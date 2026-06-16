@@ -608,5 +608,302 @@
     "n": "Series of heat-exposed rats",
     "finding": "Steinach and Kammerer linked elevated temperature ('climate') to changes in the puberty gland and sexual maturation — climate acting on the endocrine sex system.",
     "summary": "'Klima und Mannbarkeit' joined the BVA's two sex-and-environment programs: Steinach's puberty gland and Kammerer's environmental induction. Exposing rats to heat, they argued that climate acts on the puberty gland to shape sexual maturity — work later read critically (Logan's 'overheated rats') for its racial and Lamarckian framing."
+  },
+  "172": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Light / spectral exposure",
+      "Control experiments"
+    ],
+    "manipulation": "Reared cabbage-white pupae under controlled light, testing the specific action of different spectral regions against other factors (fifth part of the series).",
+    "design": "Control experiments isolating the spectral region responsible for pupal colour from confounding factors.",
+    "readout": "Pupal colour as a function of the spectral region of light.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Pieris brassicae pupae",
+    "finding": "Pins the pupal colour response to specific spectral regions of light, controlling for other factors.",
+    "summary": "The fifth instalment of Brecher's Pieris series ran control experiments to isolate which spectral regions of light drive the pupa's colour, separating the light effect from other rearing factors — tightening the causal account of environmentally cued pupal colour."
+  },
+  "153": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Growth-rate measurement",
+      "Regeneration-versus-growth comparison"
+    ],
+    "manipulation": "Measured and compared the rate of regeneration against normal growth, treating regeneration as accelerated growth.",
+    "design": "Quantitative comparison of regenerative and normal growth rates.",
+    "readout": "Rate and time-course of regeneration relative to growth.",
+    "quantification": "Quantitative",
+    "scale": "Organ / organism",
+    "n": "Comparative across cases",
+    "finding": "Regeneration is, quantitatively, a temporary acceleration of normal growth — unifying the two processes.",
+    "summary": "Przibram reframed regeneration as 'growth acceleration', arguing on quantitative grounds that the fast tissue increase after injury is the organism's normal growth speeded up. The thesis tied the BVA's regeneration and biometric-growth programs into one rate-based account."
+  },
+  "167": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Pure-line culture",
+      "Biometric size measurement"
+    ],
+    "manipulation": "Cultured pure-bred lines of the ciliate Paramecium aurelia and measured body-size variation in relation to endomixis (periodic nuclear reorganization).",
+    "design": "Biometry of size across the endomixis cycle within genetically pure lines.",
+    "readout": "Body-size distribution and its variation through endomixis.",
+    "quantification": "Quantitative",
+    "scale": "Organism (cell)",
+    "n": "Pure lines of Paramecium aurelia",
+    "finding": "Body size varies systematically with the endomixis cycle in pure lines — linking a nuclear-reorganization rhythm to biometric size variation.",
+    "summary": "Erdmann brought pure-line genetics and biometry to the ciliate Paramecium, tracking how body size varies with 'endomixis', the periodic nuclear reorganization she invoked to explain rejuvenation in clonal lines. The work sits in the Jennings-era debate over variation and inheritance in protozoan pure lines."
+  },
+  "140": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Serial growth measurement"
+    ],
+    "manipulation": "Took serial measurements of the growth of the praying mantis Sphodromantis bioculata.",
+    "design": "Longitudinal biometry of growth across instars.",
+    "readout": "Body dimensions over time and across moults.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Reared Sphodromantis bioculata",
+    "finding": "Quantifies the mantis growth curve, instar by instar.",
+    "summary": "Sztern's growth measurements on the mantis fed Przibram's quantitative-growth program directly, charting how Sphodromantis increases in size through its moults — the kind of biometric growth law the BVA sought across its model organisms."
+  },
+  "10": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Tissue-origin tracing",
+      "Grafting / marking"
+    ],
+    "manipulation": "Determined where the skin covering a limb regenerate comes from, using grafting and marking on the regenerating amphibian limb.",
+    "design": "Traced whether regenerate skin derives from the surrounding old skin or from deeper tissue.",
+    "readout": "Tissue source of the epidermis / skin on the regenerate.",
+    "quantification": "Qualitative",
+    "scale": "Tissue",
+    "n": "Series of regeneration operations",
+    "finding": "Establishes the origin of the skin in the limb regenerate, clarifying which tissue supplies the new epidermis.",
+    "summary": "Weiss asked a precise lineage question — where does the skin on a regenerated limb come from — using grafting and marking to trace its source. It refined the cellular bookkeeping of amphibian limb regeneration within his broader field-and-determination program."
+  },
+  "73": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Sectioning",
+      "Polarity / heteromorphosis test"
+    ],
+    "manipulation": "Cut Hydra (Pelmatohydra oligactis) into head and foot regions and tested what each region can regenerate.",
+    "design": "Regeneration of isolated head and foot pieces — a unipotency / polarity test.",
+    "readout": "Which structures each region forms.",
+    "quantification": "Qualitative",
+    "scale": "Tissue / organism",
+    "n": "Series of Hydra pieces",
+    "finding": "Head and foot regions behave as unipotent systems, each regenerating along its own polarity — axial determination in Hydra.",
+    "summary": "Burt treated the freshwater Hydra's head and foot as 'unipotent systems', cutting and observing what each end regenerates to probe the polarity of the body axis. The study belongs to the classic line on Hydra regeneration and axial gradients that runs to modern work on head and foot organizers."
+  },
+  "141": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Light / background modification",
+      "Observation"
+    ],
+    "manipulation": "Reared cabbage-white pupae under different light and background and recorded their colour (the main paper of the series).",
+    "design": "Background and light treatment series on Pieris pupae.",
+    "readout": "Pupal colour versus light and background.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Pieris brassicae pupae",
+    "finding": "Establishes the environmentally cued colour adaptation of the cabbage-white pupa.",
+    "summary": "A central instalment of Brecher's long Pieris study, documenting how the cabbage-white pupa tunes its colour to the surrounding light and background — the core phenomenon her control and 'chemism' papers would then dissect by spectrum and by pigment chemistry."
+  },
+  "158": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "Enzyme biochemistry",
+      "Oxygen-exclusion test"
+    ],
+    "manipulation": "Tested how excluding air (oxygen) preserves the pigment enzyme tyrosinase in animal extracts.",
+    "design": "Comparison of tyrosinase activity with versus without air exclusion.",
+    "readout": "Persistence of tyrosinase, and so of pigment-forming capacity.",
+    "quantification": "Semi-quantitative",
+    "scale": "Biochemical",
+    "n": "Animal extracts",
+    "finding": "Excluding air conserves tyrosinase — the melanin-forming enzyme is oxygen-sensitive and can be preserved anaerobically.",
+    "summary": "Przibram and Dembowski took the BVA's colour program into enzymology, showing that the pigment-forming enzyme tyrosinase is preserved when air is excluded. With Weindl's preformed-tyrosinase paper it grounded animal coloration in a specific, manipulable enzyme chemistry."
+  },
+  "40": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Background / light modification",
+      "Chromatophore observation"
+    ],
+    "manipulation": "Ran colour-change experiments on the pike, varying background and light and watching its chromatophores.",
+    "design": "Background and light treatment series on the fish.",
+    "readout": "Colour change and chromatophore response.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (chromatophores)",
+    "n": "Pike (Esox lucius)",
+    "finding": "The pike changes colour with its background and light via chromatophore adjustment.",
+    "summary": "Mayerhofer's pike experiments extended the BVA's vertebrate colour-change line to a large predatory fish, documenting how it matches its background — a companion to Secerov's loach and Abolin's minnow pharmacology."
+  },
+  "60": {
+    "method": "Developmental mechanics (egg/embryo)",
+    "methods": [
+      "Physico-chemical analogy",
+      "Crystal–organism comparison"
+    ],
+    "manipulation": "Compared the growth, restitution and form of crystals with those of organisms as a physical model for developmental mechanics.",
+    "design": "Conceptual and analogical analysis treating crystals as models of the organism.",
+    "readout": "Parallels between crystal and organismic growth, regeneration and symmetry.",
+    "quantification": "Qualitative (conceptual)",
+    "scale": "Theoretical",
+    "n": "Not applicable",
+    "finding": "Crystals furnish physical analogies for organic growth, regeneration and symmetry — a reductionist frame for Entwicklungsmechanik.",
+    "summary": "Przibram's 'crystal analogies' argued that the physics of crystal growth and restitution can model organic development, regeneration and symmetry. It is the theoretical signature of his physico-chemical program — reading life's form-making as continuous with the inorganic world."
+  },
+  "64": {
+    "method": "Environmental modification",
+    "methods": [
+      "Thermal exposure",
+      "Germ-line assessment"
+    ],
+    "manipulation": "Exposed animals to altered temperature and examined whether the environment reaches and modifies the germ-plasm.",
+    "design": "Thermal treatment versus control, with attention to heritable (germ-plasm) effects.",
+    "readout": "Effects of the environment on the germ-plasm and on offspring.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism / germ-line",
+    "n": "Series of treated animals",
+    "finding": "Argues that the environment — notably temperature — penetrates to and modifies the germ-plasm, a channel for environmental effects on heredity.",
+    "summary": "'Die Umwelt des Keimplasmas' is Przibram's theoretical-experimental case that the environment is not sealed off from the germ-plasm: temperature and surroundings can reach it. The thesis sits at the BVA's Lamarckian edge, the conceptual partner to Kammerer's inheritance experiments and to Congdon's parallel 'surroundings of the germ plasm'."
+  },
+  "96": {
+    "method": "Environmental modification",
+    "methods": [
+      "Thermal / environmental analysis",
+      "Germ-line assessment"
+    ],
+    "manipulation": "Examined how the surroundings, including temperature, relate to and affect the germ plasm.",
+    "design": "Analysis of environmental influence on the germ plasm.",
+    "readout": "Whether and how the surroundings modify the germ plasm.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism / germ-line",
+    "n": "Not specified",
+    "finding": "Treats the germ plasm as influenced by its surroundings — environment as a factor in heredity.",
+    "summary": "Congdon's 'surroundings of the germ plasm' shares its title and theme with Przibram's 'Umwelt des Keimplasmas': both ask whether the hereditary substance is shielded from or open to the environment. The BVA included it as a kindred statement in its environment-and-heredity debate."
+  },
+  "138": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Isolation / transplantation",
+      "Metamorphosis observation"
+    ],
+    "manipulation": "Tested whether gill resorption at metamorphosis in the fire salamander depends on the whole organism, by isolating and grafting tissue.",
+    "design": "Gill regression in isolated or grafted tissue versus in the intact animal.",
+    "readout": "Whether the gills regress on schedule away from the whole organism.",
+    "quantification": "Qualitative",
+    "scale": "Organ (gills)",
+    "n": "Salamandra maculosa series",
+    "finding": "The metamorphic resorption of the gills depends on the whole organism — a systemic (hormonal) signal, not the gill's own programme, drives it.",
+    "summary": "Kornfeld showed that the fire salamander's gills do not regress on their own clock: their metamorphic resorption depends on the whole organism. Like Uhlenhuth's synchronously metamorphosing eye graft, the result pointed to a circulating (thyroid) control of amphibian metamorphosis."
+  },
+  "21": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Light / background modification",
+      "Observation"
+    ],
+    "manipulation": "Reared the pupae of the tortoiseshell, peacock and painted-lady butterflies (Vanessids) under different light and recorded their colour.",
+    "design": "Light and background treatment series across several Vanessid species.",
+    "readout": "Pupal colour versus light and background.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Vanessa io, V. urticae, Pyrameis cardui, P. atalanta pupae",
+    "finding": "Vanessid pupae adapt their colour to light and background, extending the Pieris result to other butterflies.",
+    "summary": "Brecher carried her pupal-colour analysis from the cabbage white to the Vanessid butterflies, showing the same environmentally cued colour adaptation across peacock, tortoiseshell and painted-lady pupae — evidence the phenomenon is general among butterflies."
+  },
+  "107": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Comparative regeneration"
+    ],
+    "manipulation": "Amputated appendages of bristletails (Lepismatidae) and observed their regeneration, drawing conclusions of general significance.",
+    "design": "Regeneration experiments in apterygote insects that continue moulting as adults.",
+    "readout": "Capacity and pattern of appendage regeneration.",
+    "quantification": "Qualitative",
+    "scale": "Organ",
+    "n": "Lepismatidae (bristletails)",
+    "finding": "Bristletails regenerate appendages well — their lifelong moulting makes them a generally informative model for regeneration.",
+    "summary": "Przibram used the bristletails (silverfish and kin) — wingless insects that keep moulting as adults — to draw regeneration conclusions 'of more general significance'. A rediscovery target, it chose an unusual model precisely because continued moulting keeps regenerative capacity open."
+  },
+  "108": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "Enzyme biochemistry"
+    ],
+    "manipulation": "Investigated pigment formation as the action of preformed tyrosinase enzymes on their substrate.",
+    "design": "Biochemical account of pigment arising from pre-existing enzymes.",
+    "readout": "Pigment formed via preformed tyrosinases.",
+    "quantification": "Qualitative",
+    "scale": "Biochemical",
+    "n": "Animal material / extracts",
+    "finding": "Pigment arises through preformed tyrosinase enzymes — an enzymatic theory of animal pigmentation.",
+    "summary": "Weindl argued that animal pigment forms when preformed tyrosinase enzymes act on their substrate, an early enzymatic theory of pigmentation. It anchors the BVA's pigment-chemistry strand — later joined by Przibram and Dembowski's work on conserving the same enzyme."
+  },
+  "114": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Comparison across leg types"
+    ],
+    "manipulation": "Amputated the raptorial, walking and jumping legs of reared orthopterans and followed their regeneration.",
+    "design": "Comparative regeneration of functionally distinct leg types during rearing.",
+    "readout": "Regeneration of each leg type.",
+    "quantification": "Qualitative",
+    "scale": "Organ (legs)",
+    "n": "Reared Orthoptera (mantis / grasshopper)",
+    "finding": "Documents how the different specialized legs of orthopterans regenerate when the animals are reared from young.",
+    "summary": "Megušar compared regeneration across the orthopteran's specialized legs — the mantis's grasping foreleg, the walking and the jumping legs — exploiting the BVA's rearing methods. With his beetle paper it mapped insect regeneration across body parts and taxa."
+  },
+  "8": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Blastema potency test",
+      "Transposition"
+    ],
+    "manipulation": "Tested the developmental potency of the regeneration blastema in the lizard (Lacerta).",
+    "design": "Potency-probing of the blastema (transposition / challenge), as in his Triton work, now in a reptile.",
+    "readout": "What the challenged blastema forms.",
+    "quantification": "Qualitative",
+    "scale": "Tissue (blastema)",
+    "n": "Lacerta series",
+    "finding": "Probes how far the reptilian regeneration blastema is determined versus plastic — extending the determination-field analysis beyond amphibians.",
+    "summary": "Weiss carried his blastema-potency analysis into the lizard, testing how determined the reptilian regenerate is. A rediscovery target, it extends the field-and-determination framework — built on Triton — to a reptile that regenerates its tail."
+  },
+  "25": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Eye replantation"
+    ],
+    "manipulation": "Removed and re-implanted ('replanted') eyes and followed their survival, structure and function.",
+    "design": "Replantation of the eye, observing reconnection and recovery.",
+    "readout": "Survival, healing and functional recovery of the replanted eye.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Series of eye replantations",
+    "finding": "Eyes can be replanted and re-establish structure and some function — early evidence for the eye's capacity to reconnect.",
+    "summary": "Koppanyi's eye-replantation experiments removed and re-set eyes to ask whether they survive and function again, part of the BVA's deep vein of eye-transplantation work alongside Uhlenhuth's grafts. The line fed Koppanyi's later studies of vision and optic-nerve reconnection."
+  },
+  "111": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Chromatophore observation",
+      "Stimulus / physiological test"
+    ],
+    "manipulation": "Studied the colour-change reactions of the prawn Palaemon and the conditions (light, physiological state) that drive its chromatophores.",
+    "design": "Observation of chromatophore responses under varied conditions.",
+    "readout": "Chromatophore expansion and contraction and the resulting colour change.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (chromatophores)",
+    "n": "Palaemon prawns",
+    "finding": "Characterizes the prawn's colour-change reactions — an early analysis of crustacean chromatophore control.",
+    "summary": "Fröhlich's study of colour-change reactions in the prawn Palaemon opened the crustacean side of the BVA's colour-change physiology, charting how the animal's chromatophores respond. The crustacean colour-change system he probed would later be explained by chromatophorotropic hormones."
   }
 }
