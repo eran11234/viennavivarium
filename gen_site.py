@@ -464,7 +464,7 @@ table#cat{border-collapse:collapse;width:100%;font-size:14px}
 .text table{border-collapse:collapse;margin:14px 0;font-size:14px}
 .text th,.text td{border:1px solid var(--rule);padding:5px 9px}
 .text blockquote{border-left:3px solid var(--rule);margin:14px 0;padding:4px 16px;color:#534e46;background:#fbf8f2}
-.toc{align-self:start;position:sticky;top:80px}
+.toc{align-self:start;position:sticky;top:74px;max-height:calc(100vh - 90px);overflow-y:auto;padding-right:6px}
 .tocbox{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;font-family:-apple-system,sans-serif;font-size:13.5px;margin-bottom:14px}
 .tocbox p{margin:0 0 6px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
 .tocbox a{display:block;padding:2px 0;color:#4a463f}
@@ -507,7 +507,7 @@ text.blab{font-size:10px;fill:#6f6a61;font-family:-apple-system,sans-serif;point
 .legend .it{display:inline-flex;align-items:center;gap:6px;cursor:default}
 .dotc{width:11px;height:11px;border-radius:50%;display:inline-block}
 text.sat{font-size:10px;fill:var(--muted);font-family:-apple-system,sans-serif}
-@media(max-width:860px){.cols{grid-template-columns:1fr}.toc{position:static}.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.rpanes{grid-template-columns:1fr}.maplayout{grid-template-columns:1fr}.mappanel{position:static;max-height:none}nav a{margin-left:12px}}
+@media(max-width:860px){.cols{grid-template-columns:1fr}.toc{position:static;max-height:none;overflow:visible}.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.rpanes{grid-template-columns:1fr}.maplayout{grid-template-columns:1fr}.mappanel{position:static;max-height:none}nav a{margin-left:12px}}
 """
     os.makedirs(os.path.join(SITE, "assets"), exist_ok=True)
     open(os.path.join(SITE, "assets", "style.css"), "w", encoding="utf-8").write(css)
