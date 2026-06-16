@@ -147,11 +147,28 @@ TRANS_PDF = {
  "05_Kammerer_1909_Alytes-inheritance": "1909_Kammerer_Vererbung-erzwungener-Fortpflanzungsanpassungen.pdf",
  "06_Hadzi_1906_Hydra": "1906_Hadzi_Vorversuche-zur-Biologie-von-Hydra.pdf",
  "07_Przibram_1921_Form-velocity": "1921_Przibram_Form-und-Geschwindigkeit-Ein-Beitrag-zur-allgemeinen-Morphologie-Die-N.pdf",
+ "08_Kammerer_1904_Salamandra": "1904_Kammerer_Beitrag-zur-Erkenntnis-der-Verwandtschaftsverhaltnisse-von-Salamandra.pdf",
+ "09_Megusar_1912_Crustacean-colour": "1912_Megusar_Experimente-uber-den-Farbwechsel-der-Crustaceen.pdf",
+ "10_Brecher_1921_Pieris-pupal-colours": "1921_Brecher_Die-Puppenfarbungen-des-Kohlweißlings-Pieris-brassicae-L-Sechster-Teil.pdf",
+ "11_Przibram_1921_Triple-formation": "1921_Przibram_Die-Bruch-Dreifachbildung-im-Tierreiche.pdf",
+ "12_Weiss_1924_Transplanted-limb-function": "1924_Weiss_Die-Funktion-transplantierter-Amphibienextremitaten.pdf",
+ "13_Weiss_1926_Whole-regenerate-half": "1926_Weiss_Ganzregenerate-aus-Halbem-Extremitatenquerschnitt.pdf",
+ "14_PrzibramBrecher_1919_Causes-of-colouration": "1919_PrzibramBrecher_Ursachen-tierischer-Farbkleidung.pdf",
 }
 # authoritative German titles for translated papers (corpus titles can be mismatched)
 TRANS_DE = {
  "01_Przibram_1924_Amphibian-embryo": "Die virtuelle und reelle Lage des Amphibienembryos nach natürlichen und künstlichen Marken am Ei des Bergmolches (Triton alpestris)",
  "02_Steinach_1916_Puberty-glands": "Pubertätsdrüsen und Zwitterbildung",
+}
+# English titles for translations not covered by _args.json
+TRANS_EN = {
+ "08_Kammerer_1904_Salamandra": "A Contribution to the Knowledge of the Relationships of Salamandra atra and maculosa",
+ "09_Megusar_1912_Crustacean-colour": "Experiments on the Colour Change of the Crustaceans",
+ "10_Brecher_1921_Pieris-pupal-colours": "The Pupal Colourations of the Cabbage White, Pieris brassicae L. (VI: The Chemism of Colour Adaptation)",
+ "11_Przibram_1921_Triple-formation": "Triple-Formation at a Break in the Animal Kingdom",
+ "12_Weiss_1924_Transplanted-limb-function": "The Function of Transplanted Amphibian Limbs",
+ "13_Weiss_1926_Whole-regenerate-half": "Whole-Regenerates from a Half Limb Cross-Section",
+ "14_PrzibramBrecher_1919_Causes-of-colouration": "Causes of Animal Colouration. I. Preliminary Experiments on Extracts",
 }
 # slug -> (year, surname-ish) for catalog matching
 TRANS_KEY = {
@@ -162,6 +179,13 @@ TRANS_KEY = {
  "05_Kammerer_1909_Alytes-inheritance": (1909, "kammerer", "vererbung erzwungener fortpflanzungsanpassungen"),
  "06_Hadzi_1906_Hydra": (1906, "hadzi", "vorversuche biologie hydra"),
  "07_Przibram_1921_Form-velocity": (1921, "przibram", "form geschwindigkeit morphologie"),
+ "08_Kammerer_1904_Salamandra": (1904, "kammerer", "verwandtschaftsverhaltnisse salamandra atra maculosa"),
+ "09_Megusar_1912_Crustacean-colour": (1912, "megusar", "experimente farbwechsel crustaceen"),
+ "10_Brecher_1921_Pieris-pupal-colours": (1921, "brecher", "puppenfarbungen kohlweisslings pieris brassicae"),
+ "11_Przibram_1921_Triple-formation": (1921, "przibram", "bruch dreifachbildung tierreiche"),
+ "12_Weiss_1924_Transplanted-limb-function": (1924, "weiss", "funktion transplantierter amphibienextremitaten"),
+ "13_Weiss_1926_Whole-regenerate-half": (1926, "weiss", "ganzregenerate halbem extremitatenquerschnitt"),
+ "14_PrzibramBrecher_1919_Causes-of-colouration": (1919, "przibram", "ursachen tierischer farbkleidung"),
 }
 
 def load_trans_meta():
@@ -188,6 +212,9 @@ def load_trans_meta():
     # hardcode title_en / status for 01,02 (not in _args) and gaps
     out["01_Przibram_1924_Amphibian-embryo"]["title_en"] = "The Virtual and Real Position of the Amphibian Embryo, from Natural and Artificial Marks on the Egg of the Alpine Newt (Triton alpestris)"
     out["02_Steinach_1916_Puberty-glands"]["title_en"] = "Puberty Glands and Hermaphrodite Formation"
+    for slug, t in TRANS_EN.items():
+        if slug in out:
+            out[slug]["title_en"] = t
     return out
 
 # ---------- build catalog ----------
@@ -294,7 +321,8 @@ def build():
         tm = tmeta.get(slug, {}); m = tm.get("meta", {})
         vol = m.get("volume")
         journal = JOURNAL_OVERRIDE.get(slug) or (
-            f"Archiv f. Entwicklungsmechanik {vol} ({c['year']})" if vol else f"({c['year']})")
+            f"Archiv f. Entwicklungsmechanik {vol} ({c['year']})" if vol
+            else f"Archiv f. Entwicklungsmechanik der Organismen ({c['year']})")
         translations.append(dict(
             trans_slug=slug, page_slug=c["slug"], id=c["id"],
             title_en=tm.get("title_en") or c.get("title_en") or "",
