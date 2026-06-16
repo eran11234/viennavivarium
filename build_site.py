@@ -154,6 +154,13 @@ TRANS_PDF = {
  "12_Weiss_1924_Transplanted-limb-function": "1924_Weiss_Die-Funktion-transplantierter-Amphibienextremitaten.pdf",
  "13_Weiss_1926_Whole-regenerate-half": "1926_Weiss_Ganzregenerate-aus-Halbem-Extremitatenquerschnitt.pdf",
  "14_PrzibramBrecher_1919_Causes-of-colouration": "1919_PrzibramBrecher_Ursachen-tierischer-Farbkleidung.pdf",
+ "15_Kammerer_1907_Reproductive-adaptations-II": "1907_Kammerer_Vererbung-erzwungener-Fortpflanzungsanpassungen.pdf",
+ "16_Abolin_1925_Fish-colour-chemicals": "1925_Abolin_Beeinflussung-des-Fischfarbwechsels-durch-Chemikalien.pdf",
+ "17_Uhlenhuth_1913_Salamander-eye-metamorphosis": "1913_Uhlenhuth_Die-synchrone-Metamorphose-transplantierter-Salamanderaugen.pdf",
+ "18_Weiss_1927_Blastem-potency": "1927_Weiss_Potenzprufung-am-Regenerationsblastem.pdf",
+ "19_Steinach_1920_Hermaphrodite-glands": "1920_Steinach_Kunstliche-und-naturliche-Zwitterdrusen-und-ihre-analogen-Wirkungen.pdf",
+ "20_Uhlenhuth_1912_Amphibian-eye-transplant": "1912_Uhlenhuth_Die-Transplantation-des-Amphibienauges.pdf",
+ "21_Kurz_1912_Triton-leg-potencies": "1912_Kurz_Die-beinbildenden-Potenzen-entwickelter-Tritonen.pdf",
 }
 # authoritative German titles for translated papers (corpus titles can be mismatched)
 TRANS_DE = {
@@ -169,6 +176,13 @@ TRANS_EN = {
  "12_Weiss_1924_Transplanted-limb-function": "The Function of Transplanted Amphibian Limbs",
  "13_Weiss_1926_Whole-regenerate-half": "Whole-Regenerates from a Half Limb Cross-Section",
  "14_PrzibramBrecher_1919_Causes-of-colouration": "Causes of Animal Colouration. I. Preliminary Experiments on Extracts",
+ "15_Kammerer_1907_Reproductive-adaptations-II": "Inheritance of Enforced Reproductive Adaptations. I & II: Offspring of the Late-Born Salamandra maculosa and the Early-Born Salamandra atra",
+ "16_Abolin_1925_Fish-colour-chemicals": "Influencing the Colour Change of Fishes by Chemicals (I: Infundin and Adrenalin on the Melano- and Xanthophores of the Minnow)",
+ "17_Uhlenhuth_1913_Salamander-eye-metamorphosis": "The Synchronous Metamorphosis of Transplanted Salamander Eyes",
+ "18_Weiss_1927_Blastem-potency": "Potency-Testing on the Regeneration Blastema (I: Limb-Formation from Tail-Blastema in the Limb-Field in Triton)",
+ "19_Steinach_1920_Hermaphrodite-glands": "Artificial and Natural Hermaphrodite Glands and Their Analogous Effects",
+ "20_Uhlenhuth_1912_Amphibian-eye-transplant": "The Transplantation of the Amphibian Eye",
+ "21_Kurz_1912_Triton-leg-potencies": "The Leg-Forming Potencies of Developed Newts (Triton)",
 }
 # slug -> (year, surname-ish) for catalog matching
 TRANS_KEY = {
@@ -186,6 +200,13 @@ TRANS_KEY = {
  "12_Weiss_1924_Transplanted-limb-function": (1924, "weiss", "funktion transplantierter amphibienextremitaten"),
  "13_Weiss_1926_Whole-regenerate-half": (1926, "weiss", "ganzregenerate halbem extremitatenquerschnitt"),
  "14_PrzibramBrecher_1919_Causes-of-colouration": (1919, "przibram", "ursachen tierischer farbkleidung"),
+ "15_Kammerer_1907_Reproductive-adaptations-II": (1907, "kammerer", "vererbung erzwungener fortpflanzungsanpassungen"),
+ "16_Abolin_1925_Fish-colour-chemicals": (1925, "abolin", "beeinflussung fischfarbwechsels chemikalien"),
+ "17_Uhlenhuth_1913_Salamander-eye-metamorphosis": (1913, "uhlenhuth", "synchrone metamorphose transplantierter salamanderaugen"),
+ "18_Weiss_1927_Blastem-potency": (1927, "weiss", "potenzprufung regenerationsblastem"),
+ "19_Steinach_1920_Hermaphrodite-glands": (1920, "steinach", "kunstliche naturliche zwitterdrusen analogen wirkungen"),
+ "20_Uhlenhuth_1912_Amphibian-eye-transplant": (1912, "uhlenhuth", "transplantation amphibienauges"),
+ "21_Kurz_1912_Triton-leg-potencies": (1912, "kurz", "beinbildenden potenzen entwickelter tritonen"),
 }
 
 def load_trans_meta():

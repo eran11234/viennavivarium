@@ -1,7 +1,11 @@
 {
   "145": {
     "method": "Developmental mechanics (egg/embryo)",
-    "methods": ["Vital marking / fate-tracking", "Constriction / ligature", "Puncture / defect"],
+    "methods": [
+      "Vital marking / fate-tracking",
+      "Constriction / ligature",
+      "Puncture / defect"
+    ],
     "manipulation": "Followed the egg's natural pigment 'zenith field' mark and added artificial marks, hair-ligature constrictions and punctures to uncleaved alpine-newt eggs.",
     "design": "Continuous observation of individually marked eggs through cleavage, with constriction and puncture interventions; results compared against the amphibian literature (Table β).",
     "readout": "Position of the embryo's median plane relative to the egg's mark and to the first cleavage furrow.",
@@ -13,7 +17,11 @@
   },
   "38": {
     "method": "Endocrine & sex manipulation",
-    "methods": ["Gonad transplantation", "Castration", "Histology"],
+    "methods": [
+      "Gonad transplantation",
+      "Castration",
+      "Histology"
+    ],
     "manipulation": "Castrated young rats and guinea pigs and implanted the opposite sex's gonad, or both glands together, to feminize, masculinize, or produce hermaphrodites.",
     "design": "Treatment animals versus normal controls; experimental sex reversal and induced double-sex ('hermaphrodite') glands.",
     "readout": "Development of secondary sexual characters, body form, mating behaviour, and gonad histology.",
@@ -25,7 +33,11 @@
   },
   "70": {
     "method": "Regeneration & restitution",
-    "methods": ["Amputation", "Skeleton displacement / removal", "Developmental-field analysis"],
+    "methods": [
+      "Amputation",
+      "Skeleton displacement / removal",
+      "Developmental-field analysis"
+    ],
     "manipulation": "Amputated newt forelimbs after displacing the skeleton out of place or removing it entirely (skeleton-less stumps), then let them regenerate.",
     "design": "Comparison of regenerates from normal, out-of-place-skeleton, and skeleton-less stumps.",
     "readout": "Whether and how a correctly patterned limb skeleton re-forms in the regenerate.",
@@ -37,7 +49,11 @@
   },
   "135": {
     "method": "Quantitative growth & biometry",
-    "methods": ["Longitudinal measurement", "Controlled rearing", "Curve-fitting"],
+    "methods": [
+      "Longitudinal measurement",
+      "Controlled rearing",
+      "Curve-fitting"
+    ],
     "manipulation": "Reared praying mantises from hatching, weighing and measuring body length at each instar and moult.",
     "design": "Longitudinal measurement across successive instars; tabulation and fitting of growth curves.",
     "readout": "Body length and mass at each instar, and the ratios between successive instars.",
@@ -49,7 +65,11 @@
   },
   "39": {
     "method": "Inheritance & breeding",
-    "methods": ["Environmental modification", "Multi-generation breeding", "Behavioural scoring"],
+    "methods": [
+      "Environmental modification",
+      "Multi-generation breeding",
+      "Behavioural scoring"
+    ],
     "manipulation": "Forced the midwife toad to change its reproductive mode by altering temperature, humidity and 'epidemic' conditions, then bred the modified animals.",
     "design": "Control series versus descendant series across generations.",
     "readout": "Whether the enforced reproductive behaviour and associated structures reappear in the offspring.",
@@ -61,7 +81,11 @@
   },
   "56": {
     "method": "Functional physiology & behaviour",
-    "methods": ["Symbiosis analysis", "Feeding / digestion experiments", "Observation"],
+    "methods": [
+      "Symbiosis analysis",
+      "Feeding / digestion experiments",
+      "Observation"
+    ],
     "manipulation": "Kept freshwater polyps and examined the green hydra's relationship to its symbiotic algae, together with feeding, digestion and responses.",
     "design": "Exploratory preliminary experiments and observations on Hydra biology.",
     "readout": "The algal symbiosis, intracellular digestion, budding and responses of the polyp.",
@@ -73,7 +97,11 @@
   },
   "44": {
     "method": "Inheritance & breeding",
-    "methods": ["Environmental modification", "Quantitative biometry", "Controlled rearing"],
+    "methods": [
+      "Environmental modification",
+      "Quantitative biometry",
+      "Controlled rearing"
+    ],
     "manipulation": "Reared the alpine and fire salamanders under altered conditions (altitude, moisture, temperature) and recorded reproductive mode and body characters.",
     "design": "Comparative, statistical study across the two species and across conditions, with experimental induction of altered reproduction.",
     "readout": "Reproductive mode (live larvae vs fully-formed young), larval form, coloration and morphology, and their heritability.",
@@ -85,7 +113,11 @@
   },
   "93": {
     "method": "Colour change & pigment",
-    "methods": ["Background / light modification", "Blinding (ablation)", "Chromatophore observation"],
+    "methods": [
+      "Background / light modification",
+      "Blinding (ablation)",
+      "Chromatophore observation"
+    ],
     "manipulation": "Kept normal and blinded crustaceans on backgrounds of different colours, in daylight and in darkness, and observed their chromatophores.",
     "design": "Series crossing background colour x light condition x intact/blinded animals; macroscopic and microscopic observation across the day-night cycle.",
     "readout": "Expansion and contraction of the chromatophores and the resulting body colour.",
@@ -97,7 +129,10 @@
   },
   "148": {
     "method": "Functional physiology & behaviour",
-    "methods": ["Limb transplantation", "Observation of coordinated movement"],
+    "methods": [
+      "Limb transplantation",
+      "Observation of coordinated movement"
+    ],
     "manipulation": "Grafted supernumerary developed limbs onto amphibians and observed their innervation and movement.",
     "design": "Observation of the grafted limb's motor behaviour relative to the host's own homologous limb.",
     "readout": "Whether, and in what timing, the transplanted limb moves relative to the host's limbs.",
@@ -109,7 +144,10 @@
   },
   "9": {
     "method": "Regeneration & restitution",
-    "methods": ["Partial-cross-section amputation", "Developmental-field analysis"],
+    "methods": [
+      "Partial-cross-section amputation",
+      "Developmental-field analysis"
+    ],
     "manipulation": "Amputated newt limbs through only part of the cross-section (e.g., reaching only to the mid-lower-leg), leaving a partial wound surface.",
     "design": "Comparison of regenerate completeness from partial versus full limb cross-sections.",
     "readout": "Whether a whole, correctly patterned limb regenerates from a partial cross-section.",
@@ -118,5 +156,156 @@
     "n": "Series of partially-amputated Triton cristatus limbs",
     "finding": "A complete limb regenerates even from a partial (half) cross-section — evidence for a regulative 'determination field' that restores the whole pattern from incomplete material.",
     "summary": "Weiss showed that even a partial limb cross-section regenerates an entire limb, so the regenerate's pattern cannot be a simple copy of the stump's tissues. The result became a classic demonstration of regulative field behaviour, feeding directly into Bryant's double-half-limb experiments and the polar-coordinate model of limb pattern."
+  },
+  "119": {
+    "method": "Inheritance & breeding",
+    "methods": [
+      "Environmental modification",
+      "Multi-generation breeding"
+    ],
+    "manipulation": "Experimentally exchanged the reproductive mode of the alpine and fire salamanders (and the midwife toad) by altering their conditions, then bred the modified animals.",
+    "design": "Experimentally altered animals and their offspring compared against controls across generations.",
+    "readout": "Whether the enforced reproductive mode and associated characters reappear in the offspring.",
+    "quantification": "Semi-quantitative",
+    "scale": "Population (cross-generational)",
+    "n": "Offspring series tabulated for both species",
+    "finding": "Kammerer reported that the experimentally enforced reproductive adaptations were transmitted to the offspring (a Lamarckian / atavism claim, later disputed).",
+    "summary": "This second communication extends Kammerer's program: he exchanged the reproductive mode between the two Salamandra species by manipulating their environment, then bred the altered animals and tabulated the offspring, reporting that the enforced adaptation was inherited. The corpus reports the claim as stated; it belongs to the contested neo-Lamarckian work at the centre of the modern epigenetics-revival debate."
+  },
+  "81": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Pharmacological agents",
+      "Chromatophore observation"
+    ],
+    "manipulation": "Applied adrenalin, pituitrin (infundin), pilocarpine, atropine and other drugs to minnows and watched the melanophores and xanthophores respond.",
+    "design": "Series of chemical treatments versus the normal state; agonists and antagonists compared on the two chromatophore types.",
+    "readout": "Expansion and contraction of melanophores and xanthophores and the resulting colour.",
+    "quantification": "Semi-quantitative (tabulated responses)",
+    "scale": "Organism (chromatophores)",
+    "n": "Minnow (Phoxinus laevis); multiple agents",
+    "finding": "Specific drugs expand or contract specific chromatophores, implicating adrenergic and cholinergic control of fish colour change.",
+    "summary": "Abolin turned pharmacology on colour change, applying adrenalin, pituitrin, pilocarpine, atropine and others to the minnow and recording how the melanophores and xanthophores responded. By mapping which agents drove which pigment cells, he gave an early chemical dissection of the autonomic control of chromatophores that vertebrate colour-change physiology still pursues."
+  },
+  "88": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Eye transplantation",
+      "Observation of metamorphosis"
+    ],
+    "manipulation": "Transplanted an eye onto a host salamander larva and followed the graft through metamorphosis.",
+    "design": "Observation of the grafted eye's developmental timing relative to the host — a 'whole controls the part' test.",
+    "readout": "Whether the transplanted eye metamorphoses in step with the host.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye) within the organism",
+    "n": "Series of eye grafts",
+    "finding": "The transplanted eye metamorphoses synchronously with its host: the organism as a whole imposes its developmental timing on the isolated part, pointing to a systemic (hormonal) control of metamorphosis.",
+    "summary": "Uhlenhuth inverted Child's isolation logic: rather than freeing a part from the whole, he grafted an eye into a host and asked whether the whole could compel the part. The graft metamorphosed in exact step with its host, showing that a circulating systemic signal — not the organ's own clock — drives metamorphosis, an early pointer toward the thyroid control of amphibian metamorphosis."
+  },
+  "11": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Blastema transposition",
+      "Developmental-field analysis"
+    ],
+    "manipulation": "Tested what a regeneration blastema can form by placing tail-blastema material within the limb field in Triton.",
+    "design": "Comparison of the structures formed by a blastema in its own field versus a foreign field.",
+    "readout": "Whether tail-blastema forms limb structures when sited in the limb field.",
+    "quantification": "Qualitative (with figures)",
+    "scale": "Tissue (blastema)",
+    "n": "Series of blastema-transposition operations",
+    "finding": "The blastema's fate follows the field it occupies — tail-blastema in the limb field can form limb structures — confirming that a regional 'determination field', not the blastema's origin, dictates the organ.",
+    "summary": "Weiss probed the regeneration blastema's potency by moving tail-blastema into the limb region, finding that the surrounding 'limb field' redirects it toward limb formation. Together with his whole-from-half and skeleton-independence results, this fixed the regenerate's pattern as field-imposed — the field concept that runs forward into modern limb-regeneration biology."
+  },
+  "164": {
+    "method": "Endocrine & sex manipulation",
+    "methods": [
+      "Gonad transplantation",
+      "Comparison with natural intersexes"
+    ],
+    "manipulation": "Produced 'artificial hermaphrodite glands' by implanting both sex glands, and compared their effects with naturally occurring hermaphrodite glands.",
+    "design": "Artificial double-gland animals versus natural hermaphrodites; analysis of the 'antagonism of the sex hormones'.",
+    "readout": "Secondary sex characters and their suppression or expression under opposing gland secretions.",
+    "quantification": "Qualitative (descriptive + histological)",
+    "scale": "Organism",
+    "n": "Series of implanted rodents",
+    "finding": "Male and female puberty-gland secretions antagonize one another, and artificial double-glands reproduce the effects of natural hermaphrodite glands — evidence for opposing sex hormones.",
+    "summary": "Steinach implanted both sex glands to build 'artificial hermaphrodite glands' and set their effects beside those of naturally occurring intersex glands. The mutual suppression he observed — his 'antagonism of the sex hormones' — carried his puberty-gland theory toward the modern understanding of opposing androgenic and oestrogenic action."
+  },
+  "98": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Eye transplantation",
+      "Observation of growth / development"
+    ],
+    "manipulation": "Transplanted the amphibian eye to a new site or host and followed its development and size.",
+    "design": "Observation of the implanted eye's autonomy versus its dependence on the host (substrate, nutrition, spatial relations).",
+    "readout": "The grafted eye's continued development and its size relative to the host.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Series of eye grafts",
+    "finding": "The transplanted eye largely develops autonomously, but the host whole modulates its size and development through nutritive and spatial relations.",
+    "summary": "Uhlenhuth's eye-transplantation study weighed how far a grafted organ governs its own fate against how far the host whole — as a 'nursing mother' — shapes it. The eye kept much of its intrinsic development while the host adjusted its size: a Roux-style transplantation analysis of the balance between self-differentiation and dependence."
+  },
+  "133": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Potency mapping"
+    ],
+    "manipulation": "Amputated at varied levels and sites in the adult newt and recorded which regions retain the capacity to regenerate a leg.",
+    "design": "Systematic mapping of regenerative potency across the developed limb.",
+    "readout": "Whether, and what kind of, leg regenerates from each amputation site.",
+    "quantification": "Qualitative",
+    "scale": "Organ (limb)",
+    "n": "Experiments chiefly 1908-1909",
+    "finding": "Maps the leg-forming potencies the developed newt limb retains — which tissues and levels can still rebuild a leg.",
+    "summary": "Kurz charted the adult newt's leg-forming potencies, amputating at different levels to find where the capacity to regenerate a limb still resided. The work belongs to the BVA's sustained dissection of urodele limb regeneration — the same Triton system in which Weiss would later define the determination field."
+  },
+  "170": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Background modification",
+      "Pigment biochemistry"
+    ],
+    "manipulation": "Reared cabbage-white pupae against different backgrounds and analysed the chemistry of the pigments behind their colour adaptation.",
+    "design": "Correlation of background-induced colour with pigment chemistry, in the sixth instalment of the Pieris series.",
+    "readout": "Pupal colour and the chemical nature of its pigments.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Pieris brassicae pupae",
+    "finding": "Pinpoints the chemism — the pigment chemistry — underlying the pupa's environmentally cued colour adaptation.",
+    "summary": "In the sixth part of her Pieris series Brecher pushed from describing pupal colour adaptation to its chemistry, relating the background-cued colour to the pigments that produce it. The work anchors the pupal-colour-plasticity and melanisation literature that still cites her by name."
+  },
+  "174": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Supernumerary regeneration",
+      "Comparative survey",
+      "Symmetry analysis"
+    ],
+    "manipulation": "Surveyed and analysed cases where a break or wound triggers regeneration of mirror-symmetric triple appendages across the animal kingdom.",
+    "design": "Comprehensive comparative survey plus analysis of the symmetry rule that governs triple formations.",
+    "readout": "The geometry (mirror symmetry) and conditions of triple-limb formation.",
+    "quantification": "Qualitative (extensive comparative)",
+    "scale": "Organ (appendage) / organism",
+    "n": "Comparative across many taxa (monograph)",
+    "finding": "At a break, appendages regenerate as mirror-symmetric triples — a general morphogenetic rule (Bateson's rule) holding across the animal kingdom.",
+    "summary": "Przibram's vast monograph generalizes 'triple-formation': when an appendage is broken, the regenerate often appears as a mirror-symmetric trio. Surveying the phenomenon across the animal kingdom, he frames it as a morphogenetic law — Bateson's rule of mirror symmetry — a pattern principle that still informs work on supernumerary limbs."
+  },
+  "156": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Pigment extraction",
+      "Biochemical test"
+    ],
+    "manipulation": "Extracted substances from animals and tested them in preliminary experiments aimed at the causes of animal colouration.",
+    "design": "Preliminary biochemical experiments on extracts as a first step toward the chemistry of colour.",
+    "readout": "The colour-producing substances and their behaviour in extracts.",
+    "quantification": "Qualitative",
+    "scale": "Tissue / biochemical",
+    "n": "Preliminary extract experiments",
+    "finding": "Begins a biochemical analysis of the substances responsible for animal colouration.",
+    "summary": "Przibram and Brecher opened a biochemical front on colour, extracting pigment-related substances from animals as a 'preliminary' first instalment toward the causes of colouration. It pairs the BVA's colour-adaptation program with the institute's physico-chemical bent, treating colour as a problem of chemistry as much as of stimulus and response."
   }
 }
