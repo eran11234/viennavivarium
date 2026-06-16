@@ -307,5 +307,306 @@
     "n": "Preliminary extract experiments",
     "finding": "Begins a biochemical analysis of the substances responsible for animal colouration.",
     "summary": "Przibram and Brecher opened a biochemical front on colour, extracting pigment-related substances from animals as a 'preliminary' first instalment toward the causes of colouration. It pairs the BVA's colour-adaptation program with the institute's physico-chemical bent, treating colour as a problem of chemistry as much as of stimulus and response."
+  },
+  "86": {
+    "method": "Inheritance & breeding",
+    "methods": [
+      "Colour / background modification",
+      "Multi-generation breeding"
+    ],
+    "manipulation": "Induced colour change in salamanders by rearing them on differently coloured backgrounds, then bred the colour-altered animals.",
+    "design": "Offspring of colour-modified animals compared with controls across generations.",
+    "readout": "Whether the enforced colour change reappears in the offspring.",
+    "quantification": "Semi-quantitative",
+    "scale": "Population (cross-generational)",
+    "n": "Breeding series",
+    "finding": "Kammerer reported the enforced colour changes were inherited (a neo-Lamarckian claim, later disputed).",
+    "summary": "Companion to his reproductive-adaptation work, Kammerer reared salamanders on coloured backgrounds to drive colour change and then bred them, reporting the change in their descendants — extending his contested environment-writes-heredity program to coloration."
+  },
+  "59": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Controlled rearing",
+      "Amputation",
+      "Colour-change observation"
+    ],
+    "manipulation": "Reared the Egyptian praying mantis and observed its colour change and the regeneration of amputated parts.",
+    "design": "Exploratory rearing-and-experiment study establishing the mantis as an experimental object.",
+    "readout": "Background colour change and regeneration of amputated appendages.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Reared Sphodromantis bioculata",
+    "finding": "Established Sphodromantis as a tractable experimental insect, with notable colour change and regenerative capacity.",
+    "summary": "Przibram's founding study domesticated the Egyptian praying mantis for the BVA, showing how to rear it and documenting its colour change and regeneration — the groundwork for the institute's long mantis program in growth, regeneration and colour."
+  },
+  "92": {
+    "method": "Environmental modification",
+    "methods": [
+      "Light / condition exposure",
+      "Breeding",
+      "Observation"
+    ],
+    "manipulation": "Exposed the cave-dwelling olm to altered conditions (notably light) and recorded effects on reproduction, colour, eyes and body form.",
+    "design": "Altered-environment treatment versus the natural cave state.",
+    "readout": "Reproduction, pigmentation, eye development and body reduction.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Series of Proteus anguinus",
+    "finding": "Kammerer reported that environmental exposure elicits pigment and eye development in the otherwise pale, blind cave olm.",
+    "summary": "Kammerer's olm experiments probed how fixed the cave salamander's pale, eyeless form is: exposing Proteus to light and altered conditions, he reported induced pigment and eye development, folding the result into his environment-shapes-the-organism program (claims later treated cautiously)."
+  },
+  "57": {
+    "method": "Environmental modification",
+    "methods": [
+      "Reproductive-condition manipulation",
+      "Breeding observation"
+    ],
+    "manipulation": "Altered the breeding conditions (temperature, humidity) of the midwife toad and tree frog to change their reproductive behaviour.",
+    "design": "Experimental alteration of reproductive activity versus normal behaviour.",
+    "readout": "Mode and site of egg-laying and brood care.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism",
+    "n": "Alytes and Hyla series",
+    "finding": "Environmental change forces the midwife toad and tree frog to alter how and where they breed — the induction step behind Kammerer's later inheritance claims.",
+    "summary": "This earlier Kammerer paper established that manipulating temperature and humidity forces the midwife toad and tree frog to change their reproduction — the experimental induction that his 1909 work would then claim is inherited."
+  },
+  "116": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Pigment-formation analysis",
+      "Transplantation"
+    ],
+    "manipulation": "Studied how pigment forms in amphibians, including through transplantation and observation of pigment-cell behaviour.",
+    "design": "Experimental and observational study of pigment formation.",
+    "readout": "Origin and development of pigment in the skin.",
+    "quantification": "Qualitative",
+    "scale": "Tissue (integument)",
+    "n": "Not specified",
+    "finding": "Analyses the formation and origin of animal pigment, contributing to the developmental account of pigmentation.",
+    "summary": "Winkler's studies on pigment formation tackled where and how animal pigment arises — part of the BVA's broad coloration program that also ran through Brecher's pupae and Megušar's crustaceans."
+  },
+  "165": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "Gonad histology"
+    ],
+    "manipulation": "Examined, microscopically, the histological structure of the testis in a sample of men described as homosexual.",
+    "design": "Comparative histological description.",
+    "readout": "Microscopic structure of the gonad.",
+    "quantification": "Qualitative (histological)",
+    "scale": "Tissue",
+    "n": "Small human sample",
+    "finding": "Steinach claimed a distinctive gonad histology in homosexual men, applying his puberty-gland theory to sexual orientation — a claim not supported by later science.",
+    "summary": "Extending his hormonal theory of sex to human orientation, Steinach reported a distinctive testicular histology in homosexual men. Influential and troubling in its time, the claim is not supported by modern science; the paper is included here as a historical document of how the puberty-gland theory was over-extended."
+  },
+  "48": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Comparison across age / stage / size"
+    ],
+    "manipulation": "Amputated parts of amphibian larvae of different ages, developmental stages and body sizes and assessed their regenerative capacity.",
+    "design": "Comparison of regeneration across age, stage and size classes.",
+    "readout": "Extent and rate of regeneration as a function of larval age, stage and size.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organ",
+    "n": "Larval series across classes",
+    "finding": "The regenerative capacity of amphibian larvae depends systematically on age, developmental stage and body size.",
+    "summary": "Kammerer asked what governs how well an amphibian larva regenerates, amputating across age, stage and size classes and relating regenerative power to each — an early quantification of the conditions that set regenerative capacity."
+  },
+  "69": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Denervation",
+      "Amputation"
+    ],
+    "manipulation": "Cut or removed the nerve supply of developed amphibian limbs and tested whether they still regenerate after amputation.",
+    "design": "Regeneration of denervated versus innervated limbs.",
+    "readout": "Whether and how the limb regenerates without its nerves.",
+    "quantification": "Qualitative (with figures)",
+    "scale": "Organ (limb)",
+    "n": "Series of denervated limbs",
+    "finding": "Limb regeneration depends on the nervous system — denervated limbs fail to regenerate — a foundational result on the nerve-dependence of regeneration.",
+    "summary": "Weiss's companion to his skeleton-independence paper showed the opposite necessity: cut the nerves and the limb will not regenerate. This nerve-dependence of regeneration became a cornerstone of regeneration biology, running forward to Singer's mid-century work on the neurotrophic control of regrowth."
+  },
+  "49": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Asymmetry analysis"
+    ],
+    "manipulation": "Studied 'heterochely' — the asymmetry of the two claws — in decapod crustaceans through claw-removal and regeneration.",
+    "design": "Regeneration experiments on the paired claws (third communication of his regeneration studies).",
+    "readout": "Which claw regenerates as the large versus the small form after removal.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organ (claw)",
+    "n": "Decapod crustaceans",
+    "finding": "Removing a claw reorganizes the large/small asymmetry — regeneration governs the establishment of claw heterochely.",
+    "summary": "In the third of his experimental regeneration studies, Przibram used crustacean claws to analyse 'heterochely' — why one claw is large and one small — showing that regeneration after claw loss reorganizes the asymmetry, an early model for how paired structures set their handedness."
+  },
+  "125": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Comparative across species"
+    ],
+    "manipulation": "Amputated appendages of beetles and observed their regeneration across species.",
+    "design": "Comparative regeneration study in Coleoptera.",
+    "readout": "Capacity and pattern of regeneration of beetle appendages.",
+    "quantification": "Qualitative",
+    "scale": "Organ",
+    "n": "Multiple beetle species",
+    "finding": "Documents the regenerative capacities of beetles, mapping which appendages regenerate and how.",
+    "summary": "Megušar surveyed regeneration in beetles, amputating appendages across species to chart their regenerative powers — part of the BVA's comparative regeneration program that spanned crustaceans, insects and amphibians."
+  },
+  "159": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Light / background modification",
+      "Observation"
+    ],
+    "manipulation": "Reared cabbage-white pupae under different light and background conditions and recorded the colour they assumed.",
+    "design": "Comparison of pupal colour across light/background treatments.",
+    "readout": "Pupal colouration as a function of the surrounding light and background.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Pieris brassicae pupae",
+    "finding": "Pupal colour adapts to the light and background — environmentally cued pupal colouration in Pieris.",
+    "summary": "An earlier instalment of Brecher's Pieris series, establishing that the cabbage-white pupa's colour responds to the light and background it pupates against — the adaptive colour phenomenon her later 'chemism' parts would dissect chemically."
+  },
+  "67": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Light / background modification",
+      "Observation"
+    ],
+    "manipulation": "Reared Pieris pupae against different backgrounds and light and recorded their colour.",
+    "design": "Background and light treatment series across pupae.",
+    "readout": "Pupal colour versus background/light.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Pieris brassicae pupae",
+    "finding": "Confirms and extends the environmentally cued colour adaptation of the cabbage-white pupa.",
+    "summary": "A 1917 instalment of Brecher's long Pieris pupal-colour study, documenting how the pupa matches its colour to its surroundings — groundwork for the pupal-colour-plasticity literature."
+  },
+  "36": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Limb transplantation"
+    ],
+    "manipulation": "Transplanted developed (adult) limbs onto amphibians and followed their incorporation.",
+    "design": "Morphological study of how the grafted limb takes and develops.",
+    "readout": "Survival, healing and structure of the transplanted limb.",
+    "quantification": "Qualitative",
+    "scale": "Organ (limb)",
+    "n": "Series of limb grafts",
+    "finding": "Developed amphibian limbs can be transplanted and incorporated — the morphological basis for Weiss's later functional and resonance studies.",
+    "summary": "Weiss's 1923 paper established the surgery: transplanting fully formed amphibian limbs and showing that they take and integrate. It is the morphological precursor on which his 1924 'function of transplanted limbs' and the resonance principle would build."
+  },
+  "41": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Controlled rearing",
+      "Amputation",
+      "Colour observation"
+    ],
+    "manipulation": "Reared praying mantises and observed their colour change and regeneration of amputated parts.",
+    "design": "Exploratory rearing-and-experiment study of the mantids.",
+    "readout": "Colour change and regeneration of amputated parts.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Reared mantids",
+    "finding": "Documents rearing, colour change and regeneration in praying mantises, extending the BVA's mantis program.",
+    "summary": "Thomsen's study continued the BVA's work on praying mantises — how to rear them and their colour change and regeneration — paralleling Przibram's founding mantis paper and feeding the institute's sustained use of the mantis as a model."
+  },
+  "110": {
+    "method": "Endocrine & sex manipulation",
+    "methods": [
+      "Gonad manipulation / castration",
+      "Observation of sex characters"
+    ],
+    "manipulation": "Experimentally manipulated the newts' gonads and observed the development of their secondary sexual characters (e.g., the breeding crest).",
+    "design": "Comparison of secondary sex characters under gonadal manipulation versus normal.",
+    "readout": "Development of secondary sexual characters in Triton.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Series of newts",
+    "finding": "Links the newts' secondary sexual characters to gonadal control — an amphibian counterpart to Steinach's mammalian sex-gland work.",
+    "summary": "Brescia's experiments on the secondary sexual characters of newts probed how the gonad controls the male breeding dress, an amphibian parallel to the BVA's broader endocrine-sex program led by Steinach."
+  },
+  "127": {
+    "method": "Inheritance & breeding",
+    "methods": [
+      "Selective breeding",
+      "Mendelian analysis"
+    ],
+    "manipulation": "Bred Angora cats and tracked the inheritance of asymmetric eye colour (odd-eyed cats) across generations.",
+    "design": "Breeding crosses analysed for the inheritance pattern of eye-colour asymmetry.",
+    "readout": "Eye-colour phenotype of offspring.",
+    "quantification": "Semi-quantitative",
+    "scale": "Population",
+    "n": "Angora cat crosses",
+    "finding": "Analyses how asymmetric (odd-eyed) eye coloration is inherited in Angora cats.",
+    "summary": "Przibram turned breeding analysis on a charismatic trait — the odd-eyed Angora cat — tracking how asymmetric eye colour passes through generations, a Mendelian-era heredity study within the BVA's inheritance program."
+  },
+  "42": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Background / light modification",
+      "Chromatophore observation"
+    ],
+    "manipulation": "Subjected the stone loach to colour-change experiments, varying background and light and watching its chromatophores.",
+    "design": "Background and light treatment series on the fish.",
+    "readout": "Colour change and chromatophore response.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (chromatophores)",
+    "n": "Stone loach (Nemachilus barbatula)",
+    "finding": "The stone loach changes colour with its background and light via chromatophore adjustment.",
+    "summary": "Secerov's colour-change experiments on the stone loach documented how the fish matches its background through chromatophore expansion and contraction — part of the BVA's vertebrate colour-change line that Abolín would later probe pharmacologically."
+  },
+  "149": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Limb transplantation",
+      "Amputation / regeneration"
+    ],
+    "manipulation": "Amputated and observed regeneration on previously transplanted (grafted) amphibian limbs.",
+    "design": "Regeneration tested on transplanted versus normal limbs.",
+    "readout": "Whether and how a transplanted limb regenerates after amputation.",
+    "quantification": "Qualitative",
+    "scale": "Organ (limb)",
+    "n": "Series of grafted limbs",
+    "finding": "Transplanted limbs retain the capacity to regenerate, tying transplantation and regeneration in the same system.",
+    "summary": "Weiss combined his two tools — transplantation and regeneration — amputating grafted limbs to ask whether a transplanted limb can still regenerate. The result linked the regenerative field to the transplanted organ, part of his sustained analysis of limb determination."
+  },
+  "157": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Pigment extraction",
+      "Biochemical / observational test"
+    ],
+    "manipulation": "Investigated the causes of animal colouration, including the chemical substances behind colour.",
+    "design": "Experimental and analytical study of the causes of colour.",
+    "readout": "The substances and mechanisms that produce animal colour.",
+    "quantification": "Qualitative",
+    "scale": "Tissue / biochemical",
+    "n": "Preliminary experiments",
+    "finding": "Frames animal colouration as a problem of underlying causes — pigment chemistry and physiology — companion to the Przibram-Brecher extract experiments.",
+    "summary": "Przibram's 'causes of animal colouration' sets the agenda for treating colour as a chemical-physiological problem, the companion framing to the Przibram-Brecher extract experiments translated on this site, and a rediscovery target whose organism (the mantis) is still studied."
+  },
+  "169": {
+    "method": "Environmental modification",
+    "methods": [
+      "Temperature / climate exposure",
+      "Endocrine / gonad assessment"
+    ],
+    "manipulation": "Exposed animals (rats) to elevated temperature ('climate') and assessed the effect on the puberty gland and sexual maturity ('virility').",
+    "design": "Heat treatment versus control; effect on gonadal and sexual development.",
+    "readout": "Sexual maturity and puberty-gland condition under thermal stress.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism",
+    "n": "Series of heat-exposed rats",
+    "finding": "Steinach and Kammerer linked elevated temperature ('climate') to changes in the puberty gland and sexual maturation — climate acting on the endocrine sex system.",
+    "summary": "'Klima und Mannbarkeit' joined the BVA's two sex-and-environment programs: Steinach's puberty gland and Kammerer's environmental induction. Exposing rats to heat, they argued that climate acts on the puberty gland to shape sexual maturity — work later read critically (Logan's 'overheated rats') for its racial and Lamarckian framing."
   }
 }
