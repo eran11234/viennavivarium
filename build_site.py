@@ -148,6 +148,11 @@ TRANS_PDF = {
  "06_Hadzi_1906_Hydra": "1906_Hadzi_Vorversuche-zur-Biologie-von-Hydra.pdf",
  "07_Przibram_1921_Form-velocity": "1921_Przibram_Form-und-Geschwindigkeit-Ein-Beitrag-zur-allgemeinen-Morphologie-Die-N.pdf",
 }
+# authoritative German titles for translated papers (corpus titles can be mismatched)
+TRANS_DE = {
+ "01_Przibram_1924_Amphibian-embryo": "Die virtuelle und reelle Lage des Amphibienembryos nach natürlichen und künstlichen Marken am Ei des Bergmolches (Triton alpestris)",
+ "02_Steinach_1916_Puberty-glands": "Pubertätsdrüsen und Zwitterbildung",
+}
 # slug -> (year, surname-ish) for catalog matching
 TRANS_KEY = {
  "01_Przibram_1924_Amphibian-embryo": (1924, "przibram", "virtuelle reelle lage amphibienembryos"),
@@ -239,6 +244,10 @@ def build():
         pdf = assigned.get(pid)
         if pdf:
             mapped += 1
+        if slug:                       # prefer the translation's authoritative German title
+            mt = ((tmeta.get(slug, {}) or {}).get("meta") or {}).get("title") or TRANS_DE.get(slug)
+            if mt:
+                title_de = mt
 
         rec = dict(
             id=pid, year=year, author=author, author_full=author_full,
