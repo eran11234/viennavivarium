@@ -9,6 +9,7 @@
 !/README.md
 !/build_site.py
 !/gen_site.py
+!/enrich_citations.py
 !/BVA Corpus Analysis.xlsx
 !/legacy_data
 !/translations_full

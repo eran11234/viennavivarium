@@ -233,7 +233,32 @@ def gen_map():
 """
     page("map.html", "Map", "Map", body,
          head='<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>',
-         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="assets/map.js"></script>')
+         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="assets/map.js"></script>')
+
+def gen_citations():
+    """Emit the slim per-paper citing-works list (for bubbles) + the composed paragraphs."""
+    enr_path = os.path.join(ROOT, "legacy_data", "citations_enriched.json")
+    notes_path = os.path.join(ROOT, "legacy_data", "citation_notes.json")
+    cits = {}
+    if os.path.exists(enr_path):
+        enr = json.load(open(enr_path, encoding="utf-8"))
+        for pid, v in enr.items():
+            arr = []
+            for w in v["works"]:
+                a = w["authors"]
+                aname = (a[0] if a else "") + (" et al." if len(a) > 1 else "")
+                arr.append(dict(k=w["oa_id"], d=w["doi"], y=w["year"], a=aname,
+                                t=w["title"], s=w["topic"].get("subfield", ""),
+                                h=1 if w["historiographic"] else 0, m=w["species_match"]))
+            arr.sort(key=lambda x: (x["h"], -(x["y"] or 0)))
+            cits[pid] = arr
+    notes = json.load(open(notes_path, encoding="utf-8")) if os.path.exists(notes_path) else {}
+    os.makedirs(DATA, exist_ok=True)
+    open(os.path.join(DATA, "citations.js"), "w", encoding="utf-8").write(
+        "window.CITATIONS=" + json.dumps(cits, ensure_ascii=False) + ";")
+    open(os.path.join(DATA, "notes.js"), "w", encoding="utf-8").write(
+        "window.NOTES=" + json.dumps(notes, ensure_ascii=False) + ";")
+    print("citations.js:", sum(len(v) for v in cits.values()), "works | notes:", len(notes))
 
 # ---------------------------------------------------------------- reading pages
 def render_md(slug):
@@ -658,26 +683,51 @@ var nodes=gNode.selectAll('circle').data(C).join('circle')
  .on('click',function(e,c){select(c);});
 function tick(){nodes.attr('cx',function(c){return c.x;}).attr('cy',function(c){return c.y;});
  rings.attr('cx',function(c){return c.x;}).attr('cy',function(c){return c.y;});}
-function drawThreads(c){gThread.selectAll('*').remove();var cs=((L[c.id]||{}).citations||[]).slice(0,5);if(!cs.length)return;
- cs.forEach(function(x,i){var ang=(-Math.PI/2)+(i-(cs.length-1)/2)*0.55,sx=c.x+Math.cos(ang)*72,sy=c.y+Math.sin(ang)*72;
-  gThread.append('line').attr('x1',c.x).attr('y1',c.y).attr('x2',sx).attr('y2',sy).attr('stroke','#bcb4a2').attr('stroke-width',1);
-  var grp=gThread.append('g').style('cursor',x.doi?'pointer':'default').on('click',function(){if(x.doi)window.open('https://doi.org/'+x.doi,'_blank');});
-  grp.append('circle').attr('cx',sx).attr('cy',sy).attr('r',4).attr('fill','#efe9dd').attr('stroke','#9a8f78');
-  grp.append('text').attr('class','sat').attr('x',sx).attr('y',sy-7).attr('text-anchor','middle').text((x.year||'')+' '+((x.author||'').split(' ').slice(-1)[0]||''));});}
-function select(c){
- nodes.attr('opacity',function(d){return d===c?1:0.22;}).attr('stroke',function(d){return d===c?'#211f1c':'#fffdf9';}).attr('stroke-width',function(d){return d===c?2:0.8;});
- rings.attr('opacity',0.5);drawThreads(c);
- var lg=L[c.id]||{},cs=(lg.citations||[]).slice(0,6);
- var cl=cs.map(function(x){return '<li>'+(x.year?x.year+' · ':'')+esc(x.author||'')+' — '+esc((x.title||'').slice(0,90))+(x.doi?' <a target=_blank href="https://doi.org/'+x.doi+'">doi</a>':'')+'</li>';}).join('');
+var selected=null;
+function layoutBubbles(n){var pts=[],ringR=[58,100,142,184,228,272],cap=[8,13,18,24,30,40],idx=0;
+ for(var r=0;r<ringR.length&&idx<n;r++){var count=Math.min(cap[r],n-idx);
+  for(var j=0;j<count;j++){var ang=(j+0.5)/count*2*Math.PI+r*0.4;pts.push({x:Math.cos(ang)*ringR[r],y:Math.sin(ang)*ringR[r]});idx++;}}
+ while(idx<n){var ang=Math.random()*2*Math.PI;pts.push({x:Math.cos(ang)*300,y:Math.sin(ang)*300});idx++;}return pts;}
+function drawBubbles(c){gThread.selectAll('*').remove();
+ var arr=(window.CITATIONS&&window.CITATIONS[c.id])||[];if(!arr.length)return;
+ var pts=layoutBubbles(arr.length);
+ gThread.selectAll('line').data(arr).join('line').attr('x1',c.x).attr('y1',c.y)
+  .attr('x2',function(d,i){return c.x+pts[i].x;}).attr('y2',function(d,i){return c.y+pts[i].y;})
+  .attr('stroke','#d3cbb9').attr('stroke-width',0.5).attr('opacity',0.7);
+ var b=gThread.selectAll('g.bub').data(arr).join('g').attr('class','bub').style('cursor','pointer')
+  .attr('transform',function(d,i){return 'translate('+(c.x+pts[i].x)+','+(c.y+pts[i].y)+')';})
+  .on('mousemove',function(e,d){var p=d3.pointer(e,svg.node());tip.style('opacity',1).style('left',(p[0]+12)+'px').style('top',(p[1]+10)+'px').html('<b>'+esc((d.a||'')+' '+(d.y||''))+'</b><br>'+esc((d.t||'').slice(0,90)));})
+  .on('mouseout',function(){tip.style('opacity',0);})
+  .on('click',function(e,d){if(e.stopPropagation)e.stopPropagation();showCite(c,d);});
+ b.append('circle').attr('r',function(d){return (window.NOTES&&window.NOTES[d.k])?6:5;})
+  .attr('fill',function(d){return d.h?'#cfc8b8':'#d98c5f';})
+  .attr('stroke',function(d){return (window.NOTES&&window.NOTES[d.k])?'#7a3b2e':'#fffdf9';})
+  .attr('stroke-width',function(d){return (window.NOTES&&window.NOTES[d.k])?1.4:0.7;});}
+function showCite(c,d){var note=(window.NOTES&&window.NOTES[d.k])||'';
+ var doi=d.d?('<a target=_blank href="https://doi.org/'+d.d+'">'+esc(d.d)+'</a>'):'';
+ var rel=(d.m&&d.m.indexOf('same')>=0)?(' · <span class="badge">'+esc(d.m.replace(/_/g,' '))+'</span>'):'';
+ panel.innerHTML='<p class="kicker"><a href="#" id="backp">‹ back to '+esc(c.author+' '+c.year)+'</a></p>'+
+  '<h3 style="font-size:15px">'+esc(d.t||'(untitled)')+'</h3>'+
+  '<p class="pmeta">'+esc(d.a||'')+' · '+(d.y||'')+(d.s?' · '+esc(d.s):'')+(d.h?' · <span class="badge wip">historiographic</span>':'')+rel+'</p>'+
+  (note?'<p style="margin:10px 0;line-height:1.65">'+esc(note)+'</p>':'<p class="muted" style="margin:10px 0">A paragraph on what this paper does with the original is still being written.</p>')+
+  (doi?'<p class="pmeta">'+doi+'</p>':'');
+ var bp=document.getElementById('backp');if(bp)bp.addEventListener('click',function(e){e.preventDefault();select(c);});}
+function select(c){selected=c;
+ nodes.attr('opacity',function(d){return d===c?1:0.12;}).attr('stroke',function(d){return d===c?'#211f1c':'#fffdf9';}).attr('stroke-width',function(d){return d===c?2:0.8;});
+ rings.attr('opacity',0.25);
+ var k=2.4,w=width();
+ svg.transition().duration(650).call(zoom.transform,d3.zoomIdentity.translate(w/2-c.x*k,H/2-c.y*k).scale(k));
+ drawBubbles(c);
+ var lg=L[c.id]||{},arr=(window.CITATIONS&&window.CITATIONS[c.id])||[];
+ var nnote=arr.filter(function(x){return window.NOTES&&window.NOTES[x.k];}).length;
  var en=c.has_translation?('<a class="btn" href="papers/'+c.slug+'.html">Read English →</a>'):'';
  panel.innerHTML='<p class="kicker">'+esc(c._t)+' · '+(c.layer?('Layer '+c.layer):'unranked')+'</p>'+
   '<h3>'+esc(c.has_translation&&c.title_en?c.title_en:c.title)+'</h3>'+
   ((c.has_translation&&c.title_en)?'<p class="pde">'+esc(c.title)+'</p>':'')+
   '<p class="pmeta">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+'</p>'+
-  '<p class="pmeta"><b>'+(c.citations||0)+'</b> modern citations · <b>'+(lg.n_parallels||0)+'</b> parallels'+(c.rediscovery?' · <span class="badge redis">rediscovery target</span>':'')+'</p>'+
+  '<p class="pmeta"><b>'+(c.citations||0)+'</b> modern citations · <b>'+(lg.n_parallels||0)+'</b> parallels'+(c.rediscovery?' · <span class="badge redis">rediscovery</span>':'')+'</p>'+
   '<div class="actionbar" style="margin:10px 0"><a class="btn primary" href="reader.html?id='+c.id+'">Read original</a>'+en+'</div>'+
-  (cl?'<p class="pmeta" style="margin-top:6px"><b>Carried into modern work:</b></p><ul class="pcites">'+cl+'</ul>':'<p class="muted">No modern citations recorded.</p>');
-}
+  (arr.length?'<p class="pmeta" style="margin-top:4px">The '+arr.length+' bubbles are the modern works citing this paper'+(nnote?' — '+nnote+' annotated so far':'')+'. Click one (orange = scientific, grey = historiographic) to read what it does with the original.</p>':'<p class="muted">No modern citations recorded.</p>');}
 var zoom=d3.zoom().scaleExtent([0.4,5]).on('zoom',function(e){gz.attr('transform',e.transform);});
 svg.call(zoom);
 var q=document.getElementById('q'),fl=document.getElementById('layer'),fp=document.getElementById('phen'),fr=document.getElementById('ronly'),reset=document.getElementById('reset');
@@ -714,7 +764,7 @@ def main():
     open(os.path.join(DATA, "site.js"), "w").write("window.SITE=" + json.dumps({"fullPdfs": FULL}) + ";")
     open(os.path.join(SITE, ".nojekyll"), "w").write("")
     gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader()
-    gen_reading_pages(); copy_assets()
+    gen_citations(); gen_reading_pages(); copy_assets()
     print("Generated site at", SITE, "| FULL_PDFS =", FULL)
     print("pages:", sorted(os.path.basename(p) for p in glob.glob(os.path.join(SITE, "*.html"))))
     print("reading pages:", len(glob.glob(os.path.join(SITE, "papers", "*.html"))))
