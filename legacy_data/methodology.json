@@ -1354,5 +1354,453 @@
     "n": "Mantis series",
     "finding": "Raptorial legs can be produced as regenerates, a homeotic/heteromorphic outcome of regeneration in the mantis.",
     "summary": "Przibram's 'raptorial legs as regenerates' documents the mantis regenerating a grasping foreleg where another part stood — a homeotic substitution. It ties his mantis programme to his work on homeosis and the rules that govern what a regenerate becomes."
+  },
+  "4": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Serial growth measurement"
+    ],
+    "manipulation": "Took serial growth measurements of the Japanese mantis Tenodera aridifolia.",
+    "design": "Longitudinal biometry of growth across instars.",
+    "readout": "Body dimensions over time and across moults.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Reared Tenodera aridifolia",
+    "finding": "Charts the growth curve of a second mantis species, extending the BVA's biometric growth data beyond Sphodromantis.",
+    "summary": "Przibram added the Japanese mantis to his growth-measurement program, charting how Tenodera increases in size through its moults. A rediscovery target, it broadened the comparative base for the quantitative growth laws the BVA sought across its mantids."
+  },
+  "14": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Light / background modification",
+      "Observation"
+    ],
+    "manipulation": "Reared cabbage-white pupae under different light and recorded their colour.",
+    "design": "Light and background treatment series on Pieris pupae.",
+    "readout": "Pupal colour versus light and background.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Pieris brassicae pupae",
+    "finding": "The cabbage-white pupa matches its colour to the surrounding light and background.",
+    "summary": "One of the core communications of Brecher's long Pieris study, documenting the cabbage-white pupa's environmentally cued colour adaptation — the central phenomenon her spectral-control and pigment-chemistry papers would then dissect."
+  },
+  "20": {
+    "method": "Developmental mechanics (egg/embryo)",
+    "methods": [
+      "Decapitation / ablation",
+      "Metamorphosis observation"
+    ],
+    "manipulation": "Removed the head of butterfly caterpillars and tested whether the headless larvae could still pupate.",
+    "design": "Pupation of decapitated versus intact caterpillars, at different developmental times.",
+    "readout": "Whether, and when, a headless caterpillar still pupates.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Series of decapitated caterpillars",
+    "finding": "Caterpillars decapitated after a critical period can still pupate — the trigger for pupation is released into the body and no longer needs the head.",
+    "summary": "Przibram removed caterpillars' heads to ask whether the head is needed for them to pupate, finding that once a critical point is passed they pupate regardless. The result points to a circulating pupation factor, converging on the insect metamorphosis-hormone story that Kopeć was opening in the same years."
+  },
+  "24": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Methodology",
+      "Autoplastic transplantation"
+    ],
+    "manipulation": "Described and standardized the method of 'autophor' (autoplastic, self-carrying) transplantation used across the institute.",
+    "design": "Methodological paper setting out the grafting technique.",
+    "readout": "How to perform and interpret autoplastic grafts.",
+    "quantification": "Not applicable",
+    "scale": "Method",
+    "n": "Not applicable",
+    "finding": "Sets out the autoplastic transplantation method — grafting tissue back onto the same animal — as a controlled tool for regeneration and potency studies.",
+    "summary": "Przibram codified the BVA's 'autophor' transplantation method, in which tissue is grafted onto the same animal so that host and graft share a genotype and physiology. It is the technical backbone behind Koppanyi's testis and eye grafts and Weiss's limb work."
+  },
+  "27": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Eye replantation"
+    ],
+    "manipulation": "Removed and re-implanted eyes and followed their survival and recovery.",
+    "design": "Replantation of the eye, observing reconnection and function.",
+    "readout": "Survival, healing and functional recovery of the replanted eye.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Series of eye replantations",
+    "finding": "Eyes can be replanted and re-establish structure and some function.",
+    "summary": "Part of Koppanyi's eye-replantation work, removing and re-setting eyes to test whether they survive and reconnect. It belongs to the BVA's deep vein of eye-transplantation studies and fed his later research on vision and optic-nerve recovery."
+  },
+  "28": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Eye replantation"
+    ],
+    "manipulation": "Re-implanted excised eyes and tracked their fate (companion communication).",
+    "design": "Replantation of the eye with observation of structural and functional recovery.",
+    "readout": "Whether the replanted eye heals in and functions.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Series of eye replantations",
+    "finding": "Confirms that a replanted eye can survive and partly recover.",
+    "summary": "A further instalment of Koppanyi's eye-replantation studies, reinforcing that the eye can be removed and re-set with survival and some functional return — an early landmark in the surgery of sense-organ transplantation."
+  },
+  "55": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Controlled rearing",
+      "Amputation",
+      "Colour-change observation"
+    ],
+    "manipulation": "Reared the Egyptian praying mantis (Sphodromantis bioculata) and observed its colour change and the regeneration of amputated parts.",
+    "design": "Exploratory rearing-and-experiment study establishing the mantis as an experimental object.",
+    "readout": "Background colour change and regeneration of amputated appendages.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Reared Sphodromantis bioculata",
+    "finding": "Established the Egyptian mantis as a tractable experimental insect with marked colour change and regenerative capacity.",
+    "summary": "Przibram's founding mantis study showed how to rear the Egyptian praying mantis and documented its colour change and regeneration — a rediscovery target that opened the institute's long mantis program in growth, regeneration and colour."
+  },
+  "78": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "DOPA histochemistry",
+      "Extract comparison"
+    ],
+    "manipulation": "Compared the positive and negative DOPA reactions seen on frozen tissue sections with those obtained from extracts.",
+    "design": "Histochemical DOPA reaction in situ versus in extracts.",
+    "readout": "Agreement between in-section and in-extract DOPA reactions.",
+    "quantification": "Qualitative (histochemical)",
+    "scale": "Tissue / biochemical",
+    "n": "Tissue sections and extracts",
+    "finding": "The DOPA reaction agrees between frozen sections and extracts — the enzyme detected histochemically is the same one assayed biochemically, validating the DOPA test for locating melanin formation.",
+    "summary": "Brecher and Winkler cross-checked the DOPA reaction, showing that what lights up on a tissue section matches what extracts do, so the histochemical test faithfully maps where melanin-forming enzyme sits. It tightened the BVA's pigment-chemistry methods toward the modern tyrosinase/DOPA assay."
+  },
+  "85": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Eye excision",
+      "Heteromorphosis analysis"
+    ],
+    "manipulation": "Removed the eyes of the cockroach (Stylopyga) and mealworm beetle (Tenebrio) and observed antenna-like structures regenerating in their place.",
+    "design": "Analysis of the heteromorphic regenerate that replaces the eye.",
+    "readout": "The form of the structure regenerated where the eye had been.",
+    "quantification": "Qualitative",
+    "scale": "Organ (sense organ)",
+    "n": "Stylopyga orientalis and Tenebrio molitor",
+    "finding": "An antenna-like organ can regenerate in place of a removed eye — a classic homeotic heteromorphosis in insects.",
+    "summary": "Janda documented one of the striking heteromorphoses of the BVA program: take out an insect's eye and an antenna-like organ grows back. The phenomenon, sitting beside Przibram's homeosis work, became a touchstone for how a regenerate can take the 'wrong' identity."
+  },
+  "99": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Comparative regeneration"
+    ],
+    "manipulation": "Tested the regenerative capacity of freshwater snails and slugs after the removal of body parts.",
+    "design": "Comparative regeneration across gastropods.",
+    "readout": "Extent and pattern of regeneration.",
+    "quantification": "Qualitative",
+    "scale": "Organ / organism",
+    "n": "Freshwater snails and slugs",
+    "finding": "Maps the regenerative powers of gastropod molluscs — which parts they can and cannot rebuild.",
+    "summary": "Czerny surveyed regeneration in snails and slugs, adding molluscs to the BVA's comparative atlas of who regenerates what. A rediscovery target, it reaches a phylum well outside the institute's usual arthropods and vertebrates."
+  },
+  "106": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Controlled rearing",
+      "Amputation",
+      "Colour-change observation"
+    ],
+    "manipulation": "Reared the European praying mantis (Mantis religiosa) and observed its colour change and regeneration.",
+    "design": "Exploratory rearing-and-experiment study, parallel to the Egyptian-mantis paper.",
+    "readout": "Colour change and regeneration of amputated parts.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Reared Mantis religiosa",
+    "finding": "Establishes the European mantis, like its Egyptian counterpart, as a rearable experimental insect with colour change and regeneration.",
+    "summary": "Przibram extended his founding mantis study from the Egyptian Sphodromantis to the European Mantis religiosa, securing a second mantid for the institute's rearing, colour and regeneration work and broadening the comparative base of the program."
+  },
+  "112": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Size measurement",
+      "Maternal-age comparison"
+    ],
+    "manipulation": "Measured how the size of eggs and of newborns increases with the advancing age of the mother.",
+    "design": "Egg and newborn size as a function of maternal age.",
+    "readout": "Egg / newborn size across maternal age classes.",
+    "quantification": "Quantitative",
+    "scale": "Organism / population",
+    "n": "Maternal-age series",
+    "finding": "Egg and newborn size rise with the mother's age — a maternal-age effect on offspring size.",
+    "summary": "Halban quantified a maternal-age effect, showing that older mothers produce larger eggs and newborns. The measurement-driven study fits the BVA's biometric program and bears on how parental condition shapes offspring."
+  },
+  "130": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Wing excision",
+      "Regeneration observation"
+    ],
+    "manipulation": "Removed the wing of an adult fly (imago) and tested whether it regenerates.",
+    "design": "Observation of wing regeneration in the adult dipteran.",
+    "readout": "Whether the adult fly wing regrows.",
+    "quantification": "Qualitative",
+    "scale": "Organ (wing)",
+    "n": "Dipteran imagines",
+    "finding": "Probes whether the fully formed adult fly can regenerate its wing — testing the limits of regeneration in a holometabolous adult.",
+    "summary": "Kammerer asked whether an adult fly, past all its moults, can rebuild a removed wing — a hard test of regeneration in a fixed, holometabolous body. A rediscovery target, it sits at the boundary the BVA kept probing between which life-stages retain regenerative power."
+  },
+  "134": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Starvation (inanition)",
+      "Growth / size measurement"
+    ],
+    "manipulation": "Subjected animals to inanition (starvation) and measured the consequences for growth and body size.",
+    "design": "Growth and size under starvation versus normal feeding.",
+    "readout": "Change in size / growth (including de-growth) under inanition.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Starvation series",
+    "finding": "Starvation halts and reverses growth, making inanition a probe of the growth problem itself.",
+    "summary": "Morgulis used starvation as an experimental lever on growth, measuring how animals shrink and recover to get at what growth is. A rediscovery target, it connects the BVA's biometric-growth program to the physiology of starvation and regrowth."
+  },
+  "143": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Antenna manipulation",
+      "Heteromorphosis analysis"
+    ],
+    "manipulation": "Determined the conditions under which 'antenna-feet' (leg-like structures) appear in place of the antenna in the stick insect Dixippus (Carausius) morosus.",
+    "design": "Analysis of when an antennal regenerate takes leg form.",
+    "readout": "Whether the regenerate is an antenna or a leg-like 'antenna-foot'.",
+    "quantification": "Qualitative",
+    "scale": "Organ (appendage)",
+    "n": "Dixippus morosus series",
+    "finding": "Defines the conditions (notably the level of amputation) that make the stick insect regenerate a leg where an antenna belongs — controlled homeotic heteromorphosis.",
+    "summary": "Brecher pinned down when the stick insect's antenna comes back as a leg, showing the homeotic 'antenna-foot' is governed by definite conditions rather than chance. With Janda's eye-to-antenna work it made BVA heteromorphosis a rule-bound phenomenon."
+  },
+  "43": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Beak excision",
+      "Regeneration observation"
+    ],
+    "manipulation": "Removed beak tissue from the domestic goose and duck and followed its regeneration.",
+    "design": "Observation of beak regeneration in two waterfowl.",
+    "readout": "Extent and structure of the regenerated beak.",
+    "quantification": "Qualitative",
+    "scale": "Organ (beak)",
+    "n": "Goose (Anser) and duck (Anas)",
+    "finding": "Waterfowl can regenerate beak tissue — regeneration in warm-blooded vertebrates, not only the cold-blooded.",
+    "summary": "Werber and Goldschmidt showed the goose and duck regenerating beak tissue, pushing the BVA's regeneration survey into birds. A rediscovery target, it tested how far the regenerative powers familiar from amphibians extend up the vertebrate scale."
+  },
+  "54": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Fin amputation",
+      "Regeneration observation"
+    ],
+    "manipulation": "Amputated the fins of European freshwater fishes and followed their experimental regeneration.",
+    "design": "Observation of fin regeneration across species.",
+    "readout": "Extent and pattern of fin regrowth.",
+    "quantification": "Qualitative",
+    "scale": "Organ (fin)",
+    "n": "European freshwater fishes",
+    "finding": "Freshwater fishes regenerate amputated fins, with characteristic patterns of regrowth.",
+    "summary": "Bogacki documented experimental fin regeneration across European freshwater fishes, a clean vertebrate case for the BVA's regeneration atlas. The fish fin would become a classic regeneration model, here studied early at the institute."
+  },
+  "74": {
+    "method": "Environmental modification",
+    "methods": [
+      "Temperature rearing",
+      "Proportion measurement"
+    ],
+    "manipulation": "Reared rats at different temperatures and measured the resulting tail length.",
+    "design": "Tail length as a direct function of rearing temperature.",
+    "readout": "Tail length across temperature treatments.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Rats (Mus decumanus and M. rattus)",
+    "finding": "Rearing temperature directly sets tail length — warmer rats grow longer tails, an experimental demonstration of temperature shaping body proportions.",
+    "summary": "Przibram showed that a rat's tail length is tuned directly by the temperature it grows up in — an experimental version of Allen's rule. The result, that climate can mould proportions within a lifetime, is the same body of work later read critically (with Steinach's heat experiments) for its racial framing."
+  },
+  "109": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Autotomy observation",
+      "Regeneration observation"
+    ],
+    "manipulation": "Studied autotomy (self-amputation) and the subsequent regeneration of legs in the water spider Argyroneta aquatica.",
+    "design": "Observation of leg loss by autotomy and its regeneration.",
+    "readout": "Autotomy behaviour and the regrowth of shed legs.",
+    "quantification": "Qualitative",
+    "scale": "Organ (leg)",
+    "n": "Argyroneta aquatica",
+    "finding": "The water spider sheds legs by autotomy and regenerates them — linking a defensive reflex to regenerative capacity.",
+    "summary": "Otto Weiss paired autotomy with regeneration in the water spider, showing how the animal both casts off and rebuilds its legs. It extends the BVA's regeneration work to arachnids and to the reflexes that prepare a limb for regrowth."
+  },
+  "146": {
+    "method": "Developmental mechanics (egg/embryo)",
+    "methods": [
+      "Axis / potency modelling",
+      "Engagement with Harrison's grafts"
+    ],
+    "manipulation": "Analysed the axis-relations and developmental potencies of urodele limbs with models built to interpret Harrison's transplantation experiments.",
+    "design": "Model-based analysis of how the limb's axes and potencies are arranged.",
+    "readout": "The arrangement of limb axes and the potencies along them.",
+    "quantification": "Qualitative / geometric",
+    "scale": "Organ (limb)",
+    "n": "Model analysis",
+    "finding": "Frames how the urodele limb's three axes and potencies are organized, interpreting Harrison's grafting results.",
+    "summary": "This companion to Przibram's axis-relations paper engages Ross Harrison's limb-transplantation work with explicit models of the limb's axes and potencies, placing the BVA in direct dialogue with American experimental embryology over how a limb's polarity is set."
+  },
+  "3": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Partial bone removal",
+      "Regeneration observation"
+    ],
+    "manipulation": "Removed part of the long bones inside the newt limb and followed their regeneration.",
+    "design": "Observation of long-bone regeneration after internal partial removal.",
+    "readout": "Whether and how the long bones rebuild.",
+    "quantification": "Qualitative",
+    "scale": "Organ (skeleton)",
+    "n": "Triton cristatus series",
+    "finding": "The newt regenerates its long bones after partial internal removal — skeletal restitution within an intact limb.",
+    "summary": "This study followed how the newt rebuilds a long bone after part of it is taken out from inside the limb, isolating the skeleton's own regenerative behaviour. It complements Weiss's finding that the limb's pattern does not depend on its skeleton, looking instead at how the bone itself restores."
+  },
+  "5": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Serial measurement",
+      "Compound-eye facet counts"
+    ],
+    "manipulation": "Measured the increase in the size and number of compound-eye facets as the mantis Sphodromantis grows (fourth growth-measurement communication).",
+    "design": "Longitudinal biometry of facet size and number across growth.",
+    "readout": "Facet size and facet number over successive instars.",
+    "quantification": "Quantitative",
+    "scale": "Organ (compound eye)",
+    "n": "Sphodromantis bioculata series",
+    "finding": "Both the size and the number of eye facets increase as the mantis grows — quantifying how a compound eye scales with the body.",
+    "summary": "Przibram and Brecher took the growth program to the mantis's eye, counting and measuring facets across instars to show how the compound eye enlarges and adds units as the animal grows. It is a precise piece of the BVA's quest for quantitative growth laws."
+  },
+  "16": {
+    "method": "Environmental modification",
+    "methods": [
+      "Larval background colour",
+      "Pattern scoring"
+    ],
+    "manipulation": "Reared fire-salamander larvae against yellow versus black surroundings and scored the spot pattern of the resulting adults.",
+    "design": "Adult spot pattern as a function of the larva's background colour.",
+    "readout": "The black-and-yellow spot pattern of the adult salamander.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Salamandra maculosa series",
+    "finding": "The colour of the larva's surroundings influences the adult salamander's spot pattern — environmental determination of a 'fixed' colour pattern.",
+    "summary": "Przibram and Dembowski reared salamander larvae on yellow or black backgrounds and found the adult's markings shifted accordingly, an environmental hold on a supposedly set pattern. A rediscovery target, it re-tested the kind of claim — environment writing onto pattern — that made Kammerer's salamander work famous and contested."
+  },
+  "34": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Lens replantation"
+    ],
+    "manipulation": "Replanted the crystalline lens of developed (adult) animals and followed its fate.",
+    "design": "Replantation of the lens with observation of survival and clarity.",
+    "readout": "Whether the replanted lens survives and stays functional.",
+    "quantification": "Qualitative",
+    "scale": "Organ (lens)",
+    "n": "Series of lens replantations",
+    "finding": "The crystalline lens of adult animals can be replanted and survive — the lens, like the whole eye, tolerates transplantation.",
+    "summary": "Wiesner showed that even the lens of a developed animal can be removed and re-set, extending the BVA's eye-transplantation line from the whole eye (Koppanyi) to its optical core. It probes how far a differentiated, avascular organ can be moved and still keep its job."
+  },
+  "47": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Anterior amputation",
+      "Regeneration observation"
+    ],
+    "manipulation": "Removed the anterior end of the polychaete worm Ophryotrocha puerilis and followed its regeneration.",
+    "design": "Observation of head / anterior-end regeneration.",
+    "readout": "Rebuilding of the worm's anterior end.",
+    "quantification": "Qualitative",
+    "scale": "Body region (anterior)",
+    "n": "Ophryotrocha puerilis series",
+    "finding": "The worm regenerates its anterior end, including head structures, after amputation.",
+    "summary": "Czwiklitzer documented anterior regeneration in the small polychaete Ophryotrocha, a worm that became a standard laboratory animal. A rediscovery target, it brought a tractable annelid into the BVA's regeneration atlas alongside Janda's Criodrilus."
+  },
+  "52": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Jaw excision",
+      "Comparative regeneration"
+    ],
+    "manipulation": "Removed the jaw in reptiles and amphibians and compared its regeneration across the two groups.",
+    "design": "Comparative jaw regeneration in reptiles versus amphibians.",
+    "readout": "Extent and structure of the regenerated jaw.",
+    "quantification": "Qualitative",
+    "scale": "Organ (jaw)",
+    "n": "Reptile and amphibian series",
+    "finding": "Both reptiles and amphibians regenerate jaw structures, with differences in extent between the groups.",
+    "summary": "Werber broadened his lizard-jaw study into a comparison of jaw regeneration across reptiles and amphibians, mapping how this capacity varies among cold-blooded vertebrates. It is part of his systematic survey of vertebrate regeneration for the institute."
+  },
+  "63": {
+    "method": "Functional physiology & behaviour",
+    "methods": [
+      "Rate measurement at varied temperature",
+      "Temperature-coefficient (Q10) calculation"
+    ],
+    "manipulation": "Measured the rates of the mantis's vital processes at different temperatures and computed their temperature coefficients.",
+    "design": "Physiological rates across a temperature range, expressed as temperature quotients.",
+    "readout": "The Q10 / temperature coefficients of life processes.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Sphodromantis bioculata",
+    "finding": "Determines the temperature quotients for the mantis's vital processes — quantifying how strongly temperature scales physiology.",
+    "summary": "Przibram measured how the mantis's life processes speed up with warmth and cast the result as temperature coefficients, bringing van 't Hoff's chemistry to whole-animal physiology. It is a clear expression of the BVA's drive to put biology on a quantitative, physico-chemical footing."
+  },
+  "66": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Antenna amputation",
+      "Regeneration observation"
+    ],
+    "manipulation": "Amputated the antennae of half-grown Sphodromantis mantis larvae and followed their regeneration.",
+    "design": "Observation of antenna regeneration at a defined larval stage.",
+    "readout": "Whether and how the antenna regrows, and in what form.",
+    "quantification": "Qualitative",
+    "scale": "Organ (antenna)",
+    "n": "Half-grown Sphodromantis larvae",
+    "finding": "Half-grown mantis larvae regenerate their antennae, with the regenerate's form depending on stage — relevant to the heteromorphosis question.",
+    "summary": "Przibram tested antenna regeneration in half-grown mantis larvae, watching whether the regrowth is a true antenna or something else. A rediscovery target, it feeds the BVA's running analysis of when a regenerate keeps its identity and when it turns homeotic."
+  },
+  "72": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Morphometry",
+      "Wing-angle measurement"
+    ],
+    "manipulation": "Measured the angles of the venation / form of the butterfly wing.",
+    "design": "Quantitative morphometry of wing angles.",
+    "readout": "The characteristic angles of the butterfly wing.",
+    "quantification": "Quantitative",
+    "scale": "Organ (wing)",
+    "n": "Lepidopteran wings",
+    "finding": "Quantifies the angular geometry of the butterfly wing, treating wing form as measurable morphometric data.",
+    "summary": "Weiss brought precise measurement to the butterfly wing, recording its angles as hard morphometric data. The study reflects the BVA's conviction that even complex organic form should yield to number — the biometric habit Przibram instilled across the institute."
+  },
+  "79": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "DOPA histochemistry",
+      "Extract comparison"
+    ],
+    "manipulation": "Compared positive and negative DOPA reactions on frozen sections with those from extracts (companion communication).",
+    "design": "Histochemical DOPA reaction in situ versus in extracts.",
+    "readout": "Agreement between in-section and in-extract DOPA reactions.",
+    "quantification": "Qualitative (histochemical)",
+    "scale": "Tissue / biochemical",
+    "n": "Tissue sections and extracts",
+    "finding": "Confirms that the DOPA reaction matches between sections and extracts, validating the histochemical test for melanin-forming enzyme.",
+    "summary": "A companion to their other DOPA-reaction paper, Brecher and Winkler again cross-checked the in-section and in-extract tests, securing the DOPA reaction as a reliable way to locate where melanin is made — a methodological anchor for the BVA's pigment chemistry."
   }
 }
