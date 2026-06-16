@@ -100,7 +100,7 @@ def gen_index():
 def gen_catalog():
     body = """
 <h1>Catalog</h1>
-<p class="lede">All papers in the corpus. Search and filter; open a translation where the dot is filled, or the German original otherwise.</p>
+<p class="lede">All papers in the corpus. Search and filter; <strong>click any row to see the modern works that cite it</strong>, or use the Read column to open the translation or German original.</p>
 <div class="filters">
   <input id="q" type="search" placeholder="Search author, title, organism…">
   <select id="layer"><option value="">Any legacy layer</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
@@ -164,7 +164,7 @@ def gen_legacy():
 <div id="list" class="legacy"></div>
 """
     page("legacy.html", "Legacy", "Legacy", body,
-         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="assets/legacy.js"></script>')
+         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="assets/legacy.js"></script>')
 
 # ---------------------------------------------------------------- analytics
 def gen_analytics():
@@ -430,6 +430,7 @@ table#cat{border-collapse:collapse;width:100%;font-size:14px}
 #cat th{position:sticky;top:62px;z-index:5;background:var(--card);font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);cursor:default;box-shadow:0 1px 0 var(--rule)}
 #cat td.num,#cat th.num{text-align:right}
 #cat tr:hover td{background:#fbf8f2}
+#cat tbody tr{cursor:pointer}
 #cat .ti{font-weight:500}#cat .de{color:var(--muted);font-style:italic;font-size:13px}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#d8cfbe;margin-right:5px;vertical-align:middle}
 .dot.on{background:var(--accent)}
@@ -528,7 +529,7 @@ function row(c){
  else {read='<a href="reader.html?id='+c.id+'">Read original</a>';}
  var lay=c.layer?('<span class="badge l'+c.layer+'">L'+c.layer+'</span>'):'';
  var rd=c.rediscovery?' <span class="rd">◆ rediscovery</span>':'';
- return '<tr><td>'+c.year+'</td><td>'+esc(c.author)+'</td>'+
+ return '<tr class="crow" data-id="'+c.id+'"><td>'+c.year+'</td><td>'+esc(c.author)+'</td>'+
  '<td><div class="ti">'+esc(c.title)+(c.title_en?'</div><div class="de">'+esc(c.title_en):'')+'</div></td>'+
  '<td><em>'+esc(c.organism)+'</em>'+rd+'</td><td>'+lay+'</td><td class="num">'+(c.citations||0)+'</td><td>'+read+'</td></tr>';
 }
@@ -553,6 +554,7 @@ function apply(){
 }
 [q,layer,phen,sort].forEach(function(e){e.addEventListener('input',apply)});
 [tonly,ronly].forEach(function(e){e.addEventListener('change',apply)});
+tb.addEventListener('click',function(e){if(e.target.closest('a'))return;var tr=e.target.closest('tr');if(tr&&tr.dataset.id)location.href='legacy.html?id='+tr.dataset.id;});
 apply();
 })();
 """
@@ -566,6 +568,34 @@ list=document.getElementById('list'),count=document.getElementById('count');
 var cv={};C.forEach(function(c){if(c.convergence)cv[c.convergence]=(cv[c.convergence]||0)+1});
 Object.keys(cv).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;conv.appendChild(o)});
 function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]})}
+var PID=new URLSearchParams(location.search).get('id');
+if(PID){renderPaper(parseInt(PID,10));return;}
+function renderPaper(id){
+ var main=document.querySelector('main'),c=byId[id];
+ ['.layers','.filters'].forEach(function(s){var e=main.querySelector(s);if(e)e.style.display='none';});
+ var cn=document.getElementById('count');if(cn)cn.style.display='none';
+ var lede=main.querySelector('.lede');if(lede)lede.style.display='none';
+ var h1=main.querySelector('h1');if(h1)h1.textContent='Legacy of a paper';
+ if(!c){document.getElementById('list').innerHTML='<p class="muted">Paper not found. <a href="legacy.html">Back to the legacy explorer</a>.</p>';return;}
+ document.title=c.author+' '+c.year+' — legacy · Vienna Vivarium';
+ var arr=(window.CITATIONS&&window.CITATIONS[id])||[],lg=L[id]||{},NT=window.NOTES||{};
+ var sci=arr.filter(function(x){return !x.h;}),hist=arr.filter(function(x){return x.h;});
+ var en=c.has_translation?('<a class="btn" href="papers/'+c.slug+'.html">Read English translation →</a>'):'';
+ var head='<p class="kicker"><a href="legacy.html">‹ Legacy explorer</a> · '+esc(c.convergence||'')+'</p>'+
+  '<h2 style="font-family:Georgia,serif;font-size:23px;margin:.1em 0">'+esc(c.has_translation&&c.title_en?c.title_en:c.title)+'</h2>'+
+  ((c.has_translation&&c.title_en)?'<p style="font-style:italic;color:var(--muted);margin:.1em 0">'+esc(c.title)+'</p>':'')+
+  '<p class="sub" style="font-size:14px;color:#4a463f">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+(c.layer?' · <span class="badge l'+c.layer+'">Layer '+c.layer+'</span>':'')+(c.rediscovery?' <span class="badge redis">rediscovery target</span>':'')+'</p>'+
+  '<div class="actionbar" style="margin:12px 0"><a class="btn primary" href="reader.html?id='+id+'">Read original (PDF)</a>'+en+(c.doi?'<a class="btn" target="_blank" href="https://doi.org/'+c.doi+'">DOI ↗</a>':'')+'</div>';
+ function it(x){var note=NT[id+':'+x.k]||'';var doi=x.d?(' · <a target="_blank" href="https://doi.org/'+x.d+'">doi</a>'):'';
+  return '<div class="litem"><div class="ti">'+esc(x.et||x.t||'(untitled)')+'</div>'+
+   '<div class="sub">'+esc(x.a||'')+' · '+(x.y||'')+(x.s?' · '+esc(x.s):'')+(x.h?' · <span class="badge wip">historiographic</span>':'')+doi+'</div>'+
+   (note?'<p style="margin:7px 0 0;font-size:13.5px;line-height:1.6">'+esc(note)+'</p>':'')+'</div>';}
+ var out=head;
+ if(!arr.length){out+='<p class="muted" style="margin-top:14px">No modern citations are recorded for this paper.</p>';}
+ else{out+='<h3 style="margin:20px 0 8px">Cited by today — '+sci.length+' scientific work'+(sci.length!=1?'s':'')+'</h3><div class="legacy">'+sci.map(it).join('')+'</div>';
+  if(hist.length)out+='<h3 style="margin:20px 0 8px">Historiographic mentions — '+hist.length+'</h3><div class="legacy">'+hist.map(it).join('')+'</div>';}
+ document.getElementById('list').innerHTML=out;
+}
 function item(c){
  var lg=L[c.id]||{};var cites=(lg.citations||[]).slice(0,10);
  var cl=cites.map(function(x){return '<li>'+(x.year?x.year+' · ':'')+esc(x.author)+' — '+esc((x.title||'').slice(0,120))+(x.doi?' <a target=_blank href="https://doi.org/'+x.doi+'">doi</a>':'')+'</li>'}).join('');
