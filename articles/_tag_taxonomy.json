@@ -1,0 +1,332 @@
+{
+  "tags": [
+    {
+      "key": "regeneration",
+      "label": "Regeneration",
+      "category": "phenomenon"
+    },
+    {
+      "key": "transplantation",
+      "label": "Transplantation / replantation",
+      "category": "phenomenon"
+    },
+    {
+      "key": "color_change",
+      "label": "Color change (chromatophore physiology)",
+      "category": "phenomenon"
+    },
+    {
+      "key": "pigmentation",
+      "label": "Pigmentation / melanin biology",
+      "category": "phenomenon"
+    },
+    {
+      "key": "inheritance_of_acquired",
+      "label": "Inheritance of acquired characteristics",
+      "category": "phenomenon"
+    },
+    {
+      "key": "sex_determination",
+      "label": "Sex determination / sexual characters",
+      "category": "phenomenon"
+    },
+    {
+      "key": "endocrinology",
+      "label": "Internal secretion / endocrinology",
+      "category": "phenomenon"
+    },
+    {
+      "key": "thermal_modification",
+      "label": "Temperature effects",
+      "category": "phenomenon"
+    },
+    {
+      "key": "gravity_effects",
+      "label": "Gravity / orientation",
+      "category": "phenomenon"
+    },
+    {
+      "key": "light_effects",
+      "label": "Light effects",
+      "category": "phenomenon"
+    },
+    {
+      "key": "salinity_osmotic",
+      "label": "Salinity / osmotic effects",
+      "category": "phenomenon"
+    },
+    {
+      "key": "growth",
+      "label": "Growth / size change",
+      "category": "phenomenon"
+    },
+    {
+      "key": "heteromorphosis",
+      "label": "Heteromorphosis / homoeosis",
+      "category": "phenomenon"
+    },
+    {
+      "key": "hybridization",
+      "label": "Hybridization / bastardization",
+      "category": "phenomenon"
+    },
+    {
+      "key": "developmental_mechanics",
+      "label": "Entwicklungsmechanik / experimental embryology",
+      "category": "phenomenon"
+    },
+    {
+      "key": "behavior",
+      "label": "Behavior / locomotion",
+      "category": "phenomenon"
+    },
+    {
+      "key": "morphology",
+      "label": "Morphology / anatomy",
+      "category": "phenomenon"
+    },
+    {
+      "key": "amphibia",
+      "label": "Amphibia",
+      "category": "organism"
+    },
+    {
+      "key": "reptilia",
+      "label": "Reptilia",
+      "category": "organism"
+    },
+    {
+      "key": "pisces",
+      "label": "Fishes",
+      "category": "organism"
+    },
+    {
+      "key": "aves",
+      "label": "Birds",
+      "category": "organism"
+    },
+    {
+      "key": "mammalia",
+      "label": "Mammals",
+      "category": "organism"
+    },
+    {
+      "key": "orthoptera_mantis",
+      "label": "Orthoptera / Mantis",
+      "category": "organism"
+    },
+    {
+      "key": "lepidoptera",
+      "label": "Lepidoptera",
+      "category": "organism"
+    },
+    {
+      "key": "coleoptera",
+      "label": "Coleoptera (beetles)",
+      "category": "organism"
+    },
+    {
+      "key": "diptera",
+      "label": "Diptera",
+      "category": "organism"
+    },
+    {
+      "key": "hymenoptera",
+      "label": "Hymenoptera",
+      "category": "organism"
+    },
+    {
+      "key": "crustacea",
+      "label": "Crustacea",
+      "category": "organism"
+    },
+    {
+      "key": "arachnida",
+      "label": "Arachnida",
+      "category": "organism"
+    },
+    {
+      "key": "myriapoda_etc",
+      "label": "Other arthropods",
+      "category": "organism"
+    },
+    {
+      "key": "mollusca",
+      "label": "Mollusca",
+      "category": "organism"
+    },
+    {
+      "key": "annelida",
+      "label": "Annelida",
+      "category": "organism"
+    },
+    {
+      "key": "coelenterata",
+      "label": "Coelenterata / Cnidaria",
+      "category": "organism"
+    },
+    {
+      "key": "protozoa",
+      "label": "Protozoa",
+      "category": "organism"
+    },
+    {
+      "key": "foraminifera",
+      "label": "Foraminifera",
+      "category": "organism"
+    },
+    {
+      "key": "echinodermata",
+      "label": "Echinodermata",
+      "category": "organism"
+    },
+    {
+      "key": "limb",
+      "label": "Limb / extremity",
+      "category": "organ"
+    },
+    {
+      "key": "antenna",
+      "label": "Antenna / Fühler",
+      "category": "organ"
+    },
+    {
+      "key": "eye_lens",
+      "label": "Eye / lens",
+      "category": "organ"
+    },
+    {
+      "key": "jaw",
+      "label": "Jaw",
+      "category": "organ"
+    },
+    {
+      "key": "chela",
+      "label": "Chela / claw",
+      "category": "organ"
+    },
+    {
+      "key": "tail",
+      "label": "Tail / Schwanz",
+      "category": "organ"
+    },
+    {
+      "key": "gonad",
+      "label": "Gonad / sex organ",
+      "category": "organ"
+    },
+    {
+      "key": "thyroid",
+      "label": "Thyroid",
+      "category": "organ"
+    },
+    {
+      "key": "skin",
+      "label": "Skin / integument",
+      "category": "organ"
+    },
+    {
+      "key": "placenta",
+      "label": "Placenta",
+      "category": "organ"
+    },
+    {
+      "key": "heart_valve",
+      "label": "Heart valves",
+      "category": "organ"
+    },
+    {
+      "key": "experimental",
+      "label": "Experimental",
+      "category": "method"
+    },
+    {
+      "key": "observational",
+      "label": "Observational",
+      "category": "method"
+    },
+    {
+      "key": "breeding",
+      "label": "Breeding / inheritance experiment",
+      "category": "method"
+    },
+    {
+      "key": "environmental",
+      "label": "Environmental modification",
+      "category": "method"
+    },
+    {
+      "key": "culture_in_vitro",
+      "label": "Tissue culture / in vitro",
+      "category": "method"
+    },
+    {
+      "key": "chemical",
+      "label": "Chemical treatment",
+      "category": "method"
+    },
+    {
+      "key": "research_article",
+      "label": "Research article",
+      "category": "document_type"
+    },
+    {
+      "key": "obituary",
+      "label": "Obituary / In memoriam",
+      "category": "document_type"
+    },
+    {
+      "key": "correction",
+      "label": "Correction / Berichtigung",
+      "category": "document_type"
+    },
+    {
+      "key": "theoretical",
+      "label": "Theoretical / review",
+      "category": "document_type"
+    },
+    {
+      "key": "przibram_program",
+      "label": "Przibram research program",
+      "category": "research_program"
+    },
+    {
+      "key": "kammerer_salamander",
+      "label": "Kammerer Salamandra series",
+      "category": "research_program"
+    },
+    {
+      "key": "steinach_endocrine",
+      "label": "Steinach endocrine program",
+      "category": "research_program"
+    },
+    {
+      "key": "brecher_pupal_color",
+      "label": "Brecher pupal coloration",
+      "category": "research_program"
+    },
+    {
+      "key": "weiss_neural_induction",
+      "label": "Weiss extremity transplantation",
+      "category": "research_program"
+    },
+    {
+      "key": "keimplasma_umwelt",
+      "label": "Umwelt des Keimplasmas series",
+      "category": "research_program"
+    },
+    {
+      "key": "sphodromantis_growth",
+      "label": "Sphodromantis growth measurements",
+      "category": "research_program"
+    }
+  ],
+  "categories": [
+    "phenomenon",
+    "organism",
+    "organ",
+    "method",
+    "document_type",
+    "research_program"
+  ]
+}
