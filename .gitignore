@@ -1,0 +1,35 @@
+# Whitelist approach: ignore everything at the top level, then re-include only
+# the files the site is built from. This keeps your drafts, reports, decks, and
+# the generated site out of the public repo.
+
+/*
+
+!/.github
+!/.gitignore
+!/README.md
+!/build_site.py
+!/gen_site.py
+!/BVA Corpus Analysis.xlsx
+!/legacy_data
+!/translations_full
+!/articles
+
+# Within the kept folders, drop noise:
+**/__pycache__/
+**/.DS_Store
+**/.~lock.*#
+**/*.pyc
+
+# Intermediate OCR working data (page-image extracts, etc.) — the build only
+# needs these two metadata files, so keep them and drop the rest:
+translations_full/_work/*
+!translations_full/_work/_meta.json
+!translations_full/_work/_args.json
+
+# The .docx renders aren't used by the site (it builds from the .md):
+translations_full/*.docx
+
+# Never commit the generated output (CI builds it) or zips:
+/vivarium_site/
+/site/
+*.zip

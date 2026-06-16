@@ -1,0 +1,564 @@
+#!/usr/bin/env python3
+"""
+Generate the static site pages + assets for the BVA / Vienna Vivarium platform.
+Reads site/data/*.json (produced by build_site.py) and writes HTML/CSS/JS,
+copies figures, and copies the source PDFs for the translated papers.
+Run AFTER build_site.py:  python3 gen_site.py
+"""
+import os, re, json, glob, shutil, subprocess, html
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+SITE = os.path.join(ROOT, "vivarium_site")
+DATA = os.path.join(SITE, "data")
+TRANS = os.path.join(ROOT, "translations_full")
+FIGSRC = os.path.join(TRANS, "figures")
+ARTICLES = os.path.join(ROOT, "articles")
+
+# FULL_PDFS=1 (used by CI) bundles all 175 German originals and links every
+# paper to its local PDF. Unset (local dev) bundles only the 7 translated papers
+# and links the rest to their DOI, to keep local builds light.
+FULL = os.environ.get("FULL_PDFS") == "1"
+
+catalog = json.load(open(os.path.join(DATA, "catalog.json"), encoding="utf-8"))
+legacy = json.load(open(os.path.join(DATA, "legacy.json"), encoding="utf-8"))
+translations = json.load(open(os.path.join(DATA, "translations.json"), encoding="utf-8"))
+tr_by_slug = {t["trans_slug"]: t for t in translations}
+
+YEARS = [c["year"] for c in catalog]
+STATS = dict(papers=len(catalog), trans=len(translations),
+             y0=min(YEARS), y1=max(YEARS),
+             authors=len({c["author"] for c in catalog}),
+             redis=sum(1 for c in catalog if c["rediscovery"]))
+
+NAV = [("index.html", "Home"), ("catalog.html", "Catalog"),
+       ("translations.html", "Translations"), ("legacy.html", "Legacy"),
+       ("analytics.html", "Analytics"), ("about.html", "About")]
+
+# ---------------------------------------------------------------- shell
+def page(path, title, active, body, prefix="", head="", foot=""):
+    nav = "".join(
+        f'<a class="{"on" if active==h else ""}" href="{prefix}{href}">{h}</a>'
+        for href, h in NAV)
+    doc = f"""<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{title} · Vienna Vivarium in English</title>
+<link rel="stylesheet" href="{prefix}assets/style.css">{head}
+</head><body>
+<header class="site"><div class="wrap nav">
+<a class="brand" href="{prefix}index.html"><span class="b1">Vienna Vivarium</span><span class="b2">the BVA corpus in English</span></a>
+<nav>{nav}</nav></div></header>
+<main class="wrap">{body}</main>
+<footer class="site"><div class="wrap">
+<p>Biologische Versuchsanstalt (the “Vivarium”), Vienna · {STATS['papers']} papers, {STATS['y0']}–{STATS['y1']} · {STATS['trans']} English translations.</p>
+<p class="muted">An orientation platform for researchers. Translations and corpus analysis are scholarly working documents; cite the original alongside the translation.</p>
+</div></footer>{foot}</body></html>"""
+    with open(os.path.join(SITE, path), "w", encoding="utf-8") as f:
+        f.write(doc)
+
+def layer_badge(n):
+    if not n: return '<span class="badge l0">unranked</span>'
+    return f'<span class="badge l{n}">legacy layer {n}</span>'
+
+# ---------------------------------------------------------------- home
+def gen_index():
+    feat = "".join(
+        f'''<a class="tcard" href="papers/{t['page_slug']}.html">
+        <div class="ty">{t['year']}</div>
+        <div class="tt">{html.escape(t['title_en'])}</div>
+        <div class="tm">{html.escape(t['author'])} · {html.escape(t['organism'] or '')}</div>
+        {'<span class="badge wip">in progress</span>' if t['status']!='complete' else '<span class="badge done">full text</span>'}
+        </a>'''
+        for t in translations if t['status']=='complete')
+    body = f"""
+<section class="hero">
+  <p class="kicker">An orientation platform for researchers</p>
+  <h1>The Vienna Vivarium, in English</h1>
+  <p class="lede">The Biologische Versuchsanstalt (1902–1945) was one of the first institutes for experimental biology. This platform opens its early publications to English-language researchers: a searchable catalog of <strong>{STATS['papers']} papers</strong> ({STATS['y0']}–{STATS['y1']}), full English <strong>translations</strong> with figures, the German originals, and a citation-<strong>legacy</strong> layer showing where this work still touches living science.</p>
+  <div class="cta">
+    <a class="btn primary" href="catalog.html">Browse the catalog</a>
+    <a class="btn" href="translations.html">Read translations</a>
+    <a class="btn" href="legacy.html">Explore the legacy</a>
+  </div>
+</section>
+<section class="stats">
+  <div><b>{STATS['papers']}</b><span>papers cataloged</span></div>
+  <div><b>{STATS['trans']}</b><span>English translations</span></div>
+  <div><b>{STATS['authors']}</b><span>authors</span></div>
+  <div><b>{STATS['redis']}</b><span>rediscovery targets</span></div>
+</section>
+<section>
+  <h2>Featured translations</h2>
+  <div class="tgrid">{feat}</div>
+</section>
+<section class="how">
+  <h2>How to use this platform</h2>
+  <p>The <a href="catalog.html">Catalog</a> is the map of the whole corpus — filter by author, organism, phenomenon, or legacy depth, and jump to a paper's English translation (where one exists) or its German original. The <a href="translations.html">Translations</a> are full reading pages with the original plates and a side-by-side view against the scanned German. The <a href="legacy.html">Legacy</a> explorer surfaces the papers whose organisms are still studied today but whose original work goes uncited — the corpus's live edges. <a href="analytics.html">Analytics</a> shows the shape of the institute's output over four decades.</p>
+</section>"""
+    page("index.html", "Home", "Home", body)
+
+# ---------------------------------------------------------------- catalog
+def gen_catalog():
+    body = """
+<h1>Catalog</h1>
+<p class="lede">All papers in the corpus. Search and filter; open a translation where the dot is filled, or the German original otherwise.</p>
+<div class="filters">
+  <input id="q" type="search" placeholder="Search author, title, organism…">
+  <select id="layer"><option value="">Any legacy layer</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
+  <select id="phen"><option value="">Any phenomenon</option></select>
+  <label class="chk"><input type="checkbox" id="tonly"> Translated only</label>
+  <label class="chk"><input type="checkbox" id="ronly"> Rediscovery targets</label>
+  <select id="sort"><option value="year">Sort: year ↑</option><option value="-year">year ↓</option><option value="-cit">most cited</option><option value="author">author</option></select>
+</div>
+<p id="count" class="muted"></p>
+<div class="tablewrap"><table id="cat"><thead><tr>
+<th>Year</th><th>Author</th><th>Title</th><th>Organism</th><th>Legacy</th><th class="num">Cited</th><th>Read</th>
+</tr></thead><tbody></tbody></table></div>
+"""
+    page("catalog.html", "Catalog", "Catalog", body,
+         foot='<script src="data/site.js"></script><script src="data/catalog.js"></script><script src="assets/catalog.js"></script>')
+
+# ---------------------------------------------------------------- translations index
+def gen_translations():
+    cards = ""
+    for t in translations:
+        wip = t['status'] != 'complete'
+        cards += f'''<a class="tcard big" href="papers/{t['page_slug']}.html">
+        <div class="ty">{t['year']} · {html.escape(t['journal'])}</div>
+        <div class="tt">{html.escape(t['title_en'])}</div>
+        <div class="de">{html.escape(t['title_de'])}</div>
+        <div class="tm">{html.escape(t['author'])}</div>
+        <div class="meta">{'<span class="badge wip">in progress</span>' if wip else '<span class="badge done">full text</span>'}
+        <span class="muted">{t['words']:,} words · {t['figs']} figures</span></div>
+        </a>'''
+    body = f"""
+<h1>Translations</h1>
+<p class="lede">Complete English renderings of {STATS['trans']} BVA papers, with the original plates and figures. Two are still being finalized (figures or full text pending) and are marked <em>in progress</em>. Each page links to the scanned German original and a side-by-side reader.</p>
+<div class="tgrid">{cards}</div>"""
+    page("translations.html", "Translations", "Translations", body)
+
+# ---------------------------------------------------------------- legacy
+def gen_legacy():
+    body = """
+<h1>Legacy explorer</h1>
+<p class="lede">For each paper: who cites it in modern science, and whether its organism is still actively studied. <strong>Rediscovery targets</strong> are papers whose organism is alive in today's literature but whose original BVA work goes uncited — candidates for renewed attention.</p>
+<div class="filters">
+  <input id="q" type="search" placeholder="Search author, title, organism…">
+  <select id="conv"><option value="">Any convergence axis</option></select>
+  <select id="layer"><option value="">Any legacy layer</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
+  <label class="chk"><input type="checkbox" id="ronly" checked> Rediscovery targets only</label>
+</div>
+<p id="count" class="muted"></p>
+<div id="list" class="legacy"></div>
+"""
+    page("legacy.html", "Legacy", "Legacy", body,
+         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="assets/legacy.js"></script>')
+
+# ---------------------------------------------------------------- analytics
+def gen_analytics():
+    body = """
+<h1>Analytics</h1>
+<p class="lede">The shape of the institute's output, and how it lands in modern science.</p>
+<div class="charts">
+  <div class="chart"><h3>Publications per year</h3><canvas id="cYear"></canvas></div>
+  <div class="chart"><h3>Legacy-layer distribution</h3><canvas id="cLayer"></canvas></div>
+  <div class="chart"><h3>Most prolific authors</h3><canvas id="cAuth"></canvas></div>
+  <div class="chart"><h3>Most-cited papers today</h3><canvas id="cCit"></canvas></div>
+</div>
+<p class="note muted">Legacy layers: 1 = modern work engages the same organism and question; 4 = only abstract/contextual engagement. Citation counts via OpenAlex.</p>
+"""
+    page("analytics.html", "Analytics", "Analytics", body,
+         head='<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>',
+         foot='<script src="data/catalog.js"></script><script src="assets/analytics.js"></script>')
+
+# ---------------------------------------------------------------- about
+def gen_about():
+    body = f"""
+<h1>About this platform</h1>
+<div class="prose">
+<p>The <strong>Biologische Versuchsanstalt</strong> (BVA, the “Vivarium”) operated in Vienna's Prater from 1902 to 1945 — among the world's first institutions dedicated to experimental biology, founded by Hans Przibram, Leopold von Portheim, and Wilhelm Figdor. Its researchers studied regeneration, growth, inheritance, sex determination, and coloration across an unusually wide range of organisms.</p>
+<h2>What this platform is</h2>
+<p>An orientation layer for researchers who do not read German. It assembles, in one place: a searchable <strong>catalog</strong> of {STATS['papers']} papers ({STATS['y0']}–{STATS['y1']}); full English <strong>translations</strong> with the original figures; the scanned German <strong>originals</strong>; and a <strong>legacy</strong> analysis linking each paper to the modern works that cite it and to parallel research on the same organisms.</p>
+<h2>How the translations were made</h2>
+<p>Each German paper was OCR-corrected against the scanned source and translated in full, preserving numbered points, tables, and figure legends. Historical species names are kept as in the original, with modern equivalents noted (e.g. <em>Triton</em> → <em>Triturus</em>). Two translations remain in progress.</p>
+<h2>How to cite</h2>
+<p>Cite the original publication, noting the English translation and this platform as the access point, e.g.: <em>Author (Year), “Original German title,” Archiv … ; English translation, Vienna Vivarium in English.</em></p>
+<h2>Sources &amp; data</h2>
+<p>Citation and parallel-work data derive from OpenAlex. Corpus metadata, legacy layers, and convergence axes are part of the project's ongoing analysis and should be treated as scholarly working material.</p>
+</div>"""
+    page("about.html", "About", "About", body)
+
+# ---------------------------------------------------------------- reader (side-by-side)
+def gen_reader():
+    doc = """<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Side-by-side reader · Vienna Vivarium</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+html,body{height:100%;margin:0}
+.rbar{display:flex;align-items:center;gap:12px;padding:8px 14px;border-bottom:1px solid var(--rule);background:var(--paper)}
+.rbar .t{font-weight:600;font-size:14px}
+.rbar a{font-size:13px}
+.panes{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 46px)}
+.panes iframe{width:100%;height:100%;border:0;border-right:1px solid var(--rule);background:#fff}
+.lbl{position:absolute;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--paper);padding:2px 8px;border:1px solid var(--rule);border-radius:6px;margin:6px}
+@media(max-width:760px){.panes{grid-template-columns:1fr;height:auto}.panes iframe{height:88vh}}
+</style></head><body>
+<div class="rbar"><span class="t" id="title">Side-by-side reader</span>
+<a id="open" href="#" target="_blank">Open PDF in new tab ↗</a>
+<a id="back" href="#">← Back to translation</a></div>
+<div class="panes">
+  <div style="position:relative"><span class="lbl">German original</span><iframe id="pdf" title="German original PDF"></iframe></div>
+  <div style="position:relative"><span class="lbl">English translation</span><iframe id="en" title="English translation"></iframe></div>
+</div>
+<script>
+const p=new URLSearchParams(location.search);
+const pdf=p.get('pdf')||'', en=p.get('en')||'', title=p.get('title')||'';
+document.getElementById('title').textContent=title||'Side-by-side reader';
+document.getElementById('pdf').src=pdf;
+document.getElementById('en').src=en;
+document.getElementById('open').href=pdf;
+document.getElementById('back').href=en;
+</script></body></html>"""
+    with open(os.path.join(SITE, "reader.html"), "w", encoding="utf-8") as f:
+        f.write(doc)
+
+# ---------------------------------------------------------------- reading pages
+def render_md(slug):
+    mdpath = os.path.join(TRANS, slug + "_FULL.md")
+    txt = open(mdpath, encoding="utf-8").read()
+    lines = txt.split("\n")
+    # drop the first markdown H1 (we render our own title)
+    for i, ln in enumerate(lines):
+        if ln.strip():
+            if ln.startswith("# "):
+                lines[i] = ""
+            break
+    txt = "\n".join(lines)
+    out = subprocess.run(["pandoc", "-f", "markdown", "-t", "html5", "--no-highlight"],
+                         input=txt, capture_output=True, text=True)
+    frag = out.stdout
+    frag = frag.replace('src="figures/', 'src="../figures/')
+    frag = re.sub(r'\s*style="width:[^"]*"', '', frag)
+    frag = re.sub(r'\swidth="\d+"', '', frag)
+    toc = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', frag)
+    return frag, toc
+
+def gen_reading_pages():
+    os.makedirs(os.path.join(SITE, "papers"), exist_ok=True)
+    cat_by_id = {c["id"]: c for c in catalog}
+    for t in translations:
+        slug = t["trans_slug"]; ps = t["page_slug"]
+        frag, toc = render_md(slug)
+        c = cat_by_id[t["id"]]
+        lg = legacy.get(str(t["id"]), {})
+        toc_html = "".join(f'<a href="#{i}">{re.sub("<.*?>","",txt)}</a>' for i, txt in toc) if toc else ""
+        doi = t["doi"]
+        doi_a = f'<a href="https://doi.org/{doi}">{doi}</a>' if doi else "—"
+        wip = t["status"] != "complete"
+        pdf_rel = f"../pdfs/{t['pdf']}"          # direct link, relative to this papers/ page
+        pdf_root = f"pdfs/{t['pdf']}"            # for reader.html, which lives at the site root
+        reader = f"../reader.html?pdf={html.escape(pdf_root)}&en=papers/{ps}.html&title={html.escape(t['author']+' '+str(t['year']))}"
+        notice = '<div class="notice">This translation is still being finalized (figures or full text in progress).</div>' if wip else ""
+        # legacy panel
+        cites = lg.get("citations", [])[:8]
+        clist = "".join(
+            f'<li>{ (str(x["year"])+" · ") if x.get("year") else ""}{html.escape(x.get("author") or "")} — {html.escape((x.get("title") or "")[:120])}'
+            f'{" <a href=https://doi.org/"+x["doi"]+">doi</a>" if x.get("doi") else ""}</li>'
+            for x in cites)
+        redis = '<span class="badge redis">rediscovery target</span>' if lg.get("rediscovery") else ""
+        lp = f"""<section class="legacypanel">
+        <h2>Legacy</h2>
+        <div class="lstats">
+          <div><b>{lg.get('cited_by_count',0)}</b><span>cited today</span></div>
+          <div><b>{lg.get('n_parallels',0)}</b><span>modern parallels</span></div>
+          <div><b>{html.escape(lg.get('modern') or c.get('genus') or '—')}</b><span>organism now</span></div>
+        </div>
+        {redis}
+        {'<h3>Cited by today</h3><ul class="cites">'+clist+'</ul>' if clist else '<p class="muted">No modern citations recorded.</p>'}
+        </section>"""
+        body = f"""
+<article class="reading">
+  <p class="kicker"><a href="../catalog.html">Catalog</a> · BVA · {t['year']}</p>
+  <h1>{html.escape(t['title_en'])}</h1>
+  <p class="detitle">{html.escape(t['title_de'])}</p>
+  <p class="byline">{html.escape(t['author'])} · {html.escape(t['journal'])} · DOI {doi_a}</p>
+  <div class="badges">{layer_badge(c['layer'])} {('<span class=badge org>'+html.escape(c['organism'])+'</span>') if c['organism'] else ''} {'<span class="badge wip">in progress</span>' if wip else '<span class="badge done">full text</span>'}</div>
+  <div class="actionbar">
+    <a class="btn primary" href="{reader}">⇆ Read German side-by-side</a>
+    <a class="btn" href="{pdf_rel}" target="_blank">German PDF ↗</a>
+    {('<a class="btn" href="https://doi.org/'+doi+'" target="_blank">DOI ↗</a>') if doi else ''}
+  </div>
+  {notice}
+  <div class="cols">
+    <div class="text">{frag}</div>
+    <aside class="toc">{('<div class=tocbox><p>On this page</p>'+toc_html+'</div>') if toc_html else ''}{lp}</aside>
+  </div>
+  <footer class="cite">Cite: {html.escape(t['author'])} ({t['year']}), “{html.escape(t['title_de'])},” {html.escape(t['journal'])}. English translation, Vienna Vivarium in English.</footer>
+</article>"""
+        page(f"papers/{ps}.html", t["title_en"][:60], "Translations", body, prefix="../")
+
+# ---------------------------------------------------------------- assets / copy
+def _cp(src, dst):
+    """Copy only if missing (mounted FS may forbid unlink/overwrite)."""
+    if os.path.exists(dst):
+        return
+    try:
+        shutil.copyfile(src, dst)
+    except Exception as e:
+        print("  skip", os.path.basename(dst), e)
+
+def copy_assets():
+    if os.path.isdir(FIGSRC):
+        for d in sorted(glob.glob(os.path.join(FIGSRC, "*"))):
+            if not os.path.isdir(d):
+                continue
+            out = os.path.join(SITE, "figures", os.path.basename(d))
+            os.makedirs(out, exist_ok=True)
+            for f in glob.glob(os.path.join(d, "*")):
+                _cp(f, os.path.join(out, os.path.basename(f)))
+    pdir = os.path.join(SITE, "pdfs"); os.makedirs(pdir, exist_ok=True)
+    pdfs = sorted({c["pdf"] for c in catalog if c["pdf"]}) if FULL else sorted({t["pdf"] for t in translations})
+    for fn in pdfs:
+        _cp(os.path.join(ARTICLES, fn), os.path.join(pdir, fn))
+
+def write_css():
+    css = r""":root{--paper:#f7f4ee;--card:#fffdf9;--ink:#211f1c;--muted:#6f6a61;--rule:#e4ddce;
+--accent:#7a3b2e;--accent2:#355e7d;--link:#355e7d;--l1:#1d6e56;--l2:#355e7d;--l3:#9a6a1f;--l4:#9a9387;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);
+font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:34px;line-height:1.15;margin:.2em 0 .4em}
+h2{font-family:Georgia,serif;font-weight:600;font-size:23px;margin:1.6em 0 .5em}
+h3{font-size:16px;margin:.2em 0 .6em}
+.muted{color:var(--muted)}
+header.site{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.brand{display:flex;flex-direction:column;line-height:1.1}
+.brand .b1{font-family:Georgia,serif;font-weight:600;font-size:19px;color:var(--ink)}
+.brand .b2{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+nav a{margin-left:18px;font-size:14.5px;color:var(--ink)}
+nav a.on{color:var(--accent);font-weight:600}
+footer.site{margin-top:60px;border-top:1px solid var(--rule);padding:26px 0;font-size:13.5px;color:var(--muted)}
+footer.site p{margin:.3em 0}
+.hero{padding:30px 0 8px}
+.kicker{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+.lede{font-size:18px;color:#3c3833;max-width:62ch}
+.cta{margin:22px 0 6px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:9px 16px;border:1px solid var(--rule);border-radius:8px;background:var(--card);color:var(--ink);font-size:14.5px;cursor:pointer}
+.btn:hover{border-color:#cdc4b1;text-decoration:none}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn.primary:hover{background:#683224}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0}
+.stats div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px}
+.stats b{display:block;font-family:Georgia,serif;font-size:30px}
+.stats span{font-size:13px;color:var(--muted)}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:14px 0}
+.tcard{display:block;background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px;color:var(--ink)}
+.tcard:hover{border-color:#cdc4b1;text-decoration:none;transform:translateY(-1px)}
+.tcard .ty{font-size:12.5px;color:var(--muted);margin-bottom:6px}
+.tcard .tt{font-family:Georgia,serif;font-size:17px;line-height:1.25;margin-bottom:6px}
+.tcard .de{font-style:italic;color:var(--muted);font-size:13.5px;margin:4px 0}
+.tcard .tm{font-size:13.5px;color:#4a463f}
+.tcard .meta{margin-top:8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.badge{display:inline-block;font-size:11.5px;padding:2px 9px;border-radius:20px;border:1px solid var(--rule);color:var(--muted);background:var(--paper)}
+.badge.done{color:#1d6e56;border-color:#bcdccb;background:#edf7f1}
+.badge.wip{color:#9a6a1f;border-color:#e7d4ac;background:#fbf2dd}
+.badge.redis{color:#7a3b2e;border-color:#e6c6bb;background:#f8ebe6}
+.badge.org{font-style:italic}
+.badge.l1{color:#fff;background:var(--l1);border-color:var(--l1)}
+.badge.l2{color:#fff;background:var(--l2);border-color:var(--l2)}
+.badge.l3{color:#fff;background:var(--l3);border-color:var(--l3)}
+.badge.l4{color:#fff;background:var(--l4);border-color:var(--l4)}
+.how p{max-width:70ch}
+/* filters + table */
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.filters input[type=search],.filters select{padding:8px 11px;border:1px solid var(--rule);border-radius:8px;background:var(--card);font-size:14px}
+.filters #q{flex:1;min-width:220px}
+.chk{display:flex;align-items:center;gap:6px;font-size:14px;color:#4a463f}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table#cat{border-collapse:collapse;width:100%;font-size:14px}
+#cat th,#cat td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+#cat th{position:sticky;top:62px;background:var(--card);font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);cursor:default}
+#cat td.num,#cat th.num{text-align:right}
+#cat tr:hover td{background:#fbf8f2}
+#cat .ti{font-weight:500}#cat .de{color:var(--muted);font-style:italic;font-size:13px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#d8cfbe;margin-right:5px;vertical-align:middle}
+.dot.on{background:var(--accent)}
+.rd{font-size:11px;color:var(--accent)}
+/* legacy */
+.legacy{display:flex;flex-direction:column;gap:10px}
+.litem{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
+.litem .h{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.litem .ti{font-family:Georgia,serif;font-size:16px}
+.litem .sub{font-size:13px;color:var(--muted);margin-top:3px}
+.litem details{margin-top:8px}.litem summary{cursor:pointer;font-size:13.5px;color:var(--link)}
+.litem .cites{margin:8px 0 0;padding-left:18px;font-size:13px}
+.litem .cites li{margin:3px 0}
+.kv{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:#4a463f;margin-top:6px}
+/* charts */
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px}
+.chart{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
+.chart canvas{max-height:280px}
+.note{margin-top:18px}
+/* reading */
+.reading{padding-top:10px}
+.reading .detitle{font-style:italic;color:var(--muted);font-size:18px;margin:-6px 0 8px}
+.reading .byline{font-size:14px;color:#4a463f;margin:6px 0}
+.reading .badges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.actionbar{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
+.notice{background:#fbf2dd;border:1px solid #e7d4ac;color:#7a5a1c;border-radius:8px;padding:10px 14px;font-size:14px;margin:12px 0}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px;margin-top:18px}
+.text{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.72;max-width:70ch}
+.text h2{font-size:21px;margin-top:1.5em}.text h3{font-size:17px}
+.text img{max-width:100%;height:auto;display:block;margin:14px auto;border:1px solid var(--rule);background:#fff;padding:4px}
+.text table{border-collapse:collapse;margin:14px 0;font-size:14px}
+.text th,.text td{border:1px solid var(--rule);padding:5px 9px}
+.text blockquote{border-left:3px solid var(--rule);margin:14px 0;padding:4px 16px;color:#534e46;background:#fbf8f2}
+.toc{align-self:start;position:sticky;top:80px}
+.tocbox{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;font-family:-apple-system,sans-serif;font-size:13.5px;margin-bottom:14px}
+.tocbox p{margin:0 0 6px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.tocbox a{display:block;padding:2px 0;color:#4a463f}
+.legacypanel{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;font-family:-apple-system,sans-serif}
+.legacypanel h2{font-family:-apple-system,sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 10px}
+.lstats{display:flex;gap:14px;margin-bottom:10px}
+.lstats b{display:block;font-family:Georgia,serif;font-size:22px}
+.lstats span{font-size:11.5px;color:var(--muted)}
+.cites{font-size:13px;padding-left:16px}.cites li{margin:4px 0}
+.cite{margin-top:24px;border-top:1px solid var(--rule);padding-top:12px;font-size:13px;color:var(--muted)}
+.prose{max-width:72ch}.prose p{margin:.7em 0}
+@media(max-width:860px){.cols{grid-template-columns:1fr}.toc{position:static}.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}nav a{margin-left:12px}}
+"""
+    os.makedirs(os.path.join(SITE, "assets"), exist_ok=True)
+    open(os.path.join(SITE, "assets", "style.css"), "w", encoding="utf-8").write(css)
+
+def write_js():
+    catalog_js = r"""
+(function(){
+var D=window.CATALOG||[];
+var q=document.getElementById('q'),layer=document.getElementById('layer'),
+phen=document.getElementById('phen'),tonly=document.getElementById('tonly'),
+ronly=document.getElementById('ronly'),sort=document.getElementById('sort'),
+tb=document.querySelector('#cat tbody'),count=document.getElementById('count');
+var ph={};D.forEach(function(c){(c.phenomena||[]).forEach(function(p){ph[p]=(ph[p]||0)+1})});
+Object.keys(ph).sort().forEach(function(p){var o=document.createElement('option');o.value=p;o.textContent=p+' ('+ph[p]+')';phen.appendChild(o)});
+function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]})}
+function row(c){
+ var full=window.SITE&&window.SITE.fullPdfs;
+ var ger=(full&&c.pdf)?('pdfs/'+encodeURIComponent(c.pdf)):(c.doi?('https://doi.org/'+c.doi):(c.pdf?'pdfs/'+encodeURIComponent(c.pdf):''));
+ var read;
+ if(c.has_translation){read='<a href="papers/'+c.slug+'.html"><span class="dot on"></span>English</a>'+(ger?' · <a href="'+ger+'" target="_blank">DE</a>':'');}
+ else if(ger){read='<a href="'+ger+'" target="_blank">German ↗</a>';}
+ else read='—';
+ var lay=c.layer?('<span class="badge l'+c.layer+'">L'+c.layer+'</span>'):'';
+ var rd=c.rediscovery?' <span class="rd">◆ rediscovery</span>':'';
+ return '<tr><td>'+c.year+'</td><td>'+esc(c.author)+'</td>'+
+ '<td><div class="ti">'+esc(c.title)+(c.title_en?'</div><div class="de">'+esc(c.title_en):'')+'</div></td>'+
+ '<td><em>'+esc(c.organism)+'</em>'+rd+'</td><td>'+lay+'</td><td class="num">'+(c.citations||0)+'</td><td>'+read+'</td></tr>';
+}
+function apply(){
+ var t=(q.value||'').toLowerCase(),L=layer.value,P=phen.value;
+ var r=D.filter(function(c){
+  if(L&&String(c.layer)!==L)return false;
+  if(P&&(c.phenomena||[]).indexOf(P)<0)return false;
+  if(tonly.checked&&!c.has_translation)return false;
+  if(ronly.checked&&!c.rediscovery)return false;
+  if(t){var hay=(c.author+' '+c.title+' '+(c.title_en||'')+' '+(c.organism||'')).toLowerCase();if(hay.indexOf(t)<0)return false;}
+  return true;});
+ var s=sort.value;
+ r.sort(function(a,b){
+  if(s==='year')return a.year-b.year||a.id-b.id;
+  if(s==='-year')return b.year-a.year;
+  if(s==='-cit')return (b.citations||0)-(a.citations||0);
+  if(s==='author')return a.author.localeCompare(b.author);
+  return 0;});
+ tb.innerHTML=r.map(row).join('');
+ count.textContent=r.length+' of '+D.length+' papers';
+}
+[q,layer,phen,sort].forEach(function(e){e.addEventListener('input',apply)});
+[tonly,ronly].forEach(function(e){e.addEventListener('change',apply)});
+apply();
+})();
+"""
+    legacy_js = r"""
+(function(){
+var C=window.CATALOG||[],L=window.LEGACY||{};
+var byId={};C.forEach(function(c){byId[c.id]=c});
+var q=document.getElementById('q'),conv=document.getElementById('conv'),
+layer=document.getElementById('layer'),ronly=document.getElementById('ronly'),
+list=document.getElementById('list'),count=document.getElementById('count');
+var cv={};C.forEach(function(c){if(c.convergence)cv[c.convergence]=(cv[c.convergence]||0)+1});
+Object.keys(cv).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;conv.appendChild(o)});
+function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]})}
+function item(c){
+ var lg=L[c.id]||{};var cites=(lg.citations||[]).slice(0,10);
+ var cl=cites.map(function(x){return '<li>'+(x.year?x.year+' · ':'')+esc(x.author)+' — '+esc((x.title||'').slice(0,120))+(x.doi?' <a target=_blank href="https://doi.org/'+x.doi+'">doi</a>':'')+'</li>'}).join('');
+ var link=c.has_translation?'<a href="papers/'+c.slug+'.html">English translation →</a>':(c.doi?'<a target=_blank href="https://doi.org/'+c.doi+'">original ↗</a>':'');
+ return '<div class="litem"><div class="h"><div><div class="ti">'+esc(c.title)+'</div>'+
+ '<div class="sub">'+esc(c.author)+' · '+c.year+' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':'')+'</div></div>'+
+ '<div style="text-align:right">'+(c.rediscovery?'<span class="badge redis">rediscovery target</span><br>':'')+(c.layer?'<span class="badge l'+c.layer+'">L'+c.layer+'</span>':'')+'</div></div>'+
+ '<div class="kv"><span><b>'+(lg.cited_by_count||0)+'</b> cited today</span><span><b>'+(lg.n_parallels||0)+'</b> modern parallels</span><span>'+esc(c.convergence||'')+'</span></div>'+
+ (cl?'<details><summary>Show modern citations</summary><ul class="cites">'+cl+'</ul></details>':'')+
+ '<div style="margin-top:8px">'+link+'</div></div>';
+}
+function apply(){
+ var t=(q.value||'').toLowerCase(),V=conv.value,Y=layer.value;
+ var r=C.filter(function(c){
+  if(ronly.checked&&!c.rediscovery)return false;
+  if(V&&c.convergence!==V)return false;
+  if(Y&&String(c.layer)!==Y)return false;
+  if(t){var hay=(c.author+' '+c.title+' '+(c.organism||'')).toLowerCase();if(hay.indexOf(t)<0)return false;}
+  return true;});
+ r.sort(function(a,b){return (b.n_parallels||0)-(a.n_parallels||0)});
+ list.innerHTML=r.map(item).join('');
+ count.textContent=r.length+' papers';
+}
+[q,conv,layer].forEach(function(e){e.addEventListener('input',apply)});
+ronly.addEventListener('change',apply);apply();
+})();
+"""
+    analytics_js = r"""
+(function(){
+var D=window.CATALOG||[];
+var ink='#211f1c',mut='#6f6a61',grid='#e4ddce';
+Chart.defaults.font.family='-apple-system,Segoe UI,Roboto,sans-serif';Chart.defaults.color=mut;
+function years(){var m={};D.forEach(function(c){m[c.year]=(m[c.year]||0)+1});
+ var ys=[];for(var y=1902;y<=1945;y++)ys.push(y);return{labels:ys,data:ys.map(function(y){return m[y]||0})};}
+var yr=years();
+new Chart(cYear,{type:'bar',data:{labels:yr.labels,datasets:[{data:yr.data,backgroundColor:'#7a3b2e'}]},
+ options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:12}},y:{grid:{color:grid},ticks:{precision:0}}}}});
+var lc={1:0,2:0,3:0,4:0};D.forEach(function(c){if(c.layer)lc[c.layer]++});
+new Chart(cLayer,{type:'doughnut',data:{labels:['Layer 1','Layer 2','Layer 3','Layer 4'],
+ datasets:[{data:[lc[1],lc[2],lc[3],lc[4]],backgroundColor:['#1d6e56','#355e7d','#9a6a1f','#b8b1a4']}]},
+ options:{plugins:{legend:{position:'right'}}}});
+var am={};D.forEach(function(c){am[c.author]=(am[c.author]||0)+1});
+var top=Object.keys(am).map(function(k){return[k,am[k]]}).sort(function(a,b){return b[1]-a[1]}).slice(0,12);
+new Chart(cAuth,{type:'bar',data:{labels:top.map(function(x){return x[0]}),datasets:[{data:top.map(function(x){return x[1]}),backgroundColor:'#355e7d'}]},
+ options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:grid},ticks:{precision:0}},y:{grid:{display:false}}}}});
+var cc=D.slice().sort(function(a,b){return (b.citations||0)-(a.citations||0)}).slice(0,12);
+new Chart(cCit,{type:'bar',data:{labels:cc.map(function(c){return c.author+' '+c.year}),datasets:[{data:cc.map(function(c){return c.citations||0}),backgroundColor:'#7a3b2e'}]},
+ options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(i){return cc[i.dataIndex].title.slice(0,70)}}}},scales:{x:{grid:{color:grid}},y:{grid:{display:false}}}}});
+})();
+"""
+    a = os.path.join(SITE, "assets")
+    open(os.path.join(a, "catalog.js"), "w").write(catalog_js)
+    open(os.path.join(a, "legacy.js"), "w").write(legacy_js)
+    open(os.path.join(a, "analytics.js"), "w").write(analytics_js)
+
+def main():
+    os.makedirs(DATA, exist_ok=True)
+    write_css(); write_js()
+    open(os.path.join(DATA, "site.js"), "w").write("window.SITE=" + json.dumps({"fullPdfs": FULL}) + ";")
+    open(os.path.join(SITE, ".nojekyll"), "w").write("")
+    gen_index(); gen_catalog(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader()
+    gen_reading_pages(); copy_assets()
+    print("Generated site at", SITE, "| FULL_PDFS =", FULL)
+    print("pages:", sorted(os.path.basename(p) for p in glob.glob(os.path.join(SITE, "*.html"))))
+    print("reading pages:", len(glob.glob(os.path.join(SITE, "papers", "*.html"))))
+    print("figures:", len(glob.glob(os.path.join(SITE, "figures", "*", "*"))))
+    print("pdfs:", len(glob.glob(os.path.join(SITE, "pdfs", "*.pdf"))))
+
+if __name__ == "__main__":
+    main()
