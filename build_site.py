@@ -101,6 +101,42 @@ def match_pdf(year, author, title, idx, used):
             best, best_score = fn, score
     return (best, round(best_score, 2)) if best_score >= 0.45 else (None, round(best_score, 2))
 
+def assign_pdfs(summary, ds_match, idx, trans_for_id):
+    """Unique global assignment: each paper -> exactly one source PDF (bijection)."""
+    assigned, used = {}, set()
+    for pid, slug in trans_for_id.items():       # translated papers: verified mapping first
+        assigned[pid] = TRANS_PDF[slug]; used.add(TRANS_PDF[slug])
+    def info(s):
+        ds = ds_match(int(s["year"]), clean(s["author"]), s["title"])
+        return tokens(ds.get("title") or clean(s["title"])), surname(clean(s["author"])), int(s["year"])
+    pairs = []
+    for pid, s in summary.items():
+        if pid in assigned: continue
+        ttok, sn, year = info(s)
+        if not ttok: continue
+        for yr, auth, fn, ftok in idx:
+            if fn in used or not ftok: continue
+            overlap = len(ttok & ftok) / max(1, min(len(ttok), len(ftok)))
+            score = overlap + (0.25 if sn and sn in auth else 0) + (0.30 if yr == year else 0)
+            if score >= 0.40:
+                pairs.append((score, pid, fn))
+    pairs.sort(key=lambda x: x[0], reverse=True)       # greedy by best score, unique
+    for score, pid, fn in pairs:
+        if pid in assigned or fn in used: continue
+        assigned[pid] = fn; used.add(fn)
+    rem = [e for e in idx if e[2] not in used]          # complete the bijection
+    for pid, s in summary.items():
+        if pid in assigned: continue
+        ttok, sn, year = info(s)
+        best_i, best_sc = -1, -1.0
+        for i, (yr, auth, fn, ftok) in enumerate(rem):
+            ov = (len(ttok & ftok) / max(1, min(len(ttok), len(ftok)))) if ttok and ftok else 0
+            sc = ov + (0.30 if yr == year else 0) + (0.25 if sn and sn in auth else 0)
+            if sc > best_sc: best_sc, best_i = sc, i
+        if best_i >= 0:
+            assigned[pid] = rem[best_i][2]; used.add(rem[best_i][2]); rem.pop(best_i)
+    return assigned
+
 # ---------- translation metadata ----------
 # Confirmed slug -> source PDF (verified by DOI / fileOnDisk / title)
 TRANS_PDF = {
@@ -180,7 +216,7 @@ def build():
             if sc > best: best, best_id = sc, pid
         if best_id: trans_for_id[best_id] = slug
 
-    used_pdfs = set()
+    assigned = assign_pdfs(summary, ds_match, idx, trans_for_id)
     catalog, legacy = [], {}
     mapped = 0
     for pid in sorted(summary):
@@ -199,13 +235,10 @@ def build():
         same_uncited = int(s.get("n_parallel_same_organism_uncited") or 0)
         same_cites = int(s.get("n_same_organism_citations") or 0)
         rediscovery = bool(same_uncited > 0 and same_cites == 0)
-        pdf, score = match_pdf(year, author, title_de, idx, used_pdfs)
-
         slug = trans_for_id.get(pid)
-        if slug:                       # translated paper: use the verified PDF
-            pdf = TRANS_PDF[slug]
+        pdf = assigned.get(pid)
         if pdf:
-            used_pdfs.add(pdf); mapped += 1
+            mapped += 1
 
         rec = dict(
             id=pid, year=year, author=author, author_full=author_full,

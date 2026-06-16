@@ -141,6 +141,19 @@ def gen_legacy():
     body = """
 <h1>Legacy explorer</h1>
 <p class="lede">For each paper: who cites it in modern science, and whether its organism is still actively studied. <strong>Rediscovery targets</strong> are papers whose organism is alive in today's literature but whose original BVA work goes uncited — candidates for renewed attention.</p>
+
+<section class="layers">
+  <h2>What the four legacy layers mean</h2>
+  <p>Every paper is graded by how deeply modern science still engages its actual work — judged from the present-day papers that cite it, with purely historical mentions set aside. The depth runs from the same organism still under study down to nothing but the bare logic of experiment surviving.</p>
+  <div class="laycards">
+    <div class="laycard"><span class="badge l1">Layer 1</span><b>Same genus, still studied</b><p>Modern work still studies the very genus the BVA paper worked on — the deepest continuity. <span class="muted">22 papers · 13%</span></p></div>
+    <div class="laycard"><span class="badge l2">Layer 2</span><b>Same taxon, different genus</b><p>The technique or question travelled to a related animal: the same broad group (amphibians, beetles, crustaceans, mammals) but a different genus. The BVA's best-cited work lives here. <span class="muted">70 papers · 40%</span></p></div>
+    <div class="laycard"><span class="badge l3">Layer 3</span><b>Same phenomenon, unrelated organism</b><p>Modern work pursues the same phenomenon — regeneration, transplantation, colour change, inheritance, sex determination — but in an unrelated organism. <span class="muted">37 papers · 21%</span></p></div>
+    <div class="laycard"><span class="badge l4">Layer 4</span><b>Only the experimental logic survives</b><p>Engagement exists, but shares only the abstract form of “perturb and observe,” not the species, taxon, or phenomenon. <span class="muted">41 papers · 23%</span></p></div>
+  </div>
+  <p class="muted">A further 5 papers have no indexed modern citations at all. Depth is judged from OpenAlex citation data, excluding history-of-science (“historiographic”) mentions.</p>
+</section>
+
 <div class="filters">
   <input id="q" type="search" placeholder="Search author, title, organism…">
   <select id="conv"><option value="">Any convergence axis</option></select>
@@ -164,7 +177,7 @@ def gen_analytics():
   <div class="chart"><h3>Most prolific authors</h3><canvas id="cAuth"></canvas></div>
   <div class="chart"><h3>Most-cited papers today</h3><canvas id="cCit"></canvas></div>
 </div>
-<p class="note muted">Legacy layers: 1 = modern work engages the same organism and question; 4 = only abstract/contextual engagement. Citation counts via OpenAlex.</p>
+<p class="note muted">Legacy layers run from 1 (modern work still engages the same genus) to 4 (only the abstract logic of experiment survives) — see the <a href="legacy.html">Legacy</a> page for full definitions. Citation counts via OpenAlex.</p>
 """
     page("analytics.html", "Analytics", "Analytics", body,
          head='<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>',
@@ -189,38 +202,16 @@ def gen_about():
 
 # ---------------------------------------------------------------- reader (side-by-side)
 def gen_reader():
-    doc = """<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Side-by-side reader · Vienna Vivarium</title>
-<link rel="stylesheet" href="assets/style.css">
-<style>
-html,body{height:100%;margin:0}
-.rbar{display:flex;align-items:center;gap:12px;padding:8px 14px;border-bottom:1px solid var(--rule);background:var(--paper)}
-.rbar .t{font-weight:600;font-size:14px}
-.rbar a{font-size:13px}
-.panes{display:grid;grid-template-columns:1fr 1fr;height:calc(100vh - 46px)}
-.panes iframe{width:100%;height:100%;border:0;border-right:1px solid var(--rule);background:#fff}
-.lbl{position:absolute;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);background:var(--paper);padding:2px 8px;border:1px solid var(--rule);border-radius:6px;margin:6px}
-@media(max-width:760px){.panes{grid-template-columns:1fr;height:auto}.panes iframe{height:88vh}}
-</style></head><body>
-<div class="rbar"><span class="t" id="title">Side-by-side reader</span>
-<a id="open" href="#" target="_blank">Open PDF in new tab ↗</a>
-<a id="back" href="#">← Back to translation</a></div>
-<div class="panes">
-  <div style="position:relative"><span class="lbl">German original</span><iframe id="pdf" title="German original PDF"></iframe></div>
-  <div style="position:relative"><span class="lbl">English translation</span><iframe id="en" title="English translation"></iframe></div>
-</div>
-<script>
-const p=new URLSearchParams(location.search);
-const pdf=p.get('pdf')||'', en=p.get('en')||'', title=p.get('title')||'';
-document.getElementById('title').textContent=title||'Side-by-side reader';
-document.getElementById('pdf').src=pdf;
-document.getElementById('en').src=en;
-document.getElementById('open').href=pdf;
-document.getElementById('back').href=en;
-</script></body></html>"""
-    with open(os.path.join(SITE, "reader.html"), "w", encoding="utf-8") as f:
-        f.write(doc)
+    # Data-driven in-site reader: reader.html?id=<id>[&sxs=1].
+    # Embeds the German PDF in the page with a download button; side-by-side
+    # against the English translation when one exists.
+    body = """
+<div id="rhead"></div>
+<div id="rview"></div>
+<p id="rmiss" class="muted" style="display:none">Paper not found. <a href="catalog.html">Back to the catalog</a>.</p>
+"""
+    page("reader.html", "Reader", None, body,
+         foot='<script src="data/catalog.js"></script><script src="assets/reader.js"></script>')
 
 # ---------------------------------------------------------------- reading pages
 def render_md(slug):
@@ -255,9 +246,10 @@ def gen_reading_pages():
         doi = t["doi"]
         doi_a = f'<a href="https://doi.org/{doi}">{doi}</a>' if doi else "—"
         wip = t["status"] != "complete"
-        pdf_rel = f"../pdfs/{t['pdf']}"          # direct link, relative to this papers/ page
-        pdf_root = f"pdfs/{t['pdf']}"            # for reader.html, which lives at the site root
-        reader = f"../reader.html?pdf={html.escape(pdf_root)}&en=papers/{ps}.html&title={html.escape(t['author']+' '+str(t['year']))}"
+        pid = t["id"]
+        pdf_rel = f"../pdfs/{t['pdf']}"
+        reader_sxs = f"../reader.html?id={pid}&sxs=1"
+        reader_one = f"../reader.html?id={pid}"
         notice = '<div class="notice">This translation is still being finalized (figures or full text in progress).</div>' if wip else ""
         # legacy panel
         cites = lg.get("citations", [])[:8]
@@ -284,8 +276,9 @@ def gen_reading_pages():
   <p class="byline">{html.escape(t['author'])} · {html.escape(t['journal'])} · DOI {doi_a}</p>
   <div class="badges">{layer_badge(c['layer'])} {('<span class=badge org>'+html.escape(c['organism'])+'</span>') if c['organism'] else ''} {'<span class="badge wip">in progress</span>' if wip else '<span class="badge done">full text</span>'}</div>
   <div class="actionbar">
-    <a class="btn primary" href="{reader}">⇆ Read German side-by-side</a>
-    <a class="btn" href="{pdf_rel}" target="_blank">German PDF ↗</a>
+    <a class="btn primary" href="{reader_sxs}">⇆ Read German side-by-side</a>
+    <a class="btn" href="{reader_one}">German reader</a>
+    <a class="btn" href="{pdf_rel}" download>↓ Download PDF</a>
     {('<a class="btn" href="https://doi.org/'+doi+'" target="_blank">DOI ↗</a>') if doi else ''}
   </div>
   {notice}
@@ -429,7 +422,17 @@ table#cat{border-collapse:collapse;width:100%;font-size:14px}
 .cites{font-size:13px;padding-left:16px}.cites li{margin:4px 0}
 .cite{margin-top:24px;border-top:1px solid var(--rule);padding-top:12px;font-size:13px;color:var(--muted)}
 .prose{max-width:72ch}.prose p{margin:.7em 0}
-@media(max-width:860px){.cols{grid-template-columns:1fr}.toc{position:static}.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}nav a{margin-left:12px}}
+.rsingle iframe{width:100%;height:82vh;border:1px solid var(--rule);border-radius:8px;background:#fff}
+.rpanes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.rpanes .rp{position:relative}
+.rpanes iframe{width:100%;height:82vh;border:1px solid var(--rule);border-radius:8px;background:#fff}
+.rlbl{position:absolute;top:6px;left:6px;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:var(--paper);border:1px solid var(--rule);border-radius:6px;padding:2px 8px;z-index:2}
+.layers{margin:8px 0 26px}
+.laycards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:14px 0}
+.laycard{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px}
+.laycard b{display:block;margin:8px 0 4px;font-size:15px}
+.laycard p{font-size:13.5px;color:#4a463f;margin:0}
+@media(max-width:860px){.cols{grid-template-columns:1fr}.toc{position:static}.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.rpanes{grid-template-columns:1fr}nav a{margin-left:12px}}
 """
     os.makedirs(os.path.join(SITE, "assets"), exist_ok=True)
     open(os.path.join(SITE, "assets", "style.css"), "w", encoding="utf-8").write(css)
@@ -446,12 +449,9 @@ var ph={};D.forEach(function(c){(c.phenomena||[]).forEach(function(p){ph[p]=(ph[
 Object.keys(ph).sort().forEach(function(p){var o=document.createElement('option');o.value=p;o.textContent=p+' ('+ph[p]+')';phen.appendChild(o)});
 function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]})}
 function row(c){
- var full=window.SITE&&window.SITE.fullPdfs;
- var ger=(full&&c.pdf)?('pdfs/'+encodeURIComponent(c.pdf)):(c.doi?('https://doi.org/'+c.doi):(c.pdf?'pdfs/'+encodeURIComponent(c.pdf):''));
  var read;
- if(c.has_translation){read='<a href="papers/'+c.slug+'.html"><span class="dot on"></span>English</a>'+(ger?' · <a href="'+ger+'" target="_blank">DE</a>':'');}
- else if(ger){read='<a href="'+ger+'" target="_blank">German ↗</a>';}
- else read='—';
+ if(c.has_translation){read='<a href="papers/'+c.slug+'.html"><span class="dot on"></span>English</a> · <a href="reader.html?id='+c.id+'">German</a>';}
+ else {read='<a href="reader.html?id='+c.id+'">Read original</a>';}
  var lay=c.layer?('<span class="badge l'+c.layer+'">L'+c.layer+'</span>'):'';
  var rd=c.rediscovery?' <span class="rd">◆ rediscovery</span>':'';
  return '<tr><td>'+c.year+'</td><td>'+esc(c.author)+'</td>'+
@@ -495,7 +495,7 @@ function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','
 function item(c){
  var lg=L[c.id]||{};var cites=(lg.citations||[]).slice(0,10);
  var cl=cites.map(function(x){return '<li>'+(x.year?x.year+' · ':'')+esc(x.author)+' — '+esc((x.title||'').slice(0,120))+(x.doi?' <a target=_blank href="https://doi.org/'+x.doi+'">doi</a>':'')+'</li>'}).join('');
- var link=c.has_translation?'<a href="papers/'+c.slug+'.html">English translation →</a>':(c.doi?'<a target=_blank href="https://doi.org/'+c.doi+'">original ↗</a>':'');
+ var link=c.has_translation?'<a href="papers/'+c.slug+'.html">English translation →</a>':'<a href="reader.html?id='+c.id+'">read original →</a>';
  return '<div class="litem"><div class="h"><div><div class="ti">'+esc(c.title)+'</div>'+
  '<div class="sub">'+esc(c.author)+' · '+c.year+' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':'')+'</div></div>'+
  '<div style="text-align:right">'+(c.rediscovery?'<span class="badge redis">rediscovery target</span><br>':'')+(c.layer?'<span class="badge l'+c.layer+'">L'+c.layer+'</span>':'')+'</div></div>'+
@@ -542,10 +542,41 @@ new Chart(cCit,{type:'bar',data:{labels:cc.map(function(c){return c.author+' '+c
  options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(i){return cc[i.dataIndex].title.slice(0,70)}}}},scales:{x:{grid:{color:grid}},y:{grid:{display:false}}}}});
 })();
 """
+    reader_js = r"""
+(function(){
+var P=new URLSearchParams(location.search), id=parseInt(P.get('id'),10), sxs=P.get('sxs')==='1';
+var C=(window.CATALOG||[]).filter(function(c){return c.id===id})[0];
+var head=document.getElementById('rhead'), view=document.getElementById('rview');
+if(!C){document.getElementById('rmiss').style.display='block';return;}
+function esc(s){return (s||'').replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+var pdf='pdfs/'+encodeURIComponent(C.pdf||'');
+document.title=(C.author+' '+C.year)+' · Vienna Vivarium';
+var en=C.has_translation?('papers/'+C.slug+'.html'):null;
+var doi=C.doi?('<a href="https://doi.org/'+C.doi+'" target="_blank">'+C.doi+'</a>'):'';
+var acts='<a class="btn primary" href="'+pdf+'" download>↓ Download PDF</a>';
+if(en){acts+='<a class="btn" href="'+en+'">Read English translation</a>';
+ acts+= sxs?('<a class="btn" href="reader.html?id='+id+'">Single view</a>')
+          :('<a class="btn" href="reader.html?id='+id+'&sxs=1">⇆ Side-by-side English</a>');}
+if(doi)acts+='<a class="btn" href="https://doi.org/'+C.doi+'" target="_blank">DOI ↗</a>';
+var ttl=(C.has_translation&&C.title_en)?C.title_en:C.title;
+head.innerHTML='<p class="kicker"><a href="catalog.html">Catalog</a> · BVA · '+C.year+'</p>'+
+ '<h1 style="margin-bottom:4px">'+esc(ttl)+'</h1>'+
+ ((C.has_translation&&C.title_en)?'<p class="detitle" style="font-style:italic;color:var(--muted);margin:0 0 6px">'+esc(C.title)+'</p>':'')+
+ '<p class="byline">'+esc(C.author_full||C.author)+' · '+C.year+(doi?' · DOI '+doi:'')+(C.organism?' · <em>'+esc(C.organism)+'</em>':'')+'</p>'+
+ '<div class="actionbar">'+acts+'</div>';
+if(sxs&&en){
+ view.innerHTML='<div class="rpanes"><div class="rp"><span class="rlbl">German original</span><iframe src="'+pdf+'#view=FitH" title="German original PDF"></iframe></div>'+
+  '<div class="rp"><span class="rlbl">English translation</span><iframe src="'+en+'" title="English translation"></iframe></div></div>';
+}else{
+ view.innerHTML='<div class="rsingle"><iframe src="'+pdf+'#view=FitH" title="German original PDF"></iframe></div>';
+}
+})();
+"""
     a = os.path.join(SITE, "assets")
     open(os.path.join(a, "catalog.js"), "w").write(catalog_js)
     open(os.path.join(a, "legacy.js"), "w").write(legacy_js)
     open(os.path.join(a, "analytics.js"), "w").write(analytics_js)
+    open(os.path.join(a, "reader.js"), "w").write(reader_js)
 
 def main():
     os.makedirs(DATA, exist_ok=True)
