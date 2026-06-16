@@ -18,6 +18,7 @@
 # Within the kept folders, drop noise:
 **/__pycache__/
 **/.DS_Store
+**/.fuse_hidden*
 **/.~lock.*#
 **/*.pyc
 
