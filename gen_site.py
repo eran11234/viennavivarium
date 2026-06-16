@@ -371,10 +371,10 @@ footer.site p{margin:.3em 0}
 .filters input[type=search],.filters select{padding:8px 11px;border:1px solid var(--rule);border-radius:8px;background:var(--card);font-size:14px}
 .filters #q{flex:1;min-width:220px}
 .chk{display:flex;align-items:center;gap:6px;font-size:14px;color:#4a463f}
-.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+.tablewrap{border:1px solid var(--rule);border-radius:10px;background:var(--card)}
 table#cat{border-collapse:collapse;width:100%;font-size:14px}
 #cat th,#cat td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
-#cat th{position:sticky;top:62px;background:var(--card);font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);cursor:default}
+#cat th{position:sticky;top:62px;z-index:5;background:var(--card);font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);cursor:default;box-shadow:0 1px 0 var(--rule)}
 #cat td.num,#cat th.num{text-align:right}
 #cat tr:hover td{background:#fbf8f2}
 #cat .ti{font-weight:500}#cat .de{color:var(--muted);font-style:italic;font-size:13px}
