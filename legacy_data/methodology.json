@@ -1,0 +1,122 @@
+{
+  "145": {
+    "method": "Developmental mechanics (egg/embryo)",
+    "methods": ["Vital marking / fate-tracking", "Constriction / ligature", "Puncture / defect"],
+    "manipulation": "Followed the egg's natural pigment 'zenith field' mark and added artificial marks, hair-ligature constrictions and punctures to uncleaved alpine-newt eggs.",
+    "design": "Continuous observation of individually marked eggs through cleavage, with constriction and puncture interventions; results compared against the amphibian literature (Table β).",
+    "readout": "Position of the embryo's median plane relative to the egg's mark and to the first cleavage furrow.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (egg / embryo)",
+    "n": "190 experimental eggs; cleavage followed in 125",
+    "finding": "The first cleavage furrow does not reliably coincide with the median plane; the embryo's axis is fixed relative to the natural pigment mark rather than the furrow.",
+    "summary": "Przibram exploited a natural pigment spot (the 'zenith field') on the alpine-newt egg, plus artificial marks, hair ligatures and punctures, to track identifiable points on the egg through cleavage. Across 190 eggs he scored how the first furrow related to the later median plane, establishing that the furrow is an unreliable guide and that the embryo's position is set by the egg's intrinsic marks — a marking method Vogt's vital-dye fate-mapping would soon supersede."
+  },
+  "38": {
+    "method": "Endocrine & sex manipulation",
+    "methods": ["Gonad transplantation", "Castration", "Histology"],
+    "manipulation": "Castrated young rats and guinea pigs and implanted the opposite sex's gonad, or both glands together, to feminize, masculinize, or produce hermaphrodites.",
+    "design": "Treatment animals versus normal controls; experimental sex reversal and induced double-sex ('hermaphrodite') glands.",
+    "readout": "Development of secondary sexual characters, body form, mating behaviour, and gonad histology.",
+    "quantification": "Qualitative (descriptive + histological)",
+    "scale": "Organism",
+    "n": "Series of implanted rodents (rats, guinea pigs)",
+    "finding": "The gonad's interstitial 'puberty gland' secretes the hormones that determine secondary sex characters; implanting the opposite gland reverses or doubles them, yielding experimental hermaphrodites.",
+    "summary": "Steinach removed the gonads of immature rodents and grafted in the opposite gland — or both — then watched the sexual characters, body form and behaviour that developed. The reversals and induced hermaphrodites led him to locate sex-determining hormone secretion in the gonad's interstitial 'puberty gland', founding the experimental endocrinology of sex."
+  },
+  "70": {
+    "method": "Regeneration & restitution",
+    "methods": ["Amputation", "Skeleton displacement / removal", "Developmental-field analysis"],
+    "manipulation": "Amputated newt forelimbs after displacing the skeleton out of place or removing it entirely (skeleton-less stumps), then let them regenerate.",
+    "design": "Comparison of regenerates from normal, out-of-place-skeleton, and skeleton-less stumps.",
+    "readout": "Whether and how a correctly patterned limb skeleton re-forms in the regenerate.",
+    "quantification": "Qualitative (with text-figures)",
+    "scale": "Organ (limb)",
+    "n": "Series of operated Triton cristatus limbs",
+    "finding": "Limb regeneration is independent of the pre-existing skeleton: the regenerate's skeleton forms anew from the blastema under a regional 'determination field'.",
+    "summary": "Weiss amputated newt limbs whose skeleton he had either displaced or removed, and showed that a normal limb — skeleton included — regenerated regardless. The skeleton is therefore not the template; the regenerate's pattern is imposed by a region-specific 'determination field' acting on the blastema. The result travelled into modern axolotl limb-regeneration biology."
+  },
+  "135": {
+    "method": "Quantitative growth & biometry",
+    "methods": ["Longitudinal measurement", "Controlled rearing", "Curve-fitting"],
+    "manipulation": "Reared praying mantises from hatching, weighing and measuring body length at each instar and moult.",
+    "design": "Longitudinal measurement across successive instars; tabulation and fitting of growth curves.",
+    "readout": "Body length and mass at each instar, and the ratios between successive instars.",
+    "quantification": "Quantitative (full measurement tables)",
+    "scale": "Organism",
+    "n": "Reared Sphodromantis bioculata, measured each instar",
+    "finding": "Growth proceeds in regular stepwise ratios per moult — the empirical basis of what became 'Przibram's Rule' (~2.09x mass, ~1.26x linear dimension per instar).",
+    "summary": "Przibram and Megušar turned growth into numbers: rearing mantises and recording length and weight at every moult. The regular inter-instar ratios they extracted became 'Przibram's Rule', a generalization still tested by name in arthropods today — the clearest instance of the BVA's drive to make biology quantitative."
+  },
+  "39": {
+    "method": "Inheritance & breeding",
+    "methods": ["Environmental modification", "Multi-generation breeding", "Behavioural scoring"],
+    "manipulation": "Forced the midwife toad to change its reproductive mode by altering temperature, humidity and 'epidemic' conditions, then bred the modified animals.",
+    "design": "Control series versus descendant series across generations.",
+    "readout": "Whether the enforced reproductive behaviour and associated structures reappear in the offspring.",
+    "quantification": "Semi-quantitative",
+    "scale": "Population (cross-generational)",
+    "n": "Control and descendant breeding series",
+    "finding": "Kammerer reported that the environmentally enforced reproductive adaptations were inherited by the descendants — a Lamarckian claim, later disputed (the 1926 nuptial-pad scandal).",
+    "summary": "Kammerer changed the midwife toad's mode of reproduction by manipulating its environment, then bred the altered animals and compared descendants with controls, reporting that the enforced adaptation was inherited. The corpus reports the claim as he stated it; it became the most contested experiment of the era and the centre of the modern epigenetics-revival debate."
+  },
+  "56": {
+    "method": "Functional physiology & behaviour",
+    "methods": ["Symbiosis analysis", "Feeding / digestion experiments", "Observation"],
+    "manipulation": "Kept freshwater polyps and examined the green hydra's relationship to its symbiotic algae, together with feeding, digestion and responses.",
+    "design": "Exploratory preliminary experiments and observations on Hydra biology.",
+    "readout": "The algal symbiosis, intracellular digestion, budding and responses of the polyp.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Preliminary series (incomplete by the author's own note)",
+    "finding": "Documented the green hydra's symbiosis with Zoochlorella and basic features of its feeding and biology as groundwork for an experimental biology of the polyp.",
+    "summary": "Hadži's 'preliminary experiments' surveyed the biology of Hydra — above all the green hydra's partnership with its symbiotic algae, plus digestion and responses. Explicitly unfinished, it nonetheless became the early reference point for the hydra-alga symbiosis that modern work on algal transmission and host-symbiont biology still cites."
+  },
+  "44": {
+    "method": "Inheritance & breeding",
+    "methods": ["Environmental modification", "Quantitative biometry", "Controlled rearing"],
+    "manipulation": "Reared the alpine and fire salamanders under altered conditions (altitude, moisture, temperature) and recorded reproductive mode and body characters.",
+    "design": "Comparative, statistical study across the two species and across conditions, with experimental induction of altered reproduction.",
+    "readout": "Reproductive mode (live larvae vs fully-formed young), larval form, coloration and morphology, and their heritability.",
+    "quantification": "Quantitative (statistical)",
+    "scale": "Population",
+    "n": "Large statistical series across both species",
+    "finding": "Kammerer argued the two salamanders' reproductive and morphological differences are environmentally induced, heritable adaptations (a Lamarckian / atavism claim, later disputed).",
+    "summary": "In this large statistical monograph Kammerer reared the two Salamandra species under altered conditions and recorded how their reproduction, larval form and colour responded, arguing that the differences between the species are environmentally induced and heritable. It is an early, data-heavy statement of the neo-Lamarckian program that defined — and ultimately undid — his reputation."
+  },
+  "93": {
+    "method": "Colour change & pigment",
+    "methods": ["Background / light modification", "Blinding (ablation)", "Chromatophore observation"],
+    "manipulation": "Kept normal and blinded crustaceans on backgrounds of different colours, in daylight and in darkness, and observed their chromatophores.",
+    "design": "Series crossing background colour x light condition x intact/blinded animals; macroscopic and microscopic observation across the day-night cycle.",
+    "readout": "Expansion and contraction of the chromatophores and the resulting body colour.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (chromatophores)",
+    "n": "Four crustacean genera (Gelasimus, Potamobius, Palaemonetes, Palaemon)",
+    "finding": "Colour change follows background and light and depends on the eyes — blinded animals fail to adapt — implicating a visually mediated chromatophore response.",
+    "summary": "Megušar crossed background colour, illumination and blinding to dissect colour change in four crustaceans, observing the chromatophores directly. Showing that intact eyes are required for background adaptation, the work is an early analysis of the visually driven, hormonally mediated chromatophore physiology that crustacean colour-change research still pursues."
+  },
+  "148": {
+    "method": "Functional physiology & behaviour",
+    "methods": ["Limb transplantation", "Observation of coordinated movement"],
+    "manipulation": "Grafted supernumerary developed limbs onto amphibians and observed their innervation and movement.",
+    "design": "Observation of the grafted limb's motor behaviour relative to the host's own homologous limb.",
+    "readout": "Whether, and in what timing, the transplanted limb moves relative to the host's limbs.",
+    "quantification": "Qualitative (with figures)",
+    "scale": "Organ / organism",
+    "n": "Series of limb-grafted amphibians",
+    "finding": "Transplanted limbs move in exact synchrony with the host's homologous limb regardless of which nerves reach them — Weiss's 'resonance' principle of motor coordination (myotypic specificity).",
+    "summary": "Weiss grafted extra limbs onto amphibians and found that each moved in perfect unison with the host's corresponding limb, whatever nerve supplied it. He read this 'homologous response' as evidence that muscles impose their identity on their nerves — the 'resonance' / myotypic-specificity principle that became a cornerstone of developmental neuroscience and the neural-specificity debate."
+  },
+  "9": {
+    "method": "Regeneration & restitution",
+    "methods": ["Partial-cross-section amputation", "Developmental-field analysis"],
+    "manipulation": "Amputated newt limbs through only part of the cross-section (e.g., reaching only to the mid-lower-leg), leaving a partial wound surface.",
+    "design": "Comparison of regenerate completeness from partial versus full limb cross-sections.",
+    "readout": "Whether a whole, correctly patterned limb regenerates from a partial cross-section.",
+    "quantification": "Qualitative (with figures)",
+    "scale": "Organ (limb)",
+    "n": "Series of partially-amputated Triton cristatus limbs",
+    "finding": "A complete limb regenerates even from a partial (half) cross-section — evidence for a regulative 'determination field' that restores the whole pattern from incomplete material.",
+    "summary": "Weiss showed that even a partial limb cross-section regenerates an entire limb, so the regenerate's pattern cannot be a simple copy of the stump's tissues. The result became a classic demonstration of regulative field behaviour, feeding directly into Bryant's double-half-limb experiments and the polar-coordinate model of limb pattern."
+  }
+}

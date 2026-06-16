@@ -105,17 +105,18 @@ def gen_catalog():
   <input id="q" type="search" placeholder="Search author, title, organism…">
   <select id="layer"><option value="">Any legacy layer</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
   <select id="phen"><option value="">Any phenomenon</option></select>
+  <select id="method"><option value="">Any method</option></select>
   <label class="chk"><input type="checkbox" id="tonly"> Translated only</label>
   <label class="chk"><input type="checkbox" id="ronly"> Rediscovery targets</label>
-  <select id="sort"><option value="year">Sort: year ↑</option><option value="-year">year ↓</option><option value="-cit">most cited</option><option value="author">author</option></select>
+  <select id="sort"><option value="year">Sort: year ↑</option><option value="-year">year ↓</option><option value="-cit">most cited</option><option value="author">author</option><option value="method">method</option></select>
 </div>
 <p id="count" class="muted"></p>
 <div class="tablewrap"><table id="cat"><thead><tr>
-<th>Year</th><th>Author</th><th>Title</th><th>Organism</th><th>Legacy</th><th class="num">Cited</th><th>Read</th>
+<th>Year</th><th>Author</th><th>Title</th><th>Organism</th><th>Method</th><th>Legacy</th><th class="num">Cited</th><th>Read</th>
 </tr></thead><tbody></tbody></table></div>
 """
     page("catalog.html", "Catalog", "Catalog", body,
-         foot='<script src="data/site.js"></script><script src="data/catalog.js"></script><script src="assets/catalog.js"></script>')
+         foot='<script src="data/site.js"></script><script src="data/methodology.js"></script><script src="data/catalog.js"></script><script src="assets/catalog.js"></script>')
 
 # ---------------------------------------------------------------- translations index
 def gen_translations():
@@ -164,7 +165,7 @@ def gen_legacy():
 <div id="list" class="legacy"></div>
 """
     page("legacy.html", "Legacy", "Legacy", body,
-         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="assets/legacy.js"></script>')
+         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="data/methodology.js"></script><script src="assets/legacy.js"></script>')
 
 # ---------------------------------------------------------------- analytics
 def gen_analytics():
@@ -265,6 +266,22 @@ def gen_citations():
     open(os.path.join(DATA, "notes.js"), "w", encoding="utf-8").write(
         "window.NOTES=" + json.dumps(notes, ensure_ascii=False) + ";")
     print("citations.js:", sum(len(v) for v in cits.values()), "works | notes:", len(notes))
+
+def gen_methodology():
+    """Emit per-paper methodology: auto cluster for all 175 + full structured records where written."""
+    auto = json.load(open(os.path.join(ROOT, "legacy_data", "methodology_auto.json"), encoding="utf-8")) if os.path.exists(os.path.join(ROOT, "legacy_data", "methodology_auto.json")) else {}
+    full = json.load(open(os.path.join(ROOT, "legacy_data", "methodology.json"), encoding="utf-8")) if os.path.exists(os.path.join(ROOT, "legacy_data", "methodology.json")) else {}
+    meth = {}
+    for pid, rec in auto.items():
+        meth[pid] = {"cluster": rec.get("cluster", ""), "tags": rec.get("tags", [])}
+    for pid, rec in full.items():
+        meth.setdefault(pid, {})
+        meth[pid]["cluster"] = rec.get("method") or meth[pid].get("cluster", "")
+        meth[pid]["full"] = rec
+    os.makedirs(DATA, exist_ok=True)
+    open(os.path.join(DATA, "methodology.js"), "w", encoding="utf-8").write(
+        "window.METH=" + json.dumps(meth, ensure_ascii=False) + ";")
+    print("methodology.js:", len(meth), "papers |", sum(1 for v in meth.values() if v.get("full")), "full summaries")
 
 # ---------------------------------------------------------------- reading pages
 def render_md(slug):
@@ -445,6 +462,16 @@ table#cat{border-collapse:collapse;width:100%;font-size:14px}
 .litem .cites{margin:8px 0 0;padding-left:18px;font-size:13px}
 .litem .cites li{margin:3px 0}
 .kv{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:#4a463f;margin-top:6px}
+td.meth{font-size:12.5px;color:#4a463f}
+.mfull{color:var(--accent);font-size:9px;vertical-align:middle}
+.methbox{border:1px solid var(--rule);border-radius:10px;background:var(--card);padding:14px 16px;margin:14px 0}
+.methbox h3{margin:0 0 6px;font-size:15px}
+.badge.mcl{background:#ece8f6;border-color:#d2c9ec;color:#4a3f72}
+.mgrid{display:grid;grid-template-columns:130px 1fr;gap:5px 12px;margin:8px 0;font-size:13.5px}
+.mgrid dt{color:var(--muted);font-weight:600}
+.mgrid dd{margin:0;color:#3c3833}
+.mfind{font-size:13.5px;margin:8px 0}
+@media(max-width:600px){.mgrid{grid-template-columns:1fr}.mgrid dt{margin-top:6px}}
 /* charts */
 .charts{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px}
 .chart{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
@@ -522,6 +549,11 @@ ronly=document.getElementById('ronly'),sort=document.getElementById('sort'),
 tb=document.querySelector('#cat tbody'),count=document.getElementById('count');
 var ph={};D.forEach(function(c){(c.phenomena||[]).forEach(function(p){ph[p]=(ph[p]||0)+1})});
 Object.keys(ph).sort().forEach(function(p){var o=document.createElement('option');o.value=p;o.textContent=p+' ('+ph[p]+')';phen.appendChild(o)});
+var method=document.getElementById('method'),METH=window.METH||{};
+var MLAB={"Regeneration & restitution":"Regeneration","Transplantation & grafting":"Transplantation","Endocrine & sex manipulation":"Endocrine/sex","Inheritance & breeding":"Inheritance","Colour change & pigment":"Colour change","Environmental modification":"Environment","Quantitative growth & biometry":"Growth/biometry","Developmental mechanics (egg/embryo)":"Dev. mechanics","Functional physiology & behaviour":"Physiology","Morphology, histology & biochemistry":"Morphology"};
+function mcl(c){var m=METH[c.id];return m?(m.cluster||''):'';}
+var ms={};D.forEach(function(c){var m=mcl(c);if(m)ms[m]=(ms[m]||0)+1;});
+Object.keys(ms).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=(MLAB[k]||k)+' ('+ms[k]+')';method.appendChild(o);});
 function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]})}
 function row(c){
  var read;
@@ -531,13 +563,16 @@ function row(c){
  var rd=c.rediscovery?' <span class="rd">◆ rediscovery</span>':'';
  return '<tr class="crow" data-id="'+c.id+'"><td>'+c.year+'</td><td>'+esc(c.author)+'</td>'+
  '<td><div class="ti">'+esc(c.title)+(c.title_en?'</div><div class="de">'+esc(c.title_en):'')+'</div></td>'+
- '<td><em>'+esc(c.organism)+'</em>'+rd+'</td><td>'+lay+'</td><td class="num">'+(c.citations||0)+'</td><td>'+read+'</td></tr>';
+ '<td><em>'+esc(c.organism)+'</em>'+rd+'</td>'+
+ '<td class="meth">'+esc(MLAB[mcl(c)]||mcl(c)||'—')+((METH[c.id]&&METH[c.id].full)?' <span class="mfull" title="full methodology summary">●</span>':'')+'</td>'+
+ '<td>'+lay+'</td><td class="num">'+(c.citations||0)+'</td><td>'+read+'</td></tr>';
 }
 function apply(){
- var t=(q.value||'').toLowerCase(),L=layer.value,P=phen.value;
+ var t=(q.value||'').toLowerCase(),L=layer.value,P=phen.value,M=method.value;
  var r=D.filter(function(c){
   if(L&&String(c.layer)!==L)return false;
   if(P&&(c.phenomena||[]).indexOf(P)<0)return false;
+  if(M&&mcl(c)!==M)return false;
   if(tonly.checked&&!c.has_translation)return false;
   if(ronly.checked&&!c.rediscovery)return false;
   if(t){var hay=(c.author+' '+c.title+' '+(c.title_en||'')+' '+(c.organism||'')).toLowerCase();if(hay.indexOf(t)<0)return false;}
@@ -548,11 +583,12 @@ function apply(){
   if(s==='-year')return b.year-a.year;
   if(s==='-cit')return (b.citations||0)-(a.citations||0);
   if(s==='author')return a.author.localeCompare(b.author);
+  if(s==='method')return (mcl(a)||'~').localeCompare(mcl(b)||'~')||a.year-b.year;
   return 0;});
  tb.innerHTML=r.map(row).join('');
  count.textContent=r.length+' of '+D.length+' papers';
 }
-[q,layer,phen,sort].forEach(function(e){e.addEventListener('input',apply)});
+[q,layer,phen,method,sort].forEach(function(e){e.addEventListener('input',apply)});
 [tonly,ronly].forEach(function(e){e.addEventListener('change',apply)});
 tb.addEventListener('click',function(e){if(e.target.closest('a'))return;var tr=e.target.closest('tr');if(tr&&tr.dataset.id)location.href='legacy.html?id='+tr.dataset.id;});
 apply();
@@ -575,7 +611,7 @@ function renderPaper(id){
  ['.layers','.filters'].forEach(function(s){var e=main.querySelector(s);if(e)e.style.display='none';});
  var cn=document.getElementById('count');if(cn)cn.style.display='none';
  var lede=main.querySelector('.lede');if(lede)lede.style.display='none';
- var h1=main.querySelector('h1');if(h1)h1.textContent='Legacy of a paper';
+ var h1=main.querySelector('h1');if(h1)h1.textContent='Article dossier';
  if(!c){document.getElementById('list').innerHTML='<p class="muted">Paper not found. <a href="legacy.html">Back to the legacy explorer</a>.</p>';return;}
  document.title=c.author+' '+c.year+' — legacy · Vienna Vivarium';
  var arr=(window.CITATIONS&&window.CITATIONS[id])||[],lg=L[id]||{},NT=window.NOTES||{};
@@ -590,7 +626,18 @@ function renderPaper(id){
   return '<div class="litem"><div class="ti">'+esc(x.et||x.t||'(untitled)')+'</div>'+
    '<div class="sub">'+esc(x.a||'')+' · '+(x.y||'')+(x.s?' · '+esc(x.s):'')+(x.h?' · <span class="badge wip">historiographic</span>':'')+doi+'</div>'+
    (note?'<p style="margin:7px 0 0;font-size:13.5px;line-height:1.6">'+esc(note)+'</p>':'')+'</div>';}
- var out=head;
+ var M=(window.METH&&window.METH[id])||{},F=M.full,methHtml='';
+ if(F){var tg=(F.methods||[]).map(function(t){return '<span class="badge">'+esc(t)+'</span>';}).join(' ');
+  methHtml='<section class="methbox"><h3>Methodology</h3>'+
+   '<p style="margin:.2em 0 8px"><span class="badge mcl">'+esc(F.method||M.cluster||'')+'</span> '+tg+'</p>'+
+   '<dl class="mgrid"><dt>Manipulation</dt><dd>'+esc(F.manipulation||'')+'</dd>'+
+   '<dt>Design</dt><dd>'+esc(F.design||'')+'</dd><dt>Readout</dt><dd>'+esc(F.readout||'')+'</dd>'+
+   '<dt>Quantification</dt><dd>'+esc(F.quantification||'')+'</dd><dt>Scale</dt><dd>'+esc(F.scale||'')+'</dd>'+
+   (F.n?'<dt>Sample</dt><dd>'+esc(F.n)+'</dd>':'')+'</dl>'+
+   (F.finding?'<p class="mfind"><b>Key finding.</b> '+esc(F.finding)+'</p>':'')+
+   (F.summary?'<p style="line-height:1.62">'+esc(F.summary)+'</p>':'')+'</section>';
+ }else if(M.cluster){methHtml='<section class="methbox"><h3>Methodology</h3><p><span class="badge mcl">'+esc(M.cluster)+'</span> <span class="muted">— full methodological summary not yet written for this paper.</span></p></section>';}
+ var out=head+methHtml;
  if(!arr.length){out+='<p class="muted" style="margin-top:14px">No modern citations are recorded for this paper.</p>';}
  else{out+='<h3 style="margin:20px 0 8px">Cited by today — '+sci.length+' scientific work'+(sci.length!=1?'s':'')+'</h3><div class="legacy">'+sci.map(it).join('')+'</div>';
   if(hist.length)out+='<h3 style="margin:20px 0 8px">Historiographic mentions — '+hist.length+'</h3><div class="legacy">'+hist.map(it).join('')+'</div>';}
@@ -824,7 +871,7 @@ def main():
     open(os.path.join(DATA, "site.js"), "w").write("window.SITE=" + json.dumps({"fullPdfs": FULL}) + ";")
     open(os.path.join(SITE, ".nojekyll"), "w").write("")
     gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader()
-    gen_citations(); gen_reading_pages(); copy_assets()
+    gen_citations(); gen_methodology(); gen_reading_pages(); copy_assets()
     print("Generated site at", SITE, "| FULL_PDFS =", FULL)
     print("pages:", sorted(os.path.basename(p) for p in glob.glob(os.path.join(SITE, "*.html"))))
     print("reading pages:", len(glob.glob(os.path.join(SITE, "papers", "*.html"))))
