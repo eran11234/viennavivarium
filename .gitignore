@@ -19,6 +19,7 @@
 **/__pycache__/
 **/.DS_Store
 **/.fuse_hidden*
+legacy_data/_batch_*.json
 **/.~lock.*#
 **/*.pyc
 

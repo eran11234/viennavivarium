@@ -699,11 +699,11 @@ function drawBubbles(c){gThread.selectAll('*').remove();
   .on('mousemove',function(e,d){var p=d3.pointer(e,svg.node());tip.style('opacity',1).style('left',(p[0]+12)+'px').style('top',(p[1]+10)+'px').html('<b>'+esc((d.a||'')+' '+(d.y||''))+'</b><br>'+esc((d.t||'').slice(0,90)));})
   .on('mouseout',function(){tip.style('opacity',0);})
   .on('click',function(e,d){if(e.stopPropagation)e.stopPropagation();showCite(c,d);});
- b.append('circle').attr('r',function(d){return (window.NOTES&&window.NOTES[d.k])?6:5;})
+ b.append('circle').attr('r',function(d){return (window.NOTES&&window.NOTES[c.id+':'+d.k])?6:5;})
   .attr('fill',function(d){return d.h?'#cfc8b8':'#d98c5f';})
-  .attr('stroke',function(d){return (window.NOTES&&window.NOTES[d.k])?'#7a3b2e':'#fffdf9';})
-  .attr('stroke-width',function(d){return (window.NOTES&&window.NOTES[d.k])?1.4:0.7;});}
-function showCite(c,d){var note=(window.NOTES&&window.NOTES[d.k])||'';
+  .attr('stroke',function(d){return (window.NOTES&&window.NOTES[c.id+':'+d.k])?'#7a3b2e':'#fffdf9';})
+  .attr('stroke-width',function(d){return (window.NOTES&&window.NOTES[c.id+':'+d.k])?1.4:0.7;});}
+function showCite(c,d){var note=(window.NOTES&&window.NOTES[c.id+':'+d.k])||'';
  var doi=d.d?('<a target=_blank href="https://doi.org/'+d.d+'">'+esc(d.d)+'</a>'):'';
  var rel=(d.m&&d.m.indexOf('same')>=0)?(' · <span class="badge">'+esc(d.m.replace(/_/g,' '))+'</span>'):'';
  panel.innerHTML='<p class="kicker"><a href="#" id="backp">‹ back to '+esc(c.author+' '+c.year)+'</a></p>'+
@@ -719,7 +719,7 @@ function select(c){selected=c;
  svg.transition().duration(650).call(zoom.transform,d3.zoomIdentity.translate(w/2-c.x*k,H/2-c.y*k).scale(k));
  drawBubbles(c);
  var lg=L[c.id]||{},arr=(window.CITATIONS&&window.CITATIONS[c.id])||[];
- var nnote=arr.filter(function(x){return window.NOTES&&window.NOTES[x.k];}).length;
+ var nnote=arr.filter(function(x){return window.NOTES&&window.NOTES[c.id+':'+x.k];}).length;
  var en=c.has_translation?('<a class="btn" href="papers/'+c.slug+'.html">Read English →</a>'):'';
  panel.innerHTML='<p class="kicker">'+esc(c._t)+' · '+(c.layer?('Layer '+c.layer):'unranked')+'</p>'+
   '<h3>'+esc(c.has_translation&&c.title_en?c.title_en:c.title)+'</h3>'+
