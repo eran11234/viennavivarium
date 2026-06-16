@@ -905,5 +905,454 @@
     "n": "Palaemon prawns",
     "finding": "Characterizes the prawn's colour-change reactions — an early analysis of crustacean chromatophore control.",
     "summary": "Fröhlich's study of colour-change reactions in the prawn Palaemon opened the crustacean side of the BVA's colour-change physiology, charting how the animal's chromatophores respond. The crustacean colour-change system he probed would later be explained by chromatophorotropic hormones."
+  },
+  "115": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Comparative survey",
+      "Heteromorphosis / homeosis analysis"
+    ],
+    "manipulation": "Surveyed and analysed 'homeosis' in arthropods — cases where one body part is replaced by the form of another (e.g., an antenna regenerating as a leg).",
+    "design": "Comparative analysis of homeotic replacements across arthropods, often after regeneration.",
+    "readout": "Which part is replaced by which, and under what conditions.",
+    "quantification": "Qualitative (extensive comparative)",
+    "scale": "Organ / organism",
+    "n": "Comparative across arthropods",
+    "finding": "Homeosis — the substitution of one appendage type for another — is a regular, analysable phenomenon in arthropods, frequently revealed through regeneration.",
+    "summary": "Przibram's study of arthropod homeosis catalogued the striking cases where a regenerate appears as the wrong organ — an antenna as a leg, an eye as an antenna. Taking up Bateson's term, it framed homeosis as a window on the rules of pattern, a theme that runs straight to the modern homeotic-gene literature."
+  },
+  "12": {
+    "method": "Functional physiology & behaviour",
+    "methods": [
+      "Body-temperature measurement",
+      "Ambient-temperature variation"
+    ],
+    "manipulation": "Measured the body temperature of young brown rats and how it is shifted by the temperature of the surrounding world.",
+    "design": "Body temperature recorded across a range of ambient temperatures.",
+    "readout": "Body temperature as a function of external temperature.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Young Mus decumanus (brown rats)",
+    "finding": "Young rats are not yet fully homeothermic — their body temperature tracks the ambient temperature.",
+    "summary": "De Hahn measured how far the body temperature of young rats is at the mercy of their surroundings, showing the neonate's incomplete thermoregulation. The work fits the BVA's interest in how external conditions reach into the organism's physiology."
+  },
+  "37": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Limb transplantation"
+    ],
+    "manipulation": "Transplanted developed (formed) limbs in amphibians and followed their take and development.",
+    "design": "Observation of how grafted adult limbs heal in and develop.",
+    "readout": "Survival, integration and structure of the transplanted limb.",
+    "quantification": "Qualitative",
+    "scale": "Organ (limb)",
+    "n": "Series of limb grafts",
+    "finding": "Developed amphibian limbs can be transplanted and incorporated — the surgical foundation for Weiss's functional and field studies.",
+    "summary": "Weiss's full account of transplanting developed amphibian limbs established the technique on which his later work — the function of transplanted limbs, the resonance principle, the determination field — would all rest. It is the methodological keystone of his BVA programme."
+  },
+  "18": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Polarity-reversal operation",
+      "Transplantation"
+    ],
+    "manipulation": "Reversed the orientation of the newt leg and tested whether its polarity (proximo-distal axis) could be overturned.",
+    "design": "Regeneration / growth from reversed limb segments versus normal.",
+    "readout": "The axis along which the reversed limb regenerates or grows.",
+    "quantification": "Qualitative",
+    "scale": "Organ (limb)",
+    "n": "Series of Triton legs",
+    "finding": "Probes whether limb polarity is fixed or reversible — a direct test of how firmly the proximo-distal axis is determined.",
+    "summary": "Kurz tried to turn the newt's leg against its own axis, reversing segments to see whether the limb's polarity would follow the graft or hold to its origin. The experiment belongs to the BVA's sustained inquiry — culminating in Weiss — into how the limb's axes are fixed."
+  },
+  "131": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Growth-rate measurement",
+      "Amputation"
+    ],
+    "manipulation": "Measured how regeneration affects the growth rate of the water louse Asellus aquaticus.",
+    "design": "Growth rate of regenerating versus intact animals.",
+    "readout": "Growth velocity with and without an ongoing regeneration.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Asellus aquaticus series",
+    "finding": "Regeneration alters (accelerates) the growth rate of the isopod — an empirical case for the regeneration-as-growth link.",
+    "summary": "Zuelzer measured the growth of the water louse to see what an ongoing regeneration does to it, finding that regeneration and growth are coupled. The result is one of the concrete observations behind Przibram's later thesis that regeneration is growth accelerated."
+  },
+  "147": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "Pigment biochemistry",
+      "DOPA / melanin analysis"
+    ],
+    "manipulation": "Investigated the role of DOPA in the cocoons of certain moths and sawflies, locating the chemical sites of melanin formation.",
+    "design": "Biochemical analysis of where and how melanin forms via DOPA.",
+    "readout": "Presence of DOPA and the sites of melanin synthesis in the cocoon.",
+    "quantification": "Qualitative (biochemical)",
+    "scale": "Biochemical / tissue",
+    "n": "Cocoons of moths and sawflies",
+    "finding": "DOPA participates in melanin formation in insect cocoons, and the chemical sites of melanisation can be localized.",
+    "summary": "Przibram traced the chemistry of insect cocoon pigment to DOPA, pinpointing where melanin is made — an advance on the BVA's tyrosinase work toward the now-standard tyrosinase/DOPA melanin pathway. It shows the institute's colour program reaching real biochemical specificity."
+  },
+  "160": {
+    "method": "Inheritance & breeding",
+    "methods": [
+      "Environmental modification",
+      "Multi-generation breeding"
+    ],
+    "manipulation": "Enforced changes of body form by altered conditions, then bred the modified animals to test transmission.",
+    "design": "Offspring of form-modified animals versus controls across generations.",
+    "readout": "Whether the enforced form change reappears in the offspring.",
+    "quantification": "Semi-quantitative",
+    "scale": "Population (cross-generational)",
+    "n": "Breeding series (Alytes and others)",
+    "finding": "Kammerer reported that experimentally enforced changes of form were inherited (a neo-Lamarckian claim, later disputed).",
+    "summary": "The form-change counterpart to Kammerer's colour and reproduction papers: he claimed that body-shape changes forced by the environment pass to the offspring. It belongs to the contested neo-Lamarckian work now revisited in the epigenetics-revival debate."
+  },
+  "161": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Lens removal",
+      "Iris depigmentation observation"
+    ],
+    "manipulation": "Removed the amphibian lens and followed its regeneration from the iris, with attention to the depigmentation of the iris margin (first study of the series).",
+    "design": "Observation of Wolffian lens regeneration and the iris changes that accompany it.",
+    "readout": "Regrowth of a new lens from the dorsal iris and the iris's depigmentation.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Series of lens operations",
+    "finding": "The amphibian regenerates a new lens from the depigmenting dorsal iris — the classic case of Wolffian lens regeneration, here with critical remarks on stimulus physiology.",
+    "summary": "Uhlenhuth opened his lens-regeneration series on the textbook case of Wolffian regeneration: a removed lens is rebuilt from the iris, whose cells lose their pigment as they convert. His critical 'remarks on the value of stimulus physiology' show the BVA arguing over how such regeneration should be explained."
+  },
+  "168": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Lens removal",
+      "Transdifferentiation observation"
+    ],
+    "manipulation": "Continued the study of lens regeneration from the iris in amphibians.",
+    "design": "Observation of the course and conditions of lens regeneration.",
+    "readout": "Formation of a new lens from iris tissue.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Series of lens operations",
+    "finding": "Extends the analysis of how the iris regenerates a lens — the conditions and tissue conversion involved in Wolffian regeneration.",
+    "summary": "The continuation of Uhlenhuth's lens-regeneration studies pressed further into how the iris remakes a lens, a model of cell-type conversion (transdifferentiation) that remains a touchstone in regeneration biology."
+  },
+  "50": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Excision",
+      "Regeneration observation"
+    ],
+    "manipulation": "Removed the jaw of the lizard Lacerta agilis and followed its regeneration.",
+    "design": "Observation of jaw regeneration after excision.",
+    "readout": "Extent and structure of the regenerated jaw.",
+    "quantification": "Qualitative",
+    "scale": "Organ (jaw)",
+    "n": "Lacerta agilis series",
+    "finding": "The lizard can regenerate jaw structures after their removal — extending reptilian regeneration beyond the familiar tail.",
+    "summary": "Werber showed the lizard regenerating its jaw, widening the known reach of reptilian regeneration. A rediscovery target, it pairs with the BVA's other Lacerta work and with Werber's beetle-regeneration studies."
+  },
+  "62": {
+    "method": "Functional physiology & behaviour",
+    "methods": [
+      "Movement tracking",
+      "Statistical / physical analysis"
+    ],
+    "manipulation": "Analysed the 'disordered' (random) movement of lower animals as a statistical, physics-like process (second communication).",
+    "design": "Quantitative analysis of movement paths against a random-motion model.",
+    "readout": "The statistics of the animals' trajectories.",
+    "quantification": "Quantitative",
+    "scale": "Organism (behaviour)",
+    "n": "Populations of lower animals",
+    "finding": "The movement of lower organisms can be described as a disordered, quasi-random process — a physics of behaviour.",
+    "summary": "Karl Przibram, the physicist of the Przibram brothers, treated the wandering of small animals as a random-walk problem, bringing the mathematics of disordered motion to biology. It is a striking instance of the BVA's physico-chemical, quantitative ethos applied to behaviour."
+  },
+  "82": {
+    "method": "Developmental mechanics (egg/embryo)",
+    "methods": [
+      "Axis / potency modelling",
+      "Engagement with Harrison's grafts"
+    ],
+    "manipulation": "Analysed the axis-relations and developmental potencies of urodele limbs using models built to interpret Harrison's transplantation experiments.",
+    "design": "Model-based analysis of how the limb's axes and potencies are arranged.",
+    "readout": "The arrangement of limb axes and the potencies along them.",
+    "quantification": "Qualitative / geometric",
+    "scale": "Organ (limb)",
+    "n": "Model analysis",
+    "finding": "Frames how the urodele limb's three axes and developmental potencies are organized, interpreting Harrison's grafting results.",
+    "summary": "Przibram engaged Ross Harrison's celebrated limb-transplantation work with explicit models of the limb's axes and potencies, asking how the three axes of the limb are laid down. The paper places the BVA in direct dialogue with the American school of experimental embryology."
+  },
+  "83": {
+    "method": "Environmental modification",
+    "methods": [
+      "Programmatic review",
+      "Experimental morphology"
+    ],
+    "manipulation": "Argued, in the light of experimental morphology, that external living conditions act as a cause of organic variation.",
+    "design": "Synthetic / programmatic statement drawing the experimental evidence together.",
+    "readout": "The link between external conditions and organic variation.",
+    "quantification": "Qualitative",
+    "scale": "Organism / programme",
+    "n": "Synthesis",
+    "finding": "External living conditions are presented as a driver of organic variation — the theoretical core of Kammerer's environmental programme.",
+    "summary": "This is Kammerer's manifesto: external conditions, he argued, are not a backdrop but a cause of the organism's variation, and experimental morphology is the way to prove it. It states the rationale behind his inheritance experiments and the BVA's environment-shapes-the-organism stance."
+  },
+  "84": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Potency mapping",
+      "Dorso-ventral comparison"
+    ],
+    "manipulation": "Mapped how form-building (regenerative) capacity is distributed along the dorso-ventral axis of the animal body.",
+    "design": "Comparison of form-building capacity at dorsal versus ventral sites.",
+    "readout": "Regenerative / form-building capacity as a function of dorso-ventral position.",
+    "quantification": "Qualitative",
+    "scale": "Organism / organ",
+    "n": "Comparative",
+    "finding": "Form-building capacity is unevenly distributed along the dorso-ventral axis — morphogenetic potency is regionally graded.",
+    "summary": "Przibram charted where in the body the power to rebuild form is concentrated, finding a dorso-ventral gradient of morphogenetic capacity. It is a piece of the BVA's broader effort to map the body's restitution potencies — the same field-thinking Weiss would later formalize."
+  },
+  "94": {
+    "method": "Environmental modification",
+    "methods": [
+      "Thermal / environmental analysis",
+      "Germ-line assessment"
+    ],
+    "manipulation": "Argued that the environment reaches and can modify the germ-plasm (the original 1912 statement).",
+    "design": "Theoretical-experimental analysis of environmental influence on the germ-plasm.",
+    "readout": "Whether the surroundings can affect the hereditary substance.",
+    "quantification": "Qualitative",
+    "scale": "Organism / germ-line",
+    "n": "Synthesis",
+    "finding": "Holds that the germ-plasm is open to its environment — a channel for environmental effects on heredity.",
+    "summary": "This 1912 'Umwelt des Keimplasmas' is Przibram's original case that the hereditary substance is not sealed off from the world — later reissued (1917) and echoed in Congdon's English 'surroundings of the germ plasm'. It is the conceptual scaffold for the BVA's Lamarckian-leaning inheritance work."
+  },
+  "97": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Background / light modification",
+      "Skin transplantation"
+    ],
+    "manipulation": "Ran further colour-change experiments on the stone loach and transplanted skin between regions/animals to test how colour control is organized.",
+    "design": "Colour-change series combined with skin grafts (local versus systemic control).",
+    "readout": "Colour change of grafted versus host skin.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument / chromatophores)",
+    "n": "Stone loach (Nemachilus barbatula)",
+    "finding": "Skin grafts plus colour-change tests probe whether the fish's colour response is local to the skin or imposed by the whole animal.",
+    "summary": "Secerov followed his first loach paper by adding skin transplantation to the colour-change experiment, asking whether a piece of skin keeps its own colour rule or obeys its new host. It sharpened the question of local versus systemic control that runs through the BVA's colour physiology."
+  },
+  "128": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Claw removal",
+      "Asymmetry / reversal analysis"
+    ],
+    "manipulation": "Studied 'claw reversal' in decapod crustaceans — how the large and small claws swap roles after loss (fourth communication of his regeneration studies).",
+    "design": "Regeneration of the paired claws after removal, tracking which becomes large.",
+    "readout": "Which claw regenerates as the large versus the small form.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organ (claw)",
+    "n": "Decapod crustaceans",
+    "finding": "After losing the large claw, the remaining small claw can take over as the large one and the regenerate becomes the small — the asymmetry reverses.",
+    "summary": "The fourth of Przibram's regeneration studies dissected 'claw reversal': remove a lobster's big claw and the small one enlarges while the regenerate stays small. With his heterochely paper it made the crustacean claw a model for how paired structures negotiate their asymmetry."
+  },
+  "171": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Background modification",
+      "Pigment biochemistry"
+    ],
+    "manipulation": "Related the background-cued colour of cabbage-white pupae to the chemistry of their pigments (sixth part: 'chemism of colour adaptation').",
+    "design": "Correlation of environmentally induced pupal colour with pigment chemistry.",
+    "readout": "Pupal colour and the chemical nature of its pigments.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Pieris brassicae pupae",
+    "finding": "Locates the 'chemism' — the pigment chemistry — behind the pupa's environmentally cued colour adaptation.",
+    "summary": "The sixth part of Brecher's Pieris series turned from describing pupal colour adaptation to its chemistry, tying the background-cued colour to the pigments that make it. It anchors the pupal-colour-plasticity and melanisation literature that still cites the series by name."
+  },
+  "17": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Light / background modification",
+      "Observation"
+    ],
+    "manipulation": "Reared the pupae of Vanessid butterflies under different light and recorded their colour (companion communication).",
+    "design": "Light and background treatment series across Vanessid species.",
+    "readout": "Pupal colour versus light and background.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Vanessa io, V. urticae, Pyrameis cardui, P. atalanta pupae",
+    "finding": "Vanessid pupae match their colour to light and background, as the cabbage white does.",
+    "summary": "A companion to her other Vanessid communication, this Brecher paper documents environmentally cued pupal colour across the peacock, tortoiseshell and painted-lady, showing the adaptation is general among butterflies and not peculiar to Pieris."
+  },
+  "22": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Melanin quantification",
+      "Comparative across fishes"
+    ],
+    "manipulation": "Measured the change in the amount of melanin during the colour change of several fishes (Esox, Carassius, Phoxinus, Gobius, Nemachilus).",
+    "design": "Comparison of melanin quantity between pale and dark states across species.",
+    "readout": "Amount of melanin as the fish changes colour.",
+    "quantification": "Quantitative",
+    "scale": "Organism (integument)",
+    "n": "Five fish genera",
+    "finding": "The quantity of melanin itself changes during colour change — not only its distribution within chromatophores.",
+    "summary": "Kudo asked whether fish colour change is only the spreading and clumping of pigment or also a change in how much melanin there is, and measured the pigment across species to find out. A rediscovery target, it pushed the BVA's colour-change work toward quantitative pigment chemistry."
+  },
+  "71": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Lateral wounding",
+      "Regeneration observation"
+    ],
+    "manipulation": "Induced and followed the lateral (side) regeneration of the urodele limb.",
+    "design": "Regeneration from lateral surfaces of the limb versus from a clean amputation.",
+    "readout": "What regenerates from a lateral wound on the limb.",
+    "quantification": "Qualitative",
+    "scale": "Organ (limb)",
+    "n": "Series of urodele limbs",
+    "finding": "The urodele limb can regenerate from its lateral surfaces, revealing the spatial reach of its regenerative field.",
+    "summary": "Weiss probed how far around the limb the capacity to regenerate extends, eliciting growth from lateral wounds rather than the cut tip. The result fed his analysis of the limb's determination field — where, and in what orientation, the limb can rebuild itself."
+  },
+  "91": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Excision",
+      "Regeneration of reproductive organs"
+    ],
+    "manipulation": "Removed the reproductive organs of the earthworm Criodrilus lacuum and followed their regeneration (first communication).",
+    "design": "Observation of how the genital apparatus is rebuilt after removal.",
+    "readout": "Regeneration of the reproductive organs.",
+    "quantification": "Qualitative",
+    "scale": "Organ system (reproductive)",
+    "n": "Criodrilus lacuum series",
+    "finding": "The earthworm regenerates its reproductive organs — an unusually demanding restitution of a whole organ system.",
+    "summary": "Janda showed the annelid Criodrilus rebuilding its sex organs after their removal, an exacting case of organ-system regeneration. It extends the BVA's regeneration programme from limbs and appendages to the reproductive apparatus of a worm."
+  },
+  "100": {
+    "method": "Inheritance & breeding",
+    "methods": [
+      "Interspecies hybridization",
+      "Hybrid characterization"
+    ],
+    "manipulation": "Crossed the perch (Perca fluviatilis) with the ruffe (Acerina cernua) and examined the hybrids.",
+    "design": "Interspecies cross with description of the resulting hybrids.",
+    "readout": "Viability and characters of the perch x ruffe hybrids.",
+    "quantification": "Qualitative",
+    "scale": "Organism / population",
+    "n": "Hybrid broods",
+    "finding": "Perch and ruffe can be hybridized, and the hybrids show an intermediate or distinctive character set.",
+    "summary": "Kammerer crossed two percid fishes to make perch x ruffe hybrids, testing the limits of interspecies crossing and the inheritance of characters across a species boundary. It is the hybridization wing of the BVA's inheritance programme."
+  },
+  "117": {
+    "method": "Functional physiology & behaviour",
+    "methods": [
+      "Osmotic / salinity exposure",
+      "Contractile-vacuole observation"
+    ],
+    "manipulation": "Exposed protozoa to seawater and recorded the effect on the pulsation of the contractile (pulsating) vacuole.",
+    "design": "Contractile-vacuole activity in seawater versus fresh water.",
+    "readout": "Rate or persistence of vacuole pulsation under raised salinity.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (cell)",
+    "n": "Protozoan series",
+    "finding": "Seawater slows or stops the contractile vacuole — the organelle's pulsation tracks the osmotic load, evidence of its osmoregulatory role.",
+    "summary": "Zuelzer used seawater to challenge the protozoan contractile vacuole, showing its pulsation depends on the osmotic environment. The experiment is an early, clean demonstration of the contractile vacuole as an osmoregulatory organ."
+  },
+  "51": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Excision",
+      "Regeneration of sense organs"
+    ],
+    "manipulation": "Removed the antenna and the eye of the mealworm beetle (Tenebrio molitor) and followed their regeneration.",
+    "design": "Observation of antenna and eye regeneration after excision.",
+    "readout": "Extent and structure of the regenerated antenna and eye.",
+    "quantification": "Qualitative",
+    "scale": "Organ (sense organs)",
+    "n": "Tenebrio molitor series",
+    "finding": "The mealworm beetle regenerates excised sense organs — antenna and eye — within its moulting cycle.",
+    "summary": "Werber removed the beetle's antenna and eye to test how far insect sense organs regenerate, finding real restitution in Tenebrio. With his other beetle papers it built the BVA's case that holometabolous insects, too, retain regenerative power."
+  },
+  "65": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Claw observation",
+      "Transitory-form analysis"
+    ],
+    "manipulation": "Documented the transitory claw forms that the fiddler crab Gelasimus pugnax passes through (during regeneration / growth of the great claw).",
+    "design": "Tracking the succession of intermediate claw forms.",
+    "readout": "The sequence of transitory shapes the regenerating/growing claw assumes.",
+    "quantification": "Qualitative",
+    "scale": "Organ (claw)",
+    "n": "Gelasimus pugnax",
+    "finding": "The fiddler crab's great claw passes through characteristic transitory forms — a developmental sequence visible in regeneration.",
+    "summary": "Przibram followed the fiddler crab's oversized claw through the intermediate shapes it takes on, reading the succession as a record of how the structure is built. It is a further chapter in his long crustacean-claw analysis of regeneration and asymmetry."
+  },
+  "129": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Excision",
+      "Wing regeneration"
+    ],
+    "manipulation": "Removed the wings of the mealworm beetle (Tenebrio molitor) and followed their regeneration.",
+    "design": "Observation of wing regeneration after excision.",
+    "readout": "Extent and structure of the regenerated wings.",
+    "quantification": "Qualitative",
+    "scale": "Organ (wings)",
+    "n": "Tenebrio molitor series",
+    "finding": "The beetle can regenerate excised wings — a notable case of appendage regeneration in a holometabolous insect.",
+    "summary": "Werber tested whether the mealworm beetle could rebuild removed wings, and reported regeneration. A rediscovery target, it sits with his antenna/eye and Lacerta papers in the BVA's comparative survey of who can regenerate what."
+  },
+  "132": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Excision",
+      "Regeneration of reproductive organs"
+    ],
+    "manipulation": "Followed the regeneration of the reproductive organs in the earthworm Criodrilus lacuum (companion communication).",
+    "design": "Observation of how the genital apparatus is rebuilt after removal.",
+    "readout": "Regeneration of the reproductive organs.",
+    "quantification": "Qualitative",
+    "scale": "Organ system (reproductive)",
+    "n": "Criodrilus lacuum series",
+    "finding": "Confirms and details the earthworm's capacity to regenerate its reproductive organs.",
+    "summary": "A companion to his first Criodrilus paper, Janda further documented the annelid's regeneration of its sex organs — extending the BVA's regeneration programme to the reproductive system of a worm."
+  },
+  "150": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Testis autotransplantation",
+      "Spermatogenesis assessment"
+    ],
+    "manipulation": "Autotransplanted the urodele testis and checked whether spermatogenesis is maintained in the graft.",
+    "design": "Spermatogenesis in the autografted testis versus normal.",
+    "readout": "Whether sperm production continues in the transplanted testis.",
+    "quantification": "Qualitative (histological)",
+    "scale": "Organ (testis)",
+    "n": "Series of testis autografts",
+    "finding": "Spermatogenesis persists in the autoplastically transplanted testis — the organ retains its germinal function when moved.",
+    "summary": "Koppanyi showed that a urodele testis grafted back into the same animal keeps making sperm, demonstrating the organ's autonomy under transplantation. It joins the BVA's gonad-transplantation line (Steinach, Koppanyi's eye work) bearing on how far an organ governs its own function."
+  },
+  "154": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Heteromorphosis analysis"
+    ],
+    "manipulation": "Examined cases in which raptorial (grasping) legs appear as regenerates in the mantis — a heteromorphic regeneration.",
+    "design": "Analysis of when a regenerate takes the form of a raptorial leg.",
+    "readout": "The identity of the regenerated appendage (raptorial leg vs other).",
+    "quantification": "Qualitative",
+    "scale": "Organ (appendage)",
+    "n": "Mantis series",
+    "finding": "Raptorial legs can be produced as regenerates, a homeotic/heteromorphic outcome of regeneration in the mantis.",
+    "summary": "Przibram's 'raptorial legs as regenerates' documents the mantis regenerating a grasping foreleg where another part stood — a homeotic substitution. It ties his mantis programme to his work on homeosis and the rules that govern what a regenerate becomes."
   }
 }
