@@ -261,12 +261,16 @@ def gen_citations():
             arr.sort(key=lambda x: (x["h"], -(x["y"] or 0)))
             cits[pid] = arr
     notes = json.load(open(notes_path, encoding="utf-8")) if os.path.exists(notes_path) else {}
+    ver_path = os.path.join(ROOT, "legacy_data", "citation_verified.json")
+    verified = json.load(open(ver_path, encoding="utf-8")) if os.path.exists(ver_path) else []
+    ver_map = {k: 1 for k in verified}
     os.makedirs(DATA, exist_ok=True)
     open(os.path.join(DATA, "citations.js"), "w", encoding="utf-8").write(
         "window.CITATIONS=" + json.dumps(cits, ensure_ascii=False) + ";")
     open(os.path.join(DATA, "notes.js"), "w", encoding="utf-8").write(
-        "window.NOTES=" + json.dumps(notes, ensure_ascii=False) + ";")
-    print("citations.js:", sum(len(v) for v in cits.values()), "works | notes:", len(notes))
+        "window.NOTES=" + json.dumps(notes, ensure_ascii=False) + ";\n"
+        "window.VERIFIED=" + json.dumps(ver_map, ensure_ascii=False) + ";")
+    print("citations.js:", sum(len(v) for v in cits.values()), "works | notes:", len(notes), "| verified:", len(verified))
 
 def gen_methodology():
     """Emit per-paper methodology: auto cluster for all 175 + full structured records where written."""
@@ -624,8 +628,9 @@ function renderPaper(id){
   '<p class="sub" style="font-size:14px;color:#4a463f">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+(c.layer?' · <span class="badge l'+c.layer+'">Layer '+c.layer+'</span>':'')+(c.rediscovery?' <span class="badge redis">rediscovery target</span>':'')+'</p>'+
   '<div class="actionbar" style="margin:12px 0"><a class="btn primary" href="reader.html?id='+id+'">Read original (PDF)</a>'+en+(c.doi?'<a class="btn" target="_blank" href="https://doi.org/'+c.doi+'">DOI ↗</a>':'')+'</div>';
  function it(x){var note=NT[id+':'+x.k]||'';var doi=x.d?(' · <a target="_blank" href="https://doi.org/'+x.d+'">doi</a>'):'';
+  var vr=(window.VERIFIED&&window.VERIFIED[id+':'+x.k])?' <span title="Written from the citing work\'s full text, read via the publisher or an open archive" style="background:#1d6e56;color:#fff;border-radius:4px;padding:1px 6px;font-size:10px;font-weight:600;white-space:nowrap">✓ verified from source</span>':'';
   return '<div class="litem"><div class="ti">'+esc(x.et||x.t||'(untitled)')+'</div>'+
-   '<div class="sub">'+esc(x.a||'')+' · '+(x.y||'')+(x.s?' · '+esc(x.s):'')+(x.h?' · <span class="badge wip">historiographic</span>':'')+doi+'</div>'+
+   '<div class="sub">'+esc(x.a||'')+' · '+(x.y||'')+(x.s?' · '+esc(x.s):'')+(x.h?' · <span class="badge wip">historiographic</span>':'')+doi+vr+'</div>'+
    (note?'<p style="margin:7px 0 0;font-size:13.5px;line-height:1.6">'+esc(note)+'</p>':'')+'</div>';}
  var M=(window.METH&&window.METH[id])||{},F=M.full,methHtml='';
  if(F){var tg=(F.methods||[]).map(function(t){return '<span class="badge">'+esc(t)+'</span>';}).join(' ');
@@ -843,6 +848,7 @@ function drawBubbles(c){gThread.selectAll('*').remove();
  bubbleSel=b;}
 function citeCard(c,d,i){var note=(window.NOTES&&window.NOTES[c.id+':'+d.k])||'';
  var badge=d.h?'<span class="badge wip">historiographic</span>':'<span class="badge sci">scientific</span>';
+ var vr=(window.VERIFIED&&window.VERIFIED[c.id+':'+d.k])?' <span title="Written from the full text" style="background:#1d6e56;color:#fff;border-radius:4px;padding:0 5px;font-size:9.5px;font-weight:600">✓ verified</span>':'';badge+=vr;
  var rel=(d.m&&d.m.indexOf('same')>=0)?(' <span class="badge">'+esc(d.m.replace(/_/g,' '))+'</span>'):'';
  var de=(d.et&&d.t&&d.et!==d.t)?'<div class="cc-de">'+esc(d.t)+'</div>':'';
  var body=note?'<div class="cc-note">'+esc(note)+'</div>':'<div class="cc-pending">How it cites the original — paragraph still to be written.</div>';
