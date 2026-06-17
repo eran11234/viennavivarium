@@ -142,6 +142,7 @@ def gen_legacy():
     body = """
 <h1>Legacy explorer</h1>
 <p class="lede">For each paper: who cites it in modern science, and whether its organism is still actively studied. <strong>Rediscovery targets</strong> are papers whose organism is alive in today's literature but whose original BVA work goes uncited — candidates for renewed attention.</p>
+<p class="muted" style="font-size:13px;line-height:1.55;border-left:3px solid var(--rule);padding:2px 0 2px 12px;margin:0 0 14px">The short note beside each citing work describes the <em>likely</em> reason it cites the BVA original, reconstructed from that work's title, topic and (where available) abstract — not from the citing sentence itself, which is seldom digitised for this 1900–1940 literature. Read the notes as orientation; follow each DOI for the primary source.</p>
 
 <section class="layers">
   <h2>What the four legacy layers mean</h2>
@@ -638,8 +639,9 @@ function renderPaper(id){
    (F.summary?'<p style="line-height:1.62">'+esc(F.summary)+'</p>':'')+'</section>';
  }else if(M.cluster){methHtml='<section class="methbox"><h3>Methodology</h3><p><span class="badge mcl">'+esc(M.cluster)+'</span> <span class="muted">— full methodological summary not yet written for this paper.</span></p></section>';}
  var out=head+methHtml;
+ var disc='<p class="muted" style="font-size:12px;line-height:1.5;margin:18px 0 0;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:#fbf9f3"><b>How to read these notes.</b> Each line below describes the most likely reason a work cites this paper, reconstructed from the citing work\'s title, topic and (where available) abstract — <em>not</em> from the citing passage itself, which is rarely digitised for this century-old literature. They are a guide to the citation\'s likely sense, not a verified quotation; the linked DOI is the primary source.</p>';
  if(!arr.length){out+='<p class="muted" style="margin-top:14px">No modern citations are recorded for this paper.</p>';}
- else{out+='<h3 style="margin:20px 0 8px">Cited by today — '+sci.length+' scientific work'+(sci.length!=1?'s':'')+'</h3><div class="legacy">'+sci.map(it).join('')+'</div>';
+ else{out+=disc+'<h3 style="margin:20px 0 8px">Cited by today — '+sci.length+' scientific work'+(sci.length!=1?'s':'')+'</h3><div class="legacy">'+sci.map(it).join('')+'</div>';
   if(hist.length)out+='<h3 style="margin:20px 0 8px">Historiographic mentions — '+hist.length+'</h3><div class="legacy">'+hist.map(it).join('')+'</div>';}
  document.getElementById('list').innerHTML=out;
 }
@@ -866,7 +868,7 @@ function select(c){selected=c;
   '<p class="pmeta">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+'</p>'+
   '<p class="pmeta"><b>'+(c.citations||0)+'</b> modern citations · <b>'+(lg.n_parallels||0)+'</b> parallels'+(c.rediscovery?' · <span class="badge redis">rediscovery</span>':'')+'</p>'+
   '<div class="actionbar" style="margin:10px 0"><a class="btn primary" href="reader.html?id='+c.id+'">Read original</a>'+en+'</div>';
- var listhdr=arr.length?('<p class="pmeta cclbl"><b>'+arr.length+'</b> works cite this paper'+(nnote?' · <b>'+nnote+'</b> annotated':'')+' — hover a card to find it on the map</p>'):'<p class="muted" style="margin-top:6px">No modern citations recorded for this paper.</p>';
+ var listhdr=arr.length?('<p class="pmeta cclbl"><b>'+arr.length+'</b> works cite this paper'+(nnote?' · <b>'+nnote+'</b> annotated':'')+' — hover a card to find it on the map. <span class="muted" title="Each note is reconstructed from the citing work\'s title, topic and (where available) abstract, not from the citing passage itself.">How notes are written ⓘ</span></p>'):'<p class="muted" style="margin-top:6px">No modern citations recorded for this paper.</p>';
  panel.innerHTML=head+listhdr+(arr.length?('<div class="cclist">'+ord.map(function(o){return citeCard(c,o.d,o.i);}).join('')+'</div>'):'');
  var bp=document.getElementById('backp');if(bp)bp.addEventListener('click',function(e){e.preventDefault();deselect();});
  var lst=panel.querySelector('.cclist');
