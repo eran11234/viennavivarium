@@ -178,6 +178,16 @@ TRANS_PDF = {
  "36_Przibram_1919_Regeneration-as-growth": "1919_Przibram_Tierische-Regeneration-als-Wachstumsbeschleunigung.pdf",
  "37_Weiss_1927_Skin-origin-regenerate": "1927_Weiss_Die-Herkunft-der-Haut-im-Extremitatenregenerat.pdf",
  "38_PrzibramDembowski_1919_Tyrosinase-conservation": "1919_PrzibramDembowski_Konservierung-der-Tyrosinase-durch-Luftabschluß.pdf",
+ "39_Kammerer_1912_Proteus-experiments": "1912_Kammerer_Experimente-uber-Fortpflanzung-Farbe-Augen-und-Korperreduction-bei-Pro.pdf",
+ "40_Kammerer_1906_Midwife-toad-reproduction": "1906_Kammerer_Experimentelle-Veranderung-der-Fortpflanzungstatigkeit-bei-Geburtshelf.pdf",
+ "41_Przibram_1910_Homoeosis-arthropods": "1910_Przibram_Die-Homoeosis-bei-Arthropoden.pdf",
+ "42_Kornfeld_1914_Gill-resorption-metamorphosis": "1914_Kornfeld_Abhangigkeit-der-metamorphotischen-Kiemenruckbildung-vom-Gesamtorganis.pdf",
+ "43_Brecher_1924_Pieris-pupal-colours": "1924_Brecher_Die-Puppenfarbungen-des-Kohlweißlings-Pieris-brassicae-L.pdf",
+ "44_Mayerhofer_1909_Pike-colour-change": "1909_Mayerhofer_Farbwechselversuche-am-Hechte-Esox-lucius-L.pdf",
+ "45_Przibram_1917_Germ-plasm-environment": "1917_Przibram_Die-Umwelt-des-Keimplasmas.pdf",
+ "46_Przibram_1907_Bristletail-regeneration": "1907_Przibram_Regenerationsversuche-allgemeinerer-Bedeutung-bei-Borstenschwanzen-Lep.pdf",
+ "47_Weindl_1907_Pigment-formation-tyrosinase": "1907_Weindl_Pigmententstehung-auf-Grund-vorgebildeter-Tyrosinasen.pdf",
+ "48_Frohlich_1910_Palaemon-colour-change": "1910_Frohlich_Farbwechselreaktionen-bei-Palaemon.pdf",
 }
 # authoritative German titles for translated papers (corpus titles can be mismatched)
 TRANS_DE = {
@@ -222,6 +232,16 @@ TRANS_EN = {
  "36_Przibram_1919_Regeneration-as-growth": "Animal Regeneration as Growth-Acceleration",
  "37_Weiss_1927_Skin-origin-regenerate": "The Origin of the Skin in the Limb Regenerate",
  "38_PrzibramDembowski_1919_Tyrosinase-conservation": "Conservation of Tyrosinase by Exclusion of Air",
+ "39_Kammerer_1912_Proteus-experiments": "Experiments on Reproduction, Colour, Eyes and Body-Reduction in Proteus anguinus Laur.",
+ "40_Kammerer_1906_Midwife-toad-reproduction": "Experimental Alteration of the Reproductive Activity in the Midwife Toad (Alytes obstetricans) and Tree Frog (Hyla arborea)",
+ "41_Przibram_1910_Homoeosis-arthropods": "Homoeosis in Arthropods",
+ "42_Kornfeld_1914_Gill-resorption-metamorphosis": "Dependence of the Metamorphic Gill-Resorption on the Whole Organism in Salamandra maculosa",
+ "43_Brecher_1924_Pieris-pupal-colours": "The Pupal Colourations of the Cabbage White, Pieris brassicae L. (1924)",
+ "44_Mayerhofer_1909_Pike-colour-change": "Colour-Change Experiments on the Pike (Esox lucius L.)",
+ "45_Przibram_1917_Germ-plasm-environment": "The Environment of the Germ-Plasm",
+ "46_Przibram_1907_Bristletail-regeneration": "Regeneration Experiments of More General Significance in Bristletails (Lepismatidae)",
+ "47_Weindl_1907_Pigment-formation-tyrosinase": "Pigment Formation on the Basis of Pre-formed Tyrosinases",
+ "48_Frohlich_1910_Palaemon-colour-change": "Colour-Change Reactions in Palaemon",
 }
 # slug -> (year, surname-ish) for catalog matching
 TRANS_KEY = {
@@ -262,6 +282,16 @@ TRANS_KEY = {
  "36_Przibram_1919_Regeneration-as-growth": (1919, "przibram", "tierische regeneration wachstumsbeschleunigung"),
  "37_Weiss_1927_Skin-origin-regenerate": (1927, "weiss", "herkunft haut extremitatenregenerat"),
  "38_PrzibramDembowski_1919_Tyrosinase-conservation": (1919, "przibram", "konservierung tyrosinase luftabschluss"),
+ "39_Kammerer_1912_Proteus-experiments": (1912, "kammerer", "experimente fortpflanzung farbe augen korperreduction proteus anguinus"),
+ "40_Kammerer_1906_Midwife-toad-reproduction": (1906, "kammerer", "experimentelle veranderung fortpflanzungstatigkeit geburtshelferkrote alytes laubfrosch hyla"),
+ "41_Przibram_1910_Homoeosis-arthropods": (1910, "przibram", "homoeosis arthropoden"),
+ "42_Kornfeld_1914_Gill-resorption-metamorphosis": (1914, "kornfeld", "abhangigkeit metamorphotischen kiemenruckbildung gesamtorganismus salamandra maculosa"),
+ "43_Brecher_1924_Pieris-pupal-colours": (1924, "brecher", "puppenfarbungen kohlweisslings pieris brassicae"),
+ "44_Mayerhofer_1909_Pike-colour-change": (1909, "mayerhofer", "farbwechselversuche hechte esox lucius"),
+ "45_Przibram_1917_Germ-plasm-environment": (1917, "przibram", "umwelt keimplasmas"),
+ "46_Przibram_1907_Bristletail-regeneration": (1907, "przibram", "regenerationsversuche allgemeinerer bedeutung borstenschwanzen lepismatidae"),
+ "47_Weindl_1907_Pigment-formation-tyrosinase": (1907, "weindl", "pigmententstehung grund vorgebildeter tyrosinasen"),
+ "48_Frohlich_1910_Palaemon-colour-change": (1910, "frohlich", "farbwechselreaktionen palaemon"),
 }
 
 def load_trans_meta():
