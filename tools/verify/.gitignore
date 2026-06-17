@@ -1,0 +1,6 @@
+contexts.jsonl
+verified_notes.json
+citation_notes_existing.json
+.venv/
+STOP
+__pycache__/

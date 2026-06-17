@@ -36,3 +36,11 @@ translations_full/*.docx
 /vivarium_site/
 /site/
 *.zip
+
+# verification harness (dev tools)
+!tools/
+!tools/verify/
+!tools/verify/*.py
+!tools/verify/*.md
+!tools/verify/*.txt
+!tools/verify/*.json
