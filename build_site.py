@@ -161,6 +161,14 @@ TRANS_PDF = {
  "19_Steinach_1920_Hermaphrodite-glands": "1920_Steinach_Kunstliche-und-naturliche-Zwitterdrusen-und-ihre-analogen-Wirkungen.pdf",
  "20_Uhlenhuth_1912_Amphibian-eye-transplant": "1912_Uhlenhuth_Die-Transplantation-des-Amphibienauges.pdf",
  "21_Kurz_1912_Triton-leg-potencies": "1912_Kurz_Die-beinbildenden-Potenzen-entwickelter-Tritonen.pdf",
+ "22_Przibram_1906_Mantis-rearing": "1906_Przibram_Aufzucht-Farbwechsel-und-Regeneration-einer-agyptischen-Gottesanbeteri.pdf",
+ "23_Winkler_1910_Pigment-formation": "1910_Winkler_Studien-uber-Pigmentbildung.pdf",
+ "24_Steinach_1920_Homosexual-gonad": "1920_Steinach_Histologische-Beschaffenheit-der-Keimdruse-bei-homosexuellen-Mannern.pdf",
+ "25_Kammerer_1905_Amphibian-larva-regeneration": "1905_Kammerer_Uber-die-Abhangigkeit-des-Regenerationsvermogens-der-Amphibienlarven-v.pdf",
+ "26_Weiss_1925_Regeneration-dependence": "1925_Weiss_Abhangigkeit-der-Regeneration-entwickelter-Amphibien-extremitaten-vom.pdf",
+ "27_Przibram_1905_Heterochely": "1905_Przibram_Die-Heterochelie-bei-decapoden-Crustaceen-zugleich-Experimentelle-Stud.pdf",
+ "28_Weiss_1924_Regeneration-transplanted-limbs": "1924_Weiss_Regeneration-an-transplantierten-Extremitaten-entwickelter-Amphibien.pdf",
+ "29_Brecher_1919_Pieris-pupal-colours": "1919_Brecher_Die-Puppenfarbungen-des-Kohlweißlings-Pieris-brassicae-L.pdf",
 }
 # authoritative German titles for translated papers (corpus titles can be mismatched)
 TRANS_DE = {
@@ -183,6 +191,14 @@ TRANS_EN = {
  "19_Steinach_1920_Hermaphrodite-glands": "Artificial and Natural Hermaphrodite Glands and Their Analogous Effects",
  "20_Uhlenhuth_1912_Amphibian-eye-transplant": "The Transplantation of the Amphibian Eye",
  "21_Kurz_1912_Triton-leg-potencies": "The Leg-Forming Potencies of Developed Newts (Triton)",
+ "22_Przibram_1906_Mantis-rearing": "Rearing, Colour Change and Regeneration of an Egyptian Praying Mantis (Sphodromantis bioculata Burm.)",
+ "23_Winkler_1910_Pigment-formation": "Studies on Pigment Formation",
+ "24_Steinach_1920_Homosexual-gonad": "Histological Constitution of the Germ Gland in Homosexual Men",
+ "25_Kammerer_1905_Amphibian-larva-regeneration": "On the Dependence of the Regenerative Capacity of Amphibian Larvae on Age, Developmental Stage and Specific Size",
+ "26_Weiss_1925_Regeneration-dependence": "Dependence of the Regeneration of Developed Amphibian Limbs on the Nervous System",
+ "27_Przibram_1905_Heterochely": "'Heterochely' in Decapod Crustaceans (together with: Experimental Studies on Regeneration. Third Communication)",
+ "28_Weiss_1924_Regeneration-transplanted-limbs": "Regeneration on Transplanted Limbs of Developed Amphibians",
+ "29_Brecher_1919_Pieris-pupal-colours": "The Pupal Colourations of the Cabbage White, Pieris brassicae L. (1919)",
 }
 # slug -> (year, surname-ish) for catalog matching
 TRANS_KEY = {
@@ -207,6 +223,14 @@ TRANS_KEY = {
  "19_Steinach_1920_Hermaphrodite-glands": (1920, "steinach", "kunstliche naturliche zwitterdrusen analogen wirkungen"),
  "20_Uhlenhuth_1912_Amphibian-eye-transplant": (1912, "uhlenhuth", "transplantation amphibienauges"),
  "21_Kurz_1912_Triton-leg-potencies": (1912, "kurz", "beinbildenden potenzen entwickelter tritonen"),
+ "22_Przibram_1906_Mantis-rearing": (1906, "przibram", "aufzucht farbwechsel regeneration agyptischen gottesanbeterin sphodromantis"),
+ "23_Winkler_1910_Pigment-formation": (1910, "winkler", "studien pigmentbildung"),
+ "24_Steinach_1920_Homosexual-gonad": (1920, "steinach", "histologische beschaffenheit keimdruse homosexuellen mannern"),
+ "25_Kammerer_1905_Amphibian-larva-regeneration": (1905, "kammerer", "abhangigkeit regenerationsvermogens amphibienlarven alter entwicklungsstadium spezifischer grosse"),
+ "26_Weiss_1925_Regeneration-dependence": (1925, "weiss", "abhangigkeit regeneration entwickelter amphibien extremitaten nervensystem"),
+ "27_Przibram_1905_Heterochely": (1905, "przibram", "heterochelie decapoden crustaceen regeneration dritte mitteilung"),
+ "28_Weiss_1924_Regeneration-transplanted-limbs": (1924, "weiss", "regeneration transplantierten extremitaten entwickelter amphibien"),
+ "29_Brecher_1919_Pieris-pupal-colours": (1919, "brecher", "puppenfarbungen kohlweisslings pieris brassicae"),
 }
 
 def load_trans_meta():

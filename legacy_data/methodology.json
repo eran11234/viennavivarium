@@ -1802,5 +1802,812 @@
     "n": "Tissue sections and extracts",
     "finding": "Confirms that the DOPA reaction matches between sections and extracts, validating the histochemical test for melanin-forming enzyme.",
     "summary": "A companion to their other DOPA-reaction paper, Brecher and Winkler again cross-checked the in-section and in-extract tests, securing the DOPA reaction as a reliable way to locate where melanin is made — a methodological anchor for the BVA's pigment chemistry."
+  },
+  "1": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Partial limb mutilation",
+      "Regeneration observation"
+    ],
+    "manipulation": "Mutilated the newt leg along its fibular edge and followed the regeneration.",
+    "design": "Regeneration after edge-restricted (partial) limb mutilation.",
+    "readout": "What regenerates from a leg cut back only along one edge.",
+    "quantification": "Qualitative",
+    "scale": "Organ (limb)",
+    "n": "Triton cristatus series",
+    "finding": "The newt regenerates structures after partial fibular-edge mutilation, probing how a partial wound is restored.",
+    "summary": "Abolins followed how the newt rebuilds a leg mutilated only along its fibular edge, one of the late BVA Triton-limb studies that dissected regeneration edge by edge to map the limb's regenerative field."
+  },
+  "2": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Limb insertion / grafting",
+      "Symmetry analysis"
+    ],
+    "manipulation": "Inserted limbs into the urodele body and analysed the regeneration and symmetry of the resulting structures.",
+    "design": "Regeneration and symmetry of limbs placed within the body.",
+    "readout": "The symmetry and completeness of the regenerate.",
+    "quantification": "Qualitative",
+    "scale": "Organ (limb)",
+    "n": "Urodele series",
+    "finding": "The symmetry of a regenerate depends on how the limb is set in the body — bearing on the rules of regenerative symmetry.",
+    "summary": "Burchhardt studied regeneration and symmetry in limbs inserted through the urodele body, part of the institute's running analysis of what fixes the geometry of a regenerate — the symmetry rules Przibram framed as triple-formation."
+  },
+  "6": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Partial limb mutilation",
+      "Heteromorphosis analysis"
+    ],
+    "manipulation": "Mutilated newt legs along the tibial edge or medially, and noted a heteromorphosis of the long bone after excision of the fibular edge.",
+    "design": "Regeneration across different edge-restricted mutilations, with attention to bone heteromorphosis.",
+    "readout": "Regenerated structures and abnormal (heteromorphic) long-bone forms.",
+    "quantification": "Qualitative",
+    "scale": "Organ (limb / bone)",
+    "n": "Triton cristatus series",
+    "finding": "Edge-restricted mutilations regenerate, and excision of the fibular edge can yield a heteromorphic long bone — a patterned abnormality.",
+    "summary": "A jointly authored late-BVA paper extending the Triton edge-mutilation studies, reporting that cutting back specific edges of the leg can produce a heteromorphic long bone. It belongs to the institute's fine-grained mapping of the limb's regenerative field and its failure modes."
+  },
+  "7": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Heteromorphosis analysis"
+    ],
+    "manipulation": "Documented heteromorphoses at the spiracles and other structures of the stick insect Carausius (Dixippus) morosus.",
+    "design": "Survey of heteromorphic regenerates at non-appendage sites.",
+    "readout": "The aberrant structures formed at spiracles and elsewhere.",
+    "quantification": "Qualitative",
+    "scale": "Organ / body site",
+    "n": "Carausius morosus series",
+    "finding": "Heteromorphoses arise even at spiracles and other unexpected sites in the stick insect, widening the catalogue of homeotic regeneration.",
+    "summary": "Staudinger extended BVA heteromorphosis work beyond antennae and legs to the spiracles and other structures of the stick insect, showing how broadly a regenerate can take the wrong form. It enlarges the phenomenology behind Przibram's homeosis program."
+  },
+  "13": {
+    "method": "Environmental modification",
+    "methods": [
+      "Chemical cooling",
+      "Tail-length measurement"
+    ],
+    "manipulation": "Lowered the body temperature of young rats by chemical means and measured the effect on tail length.",
+    "design": "Tail length under chemically lowered body temperature versus normal.",
+    "readout": "Tail length as a function of lowered body temperature.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Young Mus decumanus",
+    "finding": "Lowering body temperature shortens the tail — the cold end of Przibram's temperature-controls-proportion series.",
+    "summary": "Bierens de Haan and Przibram cooled young rats chemically and found shorter tails, the mirror image of their heat experiments. Together these papers built the BVA's experimental case that rearing temperature directly sets extremity length, an Allen's-rule mechanism."
+  },
+  "15": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Coloured-light exposure",
+      "Pattern observation"
+    ],
+    "manipulation": "Observed the marking of the fire salamander under transmitted coloured light.",
+    "design": "Salamander spot pattern under different transmitted light colours.",
+    "readout": "The black-and-yellow pattern under coloured light.",
+    "quantification": "Qualitative",
+    "scale": "Organism (integument)",
+    "n": "Salamandra maculosa",
+    "finding": "Transmitted coloured light affects how the salamander's pattern appears or develops, extending the background-and-light influence on its markings.",
+    "summary": "Kammerer looked at the fire salamander's pattern under coloured light, a companion to the background-colour experiments on salamander markings. It is part of the contested BVA work on how environment shapes a 'fixed' colour pattern."
+  },
+  "19": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Comparative regeneration"
+    ],
+    "manipulation": "Amputated and followed regeneration of the foreleg across various genera of mantids.",
+    "design": "Comparative foreleg regeneration across mantid genera.",
+    "readout": "Extent and pattern of foreleg regeneration.",
+    "quantification": "Qualitative",
+    "scale": "Organ (foreleg)",
+    "n": "Several mantid genera",
+    "finding": "Documents how the raptorial foreleg regenerates across different mantids, a comparative extension of the BVA mantis work.",
+    "summary": "Thomson's notes compared foreleg regeneration across mantid genera, broadening the institute's long study of the praying mantis from single species to a comparative survey of how the grasping leg rebuilds."
+  },
+  "23": {
+    "method": "Non-experimental — bibliography",
+    "methods": [
+      "Bibliographic compilation"
+    ],
+    "manipulation": "Compiled the institute's English-language publications on quantitative biology from 1916 to 1919.",
+    "design": "Bibliographic notice, not an experiment.",
+    "readout": "A list of quantitative-biology output in English.",
+    "quantification": "Not applicable",
+    "scale": "Bibliography",
+    "n": "Not applicable",
+    "finding": "Gathers the BVA's quantitative-biology papers published in English, documenting the program's international reach.",
+    "summary": "This is a bibliographic notice rather than a research paper: Przibram listed the institute's English-language quantitative-biology publications of 1916-1919, a marker of how the BVA sought an international audience for its measurement-driven program."
+  },
+  "26": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Eye replantation"
+    ],
+    "manipulation": "Removed and re-implanted eyes in fishes and followed their survival.",
+    "design": "Replantation of the eye with observation of recovery.",
+    "readout": "Survival and recovery of the replanted eye.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Fish series",
+    "finding": "Eyes can be replanted with survival, here in fishes.",
+    "summary": "A fish instalment of Koppanyi's eye-replantation work, testing whether the removed and re-set eye survives across vertebrate groups — part of his systematic survey of where eye transplantation succeeds."
+  },
+  "29": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Eye replantation"
+    ],
+    "manipulation": "Removed and re-implanted eyes in amphibians and followed their survival and function.",
+    "design": "Replantation of the eye with observation of reconnection and recovery.",
+    "readout": "Survival, healing and function of the replanted eye.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Amphibian series",
+    "finding": "The amphibian eye can be replanted and recover structure and some function.",
+    "summary": "An amphibian instalment of Koppanyi's eye-replantation studies, the group where reconnection and recovery were most fully tested, feeding his later work on optic-nerve regeneration and vision."
+  },
+  "30": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Eye replantation"
+    ],
+    "manipulation": "Re-implanted eyes in mammals and followed their fate.",
+    "design": "Replantation of the eye in a mammal, with observation of survival.",
+    "readout": "Whether the mammalian replanted eye survives.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Mammal series",
+    "finding": "Tests how far eye replantation succeeds in mammals — the hardest case, with the least regenerative tolerance.",
+    "summary": "Jellinek carried the BVA's eye-replantation question into mammals, where reconnection is most demanding. It rounds out the institute's cross-vertebrate test of how far a removed eye can be re-set and still function."
+  },
+  "31": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Head transplantation"
+    ],
+    "manipulation": "Transplanted heads between insects (Lepidoptera) and observed survival and behaviour.",
+    "design": "Head-exchange grafts with observation of the composite animal.",
+    "readout": "Survival, behaviour and integration of the head-swapped insect.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Lepidopteran series",
+    "finding": "Reports that head-transplanted insects can survive for a time — Finkler's striking and much-debated claim.",
+    "summary": "Finkler's head-transplantation experiments swapped insect heads and claimed the composite animals lived and behaved, a sensational result widely discussed and contested in the 1920s. It marks the bold, controversial edge of the BVA's transplantation program."
+  },
+  "32": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Head transplantation"
+    ],
+    "manipulation": "Transplanted heads between beetles (Coleoptera) and followed the result.",
+    "design": "Head-exchange grafts in beetles.",
+    "readout": "Survival and behaviour of the head-swapped beetle.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Coleopteran series",
+    "finding": "Extends Finkler's head-transplant claim to beetles.",
+    "summary": "A beetle instalment of Finkler's head-transplantation work, part of the contested series in which he reported surviving head-swapped insects — among the most provocative experiments associated with the institute."
+  },
+  "33": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Head transplantation"
+    ],
+    "manipulation": "Transplanted insect heads and followed the composite animals (general communication).",
+    "design": "Head-exchange grafts across insects.",
+    "readout": "Survival and behaviour of head-swapped insects.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Insect series",
+    "finding": "Generalizes Finkler's claim that head-transplanted insects can survive and respond.",
+    "summary": "The general statement of Finkler's insect head-transplantation experiments, gathering the much-debated claim that a swapped head can live on its new body — a high-water mark of experimental daring, and skepticism, around the BVA."
+  },
+  "35": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Ovary autotransplantation",
+      "Function assessment"
+    ],
+    "manipulation": "Autotransplanted ovaries in rats and tested whether they remain functional.",
+    "design": "Function of the autografted ovary versus normal.",
+    "readout": "Whether the transplanted ovary maintains its endocrine and germinal function.",
+    "quantification": "Qualitative",
+    "scale": "Organ (ovary)",
+    "n": "Rat series",
+    "finding": "Autoplastically transplanted ovaries remain functional — the female counterpart to Koppanyi's functional testis graft.",
+    "summary": "Wiesner showed that a rat's ovary, grafted back into the same animal, keeps working, demonstrating gonadal autonomy under transplantation. With Koppanyi's testis and Steinach's gland work it built the BVA's case on how far a sex gland governs its own function."
+  },
+  "45": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Regeneration observation"
+    ],
+    "manipulation": "Amputated the third maxilliped of the crayfish and followed its regeneration.",
+    "design": "Observation of maxilliped regeneration.",
+    "readout": "Extent and form of the regenerated maxilliped.",
+    "quantification": "Qualitative",
+    "scale": "Organ (appendage)",
+    "n": "Astacus fluviatilis",
+    "finding": "The crayfish regenerates its third maxilliped, a specialized mouthpart-leg.",
+    "summary": "Biberhofer documented regeneration of a specific crayfish appendage, the third maxilliped, adding a fine-grained crustacean case to the BVA's regeneration atlas alongside Przibram's claw studies."
+  },
+  "46": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Comparative regeneration"
+    ],
+    "manipulation": "Tested the regenerative capacity of freshwater snails after removal of body parts.",
+    "design": "Comparative regeneration in freshwater gastropods.",
+    "readout": "Extent and pattern of regeneration.",
+    "quantification": "Qualitative",
+    "scale": "Organ / organism",
+    "n": "Freshwater snails",
+    "finding": "Maps the regenerative powers of freshwater snails.",
+    "summary": "Cerny surveyed regeneration in freshwater snails, an early mollusc entry in the BVA's comparative regeneration program that Czerny and Megusar would also pursue across gastropods."
+  },
+  "53": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Regeneration observation"
+    ],
+    "manipulation": "Tested the regenerative capacity of the lancelet Amphioxus lanceolatus after amputation.",
+    "design": "Observation of regeneration in a basal chordate.",
+    "readout": "Whether and how Amphioxus regenerates.",
+    "quantification": "Qualitative",
+    "scale": "Body region",
+    "n": "Amphioxus lanceolatus",
+    "finding": "Probes regeneration in the lancelet, a basal chordate of special phylogenetic interest.",
+    "summary": "Biberhofer tested regeneration in Amphioxus, the cephalochordate that sits near the base of the chordates. Its place in vertebrate ancestry made the question of its regenerative power especially pointed for the institute's comparative survey."
+  },
+  "58": {
+    "method": "Developmental mechanics (egg/embryo)",
+    "methods": [
+      "Altered gravity",
+      "Embryo observation"
+    ],
+    "manipulation": "Subjected water-beetle embryos to abnormal gravitational conditions and observed their development.",
+    "design": "Embryonic development under abnormal gravity versus normal.",
+    "readout": "Effects of altered gravity on the embryo.",
+    "quantification": "Qualitative",
+    "scale": "Embryo",
+    "n": "Hydrophilus aterrimus eggs",
+    "finding": "Abnormal gravity disturbs the beetle's embryonic development, probing how far gravity is a developmental cue.",
+    "summary": "Megusar manipulated gravity acting on water-beetle eggs to ask whether the embryo's development depends on its gravitational orientation, a classic Entwicklungsmechanik question (after Roux and Pfluger) brought into the BVA's insect work."
+  },
+  "61": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Serial growth measurement"
+    ],
+    "manipulation": "Took further serial growth measurements of the mantis Sphodromantis bioculata.",
+    "design": "Longitudinal biometry of mantis growth across instars.",
+    "readout": "Body dimensions over successive moults.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Sphodromantis bioculata series",
+    "finding": "Adds to the quantitative growth curve of the mantis across its development.",
+    "summary": "One of Przibram's recurring growth-measurement communications on the mantis, accumulating the instar-by-instar data behind the BVA's search for quantitative growth laws in its flagship insect."
+  },
+  "68": {
+    "method": "Non-experimental — obituary",
+    "methods": [
+      "Memorial notice"
+    ],
+    "manipulation": "Commemorates the life and work of the BVA researcher Dr. Franz Megusar.",
+    "design": "Obituary, not an experiment.",
+    "readout": "An account of Megusar's career and contributions.",
+    "quantification": "Not applicable",
+    "scale": "Memorial",
+    "n": "Not applicable",
+    "finding": "Records the death and scientific legacy of Franz Megusar, who worked on insect and mollusc regeneration at the institute.",
+    "summary": "This is an obituary, not a research paper: Przibram's memorial for Franz Megusar, the BVA worker behind the beetle-, orthopteran- and snail-regeneration studies. It is included for completeness as part of the corpus."
+  },
+  "75": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Tail-length measurement",
+      "Sex comparison"
+    ],
+    "manipulation": "Measured rat tail length and analysed it as a facultative sex character.",
+    "design": "Tail length compared between the sexes (and against temperature).",
+    "readout": "Tail length by sex.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Rats (Mus decumanus and M. rattus)",
+    "finding": "Tail length differs between the sexes, behaving as a facultative (conditional) sex character.",
+    "summary": "Przibram read rat tail length as a 'facultative sex character', tying his temperature-and-tail program to sex differences in proportion. It is part of the cluster of rat-tail papers that made the tail a model trait for environment-and-sex effects on form."
+  },
+  "76": {
+    "method": "Environmental modification",
+    "methods": [
+      "Cross-generation breeding",
+      "Tail-length measurement"
+    ],
+    "manipulation": "Bred temperature-modified rats and measured the tail length of their offspring.",
+    "design": "Offspring tail length of temperature-modified parents versus controls.",
+    "readout": "Whether the parents' temperature-induced tail change appears in offspring.",
+    "quantification": "Quantitative",
+    "scale": "Population (cross-generational)",
+    "n": "Rat breeding series",
+    "finding": "Tests whether a temperature-induced change in tail length is transmitted to the offspring — a direct Lamarckian test.",
+    "summary": "Przibram pushed the rat-tail work into heredity, asking whether tails lengthened or shortened by temperature stay changed in the next generation. It is the inheritance test at the heart of the BVA's contested environment-writes-heredity claims."
+  },
+  "77": {
+    "method": "Environmental modification",
+    "methods": [
+      "Tail-growth measurement",
+      "Temperature-coefficient calculation"
+    ],
+    "manipulation": "Measured how the relative tail length increases and computed its temperature coefficient in rats.",
+    "design": "Relative tail-length growth across temperatures, expressed as a temperature quotient.",
+    "readout": "Relative tail length and its Q10.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Rats (Mus decumanus and M. rattus)",
+    "finding": "Relative tail length grows with a measurable temperature coefficient — putting a number on how strongly temperature scales extremity growth.",
+    "summary": "Przibram quantified the temperature dependence of relative tail length as a coefficient, the most precise statement of his rule that warmth lengthens extremities. It fuses the rat-tail program with his temperature-quotient approach to physiology."
+  },
+  "80": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "DOPA timing analysis",
+      "Pigment biochemistry"
+    ],
+    "manipulation": "Determined when DOPA appears during the formation of the cocoons of the pine sawfly Lophyrus pini.",
+    "design": "Timing of the DOPA (melanin-precursor) reaction across cocoon formation.",
+    "readout": "The developmental moment at which DOPA is present.",
+    "quantification": "Qualitative (histochemical)",
+    "scale": "Biochemical / tissue",
+    "n": "Lophyrus pini cocoons",
+    "finding": "Pinpoints when DOPA, the melanin precursor, forms during cocoon construction.",
+    "summary": "Sciacchitano timed the appearance of DOPA in sawfly cocoons, extending the BVA's tyrosinase/DOPA melanin program (Przibram, Brecher, Winkler) to a precise developmental schedule for when the pigment chemistry switches on."
+  },
+  "87": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Geometric progression analysis",
+      "Cross-taxon comparison"
+    ],
+    "manipulation": "Compared the chamber progression of foraminifera with the moulting progression of mantids as parallel growth series.",
+    "design": "Analysis of two growth series under a common geometric law.",
+    "readout": "The progression (ratio series) of foraminiferan chambers and mantid moults.",
+    "quantification": "Quantitative",
+    "scale": "Organism / shell",
+    "n": "Comparative",
+    "finding": "Foraminiferan shell-chamber growth follows a progression analogous to the mantid moulting series — a shared quantitative growth law across distant taxa.",
+    "summary": "Przibram set the spiral chamber-addition of foraminifera beside the stepwise moulting of mantids, arguing both obey the same kind of growth progression. It is a characteristic BVA attempt to find one quantitative law of growth running across the animal kingdom."
+  },
+  "89": {
+    "method": "Environmental modification",
+    "methods": [
+      "Theoretical contribution",
+      "Germ-line assessment"
+    ],
+    "manipulation": "Contributed to the question of whether and how the environment reaches the germ-plasm.",
+    "design": "Analysis within the institute's germ-plasm-and-environment series.",
+    "readout": "Whether the surroundings can affect the hereditary substance.",
+    "quantification": "Qualitative",
+    "scale": "Organism / germ-line",
+    "n": "Not specified",
+    "finding": "Argues, with the BVA line, that the germ-plasm is not sealed off from its environment.",
+    "summary": "Walther's 'Umwelt des Keimplasmas' is one of several institute contributions under that title, pressing the shared claim that environment can reach the hereditary substance. The cluster of same-titled papers shows how central the germ-plasm-and-environment question was to the BVA."
+  },
+  "90": {
+    "method": "Inheritance & breeding",
+    "methods": [
+      "Interbreeding",
+      "Trait-inheritance analysis"
+    ],
+    "manipulation": "Crossed Japanese waltzing mice with European mice and followed the inheritance of their traits.",
+    "design": "Breeding crosses analysed for trait transmission (notably the waltzing behaviour).",
+    "readout": "Phenotypes and behaviour of the offspring.",
+    "quantification": "Semi-quantitative",
+    "scale": "Population",
+    "n": "Mouse crosses",
+    "finding": "Analyses how traits, including the waltzing character, are inherited in mouse crosses.",
+    "summary": "Hammerschlag used the Japanese waltzing mouse, a classic genetic curiosity, in crosses with European mice to study inheritance of its distinctive behaviour. It places the BVA inside the Mendelian-era mouse-genetics literature."
+  },
+  "95": {
+    "method": "Environmental modification",
+    "methods": [
+      "Experimental contribution",
+      "Germ-line assessment"
+    ],
+    "manipulation": "Contributed experimental material to the question of the environment's reach into the germ-plasm.",
+    "design": "Part of the institute's germ-plasm-and-environment series (amphibian material).",
+    "readout": "Evidence on whether surroundings modify the germ-plasm.",
+    "quantification": "Qualitative",
+    "scale": "Organism / germ-line",
+    "n": "Amphibian material",
+    "finding": "Adds amphibian evidence to the BVA case that environment can influence the germ-plasm.",
+    "summary": "Secerov's contribution under the 'Umwelt des Keimplasmas' banner brought amphibian material to the institute's germ-plasm-and-environment debate, one of the cluster of same-titled papers arguing the hereditary substance is open to its surroundings."
+  },
+  "101": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Regeneration observation"
+    ],
+    "manipulation": "Amputated the antenna of the woodlouse Porcellio scaber and followed its regeneration.",
+    "design": "Observation of antenna regeneration.",
+    "readout": "Extent and form of the regenerated antenna.",
+    "quantification": "Qualitative",
+    "scale": "Organ (antenna)",
+    "n": "Porcellio scaber",
+    "finding": "The terrestrial isopod regenerates its antenna.",
+    "summary": "Klintz documented antenna regeneration in the common woodlouse, adding a terrestrial isopod to the BVA's broad crustacean regeneration survey."
+  },
+  "102": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "Protein coagulation-point measurement"
+    ],
+    "manipulation": "Measured the heat-coagulation point of specific muscle plasmas and tested its dependence on the animal's living temperature.",
+    "design": "Coagulation temperature of muscle proteins from animals living at different temperatures.",
+    "readout": "The coagulation point of muscle plasma.",
+    "quantification": "Quantitative",
+    "scale": "Biochemical",
+    "n": "Fish muscle plasmas",
+    "finding": "The coagulation point of muscle plasma is independent of the temperature the animal lived at — a fixed biochemical property.",
+    "summary": "Kryz tested whether a cold- or warm-living fish has muscle proteins that coagulate at correspondingly different temperatures, and found the coagulation point fixed. The physico-chemical result fits the BVA's effort to ground physiology in measurable protein chemistry."
+  },
+  "103": {
+    "method": "Environmental modification",
+    "methods": [
+      "Salinity acclimation",
+      "Survival assessment"
+    ],
+    "manipulation": "Gradually transferred freshwater fishes to salt water to test their adaptation.",
+    "design": "Survival and condition across increasing salinity.",
+    "readout": "Tolerance and adaptation to raised salinity.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism",
+    "n": "Freshwater fish series",
+    "finding": "Freshwater fishes can be adapted to salt water within limits — experimental osmotic acclimation.",
+    "summary": "Neudorfer tested how far freshwater fish can be pushed toward sea-water salinity, an experimental probe of osmotic tolerance and adaptation. It complements Zuelzer's contractile-vacuole osmoregulation work in the BVA's environmental-physiology line."
+  },
+  "104": {
+    "method": "Environmental modification",
+    "methods": [
+      "Shell removal",
+      "Morphological observation"
+    ],
+    "manipulation": "Removed hermit crabs from their shells and observed how the abdomen differentiates.",
+    "design": "Abdominal form of de-shelled versus shelled hermit crabs.",
+    "readout": "Differentiation and form of the (normally asymmetric, soft) abdomen.",
+    "quantification": "Qualitative",
+    "scale": "Body region (abdomen)",
+    "n": "Paguridae series",
+    "finding": "The hermit crab's abdomen differentiates in response to the presence or absence of its shell — external conditions shape the soft body.",
+    "summary": "Przibram took hermit crabs out of their shells to see whether their asymmetric, shell-fitted abdomen is fixed or responsive, finding that the abdomen's form depends on the shell. It is a neat case of the environment moulding body form, central to his program."
+  },
+  "105": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Autotomy observation"
+    ],
+    "manipulation": "Observed the automatic shedding (autotomy) of malformed regenerates in arthropods.",
+    "design": "Survey of how defective regenerates are cast off.",
+    "readout": "Whether and when a malformed regenerate is autotomized.",
+    "quantification": "Qualitative",
+    "scale": "Organ (appendage)",
+    "n": "Arthropod series",
+    "finding": "Arthropods automatically shed malformed regenerates — a self-correcting autotomy that clears defective regrowth.",
+    "summary": "Przibram described how arthropods cast off badly formed regenerates and start again, a kind of quality control in regeneration. It connects autotomy, regeneration and the heteromorphosis problem he studied throughout."
+  },
+  "113": {
+    "method": "Inheritance & breeding",
+    "methods": [
+      "Colour modification",
+      "Multi-generation breeding"
+    ],
+    "manipulation": "Enforced colour changes and bred the animals to test whether the changes are inherited (reptile material).",
+    "design": "Offspring of colour-modified animals versus controls.",
+    "readout": "Whether the enforced colour change reappears in offspring.",
+    "quantification": "Semi-quantitative",
+    "scale": "Population (cross-generational)",
+    "n": "Breeding series",
+    "finding": "Kammerer reported inheritance of experimentally enforced colour changes (a neo-Lamarckian claim, later disputed).",
+    "summary": "An earlier statement of Kammerer's enforced-colour-inheritance claim, the reptile-flavoured companion to his salamander colour and form papers. It belongs to the contested neo-Lamarckian work at the centre of the modern epigenetics-revival debate."
+  },
+  "118": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Anterior / posterior regeneration"
+    ],
+    "manipulation": "Removed the front and hind ends of the leech Clepsine tessulata and followed their regeneration.",
+    "design": "Regeneration of anterior versus posterior ends.",
+    "readout": "Rebuilding of head and tail ends.",
+    "quantification": "Qualitative",
+    "scale": "Body region",
+    "n": "Clepsine tessulata",
+    "finding": "The leech regenerates both its anterior and posterior ends, with differences in capacity between them.",
+    "summary": "Gluschkiewitsch tested head- and tail-end regeneration in a leech, probing the front-back polarity of annelid regeneration. It joins Janda's and Czwiklitzer's worm studies in the BVA's annelid regeneration line."
+  },
+  "120": {
+    "method": "Functional physiology & behaviour",
+    "methods": [
+      "Ecological observation"
+    ],
+    "manipulation": "Described the symbiosis between dragonfly larvae and a filamentous alga.",
+    "design": "Observational study of the symbiotic association.",
+    "readout": "The nature and effects of the symbiosis.",
+    "quantification": "Qualitative",
+    "scale": "Organism / association",
+    "n": "Dragonfly larvae and alga",
+    "finding": "Documents a symbiotic association between dragonfly larvae and filamentous algae.",
+    "summary": "Kammerer described a symbiosis between dragonfly larvae and algae, a more ecological note among the BVA's experimental papers. It reflects the institute's broad biological curiosity beyond manipulation and measurement."
+  },
+  "121": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Excision",
+      "Secondary-sex-character regeneration"
+    ],
+    "manipulation": "Removed and followed the regeneration of secondary sexual characters in amphibians.",
+    "design": "Regeneration of secondary sex characters (e.g., breeding crest, thumb pads).",
+    "readout": "Whether and how the secondary sex characters regrow.",
+    "quantification": "Qualitative",
+    "scale": "Organ",
+    "n": "Amphibian series",
+    "finding": "Amphibians regenerate their secondary sexual characters, linking regeneration to the sex-character (hormonal) system.",
+    "summary": "Kammerer showed amphibians rebuilding their secondary sexual characters after removal, bringing regeneration and the gonad-controlled sex characters together. It anticipates the BVA's later endocrine work (Steinach, Brescia) on what governs these traits."
+  },
+  "122": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Amputation",
+      "Regeneration assessment"
+    ],
+    "manipulation": "Tested the regenerative capacity of cyclopoid copepods after injury.",
+    "design": "Observation of (limited) regeneration in copepods.",
+    "readout": "Extent of regeneration.",
+    "quantification": "Qualitative",
+    "scale": "Organ / organism",
+    "n": "Cyclopid copepods",
+    "finding": "Cyclopoid copepods show only weak regenerative capacity — an informative negative case.",
+    "summary": "Klintz documented the poor regeneration of cyclopoid copepods, a limit case that mattered as much as the positive ones for mapping where in the animal kingdom regenerative power runs strong or weak."
+  },
+  "123": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Excision",
+      "Sense-organ regeneration"
+    ],
+    "manipulation": "Removed the tentacle and eye of the pond snail Limnaea stagnalis and followed their regeneration.",
+    "design": "Observation of tentacle and eye regeneration.",
+    "readout": "Rebuilding of the tentacle and its eye.",
+    "quantification": "Qualitative",
+    "scale": "Organ (sense organ)",
+    "n": "Limnaea stagnalis",
+    "finding": "The pond snail regenerates its tentacle together with the eye it carries.",
+    "summary": "Megusar showed the pond snail rebuilding its eye-bearing tentacle, a striking case of sense-organ regeneration in a mollusc. It extends the BVA's regeneration survey into gastropods and to the eye specifically."
+  },
+  "124": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Excision",
+      "Regeneration observation"
+    ],
+    "manipulation": "Removed the caudal horn of the silkworm caterpillar Bombyx mori and followed its regeneration.",
+    "design": "Observation of caudal-horn regeneration.",
+    "readout": "Whether and how the caudal horn regrows.",
+    "quantification": "Qualitative",
+    "scale": "Organ",
+    "n": "Bombyx mori larvae",
+    "finding": "The silkworm caterpillar regenerates its caudal horn.",
+    "summary": "Megusar tested regeneration of the silkworm's tail horn, a defined larval structure in an economically familiar insect. It is one more body part in the institute's comprehensive catalogue of what insects can regrow."
+  },
+  "126": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Partial organ removal",
+      "Visceral regeneration"
+    ],
+    "manipulation": "Removed lung tissue in the fire salamander and other amphibians and followed its regeneration.",
+    "design": "Observation of lung regeneration across amphibians.",
+    "readout": "Whether and how lung tissue regrows.",
+    "quantification": "Qualitative",
+    "scale": "Organ (lung)",
+    "n": "Salamandra maculosa and others",
+    "finding": "Amphibians regenerate lung tissue — regeneration of an internal organ, not only external appendages.",
+    "summary": "Muftic carried the BVA's regeneration question inside the body, to the amphibian lung, showing that visceral organs as well as limbs can regrow. Internal-organ regeneration broadened the institute's mostly appendage-focused survey."
+  },
+  "136": {
+    "method": "Environmental modification",
+    "methods": [
+      "Experimental contribution",
+      "Germ-line assessment"
+    ],
+    "manipulation": "Contributed further amphibian material to the question of the environment's reach into the germ-plasm.",
+    "design": "Part of the germ-plasm-and-environment series, with a sex-determination angle.",
+    "readout": "Evidence on environmental influence on the germ-plasm.",
+    "quantification": "Qualitative",
+    "scale": "Organism / germ-line",
+    "n": "Amphibian material",
+    "finding": "Adds further evidence to the BVA claim that surroundings can act on the germ-plasm, with attention to sex determination.",
+    "summary": "A second Secerov contribution under 'Umwelt des Keimplasmas', bringing sex-determination considerations into the institute's germ-plasm-and-environment debate. It is one of the cluster of same-titled papers that made the question a BVA signature."
+  },
+  "137": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Tail amputation",
+      "Regeneration assessment"
+    ],
+    "manipulation": "Tested experimental tail regeneration in dormice and other mammals.",
+    "design": "Observation of mammalian tail regeneration after amputation.",
+    "readout": "Whether the mammalian tail regenerates.",
+    "quantification": "Qualitative",
+    "scale": "Organ (tail)",
+    "n": "Dormice (Myoxidae) and other mammals",
+    "finding": "Probes how far mammals regenerate the tail — testing the limited regenerative powers of warm-blooded vertebrates.",
+    "summary": "Klintz asked whether dormice and other mammals can regenerate a lost tail, testing the upper, least-regenerative reaches of the vertebrate scale. The mostly limited results helped fix where strong regeneration ends in the animal kingdom."
+  },
+  "139": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Hatchling size measurement",
+      "Maternal-age comparison"
+    ],
+    "manipulation": "Measured whether the size of freshly hatched mantises increases with the mother's age.",
+    "design": "Hatchling size as a function of maternal age (a test of Halban's maternal-age effect).",
+    "readout": "Size of newly hatched mantises across maternal ages.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Sphodromantis hatchlings",
+    "finding": "Freshly hatched mantises do NOT increase in size with the mother's age — a negative result for the maternal-age effect in this species.",
+    "summary": "Przibram and Walther tested Halban's claim that older mothers make larger offspring, now in the mantis, and found no such effect on hatchling size. The clean negative shows the BVA holding its quantitative claims to species-by-species checking."
+  },
+  "142": {
+    "method": "Colour change & pigment",
+    "methods": [
+      "Light / background modification",
+      "Observation"
+    ],
+    "manipulation": "Reared the pupae of Vanessid butterflies and recorded their colour.",
+    "design": "Light and background treatment series on Vanessid pupae.",
+    "readout": "Pupal colour versus light and background.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism (integument)",
+    "n": "Vanessa io, V. urticae pupae",
+    "finding": "Vanessid pupae adapt their colour to light and background, as in the cabbage white.",
+    "summary": "A further instalment of Brecher's Vanessid pupal-colour work, confirming environmentally cued colour adaptation across the tortoiseshell and peacock butterflies and reinforcing that the Pieris phenomenon is general."
+  },
+  "144": {
+    "method": "Transplantation & grafting",
+    "methods": [
+      "Spleen transplantation"
+    ],
+    "manipulation": "Transplanted the spleen in adult urodeles and followed the graft.",
+    "design": "Observation of spleen-graft survival and behaviour.",
+    "readout": "Survival and condition of the transplanted spleen.",
+    "quantification": "Qualitative",
+    "scale": "Organ (spleen)",
+    "n": "Adult urodele series",
+    "finding": "Tests whether a visceral organ, the spleen, can be transplanted and survive in adult newts.",
+    "summary": "Ehrenpreis extended the BVA's transplantation work from eyes, limbs and gonads to the spleen, a visceral organ, in adult newts. It probes how broadly organs tolerate grafting within the institute's favoured urodeles."
+  },
+  "151": {
+    "method": "Functional physiology & behaviour",
+    "methods": [
+      "Husbandry",
+      "Biological observation"
+    ],
+    "manipulation": "Studied the biology and husbandry of the Iberian ribbed newt Pleurodeles waltl as an experimental animal.",
+    "design": "Observational study establishing the species for laboratory work.",
+    "readout": "Life habits, rearing and biology of Pleurodeles.",
+    "quantification": "Qualitative",
+    "scale": "Organism",
+    "n": "Pleurodeles waltl",
+    "finding": "Characterizes the biology of Pleurodeles, helping establish it as a tractable experimental newt.",
+    "summary": "Koppanyi worked out the biology and husbandry of the ribbed newt Pleurodeles, the kind of foundational organism-building the BVA did for its mantids and salamanders. Pleurodeles would go on to become a standard amphibian model in developmental biology."
+  },
+  "152": {
+    "method": "Environmental modification",
+    "methods": [
+      "Heat exposure",
+      "Tail-length measurement"
+    ],
+    "manipulation": "Raised the body temperature of young rats above normal and measured the effect on tail length.",
+    "design": "Tail length under raised body temperature versus normal.",
+    "readout": "Tail length as a function of raised body temperature.",
+    "quantification": "Quantitative",
+    "scale": "Organism",
+    "n": "Young Mus decumanus",
+    "finding": "Raising body temperature lengthens the tail — the heat counterpart to the chemical-cooling experiment, confirming temperature sets extremity length.",
+    "summary": "Przibram and Wiesner warmed young rats above normal and measured longer tails, the heat arm of the temperature-and-tail series. Paired with the cooling experiments, it nailed down the direct, two-way dependence of tail length on rearing temperature."
+  },
+  "155": {
+    "method": "Regeneration & restitution",
+    "methods": [
+      "Antenna manipulation",
+      "Heteromorphosis analysis"
+    ],
+    "manipulation": "Examined leg-segments (tarsal joints) appearing on beetle antennae as heteromorphic regenerates.",
+    "design": "Analysis of leg-for-antenna substitution in beetles.",
+    "readout": "Whether antennal sites regenerate leg-segments.",
+    "quantification": "Qualitative",
+    "scale": "Organ (appendage)",
+    "n": "Beetle series",
+    "finding": "Beetles can regenerate leg-segments in place of antennal parts — a homeotic heteromorphosis.",
+    "summary": "Przibram's note on 'leg-segments on beetle antennae' is another case in his homeosis program, where a regenerate takes the identity of the wrong appendage. With Janda's eye-to-antenna and Brecher's antenna-foot work it built the BVA's homeotic catalogue."
+  },
+  "162": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "Histological observation"
+    ],
+    "manipulation": "Described the spontaneous formation of a second lens (lentoid) in the eye of a catfish.",
+    "design": "Histological description of a developmental anomaly.",
+    "readout": "Structure and position of the spontaneous second lens.",
+    "quantification": "Qualitative",
+    "scale": "Organ (eye)",
+    "n": "Single / few catfish",
+    "finding": "Documents a spontaneously formed second lens in a fish eye — a natural lentoid bearing on lens formation and regeneration.",
+    "summary": "Kolmer reported a catfish that had grown a second lens on its own, a natural experiment in lens formation. It complements Uhlenhuth's and Wiesner's induced lens-regeneration work by showing the eye can make a lentoid spontaneously."
+  },
+  "163": {
+    "method": "Inheritance & breeding",
+    "methods": [
+      "Theoretical / critical discussion"
+    ],
+    "manipulation": "Discussed the question of whether characters acquired by the soma can be inherited.",
+    "design": "Critical-theoretical contribution, not an experiment.",
+    "readout": "Arguments for and against the inheritance of somatically acquired characters.",
+    "quantification": "Not applicable",
+    "scale": "Theory",
+    "n": "Not applicable",
+    "finding": "Weighs the case for and against the inheritance of acquired characters — the central theoretical question behind the BVA's Lamarckian experiments.",
+    "summary": "Demoll's paper is a critical discussion of whether the soma can pass acquired characters to the germ line, the theoretical battlefield on which Kammerer's and Przibram's experiments were fought. It situates the institute's empirical claims within the wider Lamarckism debate."
+  },
+  "166": {
+    "method": "Morphology, histology & biochemistry",
+    "methods": [
+      "Skeletal description"
+    ],
+    "manipulation": "Described the skeleton of a partial hermaphrodite (gynandromorph).",
+    "design": "Anatomical description of an intersex specimen.",
+    "readout": "Skeletal structure of the partial hermaphrodite.",
+    "quantification": "Qualitative",
+    "scale": "Organism (skeleton)",
+    "n": "Single specimen",
+    "finding": "Documents the skeletal anatomy of a partial hermaphrodite, a natural intersex of interest to the sex-determination question.",
+    "summary": "Stieve described the skeleton of a partial hermaphrodite, a natural intersex specimen that spoke to the BVA's strong interest in sex determination and the sex glands (Steinach, Wiesner). The anatomy of such mixed individuals helped frame what 'sex' means structurally."
+  },
+  "173": {
+    "method": "Functional physiology & behaviour",
+    "methods": [
+      "Temperature variation",
+      "Reproductive-cycle observation"
+    ],
+    "manipulation": "Tested whether the female cycle and pregnancy of rats depend on temperature.",
+    "design": "Female reproductive cycle and gestation across temperatures.",
+    "readout": "Timing of the cycle and pregnancy under varied temperature.",
+    "quantification": "Semi-quantitative",
+    "scale": "Organism",
+    "n": "Rats (Mus decumanus and M. rattus)",
+    "finding": "The female cycle and pregnancy are independent of temperature — a negative result contrasting with the temperature-dependent tail length.",
+    "summary": "Przibram showed that, unlike tail length, the rat's reproductive cycle and gestation do not shift with temperature. The contrast sharpened his picture of which traits temperature can mould and which it cannot, a key calibration of the BVA's environmental program."
+  },
+  "175": {
+    "method": "Quantitative growth & biometry",
+    "methods": [
+      "Theoretical synthesis"
+    ],
+    "manipulation": "Argued, in a short general-morphology essay, for a relation between organic form and growth velocity.",
+    "design": "Brief theoretical contribution (review essay).",
+    "readout": "The proposed link between form and rate of growth.",
+    "quantification": "Qualitative (conceptual)",
+    "scale": "Theoretical",
+    "n": "Not applicable",
+    "finding": "Frames form as a product of growth velocity — a programmatic statement of the BVA's rate-based view of morphology.",
+    "summary": "A brief essay in Die Naturwissenschaften, 'Form and Velocity' states Przibram's general thesis that an organism's form follows from its rates of growth. More manifesto than experiment, it distills the institute's conviction that morphology is ultimately a quantitative, dynamic problem."
   }
 }
