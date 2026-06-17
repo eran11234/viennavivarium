@@ -169,11 +169,25 @@ TRANS_PDF = {
  "27_Przibram_1905_Heterochely": "1905_Przibram_Die-Heterochelie-bei-decapoden-Crustaceen-zugleich-Experimentelle-Stud.pdf",
  "28_Weiss_1924_Regeneration-transplanted-limbs": "1924_Weiss_Regeneration-an-transplantierten-Extremitaten-entwickelter-Amphibien.pdf",
  "29_Brecher_1919_Pieris-pupal-colours": "1919_Brecher_Die-Puppenfarbungen-des-Kohlweißlings-Pieris-brassicae-L.pdf",
+ "30_Weiss_1923_Transplanted-developed-limbs": "1923_Weiss_Die-Transplantation-von-entwickelten-Extremitaten-bei-Amphibien__bf02108516.pdf",
+ "31_Brescia_1910_Secondary-sex-characters": "1910_Brescia_Experimentelle-Untersuchungen-uber-die-sekundaren-Sexualcharaktere-der.pdf",
+ "32_Przibram_1907_Angora-cat-eye-colour": "1907_Przibram_Vererbungsversuche-uber-asymmetrische-Augenfarbung-bei-Angorakatzen.pdf",
+ "33_Secerov_1909_Loach-colour-change": "1909_Secerov_Farbenwechselversuche-an-der-Bartgrundel-Nemachilus-barbatula-L.pdf",
+ "34_SteinachKammerer_1920_Climate-virility": "1920_SteinachKammerer_Klima-und-Mannbarkeit.pdf",
+ "35_PrzibramDembowskiBrecher_1921_Tyrosinase-dopa": "1921_PrzibramDembowskiBrecher_Einwirkung-der-Tyrosinase-auf-Dopa-zugleich-Ursachen-tierischer-Farbkl.pdf",
+ "36_Przibram_1919_Regeneration-as-growth": "1919_Przibram_Tierische-Regeneration-als-Wachstumsbeschleunigung.pdf",
+ "37_Weiss_1927_Skin-origin-regenerate": "1927_Weiss_Die-Herkunft-der-Haut-im-Extremitatenregenerat.pdf",
+ "38_PrzibramDembowski_1919_Tyrosinase-conservation": "1919_PrzibramDembowski_Konservierung-der-Tyrosinase-durch-Luftabschluß.pdf",
 }
 # authoritative German titles for translated papers (corpus titles can be mismatched)
 TRANS_DE = {
  "01_Przibram_1924_Amphibian-embryo": "Die virtuelle und reelle Lage des Amphibienembryos nach natürlichen und künstlichen Marken am Ei des Bergmolches (Triton alpestris)",
  "02_Steinach_1916_Puberty-glands": "Pubertätsdrüsen und Zwitterbildung",
+ "35_PrzibramDembowskiBrecher_1921_Tyrosinase-dopa": "Einwirkung der Tyrosinase auf Dopa (zugleich: Ursachen tierischer Farbkleidung IV)",
+}
+# slug -> catalog id, forced (for papers whose catalog row is mistitled by the PDF-bijection)
+TRANS_FORCE = {
+ "35_PrzibramDembowskiBrecher_1921_Tyrosinase-dopa": 171,
 }
 # English titles for translations not covered by _args.json
 TRANS_EN = {
@@ -199,6 +213,15 @@ TRANS_EN = {
  "27_Przibram_1905_Heterochely": "'Heterochely' in Decapod Crustaceans (together with: Experimental Studies on Regeneration. Third Communication)",
  "28_Weiss_1924_Regeneration-transplanted-limbs": "Regeneration on Transplanted Limbs of Developed Amphibians",
  "29_Brecher_1919_Pieris-pupal-colours": "The Pupal Colourations of the Cabbage White, Pieris brassicae L. (1919)",
+ "30_Weiss_1923_Transplanted-developed-limbs": "The Transplantation of Developed Limbs in Amphibians",
+ "31_Brescia_1910_Secondary-sex-characters": "Experimental Investigations on the Secondary Sex Characters of the Newts",
+ "32_Przibram_1907_Angora-cat-eye-colour": "Inheritance Experiments on Asymmetric Eye-Colouration in Angora Cats",
+ "33_Secerov_1909_Loach-colour-change": "Colour-Change Experiments on the Stone Loach (Nemachilus barbatula L.)",
+ "34_SteinachKammerer_1920_Climate-virility": "Climate and Virility",
+ "35_PrzibramDembowskiBrecher_1921_Tyrosinase-dopa": "Action of Tyrosinase on 'Dopa' (Causes of Animal Colouration IV)",
+ "36_Przibram_1919_Regeneration-as-growth": "Animal Regeneration as Growth-Acceleration",
+ "37_Weiss_1927_Skin-origin-regenerate": "The Origin of the Skin in the Limb Regenerate",
+ "38_PrzibramDembowski_1919_Tyrosinase-conservation": "Conservation of Tyrosinase by Exclusion of Air",
 }
 # slug -> (year, surname-ish) for catalog matching
 TRANS_KEY = {
@@ -231,6 +254,14 @@ TRANS_KEY = {
  "27_Przibram_1905_Heterochely": (1905, "przibram", "heterochelie decapoden crustaceen regeneration dritte mitteilung"),
  "28_Weiss_1924_Regeneration-transplanted-limbs": (1924, "weiss", "regeneration transplantierten extremitaten entwickelter amphibien"),
  "29_Brecher_1919_Pieris-pupal-colours": (1919, "brecher", "puppenfarbungen kohlweisslings pieris brassicae"),
+ "30_Weiss_1923_Transplanted-developed-limbs": (1923, "weiss", "transplantation entwickelten extremitaten amphibien"),
+ "31_Brescia_1910_Secondary-sex-characters": (1910, "brescia", "experimentelle untersuchungen sekundaren sexualcharaktere tritonen"),
+ "32_Przibram_1907_Angora-cat-eye-colour": (1907, "przibram", "vererbungsversuche asymmetrische augenfarbung angorakatzen"),
+ "33_Secerov_1909_Loach-colour-change": (1909, "secerov", "farbenwechselversuche bartgrundel nemachilus barbatula"),
+ "34_SteinachKammerer_1920_Climate-virility": (1920, "steinach", "klima mannbarkeit"),
+ "36_Przibram_1919_Regeneration-as-growth": (1919, "przibram", "tierische regeneration wachstumsbeschleunigung"),
+ "37_Weiss_1927_Skin-origin-regenerate": (1927, "weiss", "herkunft haut extremitatenregenerat"),
+ "38_PrzibramDembowski_1919_Tyrosinase-conservation": (1919, "przibram", "konservierung tyrosinase luftabschluss"),
 }
 
 def load_trans_meta():
@@ -292,6 +323,11 @@ def build():
             sc = len(tokens(ttl) & tokens(s["title"])) + (1 if sn in norm(s["author"]) else 0)
             if sc > best: best, best_id = sc, pid
         if best_id: trans_for_id[best_id] = slug
+    # manual slug->id overrides for papers whose catalog row is mistitled (PDF-bijection artifacts)
+    for fslug, fid in TRANS_FORCE.items():
+        for k in [k for k, v in trans_for_id.items() if v == fslug]:
+            del trans_for_id[k]
+        trans_for_id[fid] = fslug
 
     assigned = assign_pdfs(summary, ds_match, idx, trans_for_id)
     catalog, legacy = [], {}

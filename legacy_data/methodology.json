@@ -1161,19 +1161,19 @@
     "summary": "The fourth of Przibram's regeneration studies dissected 'claw reversal': remove a lobster's big claw and the small one enlarges while the regenerate stays small. With his heterochely paper it made the crustacean claw a model for how paired structures negotiate their asymmetry."
   },
   "171": {
-    "method": "Colour change & pigment",
+    "method": "Morphology, histology & biochemistry",
     "methods": [
-      "Background modification",
-      "Pigment biochemistry"
+      "Enzyme biochemistry",
+      "Tyrosinase-DOPA assay"
     ],
-    "manipulation": "Related the background-cued colour of cabbage-white pupae to the chemistry of their pigments (sixth part: 'chemism of colour adaptation').",
-    "design": "Correlation of environmentally induced pupal colour with pigment chemistry.",
-    "readout": "Pupal colour and the chemical nature of its pigments.",
-    "quantification": "Semi-quantitative",
-    "scale": "Organism (integument)",
-    "n": "Pieris brassicae pupae",
-    "finding": "Locates the 'chemism' — the pigment chemistry — behind the pupa's environmentally cued colour adaptation.",
-    "summary": "The sixth part of Brecher's Pieris series turned from describing pupal colour adaptation to its chemistry, tying the background-cued colour to the pigments that make it. It anchors the pupal-colour-plasticity and melanisation literature that still cites the series by name."
+    "manipulation": "Tested the action of the enzyme tyrosinase on the substrate DOPA as a step toward the chemistry of animal colour (Causes of Animal Colouration IV).",
+    "design": "Biochemical assay of tyrosinase acting on DOPA.",
+    "readout": "Conversion of DOPA toward pigment under tyrosinase.",
+    "quantification": "Qualitative (biochemical)",
+    "scale": "Biochemical",
+    "n": "Enzyme / substrate preparations",
+    "finding": "Tyrosinase acts on DOPA to drive pigment (melanin) formation — a direct enzymatic step in animal colouration.",
+    "summary": "Przibram, with Dembowski and Brecher, demonstrated the enzyme tyrosinase acting on DOPA, the fourth part of the Causes of Animal Colouration series and a core result of the BVA pigment-chemistry program. It bridges Weindl preformed-tyrosinase idea and the modern tyrosinase/DOPA melanin pathway, and pairs with the institute conservation-of-tyrosinase work."
   },
   "17": {
     "method": "Colour change & pigment",
