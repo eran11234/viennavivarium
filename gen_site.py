@@ -229,7 +229,7 @@ def gen_map():
 </div>
 <div class="maplayout">
   <div class="mapwrap"><svg id="map" height="640" role="img" aria-label="Network of all 175 BVA papers grouped by research theme and coloured by legacy layer"></svg><div class="maptip" id="tip"></div></div>
-  <aside class="mappanel" id="panel"><p class="muted">Scroll to zoom, drag to pan. Colour shows the legacy layer (see the <a href="legacy.html">Legacy</a> page); a dark ring marks a rediscovery target — an organism still studied today whose BVA original goes uncited. Dot size is modern citations.</p></aside>
+  <aside class="mappanel" id="panel"><p class="muted"><b>Click any paper</b> to zoom in and open the modern works that cite it as cards on this panel — hover a card to find that work on the map. Scroll to zoom, drag to pan. Colour shows the legacy layer (see the <a href="legacy.html">Legacy</a> page); a dark ring marks a rediscovery target — an organism still studied today whose BVA original goes uncited. Dot size is modern citations.</p></aside>
 </div>
 """
     page("map.html", "Map", "Map", body,
@@ -513,7 +513,7 @@ td.meth{font-size:12.5px;color:#4a463f}
 .laycard{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px}
 .laycard b{display:block;margin:8px 0 4px;font-size:15px}
 .laycard p{font-size:13.5px;color:#4a463f;margin:0}
-.maplayout{display:grid;grid-template-columns:minmax(0,1fr) 322px;gap:16px;align-items:start}
+.maplayout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;align-items:start}
 .mapwrap{position:relative;border:1px solid var(--rule);border-radius:10px;background:var(--card);overflow:hidden}
 #map{width:100%;display:block;cursor:grab}
 #map:active{cursor:grabbing}
@@ -744,6 +744,23 @@ themes.sort(function(a,b){return order.indexOf(a)-order.indexOf(b);});
 
 var svg=d3.select('#map'),tip=d3.select('#tip'),panel=document.getElementById('panel');
 var defaultPanel=panel.innerHTML;
+(function(){var st=document.createElement('style');st.textContent=
+'.cclist{margin-top:8px;display:flex;flex-direction:column;gap:8px}'+
+'.cclbl{margin:8px 0 2px}'+
+'.citecard{border:1px solid #e6dfcc;border-left:3px solid transparent;border-radius:10px;padding:8px 10px;background:#fffdf8;transition:box-shadow .15s ease,border-color .15s ease,transform .12s ease}'+
+'.citecard.has{border-left-color:#7a3b2e}'+
+'.citecard.hl{border-color:#b07a4e;box-shadow:0 3px 12px rgba(122,59,46,.15);transform:translateY(-1px)}'+
+'.citecard.flash{animation:ccflash .9s ease}'+
+'@keyframes ccflash{0%,100%{box-shadow:0 0 0 0 rgba(217,140,95,0)}30%{box-shadow:0 0 0 3px rgba(217,140,95,.5)}}'+
+'.cc-h{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:2px}'+
+'.cc-au{font-weight:600;color:#403a2e;font-size:11.5px}'+
+'.cc-t{font-size:13px;line-height:1.38;color:#1c1a17;font-weight:600}'+
+'.cc-de{font-size:11px;color:#8a8268;margin-top:1px;font-style:italic}'+
+'.cc-note{font-size:12.5px;line-height:1.6;margin-top:6px;color:#34312a}'+
+'.cc-pending{font-size:11.5px;color:#a59c84;margin-top:5px;font-style:italic}'+
+'.cc-m{margin-top:5px;font-size:11px}.cc-m a{color:#7a3b2e}'+
+'.badge.sci{background:#e7ddc6;color:#7a3b2e}';
+document.head.appendChild(st);})();
 var H=Math.max(680,Math.min(960,Math.round((window.innerHeight||820)*0.85)));
 svg.attr('height',H);
 var byId={};C.forEach(function(c){byId[c.id]=c;});
@@ -758,8 +775,9 @@ function computeCenters(){var w=width(),cols=Math.min(themes.length,w<640?2:(w<1
   centers[t]={x:(col+0.5)/cols*w,y:(row+0.62)/rows*H,lx:(col+0.5)/cols*w,ly:row/rows*H+20};});}
 computeCenters();
 var sim=d3.forceSimulation(C)
- .force('x',d3.forceX(function(c){return centers[c._t].x;}).strength(0.12))
- .force('y',d3.forceY(function(c){return centers[c._t].y;}).strength(0.12))
+ .velocityDecay(0.34).alphaDecay(0.022)
+ .force('x',d3.forceX(function(c){return centers[c._t].x;}).strength(0.13))
+ .force('y',d3.forceY(function(c){return centers[c._t].y;}).strength(0.13))
  .force('charge',d3.forceManyBody().strength(-9))
  .force('link',d3.forceLink(links).id(function(c){return c.id;}).distance(58).strength(0.05))
  .force('collide',d3.forceCollide(function(c){return c._r+1.9;}))
@@ -780,62 +798,86 @@ var nodes=gNode.selectAll('circle').data(C).join('circle')
  .on('mousemove',function(e,c){var p=d3.pointer(e,svg.node());var nb=Object.keys(nbr[c.id]).length;tip.style('opacity',1).style('left',(p[0]+12)+'px').style('top',(p[1]+10)+'px').html('<b>'+esc(c.author)+' '+c.year+'</b><br>'+esc((c.title_en||c.title||'').slice(0,90))+(nb?'<br><span style="opacity:.65">'+nb+' same-genus link'+(nb>1?'s':'')+'</span>':''));})
  .on('mouseout',function(){tip.style('opacity',0);if(!selected)unhover();})
  .on('click',function(e,c){select(c);});
-function hoverNode(c){var s=nbr[c.id];nodes.attr('opacity',function(d){return (d===c||s[d.id])?1:0.16;});
- edge.attr('opacity',function(l){return (l.source===c||l.target===c)?0.95:0.05;}).attr('stroke',function(l){return (l.source===c||l.target===c)?'#7a3b2e':'#cdc4b1';});}
-function unhover(){nodes.attr('opacity',1);edge.attr('opacity',0.32).attr('stroke','#cdc4b1');}
+function hoverNode(c){var s=nbr[c.id];nodes.transition().duration(150).attr('opacity',function(d){return (d===c||s[d.id])?1:0.16;});
+ edge.transition().duration(150).attr('opacity',function(l){return (l.source===c||l.target===c)?0.95:0.05;}).attr('stroke',function(l){return (l.source===c||l.target===c)?'#7a3b2e':'#cdc4b1';});}
+function unhover(){nodes.transition().duration(150).attr('opacity',1);edge.transition().duration(150).attr('opacity',0.32).attr('stroke','#cdc4b1');}
 function tick(){nodes.attr('cx',function(c){return c.x;}).attr('cy',function(c){return c.y;});
  rings.attr('cx',function(c){return c.x;}).attr('cy',function(c){return c.y;});
  edge.attr('x1',function(l){return l.source.x;}).attr('y1',function(l){return l.source.y;}).attr('x2',function(l){return l.target.x;}).attr('y2',function(l){return l.target.y;});}
 sim.on('end',placeLabels);setTimeout(placeLabels,500);
-var selected=null;
-function layoutBubbles(n){var pts=[],ringR=[58,100,142,184,228,272],cap=[8,13,18,24,30,40],idx=0;
+var selected=null,bubbleSel=null;
+function hasNote(c,d){return !!(window.NOTES&&window.NOTES[c.id+':'+d.k]);}
+function layoutBubbles(n){var pts=[],ringR=[60,104,150,196,244,294],cap=[8,13,18,24,30,44],idx=0;
  for(var r=0;r<ringR.length&&idx<n;r++){var count=Math.min(cap[r],n-idx);
   for(var j=0;j<count;j++){var ang=(j+0.5)/count*2*Math.PI+r*0.4;pts.push({x:Math.cos(ang)*ringR[r],y:Math.sin(ang)*ringR[r]});idx++;}}
- while(idx<n){var ang=Math.random()*2*Math.PI;pts.push({x:Math.cos(ang)*300,y:Math.sin(ang)*300});idx++;}return pts;}
+ while(idx<n){var ang=Math.random()*2*Math.PI;pts.push({x:Math.cos(ang)*330,y:Math.sin(ang)*330});idx++;}return pts;}
+function ccHi(i,on){var el=document.getElementById('cc'+i);if(!el)return;
+ if(on){el.classList.add('hl');el.scrollIntoView({block:'nearest',behavior:'smooth'});}else{el.classList.remove('hl');}}
+function bubHi(i,on){if(!bubbleSel)return;bubbleSel.filter(function(d,j){return j===i;}).select('circle')
+ .transition().duration(130).attr('r',function(d){return on?(hasNote(selected,d)?9.5:8.5):(hasNote(selected,d)?6:5);})
+ .attr('fill',function(d){return on?'#c2540f':(d.h?'#cfc8b8':'#d98c5f');});}
 function drawBubbles(c){gThread.selectAll('*').remove();
- var arr=(window.CITATIONS&&window.CITATIONS[c.id])||[];if(!arr.length)return;
+ var arr=(window.CITATIONS&&window.CITATIONS[c.id])||[];if(!arr.length){bubbleSel=null;return;}
  var pts=layoutBubbles(arr.length);
- gThread.selectAll('line').data(arr).join('line').attr('x1',c.x).attr('y1',c.y)
-  .attr('x2',function(d,i){return c.x+pts[i].x;}).attr('y2',function(d,i){return c.y+pts[i].y;})
-  .attr('stroke','#d3cbb9').attr('stroke-width',0.5).attr('opacity',0.7);
+ gThread.selectAll('line').data(arr).join('line').attr('x1',c.x).attr('y1',c.y).attr('x2',c.x).attr('y2',c.y)
+  .attr('stroke','#d3cbb9').attr('stroke-width',0.5).attr('opacity',0)
+  .transition().duration(560).delay(function(d,i){return i*4;})
+  .attr('x2',function(d,i){return c.x+pts[i].x;}).attr('y2',function(d,i){return c.y+pts[i].y;}).attr('opacity',0.6);
  var b=gThread.selectAll('g.bub').data(arr).join('g').attr('class','bub').style('cursor','pointer')
-  .attr('transform',function(d,i){return 'translate('+(c.x+pts[i].x)+','+(c.y+pts[i].y)+')';})
-  .on('mousemove',function(e,d){var p=d3.pointer(e,svg.node());tip.style('opacity',1).style('left',(p[0]+12)+'px').style('top',(p[1]+10)+'px').html('<b>'+esc((d.a||'')+' '+(d.y||''))+'</b><br>'+esc((d.et||d.t||'').slice(0,120)));})
-  .on('mouseout',function(){tip.style('opacity',0);})
-  .on('click',function(e,d){if(e.stopPropagation)e.stopPropagation();showCite(c,d);});
- b.append('circle').attr('r',function(d){return (window.NOTES&&window.NOTES[c.id+':'+d.k])?6:5;})
+  .attr('transform','translate('+c.x+','+c.y+')')
+  .on('mouseover',function(e,d){var i=arr.indexOf(d);ccHi(i,true);bubHi(i,true);})
+  .on('mouseout',function(e,d){var i=arr.indexOf(d);ccHi(i,false);bubHi(i,false);})
+  .on('click',function(e,d){if(e.stopPropagation)e.stopPropagation();var i=arr.indexOf(d);var el=document.getElementById('cc'+i);if(el){el.scrollIntoView({block:'center',behavior:'smooth'});el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');}});
+ b.transition().duration(560).delay(function(d,i){return i*4;}).attr('transform',function(d,i){return 'translate('+(c.x+pts[i].x)+','+(c.y+pts[i].y)+')';});
+ b.append('circle').attr('r',function(d){return hasNote(c,d)?6:5;})
   .attr('fill',function(d){return d.h?'#cfc8b8':'#d98c5f';})
-  .attr('stroke',function(d){return (window.NOTES&&window.NOTES[c.id+':'+d.k])?'#7a3b2e':'#fffdf9';})
-  .attr('stroke-width',function(d){return (window.NOTES&&window.NOTES[c.id+':'+d.k])?1.4:0.7;});
+  .attr('stroke',function(d){return hasNote(c,d)?'#7a3b2e':'#fffdf9';})
+  .attr('stroke-width',function(d){return hasNote(c,d)?1.4:0.7;})
+  .attr('opacity',0).transition().duration(520).delay(function(d,i){return i*4;}).attr('opacity',1);
  b.append('text').attr('class','blab').attr('text-anchor',function(d,i){return pts[i].x<0?'end':'start';})
   .attr('x',function(d,i){return pts[i].x<0?-9:9;}).attr('y',3)
-  .text(function(d){var ln=(d.a||'').replace(' et al.','').split(' ').slice(-1)[0];return ln+' '+(d.y||'');});}
-function showCite(c,d){var note=(window.NOTES&&window.NOTES[c.id+':'+d.k])||'';
- var doi=d.d?('<a target=_blank href="https://doi.org/'+d.d+'">'+esc(d.d)+'</a>'):'';
- var rel=(d.m&&d.m.indexOf('same')>=0)?(' · <span class="badge">'+esc(d.m.replace(/_/g,' '))+'</span>'):'';
- panel.innerHTML='<p class="kicker"><a href="#" id="backp">‹ back to '+esc(c.author+' '+c.year)+'</a></p>'+
-  '<h3 style="font-size:15px">'+esc(d.et||d.t||'(untitled)')+'</h3>'+
-  (d.et?'<p class="pde" style="font-size:12px;margin:0 0 4px">'+esc(d.t)+'</p>':'')+
-  '<p class="pmeta">'+esc(d.a||'')+' · '+(d.y||'')+(d.s?' · '+esc(d.s):'')+(d.h?' · <span class="badge wip">historiographic</span>':'')+rel+'</p>'+
-  (note?'<p style="margin:10px 0;line-height:1.65">'+esc(note)+'</p>':'<p class="muted" style="margin:10px 0">A paragraph on what this paper does with the original is still being written.</p>')+
-  (doi?'<p class="pmeta">'+doi+'</p>':'');
- var bp=document.getElementById('backp');if(bp)bp.addEventListener('click',function(e){e.preventDefault();select(c);});}
+  .text(function(d){var ln=(d.a||'').replace(' et al.','').split(' ').slice(-1)[0];return ln+' '+(d.y||'');})
+  .attr('opacity',0).transition().duration(420).delay(function(d,i){return 160+i*4;}).attr('opacity',1);
+ bubbleSel=b;}
+function citeCard(c,d,i){var note=(window.NOTES&&window.NOTES[c.id+':'+d.k])||'';
+ var badge=d.h?'<span class="badge wip">historiographic</span>':'<span class="badge sci">scientific</span>';
+ var rel=(d.m&&d.m.indexOf('same')>=0)?(' <span class="badge">'+esc(d.m.replace(/_/g,' '))+'</span>'):'';
+ var de=(d.et&&d.t&&d.et!==d.t)?'<div class="cc-de">'+esc(d.t)+'</div>':'';
+ var body=note?'<div class="cc-note">'+esc(note)+'</div>':'<div class="cc-pending">How it cites the original — paragraph still to be written.</div>';
+ var doi=d.d?'<div class="cc-m"><a target=_blank href="https://doi.org/'+d.d+'">'+esc(d.d)+'</a></div>':'';
+ return '<div class="citecard'+(note?' has':'')+'" id="cc'+i+'" data-i="'+i+'">'+
+  '<div class="cc-h"><span class="cc-au">'+esc(d.a||'(anon.)')+' · '+(d.y||'n.d.')+'</span>'+badge+rel+'</div>'+
+  '<div class="cc-t">'+esc(d.et||d.t||'(untitled)')+'</div>'+de+body+doi+'</div>';}
 function select(c){selected=c;
- nodes.attr('opacity',function(d){return d===c?1:0.12;}).attr('stroke',function(d){return d===c?'#211f1c':'#fffdf9';}).attr('stroke-width',function(d){return d===c?2:0.8;});
- rings.attr('opacity',0.22);edge.attr('opacity',0.04);
- var k=2.4,w=width();
- svg.transition().duration(650).call(zoom.transform,d3.zoomIdentity.translate(w/2-c.x*k,H/2-c.y*k).scale(k));
+ nodes.transition().duration(220).attr('opacity',function(d){return d===c?1:0.1;}).attr('stroke',function(d){return d===c?'#211f1c':'#fffdf9';}).attr('stroke-width',function(d){return d===c?2:0.8;});
+ rings.transition().duration(220).attr('opacity',0.18);edge.transition().duration(220).attr('opacity',0.04);
+ var k=2.6,w=width();
+ svg.transition().duration(760).ease(d3.easeCubicInOut).call(zoom.transform,d3.zoomIdentity.translate(w/2-c.x*k,H/2-c.y*k).scale(k));
  drawBubbles(c);
  var lg=L[c.id]||{},arr=(window.CITATIONS&&window.CITATIONS[c.id])||[];
- var nnote=arr.filter(function(x){return window.NOTES&&window.NOTES[c.id+':'+x.k];}).length;
+ var ord=arr.map(function(d,i){return {d:d,i:i};});
+ ord.sort(function(A,B){var na=hasNote(c,A.d)?0:1,nb=hasNote(c,B.d)?0:1;if(na!==nb)return na-nb;
+  var ha=A.d.h?1:0,hb=B.d.h?1:0;if(ha!==hb)return ha-hb;return (B.d.y||0)-(A.d.y||0);});
+ var nnote=arr.filter(function(x){return hasNote(c,x);}).length;
  var en=c.has_translation?('<a class="btn" href="papers/'+c.slug+'.html">Read English →</a>'):'';
- panel.innerHTML='<p class="kicker">'+esc(c._t)+' · '+(c.layer?('Layer '+c.layer):'unranked')+'</p>'+
+ var head='<p class="kicker"><a href="#" id="backp">‹ all papers</a> · '+esc(c._t)+' · '+(c.layer?('Layer '+c.layer):'unranked')+'</p>'+
   '<h3>'+esc(c.has_translation&&c.title_en?c.title_en:c.title)+'</h3>'+
   ((c.has_translation&&c.title_en)?'<p class="pde">'+esc(c.title)+'</p>':'')+
   '<p class="pmeta">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+'</p>'+
   '<p class="pmeta"><b>'+(c.citations||0)+'</b> modern citations · <b>'+(lg.n_parallels||0)+'</b> parallels'+(c.rediscovery?' · <span class="badge redis">rediscovery</span>':'')+'</p>'+
-  '<div class="actionbar" style="margin:10px 0"><a class="btn primary" href="reader.html?id='+c.id+'">Read original</a>'+en+'</div>'+
-  (arr.length?'<p class="pmeta" style="margin-top:4px">The '+arr.length+' bubbles are the modern works citing this paper'+(nnote?' — '+nnote+' annotated so far':'')+'. Click one (orange = scientific, grey = historiographic) to read what it does with the original.</p>':'<p class="muted">No modern citations recorded.</p>');}
+  '<div class="actionbar" style="margin:10px 0"><a class="btn primary" href="reader.html?id='+c.id+'">Read original</a>'+en+'</div>';
+ var listhdr=arr.length?('<p class="pmeta cclbl"><b>'+arr.length+'</b> works cite this paper'+(nnote?' · <b>'+nnote+'</b> annotated':'')+' — hover a card to find it on the map</p>'):'<p class="muted" style="margin-top:6px">No modern citations recorded for this paper.</p>';
+ panel.innerHTML=head+listhdr+(arr.length?('<div class="cclist">'+ord.map(function(o){return citeCard(c,o.d,o.i);}).join('')+'</div>'):'');
+ var bp=document.getElementById('backp');if(bp)bp.addEventListener('click',function(e){e.preventDefault();deselect();});
+ var lst=panel.querySelector('.cclist');
+ if(lst){lst.addEventListener('mouseover',function(e){var card=e.target.closest('.citecard');if(!card)return;bubHi(+card.getAttribute('data-i'),true);card.classList.add('hl');});
+  lst.addEventListener('mouseout',function(e){var card=e.target.closest('.citecard');if(!card)return;bubHi(+card.getAttribute('data-i'),false);card.classList.remove('hl');});}
+ panel.scrollTop=0;}
+function deselect(){selected=null;bubbleSel=null;
+ nodes.transition().duration(280).attr('opacity',1).attr('stroke','#fffdf9').attr('stroke-width',0.8);
+ rings.transition().duration(280).attr('opacity',0.9);edge.transition().duration(280).attr('opacity',0.32).attr('stroke','#cdc4b1');
+ gThread.selectAll('*').remove();panel.innerHTML=defaultPanel;
+ svg.transition().duration(640).ease(d3.easeCubicInOut).call(zoom.transform,d3.zoomIdentity);}
 var zoom=d3.zoom().scaleExtent([0.4,5]).on('zoom',function(e){gz.attr('transform',e.transform);});
 svg.call(zoom);
 var q=document.getElementById('q'),fl=document.getElementById('layer'),fp=document.getElementById('phen'),fr=document.getElementById('ronly'),reset=document.getElementById('reset');
@@ -846,10 +888,10 @@ function matches(c){if(fl.value&&String(c.layer)!==fl.value)return false;if(fp.v
 function applyFilter(){nodes.attr('opacity',function(c){return matches(c)?1:0.08;}).attr('pointer-events',function(c){return matches(c)?'all':'none';});
  rings.attr('opacity',function(c){return matches(c)?0.9:0.05;});}
 [q,fl,fp].forEach(function(e){e.addEventListener('input',applyFilter);});fr.addEventListener('change',applyFilter);
-reset.addEventListener('click',function(){q.value='';fl.value='';fp.value='';fr.checked=false;selected=null;
+reset.addEventListener('click',function(){q.value='';fl.value='';fp.value='';fr.checked=false;selected=null;bubbleSel=null;
  nodes.attr('opacity',1).attr('pointer-events','all').attr('stroke','#fffdf9').attr('stroke-width',0.8);
  rings.attr('opacity',0.9);edge.attr('opacity',0.32).attr('stroke','#cdc4b1');gThread.selectAll('*').remove();panel.innerHTML=defaultPanel;
- svg.transition().duration(400).call(zoom.transform,d3.zoomIdentity);});
+ svg.transition().duration(520).ease(d3.easeCubicInOut).call(zoom.transform,d3.zoomIdentity);});
 document.getElementById('leg').innerHTML='<span class="it"><b>Legacy layer:</b></span>'+
  [['1','1'],['2','2'],['3','3'],['4','4']].map(function(p){return '<span class="it"><span class="dotc" style="background:'+layerColor[p[0]]+'"></span>'+p[1]+'</span>';}).join('')+
  '<span class="it"><span class="dotc" style="background:#cfc8b8"></span>none</span>'+
