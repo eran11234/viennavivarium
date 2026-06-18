@@ -188,6 +188,21 @@ TRANS_PDF = {
  "46_Przibram_1907_Bristletail-regeneration": "1907_Przibram_Regenerationsversuche-allgemeinerer-Bedeutung-bei-Borstenschwanzen-Lep.pdf",
  "47_Weindl_1907_Pigment-formation-tyrosinase": "1907_Weindl_Pigmententstehung-auf-Grund-vorgebildeter-Tyrosinasen.pdf",
  "48_Frohlich_1910_Palaemon-colour-change": "1910_Frohlich_Farbwechselreaktionen-bei-Palaemon.pdf",
+ "49_Megusar_1907_Coleoptera-regeneration": "1907_Megusar_Die-Regeneration-der-Coleopteren.pdf",
+ "50_Thomsen_1909_Rearing-colour-regeneration": "1909_Przibram_Aufzucht-Farbwechsel-und-Regeneration-der-Gottesanbeterinnen-Mantidae.pdf",
+ "51_Sztern_1914_Sphodromantis-growth": "1914_Sztern_Wachstumsmessungen-an-Sphodromantis-bioculata-Burm.pdf",
+ "52_Weiss_1930_Blastem-potency-test": "1930_Weiss_Potenzprfung-am-Regenerationsblastem.pdf",
+ "53_Kurz_1922_Polarity-reversal-newt-leg": "1922_Kurz_Versuche-uber-Polaritatsumkehr-am-Tritonenbein.pdf",
+ "54_Przibram_1924_Dopa-in-cocoons": "1924_Przibram_Die-Rolle-der-Dopa-in-den-Kokonen-gewisser-Nachtfalter-und-Blattwespen.pdf",
+ "55_deHahn_1922_Rat-body-temperature": "1922_de-Hahn_Die-Korpertemperatur-junger-Wanderratten-Mus-decumanus-und-ihre-Beeinf.pdf",
+ "56_Weiss_1923_Transplanted-limbs-II": "1923_Weiss_Die-Transplantation-von-entwickelten-Extremitaten-bei-Amphibien__bf02108515.pdf",
+ "57_Przibram_1906_Crystal-analogies": "1906_Przibram_Kristall-Analogien-zur-Entwicklungsmechanik-der-Organismen.pdf",
+ "58_Megusar_1910_Orthoptera-leg-regeneration": "1910_Megusar_Regeneration-der-Fang-Schreit-und-Sprungbeine-bei-der-Aufzucht-von-Ort.pdf",
+ "59_Koppanyi_1923_Eye-replantation": "1923_Koppanyi_Die-Replantation-von-Augen__bf02108504.pdf",
+ "60_Uhlenhuth_1920_Lens-regeneration": "1920_Uhlenhuth_Studien-zur-Linsenregeneration-bei-den-Amphibien.pdf",
+ "61_Zuelzer_1907_Regeneration-growth-rate": "1907_Zuelzer_Uber-den-Einfluß-der-Regeneration-auf-die-Wachstumsgeschwindigkeit-von.pdf",
+ "62_Brecher_1921_Pieris-pupal-colours-V": "1921_Brecher_Die-Puppenfarbungen-des-Kohlweißlings-Pieris-brassicae-L-Funfter-Teil.pdf",
+ "63_Kammerer_1919_Inherited-form-changes": "1919_Kammerer_Vererbung-erzwungener-Formveranderungen.pdf",
 }
 # authoritative German titles for translated papers (corpus titles can be mismatched)
 TRANS_DE = {
@@ -198,6 +213,11 @@ TRANS_DE = {
 # slug -> catalog id, forced (for papers whose catalog row is mistitled by the PDF-bijection)
 TRANS_FORCE = {
  "35_PrzibramDembowskiBrecher_1921_Tyrosinase-dopa": 171,
+ "30_Weiss_1923_Transplanted-developed-limbs": 36,
+ "56_Weiss_1923_Transplanted-limbs-II": 37,
+ "59_Koppanyi_1923_Eye-replantation": 25,
+ "62_Brecher_1921_Pieris-pupal-colours-V": 172,
+ "10_Brecher_1921_Pieris-pupal-colours": 170,
 }
 # English titles for translations not covered by _args.json
 TRANS_EN = {
@@ -242,6 +262,21 @@ TRANS_EN = {
  "46_Przibram_1907_Bristletail-regeneration": "Regeneration Experiments of More General Significance in Bristletails (Lepismatidae)",
  "47_Weindl_1907_Pigment-formation-tyrosinase": "Pigment Formation on the Basis of Pre-formed Tyrosinases",
  "48_Frohlich_1910_Palaemon-colour-change": "Colour-Change Reactions in Palaemon",
+ "49_Megusar_1907_Coleoptera-regeneration": "The Regeneration of the Coleoptera",
+ "50_Thomsen_1909_Rearing-colour-regeneration": "Rearing, Colour Change and Regeneration of the Praying Mantises (Mantidae)",
+ "51_Sztern_1914_Sphodromantis-growth": "Growth Measurements on Sphodromantis bioculata Burm.",
+ "52_Weiss_1930_Blastem-potency-test": "Potency-Testing on the Regeneration Blastema (in the lizard Lacerta)",
+ "53_Kurz_1922_Polarity-reversal-newt-leg": "Experiments on Polarity-Reversal in the Newt Leg",
+ "54_Przibram_1924_Dopa-in-cocoons": "The Role of Dopa in the Cocoons of Certain Moths and Sawflies, with Remarks on the Chemical Sites of Melanin Formation",
+ "55_deHahn_1922_Rat-body-temperature": "The Body Temperature of Young Brown Rats (Mus decumanus) and Its Modification by the Temperature of the Outside World",
+ "56_Weiss_1923_Transplanted-limbs-II": "The Transplantation of Developed Limbs in Amphibians (II)",
+ "57_Przibram_1906_Crystal-analogies": "Crystal Analogies to the Developmental Mechanics of Organisms",
+ "58_Megusar_1910_Orthoptera-leg-regeneration": "Regeneration of the Grasping, Walking and Jumping Legs in the Rearing of Orthoptera",
+ "59_Koppanyi_1923_Eye-replantation": "The Replantation of Eyes",
+ "60_Uhlenhuth_1920_Lens-regeneration": "Studies on Lens Regeneration in the Amphibians",
+ "61_Zuelzer_1907_Regeneration-growth-rate": "On the Influence of Regeneration on the Rate of Growth of Asellus aquaticus",
+ "62_Brecher_1921_Pieris-pupal-colours-V": "The Pupal Colourations of the Cabbage White, Pieris brassicae L. (Fifth Part)",
+ "63_Kammerer_1919_Inherited-form-changes": "Inheritance of Enforced Form-Changes",
 }
 # slug -> (year, surname-ish) for catalog matching
 TRANS_KEY = {
@@ -292,6 +327,21 @@ TRANS_KEY = {
  "46_Przibram_1907_Bristletail-regeneration": (1907, "przibram", "regenerationsversuche allgemeinerer bedeutung borstenschwanzen lepismatidae"),
  "47_Weindl_1907_Pigment-formation-tyrosinase": (1907, "weindl", "pigmententstehung grund vorgebildeter tyrosinasen"),
  "48_Frohlich_1910_Palaemon-colour-change": (1910, "frohlich", "farbwechselreaktionen palaemon"),
+ "49_Megusar_1907_Coleoptera-regeneration": (1907, "megusar", "regeneration coleopteren"),
+ "50_Thomsen_1909_Rearing-colour-regeneration": (1909, "thomsen", "aufzucht farbwechsel regeneration gottesanbeterinnen mantidae"),
+ "51_Sztern_1914_Sphodromantis-growth": (1914, "sztern", "wachstumsmessungen sphodromantis bioculata"),
+ "52_Weiss_1930_Blastem-potency-test": (1930, "weiss", "potenzprufung regenerationsblastem"),
+ "53_Kurz_1922_Polarity-reversal-newt-leg": (1922, "kurz", "versuche polaritatsumkehr tritonenbein"),
+ "54_Przibram_1924_Dopa-in-cocoons": (1924, "przibram", "rolle dopa kokonen nachtfalter blattwespen"),
+ "55_deHahn_1922_Rat-body-temperature": (1922, "hahn", "korpertemperatur junger wanderratten decumanus beeinflussung aussenwelt"),
+ "56_Weiss_1923_Transplanted-limbs-II": (1923, "weiss", "transplantation entwickelten extremitaten amphibien"),
+ "57_Przibram_1906_Crystal-analogies": (1906, "przibram", "kristall analogien entwicklungsmechanik organismen"),
+ "58_Megusar_1910_Orthoptera-leg-regeneration": (1910, "megusar", "regeneration fang schreit sprungbeine aufzucht orthopteren"),
+ "59_Koppanyi_1923_Eye-replantation": (1923, "koppanyi", "replantation augen"),
+ "60_Uhlenhuth_1920_Lens-regeneration": (1920, "uhlenhuth", "studien linsenregeneration amphibien"),
+ "61_Zuelzer_1907_Regeneration-growth-rate": (1907, "zuelzer", "einfluss regeneration wachstumsgeschwindigkeit asellus"),
+ "62_Brecher_1921_Pieris-pupal-colours-V": (1921, "brecher", "puppenfarbungen kohlweisslings pieris brassicae funfter teil"),
+ "63_Kammerer_1919_Inherited-form-changes": (1919, "kammerer", "vererbung erzwungener formveranderungen"),
 }
 
 def load_trans_meta():
