@@ -16,9 +16,16 @@ not get your library access blocked.
   Elsevier), it opens the **full-text PDF** through your session and reads that. It downloads
   one PDF only when the page itself lacks the passage — targeted, not bulk — but this does
   lean harder on your access, so the polite delay matters even more.
-- Most pre-1960 German papers are **image-only scans** with no text layer (even as PDFs), so
-  they come back `scan_pdf` / `no_passage` — those keep their existing (clearly disclosed)
-  note. Realistically this verifies the **modern + digitized subset** (~a third or so).
+- **Image-only scans** (most pre-1960 German papers) are now **OCR'd** as a last resort — it
+  renders the scan and reads it page by page until the cited author's name turns up, then
+  pulls the passage around it. OCR is OPTIONAL: install the Tesseract binary to enable it —
+  `brew install tesseract tesseract-lang` (and `pip install -r requirements.txt` for the
+  Python side). Without Tesseract those papers stay `scan_pdf`, same as before.
+  - OCR is **noisier** than real text, and old German *Fraktur* type especially can come out
+    garbled — those passages are flagged `src:"ocr"` so they're treated with extra care (and
+    skipped at write time if too garbled). The cleaner Roman-type scans OCR well.
+  - For better Fraktur results, install a Fraktur model and set `OCR_LANGS=deu+frak+eng`.
+  - Tuning: `OCR_MAX_PAGES` (default 30), `OCR_DPI` (default 300).
 - Re-running now RETRIES anything that previously failed (`no_passage`/`thin`/`paywalled`/
   `error`) so the new PDF reader gets a second crack; it only skips confirmed `ok` and image
   scans.

@@ -60,6 +60,10 @@ def main():
         bva = f"{cp.get('author','?')} ({cp.get('year','?')}). {cp.get('title_en') or cp.get('title','?')}"
         citing = f"{(w.get('authors') or ['?'])[0]} ({w.get('year','?')}). {w.get('title','?')}"
         snips = "\n  ".join('"' + s + '"' for s in r["snippets"])
+        if r.get("src") == "ocr":
+            snips = ("(These sentence(s) come from OCR of a scanned page and may contain "
+                     "transcription errors. If too garbled to be sure of the meaning, reply SKIP.)\n  "
+                     + snips)
         try:
             msg = client.messages.create(
                 model=MODEL, max_tokens=180, temperature=0.2,

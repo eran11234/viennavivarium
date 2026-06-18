@@ -1,3 +1,6 @@
 playwright>=1.40
 anthropic>=0.39
 pymupdf>=1.23
+# OCR for image-only scans (optional — also needs the Tesseract binary: `brew install tesseract tesseract-lang`)
+pytesseract>=0.3.10
+pillow>=10.0

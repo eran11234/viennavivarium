@@ -34,6 +34,9 @@ MIN_DELAY = float(os.environ.get("MIN_DELAY", "25"))   # seconds between request
 MAX_DELAY = float(os.environ.get("MAX_DELAY", "45"))
 MAX_FETCH = int(os.environ.get("MAX_FETCH", "0"))      # 0 = no cap this run
 NAV_TIMEOUT = 45000
+OCR_LANGS = os.environ.get("OCR_LANGS", "deu+eng")     # add 'frak'/'deu_frak' if you install it
+OCR_MAX_PAGES = int(os.environ.get("OCR_MAX_PAGES", "30"))  # cap OCR work per scanned PDF
+OCR_DPI = int(os.environ.get("OCR_DPI", "300"))
 
 def log(*a):
     print(datetime.datetime.now().strftime("%H:%M:%S"), *a, flush=True)
@@ -126,12 +129,8 @@ def find_pdf_urls(page, doi):
             seen.add(u); out.append(u)
     return out[:3]
 
-def fetch_pdf_text(page, url):
-    """Download the PDF through the logged-in session and pull its text (born-digital only)."""
-    try:
-        import fitz  # pymupdf
-    except Exception:
-        return None
+def fetch_pdf_bytes(page, url):
+    """Download the PDF through the logged-in browser session; return raw bytes or None."""
     try:
         resp = page.context.request.get(url, timeout=40000)
         if not resp.ok:
@@ -139,10 +138,44 @@ def fetch_pdf_text(page, url):
         ct = (resp.headers.get("content-type") or "").lower()
         if "pdf" not in ct and not url.lower().split("?")[0].endswith(".pdf"):
             return None
-        doc = fitz.open(stream=resp.body(), filetype="pdf")
+        return resp.body()
+    except Exception:
+        return None
+
+def pdf_digital_text(data):
+    """Text from a born-digital PDF's text layer (empty-ish for image-only scans)."""
+    try:
+        import fitz
+        doc = fitz.open(stream=data, filetype="pdf")
         txt = " ".join(pg.get_text() for pg in doc)
         doc.close()
         return txt
+    except Exception:
+        return ""
+
+def ocr_pdf(data, surnames):
+    """Last resort: OCR an image-only scan page by page until the surname turns up.
+    Returns OCR text, or None if Tesseract/Pillow aren't installed (then it stays a scan)."""
+    try:
+        import fitz, io, pytesseract
+        from PIL import Image
+    except Exception:
+        return None
+    try:
+        doc = fitz.open(stream=data, filetype="pdf")
+        fsur = [fold(s) for s in surnames]
+        out = []
+        for i, pg in enumerate(doc):
+            if i >= OCR_MAX_PAGES:
+                break
+            pix = pg.get_pixmap(dpi=OCR_DPI)
+            img = Image.open(io.BytesIO(pix.tobytes("png")))
+            t = pytesseract.image_to_string(img, lang=OCR_LANGS)
+            out.append(t)
+            if any(sn in fold(t) for sn in fsur):   # found the author — stop early
+                break
+        doc.close()
+        return " ".join(out)
     except Exception:
         return None
 
@@ -207,16 +240,22 @@ def main():
                 # the PDF ("View PDF" button). Open it and read that.
                 if status != "ok":
                     for pu in find_pdf_urls(page, doi):
-                        txt = fetch_pdf_text(page, pu)
-                        if not txt:
+                        data = fetch_pdf_bytes(page, pu)
+                        if not data:
                             continue
-                        if len(txt.strip()) < 500:
-                            status = "scan_pdf"      # image-only scan: no text layer
-                            continue
-                        sn = extract(txt, surnames, byear)
+                        dtxt = pdf_digital_text(data)
+                        if len(dtxt.strip()) >= 500:          # born-digital PDF
+                            sn = extract(dtxt, surnames, byear)
+                            if sn:
+                                snippets, status, src = sn, "ok", "pdf"; break
+                            status = "no_passage"; continue
+                        otxt = ocr_pdf(data, surnames)        # image-only scan -> OCR
+                        if otxt is None:
+                            status = "scan_pdf"; continue     # OCR not installed -> leave as scan
+                        sn = extract(otxt, surnames, byear)
                         if sn:
-                            snippets, status, src = sn, "ok", "pdf"; break
-                        status = "no_passage"
+                            snippets, status, src = sn, "ok", "ocr"; break
+                        status = "scan_pdf"
             except Exception as e:
                 status = "error"; snippets = [str(e)[:120]]
             rec = dict(key=key, pid=pid, doi=doi, status=status, src=src,
