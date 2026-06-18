@@ -32,7 +32,9 @@ THE CITING WORK:
 The exact sentence(s) from the citing work that mention the BVA author, verbatim:
   {snips}
 
-Write ONE or TWO plain sentences describing what the citing work does with the BVA paper and why it cites it, grounded ONLY in the sentence(s) above. Be specific and faithful to the text; do not add facts that are not in the snippet. Do not start with "This paper". If the sentence(s) do not actually refer to the BVA paper (wrong author/topic, or just a coincidental name match), reply with exactly: SKIP"""
+Write ONE or TWO plain sentences describing what the citing work does with the BVA paper and why it cites it, grounded ONLY in the sentence(s) above. Be specific and faithful to the text; do not add facts that are not in the snippet. Do not start with "This paper".
+
+Reply with exactly "SKIP" (nothing else) if the sentence(s) are NOT a genuine in-text use of the BVA paper — e.g. they are only a bibliography/reference-list entry (like "Przibram, H.: ..." or a journal/volume/pages line), a page header, a download/access/metadata line, or just a coincidental surname match with no statement about the work."""
 
 def main():
     if not os.environ.get("ANTHROPIC_API_KEY"):

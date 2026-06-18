@@ -47,21 +47,47 @@ def sanitize(s):
     s = re.sub(r"[A-Za-z0-9_]{22,}", "", s)   # strip long tokens (ids, cookies)
     return s.strip()[:400]
 
+REF_CHROME = re.compile(
+    r"google scholar|download pdf|cite this article|published:|crossref|pubmed|"
+    r"view article|save article|sign in|institutional|subscribe|reprints|"
+    r"volume\s+\d+|pages?\s+\d|article\s+number|metrics|^\s*doi|©", re.I)
+VERBS = re.compile(r"\b(showed|found|reported|cited|describe|demonstrat|observ|suggest|"
+                   r"claim|confirm|accord|noted|propos|studie|investigat|postulat|"
+                   r"replicat|invalidat|attention|hypothes)\w*", re.I)
+
+def looks_like_reflist(s):
+    """True for bibliography entries / page chrome rather than an in-text citation."""
+    if REF_CHROME.search(s):
+        return True
+    if re.match(r"^[A-ZÄÖÜ][A-Za-zÄÖÜäöüß-]+,\s*[A-Z]\.", s):  # 'Przibram, H.: ...'
+        return True
+    if len(re.findall(r"[a-zäöüß]{3,}", s)) < 4:               # too few prose words
+        return True
+    return False
+
 def extract(body, surnames, year):
-    hits = []
+    cand = []
     for sent in sentences(body):
-        if any(sn in sent for sn in surnames):
-            score = 0
-            for y in (year, year - 1, year + 1):
-                if str(y) in sent:
-                    score = 1
-            hits.append((score, sanitize(sent)))
-    hits.sort(key=lambda h: -h[0])
+        if not any(sn in sent for sn in surnames):
+            continue
+        s = sanitize(sent)
+        if not s or looks_like_reflist(s):
+            continue
+        score = 0
+        for y in (year, year - 1, year + 1):
+            if re.search(r"\(\s*" + str(y), s):    # in-text "(1921"
+                score += 2
+            elif str(y) in s:
+                score += 1
+        if VERBS.search(s):                        # reads like prose about the work
+            score += 1
+        cand.append((score, s))
+    cand.sort(key=lambda h: -h[0])
     seen, out = set(), []
-    for _, s in hits:
+    for _, s in cand:
         if s and s not in seen:
             seen.add(s); out.append(s)
-        if len(out) >= 6:
+        if len(out) >= 5:
             break
     return out
 
