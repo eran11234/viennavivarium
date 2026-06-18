@@ -179,20 +179,31 @@ def ocr_pdf(data, surnames):
     except Exception:
         return None
 
+def ocr_available():
+    try:
+        import pytesseract
+        pytesseract.get_tesseract_version()
+        return True
+    except Exception:
+        return False
+
 def main():
     enr = json.load(open(ENR, encoding="utf-8"))
     targ = json.load(open(TARG, encoding="utf-8"))
-    # Only skip works we already nailed ('ok') or confirmed image-scans; RETRY everything
-    # else (no_passage / thin / paywalled / error) — the new PDF reader may now get them.
+    # Skip works we already nailed ('ok'); retry the failures so the PDF reader gets them.
+    # Scans ('scan_pdf') are skipped UNLESS Tesseract is now installed — then retry to OCR them.
+    ocr_on = ocr_available()
+    skip = ("ok",) if ocr_on else ("ok", "scan_pdf")
     done = set()
     if os.path.exists(OUT):
         for line in open(OUT, encoding="utf-8"):
             try:
                 r = json.loads(line)
-                if r.get("status") in ("ok", "scan_pdf"):
+                if r.get("status") in skip:
                     done.add(r["key"])
             except Exception:
                 pass
+    log("OCR:", "ENABLED (will retry scans)" if ocr_on else "off (Tesseract not installed; scans skipped)")
     # optionally skip keys that are already source-verified
     skip_verified = set()
     vpath = os.path.join(ROOT, "legacy_data", "citation_verified.json")
