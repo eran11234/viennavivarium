@@ -1,0 +1,410 @@
+{
+ "intro": "Forty papers from the Biologische Versuchsanstalt are <em>rediscovery targets</em>: the animal they studied is alive in today's literature, but the original BVA work goes uncited. Here they are arranged by the living model system each one belongs to — find your organism, see what was first shown a century ago, and what question it left open. The institute's deeper unfinished business — the programs it began and never closed — follows below, drawn from Przibram's own monographs.",
+ "groups": [
+  {
+   "key": "mantises",
+   "title": "Praying mantises",
+   "modern": "Mantis · Sphodromantis · Tenodera",
+   "blurb": "The institute's flagship insect. Przibram reared the Egyptian mantis from scratch and ran growth, regeneration and colour experiments on it for a quarter-century — yet mantis biology today rarely reaches back to where its lab career began.",
+   "papers": [
+    55,
+    157,
+    61,
+    66,
+    4,
+    139
+   ]
+  },
+  {
+   "key": "insects",
+   "title": "Other insects",
+   "modern": "beetles · silverfish · silkworm · butterflies · flies · dragonflies",
+   "blurb": "A comparative sweep through the insects — who can regrow what, and how far metamorphosis closes the door on regeneration. Several of these animals later became models in their own right, without the BVA thread being picked up.",
+   "papers": [
+    129,
+    107,
+    124,
+    142,
+    130,
+    120
+   ]
+  },
+  {
+   "key": "salamander",
+   "title": "The fire salamander",
+   "modern": "Salamandra",
+   "blurb": "Kammerer's and Przibram's salamander work asked whether environment can write onto a 'fixed' pattern — and into heredity itself. It is the contested heart of the institute, and the question it posed is the one epigenetics reopened.",
+   "papers": [
+    16,
+    95,
+    15,
+    126
+   ]
+  },
+  {
+   "key": "lizards",
+   "title": "Wall lizards",
+   "modern": "Lacerta",
+   "blurb": "The lizard as a reptile that regenerates, and as a test-bed for inherited adaptation. Reptilian regeneration and environmental sex determination are both live fields now — neither aware the BVA was already here.",
+   "papers": [
+    8,
+    50,
+    113,
+    136
+   ]
+  },
+  {
+   "key": "newts",
+   "title": "Newts",
+   "modern": "Triturus · Triton · Pleurodeles",
+   "blurb": "The urodele amphibians — the regeneration and developmental-mechanics workhorses. Modern limb-regeneration and model-organism biology stand on this ground while citing almost none of it.",
+   "papers": [
+    6,
+    145,
+    134,
+    151
+   ]
+  },
+  {
+   "key": "rodents",
+   "title": "Rats & mice",
+   "modern": "Mus · Rattus",
+   "blurb": "Przibram's rat-tail program turned a body proportion into a measurable readout of rearing temperature — and then asked the forbidden question of whether the change is inherited. Developmental plasticity rebuilt all of this from zero.",
+   "papers": [
+    77,
+    76,
+    152,
+    75,
+    35
+   ]
+  },
+  {
+   "key": "molluscs",
+   "title": "Snails & slugs",
+   "modern": "Limnaea & other gastropods",
+   "blurb": "Regeneration pushed into a whole phylum outside the institute's usual arthropods and vertebrates — including a snail regrowing its eye. Comparative regeneration today wants exactly these data points and has lost them.",
+   "papers": [
+    123,
+    99,
+    46
+   ]
+  },
+  {
+   "key": "worms",
+   "title": "Worms & leeches",
+   "modern": "Ophryotrocha · Clepsine",
+   "blurb": "Annelid regeneration and its front-to-back polarity — in animals (Ophryotrocha especially) that went on to become standard laboratory models for regeneration and ageing.",
+   "papers": [
+    47,
+    118
+   ]
+  },
+  {
+   "key": "crustaceans",
+   "title": "Crustaceans",
+   "modern": "Astacus · Pagurus",
+   "blurb": "Crustacean appendage regeneration and the environment shaping the soft body — the hermit crab's shell sculpting its own abdomen being the vivid case.",
+   "papers": [
+    104,
+    45
+   ]
+  },
+  {
+   "key": "fishes",
+   "title": "Fishes",
+   "modern": "Esox & others",
+   "blurb": "Fish colour change pushed toward quantitative pigment chemistry — counting melanin, not just watching it move.",
+   "papers": [
+    22,
+    102
+   ]
+  },
+  {
+   "key": "birds",
+   "title": "Birds",
+   "modern": "Anser · Anas",
+   "blurb": "Regeneration carried up into the warm-blooded vertebrates: the goose and duck regrowing beak tissue.",
+   "papers": [
+    43
+   ]
+  }
+ ],
+ "cards": {
+  "55": [
+   "The institute's founding mantis paper: Przibram worked out how to rear the Egyptian praying mantis in the lab and documented its colour change and regeneration, turning it into a tractable experimental insect.",
+   "Having built the model, he left open what actually governs its colour change and the limits of its regeneration — the very questions the later mantis papers kept circling without closing."
+  ],
+  "157": [
+   "Reframed animal colour as a problem of underlying chemical and physiological causes — the manifesto behind the Przibram–Brecher pigment-extract experiments.",
+   "Przibram set the agenda (colour reduced to pigment chemistry) but called its solution 'a task that will need much chemical knowledge'; the molecular account arrived later, elsewhere."
+  ],
+  "61": [
+   "Instar-by-instar growth measurements of the mantis, feeding the institute's hunt for a quantitative law of how an animal scales up through its moults.",
+   "The data were gathered, but the general growth law was never derived — Przibram's 'form in a formula' ambition stalled here for want of the right mathematics."
+  ],
+  "66": [
+   "Half-grown mantis larvae regrow their antennae — and the form of the regrowth depends on the larval stage, brushing up against homeosis (an antenna returning leg-like).",
+   "What decides whether a regenerate keeps its identity or turns into another organ was left as an empirical rule; the genetic switch (homeotic / Hox control) was found decades later, and still doesn't cite this."
+  ],
+  "4": [
+   "Extended the growth-curve program to a second species, the Japanese mantis Tenodera, broadening the comparative basis for the BVA's growth laws.",
+   "Whether one universal growth formula fits across mantis species was the point — but the comparative curves were never synthesised into the law Przibram was after."
+  ],
+  "139": [
+   "A clean negative result: freshly hatched mantises are not larger when the mother is older, refuting a maternal-age effect for this species.",
+   "It closed the question for the mantis but left open where the maternal-age effect does and doesn't hold across animals — a comparative test never completed."
+  ],
+  "129": [
+   "The mealworm beetle regrows excised wings — appendage regeneration in a fully metamorphic (holometabolous) insect, where it was not expected.",
+   "How a hard-bodied adult insect reactivates wing growth was left unexplained; modern appendage-regeneration genetics in beetles rarely looks back to this result."
+  ],
+  "107": [
+   "Chose the ever-moulting bristletails (silverfish) precisely because lifelong moulting keeps regenerative capacity open — drawing conclusions 'of more general significance' for regeneration.",
+   "The link between continued moulting and retained regenerative power was never mechanised; why some lineages keep regenerating and others lose it is still open."
+  ],
+  "124": [
+   "The silkworm caterpillar regenerates its caudal horn — a defined larval structure in the most economically familiar insect.",
+   "What patterns the regrown horn, and why this structure and not others, was never pursued; the silkworm became a genetic workhorse without this thread."
+  ],
+  "142": [
+   "Tortoiseshell and peacock butterfly pupae tune their colour to light and background, showing the cabbage-white pupal-colour phenomenon is general.",
+   "The environmental cue was clear but the sensing-and-pigment mechanism was left open; pupal-colour plasticity is studied today in other butterflies without these papers."
+  ],
+  "130": [
+   "Tested whether an adult fly — past all its moults — can rebuild a removed wing, probing the hard limit of regeneration in a fixed holometabolous body.",
+   "It marked a boundary (which life-stages keep regenerative power) the BVA kept probing but never turned into a rule; Drosophila wing work later took over without the connection."
+  ],
+  "120": [
+   "Documented a symbiosis between dragonfly larvae and filamentous algae — an ecological observation among the institute's manipulative studies.",
+   "The nature and benefit of the association were described but never tested; larval-insect microbial and algal symbioses are an active field today that doesn't cite it."
+  ],
+  "16": [
+   "Rearing salamander larvae on yellow versus black backgrounds shifted the adult's spot pattern — environment reaching into a supposedly fixed marking.",
+   "Whether that imprint is truly heritable — the Kammerer claim — was left contested; today's epigenetics revisits exactly this question without these data."
+  ],
+  "95": [
+   "Brought amphibian evidence to the institute's boldest thesis: that the hereditary substance (the 'germ-plasm') is open to influence from its surroundings.",
+   "The mechanism by which environment could mark the germ-line was asserted, not shown; transgenerational epigenetic inheritance is now live and has not reconnected with this program."
+  ],
+  "15": [
+   "Examined how the fire salamander's pattern appears or develops under transmitted coloured light, extending the background-and-light influence on its markings.",
+   "How light wavelength acts on pattern formation was never pinned down — a photobiology-of-pigment question still open for this animal."
+  ],
+  "126": [
+   "Carried regeneration inside the body — showing the amphibian lung, an internal organ, can regrow, not just limbs and tails.",
+   "Internal-organ regeneration in amphibians was opened here and barely followed; modern organ-regeneration research proceeds without this early evidence."
+  ],
+  "8": [
+   "Carried the blastema-potency analysis into a reptile, testing how far a lizard's tail regenerate is already determined versus still plastic.",
+   "How fixed the reptilian blastema is — and why reptiles regenerate so differently from amphibians — remains a central, unresolved question."
+  ],
+  "50": [
+   "The lizard regrows jaw structures after their removal — extending reptilian regeneration well beyond the familiar tail.",
+   "What tissues and signals rebuild the jaw was never worked out; craniofacial regeneration in reptiles is essentially unstudied today, with this result forgotten."
+  ],
+  "113": [
+   "Reported that experimentally forced colour changes were inherited in lizards — a frontal neo-Lamarckian claim.",
+   "Inherited acquired colour sits at the heart of the modern Kammerer-and-epigenetics debate, still unsettled — and these reptile data are rarely re-examined."
+  ],
+  "136": [
+   "Added reptilian evidence, with attention to sex determination, to the germ-plasm-and-environment program.",
+   "Environmental sex determination in reptiles is now a major field; that the BVA was probing environment-and-sex here goes unrecognised in it."
+  ],
+  "6": [
+   "Cutting back specific edges of the newt's leg can yield a heteromorphic long bone — a reproducible patterned abnormality in the regenerate.",
+   "What positional information makes an edge-defect regrow the wrong bone was mapped empirically but never explained; limb 'positional memory' is hot now and doesn't cite it."
+  ],
+  "145": [
+   "Using a natural pigment mark on the alpine-newt egg, showed the first cleavage furrow does not reliably mark the median plane — the axis is set relative to the egg's own landmark.",
+   "How the egg's axis is actually specified was left to later embryology; the cytoplasmic-determinant story was worked out elsewhere, without this careful marking study."
+  ],
+  "134": [
+   "Used starvation as a lever on growth — measuring how an animal shrinks and recovers to get at what growth fundamentally is.",
+   "Starvation-and-regrowth as a probe of growth control is today's caloric-restriction and regeneration physiology — which rediscovered the lever without the groundwork."
+  ],
+  "151": [
+   "Worked out the husbandry and biology of the ribbed newt Pleurodeles — the organism-building that turns an animal into a model system.",
+   "Pleurodeles did become a standard developmental, regeneration and spaceflight model — but that model-building traces back to a BVA paper nobody cites."
+  ],
+  "77": [
+   "Put a number on it: relative tail length grows with a measurable temperature coefficient — warmth lengthens extremities, quantified.",
+   "That developmental temperature sets extremity proportions (now thermal developmental plasticity, the mechanics behind Allen's rule) is actively studied without this quantitative rule."
+  ],
+  "76": [
+   "The direct Lamarckian test: are tails lengthened or shortened by temperature passed on to the next generation?",
+   "Whether developmentally induced proportions can be inherited is precisely the transgenerational-plasticity question epigenetics reopened — these explicit tests go uncited."
+  ],
+  "152": [
+   "Warming young rats above normal produced longer tails — the heat counterpart to the cooling experiments, nailing the two-way temperature dependence.",
+   "The clean experimental control of a body proportion by rearing temperature is a textbook developmental-plasticity result the textbooks reached independently."
+  ],
+  "75": [
+   "Read rat tail length as a conditional ('facultative') sex character, linking the temperature-and-tail program to sex differences in proportion.",
+   "How sex and environment jointly tune a continuous trait was framed but not mechanised; sexual-dimorphism-of-proportion genetics doesn't look back here."
+  ],
+  "102": [
+   "A cold- or warm-living animal's muscle proteins coagulate at the same fixed temperature — a stable biochemical property, independent of life temperature.",
+   "Whether proteins adapt their thermal stability to an animal's temperature is now thermal-adaptation biochemistry, which found its answers without this early null result."
+  ],
+  "35": [
+   "A rat's own ovary, grafted back into the same animal, keeps working — the female counterpart to the institute's functional testis graft, showing gonadal autonomy.",
+   "Ovarian-tissue autotransplantation is now clinical (fertility preservation); the demonstration of graft function traces to a BVA paper outside that literature's memory."
+  ],
+  "123": [
+   "The pond snail rebuilds its eye-bearing tentacle — regeneration of a sense organ, eye and all, in a mollusc.",
+   "How a mollusc regrows a functioning eye is a striking question that invertebrate eye-regeneration and -evolution work pursues today, without this case."
+  ],
+  "99": [
+   "Mapped which parts gastropods can and cannot rebuild — extending the regeneration atlas into a whole phylum outside the institute's usual animals.",
+   "Why regenerative capacity varies so sharply across molluscan body parts was catalogued but never explained — still an open comparative question."
+  ],
+  "46": [
+   "An early mollusc entry in the comparative regeneration program, surveying the regenerative powers of freshwater snails.",
+   "The phylogenetic pattern of who-regenerates-what that these surveys began is exactly what modern comparative regeneration seeks, having lost the early data points."
+  ],
+  "47": [
+   "The small polychaete Ophryotrocha — later a standard lab animal — regrows its anterior end, head structures included.",
+   "Ophryotrocha is now a model for regeneration and ageing; its BVA debut as a regeneration subject is forgotten by the field that adopted it."
+  ],
+  "118": [
+   "A leech regenerates at both ends, with front and back differing in capacity — a probe of annelid head-to-tail polarity.",
+   "How head-versus-tail identity is set during regeneration is now answered by Hox/Wnt-gradient biology in annelids, which doesn't cite the early polarity observations."
+  ],
+  "104": [
+   "Pulled hermit crabs from their shells and found the asymmetric, shell-fitted abdomen's form depends on the shell — the environment moulding the soft body.",
+   "Context-induced body asymmetry is a developmental-plasticity question still open; the hermit-crab demonstration is a vivid, uncited early case."
+  ],
+  "45": [
+   "Documented regeneration of a specific, specialised crayfish mouthpart-leg (the third maxilliped), a fine-grained crustacean case.",
+   "Serial homology and identity in regenerated crustacean appendages — what makes a maxilliped come back a maxilliped — is asked by crustacean evo-devo now, minus this datum."
+  ],
+  "22": [
+   "Showed fish colour change is not only pigment moving within cells but a change in how much melanin there is — pushing colour change toward quantitative pigment chemistry.",
+   "Regulation of melanin synthesis (not just dispersal) during physiological colour change is melanophore biology today, reached without this quantitative start."
+  ],
+  "43": [
+   "The goose and duck regenerate beak tissue — regeneration in warm-blooded vertebrates, not only the cold-blooded.",
+   "How far endotherms retain regenerative power (the duck/chick beak is now a developmental model) is studied without this early demonstration that birds regrow beak tissue."
+  ]
+ },
+ "unfinished": [
+  {
+   "key": "formformel",
+   "title": "Form and Formula — a mathematics of living shape",
+   "question": "Could the shapes and growth of animals be captured in exact mathematical law — even a 'crystallography' of organic form?",
+   "quote_de": "Es ist eine vielversprechende, lockende Aufgabe der Zukunft, die Diagramme für die organischen Raumgitter zu entwerfen, die tierischen Formen in Formeln darzustellen.",
+   "quote_en": "It is a promising, alluring task of the future to draft the diagrams for the organic space-lattices — to represent animal forms in formulae.",
+   "source": "Przibram, Form und Formel im Tierreiche (1922), p. 174",
+   "confidence": "clean text layer",
+   "modern": "This is the project of today's mathematical biology and morphometrics — allometric scaling, Turing reaction–diffusion patterning, the physics of growth. Przibram had the ambition and the measurements (the mantis and rat-tail growth series) but not the mathematics.",
+   "papers": [
+    61,
+    4,
+    139,
+    77,
+    134
+   ]
+  },
+  {
+   "key": "homeosis",
+   "title": "Homeosis — when one organ is built in another's place",
+   "question": "What rules govern an antenna coming back as a leg, or one segment's appendage appearing in another's place?",
+   "quote_de": "Ich habe mich überzeugt, daß es sich in diesen „Ersatz‘‘-Homoeosisfällen um Regeneration handelt und dabei bestimmte Regeln für das Auftreten derselben gesucht.",
+   "quote_en": "I have satisfied myself that these 'replacement' homoeosis cases are a matter of regeneration, and have sought definite rules for their occurrence.",
+   "source": "Przibram, Form und Formel im Tierreiche (1922) [Homoeosis I 1910; II–III 1917]",
+   "confidence": "clean text layer",
+   "modern": "Przibram sought 'rules' for homeosis; the mechanism — homeotic / Hox genes — was only revealed in the 1980s and is now the cornerstone of evo-devo. The institute's experimental homeosis in mantises and crustaceans is essentially absent from that genetic literature.",
+   "papers": [
+    66,
+    55
+   ]
+  },
+  {
+   "key": "germplasm",
+   "title": "The environment of the germ-plasm — can the world rewrite heredity?",
+   "question": "Can an organism's surroundings imprint the hereditary substance itself? The institute ran a whole program — 'Die Umwelt des Keimplasmas' — to find out.",
+   "quote_de": "…ist die Wirksamkeit der „natürlichen Zuchtwahl‘‘ in den zu ihrer Demonstration vorwiegend angeführten Fällen noch nicht induktiv erwiesen.",
+   "quote_en": "…the efficacy of 'natural selection', in the cases chiefly cited to demonstrate it, has not yet been inductively proven.",
+   "source": "Przibram, Einleitung in die experimentelle Morphologie der Tiere (1904), p. 132",
+   "confidence": "OCR text layer — lightly cleaned",
+   "modern": "This is the question epigenetics and transgenerational plasticity reopened a century later — and the Kammerer affair that destroyed the program is now being re-litigated. The rat-tail inheritance tests and the salamander / lizard germ-plasm papers are the institute's hard data, almost entirely uncited in that revival.",
+   "papers": [
+    76,
+    113,
+    95,
+    136,
+    16
+   ]
+  },
+  {
+   "key": "potency",
+   "title": "The limits of regenerative potency",
+   "question": "How determined is a regeneration blastema — does it have fixed, limited potency, or can it become anything?",
+   "quote_de": "(aus dem Korpus: Przibram fragt, ob die von Weiss „nullipotent‘‘ genannten Regenerationsblasteme in Wirklichkeit „totipotent‘‘ seien.)",
+   "quote_en": "Weiss labelled regeneration blastemas 'nullipotent'; Przibram (1927) openly asked whether they are in truth 'totipotent.' The institute mapped the limb's regenerative field and its failure modes — heteromorphic bones, edge defects — without resolving how potency is set.",
+   "source": "From the corpus: Weiss (1925–1930) and Przibram, Deutungen spiegelbildlicher Lurcharme (1927)",
+   "confidence": "from corpus papers (no monograph quote)",
+   "modern": "Blastema-cell potency is the central question of modern limb-regeneration and stem-cell biology (axolotl, Pleurodeles). The field rebuilt this 'how plastic is the blastema?' debate from scratch.",
+   "papers": [
+    8,
+    6,
+    151
+   ]
+  },
+  {
+   "key": "colourchem",
+   "title": "Colour reduced to chemistry — the DOPA reaction",
+   "question": "What chemistry actually makes animal colour — can pigment and pattern be reduced to identified compounds and reactions?",
+   "quote_de": "…eine Aufgabe, welche künftig viel Fleißes und eingehender chemischer Kenntnisse zu ihrer Lösung brauchen wird.",
+   "quote_en": "…a task which in future will require much diligence and deeper chemical knowledge for its solution.",
+   "source": "Przibram, Form und Formel im Tierreiche (1922), p. 167",
+   "confidence": "clean text layer",
+   "modern": "The institute's DOPA / tyrosinase pigment work (Przibram–Brecher) sits at the root of melanin biochemistry, and the DOPA histochemical reaction is still used in melanocyte biology. Colour-as-chemistry was set as the goal; the molecular pathway was completed later, elsewhere.",
+   "papers": [
+    157,
+    22,
+    142
+   ]
+  },
+  {
+   "key": "vitality",
+   "title": "Vitality, growth and the length of a life",
+   "question": "Is growth — and the span of a whole life — one continuous chemical process, or a chain of cycles? The two 'Vitalität' volumes (1913–14) made lifespan an experimental subject.",
+   "quote_de": "…man muß sich entscheiden, ob das ganze Leben eines Organismus einen autokatalytischen Prozeß oder mehrere, sich aneinanderschließende Zyklen darstellen soll.",
+   "quote_en": "…one must decide whether the whole life of an organism represents a single autocatalytic process, or several successive, interlocking cycles.",
+   "source": "Przibram, Form und Formel im Tierreiche (1922), p. 103",
+   "confidence": "clean text layer",
+   "modern": "This is biogerontology's question. The lifespan curves, senescence and growth kinetics Przibram modelled (his 'Alternsfaktor' debate with Pütter) are now quantitative ageing science — reached without the institute's early growth-and-vitality program.",
+   "papers": [
+    134,
+    77,
+    4
+   ]
+  }
+ ],
+ "obituary": 68,
+ "qed": {
+  "enabled": false,
+  "endpoint": null,
+  "label": "Analyze with Q.E.D. Science",
+  "pending_note": "Q.E.D. Science analysis isn't connected yet. When the API key is added, this button will run a live Q.E.D. analysis of this paper and its modern context."
+ },
+ "org_override": {
+  "55": [
+   "Sphodromantis bioculata",
+   "praying mantis"
+  ],
+  "107": [
+   "Lepismatidae (bristletails)",
+   "silverfish & firebrats"
+  ],
+  "130": [
+   "Diptera (adult fly)",
+   "flies"
+  ],
+  "102": [
+   "fish & amphibian muscle",
+   "—"
+  ]
+ }
+}

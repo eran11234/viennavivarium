@@ -32,6 +32,7 @@ STATS = dict(papers=len(catalog), trans=len(translations),
 
 NAV = [("index.html", "Home"), ("catalog.html", "Catalog"),
        ("map.html", "Map"), ("translations.html", "Translations"),
+       ("rediscovery.html", "Rediscover"),
        ("legacy.html", "Legacy"), ("analytics.html", "Analytics"), ("about.html", "About")]
 
 # ---------------------------------------------------------------- shell
@@ -236,6 +237,212 @@ def gen_map():
     page("map.html", "Map", "Map", body,
          head='<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>',
          foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="assets/map.js"></script>')
+
+REDISC_CSS = r"""
+.rstats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 8px}
+.rstats div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:13px 14px}
+.rstats b{display:block;font-family:Georgia,serif;font-size:27px;line-height:1}
+.rstats span{font-size:12px;color:var(--muted)}
+.qbanner{display:flex;gap:12px;align-items:flex-start;background:#f1ece1;border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px;line-height:1.5}
+.qbanner .qi{font-size:21px;color:var(--accent2);line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0 6px}
+.chip{border:1px solid var(--rule);background:var(--card);border-radius:20px;padding:6px 13px;font-size:13.5px;color:var(--ink);cursor:pointer}
+.chip:hover{border-color:#cdc4b1}
+.chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.zchk{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted);margin:4px 0 10px;cursor:pointer}
+.gsec{margin:26px 0 8px}
+.ghead{border-bottom:2px solid var(--rule);padding-bottom:8px;margin-bottom:14px}
+.ghead h2{margin:.1em 0 .15em}
+.gmod{font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+.gblurb{font-size:14.5px;color:#46423b;max-width:74ch;margin:0}
+.dcard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px 17px;margin:12px 0}
+.dcard.flash{box-shadow:0 0 0 3px rgba(122,59,46,.4);transition:box-shadow .3s}
+.dc-h{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
+.dc-h h3{font-family:Georgia,serif;font-size:18px;line-height:1.25;margin:0 0 3px}
+.dc-meta{font-size:13.5px;color:var(--muted);margin:0}
+.dc-meta .now{color:var(--accent2)}
+.dc-badges{display:flex;flex-direction:column;gap:5px;align-items:flex-end;flex-shrink:0;text-align:right}
+.lb{font-size:11px;padding:2px 7px;border-radius:5px;color:#fff;white-space:nowrap}
+.lb.l1{background:var(--l1)}.lb.l2{background:var(--l2)}.lb.l3{background:var(--l3)}.lb.l4{background:var(--l4)}
+.clab{font-size:11px;color:var(--muted);max-width:150px}
+.gap{margin:12px 0 10px}
+.gapbar{height:7px;background:#ece6da;border-radius:4px;overflow:hidden}
+.gapbar span{display:block;height:100%;background:linear-gradient(90deg,#9a6a1f,#7a3b2e)}
+.gaptxt{font-size:13px;color:#46423b;margin:6px 0 0}
+.gaptxt b{font-family:Georgia,serif}.gaptxt b.z{color:var(--accent)}
+.ztag{color:var(--accent);font-weight:600;font-size:12px}
+.dcard.zero{border-color:#d9b8ac;background:#fdf6f3}
+.whatsnew{font-size:14.5px;line-height:1.55;margin:10px 0 0}
+.openend{font-size:14px;line-height:1.55;margin:10px 0 0;background:#f3efe6;border-radius:8px;padding:9px 12px}
+.lab{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-right:7px}
+.openend .lab{color:var(--accent2)}
+.dc-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:13px}
+.tlink{font-size:13px;border:1px solid var(--rule);border-radius:7px;padding:5px 10px;background:var(--paper);color:var(--ink)}
+.tlink:hover{border-color:#cdc4b1;text-decoration:none}
+.qedbtn{font-size:13px;border:1px solid var(--accent2);color:#fff;background:var(--accent2);border-radius:7px;padding:5px 11px;cursor:pointer;margin-left:auto}
+.qedbtn:hover{background:#2b4d68}
+.qedout{display:none;margin-top:11px;font-size:13.5px;line-height:1.5;border-left:3px solid var(--accent2);padding:9px 12px;background:#eef2f5;border-radius:6px}
+.qpend b{color:var(--accent2)}
+.ubh{margin-top:40px}
+.ubintro{max-width:74ch}
+.ubcard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:17px 18px;margin:13px 0}
+.ubcard h3{font-family:Georgia,serif;font-size:19px;margin:0 0 6px}
+.ubq{font-size:15px;color:#3c3833;font-weight:500;margin:0 0 10px}
+.ubquote{margin:0;border-left:3px solid var(--accent);padding:4px 0 4px 14px;font-style:italic;color:#46423b;font-size:14px}
+.ubquote cite{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:6px}
+.ubquote .conf{color:#9a6a1f}
+.ubquote .de{display:none;margin-top:8px;color:#5a554c}
+.degerman{display:inline-block;margin-left:8px;font-size:11px;border:1px solid var(--rule);border-radius:5px;background:var(--paper);color:var(--muted);padding:1px 7px;cursor:pointer;font-style:normal}
+.ubmod{font-size:14px;line-height:1.55;margin:11px 0 0}
+.ublinks{font-size:13px;color:var(--muted);margin:10px 0 0}
+.pchip{display:inline-block;border:1px solid var(--rule);border-radius:14px;padding:2px 9px;margin:2px 3px 0 0;font-size:12.5px;background:var(--paper)}
+.obit{font-size:13px;border-top:1px solid var(--rule);margin-top:30px;padding-top:14px}
+@media(max-width:680px){.rstats{grid-template-columns:repeat(2,1fr)}.dc-h{flex-direction:column}.dc-badges{flex-direction:row;align-items:flex-start;text-align:left}.qedbtn{margin-left:0}}
+"""
+
+REDISC_JS = r"""
+(function(){
+var R=window.REDISCOVERY, MG=R.stats.maxgap||63;
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function links(c){var L=[];
+  if(c.read)L.push('<a class="tlink" href="'+c.read+'">Read translation</a>');
+  if(c.pdf)L.push('<a class="tlink" href="pdfs/'+encodeURIComponent(c.pdf)+'" download>German PDF</a>');
+  L.push('<a class="tlink" href="legacy.html">Who cites it ↗</a>');
+  if(c.doi)L.push('<a class="tlink" href="https://doi.org/'+c.doi+'" target="_blank" rel="noopener">DOI ↗</a>');
+  return L.join('');}
+function cardHTML(pid){var c=R.cards[pid]; if(!c)return '';
+  var pct=Math.max(4,Math.round(c.gap/MG*100)), zero=c.citations===0;
+  var now=(c.modern&&c.modern!=='—'&&c.modern!==c.organism)?' <span class="now">→ today <em>'+esc(c.modern)+'</em></span>':'';
+  return '<article id="card-'+pid+'" class="dcard'+(zero?' zero':'')+'" data-cit="'+c.citations+'">'
+   +'<div class="dc-h"><div><h3>'+esc(c.title)+'</h3>'
+   +'<p class="dc-meta">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>':'')+now+'</p></div>'
+   +'<div class="dc-badges">'+(c.layer?'<span class="lb l'+c.layer+'">Layer '+c.layer+'</span>':'')
+   +(c.cluster?'<span class="clab">'+esc(c.cluster)+'</span>':'')+'</div></div>'
+   +'<div class="gap"><div class="gapbar"><span style="width:'+pct+'%"></span></div>'
+   +'<p class="gaptxt"><b>'+c.gap+'</b> modern works study this animal · <b class="'+(zero?'z':'')+'">'+c.citations+'</b> cite the original'
+   +(zero?' <span class="ztag">none yet</span>':'')+'</p></div>'
+   +'<p class="whatsnew"><span class="lab">What’s new</span>'+esc(c.whats_new)+'</p>'
+   +'<div class="openend"><span class="lab">Open end</span>'+esc(c.open_end)+'</div>'
+   +'<div class="dc-links">'+links(c)+'<button class="qedbtn" onclick="qedAnalyze('+pid+')">⚛ Analyze with Q.E.D. Science</button></div>'
+   +'<div class="qedout" id="qed-'+pid+'"></div></article>';}
+function groupHTML(g){return '<section class="gsec" data-k="'+g.key+'"><div class="ghead"><h2>'+esc(g.title)+'</h2>'
+   +'<p class="gmod">'+esc(g.modern)+'</p><p class="gblurb">'+esc(g.blurb)+'</p></div>'
+   +g.papers.slice().sort(function(a,b){return (R.cards[b]?R.cards[b].gap:0)-(R.cards[a]?R.cards[a].gap:0);}).map(cardHTML).join('')+'</section>';}
+
+document.getElementById('chips').innerHTML='<button class="chip on" data-k="all">All ‹'+R.stats.targets+'›</button>'
+  +R.groups.map(function(g){return '<button class="chip" data-k="'+g.key+'">'+esc(g.title)+' ‹'+g.papers.length+'›</button>';}).join('');
+document.getElementById('groups').innerHTML=R.groups.map(groupHTML).join('');
+
+document.getElementById('unfinished').innerHTML=R.unfinished.map(function(u){
+  var ch=(u.papers||[]).map(function(id){var c=R.cards[id];return c?'<a class="pchip" href="#card-'+id+'" onclick="return jump('+id+')">'+esc(c.author)+' '+c.year+'</a>':'';}).join('');
+  return '<section class="ubcard"><h3>'+esc(u.title)+'</h3><p class="ubq">'+esc(u.question)+'</p>'
+   +'<blockquote class="ubquote">“'+esc(u.quote_en)+'”'
+   +'<button class="degerman" onclick="var d=this.parentNode.querySelector(\'.de\');d.style.display=d.style.display===\'block\'?\'none\':\'block\';">original German</button>'
+   +'<span class="de">„'+esc(u.quote_de)+'“</span>'
+   +'<cite>— '+esc(u.source)+' · <span class="conf">'+esc(u.confidence)+'</span></cite></blockquote>'
+   +'<p class="ubmod"><span class="lab">Where it went</span>'+esc(u.modern)+'</p>'
+   +(ch?'<p class="ublinks">In the walk-through: '+ch+'</p>':'')+'</section>';
+}).join('');
+
+if(R.obituary){document.querySelector('.obit').innerHTML='A 40th paper, '+esc(R.obituary.author)+' ('+R.obituary.year+'), “'+esc(R.obituary.title)+',” was flagged by the same algorithm but is an obituary (of the BVA researcher Franz Megusar), not a discovery — so it is left out of the walk-through above.';}
+
+var zchk=document.getElementById('zonly');
+function applyZero(){var on=zchk.checked;
+  document.querySelectorAll('.dcard').forEach(function(c){c.style.display=(on&&c.dataset.cit!=='0')?'none':'';});}
+function setFilter(k){
+  document.querySelectorAll('#chips .chip').forEach(function(b){b.classList.toggle('on',b.dataset.k===k);});
+  document.querySelectorAll('.gsec').forEach(function(s){s.style.display=(k==='all'||s.dataset.k===k)?'':'none';});
+  applyZero();}
+document.getElementById('chips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(b)setFilter(b.dataset.k);});
+zchk.addEventListener('change',applyZero);
+
+window.jump=function(id){setFilter('all');zchk.checked=false;applyZero();var el=document.getElementById('card-'+id);
+  if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('flash');setTimeout(function(){el.classList.remove('flash');},1600);}return false;};
+
+window.qedAnalyze=function(id){var out=document.getElementById('qed-'+id),q=R.qed||{},c=R.cards[id];
+  out.style.display='block';
+  if(!q.enabled||!q.endpoint){out.innerHTML='<div class="qpend"><b>Q.E.D. Science — not connected yet.</b> '+esc(q.pending_note||'')+'</div>';return;}
+  out.innerHTML='<div class="qpend">Analyzing “'+esc(c.title)+'” with Q.E.D. Science…</div>';
+  fetch(q.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:id,title:c.title,author:c.author,year:c.year,doi:c.doi,organism:c.organism})})
+   .then(function(r){return r.json();})
+   .then(function(d){out.innerHTML='<div class="qres">'+esc(d.summary||d.analysis||JSON.stringify(d))+'</div>';})
+   .catch(function(e){out.innerHTML='<div class="qpend">Q.E.D. request failed: '+esc(String(e))+'</div>';});};
+})();
+"""
+
+
+def gen_rediscovery():
+    """Interactive walk-through of the 40 rediscovery targets, grouped by living model
+    system, with per-paper open ends, a monograph-mined 'unfinished business' synthesis,
+    and a (placeholder) Q.E.D. Science analysis button wired for later activation."""
+    rp = os.path.join(ROOT, "legacy_data", "rediscovery.json")
+    R = json.load(open(rp, encoding="utf-8"))
+    cat_by_id = {c["id"]: c for c in catalog}
+    read_for = {t["id"]: t["page_slug"] for t in translations}
+    org_ov = {int(k): v for k, v in R.get("org_override", {}).items()}
+    mpath = os.path.join(ROOT, "legacy_data", "methodology.json")
+    meth = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else {}
+
+    def card(pid):
+        c = cat_by_id[pid]
+        cur = R["cards"][str(pid)]
+        org, modern = org_ov.get(pid, (c.get("organism"), c.get("modern")))
+        return dict(
+            id=pid, title=(c.get("title_en") or c.get("title") or "").replace("�", "ä"),
+            author=c.get("author"), year=c.get("year"),
+            organism=org, modern=modern, taxon=c.get("taxon"),
+            cluster=(meth.get(str(pid), {}) or {}).get("method", ""), layer=c.get("layer"),
+            citations=c.get("citations", 0), gap=c.get("n_parallels", 0),
+            whats_new=cur[0], open_end=cur[1],
+            read=("papers/" + read_for[pid] + ".html") if pid in read_for else None,
+            pdf=c.get("pdf"), doi=c.get("doi"))
+
+    cards = {}
+    for g in R["groups"]:
+        for pid in g["papers"]:
+            cards[str(pid)] = card(pid)
+    maxgap = max((c["gap"] for c in cards.values()), default=63)
+    zero = sum(1 for c in cards.values() if c["citations"] == 0)
+    ob = cat_by_id.get(R.get("obituary"))
+    obit = dict(id=ob["id"], author=ob["author"], year=ob["year"],
+                title=(ob.get("title") or "").replace("�", "ä")) if ob else None
+    data = dict(intro=R["intro"], qed=R["qed"], groups=R["groups"], cards=cards,
+                unfinished=R["unfinished"], obituary=obit,
+                stats=dict(targets=len(cards), systems=len(R["groups"]),
+                           zero=zero, programs=len(R["unfinished"]), maxgap=maxgap))
+    os.makedirs(DATA, exist_ok=True)
+    open(os.path.join(DATA, "rediscovery.js"), "w", encoding="utf-8").write(
+        "window.REDISCOVERY=" + json.dumps(data, ensure_ascii=False) + ";")
+
+    body = ('<p class="kicker">Rediscovery targets</p>'
+        '<h1>Forty discoveries waiting to be re-cited</h1>'
+        '<p class="lede">' + R["intro"] + '</p>'
+        '<div class="rstats">'
+        '<div><b>' + str(len(cards)) + '</b><span>rediscovery targets</span></div>'
+        '<div><b>' + str(len(R["groups"])) + '</b><span>living model systems</span></div>'
+        '<div><b>' + str(zero) + '</b><span>with zero modern citations</span></div>'
+        '<div><b>' + str(len(R["unfinished"])) + '</b><span>unfinished programs</span></div>'
+        '</div>'
+        '<div class="qbanner"><span class="qi">⚛</span><div><b>Analyze with Q.E.D. Science.</b> '
+        'Each discovery below carries a Q.E.D. analysis button. It is wired and waiting: as soon as the '
+        'Q.E.D. Science API key is added it will run a live analysis of that paper. Until then it shows what it will do.</div></div>'
+        '<div id="chips" class="chips"></div>'
+        '<label class="zchk"><input type="checkbox" id="zonly"> Show only the targets nobody cites yet ('
+        + str(zero) + ')</label>'
+        '<div id="groups"></div>'
+        '<h2 class="ubh">The institute’s unfinished business</h2>'
+        '<p class="muted ubintro">Beyond the single papers, the Vivarium opened whole research programs it never '
+        'closed. These six are drawn from Przibram’s own monographs — each with the original passage and a note '
+        'on where the question went.</p>'
+        '<div id="unfinished"></div>'
+        '<p class="obit muted"></p>')
+
+    page("rediscovery.html", "Rediscover", "Rediscover", body,
+         head="<style>" + REDISC_CSS + "</style>",
+         foot='<script src="data/rediscovery.js"></script><script>' + REDISC_JS + '</script>')
+    print("rediscovery.html:", len(cards), "cards |", len(R["groups"]), "groups |",
+          len(R["unfinished"]), "programs | zero-cite:", zero)
+
 
 def gen_citations():
     """Emit the slim per-paper citing-works list (for bubbles) + the composed paragraphs."""
@@ -921,7 +1128,7 @@ def main():
     open(os.path.join(DATA, "site.js"), "w").write("window.SITE=" + json.dumps({"fullPdfs": FULL}) + ";")
     open(os.path.join(SITE, ".nojekyll"), "w").write("")
     gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader()
-    gen_citations(); gen_methodology(); gen_reading_pages(); copy_assets()
+    gen_citations(); gen_methodology(); gen_rediscovery(); gen_reading_pages(); copy_assets()
     print("Generated site at", SITE, "| FULL_PDFS =", FULL)
     print("pages:", sorted(os.path.basename(p) for p in glob.glob(os.path.join(SITE, "*.html"))))
     print("reading pages:", len(glob.glob(os.path.join(SITE, "papers", "*.html"))))
