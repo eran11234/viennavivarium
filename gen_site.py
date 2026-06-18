@@ -167,7 +167,7 @@ def gen_legacy():
 <div id="list" class="legacy"></div>
 """
     page("legacy.html", "Legacy", "Legacy", body,
-         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="data/methodology.js"></script><script src="assets/legacy.js"></script>')
+         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="data/summaries.js"></script><script src="data/methodology.js"></script><script src="assets/legacy.js"></script>')
 
 # ---------------------------------------------------------------- analytics
 def gen_analytics():
@@ -259,6 +259,7 @@ REDISC_CSS = r"""
 .dcard.flash{box-shadow:0 0 0 3px rgba(122,59,46,.4);transition:box-shadow .3s}
 .dc-h{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
 .dc-h h3{font-family:Georgia,serif;font-size:18px;line-height:1.25;margin:0 0 3px}
+.dc-de{font-style:italic;color:var(--muted);font-size:12.5px;margin:1px 0 4px}
 .dc-meta{font-size:13.5px;color:var(--muted);margin:0}
 .dc-meta .now{color:var(--accent2)}
 .dc-badges{display:flex;flex-direction:column;gap:5px;align-items:flex-end;flex-shrink:0;text-align:right}
@@ -274,6 +275,8 @@ REDISC_CSS = r"""
 .dcard.zero{border-color:#d9b8ac;background:#fdf6f3}
 .whatsnew{font-size:14.5px;line-height:1.55;margin:10px 0 0}
 .openend{font-size:14px;line-height:1.55;margin:10px 0 0;background:#f3efe6;border-radius:8px;padding:9px 12px}
+.citesumm{font-size:13.5px;line-height:1.55;margin:8px 0 0;background:#eef2f5;border-left:3px solid var(--accent2);border-radius:6px;padding:8px 12px}
+.citesumm .lab{color:var(--accent2)}
 .lab{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-right:7px}
 .openend .lab{color:var(--accent2)}
 .dc-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:13px}
@@ -315,6 +318,7 @@ function cardHTML(pid){var c=R.cards[pid]; if(!c)return '';
   var now=(c.modern&&c.modern!=='—'&&c.modern!==c.organism)?' <span class="now">→ today <em>'+esc(c.modern)+'</em></span>':'';
   return '<article id="card-'+pid+'" class="dcard'+(zero?' zero':'')+'" data-cit="'+c.citations+'">'
    +'<div class="dc-h"><div><h3>'+esc(c.title)+'</h3>'
+   +((c.title_de&&c.title_de!==c.title)?'<p class="dc-de">('+esc(c.title_de)+')</p>':'')
    +'<p class="dc-meta">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>':'')+now+'</p></div>'
    +'<div class="dc-badges">'+(c.layer?'<span class="lb l'+c.layer+'">Layer '+c.layer+'</span>':'')
    +(c.cluster?'<span class="clab">'+esc(c.cluster)+'</span>':'')+'</div></div>'
@@ -323,6 +327,7 @@ function cardHTML(pid){var c=R.cards[pid]; if(!c)return '';
    +(zero?' <span class="ztag">none yet</span>':'')+'</p></div>'
    +'<p class="whatsnew"><span class="lab">What’s new</span>'+esc(c.whats_new)+'</p>'
    +'<div class="openend"><span class="lab">Open end</span>'+esc(c.open_end)+'</div>'
+   +(c.cite_summary?'<div class="citesumm"><span class="lab">How it’s cited today</span>'+esc(c.cite_summary)+'</div>':'')
    +'<div class="dc-links">'+links(c)+'<button class="qedbtn" onclick="qedAnalyze('+pid+')">⚛ Analyze with Q.E.D. Science</button></div>'
    +'<div class="qedout" id="qed-'+pid+'"></div></article>';}
 function groupHTML(g){return '<section class="gsec" data-k="'+g.key+'"><div class="ghead"><h2>'+esc(g.title)+'</h2>'
@@ -382,13 +387,17 @@ def gen_rediscovery():
     org_ov = {int(k): v for k, v in R.get("org_override", {}).items()}
     mpath = os.path.join(ROOT, "legacy_data", "methodology.json")
     meth = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else {}
+    _sp = os.path.join(ROOT, "legacy_data", "citation_summaries.json")
+    SUMM = json.load(open(_sp, encoding="utf-8")) if os.path.exists(_sp) else {}
 
     def card(pid):
         c = cat_by_id[pid]
         cur = R["cards"][str(pid)]
         org, modern = org_ov.get(pid, (c.get("organism"), c.get("modern")))
         return dict(
+            cite_summary=SUMM.get(str(pid)),
             id=pid, title=(c.get("title_en") or c.get("title") or "").replace("�", "ä"),
+            title_de=(c.get("title") or "").replace("�", "ä"),
             author=c.get("author"), year=c.get("year"),
             organism=org, modern=modern, taxon=c.get("taxon"),
             cluster=(meth.get(str(pid), {}) or {}).get("method", ""), layer=c.get("layer"),
@@ -426,6 +435,7 @@ def gen_rediscovery():
         '<div class="qbanner"><span class="qi">⚛</span><div><b>Analyze with Q.E.D. Science.</b> '
         'Each discovery below carries a Q.E.D. analysis button. It is wired and waiting: as soon as the '
         'Q.E.D. Science API key is added it will run a live analysis of that paper. Until then it shows what it will do.</div></div>'
+        '<p class="muted" style="font-size:13.5px;line-height:1.55;max-width:76ch;margin:8px 0 0">On each card the bar reads <b>how many modern works study this animal</b> against <b>how many cite the BVA original</b> — the wider the gap, the more orphaned the work. Where modern science <em>does</em> engage a paper, a “How it’s cited today” note summarises that reception; <b>Who cites it ↗</b> opens the full, paper-by-paper citation list on the Legacy page.</p>'
         '<div id="chips" class="chips"></div>'
         '<label class="zchk"><input type="checkbox" id="zonly"> Show only the targets nobody cites yet ('
         + str(zero) + ')</label>'
@@ -439,7 +449,7 @@ def gen_rediscovery():
 
     page("rediscovery.html", "Rediscover", "Rediscover", body,
          head="<style>" + REDISC_CSS + "</style>",
-         foot='<script src="data/rediscovery.js"></script><script>' + REDISC_JS + '</script>')
+         foot='<script src="data/summaries.js"></script><script src="data/rediscovery.js"></script><script>' + REDISC_JS + '</script>')
     print("rediscovery.html:", len(cards), "cards |", len(R["groups"]), "groups |",
           len(R["unfinished"]), "programs | zero-cite:", zero)
 
@@ -477,7 +487,12 @@ def gen_citations():
     open(os.path.join(DATA, "notes.js"), "w", encoding="utf-8").write(
         "window.NOTES=" + json.dumps(notes, ensure_ascii=False) + ";\n"
         "window.VERIFIED=" + json.dumps(ver_map, ensure_ascii=False) + ";")
-    print("citations.js:", sum(len(v) for v in cits.values()), "works | notes:", len(notes), "| verified:", len(verified))
+    sum_path = os.path.join(ROOT, "legacy_data", "citation_summaries.json")
+    summaries = json.load(open(sum_path, encoding="utf-8")) if os.path.exists(sum_path) else {}
+    open(os.path.join(DATA, "summaries.js"), "w", encoding="utf-8").write(
+        "window.SUMMARIES=" + json.dumps(summaries, ensure_ascii=False) + ";")
+    print("citations.js:", sum(len(v) for v in cits.values()), "works | notes:", len(notes),
+          "| verified:", len(verified), "| summaries:", len(summaries))
 
 def gen_methodology():
     """Emit per-paper methodology: auto cluster for all 175 + full structured records where written."""
@@ -519,6 +534,8 @@ def render_md(slug):
 def gen_reading_pages():
     os.makedirs(os.path.join(SITE, "papers"), exist_ok=True)
     cat_by_id = {c["id"]: c for c in catalog}
+    _sp = os.path.join(ROOT, "legacy_data", "citation_summaries.json")
+    SUMM = json.load(open(_sp, encoding="utf-8")) if os.path.exists(_sp) else {}
     for t in translations:
         slug = t["trans_slug"]; ps = t["page_slug"]
         frag, toc = render_md(slug)
@@ -548,6 +565,7 @@ def gen_reading_pages():
           <div><b>{html.escape(lg.get('modern') or c.get('genus') or '—')}</b><span>organism now</span></div>
         </div>
         {redis}
+        {('<div style="margin:10px 0;padding:11px 13px;border-left:3px solid var(--accent2);background:#eef2f5;border-radius:7px"><h3 style="margin:.1em 0 .35em;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent2)">How later science draws on this work</h3><p style="margin:0;font-size:13.5px;line-height:1.6">'+html.escape(SUMM[str(pid)])+'</p></div>') if str(pid) in SUMM else ''}
         {'<h3>Cited by today</h3><ul class="cites">'+clist+'</ul>' if clist else '<p class="muted">No modern citations recorded.</p>'}
         </section>"""
         body = f"""
@@ -774,7 +792,7 @@ function row(c){
  var lay=c.layer?('<span class="badge l'+c.layer+'">L'+c.layer+'</span>'):'';
  var rd=c.rediscovery?' <span class="rd">◆ rediscovery</span>':'';
  return '<tr class="crow" data-id="'+c.id+'"><td>'+c.year+'</td><td>'+esc(c.author)+'</td>'+
- '<td><div class="ti">'+esc(c.title)+(c.title_en?'</div><div class="de">'+esc(c.title_en):'')+'</div></td>'+
+ '<td><div class="ti">'+esc(c.title_en||c.title)+'</div>'+((c.title&&c.title!==c.title_en)?'<div class="de">('+esc(c.title)+')</div>':'')+'</td>'+
  '<td><em>'+esc(c.organism)+'</em>'+rd+'</td>'+
  '<td class="meth">'+esc(MLAB[mcl(c)]||mcl(c)||'—')+((METH[c.id]&&METH[c.id].full)?' <span class="mfull" title="full methodology summary">●</span>':'')+'</td>'+
  '<td>'+lay+'</td><td class="num">'+(c.citations||0)+'</td><td>'+read+'</td></tr>';
@@ -830,8 +848,8 @@ function renderPaper(id){
  var sci=arr.filter(function(x){return !x.h;}),hist=arr.filter(function(x){return x.h;});
  var en=c.has_translation?('<a class="btn" href="papers/'+c.slug+'.html">Read English translation →</a>'):'';
  var head='<p class="kicker"><a href="legacy.html">‹ Legacy explorer</a> · '+esc(c.convergence||'')+'</p>'+
-  '<h2 style="font-family:Georgia,serif;font-size:23px;margin:.1em 0">'+esc(c.has_translation&&c.title_en?c.title_en:c.title)+'</h2>'+
-  ((c.has_translation&&c.title_en)?'<p style="font-style:italic;color:var(--muted);margin:.1em 0">'+esc(c.title)+'</p>':'')+
+  '<h2 style="font-family:Georgia,serif;font-size:23px;margin:.1em 0">'+esc(c.title_en||c.title)+'</h2>'+
+  ((c.title&&c.title!==c.title_en)?'<p style="font-style:italic;color:var(--muted);margin:.1em 0">('+esc(c.title)+')</p>':'')+
   '<p class="sub" style="font-size:14px;color:#4a463f">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+(c.layer?' · <span class="badge l'+c.layer+'">Layer '+c.layer+'</span>':'')+(c.rediscovery?' <span class="badge redis">rediscovery target</span>':'')+'</p>'+
   '<div class="actionbar" style="margin:12px 0"><a class="btn primary" href="reader.html?id='+id+'">Read original (PDF)</a>'+en+(c.doi?'<a class="btn" target="_blank" href="https://doi.org/'+c.doi+'">DOI ↗</a>':'')+'</div>';
  function it(x){var note=NT[id+':'+x.k]||'';var doi=x.d?(' · <a target="_blank" href="https://doi.org/'+x.d+'">doi</a>'):'';
@@ -851,6 +869,8 @@ function renderPaper(id){
    (F.summary?'<p style="line-height:1.62">'+esc(F.summary)+'</p>':'')+'</section>';
  }else if(M.cluster){methHtml='<section class="methbox"><h3>Methodology</h3><p><span class="badge mcl">'+esc(M.cluster)+'</span> <span class="muted">— full methodological summary not yet written for this paper.</span></p></section>';}
  var out=head+methHtml;
+ var sm=(window.SUMMARIES&&window.SUMMARIES[id])||'';
+ if(sm)out+='<section style="margin:18px 0 0;padding:13px 16px;border-left:4px solid var(--accent2);background:#eef2f5;border-radius:8px"><h3 style="margin:.1em 0 .4em">How later science draws on this work</h3><p style="margin:0;line-height:1.62;font-size:14.5px">'+esc(sm)+'</p></section>';
  var disc='<p class="muted" style="font-size:12px;line-height:1.5;margin:18px 0 0;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:#fbf9f3"><b>How to read these notes.</b> Each line below describes the most likely reason a work cites this paper, reconstructed from the citing work\'s title, topic and (where available) abstract — <em>not</em> from the citing passage itself, which is rarely digitised for this century-old literature. They are a guide to the citation\'s likely sense, not a verified quotation; the linked DOI is the primary source.</p>';
  if(!arr.length){out+='<p class="muted" style="margin-top:14px">No modern citations are recorded for this paper.</p>';}
  else{out+=disc+'<h3 style="margin:20px 0 8px">Cited by today — '+sci.length+' scientific work'+(sci.length!=1?'s':'')+'</h3><div class="legacy">'+sci.map(it).join('')+'</div>';
@@ -861,7 +881,8 @@ function item(c){
  var lg=L[c.id]||{};var cites=(lg.citations||[]).slice(0,10);
  var cl=cites.map(function(x){return '<li>'+(x.year?x.year+' · ':'')+esc(x.author)+' — '+esc((x.title||'').slice(0,120))+(x.doi?' <a target=_blank href="https://doi.org/'+x.doi+'">doi</a>':'')+'</li>'}).join('');
  var link=c.has_translation?'<a href="papers/'+c.slug+'.html">English translation →</a>':'<a href="reader.html?id='+c.id+'">read original →</a>';
- return '<div class="litem"><div class="h"><div><div class="ti">'+esc(c.title)+'</div>'+
+ return '<div class="litem"><div class="h"><div><div class="ti">'+esc(c.title_en||c.title)+'</div>'+
+ ((c.title&&c.title!==c.title_en)?'<div class="de" style="font-style:italic;color:var(--muted);font-size:12.5px;margin:1px 0 2px">('+esc(c.title)+')</div>':'')+
  '<div class="sub">'+esc(c.author)+' · '+c.year+' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':'')+'</div></div>'+
  '<div style="text-align:right">'+(c.rediscovery?'<span class="badge redis">rediscovery target</span><br>':'')+(c.layer?'<span class="badge l'+c.layer+'">L'+c.layer+'</span>':'')+'</div></div>'+
  '<div class="kv"><span><b>'+(lg.cited_by_count||0)+'</b> cited today</span><span><b>'+(lg.n_parallels||0)+'</b> modern parallels</span><span>'+esc(c.convergence||'')+'</span></div>'+
@@ -904,7 +925,7 @@ new Chart(cAuth,{type:'bar',data:{labels:top.map(function(x){return x[0]}),datas
  options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:grid},ticks:{precision:0}},y:{grid:{display:false}}}}});
 var cc=D.slice().sort(function(a,b){return (b.citations||0)-(a.citations||0)}).slice(0,12);
 new Chart(cCit,{type:'bar',data:{labels:cc.map(function(c){return c.author+' '+c.year}),datasets:[{data:cc.map(function(c){return c.citations||0}),backgroundColor:'#7a3b2e'}]},
- options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(i){return cc[i.dataIndex].title.slice(0,70)}}}},scales:{x:{grid:{color:grid}},y:{grid:{display:false}}}}});
+ options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(i){return (cc[i.dataIndex].title_en||cc[i.dataIndex].title||'').slice(0,70)}}}},scales:{x:{grid:{color:grid}},y:{grid:{display:false}}}}});
 })();
 """
     reader_js = r"""
@@ -923,10 +944,10 @@ if(en){acts+='<a class="btn" href="'+en+'">Read English translation</a>';
  acts+= sxs?('<a class="btn" href="reader.html?id='+id+'">Single view</a>')
           :('<a class="btn" href="reader.html?id='+id+'&sxs=1">⇆ Side-by-side English</a>');}
 if(doi)acts+='<a class="btn" href="https://doi.org/'+C.doi+'" target="_blank">DOI ↗</a>';
-var ttl=(C.has_translation&&C.title_en)?C.title_en:C.title;
+var ttl=C.title_en||C.title;
 head.innerHTML='<p class="kicker"><a href="catalog.html">Catalog</a> · BVA · '+C.year+'</p>'+
  '<h1 style="margin-bottom:4px">'+esc(ttl)+'</h1>'+
- ((C.has_translation&&C.title_en)?'<p class="detitle" style="font-style:italic;color:var(--muted);margin:0 0 6px">'+esc(C.title)+'</p>':'')+
+ ((C.title&&C.title!==C.title_en)?'<p class="detitle" style="font-style:italic;color:var(--muted);margin:0 0 6px">('+esc(C.title)+')</p>':'')+
  '<p class="byline">'+esc(C.author_full||C.author)+' · '+C.year+(doi?' · DOI '+doi:'')+(C.organism?' · <em>'+esc(C.organism)+'</em>':'')+'</p>'+
  '<div class="actionbar">'+acts+'</div>';
 if(sxs&&en){
@@ -1076,8 +1097,8 @@ function select(c){selected=c;
  var nnote=arr.filter(function(x){return hasNote(c,x);}).length;
  var en=c.has_translation?('<a class="btn" href="papers/'+c.slug+'.html">Read English →</a>'):'';
  var head='<p class="kicker"><a href="#" id="backp">‹ all papers</a> · '+esc(c._t)+' · '+(c.layer?('Layer '+c.layer):'unranked')+'</p>'+
-  '<h3>'+esc(c.has_translation&&c.title_en?c.title_en:c.title)+'</h3>'+
-  ((c.has_translation&&c.title_en)?'<p class="pde">'+esc(c.title)+'</p>':'')+
+  '<h3>'+esc(c.title_en||c.title)+'</h3>'+
+  ((c.title&&c.title!==c.title_en)?'<p class="pde">('+esc(c.title)+')</p>':'')+
   '<p class="pmeta">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+'</p>'+
   '<p class="pmeta"><b>'+(c.citations||0)+'</b> modern citations · <b>'+(lg.n_parallels||0)+'</b> parallels'+(c.rediscovery?' · <span class="badge redis">rediscovery</span>':'')+'</p>'+
   '<div class="actionbar" style="margin:10px 0"><a class="btn primary" href="reader.html?id='+c.id+'">Read original</a>'+en+'</div>';

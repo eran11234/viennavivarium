@@ -410,6 +410,11 @@ def build():
         trans_for_id[fid] = fslug
 
     assigned = assign_pdfs(summary, ds_match, idx, trans_for_id)
+    # English titles for ALL papers (parenthetical German kept); + cleaned German where OCR-corrupted
+    _tp = os.path.join(ROOT, "legacy_data", "titles_en.json")
+    TITLES_EN = json.load(open(_tp, encoding="utf-8")) if os.path.exists(_tp) else {}
+    _dp = os.path.join(ROOT, "legacy_data", "titles_de_clean.json")
+    TITLES_DE = json.load(open(_dp, encoding="utf-8")) if os.path.exists(_dp) else {}
     catalog, legacy = [], {}
     mapped = 0
     for pid in sorted(summary):
@@ -436,6 +441,11 @@ def build():
             mt = ((tmeta.get(slug, {}) or {}).get("meta") or {}).get("title") or TRANS_DE.get(slug)
             if mt:
                 title_de = mt
+        title_de = TITLES_DE.get(str(pid)) or title_de   # repair OCR-corrupted German
+        # fix OCR mid-word capital umlauts (FarbverÄnderungen -> Farbveränderungen, HÄutung -> Häutung)
+        title_de = re.sub(r'(?<=[A-Za-zäöüß])([ÄÖÜ])', lambda m: m.group(1).lower(), title_de)
+        # English title for every paper: translation's own title if present, else curated translation
+        title_en = (tmeta.get(slug, {}).get("title_en") if slug else None) or TITLES_EN.get(str(pid))
 
         rec = dict(
             id=pid, year=year, author=author, author_full=author_full,
@@ -446,7 +456,7 @@ def build():
             pdf=pdf, has_translation=bool(slug),
             slug=(slug.split("_")[0] + "-" + re.sub(r"[^a-z0-9]+","-",norm(author)) + "-" + str(year)) if slug else None,
             trans_slug=slug,
-            title_en=(tmeta.get(slug, {}).get("title_en") if slug else None),
+            title_en=title_en,
             rationale=ds.get("rationale", ""),
         )
         catalog.append(rec)
