@@ -153,6 +153,20 @@ def pdf_digital_text(data):
     except Exception:
         return ""
 
+def _ensure_tesseract_path():
+    """Point pytesseract at the Homebrew tesseract even if it isn't on PATH (double-click launch)."""
+    import os, shutil
+    try:
+        import pytesseract
+    except Exception:
+        return
+    if shutil.which("tesseract"):
+        return
+    for p in ("/opt/homebrew/bin/tesseract", "/usr/local/bin/tesseract"):
+        if os.path.exists(p):
+            pytesseract.pytesseract.tesseract_cmd = p
+            return
+
 def ocr_pdf(data, surnames):
     """Last resort: OCR an image-only scan page by page until the surname turns up.
     Returns OCR text, or None if Tesseract/Pillow aren't installed (then it stays a scan)."""
@@ -161,6 +175,7 @@ def ocr_pdf(data, surnames):
         from PIL import Image
     except Exception:
         return None
+    _ensure_tesseract_path()
     try:
         doc = fitz.open(stream=data, filetype="pdf")
         fsur = [fold(s) for s in surnames]
@@ -182,6 +197,7 @@ def ocr_pdf(data, surnames):
 def ocr_available():
     try:
         import pytesseract
+        _ensure_tesseract_path()
         pytesseract.get_tesseract_version()
         return True
     except Exception:
