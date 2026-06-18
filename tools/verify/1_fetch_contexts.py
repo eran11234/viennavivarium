@@ -65,10 +65,16 @@ def looks_like_reflist(s):
         return True
     return False
 
+def fold(s):
+    import unicodedata
+    s = s.replace("ß", "ss")
+    return "".join(c for c in unicodedata.normalize("NFKD", s) if not unicodedata.combining(c)).lower()
+
 def extract(body, surnames, year):
+    fsur = [fold(sn) for sn in surnames]
     cand = []
     for sent in sentences(body):
-        if not any(sn in sent for sn in surnames):
+        if not any(sn in fold(sent) for sn in fsur):   # diacritic/ß-insensitive (Weiß=Weiss)
             continue
         s = sanitize(sent)
         if not s or looks_like_reflist(s):
