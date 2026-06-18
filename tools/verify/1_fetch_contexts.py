@@ -110,14 +110,56 @@ def classify(body):
         return "paywalled"
     return "thin"
 
+def find_pdf_urls(page, doi):
+    """Candidate full-text PDF links on the page, plus the canonical Springer one."""
+    urls = []
+    try:
+        urls = page.eval_on_selector_all(
+            "a[href]",
+            "els => els.map(a => a.href).filter(h => /\\.pdf(\\?|$)|\\/pdf\\//i.test(h))")
+    except Exception:
+        urls = []
+    urls.append("https://link.springer.com/content/pdf/" + doi + ".pdf")
+    seen, out = set(), []
+    for u in urls:
+        if u and u not in seen:
+            seen.add(u); out.append(u)
+    return out[:3]
+
+def fetch_pdf_text(page, url):
+    """Download the PDF through the logged-in session and pull its text (born-digital only)."""
+    try:
+        import fitz  # pymupdf
+    except Exception:
+        return None
+    try:
+        resp = page.context.request.get(url, timeout=40000)
+        if not resp.ok:
+            return None
+        ct = (resp.headers.get("content-type") or "").lower()
+        if "pdf" not in ct and not url.lower().split("?")[0].endswith(".pdf"):
+            return None
+        doc = fitz.open(stream=resp.body(), filetype="pdf")
+        txt = " ".join(pg.get_text() for pg in doc)
+        doc.close()
+        return txt
+    except Exception:
+        return None
+
 def main():
     enr = json.load(open(ENR, encoding="utf-8"))
     targ = json.load(open(TARG, encoding="utf-8"))
+    # Only skip works we already nailed ('ok') or confirmed image-scans; RETRY everything
+    # else (no_passage / thin / paywalled / error) — the new PDF reader may now get them.
     done = set()
     if os.path.exists(OUT):
         for line in open(OUT, encoding="utf-8"):
-            try: done.add(json.loads(line)["key"])
-            except Exception: pass
+            try:
+                r = json.loads(line)
+                if r.get("status") in ("ok", "scan_pdf"):
+                    done.add(r["key"])
+            except Exception:
+                pass
     # optionally skip keys that are already source-verified
     skip_verified = set()
     vpath = os.path.join(ROOT, "legacy_data", "citation_verified.json")
@@ -149,29 +191,42 @@ def main():
         for (key, pid, doi, surnames, byear, wyear) in jobs:
             if os.path.exists(os.path.join(HERE, "STOP")):
                 log("STOP file found — exiting cleanly."); break
-            status, snippets = "error", []
+            status, snippets, src = "error", [], ""
             try:
                 page.goto("https://doi.org/" + doi, wait_until="domcontentloaded")
                 try: page.wait_for_load_state("networkidle", timeout=12000)
                 except Exception: pass
                 body = page.inner_text("body")
-                status = classify(body)
-                if status == "fulltext":
+                cls = classify(body)
+                if cls == "fulltext":
                     snippets = extract(body, surnames, byear)
-                    if not snippets:
+                    status, src = ("ok", "html") if snippets else ("no_passage", "html")
+                else:
+                    status = cls
+                # If the landing page didn't give the passage, the full text is usually in
+                # the PDF ("View PDF" button). Open it and read that.
+                if status != "ok":
+                    for pu in find_pdf_urls(page, doi):
+                        txt = fetch_pdf_text(page, pu)
+                        if not txt:
+                            continue
+                        if len(txt.strip()) < 500:
+                            status = "scan_pdf"      # image-only scan: no text layer
+                            continue
+                        sn = extract(txt, surnames, byear)
+                        if sn:
+                            snippets, status, src = sn, "ok", "pdf"; break
                         status = "no_passage"
-                    else:
-                        status = "ok"
             except Exception as e:
                 status = "error"; snippets = [str(e)[:120]]
-            rec = dict(key=key, pid=pid, doi=doi, status=status,
+            rec = dict(key=key, pid=pid, doi=doi, status=status, src=src,
                        surnames=surnames, year=byear, snippets=snippets,
                        ts=datetime.datetime.now().isoformat(timespec="seconds"))
             out.write(json.dumps(rec, ensure_ascii=False) + "\n"); out.flush()
             n_done += 1
-            log(f"[{n_done}] {key}  {status}  ({len(snippets)} snip)")
+            log(f"[{n_done}] {key}  {status}{('/'+src) if src else ''}  ({len(snippets)} snip)")
             # crude block-detection: many consecutive paywalls/errors => back off / stop
-            if status in ("paywalled", "error", "scan_or_empty"):
+            if status in ("paywalled", "error"):
                 n_block += 1
             else:
                 n_block = 0

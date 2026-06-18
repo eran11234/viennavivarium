@@ -12,10 +12,16 @@ not get your library access blocked.
   to **25–45 s between requests** and **stops itself** after 8 straight failures. **Do not
   lower the delays.** At this rate ~2,000 works takes **several nights** — that is correct,
   not a bug. If unsure, check your library's acceptable-use policy first.
-- It only reads pages (no bulk PDF downloads).
-- Most pre-1960 German papers are **image-only scans** with no text layer, so they will come
-  back `scan_or_empty` / `no_passage` — those keep their existing (clearly disclosed) note.
-  Realistically this verifies the **modern + digitized subset** (~a quarter to a third).
+- When the article's HTML page is just an abstract + reference list (common on Springer/
+  Elsevier), it opens the **full-text PDF** through your session and reads that. It downloads
+  one PDF only when the page itself lacks the passage — targeted, not bulk — but this does
+  lean harder on your access, so the polite delay matters even more.
+- Most pre-1960 German papers are **image-only scans** with no text layer (even as PDFs), so
+  they come back `scan_pdf` / `no_passage` — those keep their existing (clearly disclosed)
+  note. Realistically this verifies the **modern + digitized subset** (~a third or so).
+- Re-running now RETRIES anything that previously failed (`no_passage`/`thin`/`paywalled`/
+  `error`) so the new PDF reader gets a second crack; it only skips confirmed `ok` and image
+  scans.
 
 ## One-time setup
 ```bash
