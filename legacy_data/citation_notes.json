@@ -782,7 +782,7 @@
  "160:W1981194605": "Gliboff's history of the Kammerer case cites this inheritance-of-enforced-form-changes paper among the experiments at the centre of the midwife-toad controversy.",
  "160:W2075657090": "Gliboff's study of Kammerer's 'art of biological transformation' cites this form-inheritance paper as an expression of his belief in the malleable, heritable organism.",
  "160:W2546244624": "Vargas's epigenetic perspective on Kammerer's midwife-toad experiments cites this form-inheritance paper as part of the contested body of work he reconsiders in light of molecular epigenetics.",
- "160:W2099717200": "Gliboff's critical answer to whether Kammerer discovered epigenetic inheritance cites this form-inheritance paper as one of the claims he argues should not be read as anticipating modern epigenetics.",
+ "160:W2099717200": "Gliboff (2010) recounts how Arthur Koestler (1971) later promoted the view that Kammerer had been misunderstood and maligned by a neo-Darwinian establishment closed to his ideas about the inheritance of acquired characters.",
  "160:W1983903607": "Aronson's reassessment of Koestler's 'The Case of the Midwife Toad' cites Kammerer's form-inheritance paper among the experiments whose interpretation the controversy turned on.",
  "160:W2047751259": "Svardal's comment asking whether epigenetics can solve the midwife-toad case cites Kammerer's form-inheritance work as part of the contested results under re-examination.",
  "160:W3161558943": "Nahm's reappraisal of Kammerer's experiments and epigenetics cites this form-inheritance paper among the studies he re-evaluates.",
@@ -1370,5 +1370,6 @@
  "153:W2313412715": "Boilly (1974) applies Przibram's (1919) conception, with Abeloos's, to interpret the discontinuity in the series of morphological levels in his own regeneration system.",
  "94:W4404435762": "Hartenstein (2024) quotes Przibram's 1912 paper — written just after the institute opened — declaring that 'the question of the inheritance of acquired characters has entered a new stage.'",
  "132:W4212877948": "Rota (2021) cites Janda (1912) for showing that Criodrilus can regenerate the same or nearly the same number of segments after losing the entire genital region or even larger body parts.",
- "141:W4404435762": "Hartenstein's (2024) history reports Brecher's finding that it is the wavelength of the light, rather than its intensity, that governs the pupal colouration."
+ "141:W4404435762": "Hartenstein's (2024) history reports Brecher's finding that it is the wavelength of the light, rather than its intensity, that governs the pupal colouration.",
+ "159:W4404435762": "Hartenstein's (2024) history reports Brecher's finding that it is the wavelength of the light, not its intensity, that governs the pupal colouration."
 }
