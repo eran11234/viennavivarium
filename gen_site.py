@@ -832,7 +832,7 @@ td.meth{font-size:12.5px;color:#4a463f}
 .laycard p{font-size:13.5px;color:#4a463f;margin:0}
 .maplayout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;align-items:start}
 .mapwrap{position:relative;border:1px solid var(--rule);border-radius:10px;background:var(--card);overflow:hidden}
-.mapwrap::before{content:"";position:absolute;inset:0;z-index:0;background:url(assets/img/prater-map-1883.jpg) center/cover no-repeat;opacity:.20;filter:sepia(.35) saturate(.65) contrast(1.02);pointer-events:none}
+.mapwrap::before{content:"";position:absolute;inset:0;z-index:0;background:url(img/prater-map-1883.jpg) center/cover no-repeat;opacity:.20;filter:sepia(.35) saturate(.65) contrast(1.02);pointer-events:none}
 .mapwrap::after{content:"the prater, vienna · 1883";position:absolute;right:9px;bottom:7px;z-index:2;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:rgba(247,244,238,.7);padding:1px 6px;border-radius:4px;pointer-events:none}
 #map{width:100%;display:block;cursor:grab;position:relative;z-index:1}
 #map:active{cursor:grabbing}
