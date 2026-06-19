@@ -32,7 +32,7 @@ STATS = dict(papers=len(catalog), trans=len(translations),
 
 NAV = [("index.html", "Home"), ("catalog.html", "Catalog"),
        ("map.html", "Map"), ("translations.html", "Translations"),
-       ("rediscovery.html", "Rediscover"),
+       ("rediscovery.html", "Rediscover"), ("authors.html", "Authors"),
        ("legacy.html", "Legacy"), ("analytics.html", "Analytics"), ("about.html", "About")]
 
 # ---------------------------------------------------------------- shell
@@ -81,6 +81,10 @@ def gen_index():
     <a class="btn" href="legacy.html">Explore the legacy</a>
   </div>
 </section>
+<figure class="heroimg">
+  <img src="assets/img/vivarium-building.jpg" alt="The Biologische Versuchsanstalt building in the Vienna Prater, with VIVARIUM inscribed on the façade" loading="lazy">
+  <figcaption>The Biologische Versuchsanstalt — the “Vivarium” — in the Vienna Prater. Built in 1873 as an aquarium-exhibition hall, it became, from 1902, the world's first private institute for experimental biology. The name <em>VIVARIUM</em> is still legible on the façade.</figcaption>
+</figure>
 <section class="stats">
   <div><b>{STATS['papers']}</b><span>papers cataloged</span></div>
   <div><b>{STATS['trans']}</b><span>English translations</span></div>
@@ -376,6 +380,80 @@ window.qedAnalyze=function(id){var out=document.getElementById('qed-'+id),q=R.qe
 """
 
 
+def gen_authors():
+    """A directory of the people behind the corpus: bios for the principal figures,
+    a short line for every other contributor, each with their papers linked."""
+    ap = os.path.join(ROOT, "legacy_data", "authors.json")
+    A = json.load(open(ap, encoding="utf-8"))
+    cat_by_id = {c["id"]: c for c in catalog}
+    read_for = {t["id"]: t["page_slug"] for t in translations}
+
+    def plink(pid):
+        c = cat_by_id.get(pid)
+        if not c:
+            return ""
+        href = ("papers/" + read_for[pid] + ".html") if pid in read_for else ("reader.html?id=%d" % pid)
+        t = (c.get("title_en") or c.get("title") or "").strip()
+        if len(t) > 52:
+            t = t[:51].rstrip() + "…"
+        return '<a class="pchip" href="%s">%s · %s</a>' % (href, c["year"], html.escape(t))
+
+    def card(p, compact):
+        chips = " ".join(plink(i) for i in p["papers"])
+        yrs = ('<span class="ayears">%s</span>' % html.escape(p["years"])) if p.get("years") else ""
+        role = ('<span class="arole">%s</span>' % html.escape(p["role"])) if p.get("role") else ""
+        link = ('<a class="alink" href="%s" target="_blank" rel="noopener">more ↗</a>' % p["link"]) if p.get("link") else ""
+        n = len(p["papers"])
+        return ('<article class="acard%s" id="a-%s">' % (" feat" if not compact else "", html.escape(p["key"]))
+                + '<div class="ahead"><h2>%s</h2>%s%s</div>' % (html.escape(p["name"]), yrs, role)
+                + '<p class="abio">%s</p>' % html.escape(p["bio"])
+                + '<div class="apapers"><span class="lab">%s</span> %s</div>' % (
+                    ("Wrote" if n != 1 else "Wrote"), chips)
+                + link + '</article>')
+
+    feat = [p for p in A["people"] if p["featured"]]
+    rest = [p for p in A["people"] if not p["featured"]]
+    body = ('<p class="kicker">The people behind the corpus</p>'
+            '<h1>Authors of the Vivarium</h1>'
+            '<p class="lede">' + A["intro"] + '</p>'
+            '<div class="astats"><div><b>%d</b><span>contributors</span></div>'
+            '<div><b>%d</b><span>principal figures</span></div>'
+            '<div><b>%d</b><span>papers, 1904–1930</span></div></div>'
+            % (A["stats"]["people"], A["stats"]["featured"], STATS["papers"])
+            + '<h2 class="asec">Principal figures</h2><div class="agrid feat">'
+            + "".join(card(p, False) for p in feat) + '</div>'
+            + '<h2 class="asec">Further contributors</h2>'
+            + '<p class="muted" style="margin:0 0 12px;max-width:74ch">Assistants, visiting researchers and students who each left one or a few papers in the corpus.</p>'
+            + '<div class="agrid">' + "".join(card(p, True) for p in rest) + '</div>')
+    page("authors.html", "Authors", "Authors", body, head="<style>" + AUTHORS_CSS + "</style>")
+    print("authors.html:", len(A["people"]), "people |", len(feat), "featured")
+
+
+AUTHORS_CSS = r"""
+.astats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 6px}
+.astats div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:13px 14px}
+.astats b{display:block;font-family:Georgia,serif;font-size:27px;line-height:1}
+.astats span{font-size:12px;color:var(--muted)}
+.asec{border-bottom:2px solid var(--rule);padding-bottom:7px;margin:34px 0 16px}
+.agrid{display:grid;gap:14px}
+.agrid.feat{grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.agrid:not(.feat){grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
+.acard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px 17px}
+.acard.feat{border-left:4px solid var(--accent)}
+.ahead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:8px}
+.ahead h2{font-family:Georgia,serif;font-size:19px;margin:0;border:0;padding:0}
+.ayears{font-size:13px;color:var(--accent);font-weight:600}
+.arole{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule);border-radius:5px;padding:1px 6px}
+.abio{font-size:13.7px;line-height:1.58;color:#3c3833;margin:0 0 11px}
+.apapers .lab{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-right:6px}
+.apapers{font-size:0}
+.pchip{display:inline-block;font-size:12.5px;border:1px solid var(--rule);border-radius:13px;padding:3px 10px;margin:3px 4px 0 0;background:var(--paper);color:var(--ink);line-height:1.3}
+.pchip:hover{border-color:#cdc4b1;text-decoration:none;background:#fff}
+.alink{display:inline-block;margin-top:11px;font-size:13px}
+@media(max-width:640px){.astats{grid-template-columns:repeat(3,1fr)}.agrid.feat,.agrid:not(.feat){grid-template-columns:1fr}}
+"""
+
+
 def gen_rediscovery():
     """Interactive walk-through of the 40 rediscovery targets, grouped by living model
     system, with per-paper open ends, a monograph-mined 'unfinished business' synthesis,
@@ -613,6 +691,12 @@ def copy_assets():
     pdfs = sorted({c["pdf"] for c in catalog if c["pdf"]}) if FULL else sorted({t["pdf"] for t in translations})
     for fn in pdfs:
         _cp(os.path.join(ARTICLES, fn), os.path.join(pdir, fn))
+    # site imagery (historical photos / map) committed under legacy_data/img
+    imgsrc = os.path.join(ROOT, "legacy_data", "img")
+    if os.path.isdir(imgsrc):
+        imgout = os.path.join(SITE, "assets", "img"); os.makedirs(imgout, exist_ok=True)
+        for f in glob.glob(os.path.join(imgsrc, "*")):
+            _cp(f, os.path.join(imgout, os.path.basename(f)))
 
 def write_css():
     css = r""":root{--paper:#f7f4ee;--card:#fffdf9;--ink:#211f1c;--muted:#6f6a61;--rule:#e4ddce;
@@ -637,6 +721,9 @@ nav a.on{color:var(--accent);font-weight:600}
 footer.site{margin-top:60px;border-top:1px solid var(--rule);padding:26px 0;font-size:13.5px;color:var(--muted)}
 footer.site p{margin:.3em 0}
 .hero{padding:30px 0 8px}
+.heroimg{margin:26px 0 4px}
+.heroimg img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:10px;filter:sepia(.18) contrast(1.02)}
+.heroimg figcaption{font-size:13px;color:var(--muted);line-height:1.55;margin:9px 2px 0;max-width:76ch}
 .kicker{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
 .lede{font-size:18px;color:#3c3833;max-width:62ch}
 .cta{margin:22px 0 6px;display:flex;gap:10px;flex-wrap:wrap}
@@ -745,8 +832,11 @@ td.meth{font-size:12.5px;color:#4a463f}
 .laycard p{font-size:13.5px;color:#4a463f;margin:0}
 .maplayout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;align-items:start}
 .mapwrap{position:relative;border:1px solid var(--rule);border-radius:10px;background:var(--card);overflow:hidden}
-#map{width:100%;display:block;cursor:grab}
+.mapwrap::before{content:"";position:absolute;inset:0;z-index:0;background:url(assets/img/prater-map-1883.jpg) center/cover no-repeat;opacity:.20;filter:sepia(.35) saturate(.65) contrast(1.02);pointer-events:none}
+.mapwrap::after{content:"the prater, vienna · 1883";position:absolute;right:9px;bottom:7px;z-index:2;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:rgba(247,244,238,.7);padding:1px 6px;border-radius:4px;pointer-events:none}
+#map{width:100%;display:block;cursor:grab;position:relative;z-index:1}
 #map:active{cursor:grabbing}
+.maptip{z-index:3}
 .mapctrl{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
 .mapctrl input[type=search],.mapctrl select{padding:7px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--card);font-size:13.5px}
 .mapctrl #q{flex:1;min-width:200px}
@@ -1149,7 +1239,7 @@ def main():
     open(os.path.join(DATA, "site.js"), "w").write("window.SITE=" + json.dumps({"fullPdfs": FULL}) + ";")
     open(os.path.join(SITE, ".nojekyll"), "w").write("")
     gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader()
-    gen_citations(); gen_methodology(); gen_rediscovery(); gen_reading_pages(); copy_assets()
+    gen_citations(); gen_methodology(); gen_rediscovery(); gen_authors(); gen_reading_pages(); copy_assets()
     print("Generated site at", SITE, "| FULL_PDFS =", FULL)
     print("pages:", sorted(os.path.basename(p) for p in glob.glob(os.path.join(SITE, "*.html"))))
     print("reading pages:", len(glob.glob(os.path.join(SITE, "papers", "*.html"))))

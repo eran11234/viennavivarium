@@ -1,0 +1,863 @@
+{
+ "intro": "The Biologische Versuchsanstalt was founded in 1902 by the zoologist <strong>Hans Przibram</strong> with the botanists <strong>Leopold von Portheim</strong> and <strong>Wilhelm Figdor</strong>, who bought the old Vivarium aquarium-hall in the Prater and turned it into the world's first private institute for experimental biology. These are the people behind the 175 papers — founders, assistants, visiting researchers and students. Many were Jewish; after the 1938 Anschluss the institute was seized and its scientists driven out. Some emigrated and shaped science abroad; several — Przibram, Brecher, Zuelzer among them — were murdered in the Holocaust. Each card lists what they wrote here; follow a paper to its English translation or its legacy.",
+ "people": [
+  {
+   "key": "przibram-h",
+   "name": "Hans Przibram",
+   "years": "1874–1944",
+   "role": "Founder & director",
+   "bio": "Co-founder and scientific director of the Biologische Versuchsanstalt, which he established in 1902 with the botanists Leopold von Portheim and Wilhelm Figdor and led until 1938. A Vienna-born zoologist of independent means, he built the institute into a model of experimental, quantitative biology and worked across regeneration, growth, homeosis, symmetry and the 'crystal analogies' of organic form. Dismissed and dispossessed after the 1938 Anschluss because he was Jewish, he fled to Amsterdam in 1939; deported to the Theresienstadt ghetto in 1943, he died there on 20 May 1944, and his wife Elisabeth took her own life the following day.",
+   "link": "https://en.wikipedia.org/wiki/Hans_Leo_Przibram",
+   "featured": true,
+   "papers": [
+    3,
+    4,
+    5,
+    6,
+    13,
+    16,
+    17,
+    20,
+    23,
+    24,
+    49,
+    55,
+    59,
+    60,
+    61,
+    63,
+    64,
+    65,
+    66,
+    68,
+    74,
+    75,
+    76,
+    77,
+    82,
+    84,
+    87,
+    94,
+    104,
+    105,
+    106,
+    107,
+    115,
+    127,
+    128,
+    135,
+    139,
+    145,
+    146,
+    147,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    172,
+    173,
+    174,
+    175
+   ]
+  },
+  {
+   "key": "kammerer",
+   "name": "Paul Kammerer",
+   "years": "1880–1926",
+   "role": "Zoologist",
+   "bio": "The institute's most famous and most controversial figure. Kammerer used fire salamanders, midwife toads and the olm to argue that environmentally induced characters could be inherited — the central claim of neo-Lamarckism. In 1926 the American herpetologist G. K. Noble found that the nuptial pads of his key midwife-toad specimen had been injected with Indian ink; six weeks later Kammerer shot himself in the forest near Puchberg am Schneeberg. Arthur Koestler reopened the affair in 'The Case of the Midwife Toad' (1971), and it is revisited today through the lens of epigenetics.",
+   "link": "https://en.wikipedia.org/wiki/Paul_Kammerer",
+   "featured": true,
+   "papers": [
+    15,
+    39,
+    44,
+    48,
+    57,
+    83,
+    86,
+    92,
+    100,
+    113,
+    119,
+    120,
+    121,
+    130,
+    160,
+    169
+   ]
+  },
+  {
+   "key": "brecher",
+   "name": "Leonore Brecher",
+   "years": "1886–1942",
+   "role": "Zoologist",
+   "bio": "Brecher took her Vienna doctorate in 1916 on the pupal colouration of the cabbage white and spent two decades at the institute showing how light and background govern butterfly pigment — work now cited in butterfly colour-plasticity research. She was among the first women to seek habilitation at the University of Vienna. Dismissed within days of the 1938 Anschluss because she was Jewish, her attempts to emigrate failed; she was deported on 14 September 1942 to Maly Trostinec and murdered on arrival, four days later.",
+   "link": "https://brainosoph.wordpress.com/2020/06/30/deported-and-forgotten-leonore-brecher/",
+   "featured": true,
+   "papers": [
+    5,
+    14,
+    17,
+    21,
+    67,
+    78,
+    79,
+    141,
+    142,
+    143,
+    156,
+    159,
+    170,
+    171,
+    172
+   ]
+  },
+  {
+   "key": "weiss-p",
+   "name": "Paul Weiss",
+   "years": "1898–1989",
+   "role": "Zoologist",
+   "bio": "At the Vivarium in the 1920s Weiss carried out the limb-transplantation and regeneration experiments that grounded his concept of the morphogenetic 'field' — the idea that a region, not a pre-existing template, imposes pattern on the regenerate. He left for the United States around 1930, working with Ross Harrison at Yale and later at Chicago and the Rockefeller Institute, and became one of the twentieth century's leading developmental biologists and a founder of systems thinking in biology. His Vivarium papers are still cited in modern axolotl limb-regeneration research.",
+   "link": "https://en.wikipedia.org/wiki/Paul_Alfred_Weiss",
+   "featured": true,
+   "papers": [
+    6,
+    8,
+    9,
+    10,
+    11,
+    36,
+    37,
+    69,
+    70,
+    71,
+    72,
+    148,
+    149
+   ]
+  },
+  {
+   "key": "megusar",
+   "name": "Franz Megušar",
+   "years": "1876–1916",
+   "role": "Zoologist",
+   "bio": "A Slovenian zoologist from Kamna Gorica, Megušar joined the institute in 1904 and became one of its most productive students of regeneration, working across beetles, snails, crustaceans and amphibians. He was killed in the First World War on 3 August 1916 as an Austrian officer-cadet; Przibram wrote his obituary, the one non-research item among these 175 papers.",
+   "link": "https://www.slovenska-biografija.si/oseba/sbi357567/",
+   "featured": true,
+   "papers": [
+    58,
+    93,
+    114,
+    123,
+    124,
+    125,
+    135
+   ]
+  },
+  {
+   "key": "koppanyi",
+   "name": "Theodor Koppányi",
+   "years": "1899–1962",
+   "role": "Zoologist · pharmacologist",
+   "bio": "A Hungarian-born researcher who, working under Przibram in the early 1920s, performed the institute's sensational eye-transplantation experiments — replanting and transplanting eyes in salamanders, fish and rats. He emigrated to the United States and became a founding figure of modern pharmacology at Georgetown University, author of more than 500 papers.",
+   "link": "https://biotechnology.georgetown.edu/about/founding-director/",
+   "featured": true,
+   "papers": [
+    25,
+    26,
+    27,
+    28,
+    29,
+    150,
+    151
+   ]
+  },
+  {
+   "key": "werber",
+   "name": "Isaak Werber",
+   "years": "",
+   "role": "",
+   "bio": "Surveyed regeneration across insects and reptiles — the mealworm beetle's wings and antennae, the lizard's jaws — extending the institute's comparative atlas of who can regrow what.",
+   "link": "",
+   "featured": true,
+   "papers": [
+    43,
+    50,
+    51,
+    52,
+    129
+   ]
+  },
+  {
+   "key": "uhlenhuth",
+   "name": "Eduard Uhlenhuth",
+   "years": "",
+   "role": "",
+   "bio": "Worked on transplantation of the amphibian eye and the 'synchronous metamorphosis' of transplanted salamander organs. His eye-transplant experiments were later cited by Roger Sperry in founding the chemoaffinity hypothesis of neural specificity; Uhlenhuth emigrated to the United States.",
+   "link": "",
+   "featured": true,
+   "papers": [
+    88,
+    98,
+    161,
+    168
+   ]
+  },
+  {
+   "key": "steinach",
+   "name": "Eugen Steinach",
+   "years": "1861–1944",
+   "role": "Physiologist",
+   "bio": "From 1912 Steinach directed the institute's department of physiology — a pioneer of endocrinology who showed that the gonads' interstitial cells secrete the sex hormones. His 'Steinach operation,' a vasoligature claimed to rejuvenate ageing men, made him world-famous in the 1920s (W. B. Yeats was among those 'Steinached'), and he was repeatedly nominated for a Nobel Prize. Jewish, he was lecturing in Switzerland at the time of the 1938 Anschluss and was granted residence there; his wife took her life in Zurich that September, and Steinach died in exile in 1944.",
+   "link": "https://en.wikipedia.org/wiki/Eugen_Steinach",
+   "featured": true,
+   "papers": [
+    38,
+    164,
+    165,
+    169
+   ]
+  },
+  {
+   "key": "secerov",
+   "name": "Slavko Šećerov",
+   "years": "",
+   "role": "",
+   "bio": "A Serbian zoologist who studied colour change in the stone loach and contributed to the institute's 'environment of the germ-plasm' program; he later became a public figure in Yugoslavia.",
+   "link": "",
+   "featured": true,
+   "papers": [
+    42,
+    95,
+    97,
+    136
+   ]
+  },
+  {
+   "key": "wiesner",
+   "name": "B. P. Wiesner",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the crystalline lens of adult animals can be replanted and survive — the lens, like the whole eye, tolerates transplantation.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    34,
+    35,
+    152
+   ]
+  },
+  {
+   "key": "dembowski",
+   "name": "Jan Dembowski",
+   "years": "1889–1963",
+   "role": "Zoologist",
+   "bio": "A Polish biologist who collaborated on the institute's coloration and salamander-pattern studies. He went on to become a leading figure in Polish science and a president of the Polish Academy of Sciences.",
+   "link": "https://en.wikipedia.org/wiki/Jan_Dembowski",
+   "featured": true,
+   "papers": [
+    16,
+    158,
+    172
+   ]
+  },
+  {
+   "key": "klintz",
+   "name": "Klintz",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the terrestrial isopod regenerates its antenna.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    101,
+    122,
+    137
+   ]
+  },
+  {
+   "key": "janda",
+   "name": "Viktor Janda",
+   "years": "",
+   "role": "",
+   "bio": "Studied regeneration of the genital organs and the reversal of sex characters in the worm Criodrilus — work still cited in annelid-regeneration research today.",
+   "link": "",
+   "featured": true,
+   "papers": [
+    85,
+    91,
+    132
+   ]
+  },
+  {
+   "key": "finkler",
+   "name": "Walter Finkler",
+   "years": "",
+   "role": "",
+   "bio": "Performed the institute's controversial head-transplantation experiments on insects, reporting that swapped heads could still function — results that drew wide attention and considerable skepticism.",
+   "link": "",
+   "featured": true,
+   "papers": [
+    31,
+    32,
+    33
+   ]
+  },
+  {
+   "key": "walther",
+   "name": "Adolf Walther",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: argues, with the BVA line, that the germ-plasm is not sealed off from its environment.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    89,
+    139
+   ]
+  },
+  {
+   "key": "cerny",
+   "name": "Adolf Černý",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: maps the regenerative powers of freshwater snails.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    46,
+    99
+   ]
+  },
+  {
+   "key": "biberhofer",
+   "name": "Biberhofer",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the crayfish regenerates its third maxilliped, a specialized mouthpart-leg.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    45,
+    53
+   ]
+  },
+  {
+   "key": "winkler",
+   "name": "Ferdinand Winkler",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: confirms that the DOPA reaction matches between sections and extracts, validating the histochemical test for melanin-forming enzyme.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    79,
+    116
+   ]
+  },
+  {
+   "key": "kurz",
+   "name": "Kurz",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: probes whether limb polarity is fixed or reversible — a direct test of how firmly the proximo-distal axis is determined.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    18,
+    133
+   ]
+  },
+  {
+   "key": "abolin",
+   "name": "Leo Abolin",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the newt regenerates structures after partial fibular-edge mutilation, probing how a partial wound is restored.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    1,
+    81
+   ]
+  },
+  {
+   "key": "zuelzer",
+   "name": "Margarete Zuelzer",
+   "years": "1877–1943",
+   "role": "Protozoologist",
+   "bio": "A pioneering woman protozoologist (Heidelberg doctorate, 1904), Zuelzer worked at the institute on the contractile vacuole and the effects of seawater on protozoa before leading the Protozoa Laboratory in Berlin-Dahlem. Jewish, she was dismissed under the Nazi racial laws in 1933 and fled to Amsterdam; she died of starvation in the Westerbork transit camp in 1943.",
+   "link": "https://en.wikipedia.org/wiki/Margarete_Zuelzer",
+   "featured": true,
+   "papers": [
+    117,
+    131
+   ]
+  },
+  {
+   "key": "sciacchitano",
+   "name": "Sciacchitano",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: edge-restricted mutilations regenerate, and excision of the fibular edge can yield a heteromorphic long bone — a patterned abnormality.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    6,
+    80
+   ]
+  },
+  {
+   "key": "bogacki",
+   "name": "Bogacki",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: freshwater fishes regenerate amputated fins, with characteristic patterns of regrowth.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    54
+   ]
+  },
+  {
+   "key": "brescia",
+   "name": "Brescia",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: links the newts' secondary sexual characters to gonadal control — an amphibian counterpart to Steinach's mammalian sex-gland work.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    110
+   ]
+  },
+  {
+   "key": "burchhardt",
+   "name": "Burchhardt",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the symmetry of a regenerate depends on how the limb is set in the body — bearing on the rules of regenerative symmetry.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    2
+   ]
+  },
+  {
+   "key": "burt",
+   "name": "Burt",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: head and foot regions behave as unipotent systems, each regenerating along its own polarity — axial determination in Hydra.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    73
+   ]
+  },
+  {
+   "key": "congdon",
+   "name": "Congdon",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: treats the germ plasm as influenced by its surroundings — environment as a factor in heredity.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    96
+   ]
+  },
+  {
+   "key": "czwiklitzer",
+   "name": "Czwiklitzer",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the worm regenerates its anterior end, including head structures, after amputation.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    47
+   ]
+  },
+  {
+   "key": "ehrenpreis",
+   "name": "Ehrenpreis",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: tests whether a visceral organ, the spleen, can be transplanted and survive in adult newts.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    144
+   ]
+  },
+  {
+   "key": "flathauser",
+   "name": "Flat-Hauser",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the newt regenerates its long bones after partial internal removal — skeletal restitution within an intact limb.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    3
+   ]
+  },
+  {
+   "key": "frohlich",
+   "name": "Fröhlich",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: characterizes the prawn's colour-change reactions — an early analysis of crustacean chromatophore control.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    111
+   ]
+  },
+  {
+   "key": "gluschkiewitsch",
+   "name": "Gluschkiewitsch",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the leech regenerates both its anterior and posterior ends, with differences in capacity between them.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    118
+   ]
+  },
+  {
+   "key": "goldschmidt",
+   "name": "Goldschmidt",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: waterfowl can regenerate beak tissue — regeneration in warm-blooded vertebrates, not only the cold-blooded.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    43
+   ]
+  },
+  {
+   "key": "hammerschlag",
+   "name": "Hammerschlag",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: analyses how traits, including the waltzing character, are inherited in mouse crosses.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    90
+   ]
+  },
+  {
+   "key": "stieve",
+   "name": "Hermann Stieve",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: documents the skeletal anatomy of a partial hermaphrodite, a natural intersex of interest to the sex-determination question.",
+   "link": "https://en.wikipedia.org/wiki/Hermann_Stieve",
+   "featured": false,
+   "papers": [
+    166
+   ]
+  },
+  {
+   "key": "bierensdehaan",
+   "name": "J. A. Bierens de Haan",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: lowering body temperature shortens the tail — the cold end of Przibram's temperature-controls-proportion series.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    13
+   ]
+  },
+  {
+   "key": "jellinek",
+   "name": "Jellinek",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: tests how far eye replantation succeeds in mammals — the hardest case, with the least regenerative tolerance.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    30
+   ]
+  },
+  {
+   "key": "halban",
+   "name": "Josef Halban",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: egg and newborn size rise with the mother's age — a maternal-age effect on offspring size.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    112
+   ]
+  },
+  {
+   "key": "hadzi",
+   "name": "Jovan Hadži",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: documented the green hydra's symbiosis with Zoochlorella and basic features of its feeding and biology as groundwork for an experimental biology of the polyp.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    56
+   ]
+  },
+  {
+   "key": "przibram-k",
+   "name": "Karl Przibram",
+   "years": "1878–1973",
+   "role": "Physicist",
+   "bio": "Hans Przibram's younger brother — a physicist known for work on radioactivity, luminescence and colour centres in crystals. His single contribution here brought a physicist's eye to the 'disordered movement' of lower animals, an early brush with what is now the physics of active matter. Also persecuted as a Jew after 1938, he emigrated to Belgium and survived the war, returning afterwards to Vienna.",
+   "link": "https://en.wikipedia.org/wiki/Karl_Przibram",
+   "featured": true,
+   "papers": [
+    62
+   ]
+  },
+  {
+   "key": "kornfeld",
+   "name": "Kornfeld",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the metamorphic resorption of the gills depends on the whole organism — a systemic (hormonal) signal, not the gill's own programme, drives it.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    138
+   ]
+  },
+  {
+   "key": "kryz",
+   "name": "Kryz",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the coagulation point of muscle plasma is independent of the temperature the animal lived at — a fixed biochemical property.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    102
+   ]
+  },
+  {
+   "key": "kudo",
+   "name": "Kudô",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the quantity of melanin itself changes during colour change — not only its distribution within chromatophores.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    22
+   ]
+  },
+  {
+   "key": "sato",
+   "name": "Kunio Sato",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the DOPA reaction agrees between frozen sections and extracts — the enzyme detected histochemically is the same one assayed biochemically, validating the DOPA test for locating melanin formation.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    78
+   ]
+  },
+  {
+   "key": "mayerhofer",
+   "name": "Mayerhofer",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: the pike changes colour with its background and light via chromatophore adjustment.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    40
+   ]
+  },
+  {
+   "key": "muftic",
+   "name": "Muftić",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: amphibians regenerate lung tissue — regeneration of an internal organ, not only external appendages.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    126
+   ]
+  },
+  {
+   "key": "neudorfer",
+   "name": "Neudörfer",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: freshwater fishes can be adapted to salt water within limits — experimental osmotic acclimation.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    103
+   ]
+  },
+  {
+   "key": "grosser",
+   "name": "Otto Grosser",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: established the Egyptian mantis as a tractable experimental insect with marked colour change and regenerative capacity.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    55
+   ]
+  },
+  {
+   "key": "weiss-o",
+   "name": "Otto Weiss",
+   "years": "",
+   "role": "",
+   "bio": "Not to be confused with Paul Weiss: Otto Weiss contributed a single study of regeneration and autotomy in the water spider.",
+   "link": "",
+   "featured": true,
+   "papers": [
+    109
+   ]
+  },
+  {
+   "key": "demoll",
+   "name": "Reinhard Demoll",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: weighs the case for and against the inheritance of acquired characters — the central theoretical question behind the BVA's Lamarckian experiments.",
+   "link": "https://de.wikipedia.org/wiki/Reinhard_Demoll",
+   "featured": false,
+   "papers": [
+    163
+   ]
+  },
+  {
+   "key": "erdmann",
+   "name": "Rhoda Erdmann",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: body size varies systematically with the endomixis cycle in pure lines — linking a nuclear-reorganization rhythm to biometric size variation.",
+   "link": "https://en.wikipedia.org/wiki/Rhoda_Erdmann",
+   "featured": false,
+   "papers": [
+    167
+   ]
+  },
+  {
+   "key": "morgulis",
+   "name": "Sergius Morgulis",
+   "years": "",
+   "role": "",
+   "bio": "An American physiologist who used starvation (inanition) as an experimental lever on the growth problem; he later worked in the United States on nutrition and biochemistry.",
+   "link": "https://en.wikipedia.org/wiki/Sergius_Morgulis",
+   "featured": true,
+   "papers": [
+    134
+   ]
+  },
+  {
+   "key": "staudinger",
+   "name": "Staudinger",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: heteromorphoses arise even at spiracles and other unexpected sites in the stick insect, widening the catalogue of homeotic regeneration.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    7
+   ]
+  },
+  {
+   "key": "sztern",
+   "name": "Sztern",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: quantifies the mantis growth curve, instar by instar.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    140
+   ]
+  },
+  {
+   "key": "thomsen",
+   "name": "Thomsen",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: documents rearing, colour change and regeneration in praying mantises, extending the BVA's mantis program.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    41
+   ]
+  },
+  {
+   "key": "thomson",
+   "name": "Thomson",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: documents how the raptorial foreleg regenerates across different mantids, a comparative extension of the BVA mantis work.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    19
+   ]
+  },
+  {
+   "key": "kolmer",
+   "name": "Walter Kolmer",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: documents a spontaneously formed second lens in a fish eye — a natural lentoid bearing on lens formation and regeneration.",
+   "link": "https://en.wikipedia.org/wiki/Walter_Kolmer",
+   "featured": false,
+   "papers": [
+    162
+   ]
+  },
+  {
+   "key": "weindl",
+   "name": "Weindl",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: pigment arises through preformed tyrosinase enzymes — an enzymatic theory of animal pigmentation.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    108
+   ]
+  },
+  {
+   "key": "dehahn",
+   "name": "de Hahn",
+   "years": "",
+   "role": "",
+   "bio": "Contributed to the corpus: young rats are not yet fully homeothermic — their body temperature tracks the ambient temperature.",
+   "link": "",
+   "featured": false,
+   "papers": [
+    12
+   ]
+  }
+ ],
+ "stats": {
+  "people": 60,
+  "featured": 17
+ }
+}
