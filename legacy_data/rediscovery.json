@@ -1,5 +1,5 @@
 {
- "intro": "Forty papers from the Biologische Versuchsanstalt are <em>rediscovery targets</em>: the animal they studied is alive in today's literature, but the original BVA work goes uncited. Here they are arranged by the living model system each one belongs to — find your organism, see what was first shown a century ago, and what question it left open. The institute's deeper unfinished business — the programs it began and never closed — follows below, drawn from Przibram's own monographs.",
+ "intro": "Forty papers from the Biologische Versuchsanstalt are <em>rediscovery targets</em>: the animal they studied is alive in today's literature, but the original BVA work goes uncited. Here they are arranged by the living model system each one belongs to. For each, the key question is not what the paper left unfinished, but whether that question is <strong>still open today</strong> — or whether the paper is a <strong>sleeping beauty</strong>: a forgotten early answer to something science is still asking. The institute's larger unfinished programs follow below.",
  "groups": [
   {
    "key": "mantises",
@@ -132,159 +132,159 @@
  "cards": {
   "55": [
    "The institute's founding mantis paper: Przibram worked out how to rear the Egyptian praying mantis in the lab and documented its colour change and regeneration, turning it into a tractable experimental insect.",
-   "Having built the model, he left open what actually governs its colour change and the limits of its regeneration — the very questions the later mantis papers kept circling without closing."
+   "Still open — and dormant. Insect colour change and appendage regeneration are both live questions, and the mantis is still a model for vision and predatory behaviour, yet the study that first made it a lab animal goes essentially uncited (last cited ~2004)."
   ],
   "157": [
    "Reframed animal colour as a problem of underlying chemical and physiological causes — the manifesto behind the Przibram–Brecher pigment-extract experiments.",
-   "Przibram set the agenda (colour reduced to pigment chemistry) but called its solution 'a task that will need much chemical knowledge'; the molecular account arrived later, elsewhere."
+   "Largely answered — but it called the answer. The chemical theory of colour Przibram demanded became melanin/DOPA biochemistry; a sleeping beauty whose agenda modern pigment science fulfilled without it. Its 20 citations all stop by 1938."
   ],
   "61": [
    "Instar-by-instar growth measurements of the mantis, feeding the institute's hunt for a quantitative law of how an animal scales up through its moults.",
-   "The data were gathered, but the general growth law was never derived — Przibram's 'form in a formula' ambition stalled here for want of the right mathematics."
+   "Still open: a universal quantitative law of arthropod growth — the goal here — is still sought in modern allometry and developmental-plasticity research. The data themselves sleep (last cited 1953)."
   ],
   "66": [
    "Half-grown mantis larvae regrow their antennae — and the form of the regrowth depends on the larval stage, brushing up against homeosis (an antenna returning leg-like).",
-   "What decides whether a regenerate keeps its identity or turns into another organ was left as an empirical rule; the genetic switch (homeotic / Hox control) was found decades later, and still doesn't cite this."
+   "Answered elsewhere, uncited here: the homeotic switch (Hox genes) explains why a regenerate can come back as the wrong organ, but this experimental homeosis is a sleeping beauty evo-devo never woke (last cited 1989)."
   ],
   "4": [
    "Extended the growth-curve program to a second species, the Japanese mantis Tenodera, broadening the comparative basis for the BVA's growth laws.",
-   "Whether one universal growth formula fits across mantis species was the point — but the comparative curves were never synthesised into the law Przibram was after."
+   "Still open: whether one growth law spans mantis species feeds today's comparative-scaling research. Briefly re-cited in 2012 (Wigglesworth's 'Przibram's rule'), otherwise asleep."
   ],
   "139": [
    "A clean negative result: freshly hatched mantises are not larger when the mother is older, refuting a maternal-age effect for this species.",
-   "It closed the question for the mantis but left open where the maternal-age effect does and doesn't hold across animals — a comparative test never completed."
+   "Wide open, never cited. Maternal-age effects on offspring size are live in life-history and ageing research, yet this clean negative result has no recorded citations at all."
   ],
   "129": [
    "The mealworm beetle regrows excised wings — appendage regeneration in a fully metamorphic (holometabolous) insect, where it was not expected.",
-   "How a hard-bodied adult insect reactivates wing growth was left unexplained; modern appendage-regeneration genetics in beetles rarely looks back to this result."
+   "A sleeping beauty, waking. Whether and how adult insects regenerate wings is live again — this 1907 result was re-cited in 2021 and 2025 by modern insect wing-damage and regeneration studies."
   ],
   "107": [
    "Chose the ever-moulting bristletails (silverfish) precisely because lifelong moulting keeps regenerative capacity open — drawing conclusions 'of more general significance' for regeneration.",
-   "The link between continued moulting and retained regenerative power was never mechanised; why some lineages keep regenerating and others lose it is still open."
+   "Still open: why some lineages keep regenerating and others lose it is an open comparative question, and the ever-moulting silverfish are a candidate model. Re-cited once (2012), otherwise dormant."
   ],
   "124": [
    "The silkworm caterpillar regenerates its caudal horn — a defined larval structure in the most economically familiar insect.",
-   "What patterns the regrown horn, and why this structure and not others, was never pursued; the silkworm became a genetic workhorse without this thread."
+   "Still open and dormant: what patterns a regenerated larval structure is a live developmental question, but the silkworm — now a genetic workhorse — is never cited for this (last 1913)."
   ],
   "142": [
    "Tortoiseshell and peacock butterfly pupae tune their colour to light and background, showing the cabbage-white pupal-colour phenomenon is general.",
-   "The environmental cue was clear but the sensing-and-pigment mechanism was left open; pupal-colour plasticity is studied today in other butterflies without these papers."
+   "Still open: how environmental cues set pupal colour is active butterfly-plasticity research, but this instalment sleeps (last cited 1999) while the field cites other Brecher papers."
   ],
   "130": [
    "Tested whether an adult fly — past all its moults — can rebuild a removed wing, probing the hard limit of regeneration in a fixed holometabolous body.",
-   "It marked a boundary (which life-stages keep regenerative power) the BVA kept probing but never turned into a rule; Drosophila wing work later took over without the connection."
+   "A sleeping beauty waking up: the limits of regeneration in the adult fly are live again in Drosophila work — this 1907 paper was re-cited in 2021 and 2025."
   ],
   "120": [
    "Documented a symbiosis between dragonfly larvae and filamentous algae — an ecological observation among the institute's manipulative studies.",
-   "The nature and benefit of the association were described but never tested; larval-insect microbial and algal symbioses are an active field today that doesn't cite it."
+   "A sleeping beauty: larval-insect microbial and algal symbiosis is a fast-growing field, and this 1907 observation was re-cited in 2021 after a century asleep."
   ],
   "16": [
    "Rearing salamander larvae on yellow versus black backgrounds shifted the adult's spot pattern — environment reaching into a supposedly fixed marking.",
-   "Whether that imprint is truly heritable — the Kammerer claim — was left contested; today's epigenetics revisits exactly this question without these data."
+   "Wide open today. Whether an environmentally induced pattern can be inherited is the core question epigenetics reopened — and this paper is waking, re-cited in 2015 and 2021. A textbook sleeping beauty."
   ],
   "95": [
    "Brought amphibian evidence to the institute's boldest thesis: that the hereditary substance (the 'germ-plasm') is open to influence from its surroundings.",
-   "The mechanism by which environment could mark the germ-line was asserted, not shown; transgenerational epigenetic inheritance is now live and has not reconnected with this program."
+   "Still open: transgenerational (epigenetic) inheritance is a live, contested field, but this 'environment of the germ-plasm' paper sleeps (last cited 2006)."
   ],
   "15": [
    "Examined how the fire salamander's pattern appears or develops under transmitted coloured light, extending the background-and-light influence on its markings.",
-   "How light wavelength acts on pattern formation was never pinned down — a photobiology-of-pigment question still open for this animal."
+   "Still open and nearly dormant: how light wavelength acts on pigment-pattern formation is unresolved; re-cited once (2021) but otherwise asleep."
   ],
   "126": [
    "Carried regeneration inside the body — showing the amphibian lung, an internal organ, can regrow, not just limbs and tails.",
-   "Internal-organ regeneration in amphibians was opened here and barely followed; modern organ-regeneration research proceeds without this early evidence."
+   "Still open: internal-organ regeneration — the lung included — is a major live goal of regenerative medicine, yet this early amphibian demonstration is uncited since 1927."
   ],
   "8": [
    "Carried the blastema-potency analysis into a reptile, testing how far a lizard's tail regenerate is already determined versus still plastic.",
-   "How fixed the reptilian blastema is — and why reptiles regenerate so differently from amphibians — remains a central, unresolved question."
+   "A sleeping beauty, awake. How determined a reptilian regeneration blastema is — and why reptiles regenerate unlike amphibians — is live in regeneration biology; this 1930 paper was re-cited as recently as 2024."
   ],
   "50": [
    "The lizard regrows jaw structures after their removal — extending reptilian regeneration well beyond the familiar tail.",
-   "What tissues and signals rebuild the jaw was never worked out; craniofacial regeneration in reptiles is essentially unstudied today, with this result forgotten."
+   "A sleeping beauty waking: craniofacial and jaw regeneration in reptiles is barely studied but live, and this paper was re-cited in 2021 after decades asleep."
   ],
   "113": [
    "Reported that experimentally forced colour changes were inherited in lizards — a frontal neo-Lamarckian claim.",
-   "Inherited acquired colour sits at the heart of the modern Kammerer-and-epigenetics debate, still unsettled — and these reptile data are rarely re-examined."
+   "Wide open: inheritance of an acquired colour state is exactly the epigenetics question, and this is one of the contested Kammerer results still being re-examined — re-cited in 2014."
   ],
   "136": [
    "Added reptilian evidence, with attention to sex determination, to the germ-plasm-and-environment program.",
-   "Environmental sex determination in reptiles is now a major field; that the BVA was probing environment-and-sex here goes unrecognised in it."
+   "Still open: environmental sex determination in reptiles is a major live field, but this early environment-and-sex paper sleeps (last cited 2006)."
   ],
   "6": [
    "Cutting back specific edges of the newt's leg can yield a heteromorphic long bone — a reproducible patterned abnormality in the regenerate.",
-   "What positional information makes an edge-defect regrow the wrong bone was mapped empirically but never explained; limb 'positional memory' is hot now and doesn't cite it."
+   "Still open: 'positional memory' — why a defect regrows the wrong structure — is a central live question in limb regeneration, yet this 1930 mapping sleeps (last cited 1961)."
   ],
   "145": [
    "Using a natural pigment mark on the alpine-newt egg, showed the first cleavage furrow does not reliably mark the median plane — the axis is set relative to the egg's own landmark.",
-   "How the egg's axis is actually specified was left to later embryology; the cytoplasmic-determinant story was worked out elsewhere, without this careful marking study."
+   "Answered later, passed by. Cytoplasmic determinants and molecular axis-specification settled the embryo's axis; this careful egg-marking study is a sleeping beauty the modern literature skipped (last cited 1929)."
   ],
   "134": [
    "Used starvation as a lever on growth — measuring how an animal shrinks and recovers to get at what growth fundamentally is.",
-   "Starvation-and-regrowth as a probe of growth control is today's caloric-restriction and regeneration physiology — which rediscovered the lever without the groundwork."
+   "A live question: caloric restriction, starvation and regrowth are active in ageing and regeneration physiology, yet this early use of the lever sleeps (last cited 1923)."
   ],
   "151": [
    "Worked out the husbandry and biology of the ribbed newt Pleurodeles — the organism-building that turns an animal into a model system.",
-   "Pleurodeles did become a standard developmental, regeneration and spaceflight model — but that model-building traces back to a BVA paper nobody cites."
+   "Still open and never cited. Pleurodeles became a standard regeneration and spaceflight model, but the BVA paper that first worked out its husbandry has zero citations — a true sleeping beauty."
   ],
   "77": [
    "Put a number on it: relative tail length grows with a measurable temperature coefficient — warmth lengthens extremities, quantified.",
-   "That developmental temperature sets extremity proportions (now thermal developmental plasticity, the mechanics behind Allen's rule) is actively studied without this quantitative rule."
+   "A sleeping beauty: developmental temperature setting limb proportions (the mechanics behind Allen's rule) is live in thermal-plasticity research — the sister rat-tail paper was re-cited in 2023."
   ],
   "76": [
    "The direct Lamarckian test: are tails lengthened or shortened by temperature passed on to the next generation?",
-   "Whether developmentally induced proportions can be inherited is precisely the transgenerational-plasticity question epigenetics reopened — these explicit tests go uncited."
+   "Wide open: whether a developmentally induced proportion can be inherited is the transgenerational-plasticity question epigenetics reopened — re-cited in 2021 after sleeping since the 1960s."
   ],
   "152": [
    "Warming young rats above normal produced longer tails — the heat counterpart to the cooling experiments, nailing the two-way temperature dependence.",
-   "The clean experimental control of a body proportion by rearing temperature is a textbook developmental-plasticity result the textbooks reached independently."
+   "Still open and dormant: experimental control of a body proportion by rearing temperature is textbook developmental plasticity, yet this paper has no recorded citations."
   ],
   "75": [
    "Read rat tail length as a conditional ('facultative') sex character, linking the temperature-and-tail program to sex differences in proportion.",
-   "How sex and environment jointly tune a continuous trait was framed but not mechanised; sexual-dimorphism-of-proportion genetics doesn't look back here."
+   "Still open: how environment and sex jointly tune a continuous trait is live in eco-evo-devo, but this paper slept after a single 1926 citation."
   ],
   "102": [
    "A cold- or warm-living animal's muscle proteins coagulate at the same fixed temperature — a stable biochemical property, independent of life temperature.",
-   "Whether proteins adapt their thermal stability to an animal's temperature is now thermal-adaptation biochemistry, which found its answers without this early null result."
+   "Still open: whether proteins adapt their thermal stability to an animal's temperature is live thermal-adaptation biochemistry, but this early null result sleeps (last cited 1947)."
   ],
   "35": [
    "A rat's own ovary, grafted back into the same animal, keeps working — the female counterpart to the institute's functional testis graft, showing gonadal autonomy.",
-   "Ovarian-tissue autotransplantation is now clinical (fertility preservation); the demonstration of graft function traces to a BVA paper outside that literature's memory."
+   "A sleeping beauty: ovarian-tissue autotransplantation is now clinical (fertility preservation), but this 1923 demonstration of graft function is uncited since 1976."
   ],
   "123": [
    "The pond snail rebuilds its eye-bearing tentacle — regeneration of a sense organ, eye and all, in a mollusc.",
-   "How a mollusc regrows a functioning eye is a striking question that invertebrate eye-regeneration and -evolution work pursues today, without this case."
+   "Still open: how an invertebrate regrows a functioning eye drives invertebrate eye-regeneration and -evolution research, but this case sleeps (last cited 1929)."
   ],
   "99": [
    "Mapped which parts gastropods can and cannot rebuild — extending the regeneration atlas into a whole phylum outside the institute's usual animals.",
-   "Why regenerative capacity varies so sharply across molluscan body parts was catalogued but never explained — still an open comparative question."
+   "Still open: the phylogenetic pattern of who-regenerates-what across molluscs is exactly what modern comparative regeneration seeks — these early data points sleep (last cited 1950)."
   ],
   "46": [
    "An early mollusc entry in the comparative regeneration program, surveying the regenerative powers of freshwater snails.",
-   "The phylogenetic pattern of who-regenerates-what that these surveys began is exactly what modern comparative regeneration seeks, having lost the early data points."
+   "Still open and dormant: the same live comparative-regeneration question, with these snail data uncited since 1914."
   ],
   "47": [
    "The small polychaete Ophryotrocha — later a standard lab animal — regrows its anterior end, head structures included.",
-   "Ophryotrocha is now a model for regeneration and ageing; its BVA debut as a regeneration subject is forgotten by the field that adopted it."
+   "A sleeping beauty: Ophryotrocha is now a model for regeneration and ageing, but its 1905 BVA debut as a regeneration subject sleeps (last cited 1974)."
   ],
   "118": [
    "A leech regenerates at both ends, with front and back differing in capacity — a probe of annelid head-to-tail polarity.",
-   "How head-versus-tail identity is set during regeneration is now answered by Hox/Wnt-gradient biology in annelids, which doesn't cite the early polarity observations."
+   "Answered in principle — Hox/Wnt gradients set annelid head–tail identity — but this early polarity observation is a sleeping beauty the molecular literature never cites (last 1996)."
   ],
   "104": [
    "Pulled hermit crabs from their shells and found the asymmetric, shell-fitted abdomen's form depends on the shell — the environment moulding the soft body.",
-   "Context-induced body asymmetry is a developmental-plasticity question still open; the hermit-crab demonstration is a vivid, uncited early case."
+   "Still open: context-induced body asymmetry is a live developmental-plasticity question; re-cited once in 2011, otherwise a vivid sleeping beauty."
   ],
   "45": [
    "Documented regeneration of a specific, specialised crayfish mouthpart-leg (the third maxilliped), a fine-grained crustacean case.",
-   "Serial homology and identity in regenerated crustacean appendages — what makes a maxilliped come back a maxilliped — is asked by crustacean evo-devo now, minus this datum."
+   "Still open: serial homology and identity in regenerated crustacean appendages is asked by crustacean evo-devo now, but this datum sleeps (last cited 1929)."
   ],
   "22": [
    "Showed fish colour change is not only pigment moving within cells but a change in how much melanin there is — pushing colour change toward quantitative pigment chemistry.",
-   "Regulation of melanin synthesis (not just dispersal) during physiological colour change is melanophore biology today, reached without this quantitative start."
+   "Answered early: regulation of melanin synthesis during colour change is melanophore biology today, which this 1922 quantitative start anticipated — a sleeping beauty cited only to 1946."
   ],
   "43": [
    "The goose and duck regenerate beak tissue — regeneration in warm-blooded vertebrates, not only the cold-blooded.",
-   "How far endotherms retain regenerative power (the duck/chick beak is now a developmental model) is studied without this early demonstration that birds regrow beak tissue."
+   "Still open: how far warm-blooded vertebrates retain regenerative power (the duck/chick beak is now a developmental model) is live, yet this demonstration that birds regrow beak tissue is uncited since 1936."
   ]
  },
  "unfinished": [
@@ -386,8 +386,8 @@
  "qed": {
   "enabled": false,
   "endpoint": null,
-  "label": "Analyze with Q.E.D. Science",
-  "pending_note": "Q.E.D. Science analysis isn't connected yet. When the API key is added, this button will run a live Q.E.D. analysis of this paper and its modern context."
+  "label": "Is this still open? — ask Consensus",
+  "pending_note": "Not connected yet. When a Consensus (or Q.E.D. Science) API endpoint is added, this button will query today's literature for this paper's question and report whether it is still open or has since been answered. On a static site the call must go through a small proxy that holds the API key — see the note at the top of the page."
  },
  "org_override": {
   "55": [

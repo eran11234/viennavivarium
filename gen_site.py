@@ -279,6 +279,9 @@ REDISC_CSS = r"""
 .dcard.zero{border-color:#d9b8ac;background:#fdf6f3}
 .whatsnew{font-size:14.5px;line-height:1.55;margin:10px 0 0}
 .openend{font-size:14px;line-height:1.55;margin:10px 0 0;background:#f3efe6;border-radius:8px;padding:9px 12px}
+.citetag{display:inline-block;margin-left:8px;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;padding:1px 7px;border-radius:10px;white-space:nowrap;vertical-align:middle}
+.citetag.wake{background:#1d6e56;color:#fff}
+.citetag.dorm{background:#e6ddcb;color:#6f6a61}
 .citesumm{font-size:13.5px;line-height:1.55;margin:8px 0 0;background:#eef2f5;border-left:3px solid var(--accent2);border-radius:6px;padding:8px 12px}
 .citesumm .lab{color:var(--accent2)}
 .lab{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-right:7px}
@@ -330,9 +333,11 @@ function cardHTML(pid){var c=R.cards[pid]; if(!c)return '';
    +'<p class="gaptxt"><b>'+c.gap+'</b> modern works study this animal · <b class="'+(zero?'z':'')+'">'+c.citations+'</b> cite the original'
    +(zero?' <span class="ztag">none yet</span>':'')+'</p></div>'
    +'<p class="whatsnew"><span class="lab">What’s new</span>'+esc(c.whats_new)+'</p>'
-   +'<div class="openend"><span class="lab">Open end</span>'+esc(c.open_end)+'</div>'
+   +'<div class="openend"><span class="lab">Still open today?</span>'+esc(c.open_end)
+   +(c.ncite?'<span class="citetag'+(c.recent?' wake':' dorm')+'">'+(c.recent?'re-cited '+c.lastcite+' · waking':'last cited '+c.lastcite+' · dormant')+'</span>':'<span class="citetag dorm">never cited</span>')
+   +'</div>'
    +(c.cite_summary?'<div class="citesumm"><span class="lab">How it’s cited today</span>'+esc(c.cite_summary)+'</div>':'')
-   +'<div class="dc-links">'+links(c)+'<button class="qedbtn" onclick="qedAnalyze('+pid+')">⚛ Analyze with Q.E.D. Science</button></div>'
+   +'<div class="dc-links">'+links(c)+'<button class="qedbtn" onclick="qedAnalyze('+pid+')">☾ Is this still open? · check the literature</button></div>'
    +'<div class="qedout" id="qed-'+pid+'"></div></article>';}
 function groupHTML(g){return '<section class="gsec" data-k="'+g.key+'"><div class="ghead"><h2>'+esc(g.title)+'</h2>'
    +'<p class="gmod">'+esc(g.modern)+'</p><p class="gblurb">'+esc(g.blurb)+'</p></div>'
@@ -467,13 +472,22 @@ def gen_rediscovery():
     meth = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else {}
     _sp = os.path.join(ROOT, "legacy_data", "citation_summaries.json")
     SUMM = json.load(open(_sp, encoding="utf-8")) if os.path.exists(_sp) else {}
+    _ep = os.path.join(ROOT, "legacy_data", "citations_enriched.json")
+    ENR = json.load(open(_ep, encoding="utf-8")) if os.path.exists(_ep) else {}
+
+    def citeyears(pid):
+        ys = sorted(w.get("year") for w in ENR.get(str(pid), {}).get("works", []) if w.get("year"))
+        return ys
 
     def card(pid):
         c = cat_by_id[pid]
         cur = R["cards"][str(pid)]
         org, modern = org_ov.get(pid, (c.get("organism"), c.get("modern")))
+        ys = citeyears(pid)
+        last = ys[-1] if ys else None
         return dict(
             cite_summary=SUMM.get(str(pid)),
+            lastcite=last, recent=bool(last and last >= 2010), ncite=len(ys),
             id=pid, title=(c.get("title_en") or c.get("title") or "").replace("�", "ä"),
             title_de=(c.get("title") or "").replace("�", "ä"),
             author=c.get("author"), year=c.get("year"),
@@ -510,9 +524,13 @@ def gen_rediscovery():
         '<div><b>' + str(zero) + '</b><span>with zero modern citations</span></div>'
         '<div><b>' + str(len(R["unfinished"])) + '</b><span>unfinished programs</span></div>'
         '</div>'
-        '<div class="qbanner"><span class="qi">⚛</span><div><b>Analyze with Q.E.D. Science.</b> '
-        'Each discovery below carries a Q.E.D. analysis button. It is wired and waiting: as soon as the '
-        'Q.E.D. Science API key is added it will run a live analysis of that paper. Until then it shows what it will do.</div></div>'
+        '<div class="qbanner"><span class="qi">☾</span><div><b>Is it still open — or a sleeping beauty?</b> '
+        'For each paper, the “Still open today?” line asks whether the question it touches remains unresolved, or '
+        'whether the paper is a <em>sleeping beauty</em> — a forgotten early answer to something science is still asking. '
+        'A green <span class="citetag wake" style="margin:0">re-cited · waking</span> tag means modern work (2010 on) has begun citing it again; a grey '
+        '<span class="citetag dorm" style="margin:0">dormant</span> tag means it has gone quiet. '
+        'The per-card button can be wired to the <b>Consensus</b> API to check this against today\'s literature live '
+        '(a static site needs a small key-holding proxy for that — see below).</div></div>'
         '<p class="muted" style="font-size:13.5px;line-height:1.55;max-width:76ch;margin:8px 0 0">On each card the bar reads <b>how many modern works study this animal</b> against <b>how many cite the BVA original</b> — the wider the gap, the more orphaned the work. Where modern science <em>does</em> engage a paper, a “How it’s cited today” note summarises that reception; <b>Who cites it ↗</b> opens the full, paper-by-paper citation list on the Legacy page.</p>'
         '<div id="chips" class="chips"></div>'
         '<label class="zchk"><input type="checkbox" id="zonly"> Show only the targets nobody cites yet ('
@@ -523,6 +541,17 @@ def gen_rediscovery():
         'closed. These six are drawn from Przibram’s own monographs — each with the original passage and a note '
         'on where the question went.</p>'
         '<div id="unfinished"></div>'
+        '<section style="margin-top:34px;padding:14px 16px;border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:10px;background:#f1ece1">'
+        '<h3 style="margin:.1em 0 .4em">Connecting Consensus</h3>'
+        '<p class="muted" style="font-size:13.5px;line-height:1.6;max-width:80ch;margin:0">'
+        'Consensus (<a href="https://consensus.app/home/api/" target="_blank" rel="noopener">consensus.app/api</a>) offers a '
+        'developer API — a <code>GET /v1/quick_search</code> endpoint that returns ranked, peer-reviewed papers for a question '
+        '(≈$0.10/call, access by application) — plus an MCP server. It is a natural fit for the “Still open today?” question: '
+        'feed it each paper&rsquo;s open question and read back whether current literature has settled it. '
+        'Two ways to wire it here: <b>(1) build-time</b> — run the queries once when the site is built (where the API key is '
+        'safe) and bake the verdicts into the page, with no per-visitor cost or key exposure; or <b>(2) live</b> — the per-card '
+        'button calls a tiny serverless proxy (a Cloudflare Worker or Netlify function) that holds the key, since a key must '
+        'never sit in this static page&rsquo;s JavaScript. Give me a key and I&rsquo;ll wire whichever you prefer.</p></section>'
         '<p class="obit muted"></p>')
 
     page("rediscovery.html", "Rediscover", "Rediscover", body,
