@@ -415,6 +415,13 @@ def build():
     TITLES_EN = json.load(open(_tp, encoding="utf-8")) if os.path.exists(_tp) else {}
     _dp = os.path.join(ROOT, "legacy_data", "titles_de_clean.json")
     TITLES_DE = json.load(open(_dp, encoding="utf-8")) if os.path.exists(_dp) else {}
+    _fp = os.path.join(ROOT, "legacy_data", "fffd_fixes.json")
+    FFFD = json.load(open(_fp, encoding="utf-8")) if os.path.exists(_fp) else {}
+    def defffd(s):
+        if not s or "�" not in s: return s
+        # match a whole word-core (may contain several U+FFFD), ignoring surrounding quotes/punctuation
+        return re.sub(r"[\wÀ-ÿ'’\-�]+",
+                      lambda m: FFFD.get(m.group(0), m.group(0)) if "�" in m.group(0) else m.group(0), s)
     catalog, legacy = [], {}
     mapped = 0
     for pid in sorted(summary):
@@ -457,7 +464,7 @@ def build():
             slug=(slug.split("_")[0] + "-" + re.sub(r"[^a-z0-9]+","-",norm(author)) + "-" + str(year)) if slug else None,
             trans_slug=slug,
             title_en=title_en,
-            rationale=ds.get("rationale", ""),
+            rationale=defffd(ds.get("rationale", "")),
         )
         catalog.append(rec)
 
