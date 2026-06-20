@@ -643,6 +643,29 @@ def gen_reading_pages():
     cat_by_id = {c["id"]: c for c in catalog}
     _sp = os.path.join(ROOT, "legacy_data", "citation_summaries.json")
     SUMM = json.load(open(_sp, encoding="utf-8")) if os.path.exists(_sp) else {}
+    # cross-link indices: paper -> author cards, and organism groupings for "related papers"
+    _AUTH = json.load(open(os.path.join(ROOT, "legacy_data", "authors.json"), encoding="utf-8"))
+    pid2auth = {}
+    for _p in _AUTH["people"]:
+        for _pid in _p.get("papers", []):
+            pid2auth.setdefault(_pid, []).append((_p["key"], _p["name"]))
+    read_for = {tt["id"]: tt["page_slug"] for tt in translations}
+    # a few catalog rows have a wrong organism (fixed only via rediscovery.json org_override);
+    # leave those out of the organism grouping so they neither pollute nor get a wrong "related" list
+    _rp = os.path.join(ROOT, "legacy_data", "rediscovery.json")
+    _bad_org = set()
+    if os.path.exists(_rp):
+        _bad_org = {int(k) for k in json.load(open(_rp, encoding="utf-8")).get("org_override", {})}
+    genus_idx, taxon_idx = {}, {}
+    for _c in catalog:
+        if _c["id"] in _bad_org:
+            continue
+        _g = (_c.get("genus") or "").strip().lower()
+        _x = (_c.get("taxon") or "").strip().lower()
+        if _g:
+            genus_idx.setdefault(_g, []).append(_c["id"])
+        if _x:
+            taxon_idx.setdefault(_x, []).append(_c["id"])
     for t in translations:
         slug = t["trans_slug"]; ps = t["page_slug"]
         frag, toc = render_md(slug)
@@ -675,6 +698,42 @@ def gen_reading_pages():
         {('<div style="margin:10px 0;padding:11px 13px;border-left:3px solid var(--accent2);background:#eef2f5;border-radius:7px"><h3 style="margin:.1em 0 .35em;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent2)">How later science draws on this work</h3><p style="margin:0;font-size:13.5px;line-height:1.6">'+html.escape(SUMM[str(pid)])+'</p></div>') if str(pid) in SUMM else ''}
         {'<h3>Cited by today</h3><ul class="cites">'+clist+'</ul>' if clist else '<p class="muted">No modern citations recorded.</p>'}
         </section>"""
+        # connections panel: author bio(s), this paper's rediscovery card, related papers (same organism)
+        auth_links = "".join(
+            '<a class="cnchip" href="../authors.html#a-%s">%s &rarr;</a>' % (html.escape(k), html.escape(nm))
+            for k, nm in pid2auth.get(pid, []))
+        redis_link = ('<p class="ck">Rediscovery</p>'
+                      '<a class="cnredis" href="../rediscovery.html#card-%d">Why this is a rediscovery target &rarr;</a>' % pid
+                      ) if lg.get("rediscovery") else ""
+        _g = (c.get("genus") or "").strip().lower()
+        _x = (c.get("taxon") or "").strip().lower()
+        _seen = {pid}; _rel = []; _from_genus = 0
+        if pid not in _bad_org:
+            for _rid in genus_idx.get(_g, []):
+                if _rid not in _seen:
+                    _seen.add(_rid); _rel.append(_rid)
+            _from_genus = len(_rel)
+            if len(_rel) < 4:
+                for _rid in taxon_idx.get(_x, []):
+                    if _rid not in _seen:
+                        _seen.add(_rid); _rel.append(_rid)
+            _rel.sort(key=lambda r: (0 if r in read_for else 1, cat_by_id[r].get("year") or 0))
+            _rel = _rel[:6]
+
+        def _rlink(rid):
+            rc = cat_by_id[rid]
+            href = (read_for[rid] + ".html") if rid in read_for else ("../reader.html?id=%d" % rid)
+            tt = (rc.get("title_en") or rc.get("title") or "").strip()
+            if len(tt) > 46:
+                tt = tt[:45].rstrip() + "…"
+            return '<a class="cnchip" href="%s">%s &middot; %s</a>' % (href, rc.get("year"), html.escape(tt))
+        rel_html = "".join(_rlink(r) for r in _rel)
+        _org_label = (c.get("genus") if _from_genus else (c.get("taxon") or "the corpus"))
+        connect = ('<section class="connect"><h2>Connections</h2>'
+                   + (('<p class="ck">Author</p>' + auth_links) if auth_links else '')
+                   + redis_link
+                   + (('<p class="ck">More on %s</p>%s' % (html.escape(_org_label), rel_html)) if rel_html else '')
+                   + '</section>')
         body = f"""
 <article class="reading">
   <p class="kicker"><a href="../catalog.html">Catalog</a> · BVA · {t['year']}</p>
@@ -691,7 +750,7 @@ def gen_reading_pages():
   {notice}
   <div class="cols">
     <div class="text">{frag}</div>
-    <aside class="toc">{('<div class=tocbox><p>On this page</p>'+toc_html+'</div>') if toc_html else ''}{lp}</aside>
+    <aside class="toc">{('<div class=tocbox><p>On this page</p>'+toc_html+'</div>') if toc_html else ''}{lp}{connect}</aside>
   </div>
   <footer class="cite">Cite: {html.escape(t['author'])} ({t['year']}), “{html.escape(t['title_de'])},” {html.escape(t['journal'])}. English translation, Vienna Vivarium in English.</footer>
 </article>"""
@@ -847,6 +906,12 @@ td.meth{font-size:12.5px;color:#4a463f}
 .lstats b{display:block;font-family:Georgia,serif;font-size:22px}
 .lstats span{font-size:11.5px;color:var(--muted)}
 .cites{font-size:13px;padding-left:16px}.cites li{margin:4px 0}
+.connect{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin-top:14px;font-family:-apple-system,sans-serif}
+.connect h2{font-family:-apple-system,sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:0 0 6px}
+.connect .ck{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:600;margin:11px 0 5px}
+.cnchip{display:inline-block;font-size:12.5px;border:1px solid var(--rule);border-radius:13px;padding:3px 10px;margin:0 4px 5px 0;background:var(--paper);color:var(--ink);line-height:1.3}
+.cnchip:hover{border-color:#cdc4b1;text-decoration:none;background:#fff}
+.cnredis{display:inline-block;font-size:13px;color:var(--accent);font-weight:600}
 .cite{margin-top:24px;border-top:1px solid var(--rule);padding-top:12px;font-size:13px;color:var(--muted)}
 .prose{max-width:72ch}.prose p{margin:.7em 0}
 .rsingle iframe{width:100%;height:82vh;border:1px solid var(--rule);border-radius:8px;background:#fff}
