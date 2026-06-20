@@ -344,6 +344,15 @@ TRANS_KEY = {
  "63_Kammerer_1919_Inherited-form-changes": (1919, "kammerer", "vererbung erzwungener formveranderungen"),
 }
 
+# Extra translations (slugs 64+) integrated via legacy_data/trans_extra.json
+# {slug: {id, pdf, title_en}} — merged into the dicts above so the rest of the pipeline is unchanged.
+_extra_path = os.path.join(ROOT, "legacy_data", "trans_extra.json")
+if os.path.exists(_extra_path):
+    for _slug, _e in json.load(open(_extra_path, encoding="utf-8")).items():
+        if _e.get("pdf"):      TRANS_PDF[_slug] = _e["pdf"]
+        if _e.get("title_en"): TRANS_EN[_slug] = _e["title_en"]
+        if _e.get("id"):       TRANS_FORCE[_slug] = _e["id"]
+
 def load_trans_meta():
     meta = {}
     p = os.path.join(TRANS, "_work", "_meta.json")
