@@ -436,12 +436,16 @@ def gen_authors():
             pic = ('<figure class="aportrait"><img src="assets/%s" alt="Portrait of %s" loading="lazy">'
                    '<figcaption>%s</figcaption></figure>'
                    % (p["img"], html.escape(p["name"]), html.escape(p.get("img_credit", ""))))
-        body = ('<div class="abody"><div class="ahead"><h2>%s</h2>%s%s</div>' % (html.escape(p["name"]), yrs, role)
-                + '<p class="abio">%s</p>' % html.escape(p["bio"])
-                + '<div class="apapers"><span class="lab">Wrote</span> %s</div>' % chips
-                + link + '</div>')
+        toggle = ('<span class="atoggle">%d %s <i class="chev">&rsaquo;</i></span>'
+                  % (n, "papers" if n != 1 else "paper"))
+        summary = ('<summary class="asum">' + pic
+                   + '<div class="abody"><div class="ahead"><h2>%s</h2>%s%s</div>' % (html.escape(p["name"]), yrs, role)
+                   + '<p class="abio">%s</p>' % html.escape(p["bio"])
+                   + toggle + '</div></summary>')
+        detail = ('<div class="adetail"><div class="apapers"><span class="lab">Wrote</span> %s</div>%s</div>'
+                  % (chips, link))
         cls = "acard" + (" feat" if not compact else "") + (" haspic" if pic else "")
-        return '<article class="%s" id="a-%s">%s%s</article>' % (cls, html.escape(p["key"]), pic, body)
+        return '<details class="%s" id="a-%s">%s%s</details>' % (cls, html.escape(p["key"]), summary, detail)
 
     feat = [p for p in A["people"] if p["featured"]]
     rest = [p for p in A["people"] if not p["featured"]]
@@ -470,14 +474,23 @@ AUTHORS_CSS = r"""
 .agrid{display:grid;gap:14px}
 .agrid.feat{grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
 .agrid:not(.feat){grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
-.acard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px 17px}
+.acard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:0;overflow:hidden}
 .acard.feat{border-left:4px solid var(--accent)}
-.acard.haspic{display:flex;gap:14px;align-items:flex-start}
-.acard.haspic .abody{flex:1;min-width:0}
+.acard[open]{box-shadow:0 3px 16px rgba(0,0,0,.08)}
+.asum{padding:16px 17px;cursor:pointer;list-style:none;display:block}
+.asum::-webkit-details-marker{display:none}.asum::marker{content:""}
+.asum:hover{background:rgba(122,59,46,.04)}
+.acard.haspic .asum{display:flex;gap:14px;align-items:flex-start}
+.abody{flex:1;min-width:0}
+.atoggle{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:700}
+.chev{font-style:normal;font-size:16px;line-height:1;display:inline-block;transition:transform .2s}
+.acard[open] .chev{transform:rotate(90deg)}
+.adetail{padding:0 17px 15px;animation:adrop .25s ease}
+@keyframes adrop{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .aportrait{margin:0;flex:0 0 auto;width:88px}
 .aportrait img{width:88px;height:108px;object-fit:cover;border-radius:9px;border:1px solid var(--rule);background:#efe9dd;filter:sepia(.12)}
 .aportrait figcaption{font-size:8.5px;line-height:1.25;color:var(--muted);margin-top:3px;text-align:center}
-@media(max-width:520px){.acard.haspic{flex-direction:column}.aportrait,.aportrait img{width:78px}}
+@media(max-width:520px){.acard.haspic .asum{flex-direction:column}.aportrait,.aportrait img{width:78px}}
 .ahead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:8px}
 .ahead h2{font-family:Georgia,serif;font-size:19px;margin:0;border:0;padding:0}
 .ayears{font-size:13px;color:var(--accent);font-weight:600}
