@@ -61,7 +61,9 @@
     173,
     174,
     175
-   ]
+   ],
+   "img": "img/authors/przibram-h.jpg",
+   "img_credit": "Public domain · Wikimedia Commons"
   },
   {
    "key": "kammerer",
@@ -88,7 +90,9 @@
     130,
     160,
     169
-   ]
+   ],
+   "img": "img/authors/kammerer.jpg",
+   "img_credit": "Public domain · Wikimedia Commons"
   },
   {
    "key": "brecher",
@@ -138,7 +142,9 @@
     72,
     148,
     149
-   ]
+   ],
+   "img": "img/authors/weiss-p.jpg",
+   "img_credit": "No known copyright restrictions · Wikimedia Commons"
   },
   {
    "key": "megusar",
@@ -220,7 +226,9 @@
     164,
     165,
     169
-   ]
+   ],
+   "img": "img/authors/steinach.jpg",
+   "img_credit": "Wellcome Collection · CC BY 4.0"
   },
   {
    "key": "secerov",
@@ -263,7 +271,9 @@
     16,
     158,
     172
-   ]
+   ],
+   "img": "img/authors/dembowski.jpg",
+   "img_credit": "Public domain · Wikimedia Commons"
   },
   {
    "key": "klintz",
@@ -396,7 +406,9 @@
    "papers": [
     117,
     131
-   ]
+   ],
+   "img": "img/authors/zuelzer.jpg",
+   "img_credit": "Wikimedia Commons · CC BY-SA 3.0"
   },
   {
    "key": "sciacchitano",
@@ -757,7 +769,9 @@
    "featured": false,
    "papers": [
     167
-   ]
+   ],
+   "img": "img/authors/erdmann.jpg",
+   "img_credit": "Wellcome Collection · CC BY 4.0"
   },
   {
    "key": "morgulis",

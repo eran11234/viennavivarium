@@ -431,12 +431,17 @@ def gen_authors():
         role = ('<span class="arole">%s</span>' % html.escape(p["role"])) if p.get("role") else ""
         link = ('<a class="alink" href="%s" target="_blank" rel="noopener">more ↗</a>' % p["link"]) if p.get("link") else ""
         n = len(p["papers"])
-        return ('<article class="acard%s" id="a-%s">' % (" feat" if not compact else "", html.escape(p["key"]))
-                + '<div class="ahead"><h2>%s</h2>%s%s</div>' % (html.escape(p["name"]), yrs, role)
+        pic = ''
+        if p.get("img"):
+            pic = ('<figure class="aportrait"><img src="assets/%s" alt="Portrait of %s" loading="lazy">'
+                   '<figcaption>%s</figcaption></figure>'
+                   % (p["img"], html.escape(p["name"]), html.escape(p.get("img_credit", ""))))
+        body = ('<div class="abody"><div class="ahead"><h2>%s</h2>%s%s</div>' % (html.escape(p["name"]), yrs, role)
                 + '<p class="abio">%s</p>' % html.escape(p["bio"])
-                + '<div class="apapers"><span class="lab">%s</span> %s</div>' % (
-                    ("Wrote" if n != 1 else "Wrote"), chips)
-                + link + '</article>')
+                + '<div class="apapers"><span class="lab">Wrote</span> %s</div>' % chips
+                + link + '</div>')
+        cls = "acard" + (" feat" if not compact else "") + (" haspic" if pic else "")
+        return '<article class="%s" id="a-%s">%s%s</article>' % (cls, html.escape(p["key"]), pic, body)
 
     feat = [p for p in A["people"] if p["featured"]]
     rest = [p for p in A["people"] if not p["featured"]]
@@ -467,6 +472,12 @@ AUTHORS_CSS = r"""
 .agrid:not(.feat){grid-template-columns:repeat(auto-fill,minmax(290px,1fr))}
 .acard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px 17px}
 .acard.feat{border-left:4px solid var(--accent)}
+.acard.haspic{display:flex;gap:14px;align-items:flex-start}
+.acard.haspic .abody{flex:1;min-width:0}
+.aportrait{margin:0;flex:0 0 auto;width:88px}
+.aportrait img{width:88px;height:108px;object-fit:cover;border-radius:9px;border:1px solid var(--rule);background:#efe9dd;filter:sepia(.12)}
+.aportrait figcaption{font-size:8.5px;line-height:1.25;color:var(--muted);margin-top:3px;text-align:center}
+@media(max-width:520px){.acard.haspic{flex-direction:column}.aportrait,.aportrait img{width:78px}}
 .ahead{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin-bottom:8px}
 .ahead h2{font-family:Georgia,serif;font-size:19px;margin:0;border:0;padding:0}
 .ayears{font-size:13px;color:var(--accent);font-weight:600}
@@ -1145,9 +1156,12 @@ def copy_assets():
     # site imagery (historical photos / map) committed under legacy_data/img
     imgsrc = os.path.join(ROOT, "legacy_data", "img")
     if os.path.isdir(imgsrc):
-        imgout = os.path.join(SITE, "assets", "img"); os.makedirs(imgout, exist_ok=True)
-        for f in glob.glob(os.path.join(imgsrc, "*")):
-            _cp(f, os.path.join(imgout, os.path.basename(f)))
+        for root, _dirs, files in os.walk(imgsrc):
+            rel = os.path.relpath(root, imgsrc)
+            outd = os.path.join(SITE, "assets", "img") if rel == "." else os.path.join(SITE, "assets", "img", rel)
+            os.makedirs(outd, exist_ok=True)
+            for f in files:
+                _cp(os.path.join(root, f), os.path.join(outd, f))
 
 def write_css():
     css = r""":root{--paper:#f7f4ee;--card:#fffdf9;--ink:#211f1c;--muted:#6f6a61;--rule:#e4ddce;
