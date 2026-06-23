@@ -289,8 +289,12 @@ REDISC_CSS = r"""
 .dc-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:13px}
 .tlink{font-size:13px;border:1px solid var(--rule);border-radius:7px;padding:5px 10px;background:var(--paper);color:var(--ink)}
 .tlink:hover{border-color:#cdc4b1;text-decoration:none}
-.qedbtn{font-size:13px;border:1px solid var(--accent2);color:#fff;background:var(--accent2);border-radius:7px;padding:5px 11px;cursor:pointer;margin-left:auto}
-.qedbtn:hover{background:#2b4d68}
+.qedbtn{font-size:13px;border:1px solid var(--accent2);color:#fff;background:var(--accent2);border-radius:7px;padding:5px 11px;cursor:pointer;text-decoration:none;display:inline-block}
+a.qedbtn{margin-left:6px}
+.dc-links .qedbtn.ghost{margin-left:auto}
+.qedbtn:hover{background:#2b4d68;text-decoration:none}
+.qedbtn.ghost{background:transparent;color:var(--accent2)}
+.qedbtn.ghost:hover{background:#eef2f5}
 .qedout{display:none;margin-top:11px;font-size:13.5px;line-height:1.5;border-left:3px solid var(--accent2);padding:9px 12px;background:#eef2f5;border-radius:6px}
 .qpend b{color:var(--accent2)}
 .cons .consq{margin:0 0 2px;font-size:13.5px}
@@ -346,7 +350,9 @@ function cardHTML(pid){var c=R.cards[pid]; if(!c)return '';
    +(c.ncite?'<span class="citetag'+(c.recent?' wake':' dorm')+'">'+(c.recent?'re-cited '+c.lastcite+' · waking':'last cited '+c.lastcite+' · dormant')+'</span>':'<span class="citetag dorm">never cited</span>')
    +'</div>'
    +(c.cite_summary?'<div class="citesumm"><span class="lab">How it’s cited today</span>'+esc(c.cite_summary)+'</div>':'')
-   +'<div class="dc-links">'+links(c)+'<button class="qedbtn" onclick="qedAnalyze('+pid+')">'+(c.consensus?('☾ What today’s research says · '+c.consensus.n+' papers'):'☾ Check the literature')+'</button></div>'
+   +'<div class="dc-links">'+links(c)
+   +(c.consensus?'<button class="qedbtn ghost" onclick="qedAnalyze('+pid+')">☾ Quick peek</button>':'')
+   +'<a class="qedbtn" href="dossier/'+pid+'.html">☾ Deep dive'+(c.consensus?(' · '+c.consensus.n+' papers'):'')+' →</a></div>'
    +'<div class="qedout" id="qed-'+pid+'"></div></article>';}
 function groupHTML(g){return '<section class="gsec" data-k="'+g.key+'"><div class="ghead"><h2>'+esc(g.title)+'</h2>'
    +'<p class="gmod">'+esc(g.modern)+'</p><p class="gblurb">'+esc(g.blurb)+'</p></div>'
@@ -596,6 +602,131 @@ def gen_rediscovery():
          foot='<script src="data/summaries.js"></script><script src="data/rediscovery.js"></script><script>' + REDISC_JS + '</script>')
     print("rediscovery.html:", len(cards), "cards |", len(R["groups"]), "groups |",
           len(R["unfinished"]), "programs | zero-cite:", zero)
+
+
+DOSSIER_CSS = r"""
+.dossier{max-width:820px}
+.dossier .detitle{font-style:italic;color:var(--muted);margin:.1em 0 .3em;font-size:16px}
+.dossier .byline{color:var(--muted);font-size:14px;margin:.2em 0 14px}
+.dsec{margin:26px 0;padding-top:6px}
+.dsec h2{font-family:Georgia,serif;font-size:21px;border-bottom:2px solid var(--rule);padding-bottom:6px;margin:0 0 12px}
+.dsec h2 .cnt{font-family:-apple-system,sans-serif;font-size:13px;color:var(--muted);font-weight:400}
+.whatd{font-size:15.5px;line-height:1.6;margin:0}
+.meth{font-size:14px;line-height:1.6;margin:10px 0 0;color:#3c3833}
+.meth .lab,.openq .lab{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:600;margin-bottom:2px}
+.statebox{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:12px;padding:16px 18px}
+.statebox h2{border-bottom:0;margin:.1em 0 8px;font-size:20px}
+.verdict{display:inline-block;background:var(--accent2);color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em;padding:3px 11px;border-radius:20px;margin-bottom:8px}
+.stateprose{font-size:15.5px;line-height:1.65;margin:0 0 14px}
+.dstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 14px}
+.dstats div{background:var(--paper);border:1px solid var(--rule);border-radius:9px;padding:10px 12px;text-align:center}
+.dstats b{display:block;font-family:Georgia,serif;font-size:24px;line-height:1}
+.dstats span{font-size:11.5px;color:var(--muted)}
+.openq{font-size:14.5px;line-height:1.6;margin:4px 0 0;padding-top:10px;border-top:1px dashed var(--rule)}
+.facets{margin:0;padding-left:20px;font-size:15px;line-height:1.5}
+.facets li{margin:5px 0;color:#2f2c28}
+.conslist{margin-top:4px}
+.conspaper{padding:11px 0;border-top:1px solid var(--rule)}
+.conspaper:first-child{border-top:0}
+.conslink{font-weight:600;font-size:15px;line-height:1.4}
+.consmeta2{font-size:12px;color:var(--muted);margin:3px 0 4px}
+.ptag{display:inline-block;background:var(--card);border:1px solid var(--rule);border-radius:5px;padding:0 6px;margin-left:5px;font-size:10.5px;text-transform:capitalize}
+.constake{margin:3px 0 0;font-size:14px;line-height:1.55;color:#2f2c28}
+@media(max-width:640px){.dstats{grid-template-columns:repeat(3,1fr)}}
+"""
+
+
+def gen_dossier():
+    """One deep scroll page per rediscovery paper: the historic work, the modern
+    state of the field, the questions put to Consensus, and every relevant modern paper."""
+    rp = os.path.join(ROOT, "legacy_data", "rediscovery.json")
+    R = json.load(open(rp, encoding="utf-8"))
+    dp = os.path.join(ROOT, "legacy_data", "consensus_deep.json")
+    DEEP = json.load(open(dp, encoding="utf-8")) if os.path.exists(dp) else {}
+    if not DEEP:
+        return
+    cat_by_id = {c["id"]: c for c in catalog}
+    read_for = {t["id"]: t["page_slug"] for t in translations}
+    org_ov = {int(k): v for k, v in R.get("org_override", {}).items()}
+    mpath = os.path.join(ROOT, "legacy_data", "methodology.json")
+    meth = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else {}
+    os.makedirs(os.path.join(SITE, "dossier"), exist_ok=True)
+
+    def paper_html(r):
+        bits = [str(r.get("year") or "")]
+        au = html.escape(r.get("author") or "")
+        if au:
+            bits.append(au + (" +%d" % (r["n_authors"] - 1) if (r.get("n_authors") or 0) > 1 else ""))
+        if r.get("journal"):
+            bits.append(html.escape(r["journal"]))
+        meta = " · ".join(x for x in bits if x)
+        tags = ""
+        if r.get("study_type"):
+            tags += '<span class="ptag">' + html.escape(r["study_type"]) + '</span>'
+        if r.get("citations") is not None:
+            tags += '<span class="ptag">' + str(r["citations"]) + ' cites</span>'
+        tk = ('<p class="constake">' + html.escape(r["takeaway"]) + '</p>') if r.get("takeaway") else ""
+        u = r.get("url") or "#"
+        return ('<div class="conspaper"><a class="conslink" href="' + u + '" target="_blank" rel="noopener">'
+                + html.escape(r.get("title") or "(untitled)") + ' ↗</a><div class="consmeta2">' + meta + ' '
+                + tags + '</div>' + tk + '</div>')
+
+    n = 0
+    for pid_s, d in DEEP.items():
+        pid = int(pid_s)
+        c = cat_by_id.get(pid)
+        if not c:
+            continue
+        cur = R["cards"].get(pid_s, ["", ""])
+        org, modern = org_ov.get(pid, (c.get("organism"), c.get("modern")))
+        m = meth.get(pid_s, {})
+        title_en = (c.get("title_en") or c.get("title") or "").replace("�", "ä")
+        title_de = (c.get("title") or "").replace("�", "ä")
+        read = ("../papers/" + read_for[pid] + ".html") if pid in read_for else None
+        res = sorted(d.get("results", []), key=lambda r: (r.get("year") or 0), reverse=True)
+        actions = '<a class="btn" href="../rediscovery.html#card-%d">← Rediscover</a>' % pid
+        if read:
+            actions += '<a class="btn primary" href="%s">Read the English translation</a>' % read
+        actions += '<a class="btn" href="../reader.html?id=%d">German original</a>' % pid
+        if c.get("doi"):
+            actions += '<a class="btn" href="https://doi.org/%s" target="_blank" rel="noopener">DOI ↗</a>' % c["doi"]
+        body = f"""
+<article class="dossier">
+  <p class="kicker"><a href="../rediscovery.html">Rediscover</a> · BVA · {c.get('year')}{(' · <em>'+html.escape(org)+'</em>') if org else ''}</p>
+  <h1>{html.escape(title_en)}</h1>
+  {('<p class="detitle">'+html.escape(title_de)+'</p>') if title_de and title_de != title_en else ''}
+  <p class="byline">{html.escape(c.get('author') or '')} · {c.get('year')}</p>
+  <div class="actionbar">{actions}</div>
+  <section class="dsec">
+    <h2>What this paper did</h2>
+    <p class="whatd">{html.escape(cur[0])}</p>
+    {('<p class="meth"><span class="lab">How</span>'+html.escape(m.get('manipulation') or '')+'</p>') if m.get('manipulation') else ''}
+  </section>
+  <section class="dsec statebox">
+    <span class="verdict">{html.escape(d.get('verdict') or 'Still open today?')}</span>
+    <h2>The state of the field today</h2>
+    <p class="stateprose">{html.escape(d.get('state') or '')}</p>
+    <div class="dstats">
+      <div><b>{d.get('n_unique',0)}</b><span>modern papers found</span></div>
+      <div><b>{d.get('recent',0)}</b><span>since 2015</span></div>
+      <div><b>{d.get('latest') or '—'}</b><span>most recent</span></div>
+    </div>
+    <p class="openq"><span class="lab">The paper’s open question</span>{html.escape(cur[1])}</p>
+  </section>
+  <section class="dsec">
+    <h2>Questions put to Consensus</h2>
+    <ul class="facets">{''.join('<li>'+html.escape(f['q'])+'</li>' for f in d.get('facets',[]))}</ul>
+  </section>
+  <section class="dsec">
+    <h2>What modern research says <span class="cnt">({len(res)} papers)</span></h2>
+    <div class="conslist">{''.join(paper_html(r) for r in res)}</div>
+  </section>
+  <footer class="cite">Modern literature retrieved via the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API (June 2026) for this paper’s open questions; takeaways are Consensus’s one-line summaries of each study. A research aid, not a settled verdict.</footer>
+</article>"""
+        page(f"dossier/{pid}.html", title_en[:60], "Rediscover", body,
+             head="<style>" + DOSSIER_CSS + "</style>", prefix="../")
+        n += 1
+    print("dossier pages:", n)
 
 
 def gen_citations():
@@ -1370,7 +1501,7 @@ def main():
     open(os.path.join(DATA, "site.js"), "w").write("window.SITE=" + json.dumps({"fullPdfs": FULL}) + ";")
     open(os.path.join(SITE, ".nojekyll"), "w").write("")
     gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader()
-    gen_citations(); gen_methodology(); gen_rediscovery(); gen_authors(); gen_reading_pages(); copy_assets()
+    gen_citations(); gen_methodology(); gen_rediscovery(); gen_dossier(); gen_authors(); gen_reading_pages(); copy_assets()
     print("Generated site at", SITE, "| FULL_PDFS =", FULL)
     print("pages:", sorted(os.path.basename(p) for p in glob.glob(os.path.join(SITE, "*.html"))))
     print("reading pages:", len(glob.glob(os.path.join(SITE, "papers", "*.html"))))
