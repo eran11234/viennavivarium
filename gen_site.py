@@ -243,7 +243,7 @@ def gen_map():
          foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="assets/map.js"></script>')
 
 REDISC_CSS = r"""
-.rstats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 8px}
+.rstats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 8px}
 .rstats div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:13px 14px}
 .rstats b{display:block;font-family:Georgia,serif;font-size:27px;line-height:1}
 .rstats span{font-size:12px;color:var(--muted)}
@@ -293,6 +293,15 @@ REDISC_CSS = r"""
 .qedbtn:hover{background:#2b4d68}
 .qedout{display:none;margin-top:11px;font-size:13.5px;line-height:1.5;border-left:3px solid var(--accent2);padding:9px 12px;background:#eef2f5;border-radius:6px}
 .qpend b{color:var(--accent2)}
+.cons .consq{margin:0 0 2px;font-size:13.5px}
+.cons .consmeta{margin:0 0 10px;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.conspaper{padding:8px 0;border-top:1px solid #dde4ea}
+.conspaper:first-of-type{border-top:0}
+.conslink{font-weight:600;font-size:13.5px;line-height:1.35;display:inline-block}
+.consmeta2{font-size:11.5px;color:var(--muted);margin:2px 0 3px}
+.ptag{display:inline-block;background:#fff;border:1px solid var(--rule);border-radius:5px;padding:0 6px;margin-left:5px;font-size:10.5px;text-transform:capitalize}
+.constake{margin:3px 0 0;font-size:13px;line-height:1.5;color:#2f2c28}
+.consfoot{margin:9px 0 0;font-size:11.5px;color:var(--muted);font-style:italic}
 .ubh{margin-top:40px}
 .ubintro{max-width:74ch}
 .ubcard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:17px 18px;margin:13px 0}
@@ -337,7 +346,7 @@ function cardHTML(pid){var c=R.cards[pid]; if(!c)return '';
    +(c.ncite?'<span class="citetag'+(c.recent?' wake':' dorm')+'">'+(c.recent?'re-cited '+c.lastcite+' · waking':'last cited '+c.lastcite+' · dormant')+'</span>':'<span class="citetag dorm">never cited</span>')
    +'</div>'
    +(c.cite_summary?'<div class="citesumm"><span class="lab">How it’s cited today</span>'+esc(c.cite_summary)+'</div>':'')
-   +'<div class="dc-links">'+links(c)+'<button class="qedbtn" onclick="qedAnalyze('+pid+')">☾ Is this still open? · check the literature</button></div>'
+   +'<div class="dc-links">'+links(c)+'<button class="qedbtn" onclick="qedAnalyze('+pid+')">'+(c.consensus?('☾ What today’s research says · '+c.consensus.n+' papers'):'☾ Check the literature')+'</button></div>'
    +'<div class="qedout" id="qed-'+pid+'"></div></article>';}
 function groupHTML(g){return '<section class="gsec" data-k="'+g.key+'"><div class="ghead"><h2>'+esc(g.title)+'</h2>'
    +'<p class="gmod">'+esc(g.modern)+'</p><p class="gblurb">'+esc(g.blurb)+'</p></div>'
@@ -373,14 +382,21 @@ zchk.addEventListener('change',applyZero);
 window.jump=function(id){setFilter('all');zchk.checked=false;applyZero();var el=document.getElementById('card-'+id);
   if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('flash');setTimeout(function(){el.classList.remove('flash');},1600);}return false;};
 
-window.qedAnalyze=function(id){var out=document.getElementById('qed-'+id),q=R.qed||{},c=R.cards[id];
+window.qedAnalyze=function(id){var out=document.getElementById('qed-'+id),c=R.cards[id];
+  if(out.style.display==='block'){out.style.display='none';return;}
   out.style.display='block';
-  if(!q.enabled||!q.endpoint){out.innerHTML='<div class="qpend"><b>Q.E.D. Science — not connected yet.</b> '+esc(q.pending_note||'')+'</div>';return;}
-  out.innerHTML='<div class="qpend">Analyzing “'+esc(c.title)+'” with Q.E.D. Science…</div>';
-  fetch(q.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:id,title:c.title,author:c.author,year:c.year,doi:c.doi,organism:c.organism})})
-   .then(function(r){return r.json();})
-   .then(function(d){out.innerHTML='<div class="qres">'+esc(d.summary||d.analysis||JSON.stringify(d))+'</div>';})
-   .catch(function(e){out.innerHTML='<div class="qpend">Q.E.D. request failed: '+esc(String(e))+'</div>';});};
+  var cn=c.consensus;
+  if(!cn||!cn.papers||!cn.papers.length){out.innerHTML='<div class="qpend">No Consensus results recorded for this question.</div>';return;}
+  var h='<div class="cons"><p class="consq">Question put to <b>Consensus</b>: <em>“'+esc(cn.query)+'”</em></p>'
+    +'<p class="consmeta">'+cn.n+' papers found · '+cn.recent+' published since 2015'+(cn.latest?(' · most recent '+cn.latest):'')+'</p>';
+  h+=cn.papers.map(function(p){
+    var meta=[p.year,(p.author?(esc(p.author)+(p.others>0?(' +'+p.others):'')):''),(p.journal?esc(p.journal):'')].filter(Boolean).join(' · ');
+    var tags=(p.study?'<span class="ptag">'+esc(p.study)+'</span>':'')+((p.cites!=null)?'<span class="ptag">'+p.cites+' cites</span>':'');
+    return '<div class="conspaper"><a class="conslink" href="'+p.url+'" target="_blank" rel="noopener">'+esc(p.title)+' ↗</a>'
+      +'<div class="consmeta2">'+meta+' '+tags+'</div>'
+      +(p.takeaway?'<p class="constake">'+esc(p.takeaway)+'</p>':'')+'</div>';}).join('');
+  h+='<p class="consfoot">Modern literature retrieved via the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API for this paper’s open question. Takeaways are Consensus’s one-line summaries of each citing study.</p></div>';
+  out.innerHTML=h;};
 })();
 """
 
@@ -474,6 +490,26 @@ def gen_rediscovery():
     SUMM = json.load(open(_sp, encoding="utf-8")) if os.path.exists(_sp) else {}
     _ep = os.path.join(ROOT, "legacy_data", "citations_enriched.json")
     ENR = json.load(open(_ep, encoding="utf-8")) if os.path.exists(_ep) else {}
+    _consp = os.path.join(ROOT, "legacy_data", "consensus.json")
+    CONS = json.load(open(_consp, encoding="utf-8")) if os.path.exists(_consp) else {}
+
+    def consensus_for(pid):
+        cn = CONS.get(str(pid))
+        if not cn or not cn.get("results"):
+            return None
+        rs = [r for r in cn["results"] if r.get("title")][:5]
+        if not rs:
+            return None
+        yrs = [r.get("year") for r in rs if r.get("year")]
+        return dict(
+            query=cn.get("query"), n=cn.get("n_results", len(rs)),
+            latest=(max(yrs) if yrs else None),
+            recent=sum(1 for y in yrs if y and y >= 2015),
+            papers=[dict(title=r.get("title"), author=r.get("author"),
+                         others=max(0, (r.get("n_authors") or 1) - 1), year=r.get("year"),
+                         journal=r.get("journal"), study=r.get("study_type"),
+                         cites=r.get("citations"), takeaway=r.get("takeaway"), url=r.get("url"))
+                    for r in rs])
 
     def citeyears(pid):
         ys = sorted(w.get("year") for w in ENR.get(str(pid), {}).get("works", []) if w.get("year"))
@@ -496,7 +532,7 @@ def gen_rediscovery():
             citations=c.get("citations", 0), gap=c.get("n_parallels", 0),
             whats_new=cur[0], open_end=cur[1],
             read=("papers/" + read_for[pid] + ".html") if pid in read_for else None,
-            pdf=c.get("pdf"), doi=c.get("doi"))
+            pdf=c.get("pdf"), doi=c.get("doi"), consensus=consensus_for(pid))
 
     cards = {}
     for g in R["groups"]:
@@ -504,13 +540,16 @@ def gen_rediscovery():
             cards[str(pid)] = card(pid)
     maxgap = max((c["gap"] for c in cards.values()), default=63)
     zero = sum(1 for c in cards.values() if c["citations"] == 0)
+    cons_total = sum(c["consensus"]["n"] for c in cards.values() if c.get("consensus"))
+    cons_npapers = sum(1 for c in cards.values() if c.get("consensus"))
     ob = cat_by_id.get(R.get("obituary"))
     obit = dict(id=ob["id"], author=ob["author"], year=ob["year"],
                 title=(ob.get("title") or "").replace("�", "ä")) if ob else None
     data = dict(intro=R["intro"], qed=R["qed"], groups=R["groups"], cards=cards,
                 unfinished=R["unfinished"], obituary=obit,
                 stats=dict(targets=len(cards), systems=len(R["groups"]),
-                           zero=zero, programs=len(R["unfinished"]), maxgap=maxgap))
+                           zero=zero, programs=len(R["unfinished"]), maxgap=maxgap,
+                           cons_total=cons_total, cons_npapers=cons_npapers))
     os.makedirs(DATA, exist_ok=True)
     open(os.path.join(DATA, "rediscovery.js"), "w", encoding="utf-8").write(
         "window.REDISCOVERY=" + json.dumps(data, ensure_ascii=False) + ";")
@@ -523,14 +562,15 @@ def gen_rediscovery():
         '<div><b>' + str(len(R["groups"])) + '</b><span>living model systems</span></div>'
         '<div><b>' + str(zero) + '</b><span>with zero modern citations</span></div>'
         '<div><b>' + str(len(R["unfinished"])) + '</b><span>unfinished programs</span></div>'
+        '<div><b>' + str(cons_total) + '</b><span>modern papers via Consensus</span></div>'
         '</div>'
         '<div class="qbanner"><span class="qi">☾</span><div><b>Is it still open — or a sleeping beauty?</b> '
         'For each paper, the “Still open today?” line asks whether the question it touches remains unresolved, or '
         'whether the paper is a <em>sleeping beauty</em> — a forgotten early answer to something science is still asking. '
         'A green <span class="citetag wake" style="margin:0">re-cited · waking</span> tag means modern work (2010 on) has begun citing it again; a grey '
         '<span class="citetag dorm" style="margin:0">dormant</span> tag means it has gone quiet. '
-        'The per-card button can be wired to the <b>Consensus</b> API to check this against today\'s literature live '
-        '(a static site needs a small key-holding proxy for that — see below).</div></div>'
+        'Now wired live: the <b>☾ What today\'s research says</b> button on each card opens the modern literature on that '
+        'paper\'s open question — <b>' + str(cons_total) + ' papers</b> across the ' + str(cons_npapers) + ' targets, retrieved from the <b>Consensus</b> API with each study\'s one-line takeaway.</div></div>'
         '<p class="muted" style="font-size:13.5px;line-height:1.55;max-width:76ch;margin:8px 0 0">On each card the bar reads <b>how many modern works study this animal</b> against <b>how many cite the BVA original</b> — the wider the gap, the more orphaned the work. Where modern science <em>does</em> engage a paper, a “How it’s cited today” note summarises that reception; <b>Who cites it ↗</b> opens the full, paper-by-paper citation list on the Legacy page.</p>'
         '<div id="chips" class="chips"></div>'
         '<label class="zchk"><input type="checkbox" id="zonly"> Show only the targets nobody cites yet ('
@@ -542,16 +582,13 @@ def gen_rediscovery():
         'on where the question went.</p>'
         '<div id="unfinished"></div>'
         '<section style="margin-top:34px;padding:14px 16px;border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:10px;background:#f1ece1">'
-        '<h3 style="margin:.1em 0 .4em">Connecting Consensus</h3>'
+        '<h3 style="margin:.1em 0 .4em">Powered by Consensus</h3>'
         '<p class="muted" style="font-size:13.5px;line-height:1.6;max-width:80ch;margin:0">'
-        'Consensus (<a href="https://consensus.app/home/api/" target="_blank" rel="noopener">consensus.app/api</a>) offers a '
-        'developer API — a <code>GET /v1/quick_search</code> endpoint that returns ranked, peer-reviewed papers for a question '
-        '(≈$0.10/call, access by application) — plus an MCP server. It is a natural fit for the “Still open today?” question: '
-        'feed it each paper&rsquo;s open question and read back whether current literature has settled it. '
-        'Two ways to wire it here: <b>(1) build-time</b> — run the queries once when the site is built (where the API key is '
-        'safe) and bake the verdicts into the page, with no per-visitor cost or key exposure; or <b>(2) live</b> — the per-card '
-        'button calls a tiny serverless proxy (a Cloudflare Worker or Netlify function) that holds the key, since a key must '
-        'never sit in this static page&rsquo;s JavaScript. Give me a key and I&rsquo;ll wire whichever you prefer.</p></section>'
+        'Each paper&rsquo;s open question was put to the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> '
+        'developer API (<code>GET /v1/quick_search</code>), which returns ranked, peer-reviewed papers with a one-line takeaway for each. '
+        'The results were fetched once <b>at build time</b> and baked into this page, so there is no per-visitor cost and the API key '
+        'never sits in this static site&rsquo;s JavaScript. The takeaways shown are Consensus&rsquo;s own summaries of each study; '
+        'follow any title to read it on Consensus. Verdicts reflect the literature as retrieved in June 2026 and are a research aid, not a settled answer.</p></section>'
         '<p class="obit muted"></p>')
 
     page("rediscovery.html", "Rediscover", "Rediscover", body,

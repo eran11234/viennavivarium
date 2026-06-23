@@ -1,0 +1,3044 @@
+{
+ "55": {
+  "query": "Can praying mantises regenerate lost limbs and change body colour?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Evolutionary genomics of camouflage innovation in the orchid mantis",
+    "author": "Guang-Ming Huang",
+    "n_authors": 5,
+    "year": 2023,
+    "journal": "Nature Communications",
+    "study_type": "other",
+    "citations": 17,
+    "takeaway": "The orchid mantis' unique camouflage is influenced by the Scarlet gene, Wnt signaling, and the Trypsin gene family, providing insights into phenotypic innovation and adaptation.",
+    "url": "https://consensus.app/papers/evolutionary-genomics-of-camouflage-innovation-in-the-huang-song/0bc49acaeda05f76a5b915ce4b121f4b/?utm_source=publicapi",
+    "doi": "10.1038/s41467-023-40355-1"
+   },
+   {
+    "title": "Evolutionary basis and ecological function of body colour transition in the orchid mantis",
+    "author": "Xiaojin Pei",
+    "n_authors": 2,
+    "year": 2025,
+    "journal": "Nature Ecology & Evolution",
+    "study_type": null,
+    "citations": 0,
+    "takeaway": null,
+    "url": "https://consensus.app/papers/evolutionary-basis-and-ecological-function-of-body-colour-pei-li/e3833079f6a453e29ae88c7467cbc917/?utm_source=publicapi",
+    "doi": "10.1038/s41559-025-02738-z"
+   },
+   {
+    "title": "Differentiation in the body color of Creobroter gemmata under red and green background at an early stage",
+    "author": "S. Liu",
+    "n_authors": 2,
+    "year": 2025,
+    "journal": "bioRxiv",
+    "study_type": "non-randomized experimental study",
+    "citations": 0,
+    "takeaway": "Creobroter gemmata praying mantises can differentiate their body colors based on background color, with more significant differentiation in early stages.",
+    "url": "https://consensus.app/papers/differentiation-in-the-body-color-of-creobroter-gemmata-liu-ma/af31654da6b450899b43a3618a40b325/?utm_source=publicapi",
+    "doi": "10.1101/2025.03.05.641766"
+   },
+   {
+    "title": "Coloration in a Praying Mantis: Color Change, Sexual Color Dimorphism, and Possible Camouflage Strategies",
+    "author": "L. Y. Rosenheim",
+    "n_authors": 3,
+    "year": 2025,
+    "journal": "Ecology and Evolution",
+    "study_type": "non-randomized experimental study",
+    "citations": 1,
+    "takeaway": "Praying mantis exhibit sexual color dimorphism, with highly mobile males showing generalist coloration and more sedentary females showing specialist coloration, potentially reflecting differences in camouflage strategies.",
+    "url": "https://consensus.app/papers/coloration-in-a-praying-mantis-color-change-sexual-color-rosenheim-rosenheim/446e0d030bc55f57899c26293a614016/?utm_source=publicapi",
+    "doi": "10.1002/ece3.70398"
+   },
+   {
+    "title": "The pigment transporter Redboy confers programmed body colour transition in orchid mantises",
+    "author": "Xiaojin Pei",
+    "n_authors": 16,
+    "year": 2025,
+    "journal": "Nature Ecology & Evolution",
+    "study_type": "non-randomized experimental study",
+    "citations": 3,
+    "takeaway": "The pigment transporter Redboy in orchid mantises, which promotes ecological adaptation by coordinating gene family evolution and hormone regulation, contributes to the transition from black-red to white body color in later instars.",
+    "url": "https://consensus.app/papers/the-pigment-transporter-redboy-confers-programmed-body-pei-zhao/657d8b281e46580fb0ef707748bff77b/?utm_source=publicapi",
+    "doi": "10.1038/s41559-025-02737-0"
+   },
+   {
+    "title": "Morphology and material composition of raptorial foreleg cuticles in praying mantises Gongylus gongylodes and Sphodromantis lineola",
+    "author": "Timo Zeimet",
+    "n_authors": 3,
+    "year": 2025,
+    "journal": "Scientific Reports",
+    "study_type": "cross-sectional study",
+    "citations": 5,
+    "takeaway": "Praying mantises' raptorial forelegs may adapt to their preferred prey type, with Sphodromantis lineola preferring harder prey and Gongylus gongylodes feeding on softer prey like flies.",
+    "url": "https://consensus.app/papers/morphology-and-material-composition-of-raptorial-foreleg-zeimet-gorb/b787e9bfb3c7517a81a3c3435854c287/?utm_source=publicapi",
+    "doi": "10.1038/s41598-025-06427-6"
+   }
+  ]
+ },
+ "157": {
+  "query": "Is animal pigmentation produced by enzymes such as tyrosinase acting on DOPA?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "MAMMALIAN TYROSINASE AND DOPA OXIDASE",
+    "author": "G. H. Hogeboom",
+    "n_authors": 2,
+    "year": 1942,
+    "journal": "Journal of Biological Chemistry",
+    "study_type": "non-randomized experimental study",
+    "citations": 89,
+    "takeaway": "The mechanism of melanin production in mammals involves a specific enzyme, dopa oxidase, and a rich source of tyrosinase, but the exact enzyme responsible for melanin formation remains inconclusive.",
+    "url": "https://consensus.app/papers/mammalian-tyrosinase-and-dopa-oxidase-hogeboom-adams/1adac7b308cc524eb536552aad658f14/?utm_source=publicapi",
+    "doi": "10.1016/s0021-9258(18)45031-4"
+   },
+   {
+    "title": "A second tyrosinase‐related protein, TRP‐2, is a melanogenic enzyme termed DOPAchrome tautomerase.",
+    "author": "K. Tsukamoto",
+    "n_authors": 5,
+    "year": 1992,
+    "journal": "The EMBO Journal",
+    "study_type": "other",
+    "citations": 545,
+    "takeaway": "TRP-2, a tyrosinase-related protein, encodes a protein with DOPAchrome tautomerase activity, which plays a role in regulating the proportion of carboxylated subunits in melanin biopolymer.",
+    "url": "https://consensus.app/papers/a-second-tyrosinaserelated-protein-trp2-is-a-melanogenic-tsukamoto-jackson/8aa837289afc59728c0d936e54adb5e5/?utm_source=publicapi",
+    "doi": "10.1002/j.1460-2075.1992.tb05082.x"
+   },
+   {
+    "title": "Tyrosinases from two different loci are expressed by normal and by transformed melanocytes.",
+    "author": "M. Jiménez",
+    "n_authors": 3,
+    "year": 1991,
+    "journal": "The Journal of biological chemistry",
+    "study_type": "non-rct in vitro",
+    "citations": 211,
+    "takeaway": "The brown and albino loci of mice encode similar tyrosinase proteins, suggesting that melanogenesis in mammals is controlled by multiple gene products.",
+    "url": "https://consensus.app/papers/tyrosinases-from-two-different-loci-are-expressed-by-jimnez-tsukamoto/ea78f4dfde025a0a85346c6531c43565/?utm_source=publicapi",
+    "doi": ""
+   },
+   {
+    "title": "Mammalian tyrosinase catalyzes three reactions in the biosynthesis of melanin.",
+    "author": "A. Körner",
+    "n_authors": 2,
+    "year": 1982,
+    "journal": "Science",
+    "study_type": "other",
+    "citations": 559,
+    "takeaway": "Mammalian tyrosinase plays a crucial role in the biosynthesis of melanin, with its unique ability to catalyze three distinct reactions within a single biochemical pathway.",
+    "url": "https://consensus.app/papers/mammalian-tyrosinase-catalyzes-three-reactions-in-the-krner-pawelek/239751392653553487dee16c93a8df30/?utm_source=publicapi",
+    "doi": "10.1126/science.6810464"
+   },
+   {
+    "title": "Tyrosinase and related proteins in mammalian pigmentation",
+    "author": "V. del Marmol",
+    "n_authors": 2,
+    "year": 1996,
+    "journal": "FEBS Letters",
+    "study_type": "literature review",
+    "citations": 457,
+    "takeaway": "Tyrosinase and related proteins play a crucial role in mammalian pigmentation by converting tyrosine to melanin, with recent findings suggesting a common ancestor for these genes.",
+    "url": "https://consensus.app/papers/tyrosinase-and-related-proteins-in-mammalian-marmol-beermann/b1ec711333015f248abb787f2f0830bc/?utm_source=publicapi",
+    "doi": "10.1016/0014-5793(96)00109-3"
+   },
+   {
+    "title": "Mammalian tyrosinase; preparation and properties.",
+    "author": "A. Lerner",
+    "n_authors": 4,
+    "year": 1949,
+    "journal": "The Journal of biological chemistry",
+    "study_type": null,
+    "citations": 267,
+    "takeaway": "Mammalian tyrosinase, an enzyme that catalyzes melanin production, has been confirmed to exist and is involved in the conversion of tyrosine to melanin in mammals.",
+    "url": "https://consensus.app/papers/mammalian-tyrosinase-preparation-and-properties-lerner-fitzpatrick/4595b893aff752788890484fc221d3dd/?utm_source=publicapi",
+    "doi": "10.1016/s0021-9258(18)56947-7"
+   }
+  ]
+ },
+ "61": {
+  "query": "Is there a universal quantitative law of arthropod growth across moult stages?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "The Progression Factor in Insect Growth",
+    "author": "F. S. Bodenheimer",
+    "n_authors": 1,
+    "year": 1933,
+    "journal": "The Quarterly Review of Biology",
+    "study_type": "other",
+    "citations": 18,
+    "takeaway": "The growth factor in insect growth is a general rule of 2 for weight and i.26 for length, with deviations in complex cases being only deviations from this principle.",
+    "url": "https://consensus.app/papers/the-progression-factor-in-insect-growth-bodenheimer/6dc79f39558659fda9b6e433e8811aa1/?utm_source=publicapi",
+    "doi": "10.1086/394427"
+   },
+   {
+    "title": "Dyar's rule and multivariate allometric growth in nine species of waterstriders (Heteroptera: Gerridae)",
+    "author": "C. Klingenberg",
+    "n_authors": 2,
+    "year": 1992,
+    "journal": "Journal of Zoology",
+    "study_type": "other",
+    "citations": 67,
+    "takeaway": "Dyar's rule is inconsistent in waterstrider species, but growth ratios vary within a limited range, with head width growth ratios differing more between moults than multivariate size.",
+    "url": "https://consensus.app/papers/dyars-rule-and-multivariate-allometric-growth-in-nine-klingenberg-zimmermann/91e8a4382ecf5a798d687181199f094f/?utm_source=publicapi",
+    "doi": "10.1111/j.1469-7998.1992.tb04406.x"
+   },
+   {
+    "title": "The moulting arthropod: a complete genetic toolkit review",
+    "author": "Giulia Campli",
+    "n_authors": 11,
+    "year": 2024,
+    "journal": "Biological Reviews",
+    "study_type": "literature review",
+    "citations": 38,
+    "takeaway": "Arthropods undergo periodic moulting events, requiring tightly regulated processes and highlighting knowledge gaps across diverse taxa.",
+    "url": "https://consensus.app/papers/the-moulting-arthropod-a-complete-genetic-toolkit-review-campli-volovych/b2790acc25a75752b20765e7dba74e37/?utm_source=publicapi",
+    "doi": "10.1111/brv.13123"
+   },
+   {
+    "title": "DEVELOPMENTAL TRAIT EVOLUTION IN TRILOBITES",
+    "author": "G. Fusco",
+    "n_authors": 4,
+    "year": 2012,
+    "journal": "Evolution",
+    "study_type": "other",
+    "citations": 45,
+    "takeaway": "Trilobite developmental traits were relatively labile during evolutionary history, with growth rates varying independently among species and conforming to Dyar's rule.",
+    "url": "https://consensus.app/papers/developmental-trait-evolution-in-trilobites-fusco-jr/7c0c002f8370562186371414933994b1/?utm_source=publicapi",
+    "doi": "10.1111/j.1558-5646.2011.01447.x"
+   },
+   {
+    "title": "Numerical Reduction of Instars in the Metamorphosis of Euphausids",
+    "author": "R. Macdonald",
+    "n_authors": 1,
+    "year": 1926,
+    "journal": "Nature",
+    "study_type": "other",
+    "citations": 2,
+    "takeaway": "Euphausids undergo metamorphosis in stages, with each moult or ecdysis followed by rapid growth until the new chitinous layer hardens, resulting in a series of distinct life stages.",
+    "url": "https://consensus.app/papers/numerical-reduction-of-instars-in-the-metamorphosis-of-macdonald/d3a42aeb8f945786a79bd41bfd1c6224/?utm_source=publicapi",
+    "doi": "10.1038/117894a0"
+   },
+   {
+    "title": "Model of copepod growth and development: moulting and mortality in relation to physiological processes during an individual moult cycle",
+    "author": "F. Carlotti",
+    "n_authors": 2,
+    "year": 1992,
+    "journal": "Marine Ecology Progress Series",
+    "study_type": "theoretical, modeling, or simulation study",
+    "citations": 62,
+    "takeaway": "The mathematical model of copepod population dynamics demonstrates the relationship between physiological processes and population dynamics, allowing for predictions of population age structure and growth rates.",
+    "url": "https://consensus.app/papers/model-of-copepod-growth-and-development-moulting-and-carlotti-nival/04d7e40388ed53b593e503b744a44357/?utm_source=publicapi",
+    "doi": "10.3354/meps084219"
+   }
+  ]
+ },
+ "66": {
+  "query": "Can a regenerated arthropod antenna develop into a leg-like structure (homeosis)?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Expression of homeotic mutations in duplicated and regenerated antennae of Drosophila melanogaster.",
+    "author": "W. Gehring",
+    "n_authors": 2,
+    "year": 1975,
+    "journal": "Journal of embryology and experimental morphology",
+    "study_type": "non-rct in vitro",
+    "citations": 17,
+    "takeaway": "Homeotic mutations in Drosophila melanogaster cause partial antenna-leg transformations during proliferation in culture, indicating that the mutant gene is expressed during proliferation in culture.",
+    "url": "https://consensus.app/papers/expression-of-homeotic-mutations-in-duplicated-and-gehring-schubiger/5c7731e03bb8525989bc3128e877f645/?utm_source=publicapi",
+    "doi": ""
+   },
+   {
+    "title": "A homoeotic mutation transforming leg to antenna in Drosophila",
+    "author": "G. Struhl",
+    "n_authors": 1,
+    "year": 1981,
+    "journal": "Nature",
+    "study_type": "non-randomized experimental study",
+    "citations": 238,
+    "takeaway": "Homoeotic mutations in the Antp locus can transform the second leg into an antenna in Drosophila, promoting an atavistic condition.",
+    "url": "https://consensus.app/papers/a-homoeotic-mutation-transforming-leg-to-antenna-in-struhl/9294bdc782935b7f959ea7902f881d0c/?utm_source=publicapi",
+    "doi": "10.1038/292635a0"
+   },
+   {
+    "title": "Comparative analysis of leg and antenna development in wild-type and homeotic Drosophila melanogaster",
+    "author": "M. Cummins",
+    "n_authors": 4,
+    "year": 2003,
+    "journal": "Development Genes and Evolution",
+    "study_type": "non-randomized experimental study",
+    "citations": 17,
+    "takeaway": "The developmental programs of leg and antenna in Drosophila are partially conserved, but regulatory relationships and interactions between genes differ, resulting in positional specificity of homeotic transformations.",
+    "url": "https://consensus.app/papers/comparative-analysis-of-leg-and-antenna-development-in-cummins-pueyo/a8060378cabd585e9b9522f30b8a09a8/?utm_source=publicapi",
+    "doi": "10.1007/s00427-003-0326-8"
+   },
+   {
+    "title": "Pattern formation and determination in the antenna of the homoeotic mutant Antennapedia of Drosophila melanogaster.",
+    "author": "John H. Postlethwait",
+    "n_authors": 4,
+    "year": 1971,
+    "journal": "Developmental biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 142,
+    "takeaway": "The antennal-leg homoeotic mutant Antennapedia shows that cell division in antennae is influenced by both clonally inherited and environmental factors, suggesting two types of determination in antennal development.",
+    "url": "https://consensus.app/papers/pattern-formation-and-determination-in-the-antenna-of-the-postlethwait-postlethwait/99851bb0b5945f5a9becf85e81d4bf17/?utm_source=publicapi",
+    "doi": "10.1016/0012-1606(71)90008-x"
+   },
+   {
+    "title": "Control of antennal versus leg development in Drosophila",
+    "author": "F. Casares",
+    "n_authors": 2,
+    "year": 1998,
+    "journal": "Nature",
+    "study_type": null,
+    "citations": 297,
+    "takeaway": "In Drosophila, Antennapedia promotes leg development by repressing homothorax and nuclear Exd, resulting in distinct antennal and leg structures.",
+    "url": "https://consensus.app/papers/control-of-antennal-versus-leg-development-in-drosophila-casares-mann/9e13e1d6270c5012a778367187bdf579/?utm_source=publicapi",
+    "doi": "10.1038/33706"
+   },
+   {
+    "title": "Homeotic transformation of tail to limbs: A novel morphogenesis in the framework of self-organization and reprogramming of cell fate during appendage regeneration.",
+    "author": "J. Hota",
+    "n_authors": 5,
+    "year": 2024,
+    "journal": "Cells & development",
+    "study_type": null,
+    "citations": 1,
+    "takeaway": null,
+    "url": "https://consensus.app/papers/homeotic-transformation-of-tail-to-limbs-a-novel-hota-pattnaik/297a2bd4fe9f5014bb66b376977ba4ca/?utm_source=publicapi",
+    "doi": "10.1016/j.cdev.2024.203987"
+   }
+  ]
+ },
+ "4": {
+  "query": "Does a single growth law describe body growth across different praying mantis species?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Allometric growth in the Praying mantis Stagmatoptera biocellata",
+    "author": "Ernesto Rodriguez",
+    "n_authors": 2,
+    "year": 2009,
+    "journal": "Journal of Zoology",
+    "study_type": "other",
+    "citations": 3,
+    "takeaway": "Allometric growth patterns in the Praying mantis Stagmatoptera biocellata show adaptative value and support the hypothesis of anatomic relationships between parts involved in the mantis strike.",
+    "url": "https://consensus.app/papers/allometric-growth-in-the-praying-mantis-stagmatoptera-rodriguez-maldonado/d0e24f7ef2665b27a4e8d0e28734b1cd/?utm_source=publicapi",
+    "doi": "10.1111/j.1469-7998.1974.tb04129.x"
+   },
+   {
+    "title": "Different paths to sexual size dimorphism in two praying mantids, Pseudomantis albofimbriata and Hierodula majuscula",
+    "author": "Louise E. Allen",
+    "n_authors": 3,
+    "year": 2014,
+    "journal": "Insect Science",
+    "study_type": "other",
+    "citations": 12,
+    "takeaway": "Sexual size dimorphism in praying mantids can result from two different growth and development patterns in closely related species, with females showing a larger adult size and males having a shorter adulthood.",
+    "url": "https://consensus.app/papers/different-paths-to-sexual-size-dimorphism-in-two-praying-allen-barry/612e0cb113f552ad9cfe56227da3ee6b/?utm_source=publicapi",
+    "doi": "10.1111/1744-7917.12016"
+   },
+   {
+    "title": "Linking scaling laws across eukaryotes",
+    "author": "I. Hatton",
+    "n_authors": 5,
+    "year": 2019,
+    "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+    "study_type": "cross-sectional study",
+    "citations": 147,
+    "takeaway": "Metabolism and abundance scale with body size in a reciprocal manner across all eukaryotes, supporting energetic equivalence, while growth and mortality rates scale similarly across groups, contradicting a metabolic basis for growth and mortality scaling.",
+    "url": "https://consensus.app/papers/linking-scaling-laws-across-eukaryotes-hatton-dobson/8ca3347090d0550ba8f31c71c786aa5b/?utm_source=publicapi",
+    "doi": "10.1073/pnas.1900492116"
+   },
+   {
+    "title": "Manual of praying mantis morphology, nomenclature, and practices (Insecta, Mantodea)",
+    "author": "Sydney K. Brannoch",
+    "n_authors": 6,
+    "year": 2017,
+    "journal": "ZooKeys",
+    "study_type": "other",
+    "citations": 135,
+    "takeaway": "This study proposes new standards for praying mantis morphology, standardized foreleg femoral and tibial spine presentation, and provides guidelines for proper specimen preservation and research methods.",
+    "url": "https://consensus.app/papers/manual-of-praying-mantis-morphology-nomenclature-and-brannoch-wieland/c92c6075bcbd5cffa1a04d5ed5b53e94/?utm_source=publicapi",
+    "doi": "10.3897/zookeys.696.12542"
+   },
+   {
+    "title": "Allometry of Ingestion Among Habitat Mimicking Praying Mantises",
+    "author": "C. Oufiero",
+    "n_authors": 3,
+    "year": 2026,
+    "journal": "Ecology and Evolution",
+    "study_type": "cross-sectional study",
+    "citations": 0,
+    "takeaway": "Large praying mantises can ingest more resources than needed based on their metabolic rate, potentially impacting their role in the ecosystem.",
+    "url": "https://consensus.app/papers/allometry-of-ingestion-among-habitat-mimicking-praying-oufiero-wood/731812b7b1425d149d32be51dec82449/?utm_source=publicapi",
+    "doi": "10.1002/ece3.73091"
+   },
+   {
+    "title": "The chromosome-level genome of Chinese praying mantis Tenodera sinensis (Mantodea: Mantidae) reveals its biology as a predator",
+    "author": "Ruizhong Yuan",
+    "n_authors": 10,
+    "year": 2022,
+    "journal": "GigaScience",
+    "study_type": "other",
+    "citations": 8,
+    "takeaway": "The chromosome-level genome of the Chinese praying mantis reveals its biology as a predator, with expansions in digestion and detoxification genes, and a key role for LWS opsins in regulating predatory behaviors.",
+    "url": "https://consensus.app/papers/the-chromosomelevel-genome-of-chinese-praying-mantis-yuan-zheng/d7f77db4c98552a7bdf0714502bc75b7/?utm_source=publicapi",
+    "doi": "10.1093/gigascience/giad090"
+   }
+  ]
+ },
+ "139": {
+  "query": "Does maternal age affect offspring body size in insects?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "The influence of maternal age and mating frequency on egg size and offspring performance in Callosobruchus maculatus (Coleoptera: Bruchidae)",
+    "author": "C. Fox",
+    "n_authors": 1,
+    "year": 1993,
+    "journal": "Oecologia",
+    "study_type": "non-randomized experimental study",
+    "citations": 184,
+    "takeaway": "Maternal age influences egg size and offspring performance in Callosobruchus maculatus, with multiple mating and adult feeding increasing egg size, but multiple mating has no detectable impact on offspring development time or body size.",
+    "url": "https://consensus.app/papers/the-influence-of-maternal-age-and-mating-frequency-on-egg-fox/c55c2abb4c145b3da70b15c6a7f455eb/?utm_source=publicapi",
+    "doi": "10.1007/bf00318042"
+   },
+   {
+    "title": "Maternal body size and age govern reproduction and offspring phenotype in the zig-zag ladybird beetle (Menochilus sexmaculatus)",
+    "author": "Shashwat Singh",
+    "n_authors": 3,
+    "year": 2020,
+    "journal": "Canadian Journal of Zoology",
+    "study_type": "non-randomized experimental study",
+    "citations": 8,
+    "takeaway": "Larger zig-zag ladybird beetle mothers lay more eggs per day, and their offspring develop rapidly, with larger females showing greater ability to adjust life-history traits.",
+    "url": "https://consensus.app/papers/maternal-body-size-and-age-govern-reproduction-and-singh-mishra/85b21c174b63513cad5dc70353025734/?utm_source=publicapi",
+    "doi": "10.1139/cjz-2020-0152"
+   },
+   {
+    "title": "Triparental ageing in a laboratory population of an insect with maternal care",
+    "author": "H. Cope",
+    "n_authors": 3,
+    "year": 2022,
+    "journal": "Behavioral Ecology",
+    "study_type": "non-randomized experimental study",
+    "citations": 4,
+    "takeaway": "Parental age interactions, involving both maternal and paternal ages, significantly influence offspring outcomes in burying beetle species.",
+    "url": "https://consensus.app/papers/triparental-ageing-in-a-laboratory-population-of-an-insect-cope-ivimey-cook/6b4fc37261d15417bed1402984ae33fa/?utm_source=publicapi",
+    "doi": "10.1093/beheco/arac078"
+   },
+   {
+    "title": "Variation in parasitoid adult size is related to host egg size, maternal state and developmental time",
+    "author": "Mei Qi",
+    "n_authors": 8,
+    "year": 2024,
+    "journal": "Journal of Applied Entomology",
+    "study_type": "non-randomized experimental study",
+    "citations": 3,
+    "takeaway": "Anastatus disparis' body size is influenced by host egg size, maternal size, and developmental time, with larger females and shorter offspring development times.",
+    "url": "https://consensus.app/papers/variation-in-parasitoid-adult-size-is-related-to-host-egg-qi-yin/b8abfa5f97945ff6ae395cc99997e69d/?utm_source=publicapi",
+    "doi": "10.1111/jen.13323"
+   },
+   {
+    "title": "Maternal rearing condition and age affect progeny fitness in the parasitoid wasp Lysiphlebus fabarum",
+    "author": "P. Najafpour",
+    "n_authors": 3,
+    "year": 2018,
+    "journal": "Entomologia Experimentalis et Applicata",
+    "study_type": "non-randomized experimental study",
+    "citations": 11,
+    "takeaway": "Progeny of Lysiphlebus fabarum parasitoid wasps with larger egg size and younger mothers have longer developmental time, with maternal body size being a stronger factor than age.",
+    "url": "https://consensus.app/papers/maternal-rearing-condition-and-age-affect-progeny-fitness-najafpour-rasekh/0c07c7e97b345e11acd8c315404529de/?utm_source=publicapi",
+    "doi": "10.1111/eea.12640"
+   },
+   {
+    "title": "Effects of Maternal Age and Egg Weight on Developmental Time and Body Weight of Offspring of Podisus maculiventris (Heteroptera: Pentatomidae)",
+    "author": "J. Mohaghegh",
+    "n_authors": 3,
+    "year": 1998,
+    "journal": "Annals of The Entomological Society of America",
+    "study_type": "non-randomized experimental study",
+    "citations": 42,
+    "takeaway": "Maternal age and egg weight significantly impact the developmental time and body weight of Podisus maculiventris offspring, with offspring from large eggs and young females being heavier than those from small or old eggs.",
+    "url": "https://consensus.app/papers/effects-of-maternal-age-and-egg-weight-on-developmental-mohaghegh-declercq/9cb31d6eb88359969f929f55bc225b85/?utm_source=publicapi",
+    "doi": "10.1093/aesa/91.3.315"
+   }
+  ]
+ },
+ "129": {
+  "query": "Can adult insects regenerate amputated wings after complete extirpation?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "The Ras/MAPK pathway is required for regenerative growth of wing discs in the black cutworm Agrotis ypsilon.",
+    "author": "Yuanyuan Xu",
+    "n_authors": 7,
+    "year": 2021,
+    "journal": "Insect biochemistry and molecular biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 8,
+    "takeaway": "The Ras/MAPK pathway plays a crucial role in regenerative growth of wing discs in black cutworm Agrotis ypsilon, providing molecular clues to cell proliferation regulation during regeneration in lepidopteran insects.",
+    "url": "https://consensus.app/papers/the-rasmapk-pathway-is-required-for-regenerative-growth-of-xu-wei/3595b7e3d6e058feb1431e8cfa16f90c/?utm_source=publicapi",
+    "doi": "10.1016/j.ibmb.2021.103552"
+   },
+   {
+    "title": "Gill regeneration in the mayfly Cloeon uncovers new molecular pathways in insect regeneration",
+    "author": "C. Martin-Blanco",
+    "n_authors": 6,
+    "year": 2024,
+    "journal": "Open Biology",
+    "study_type": null,
+    "citations": 1,
+    "takeaway": "The mayfly Cloeon can regenerate lost abdominal gills faster than normal development, revealing new molecular pathways in insect regeneration.",
+    "url": "https://consensus.app/papers/gill-regeneration-in-the-mayfly-cloeon-uncovers-new-martin-blanco-navarro/ebe4796597575ee9bbd684d907c775c7/?utm_source=publicapi",
+    "doi": "10.1098/rsob.240118"
+   },
+   {
+    "title": "Intercalary regeneration in imaginal wing disk of Drosophila melanogaster",
+    "author": "J. Haynie",
+    "n_authors": 2,
+    "year": 1976,
+    "journal": "Nature",
+    "study_type": "non-randomized experimental study",
+    "citations": 149,
+    "takeaway": "Drosophila imaginal disk cells can undergo pattern regulation through regeneration and duplication when parts are removed, similar to how amphibian and cockroach limbs can regenerate.",
+    "url": "https://consensus.app/papers/intercalary-regeneration-in-imaginal-wing-disk-of-haynie-bryant/522b19f6f5915471a6aefd9b175d5d0e/?utm_source=publicapi",
+    "doi": "10.1038/259659b0"
+   },
+   {
+    "title": "A single WNT enhancer drives specification and regeneration of the Drosophila wing",
+    "author": "Elena Gracia-Latorre",
+    "n_authors": 4,
+    "year": 2022,
+    "journal": "Nature Communications",
+    "study_type": null,
+    "citations": 20,
+    "takeaway": "A single WNT enhancer in the wingless gene drives wing specification and regeneration in Drosophila, ensuring robust development and regenerative capacity even under stress conditions.",
+    "url": "https://consensus.app/papers/a-single-wnt-enhancer-drives-specification-and-gracia-latorre-prez/efafb93244e85b2992e7aed7965c5395/?utm_source=publicapi",
+    "doi": "10.1038/s41467-022-32400-2"
+   },
+   {
+    "title": "Physiological and molecular mechanisms of insect appendage regeneration",
+    "author": "Jiru Zhong",
+    "n_authors": 6,
+    "year": 2023,
+    "journal": "Cell Regeneration",
+    "study_type": "literature review",
+    "citations": 16,
+    "takeaway": "Insect appendage regeneration is influenced by physiological conditions and internal molecular mechanisms, with research progress focusing on the role of hormones and cytokines in this process.",
+    "url": "https://consensus.app/papers/physiological-and-molecular-mechanisms-of-insect-zhong-jing/8bf8b04ee4b65a91b389ffe8d451841a/?utm_source=publicapi",
+    "doi": "10.1186/s13619-022-00156-1"
+   },
+   {
+    "title": "Determination of suitable insect part for non‐lethal DNA sampling: case study of DNA quality and regeneration capability of dragonflies",
+    "author": "Stanislav Ožana",
+    "n_authors": 3,
+    "year": 2020,
+    "journal": "Insect Conservation and Diversity",
+    "study_type": "non-randomized experimental study",
+    "citations": 15,
+    "takeaway": "Dragonfly mid-legs provide the best non-lethal DNA samples for quantity and quality, with legs being the most useful for sequencing, and their regeneration capability allows for minimal impact on larvae survival.",
+    "url": "https://consensus.app/papers/determination-of-suitable-insect-part-for-nonlethal-dna-oana-pyszko/b90d141f749b5fa4a7f6af012dde0b6f/?utm_source=publicapi",
+    "doi": "10.1111/icad.12400"
+   }
+  ]
+ },
+ "107": {
+  "query": "Does lifelong moulting preserve regenerative capacity in insects?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "The Capacity for Limb Regeneration During Metamorphosis is Broadly Conserved in the Coccinellidae",
+    "author": "J. Michaud",
+    "n_authors": 11,
+    "year": 2020,
+    "journal": "Annals of the Entomological Society of America",
+    "study_type": "non-randomized experimental study",
+    "citations": 7,
+    "takeaway": "Limb regeneration capacity is widely conserved in the Coccinellidae family, contributing to ecological success and influencing the distribution and behavior of these species.",
+    "url": "https://consensus.app/papers/the-capacity-for-limb-regeneration-during-metamorphosis-michaud-nedvd/1f63dbe7d9555422b54ae61961fbc717/?utm_source=publicapi",
+    "doi": "10.1093/aesa/saaa020"
+   },
+   {
+    "title": "Intestinal regeneration as an insect resistance mechanism to entomopathogenic bacteria.",
+    "author": "A. Castagnola",
+    "n_authors": 2,
+    "year": 2016,
+    "journal": "Current opinion in insect science",
+    "study_type": null,
+    "citations": 50,
+    "takeaway": "Insects may use gut regeneration as a resistance mechanism against entomopathogenic bacteria, with molecular cues regulating gut stem cell proliferation and healing processes.",
+    "url": "https://consensus.app/papers/intestinal-regeneration-as-an-insect-resistance-castagnola-jurat-fuentes/42d429bfde135cc086eefab74666dfad/?utm_source=publicapi",
+    "doi": "10.1016/j.cois.2016.04.008"
+   },
+   {
+    "title": "Retinoids regulate a developmental checkpoint for tissue regeneration in Drosophila",
+    "author": "A. Halme",
+    "n_authors": 3,
+    "year": 2010,
+    "journal": "Current biology : CB",
+    "study_type": null,
+    "citations": 171,
+    "takeaway": "Retinoid biosynthesis in Drosophila extends larval growth after imaginal disc damage by inhibiting PTTH expression, allowing for tissue regeneration and maintaining a permissive environment for regeneration.",
+    "url": "https://consensus.app/papers/retinoids-regulate-a-developmental-checkpoint-for-tissue-halme-cheng/d82547b04df450e1865300815deb4d00/?utm_source=publicapi",
+    "doi": "10.1016/j.cub.2010.01.038"
+   },
+   {
+    "title": "Molecular aspects of eye development and regeneration in the Australian redclaw crayfish, Cherax quadricarinatus",
+    "author": "T. Ventura",
+    "n_authors": 6,
+    "year": 2019,
+    "journal": "Aquaculture and Fisheries",
+    "study_type": "non-randomized experimental study",
+    "citations": 16,
+    "takeaway": "The red-claw crayfish, Cherax quadricarinatus, serves as an ideal model for studying ocular regeneration in adult arthropods, as it continues to grow during adulthood and can regenerate the retinal section of its eye.",
+    "url": "https://consensus.app/papers/molecular-aspects-of-eye-development-and-regeneration-in-ventura-stewart/9d92a00e2fd7521d898c2ae26b5fbda1/?utm_source=publicapi",
+    "doi": "10.1016/j.aaf.2018.04.001"
+   },
+   {
+    "title": "The evolution of exoskeleton moulting in Trilobita",
+    "author": "Harriet Drage",
+    "n_authors": 1,
+    "year": 2024,
+    "journal": null,
+    "study_type": "other",
+    "citations": 3,
+    "takeaway": "Trilobites exhibit extreme variability in moulting behavior, which has shaped their evolutionary history and influenced their morphology and behavior.",
+    "url": "https://consensus.app/papers/the-evolution-of-exoskeleton-moulting-in-trilobita-drage/16ad6c477e9350799cfb6f94f42c5e1e/?utm_source=publicapi",
+    "doi": ""
+   },
+   {
+    "title": "Physiology and Biochemistry of Insect Moulting Fluid",
+    "author": "S. Reynolds",
+    "n_authors": 2,
+    "year": 1996,
+    "journal": "Advances in Insect Physiology",
+    "study_type": "other",
+    "citations": 108,
+    "takeaway": "Insect moulting fluid physiology and biochemistry may lead to novel, safer methods of insect pest control and connective tissue remodelling.",
+    "url": "https://consensus.app/papers/physiology-and-biochemistry-of-insect-moulting-fluid-reynolds-samuels/969aa8e337825012935dd484f6d6ed4a/?utm_source=publicapi",
+    "doi": "10.1016/s0065-2806(08)60031-4"
+   }
+  ]
+ },
+ "124": {
+  "query": "Can caterpillars regenerate larval appendages such as the caudal horn?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Physiological and molecular mechanisms of insect appendage regeneration",
+    "author": "Jiru Zhong",
+    "n_authors": 6,
+    "year": 2023,
+    "journal": "Cell Regeneration",
+    "study_type": "literature review",
+    "citations": 16,
+    "takeaway": "Insect appendage regeneration is influenced by physiological conditions and internal molecular mechanisms, with research progress focusing on the role of hormones and cytokines in this process.",
+    "url": "https://consensus.app/papers/physiological-and-molecular-mechanisms-of-insect-zhong-jing/8bf8b04ee4b65a91b389ffe8d451841a/?utm_source=publicapi",
+    "doi": "10.1186/s13619-022-00156-1"
+   },
+   {
+    "title": "Regeneration, Regengrow and Tissue Repair in Animals: Evolution Indicates That No Regeneration Occurs in Terrestrial Environments but Only Recovery Healing",
+    "author": "L. Alibardi",
+    "n_authors": 1,
+    "year": 2024,
+    "journal": "Journal of Developmental Biology",
+    "study_type": "literature review",
+    "citations": 6,
+    "takeaway": "In terrestrial animals, regeneration is limited to aquatic or amphibious species due to changes in genomes and environmental conditions, rather than a complete loss of regeneration.",
+    "url": "https://consensus.app/papers/regeneration-regengrow-and-tissue-repair-in-animals-alibardi/4783565d1a7359d094b67baf2070b78d/?utm_source=publicapi",
+    "doi": "10.3390/jdb13010002"
+   },
+   {
+    "title": "Appendage Regeneration in Vertebrates: What Makes This Possible?",
+    "author": "Valentina Daponte",
+    "n_authors": 3,
+    "year": 2021,
+    "journal": "Cells",
+    "study_type": "literature review",
+    "citations": 39,
+    "takeaway": "Understanding the similarities and differences in appendage regeneration in lizards, salamanders, and zebrafish can guide effective regenerative strategies in mammals.",
+    "url": "https://consensus.app/papers/appendage-regeneration-in-vertebrates-what-makes-this-daponte-tylzanowski/e56b718e991f581ba80a302d0428a72a/?utm_source=publicapi",
+    "doi": "10.3390/cells10020242"
+   },
+   {
+    "title": "Appendage regeneration is context dependent at the cellular level",
+    "author": "Can Aztekin",
+    "n_authors": 1,
+    "year": 2021,
+    "journal": "Open Biology",
+    "study_type": "literature review",
+    "citations": 18,
+    "takeaway": "Appendage regeneration is context-dependent at the cellular level, but requires signaling centers, stem/progenitor cell types, and a regeneration-permissive environment for cross-species and paradigm comparisons.",
+    "url": "https://consensus.app/papers/appendage-regeneration-is-context-dependent-at-the-aztekin/9024b544da9e520bae07195c488404d7/?utm_source=publicapi",
+    "doi": "10.1098/rsob.210126"
+   },
+   {
+    "title": "Regeneration and regengrow in multicellular animals derive from the presence of processes of organ metamorphosis and continuous growth in their life cycles",
+    "author": "L. Alibardi",
+    "n_authors": 1,
+    "year": 2023,
+    "journal": "Acta Zoologica",
+    "study_type": "literature review",
+    "citations": 5,
+    "takeaway": "Regeneration is a basal ancestral property of aquatic animals, while terrestrial animals lack regeneration genes, relying on wound healing and scarring for repair.",
+    "url": "https://consensus.app/papers/regeneration-and-regengrow-in-multicellular-animals-alibardi/10dfe6c06833583b829d45eba93b9c1a/?utm_source=publicapi",
+    "doi": "10.1111/azo.12487"
+   },
+   {
+    "title": "Determination of the Morphometric Characteristics of Larval Instars in the Sap Beetle Urophorus humeralis (Coleoptera: Nitidulidae)",
+    "author": "Kang Chang",
+    "n_authors": 5,
+    "year": 2026,
+    "journal": "Insects",
+    "study_type": null,
+    "citations": 0,
+    "takeaway": null,
+    "url": "https://consensus.app/papers/determination-of-the-morphometric-characteristics-of-chang-guo/67ec7a72581055b5ae75541e29c70304/?utm_source=publicapi",
+    "doi": "10.3390/insects17030344"
+   }
+  ]
+ },
+ "142": {
+  "query": "Do light and background colour determine butterfly pupal coloration?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Identifying the proximal cue(s) for pupal color variation in the bordered patch butterfly, Chlosyne lacinia (Lepidoptera: Nymphalidae)",
+    "author": "Jamie M. Phelps",
+    "n_authors": 3,
+    "year": 2024,
+    "journal": "Annals of the Entomological Society of America",
+    "study_type": "non-randomized experimental study",
+    "citations": 0,
+    "takeaway": "Chlosyne lacinia pupae with higher melanization on black backgrounds have longer developmental periods, suggesting a trade-off between defense and developmental time.",
+    "url": "https://consensus.app/papers/identifying-the-proximal-cues-for-pupal-color-variation-in-phelps-santiagorosario/bc4e107efade5f83b72a9cba8d651670/?utm_source=publicapi",
+    "doi": "10.1093/aesa/saae026"
+   },
+   {
+    "title": "Pupal colour plasticity in the butterfly Catopsilia pomona (Lepidoptera: Pieridae)",
+    "author": "Tarunkishwor Yumnam",
+    "n_authors": 3,
+    "year": 2021,
+    "journal": "Biological Journal of the Linnean Society",
+    "study_type": "non-randomized experimental study",
+    "citations": 6,
+    "takeaway": "Pupal color plasticity in the butterfly Catopsilia pomona helps pupae match their substrate colors, with leaf-borne pupae tending to be greener and off-leaf pupae browner, influenced by leaf position, midrib thickness, and leaf length.",
+    "url": "https://consensus.app/papers/pupal-colour-plasticity-in-the-butterfly-catopsilia-yumnam-banerjee/005edeb88d4255fb80898b44cb1a3c52/?utm_source=publicapi",
+    "doi": "10.1093/biolinnean/blab087"
+   },
+   {
+    "title": "Two different sensory mechanisms for the control of pupal protective coloration in butterflies.",
+    "author": "Sota Hiraga",
+    "n_authors": 1,
+    "year": 2005,
+    "journal": "Journal of insect physiology",
+    "study_type": "non-randomized experimental study",
+    "citations": 16,
+    "takeaway": "In Graphium sarpedon, pupal coloration is determined by the illuminant difference between dorsal and ventral light, while in Papilio xuthus, it is determined by tactile signals from a rough surfaced pupation site.",
+    "url": "https://consensus.app/papers/two-different-sensory-mechanisms-for-the-control-of-pupal-hiraga/7a3924ecf749581aaabfd02554fa308a/?utm_source=publicapi",
+    "doi": "10.1016/j.jinsphys.2005.04.018"
+   },
+   {
+    "title": "Color preference for pupation sites of the butterfly larvaeInachis io and the significance of the pupal melanization reducing factor",
+    "author": "G. Starnecker",
+    "n_authors": 1,
+    "year": 1996,
+    "journal": "Naturwissenschaften",
+    "study_type": "non-randomized experimental study",
+    "citations": 12,
+    "takeaway": "Butterfly larvae Inachis io can adapt to various light and dark background colors, with a preference for certain colors, and the pupal melanization reducing factor plays a role in this adaptation process.",
+    "url": "https://consensus.app/papers/color-preference-for-pupation-sites-of-the-butterfly-starnecker/f8a0503f0475543b87d728370a41f764/?utm_source=publicapi",
+    "doi": "10.1007/bf01144017"
+   },
+   {
+    "title": "Pupal colour–pupation substrate correlation in butterflies",
+    "author": "H. Mayekar",
+    "n_authors": 2,
+    "year": 2023,
+    "journal": "Entomologia Experimentalis et Applicata",
+    "study_type": "other",
+    "citations": 1,
+    "takeaway": "Pupal color plasticity in butterflies is strongly correlated with pupation substrate choice, potentially protecting them against predation by matching their background.",
+    "url": "https://consensus.app/papers/pupal-colourpupation-substrate-correlation-in-mayekar-kodandaramaiah/8fcb7d401ab65312a7b4ba52e71812dd/?utm_source=publicapi",
+    "doi": "10.1111/eea.13399"
+   },
+   {
+    "title": "Seasonal change in pupation behaviour and pupal mortality in a swallowtail butterfly",
+    "author": "C. Stefanescu",
+    "n_authors": 1,
+    "year": 2024,
+    "journal": "Animal Biodiversity and Conservation",
+    "study_type": "other",
+    "citations": 15,
+    "takeaway": "Seasonal changes in swallowtail butterfly pupation behavior and mortality rates suggest that pupation sites in litter and above ground level evolved to avoid strong bird predation on hostplants and to protect against both visual and non-visual predators.",
+    "url": "https://consensus.app/papers/seasonal-change-in-pupation-behaviour-and-pupal-mortality-stefanescu/17ba7eedf9465e6e8ccd07e5bc696d1b/?utm_source=publicapi",
+    "doi": "10.32800/abc.2004.27.2025"
+   }
+  ]
+ },
+ "130": {
+  "query": "Can adult flies regenerate wings?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Imaginal Disc Regeneration Takes Flight",
+    "author": "I. Hariharan",
+    "n_authors": 2,
+    "year": 2017,
+    "journal": "Current opinion in cell biology",
+    "study_type": "literature review",
+    "citations": 58,
+    "takeaway": "Genetic ablation systems in Drosophila enable precise damage and regeneration of imaginal discs, offering new insights into wound healing, regenerative growth, and tissue plasticity.",
+    "url": "https://consensus.app/papers/imaginal-disc-regeneration-takes-flight-hariharan-serras/fabc850d6e805db9ab01fca558d87c1f/?utm_source=publicapi",
+    "doi": "10.1016/j.ceb.2017.03.005"
+   },
+   {
+    "title": "Long non-coding RNAs involved in Drosophila development and regeneration",
+    "author": "Carlos Camilleri-Robles",
+    "n_authors": 7,
+    "year": 2024,
+    "journal": "NAR Genomics and Bioinformatics",
+    "study_type": "non-randomized experimental study",
+    "citations": 6,
+    "takeaway": "The lncRNA may play a role in Drosophila development and regeneration, restoring wing regeneration in damaged wing discs.",
+    "url": "https://consensus.app/papers/long-noncoding-rnas-involved-in-drosophila-development-camilleri-robles-amador/d9d58bcb83b850ea8282692008f921e2/?utm_source=publicapi",
+    "doi": "10.1093/nargab/lqae091"
+   },
+   {
+    "title": "Chromatin status is key for regeneration.",
+    "author": "S. Forcales",
+    "n_authors": 2,
+    "year": 2019,
+    "journal": "Seminars in cell & developmental biology",
+    "study_type": "literature review",
+    "citations": 1,
+    "takeaway": "Chromatin status plays a crucial role in regeneration of drosophila imaginal discs, with genetic ablation systems providing new insights into wound healing and regenerative growth mechanisms.",
+    "url": "https://consensus.app/papers/chromatin-status-is-key-for-regeneration-forcales-corominas/2f17aefae7dc5e46b9db51f5b3f72824/?utm_source=publicapi",
+    "doi": "10.1016/j.semcdb.2019.06.002"
+   },
+   {
+    "title": "Drosophila Wnt and STAT Define Apoptosis-Resistant Epithelial Cells for Tissue Regeneration after Irradiation",
+    "author": "Shilpi Verghese",
+    "n_authors": 2,
+    "year": 2016,
+    "journal": "PLoS Biology",
+    "study_type": "non-rct in vitro",
+    "citations": 65,
+    "takeaway": "Differential gene expression within identical epithelial cells can create a subpopulation with greater resistance to apoptosis, enabling tissue regeneration after damage without the need for special damage-resistant cell types like stem cells.",
+    "url": "https://consensus.app/papers/drosophila-wnt-and-stat-define-apoptosisresistant-verghese-su/f2513e2bd87e543e84d6c108519d9a11/?utm_source=publicapi",
+    "doi": "10.1371/journal.pbio.1002536"
+   },
+   {
+    "title": "Wing regeneration: Single-cell analysis sheds new light.",
+    "author": "M. Milán",
+    "n_authors": 1,
+    "year": 2022,
+    "journal": "Current biology : CB",
+    "study_type": "other",
+    "citations": 0,
+    "takeaway": "Drosophila wing primordium can regenerate in response to damage, with this capacity relying on the activation of a pro-regenerative gene regulatory network in two distinct cell populations within the blastema.",
+    "url": "https://consensus.app/papers/wing-regeneration-singlecell-analysis-sheds-new-light-miln/532d5ad0a9955c799e2fa03a62be289e/?utm_source=publicapi",
+    "doi": "10.1016/j.cub.2022.06.068"
+   },
+   {
+    "title": "Regenerative growth in Drosophila imaginal discs is regulated by Wingless and Myc",
+    "author": "Rachel K. Smith-Bolton",
+    "n_authors": 4,
+    "year": 2009,
+    "journal": "Developmental cell",
+    "study_type": "non-randomized experimental study",
+    "citations": 273,
+    "takeaway": "Wingless and Myc are crucial for regenerative growth in Drosophila larvae, and ectopic Myc enhances regeneration when other growth drivers fail, making it suitable for large-scale genetic screens.",
+    "url": "https://consensus.app/papers/regenerative-growth-in-drosophila-imaginal-discs-is-smith-bolton-worley/beb6290c898853b5b42e0ca67fad98f3/?utm_source=publicapi",
+    "doi": "10.1016/j.devcel.2009.04.015"
+   }
+  ]
+ },
+ "120": {
+  "query": "Do aquatic insect larvae form symbioses with algae?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Marine Invertebrate Larvae Associated with Symbiodinium: A Mutualism from the Start?",
+    "author": "M. Mies",
+    "n_authors": 4,
+    "year": 2017,
+    "journal": "Frontiers in Ecology and Evolution",
+    "study_type": "literature review",
+    "citations": 41,
+    "takeaway": "The mutualistic relationship between animal hosts and algal symbionts in marine invertebrates is often not established during larval development, with symbiont identity potentially influencing this outcome.",
+    "url": "https://consensus.app/papers/marine-invertebrate-larvae-associated-with-symbiodinium-mies-sumida/78c0181638375d22a198ececbdab4f5e/?utm_source=publicapi",
+    "doi": "10.3389/fevo.2017.00056"
+   },
+   {
+    "title": "Ascophyllum (Phaeophyceae) and its symbionts. IX. A novel symbiosis between Halocladius variabilis (Chironomidae, Insecta) and Elachista fucicola (Elachistaceae, Phaeophyceae) from marine rocky shores of Nova Scotia.",
+    "author": "D. Garbary",
+    "n_authors": 5,
+    "year": 2005,
+    "journal": "Symbiosis",
+    "study_type": null,
+    "citations": 13,
+    "takeaway": "Halocladius variabilis larvae and Elachista fucicola, a marine alga, may have a potential mutualistic symbiosis, benefiting the alga through grazing and fecal nitrogen enrichment.",
+    "url": "https://consensus.app/papers/ascophyllum-phaeophyceae-and-its-symbionts-ix-a-novel-garbary-jamieson/3549a6f6809d57bda7ec41c12762dc00/?utm_source=publicapi",
+    "doi": ""
+   },
+   {
+    "title": "Culex quinquefasciatus larvae development arrested when fed on Neochloris aquatica",
+    "author": "M. F. Gil",
+    "n_authors": 4,
+    "year": 2021,
+    "journal": "PLoS Neglected Tropical Diseases",
+    "study_type": "non-randomized experimental study",
+    "citations": 20,
+    "takeaway": "Neochloris aquatica microalga negatively affects the development of Culex quinquefasciatus larvae, making it a potential biological control agent for controlling this mosquito population.",
+    "url": "https://consensus.app/papers/culex-quinquefasciatus-larvae-development-arrested-when-gil-fassolari/0ca1be17459f5847af8574c134ddbba7/?utm_source=publicapi",
+    "doi": "10.1371/journal.pntd.0009988"
+   },
+   {
+    "title": "Aquatic Insects and Benthic Diatoms: A History of Biotic Relationships in Freshwater Ecosystems",
+    "author": "S. Fenoglio",
+    "n_authors": 5,
+    "year": 2020,
+    "journal": "Water",
+    "study_type": "literature review",
+    "citations": 24,
+    "takeaway": "Aquatic insects and diatoms have complex interactions in freshwater ecosystems, influencing the evolution of stream biological communities over millions of years.",
+    "url": "https://consensus.app/papers/aquatic-insects-and-benthic-diatoms-a-history-of-biotic-fenoglio-figueroa/9b6b33e19ef25470a3b3c42e455bcb01/?utm_source=publicapi",
+    "doi": "10.3390/w12102934"
+   },
+   {
+    "title": "Symbioses between aquatic invertebrates and algae",
+    "author": "R. Hinde",
+    "n_authors": 1,
+    "year": 1987,
+    "journal": "International Journal for Parasitology",
+    "study_type": "literature review",
+    "citations": 6,
+    "takeaway": "Aquatic invertebrates benefit from algae presence, but the algae may be harmed by the animals, and further investigation is needed to determine the nature of these symbiotic associations.",
+    "url": "https://consensus.app/papers/symbioses-between-aquatic-invertebrates-and-algae-hinde/805f80ff82295bf589119d760efe4094/?utm_source=publicapi",
+    "doi": "10.1016/0020-7519(87)90113-5"
+   },
+   {
+    "title": "Microorganism-Based Larval Diets Affect Mosquito Development, Size and Nutritional Reserves in the Yellow Fever Mosquito Aedes aegypti (Diptera: Culicidae)",
+    "author": "R. Souza",
+    "n_authors": 6,
+    "year": 2019,
+    "journal": "Frontiers in Physiology",
+    "study_type": "non-randomized experimental study",
+    "citations": 111,
+    "takeaway": "Larvae fed yeast show high plasticity to feed, able to develop under different microorganism-based diets, but bacteria and microalgae diets cause delays in development and adult emergence.",
+    "url": "https://consensus.app/papers/microorganismbased-larval-diets-affect-mosquito-souza-virginio/939396be03175db68b67ac61692537b7/?utm_source=publicapi",
+    "doi": "10.3389/fphys.2019.00152"
+   }
+  ]
+ },
+ "16": {
+  "query": "Can an environmentally induced colour pattern be inherited in amphibians?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "The Midwife Toad Challenge After (Half) a Century",
+    "author": "J. Arntzen",
+    "n_authors": 1,
+    "year": 2022,
+    "journal": "Frontiers Media",
+    "study_type": "commentary or perspective",
+    "citations": 1,
+    "takeaway": "Paul Kammerer's claim that environmentally induced character states are carried over to the next generation remains unconfirmed, but his experiment on fire salamander color pattern change has been confirmed.",
+    "url": "https://consensus.app/papers/the-midwife-toad-challenge-after-half-a-century-arntzen/616e07afbe655704b595714571dd1457/?utm_source=publicapi",
+    "doi": "10.3389/fevo.2022.819542"
+   },
+   {
+    "title": "Genetic and environmental drivers of colour and pattern in the Australian jacky dragon (Amphibolurus muricatus)",
+    "author": "Rebecca S Raynal",
+    "n_authors": 4,
+    "year": 2022,
+    "journal": "Journal of Evolutionary Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 4,
+    "takeaway": "Heritable genetic factors and hatchling age are key drivers of coloration in the Australian jacky dragon, while thermal environment does not significantly contribute to variation in coloration.",
+    "url": "https://consensus.app/papers/genetic-and-environmental-drivers-of-colour-and-pattern-in-raynal-schwanz/8261d155a04e5971b1df787c40b4448b/?utm_source=publicapi",
+    "doi": "10.1111/jeb.14066"
+   },
+   {
+    "title": "Adaptive colouration in amphibians.",
+    "author": "Andreas Rudh",
+    "n_authors": 2,
+    "year": 2013,
+    "journal": "Seminars in cell & developmental biology",
+    "study_type": null,
+    "citations": 95,
+    "takeaway": "Adaptive coloration in amphibians plays a role in thermoregulation, UV protection, predator avoidance, and sexual signaling, but many functions remain unexplored and few genes influencing pigmentation or patterning have been identified.",
+    "url": "https://consensus.app/papers/adaptive-colouration-in-amphibians-rudh-qvarnstrm/e39bdcc873675b7baa9da059c98c4f01/?utm_source=publicapi",
+    "doi": "10.1016/j.semcdb.2013.05.004"
+   },
+   {
+    "title": "Environment and Genetic Accommodation",
+    "author": "H. Nijhout",
+    "n_authors": 2,
+    "year": 2008,
+    "journal": "Biological Theory",
+    "study_type": "non-randomized experimental study",
+    "citations": 8,
+    "takeaway": "Artificial selection for increased color change in larval coloration in response to heat-shock can lead to genetic accommodation of a black/green color polyphenism in a monophenic species.",
+    "url": "https://consensus.app/papers/environment-and-genetic-accommodation-nijhout-suzuki/af5467e39e6c5126927356049c54d1c5/?utm_source=publicapi",
+    "doi": "10.1162/biot.2008.3.3.204"
+   },
+   {
+    "title": "Genetic Basis and Evolutionary Forces of Sexually Dimorphic Color Variation in a Toad-Headed Agamid Lizard",
+    "author": "Bin Lu",
+    "n_authors": 9,
+    "year": 2024,
+    "journal": "Molecular Biology and Evolution",
+    "study_type": "other",
+    "citations": 14,
+    "takeaway": "Sexually dimorphic color variation in toad-headed agamid lizards is driven by genetic factors, with natural selection and assortative mating potentially contributing to its prevalence in desert habitats.",
+    "url": "https://consensus.app/papers/genetic-basis-and-evolutionary-forces-of-sexually-lu-qiu/73ad30dd8f2f5ef2868fa027e82a3e32/?utm_source=publicapi",
+    "doi": "10.1093/molbev/msae054"
+   },
+   {
+    "title": "Genetics and evolution of colour patterns in reptiles.",
+    "author": "M. Olsson",
+    "n_authors": 3,
+    "year": 2013,
+    "journal": "Seminars in cell & developmental biology",
+    "study_type": null,
+    "citations": 194,
+    "takeaway": "Coloration in reptiles is influenced by complex interactions between structural and pigmentary components, with variations in visual systems, heritability, reproductive tactics, and color fading in response to physiological stress and ageing.",
+    "url": "https://consensus.app/papers/genetics-and-evolution-of-colour-patterns-in-reptiles-olsson-stuart-fox/326a23f933f85cff9cf6324cd5ea67c4/?utm_source=publicapi",
+    "doi": "10.1016/j.semcdb.2013.04.001"
+   }
+  ]
+ },
+ "95": {
+  "query": "Can the environment alter heritable germ-plasm (transgenerational epigenetic inheritance)?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Environmentally induced epigenetic transgenerational inheritance of disease",
+    "author": "E. Nilsson",
+    "n_authors": 3,
+    "year": 2018,
+    "journal": "Environmental Epigenetics",
+    "study_type": "literature review",
+    "citations": 354,
+    "takeaway": "Environmental factors, such as toxicants, abnormal nutrition, and stress, can promote epigenetic transgenerational inheritance of diseases, increasing disease susceptibility in subsequent generations.",
+    "url": "https://consensus.app/papers/environmentally-induced-epigenetic-transgenerational-nilsson-sadlerriggleman/2702d19463415cb0ba973ac45f84fdb2/?utm_source=publicapi",
+    "doi": "10.1093/eep/dvy016"
+   },
+   {
+    "title": "Transgenerational Inheritance of Environmentally Induced Epigenetic Alterations during Mammalian Development",
+    "author": "L. Legoff",
+    "n_authors": 5,
+    "year": 2019,
+    "journal": "Cells",
+    "study_type": "literature review",
+    "citations": 72,
+    "takeaway": "Environmental factors can induce parental alterations and affect offspring phenotypes through gametic epigenetic inheritance, influencing disease risk assessment.",
+    "url": "https://consensus.app/papers/transgenerational-inheritance-of-environmentally-legoff-dcruz/b9c264207f535a6cb023023f4eceaf85/?utm_source=publicapi",
+    "doi": "10.3390/cells8121559"
+   },
+   {
+    "title": "Inheritance of environment-induced phenotypic changes through epigenetic mechanisms",
+    "author": "Yukiko Tando",
+    "n_authors": 2,
+    "year": 2023,
+    "journal": "Environmental Epigenetics",
+    "study_type": null,
+    "citations": 20,
+    "takeaway": "Parental environmental factors can cause epigenetic changes that alter the phenotypes of descendants through various mechanisms, including DNA methylation, histone modification, and small RNAs via metabolites.",
+    "url": "https://consensus.app/papers/inheritance-of-environmentinduced-phenotypic-changes-tando-matsui/fa833bcb83b95a6a842e57bc251e6b9e/?utm_source=publicapi",
+    "doi": "10.1093/eep/dvad008"
+   },
+   {
+    "title": "Developmental origins of epigenetic transgenerational inheritance",
+    "author": "M. Hanson",
+    "n_authors": 2,
+    "year": 2016,
+    "journal": "Environmental epigenetics",
+    "study_type": "literature review",
+    "citations": 155,
+    "takeaway": "Environmental factors can induce epigenetic alterations in germ cells during specific developmental windows, potentially affecting phenotypic variation and disease risk in various species.",
+    "url": "https://consensus.app/papers/developmental-origins-of-epigenetic-transgenerational-hanson-skinner/4d39b63501c8540ca611e58b7943aaae/?utm_source=publicapi",
+    "doi": "10.1093/eep/dvw002"
+   },
+   {
+    "title": "Transgenerational inheritance: how impacts to the epigenetic and genetic information of parents affect offspring health.",
+    "author": "M. J. Xavier",
+    "n_authors": 4,
+    "year": 2019,
+    "journal": "Human reproduction update",
+    "study_type": "systematic review",
+    "citations": 200,
+    "takeaway": "Environmental factors, ageing, diet, and toxicant exposure can alter the epigenetic composition of parents, potentially affecting offspring's health and well-being.",
+    "url": "https://consensus.app/papers/transgenerational-inheritance-how-impacts-to-the-xavier-roman/52a2e74648d255ce9021fe215af9cc7b/?utm_source=publicapi",
+    "doi": "10.1093/humupd/dmz017"
+   },
+   {
+    "title": "Transgenerational epigenetic inheritance: a critical perspective",
+    "author": "A. Bird",
+    "n_authors": 1,
+    "year": 2024,
+    "journal": "Frontiers in Epigenetics and Epigenomics",
+    "study_type": "literature review",
+    "citations": 17,
+    "takeaway": "The evidence for environmentally induced epigenetic inheritance in mammals remains inconclusive, with genome sequencing strengthening the causal relationship between genotypes and organismal characteristics.",
+    "url": "https://consensus.app/papers/transgenerational-epigenetic-inheritance-a-critical-bird/3afbda9d30af535390250bfbb3a1c6d6/?utm_source=publicapi",
+    "doi": "10.3389/freae.2024.1434253"
+   }
+  ]
+ },
+ "15": {
+  "query": "Does light wavelength affect pigment pattern formation in amphibians?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Light-specific wavelengths differentially affect the exploration rate, opercular beat, skin color change, opsin transcripts, and the oxi-redox system of the longsnout seahorse Hippocampus reidi.",
+    "author": "J. A. Souto-Neto",
+    "n_authors": 8,
+    "year": 2023,
+    "journal": "Comparative biochemistry and physiology. Part A, Molecular & integrative physiology",
+    "study_type": "non-randomized experimental study",
+    "citations": 8,
+    "takeaway": "Yellow light increases melanin levels in juvenile seahorses, while blue and yellow wavelengths increase juvenile mortality rates, impacting their color change, growth, and survival rates.",
+    "url": "https://consensus.app/papers/lightspecific-wavelengths-differentially-affect-the-souto-neto-david/dc55676505e85ee0b697b05374496075/?utm_source=publicapi",
+    "doi": "10.1016/j.cbpa.2023.111551"
+   },
+   {
+    "title": "Individual colour patches as multicomponent signals",
+    "author": "G. Grether",
+    "n_authors": 3,
+    "year": 2004,
+    "journal": "Biological Reviews",
+    "study_type": "theoretical, modeling, or simulation study",
+    "citations": 264,
+    "takeaway": "Multiple trait evolution theory can be applied to individual color patch components, allowing for a more comprehensive understanding of animal coloration.",
+    "url": "https://consensus.app/papers/individual-colour-patches-as-multicomponent-signals-grether-kolluru/8ae62751274457b69cdeaea59c704419/?utm_source=publicapi",
+    "doi": "10.1017/s1464793103006390"
+   },
+   {
+    "title": "Salamanders and other amphibians are aglow with biofluorescence",
+    "author": "Jennifer Y. Lamb",
+    "n_authors": 2,
+    "year": 2020,
+    "journal": "Scientific Reports",
+    "study_type": null,
+    "citations": 50,
+    "takeaway": "Biofluorescence is widespread in amphibians, with variations in patterning and primary wavelengths within the green light spectrum, potentially impacting their ecology and evolution.",
+    "url": "https://consensus.app/papers/salamanders-and-other-amphibians-are-aglow-with-lamb-davis/6c7665f5142a5ad581bec8ccb1838533/?utm_source=publicapi",
+    "doi": "10.1038/s41598-020-59528-9"
+   },
+   {
+    "title": "Evolutionary analyses of visual opsin genes in frogs and toads: Diversity, duplication, and positive selection",
+    "author": "Ryan K. Schott",
+    "n_authors": 5,
+    "year": 2022,
+    "journal": "Ecology and Evolution",
+    "study_type": "cross-sectional study",
+    "citations": 18,
+    "takeaway": "Anurans exhibit diverse visual systems with ecological factors and behavior driving changes in their visual systems, including visual opsin duplication in the African bullfrog.",
+    "url": "https://consensus.app/papers/evolutionary-analyses-of-visual-opsin-genes-in-frogs-and-schott-perez/4d6f3019a91752cf9bd72220acee6da4/?utm_source=publicapi",
+    "doi": "10.1002/ece3.8595"
+   },
+   {
+    "title": "Adaptive colouration in amphibians.",
+    "author": "Andreas Rudh",
+    "n_authors": 2,
+    "year": 2013,
+    "journal": "Seminars in cell & developmental biology",
+    "study_type": null,
+    "citations": 95,
+    "takeaway": "Adaptive coloration in amphibians plays a role in thermoregulation, UV protection, predator avoidance, and sexual signaling, but many functions remain unexplored and few genes influencing pigmentation or patterning have been identified.",
+    "url": "https://consensus.app/papers/adaptive-colouration-in-amphibians-rudh-qvarnstrm/e39bdcc873675b7baa9da059c98c4f01/?utm_source=publicapi",
+    "doi": "10.1016/j.semcdb.2013.05.004"
+   },
+   {
+    "title": "A transcriptome analysis revealing the molecular mechanism of light intensity-driven color variation in the skin of Chinese giant salamander (Andrias davidianus)",
+    "author": "Zhizhi Jing",
+    "n_authors": 6,
+    "year": 2026,
+    "journal": "BMC Genomics",
+    "study_type": null,
+    "citations": 0,
+    "takeaway": null,
+    "url": "https://consensus.app/papers/a-transcriptome-analysis-revealing-the-molecular-jing-chen/a25e8e36456e542d80010aa749210930/?utm_source=publicapi",
+    "doi": "10.1186/s12864-026-12844-2"
+   }
+  ]
+ },
+ "126": {
+  "query": "Can amphibians regenerate internal organs such as the lung?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "A comparative perspective on lung and gill regeneration",
+    "author": "L. Cadiz",
+    "n_authors": 2,
+    "year": 2020,
+    "journal": "Journal of Experimental Biology",
+    "study_type": null,
+    "citations": 22,
+    "takeaway": "Fish and amphibians' gill regeneration offers a unique opportunity to uncover common signaling mechanisms for lung regeneration in all vertebrates, potentially leading to new advances in tissue repair after lung disease.",
+    "url": "https://consensus.app/papers/a-comparative-perspective-on-lung-and-gill-regeneration-cadiz-jonz/228bdc2bc98b5bdfbd784e7d0e28a217/?utm_source=publicapi",
+    "doi": "10.1242/jeb.226076"
+   },
+   {
+    "title": "The Xenopus respiratory system reveals common tetrapod mechanisms for growth, regeneration and healing",
+    "author": "Shiri Kult Perry",
+    "n_authors": 4,
+    "year": 2024,
+    "journal": "bioRxiv",
+    "study_type": "non-randomized experimental study",
+    "citations": 1,
+    "takeaway": "Xenopus tropicalis amphibians show regenerative capacity for lung tissue repair, using the same signaling pathways and stem cells as mammals during lung growth, regeneration, and healing.",
+    "url": "https://consensus.app/papers/the-xenopus-respiratory-system-reveals-common-tetrapod-perry-shaidani/bb3d222c54a95083b571a9f904acbb32/?utm_source=publicapi",
+    "doi": "10.1101/2024.10.10.617686"
+   },
+   {
+    "title": "Developmental switch from morphological replication to compensatory growth for salamander lung regeneration",
+    "author": "Binxu Yin",
+    "n_authors": 6,
+    "year": 2022,
+    "journal": "Cell Proliferation",
+    "study_type": "non-randomized experimental study",
+    "citations": 6,
+    "takeaway": "Salamanders repair injured lungs by promoting epithelial cell proliferation to strengthen remaining alveoli without rebuilding new ones, demonstrating distinct regenerative strategies during different stages of life.",
+    "url": "https://consensus.app/papers/developmental-switch-from-morphological-replication-to-yin-zhang/cdc01d9c72ce523ebce8eab9737194b1/?utm_source=publicapi",
+    "doi": "10.1111/cpr.13369"
+   },
+   {
+    "title": "Lung injury in axolotl salamanders induces an organ‐wide proliferation response",
+    "author": "T. Jensen",
+    "n_authors": 9,
+    "year": 2021,
+    "journal": "Developmental Dynamics",
+    "study_type": "non-randomized experimental study",
+    "citations": 15,
+    "takeaway": "Lung injury in axolotl salamanders leads to organ-wide proliferation, resulting in recovery of lung mass and morphology by 56 days post-amputation.",
+    "url": "https://consensus.app/papers/lung-injury-in-axolotl-salamanders-induces-an-organwide-jensen-giunta/2c0d7ee7cb865e6e8ff9036552dfe9db/?utm_source=publicapi",
+    "doi": "10.1002/dvdy.315"
+   },
+   {
+    "title": "Organ regeneration evolved in fish and amphibians in relation to metamorphosis: Speculations on a post-embryonic developmental process lost in amniotes after the water to land transition.",
+    "author": "L. Alibardi",
+    "n_authors": 1,
+    "year": 2019,
+    "journal": "Annals of anatomy = Anatomischer Anzeiger : official organ of the Anatomische Gesellschaft",
+    "study_type": "theoretical, modeling, or simulation study",
+    "citations": 36,
+    "takeaway": "Organ regeneration evolved in fish and amphibians due to metamorphosis, but was lost in amniotes after the water-to-land transition.",
+    "url": "https://consensus.app/papers/organ-regeneration-evolved-in-fish-and-amphibians-in-alibardi/9f865977dfc85ef1b6cebad32ecffd49/?utm_source=publicapi",
+    "doi": "10.1016/j.aanat.2018.12.005"
+   },
+   {
+    "title": "The cancer paradigms of mammalian regeneration: can mammals regenerate as amphibians?",
+    "author": "R. Sarig",
+    "n_authors": 2,
+    "year": 2017,
+    "journal": "Carcinogenesis",
+    "study_type": "literature review",
+    "citations": 22,
+    "takeaway": "Mammalian regeneration can be improved by inducing de-differentiation of mature cardiomyocytes, potentially avoiding malignant transformation and enhancing regeneration in non-regenerating organs like the heart.",
+    "url": "https://consensus.app/papers/the-cancer-paradigms-of-mammalian-regeneration-can-sarig-tzahor/56cc47b30e7e51698eb2e9912b1fae9b/?utm_source=publicapi",
+    "doi": "10.1093/carcin/bgw103"
+   }
+  ]
+ },
+ "8": {
+  "query": "How determined is the tail regeneration blastema in reptiles?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Review. Regeneration of the tail in lizards appears regulated by a balanced expression of oncogenes and tumor suppressors.",
+    "author": "L. Alibardi",
+    "n_authors": 1,
+    "year": 2021,
+    "journal": "Annals of anatomy = Anatomischer Anzeiger : official organ of the Anatomische Gesellschaft",
+    "study_type": "literature review",
+    "citations": 15,
+    "takeaway": "Lizard tail regeneration is regulated by a balanced expression of oncogenes and tumor suppressors, with no malignant transformation observed during cell movements.",
+    "url": "https://consensus.app/papers/review-regeneration-of-the-tail-in-lizards-appears-alibardi/58161f5ef57f5ed184426966174de27c/?utm_source=publicapi",
+    "doi": "10.1016/j.aanat.2021.151824"
+   },
+   {
+    "title": "Gene expression in regenerating and scarring tails of lizard evidences three main key genes (wnt2b, egfl6, and arhgap28) activated during the regulated process of tail regeneration",
+    "author": "M. Degan",
+    "n_authors": 3,
+    "year": 2020,
+    "journal": "Protoplasma",
+    "study_type": "non-rct in vitro",
+    "citations": 22,
+    "takeaway": "Three key genes (wnt2b, egfl6, and arhgap28) play a crucial role in regulating lizard tail regeneration after cauterization, affecting cell proliferation, movement, and immune response.",
+    "url": "https://consensus.app/papers/gene-expression-in-regenerating-and-scarring-tails-of-degan-valle/31343139fbe055988ac9de87fabd19c2/?utm_source=publicapi",
+    "doi": "10.1007/s00709-020-01545-6"
+   },
+   {
+    "title": "The regenerating tail of lizard transits through a tumour‐like stage represented by the regenerative blastema",
+    "author": "L. Alibardi",
+    "n_authors": 1,
+    "year": 2022,
+    "journal": "Acta Zoologica",
+    "study_type": "literature review",
+    "citations": 4,
+    "takeaway": "Lizard tail regeneration involves a tumor-like stage called the regenerative blastema, which self-regulates to produce a new tail within 1 to 2 months, offering insights into cancer growth regulation.",
+    "url": "https://consensus.app/papers/the-regenerating-tail-of-lizard-transits-through-a-alibardi/6b051f9729e35c49b9570dc32c8b6e1b/?utm_source=publicapi",
+    "doi": "10.1111/azo.12446"
+   },
+   {
+    "title": "The regeneration blastema of lizards: an amniote model for the study of appendage replacement",
+    "author": "E. Gilbert",
+    "n_authors": 3,
+    "year": 2015,
+    "journal": "Regeneration",
+    "study_type": "literature review",
+    "citations": 49,
+    "takeaway": "Lizard tail regeneration involves a blastema-mediated process, resulting in a functional but non-identical replacement after tail loss, with diverse regenerative mechanisms among different species.",
+    "url": "https://consensus.app/papers/the-regeneration-blastema-of-lizards-an-amniote-model-for-gilbert-delorme/7129e3fad06a5d1aad4c9719cbc2cb50/?utm_source=publicapi",
+    "doi": "10.1002/reg2.31"
+   },
+   {
+    "title": "Cartilage and Muscle Cell Fate and Origins during Lizard Tail Regeneration",
+    "author": "R. Londono",
+    "n_authors": 5,
+    "year": 2017,
+    "journal": "Frontiers in Bioengineering and Biotechnology",
+    "study_type": "non-randomized experimental study",
+    "citations": 42,
+    "takeaway": "Differentiated cartilage and muscle cells contribute to regenerated muscle and cartilage tissues in mourning gecko lizards, suggesting dedifferentiation and/or transdifferentiation are partially responsible for their remarkable regenerative ability.",
+    "url": "https://consensus.app/papers/cartilage-and-muscle-cell-fate-and-origins-during-lizard-londono-wen-zhong/74dd75f621a65ccabc5b5a57d489c0da/?utm_source=publicapi",
+    "doi": "10.3389/fbioe.2017.00070"
+   },
+   {
+    "title": "De Novo Transcriptome Sequencing and Analysis of Differential Gene Expression among Various Stages of Tail Regeneration in Hemidactylus flaviviridis",
+    "author": "Sonam Patel",
+    "n_authors": 5,
+    "year": 2022,
+    "journal": "Journal of Developmental Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 10,
+    "takeaway": "Stage-wise transcriptome analysis reveals molecular signaling pathways and cellular processes involved in lizard tail regeneration, potentially benefiting other amniotes.",
+    "url": "https://consensus.app/papers/de-novo-transcriptome-sequencing-and-analysis-of-patel-ranadive/44bd0ac028bb55b2b9db12d228b484f9/?utm_source=publicapi",
+    "doi": "10.3390/jdb10020024"
+   }
+  ]
+ },
+ "50": {
+  "query": "Can reptiles regenerate jaw or craniofacial structures?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Regeneration of Bone, Cartilage, and Tooth Following Lower Jaw Amputation in Newts.",
+    "author": "Kento Tsubosaki",
+    "n_authors": 10,
+    "year": 2026,
+    "journal": "Biomedicines",
+    "study_type": "non-randomized experimental study",
+    "citations": 0,
+    "takeaway": "Adult newts can regenerate their lower jaws, restoring bone, cartilage, and teeth after substantial loss, potentially benefiting human jaw reconstruction strategies.",
+    "url": "https://consensus.app/papers/regeneration-of-bone-cartilage-and-tooth-following-lower-tsubosaki-hani/5d1662e7ac765ac18dad4595d4ae469e/?utm_source=publicapi",
+    "doi": "10.3390/biomedicines14020434"
+   },
+   {
+    "title": "Resilience of the replacing dentition in adult reptiles",
+    "author": "J. I. Henríquez",
+    "n_authors": 2,
+    "year": 2024,
+    "journal": "Developmental biology",
+    "study_type": "literature review",
+    "citations": 7,
+    "takeaway": "Reptiles, particularly lizards, exhibit life-long tooth replacement, revealing insights into the evolution of dentition and human dental disorders.",
+    "url": "https://consensus.app/papers/resilience-of-the-replacing-dentition-in-adult-reptiles-henrquez-richman/44574f54a7af51ffa0c81b49376066e2/?utm_source=publicapi",
+    "doi": "10.1016/j.ydbio.2024.07.013"
+   },
+   {
+    "title": "Regenerative capability of upper and lower jaws in the newt.",
+    "author": "Sukla Ghosh",
+    "n_authors": 3,
+    "year": 1994,
+    "journal": "The International journal of developmental biology",
+    "study_type": "non-rct in vitro",
+    "citations": 73,
+    "takeaway": "The regenerating amphibian jaw shows differences in skeletal regeneration, with tooth-bearing elements ossifying and other elements remaining cartilaginous, and demonstrates a direct regeneration of adult jaws.",
+    "url": "https://consensus.app/papers/regenerative-capability-of-upper-and-lower-jaws-in-the-newt-ghosh-thorogood/741f516d8f9158efa2685e72c121473b/?utm_source=publicapi",
+    "doi": "10.1387/ijdb.7531480"
+   },
+   {
+    "title": "Wnt Signaling and Its Contribution to Craniofacial Tissue Homeostasis",
+    "author": "Xing Yin",
+    "n_authors": 17,
+    "year": 2015,
+    "journal": "Journal of Dental Research",
+    "study_type": "literature review",
+    "citations": 47,
+    "takeaway": "Wnt signaling plays a crucial role in maintaining and healing craniofacial tissues, with potential therapeutic applications in accelerating healing through activation of endogenous stem cells.",
+    "url": "https://consensus.app/papers/wnt-signaling-and-its-contribution-to-craniofacial-tissue-yin-yin/b4d1470af3405a6ab226350bae843b49/?utm_source=publicapi",
+    "doi": "10.1177/0022034515599772"
+   },
+   {
+    "title": "Exploring the Use of Animal Models in Craniofacial Regenerative Medicine: A Narrative Review",
+    "author": "S. A. Mosaddad",
+    "n_authors": 3,
+    "year": 2023,
+    "journal": "Tissue Engineering Part B: Reviews",
+    "study_type": "systematic review",
+    "citations": 28,
+    "takeaway": "Animal models can effectively assess the efficacy and safety of new therapeutic interventions in craniofacial tissue engineering, benefiting both human and veterinary medicine.",
+    "url": "https://consensus.app/papers/exploring-the-use-of-animal-models-in-craniofacial-mosaddad-hussain/36a75828bfca5efb871137a58268aacc/?utm_source=publicapi",
+    "doi": "10.1089/ten.teb.2023.0038"
+   },
+   {
+    "title": "In ovo manipulation of Nile crocodile embryos: egg windowing and potential dental research applications.",
+    "author": "J. C. Truter",
+    "n_authors": 2,
+    "year": 2021,
+    "journal": "The International journal of developmental biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 3,
+    "takeaway": "Egg windowing in Nile crocodile embryos allows for manipulation of the mandibular arch and maxillary process without risking damage to the chorioallantoic membrane, potentially benefiting dental research.",
+    "url": "https://consensus.app/papers/in-ovo-manipulation-of-nile-crocodile-embryos-egg-truter-myburgh/a7fffe53ee5053a388015810c6dee4aa/?utm_source=publicapi",
+    "doi": "10.1387/ijdb.210196ct"
+   }
+  ]
+ },
+ "113": {
+  "query": "Are experimentally induced colour changes inherited across generations in reptiles?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "The Genetic Basis of Adaptation following Plastic Changes in Coloration in a Novel Environment.",
+    "author": "Ammon Corl",
+    "n_authors": 7,
+    "year": 2018,
+    "journal": "Current biology : CB",
+    "study_type": "cross-sectional study",
+    "citations": 101,
+    "takeaway": "Ancient plasticity in coloration facilitated initial survival in a lava environment, followed by genetic changes that modified the phenotype and aided adaptation to the new environment.",
+    "url": "https://consensus.app/papers/the-genetic-basis-of-adaptation-following-plastic-changes-corl-bi/c4f675ae74d455e2b46c05bd6cb9d29a/?utm_source=publicapi",
+    "doi": "10.1016/j.cub.2018.06.075"
+   },
+   {
+    "title": "Genetic and environmental drivers of colour and pattern in the Australian jacky dragon (Amphibolurus muricatus)",
+    "author": "Rebecca S Raynal",
+    "n_authors": 4,
+    "year": 2022,
+    "journal": "Journal of Evolutionary Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 4,
+    "takeaway": "Heritable genetic factors and hatchling age are key drivers of coloration in the Australian jacky dragon, while thermal environment does not significantly contribute to variation in coloration.",
+    "url": "https://consensus.app/papers/genetic-and-environmental-drivers-of-colour-and-pattern-in-raynal-schwanz/8261d155a04e5971b1df787c40b4448b/?utm_source=publicapi",
+    "doi": "10.1111/jeb.14066"
+   },
+   {
+    "title": "Genetics and evolution of colour patterns in reptiles.",
+    "author": "M. Olsson",
+    "n_authors": 3,
+    "year": 2013,
+    "journal": "Seminars in cell & developmental biology",
+    "study_type": null,
+    "citations": 194,
+    "takeaway": "Coloration in reptiles is influenced by complex interactions between structural and pigmentary components, with variations in visual systems, heritability, reproductive tactics, and color fading in response to physiological stress and ageing.",
+    "url": "https://consensus.app/papers/genetics-and-evolution-of-colour-patterns-in-reptiles-olsson-stuart-fox/326a23f933f85cff9cf6324cd5ea67c4/?utm_source=publicapi",
+    "doi": "10.1016/j.semcdb.2013.04.001"
+   },
+   {
+    "title": "Environmentally induced changes in carotenoid‐based coloration of female lizards: a comment on Vercken et al.",
+    "author": "Julien Cote",
+    "n_authors": 6,
+    "year": 2008,
+    "journal": "Journal of Evolutionary Biology",
+    "study_type": "commentary or perspective",
+    "citations": 59,
+    "takeaway": "Female common lizards show continuous color variation from pale yellow to orange, with some plasticity in response to population sex ratio changes, but most variation remains invariant throughout an adult female's life.",
+    "url": "https://consensus.app/papers/environmentally-induced-changes-in-carotenoidbased-cote-cote/ec7d1587101b5988be3d33f9c149cf67/?utm_source=publicapi",
+    "doi": "10.1111/j.1420-9101.2008.01534.x"
+   },
+   {
+    "title": "The genetic basis of discrete and quantitative colour variation in the polymorphic lizard, Ctenophorus decresii",
+    "author": "Katrina J. Rankin",
+    "n_authors": 4,
+    "year": 2016,
+    "journal": "BMC Evolutionary Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 37,
+    "takeaway": "In the polymorphic tawny dragon lizard Ctenophorus decresii, two autosomal loci with complete dominance determine distinct throat colors, with broader genetic influence on variation in constituent morph traits.",
+    "url": "https://consensus.app/papers/the-genetic-basis-of-discrete-and-quantitative-colour-rankin-mclean/29f0e0d5be325453b197fcf788399ad3/?utm_source=publicapi",
+    "doi": "10.1186/s12862-016-0757-2"
+   },
+   {
+    "title": "Regulatory changes in pterin and carotenoid genes underlie balanced color polymorphisms in the wall lizard",
+    "author": "P. Andrade",
+    "n_authors": 24,
+    "year": 2018,
+    "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+    "study_type": "other",
+    "citations": 207,
+    "takeaway": "The European common wall lizard's color variations are primarily due to regulatory changes in pterin and carotenoid genes, resulting from ancient genetic variation and cross-species hybridization.",
+    "url": "https://consensus.app/papers/regulatory-changes-in-pterin-and-carotenoid-genes-andrade-pinho/a1ef5800fa285d12858fe5204dd27b2d/?utm_source=publicapi",
+    "doi": "10.1073/pnas.1820320116"
+   }
+  ]
+ },
+ "136": {
+  "query": "Does temperature determine sex in reptiles (environmental sex determination)?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Understanding the role of environmental temperature on sex determination through comparative studies in reptiles and amphibians.",
+    "author": "H. Akashi",
+    "n_authors": 6,
+    "year": 2023,
+    "journal": "Journal of experimental zoology. Part A, Ecological and integrative physiology",
+    "study_type": "literature review",
+    "citations": 14,
+    "takeaway": "Temperature-dependent sex determination (TSD) in reptiles and amphibians influences sexual differentiation pathways, resulting in distinct primary sex ratios.",
+    "url": "https://consensus.app/papers/understanding-the-role-of-environmental-temperature-on-akashi-hasui/57b7fcf0c69d5746adf902997f2bce59/?utm_source=publicapi",
+    "doi": "10.1002/jez.2760"
+   },
+   {
+    "title": "Environmental Sex Determination in Reptiles: Ecology, Evolution, and Experimental Design",
+    "author": "F. Janzen",
+    "n_authors": 2,
+    "year": 1991,
+    "journal": "The Quarterly Review of Biology",
+    "study_type": "literature review",
+    "citations": 490,
+    "takeaway": "Temperature-dependent sex determination (TSD) is present in three major reptilian lineages, with potential adaptive significance and implications for sex determination in other vertebrates.",
+    "url": "https://consensus.app/papers/environmental-sex-determination-in-reptiles-ecology-janzen-paukstis/f2578fa9084d566e87a176bb739fba1e/?utm_source=publicapi",
+    "doi": "10.1086/417143"
+   },
+   {
+    "title": "Environmental Sex Determination Mechanisms in Reptiles",
+    "author": "Horacio Merchant-Larios",
+    "n_authors": 2,
+    "year": 2012,
+    "journal": "Sexual Development",
+    "study_type": "literature review",
+    "citations": 69,
+    "takeaway": "Temperature-dependent sex determination in reptiles varies among species, with estrogen levels potentially playing a role, and environmental factors like temperature and hormones also playing a role in sex determination.",
+    "url": "https://consensus.app/papers/environmental-sex-determination-mechanisms-in-reptiles-merchant-larios-daz-hernndez/1a305e78bb51554fb555e3816ae10d4a/?utm_source=publicapi",
+    "doi": "10.1159/000341936"
+   },
+   {
+    "title": "Temperature-dependent sex determination.",
+    "author": "N. Valenzuela",
+    "n_authors": 2,
+    "year": 2004,
+    "journal": null,
+    "study_type": "literature review",
+    "citations": 91,
+    "takeaway": "Temperature-dependent sex determination (TSD) is a unique mechanism in reptiles, affecting sex determination during incubation and potentially impacting sex ratios over time.",
+    "url": "https://consensus.app/papers/temperaturedependent-sex-determination-valenzuela-deeming/54436fa1dcbd5d11ad678d2be889a279/?utm_source=publicapi",
+    "doi": ""
+   },
+   {
+    "title": "The ecology and evolution of temperature‐dependent reaction norms for sex determination in reptiles: a mechanistic conceptual model",
+    "author": "N. Pezaro",
+    "n_authors": 3,
+    "year": 2017,
+    "journal": "Biological Reviews",
+    "study_type": "theoretical, modeling, or simulation study",
+    "citations": 43,
+    "takeaway": "Temperature-dependent sex determination in reptiles can be linked to environmental variation, potentially affecting their adaptive capacity to climate change and affecting conservation and management strategies.",
+    "url": "https://consensus.app/papers/the-ecology-and-evolution-of-temperaturedependent-pezaro-doody/96a46991c0ed5b52a328551e49700241/?utm_source=publicapi",
+    "doi": "10.1111/brv.12285"
+   },
+   {
+    "title": "Exploring the evolution of environmental sex determination, especially in reptiles",
+    "author": "F. Janzen",
+    "n_authors": 2,
+    "year": 2006,
+    "journal": "Journal of Evolutionary Biology",
+    "study_type": null,
+    "citations": 212,
+    "takeaway": "Temperature-dependent sex determination (TSD) in amniote vertebrates has a complex evolutionary history, with recent findings in lizards and turtles promising progress towards understanding its cause and significance.",
+    "url": "https://consensus.app/papers/exploring-the-evolution-of-environmental-sex-janzen-phillips/3567f0800b995724b95388a24e1c6c12/?utm_source=publicapi",
+    "doi": "10.1111/j.1420-9101.2006.01138.x"
+   }
+  ]
+ },
+ "6": {
+  "query": "Does positional memory cause heteromorphic limb regeneration in amphibians?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Molecular basis of positional memory in limb regeneration",
+    "author": "L. Otsuki",
+    "n_authors": 5,
+    "year": 2025,
+    "journal": "Nature",
+    "study_type": "non-rct in vitro",
+    "citations": 11,
+    "takeaway": "Positional memory in limb regeneration in axolotls is stabilized by a positive-feedback loop, and can be reprogrammed more easily from anterior to posterior direction, impacting tissue engineering.",
+    "url": "https://consensus.app/papers/molecular-basis-of-positional-memory-in-limb-regeneration-otsuki-plattner/da3210dc03815b218e9b6955e7586776/?utm_source=publicapi",
+    "doi": "10.1038/s41586-025-09036-5"
+   },
+   {
+    "title": "Positional Memory in Vertebrate Regeneration: A Century's Insights from the Salamander Limb.",
+    "author": "L. Otsuki",
+    "n_authors": 2,
+    "year": 2021,
+    "journal": "Cold Spring Harbor perspectives in biology",
+    "study_type": "literature review",
+    "citations": 33,
+    "takeaway": "Positional memory in vertebrate regeneration, as demonstrated in the salamander limb model, could lead to improved tissue repair and tissue engineering for therapeutic purposes.",
+    "url": "https://consensus.app/papers/positional-memory-in-vertebrate-regeneration-a-centurys-otsuki-tanaka/c59b230a7cd55077bcbb19a69f3c6378/?utm_source=publicapi",
+    "doi": "10.1101/cshperspect.a040899"
+   },
+   {
+    "title": "Molecular basis for positional memory and its reprogrammability in limb regeneration",
+    "author": "L. Otsuki",
+    "n_authors": 4,
+    "year": 2023,
+    "journal": "bioRxiv",
+    "study_type": "non-rct in vitro",
+    "citations": 5,
+    "takeaway": "A positive feedback mechanism in limb regeneration allows for the reprogramming of positional memory, allowing for more easily altered limb identities in tissue engineering.",
+    "url": "https://consensus.app/papers/molecular-basis-for-positional-memory-and-its-otsuki-plattner/6c62f9d10a1e568da1aec278dbcfe132/?utm_source=publicapi",
+    "doi": "10.1101/2023.10.27.564423"
+   },
+   {
+    "title": "Cells keep a memory of their tissue origin during axolotl limb regeneration",
+    "author": "M. Kragl",
+    "n_authors": 7,
+    "year": 2009,
+    "journal": "Nature",
+    "study_type": "non-rct in vitro",
+    "citations": 829,
+    "takeaway": "Limb regeneration in axolotls can be achieved without complete dedifferentiation to a pluripotent state, with restricted progenitor cells and cell-type-specific positional identity.",
+    "url": "https://consensus.app/papers/cells-keep-a-memory-of-their-tissue-origin-during-axolotl-kragl-knapp/4add1a02a1025d12be3f09d1d1478129/?utm_source=publicapi",
+    "doi": "10.1038/nature08152"
+   },
+   {
+    "title": "The cellular logic of limb regeneration",
+    "author": "Matthew A. Cherubino",
+    "n_authors": 2,
+    "year": 2026,
+    "journal": "eLife",
+    "study_type": null,
+    "citations": 0,
+    "takeaway": null,
+    "url": "https://consensus.app/papers/the-cellular-logic-of-limb-regeneration-cherubino-mccusker/84ceb63c91c351939606ed436f59d07a/?utm_source=publicapi",
+    "doi": "10.7554/elife.110316"
+   },
+   {
+    "title": "Positional information in axolotl and mouse limb extracellular matrix is mediated via heparan sulfate and fibroblast growth factor during limb regeneration in the axolotl (Ambystoma mexicanum)",
+    "author": "A. Phan",
+    "n_authors": 13,
+    "year": 2015,
+    "journal": "Regeneration",
+    "study_type": "non-rct in vitro",
+    "citations": 63,
+    "takeaway": "Positional information in limb regeneration is mediated by heparan sulfate and fibroblast growth factor, establishing a crucial link between salamander regeneration and mammals.",
+    "url": "https://consensus.app/papers/positional-information-in-axolotl-and-mouse-limb-phan-lee/3b67d2550a085326960b91e759b67ce2/?utm_source=publicapi",
+    "doi": "10.1002/reg2.40"
+   }
+  ]
+ },
+ "145": {
+  "query": "Does the first cleavage plane predict the body axis of the amphibian embryo?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "The first cleavage furrow demarcates the dorsal-ventral axis in Xenopus embryos.",
+    "author": "S. L. Klein",
+    "n_authors": 1,
+    "year": 1987,
+    "journal": "Developmental biology",
+    "study_type": "non-rct in vitro",
+    "citations": 129,
+    "takeaway": "The first cleavage furrow in Xenopus embryos demarcates the dorsal-ventral axis, indicating the dorsal side of the embryo when it bisects the region of pale pigmentation.",
+    "url": "https://consensus.app/papers/the-first-cleavage-furrow-demarcates-the-dorsalventral-klein/46f4c32fda0551f098cec0af1ed637c1/?utm_source=publicapi",
+    "doi": "10.1016/0012-1606(87)90127-8"
+   },
+   {
+    "title": "Close Correlation between the First Cleavage Plane and the Body Axis in Early Xenopus Embryos",
+    "author": "Rie Masho1",
+    "n_authors": 1,
+    "year": 1990,
+    "journal": "Development",
+    "study_type": "non-rct in vitro",
+    "citations": 41,
+    "takeaway": "The first cleavage plane in early Xenopus embryos is closely related to the body axis, with most of it lying within 30 degrees of the dorsal midline at the initial gastrula stage.",
+    "url": "https://consensus.app/papers/close-correlation-between-the-first-cleavage-plane-and-the-masho1/25c6acb3f26f5fce842ede34d6a8bb0a/?utm_source=publicapi",
+    "doi": "10.1111/j.1440-169x.1990.00057.x"
+   },
+   {
+    "title": "The first cleavage plane and the embryonic axis are determined by separate mechanisms in Xenopus laevis. II. Experimental dissociation by lateral compression of the egg.",
+    "author": "S. Black",
+    "n_authors": 2,
+    "year": 1988,
+    "journal": "Developmental biology",
+    "study_type": null,
+    "citations": 47,
+    "takeaway": "Subcortical rotation is the crucial early step in determining the embryonic axis in Xenopus laevis, while the first cleavage plane and the embryonic axis are determined by separate mechanisms.",
+    "url": "https://consensus.app/papers/the-first-cleavage-plane-and-the-embryonic-axis-are-black-vincent/2a4f640f4ad95fd99786d892502d5d55/?utm_source=publicapi",
+    "doi": "10.1016/0012-1606(88)90267-9"
+   },
+   {
+    "title": "The first cleavage plane and the embryonic axis are determined by separate mechanisms in Xenopus laevis. I. Independence in undisturbed embryos.",
+    "author": "Michael V. Danilchik",
+    "n_authors": 2,
+    "year": 1988,
+    "journal": "Developmental biology",
+    "study_type": "non-rct in vitro",
+    "citations": 55,
+    "takeaway": "The first cleavage plane and embryonic axis are determined by separate mechanisms in Xenopus laevis, with the first cleavage plane often not congruent, but convergence and extension during gastrulation and neurulation can cause apparent congruence in half-labeled embryos.",
+    "url": "https://consensus.app/papers/the-first-cleavage-plane-and-the-embryonic-axis-are-danilchik-black/fe00674e0a3e5156a439bf593e20db13/?utm_source=publicapi",
+    "doi": "10.1016/0012-1606(88)90266-7"
+   },
+   {
+    "title": "A fate map for the first cleavages of the zebrafish",
+    "author": "D. Strehlow",
+    "n_authors": 2,
+    "year": 1993,
+    "journal": "Nature",
+    "study_type": "other",
+    "citations": 58,
+    "takeaway": "The first three cleavages of the zebrafish embryo can be traced to the three principal adult body axes using fluorescent dyes on very-high-molecular-mass carriers.",
+    "url": "https://consensus.app/papers/a-fate-map-for-the-first-cleavages-of-the-zebrafish-strehlow-gilbert/753f54eedf2a569a8eb0d0932958f9be/?utm_source=publicapi",
+    "doi": "10.1038/361451a0"
+   },
+   {
+    "title": "P-190 The first cleavage plane in human embryos is dictated by the topology of pronuclei, not by the polar body position",
+    "author": "V. Porokh",
+    "n_authors": 7,
+    "year": 2022,
+    "journal": "Human Reproduction",
+    "study_type": "cross-sectional study",
+    "citations": 1,
+    "takeaway": "Human embryos tend to divide at a right angle to the longitudinal pronuclear axis, rather than along the polar body, challenging the textbook view of the first division's geometry derived from mice experiments.",
+    "url": "https://consensus.app/papers/p190the-first-cleavage-plane-in-human-embryos-is-dictated-porokh-kyjovsk/d7e89c236000530fbf95f8094b7e6ca2/?utm_source=publicapi",
+    "doi": "10.1093/humrep/deac107.183"
+   }
+  ]
+ },
+ "134": {
+  "query": "Do starvation and caloric restriction affect growth and later regeneration?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "It is not all about regeneration: Planarians striking power to stand starvation.",
+    "author": "D. Felix",
+    "n_authors": 5,
+    "year": 2019,
+    "journal": "Seminars in cell & developmental biology",
+    "study_type": "literature review",
+    "citations": 31,
+    "takeaway": "Planarians can adapt to long-term starvation by shrinking or degrowing, potentially rejuvenating them and explaining the historical notion of non-ageing planarians.",
+    "url": "https://consensus.app/papers/it-is-not-all-about-regeneration-planarians-striking-power-felix-gutirrez-gutirrez/4ec11b51c6845403839026d948fae759/?utm_source=publicapi",
+    "doi": "10.1016/j.semcdb.2018.04.010"
+   },
+   {
+    "title": "Perspective: Do Fasting, Caloric Restriction, and Diets Increase Sensitivity to Radiotherapy? A Literature Review.",
+    "author": "P. Icard",
+    "n_authors": 8,
+    "year": 2020,
+    "journal": "Advances in nutrition",
+    "study_type": "systematic review",
+    "citations": 23,
+    "takeaway": "Short periods of fasting before or during radiation therapy may increase tumor responsiveness and potentially stimulate an acute anticancer immune response.",
+    "url": "https://consensus.app/papers/perspective-do-fasting-caloric-restriction-and-diets-icard-ollivier/e1b3f9892e5651999c457083503b7896/?utm_source=publicapi",
+    "doi": "10.1093/advances/nmaa062"
+   },
+   {
+    "title": "Altered metabolic state impedes limb regeneration in salamanders",
+    "author": "Zhengrong Peng",
+    "n_authors": 6,
+    "year": 2021,
+    "journal": "Zoological Research",
+    "study_type": "non-randomized experimental study",
+    "citations": 19,
+    "takeaway": "Under extreme physiological stress, salamanders can exploit alternative strategies to secure blastema formation for limb regeneration, but limb outgrowth and patterning are significantly attenuated.",
+    "url": "https://consensus.app/papers/altered-metabolic-state-impedes-limb-regeneration-in-peng-yin/2431dd82a55d591ea829875bf97e74d0/?utm_source=publicapi",
+    "doi": "10.24272/j.issn.2095-8137.2021.186"
+   },
+   {
+    "title": "Food deprivation and refeeding influence growth, nutrient retention and functional recovery of rats.",
+    "author": "Julio J. Boza",
+    "n_authors": 10,
+    "year": 1999,
+    "journal": "The Journal of nutrition",
+    "study_type": "non-randomized experimental study",
+    "citations": 117,
+    "takeaway": "Starvation in rats leads to lower muscle glutamine levels and impaired intestinal mucosa, but refeeding rapidly repairs gut atrophy and normalizes intestinal permeability.",
+    "url": "https://consensus.app/papers/food-deprivation-and-refeeding-influence-growth-nutrient-boza-moennoz/177b9ef166cf5da5b80a2dbd50d1c052/?utm_source=publicapi",
+    "doi": "10.1093/jn/129.7.1340"
+   },
+   {
+    "title": "Caloric restriction and cellular senescence.",
+    "author": "L. Fontana",
+    "n_authors": 3,
+    "year": 2018,
+    "journal": "Mechanisms of ageing and development",
+    "study_type": null,
+    "citations": 86,
+    "takeaway": "Caloric restriction can prevent the accumulation of senescent cells, potentially promoting health and extending lifespan.",
+    "url": "https://consensus.app/papers/caloric-restriction-and-cellular-senescence-fontana-nehme/ee459645cf2d5e2ab71dc2364d544e3f/?utm_source=publicapi",
+    "doi": "10.1016/j.mad.2018.10.005"
+   },
+   {
+    "title": "Calorie Restriction Governs Intestinal Epithelial Regeneration through Cell-Autonomous Regulation of mTORC1 in Reserve Stem Cells",
+    "author": "Maryam Yousefi",
+    "n_authors": 9,
+    "year": 2018,
+    "journal": "Stem Cell Reports",
+    "study_type": null,
+    "citations": 72,
+    "takeaway": "Caloric restriction enhances intestinal epithelial regeneration by preserving an injury-resistant reserve stem cell pool, highlighting the critical role of mTORC1 in epithelial regeneration.",
+    "url": "https://consensus.app/papers/calorie-restriction-governs-intestinal-epithelial-yousefi-nakauka-ddamba/f2170b633c965fb0b65c540b60bb7f68/?utm_source=publicapi",
+    "doi": "10.1016/j.stemcr.2018.01.026"
+   }
+  ]
+ },
+ "151": {
+  "query": "Is Pleurodeles waltl an established model organism for limb regeneration?",
+  "n_results": 19,
+  "results": [
+   {
+    "title": "Reading and editing the Pleurodeles waltl genome reveals novel features of tetrapod regeneration",
+    "author": "Heng Wang",
+    "n_authors": 15,
+    "year": 2017,
+    "journal": "Nature Communications",
+    "study_type": "other",
+    "citations": 139,
+    "takeaway": "The Pleurodeles waltl genome reveals novel features of tetrapod regeneration, including the co-expression of embryonic stem cell-specific miRNAs and Harbinger DNA transposons during limb regeneration.",
+    "url": "https://consensus.app/papers/reading-and-editing-the-pleurodeles-waltl-genome-reveals-wang-talavera-lpez/97e9417792ba5708bdb623e643e17e00/?utm_source=publicapi",
+    "doi": "10.1038/s41467-017-01964-9"
+   },
+   {
+    "title": "Improved transcriptome assembly and functional annotation of Pleurodeles waltl for regeneration research",
+    "author": "M. Y. Yassouf",
+    "n_authors": 4,
+    "year": 2025,
+    "journal": "PLOS One",
+    "study_type": "other",
+    "citations": 0,
+    "takeaway": "The updated transcriptome assembly for Pleurodeles waltl provides a more comprehensive representation of reads and proteins, enhancing regeneration research and providing valuable insights into molecular mechanisms.",
+    "url": "https://consensus.app/papers/improved-transcriptome-assembly-and-functional-yassouf-kinoshita/ceea7ae75e665d5da4089d65c4ecbc2d/?utm_source=publicapi",
+    "doi": "10.1371/journal.pone.0323196"
+   },
+   {
+    "title": "Ex vivo expansion of primary cells from limb tissue of Pleurodeles waltl",
+    "author": "Mahmudul Hasan",
+    "n_authors": 3,
+    "year": 2023,
+    "journal": "Development",
+    "study_type": "non-rct in vitro",
+    "citations": 5,
+    "takeaway": "Fibronectin coating provides the best biocompatible environment for cell outgrowth and attachment in Pleurodeles waltl limb tissue for in vitro experiments.",
+    "url": "https://consensus.app/papers/ex-vivo-expansion-of-primary-cells-from-limb-tissue-of-hasan-sekiya/82fc6bb65fe15483ba0228a7efe47e38/?utm_source=publicapi",
+    "doi": "10.1111/dgd.12866"
+   },
+   {
+    "title": "Differentiated muscle cells of salamander Pleurodeles waltl re-enter the cell cycle",
+    "author": "Hao Cai",
+    "n_authors": 4,
+    "year": 2025,
+    "journal": "Histochemistry and Cell Biology",
+    "study_type": "non-rct in vitro",
+    "citations": 0,
+    "takeaway": "This study successfully established a method for isolating and cultivating muscle stem cells from salamanders, providing a valuable tool for exploring molecular mechanisms governing skeletal muscle regeneration.",
+    "url": "https://consensus.app/papers/differentiated-muscle-cells-of-salamander-pleurodeles-cai-hua/717c45231ca455ae8a38c7e44ea2ea18/?utm_source=publicapi",
+    "doi": "10.1007/s00418-025-02377-2"
+   },
+   {
+    "title": "Sequencing and chromosome-scale assembly of the giant Pleurodeles waltl genome",
+    "author": "Thomas Brown",
+    "n_authors": 18,
+    "year": 2023,
+    "journal": "bioRxiv",
+    "study_type": null,
+    "citations": 20,
+    "takeaway": "The Pleurodeles waltl genome provides a valuable resource for studying regenerative, developmental, and evolutionary principles, with DNA transposable elements playing a major role in its expansion.",
+    "url": "https://consensus.app/papers/sequencing-and-chromosomescale-assembly-of-the-giant-brown-elewa/2d67b91261bb5a699c65ca2aff5d7a96/?utm_source=publicapi",
+    "doi": "10.1101/2022.10.19.512763"
+   },
+   {
+    "title": "Chromosome-scale genome assembly reveals how repeat elements shape non-coding RNA landscapes active during newt limb regeneration",
+    "author": "Thomas Brown",
+    "n_authors": 19,
+    "year": 2025,
+    "journal": "Cell Genomics",
+    "study_type": null,
+    "citations": 22,
+    "takeaway": "Intronic repeat elements in newt genomes drive non-coding RNA biogenesis and regeneration-specific expression, providing insights into adult regeneration and developmental principles.",
+    "url": "https://consensus.app/papers/chromosomescale-genome-assembly-reveals-how-repeat-brown-mishra/8bb1255c4b9956138ed77f5726dd39e1/?utm_source=publicapi",
+    "doi": "10.1016/j.xgen.2025.100761"
+   }
+  ]
+ },
+ "77": {
+  "query": "Does developmental temperature set limb and tail proportions in mammals (Allen's rule)?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Developmental Plasticity in Response to Temperature Aligns with Allen’s but not Bergmann’s Rule",
+    "author": "Rachel E Bockrath",
+    "n_authors": 4,
+    "year": 2026,
+    "journal": "Integrative And Comparative Biology",
+    "study_type": null,
+    "citations": 0,
+    "takeaway": null,
+    "url": "https://consensus.app/papers/developmental-plasticity-in-response-to-temperature-bockrath-wimberly-lehmann/8f4e92357dc75116a8c6a049868ac4cb/?utm_source=publicapi",
+    "doi": "10.1093/icb/icag059"
+   },
+   {
+    "title": "Temperature-dependent Developmental Plasticity and Its Effects on Allen’s and Bergmann’s Rules in Endotherms",
+    "author": "Joshua K. R. Tabh",
+    "n_authors": 2,
+    "year": 2023,
+    "journal": "Integrative and Comparative Biology",
+    "study_type": null,
+    "citations": 19,
+    "takeaway": "Developmental plasticity drives Bergmann's and Allen's rules in endotherms, with non-linear contributions based on energy efficiency and thermal advantages at given ambient temperatures.",
+    "url": "https://consensus.app/papers/temperaturedependent-developmental-plasticity-and-its-tabh-nord/544526c503c6518e840da056c83c4291/?utm_source=publicapi",
+    "doi": "10.1093/icb/icad026"
+   },
+   {
+    "title": "Allen's Rule Revisited: Temperature Influences Bone Elongation During a Critical Period of Postnatal Development",
+    "author": "Maria A Serrat",
+    "n_authors": 1,
+    "year": 2013,
+    "journal": "The Anatomical Record",
+    "study_type": "non-randomized experimental study",
+    "citations": 52,
+    "takeaway": "Temperature significantly influences bone elongation during a critical period of early postnatal development, with the skeleton being most responsive to external stimuli during this period.",
+    "url": "https://consensus.app/papers/allens-rule-revisited-temperature-influences-bone-serrat/e6dac2141556576bab1ac7da3cac2398/?utm_source=publicapi",
+    "doi": "10.1002/ar.22763"
+   },
+   {
+    "title": "Temperature regulates limb length in homeotherms by directly modulating cartilage growth",
+    "author": "Maria A Serrat",
+    "n_authors": 3,
+    "year": 2008,
+    "journal": "Proceedings of the National Academy of Sciences",
+    "study_type": "non-randomized experimental study",
+    "citations": 161,
+    "takeaway": "Temperature indirectly influences limb length in mammals by affecting appendage temperature, rather than vascular nutrient delivery.",
+    "url": "https://consensus.app/papers/temperature-regulates-limb-length-in-homeotherms-by-serrat-king/c5537d51116e59f68b09953652a5714e/?utm_source=publicapi",
+    "doi": "10.1073/pnas.0803319105"
+   },
+   {
+    "title": "and its",
+    "author": "Joshua K. R. Tabh",
+    "n_authors": 8,
+    "year": 2023,
+    "journal": null,
+    "study_type": "literature review",
+    "citations": 0,
+    "takeaway": "Developmental plasticity drives James' and Allen's rules in endotherms, but their impact on species persistence depends on energy efficiency and thermal advantages at given temperatures.",
+    "url": "https://consensus.app/papers/and-its-tabh-nord/53ab5f0bf4cb581b9aab008fb09d27c0/?utm_source=publicapi",
+    "doi": ""
+   },
+   {
+    "title": "Small mammals have big tails in the tropics",
+    "author": "J. Alroy",
+    "n_authors": 1,
+    "year": 2019,
+    "journal": "Global Ecology and Biogeography",
+    "study_type": "cross-sectional study",
+    "citations": 25,
+    "takeaway": "Small mammals have larger tails in the tropics, potentially related to increased arboreality and stability in tree branches.",
+    "url": "https://consensus.app/papers/small-mammals-have-big-tails-in-the-tropics-alroy/65686b5044f951fd9afe4635486d5f34/?utm_source=publicapi",
+    "doi": "10.1111/geb.12912"
+   }
+  ]
+ },
+ "76": {
+  "query": "Can a developmentally induced body proportion be inherited in mammals?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Maternal high-fat diet effects on third-generation female body size via the paternal lineage.",
+    "author": "G. A. Dunn",
+    "n_authors": 2,
+    "year": 2011,
+    "journal": "Endocrinology",
+    "study_type": "non-randomized experimental study",
+    "citations": 350,
+    "takeaway": "Maternal high-fat diet exposure increases body size in third-generation female offspring, with this effect transmitted via the paternal lineage, potentially affecting disease predisposition.",
+    "url": "https://consensus.app/papers/maternal-highfat-diet-effects-on-thirdgeneration-female-dunn-bale/e2ee8aa0fb665549b472b8409b12565c/?utm_source=publicapi",
+    "doi": "10.1210/en.2010-1461"
+   },
+   {
+    "title": "Developmental Programming Mediated by Complementary Roles of Imprinted Grb10 in Mother and Pup",
+    "author": "Michael Cowley",
+    "n_authors": 15,
+    "year": 2014,
+    "journal": "PLoS Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 55,
+    "takeaway": "Imprinted gene Grb10 plays a key role in regulating offspring growth and determining lean/fat tissue proportions, influencing adult health and energy homeostasis.",
+    "url": "https://consensus.app/papers/developmental-programming-mediated-by-complementary-cowley-garfield/a9c110f041c15f85a21edc02fcea839c/?utm_source=publicapi",
+    "doi": "10.1371/journal.pbio.1001799"
+   },
+   {
+    "title": "The heritability of body composition",
+    "author": "A. Brener",
+    "n_authors": 8,
+    "year": 2021,
+    "journal": "BMC Pediatrics",
+    "study_type": "cross-sectional study",
+    "citations": 27,
+    "takeaway": "Heritable body composition traits are demonstrated in childhood, but environmental factors have a more significant impact during teenage years.",
+    "url": "https://consensus.app/papers/the-heritability-of-body-composition-brener-waksman/953548f933975c019f0e5bb9f5f4d029/?utm_source=publicapi",
+    "doi": "10.1186/s12887-021-02695-z"
+   },
+   {
+    "title": "Size Inheritance",
+    "author": "W. Castle",
+    "n_authors": 1,
+    "year": 1941,
+    "journal": "The American Naturalist",
+    "study_type": "other",
+    "citations": 1,
+    "takeaway": "The multiple factor hypothesis is inadequate for explaining body size inheritance in mammals, as many independent genes influence it, with some increasing it, others decreasing it, and some having no observable influence.",
+    "url": "https://consensus.app/papers/size-inheritance-castle/4880c07da30156f69c783214aff5d414/?utm_source=publicapi",
+    "doi": "10.1086/280988"
+   },
+   {
+    "title": "The maternal effects on growth and conformation in Shire horse-Shetland pony crosses.",
+    "author": "A. Walton",
+    "n_authors": 2,
+    "year": 1938,
+    "journal": "Proceedings of The Royal Society B: Biological Sciences",
+    "study_type": "non-randomized experimental study",
+    "citations": 466,
+    "takeaway": "The size of the mother significantly affects the size of offspring in Shire horse-Shetland pony crosses, suggesting that maternal influence plays a significant role in determining offspring growth and conformation.",
+    "url": "https://consensus.app/papers/the-maternal-effects-on-growth-and-conformation-in-shire-walton-hammond/21f134c01def569ba733a0f838846899/?utm_source=publicapi",
+    "doi": "10.1098/rspb.1938.0029"
+   },
+   {
+    "title": "INHERITANCE OF ENVIRONMENTAL VARIATION IN BODY SIZE: SUPERPARASITISM OF SEEDS AFFECTS PROGENY AND GRANDPROGENY BODY SIZE VIA A NONGENETIC MATERNAL EFFECT",
+    "author": "C. Fox",
+    "n_authors": 2,
+    "year": 1998,
+    "journal": "Evolution",
+    "study_type": null,
+    "citations": 76,
+    "takeaway": "Environmental variation in body size is inherited by progeny in the seed beetle, Callosobruchus maculatus, through a nongenetic maternal effect.",
+    "url": "https://consensus.app/papers/inheritance-of-environmental-variation-in-body-size-fox-savalli/36bce89eb9395778bae6a9dea396a094/?utm_source=publicapi",
+    "doi": "10.1111/j.1558-5646.1998.tb05150.x"
+   }
+  ]
+ },
+ "152": {
+  "query": "Does rearing temperature alter tail length in rodents?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Behaviorally mediated, warm adaptation: a physiological strategy when mice behaviorally thermoregulate.",
+    "author": "C. Gordon",
+    "n_authors": 6,
+    "year": 2014,
+    "journal": "Journal of thermal biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 33,
+    "takeaway": "Mice housed in a thermocline for long periods experience behaviorally mediated warm adaptation, leading to smaller internal organs and longer tails compared to mice housed in isothermal conditions.",
+    "url": "https://consensus.app/papers/behaviorally-mediated-warm-adaptation-a-physiological-gordon-aydin/77000c1ae355513382f4b276d466246f/?utm_source=publicapi",
+    "doi": "10.1016/j.jtherbio.2014.06.006"
+   },
+   {
+    "title": "Genotype and environment in tail length in mice.",
+    "author": "S. A. Barnett",
+    "n_authors": 1,
+    "year": 1965,
+    "journal": "Quarterly journal of experimental physiology and cognate medical sciences",
+    "study_type": "non-randomized experimental study",
+    "citations": 42,
+    "takeaway": "Mice tail length is not influenced by cold, and its variation is higher in the reducedtail strain A/Tb than in other inbred strains.",
+    "url": "https://consensus.app/papers/genotype-and-environment-in-tail-length-in-mice-barnett/f9c529dfea23530fb15fb39788aeb938/?utm_source=publicapi",
+    "doi": "10.1113/expphysiol.1965.sp001807"
+   },
+   {
+    "title": "Lability of tail length of the white-footed mouse, Peromyscus leucopus noveboracensis.",
+    "author": "R. Thorington",
+    "n_authors": 1,
+    "year": 1970,
+    "journal": "Journal of mammalogy",
+    "study_type": "non-randomized experimental study",
+    "citations": 13,
+    "takeaway": "White-footed mice raised at 25° C have significantly longer tails at maturity than those raised at 15° C, suggesting a direct effect of temperature on tail growth.",
+    "url": "https://consensus.app/papers/lability-of-tail-length-of-the-whitefooted-mouse-thorington/54e1b01bc10b5b42a8e10a804ba9536b/?utm_source=publicapi",
+    "doi": "10.2307/1378531"
+   },
+   {
+    "title": "A global test of Allen’s rule in rodents",
+    "author": "B. H. Alhajeri",
+    "n_authors": 5,
+    "year": 2020,
+    "journal": "Global Ecology and Biogeography",
+    "study_type": "cross-sectional study",
+    "citations": 50,
+    "takeaway": "Allen's rule is confirmed in rodents only for tails, with a positive relationship between tail length and cold temperatures, driven by adaptation to cold temperatures and habitat type.",
+    "url": "https://consensus.app/papers/a-global-test-of-allens-rule-in-rodents-alhajeri-fourcade/40d4c479652e5c4dace334f6adcd6d97/?utm_source=publicapi",
+    "doi": "10.1111/geb.13198"
+   },
+   {
+    "title": "Effect of warm rearing on the development of thermolytic effectors in rats",
+    "author": "A. Demicka",
+    "n_authors": 2,
+    "year": 1993,
+    "journal": "Journal of Thermal Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 17,
+    "takeaway": "Warm rearing stimulates hypertrophy of thermolytic organs in rats, particularly in females, which is crucial for pregnancy and caring for young.",
+    "url": "https://consensus.app/papers/effect-of-warm-rearing-on-the-development-of-thermolytic-demicka-caputa/daa3722f128a53b0afd8f0d26f8821d6/?utm_source=publicapi",
+    "doi": "10.1016/0306-4565(93)90010-q"
+   },
+   {
+    "title": "Allen's Rule Revisited: Temperature Influences Bone Elongation During a Critical Period of Postnatal Development",
+    "author": "Maria A Serrat",
+    "n_authors": 1,
+    "year": 2013,
+    "journal": "The Anatomical Record",
+    "study_type": "non-randomized experimental study",
+    "citations": 52,
+    "takeaway": "Temperature significantly influences bone elongation during a critical period of early postnatal development, with the skeleton being most responsive to external stimuli during this period.",
+    "url": "https://consensus.app/papers/allens-rule-revisited-temperature-influences-bone-serrat/e6dac2141556576bab1ac7da3cac2398/?utm_source=publicapi",
+    "doi": "10.1002/ar.22763"
+   }
+  ]
+ },
+ "75": {
+  "query": "Do environment and sex jointly determine continuous traits such as tail length?",
+  "n_results": 19,
+  "results": [
+   {
+    "title": "SEXUAL SELECTION IN THE MONOGAMOUS BARN SWALLOW (HIRUNDO RUSTICA). I. DETERMINANTS OF TAIL ORNAMENT SIZE",
+    "author": "A. Møller",
+    "n_authors": 1,
+    "year": 1991,
+    "journal": "Evolution",
+    "study_type": "cross-sectional study",
+    "citations": 127,
+    "takeaway": "Tail length in the monogamous barn swallow Hirundo rustica is 20% greater in males than in females, correlates with wing length, and has a 0.59 heritability, suggesting secondary sexual traits may show significant heritability.",
+    "url": "https://consensus.app/papers/sexual-selection-in-the-monogamous-barn-swallow-hirundo-mller/08b97e10bf52503eab1f92e7f8cdec0c/?utm_source=publicapi",
+    "doi": "10.1111/j.1558-5646.1991.tb02690.x"
+   },
+   {
+    "title": "Sexual Dimorphism in Three Populations of the Chiala Mountain Salamander, Batrachuperus karlschmidti (Caudata: Hynobiidae)",
+    "author": "Xiuying Liu",
+    "n_authors": 6,
+    "year": 2026,
+    "journal": "Animals : an Open Access Journal from MDPI",
+    "study_type": "cross-sectional study",
+    "citations": 0,
+    "takeaway": "Sexual dimorphism in body shape, not body size, is found in three populations of the Chiala Mountain Salamander, with males having larger head and limb dimensions and females having larger interlimb distance.",
+    "url": "https://consensus.app/papers/sexual-dimorphism-in-three-populations-of-the-chiala-liu-shen/c350d86400e05e5c9cfef8e63a46ce4a/?utm_source=publicapi",
+    "doi": "10.3390/ani16020332"
+   },
+   {
+    "title": "Aging trajectories are trait- and sex-specific in the long-lived Alpine swift",
+    "author": "Héloïse Moullec",
+    "n_authors": 3,
+    "year": 2023,
+    "journal": "Frontiers in Ecology and Evolution",
+    "study_type": "other",
+    "citations": 5,
+    "takeaway": "Alpine swifts show age-dependent variation in traits, with sex-specific asynchrony in aging, and senescence rates differing between sexes.",
+    "url": "https://consensus.app/papers/aging-trajectories-are-trait-and-sexspecific-in-the-moullec-reichert/5f79ce32a3b850aeb7bcee146d5f8a1b/?utm_source=publicapi",
+    "doi": "10.3389/fevo.2023.983266"
+   },
+   {
+    "title": "The influence of natural selection and sexual selection on the tails of sea-snakes (Laticauda colubrina)",
+    "author": "R. Shine",
+    "n_authors": 2,
+    "year": 2001,
+    "journal": "Biological Journal of The Linnean Society",
+    "study_type": "cross-sectional study",
+    "citations": 36,
+    "takeaway": "Relative tail length in male sea kraits influences their fitness through natural and sexual selection, with longer tails enhancing survival, growth, and locomotor ability, while shorter tails improve swimming speed and mating success.",
+    "url": "https://consensus.app/papers/the-influence-of-natural-selection-and-sexual-selection-on-shine-shetty/b63757aaa96f59c28927f5551600bde8/?utm_source=publicapi",
+    "doi": "10.1006/bijl.2001.0560"
+   },
+   {
+    "title": "Disrupted development from head to tail: Pervasive effects of postnatal restricted resources on neurobiological, behavioral, and morphometric outcomes",
+    "author": "M. Kent",
+    "n_authors": 18,
+    "year": 2022,
+    "journal": "Frontiers in Behavioral Neuroscience",
+    "study_type": "rct",
+    "citations": 4,
+    "takeaway": "Postnatal restricted resources in Long-Evans rats disrupted development, affecting neurobiology, behavior, and morphology.",
+    "url": "https://consensus.app/papers/disrupted-development-from-head-to-tail-pervasive-effects-kent-jacob/493f94defd665f7a950c8bd5b3c9ffe3/?utm_source=publicapi",
+    "doi": "10.3389/fnbeh.2022.910056"
+   },
+   {
+    "title": "Selection on multiple sexual signals in two Central and Eastern European populations of the barn swallow",
+    "author": "P. L. Pap",
+    "n_authors": 12,
+    "year": 2019,
+    "journal": "Ecology and Evolution",
+    "study_type": "other",
+    "citations": 9,
+    "takeaway": "Sexual selection on tail length and ventral coloration varies between barn swallow populations, with darker coloration being more advantageous in early breeding stages, but the underlying mechanism remains unclear.",
+    "url": "https://consensus.app/papers/selection-on-multiple-sexual-signals-in-two-central-and-pap-flp/2356c04aa0305a9799b938b5aed2e8de/?utm_source=publicapi",
+    "doi": "10.1002/ece3.5629"
+   }
+  ]
+ },
+ "35": {
+  "query": "Does autologous ovarian tissue transplantation restore fertility?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Current Success and Efficiency of Autologous Ovarian Transplantation: A Meta-Analysis",
+    "author": "F. Pacheco",
+    "n_authors": 2,
+    "year": 2017,
+    "journal": "Reproductive Sciences",
+    "study_type": "meta-analysis",
+    "citations": 207,
+    "takeaway": "Cryopreservation of ovarian tissue before autotransplantation shows promising success rates, making it a viable option for fertility preservation.",
+    "url": "https://consensus.app/papers/current-success-and-efficiency-of-autologous-ovarian-pacheco-oktay/0d61cca61fcb5fe6a057e48174e22138/?utm_source=publicapi",
+    "doi": "10.1177/1933719117702251"
+   },
+   {
+    "title": "Evaluation of ovarian tissue transplantation: results from three clinical centers.",
+    "author": "M. Shapira",
+    "n_authors": 4,
+    "year": 2020,
+    "journal": "Fertility and sterility",
+    "study_type": "cohort study",
+    "citations": 113,
+    "takeaway": "Ovarian tissue autotransplantation (AT) is highly effective in restoring fertility in sterilized patients, with prior chemotherapy exposure not being a contraindication, and repeated transplantation may be feasible in selected cases.",
+    "url": "https://consensus.app/papers/evaluation-of-ovarian-tissue-transplantation-results-shapira-dolmans/9253932d27185eb5b315dfeb665a097c/?utm_source=publicapi",
+    "doi": "10.1016/j.fertnstert.2020.03.037"
+   },
+   {
+    "title": "Comparison of Orthotopic and Heterotopic Autologous Ovarian Tissue Transplantation (OTT) Outcomes.",
+    "author": "K. Oktay",
+    "n_authors": 2,
+    "year": 2023,
+    "journal": "Fertility and sterility",
+    "study_type": "cohort study",
+    "citations": 28,
+    "takeaway": "Orthotopic ovarian tissue transplantation is preferred for those intending to conceive, while heterotopic transplantation is less invasive for those primarily seeking endocrine function restoration.",
+    "url": "https://consensus.app/papers/comparison-of-orthotopic-and-heterotopic-autologous-oktay-marin/47f178f63e8e5aab8b4f5d82c998f83a/?utm_source=publicapi",
+    "doi": "10.1016/j.fertnstert.2023.10.015"
+   },
+   {
+    "title": "Strategies to safely use cryopreserved ovarian tissue to restore fertility after cancer: a systematic review.",
+    "author": "L. Eijkenboom",
+    "n_authors": 6,
+    "year": 2022,
+    "journal": "Reproductive biomedicine online",
+    "study_type": "systematic review",
+    "citations": 26,
+    "takeaway": "Experimental strategies are being developed to safely use cryopreserved ovarian tissue to restore fertility after cancer, but require further research and ethical considerations.",
+    "url": "https://consensus.app/papers/strategies-to-safely-use-cryopreserved-ovarian-tissue-to-eijkenboom-saedt/dd006eed45b15eab83b352e9b5f8e7ed/?utm_source=publicapi",
+    "doi": "10.1016/j.rbmo.2022.05.020"
+   },
+   {
+    "title": "Fresh and cryopreserved ovarian tissue transplantation for preserving reproductive and endocrine function: a systematic review and individual patient data meta-analysis",
+    "author": "H. Khattak",
+    "n_authors": 20,
+    "year": 2022,
+    "journal": "Human Reproduction Update",
+    "study_type": "meta-analysis",
+    "citations": 141,
+    "takeaway": "Ovarian tissue cryopreservation and transplantation can effectively restore reproductive and hormonal functions in women, potentially preserving endocrine function as well.",
+    "url": "https://consensus.app/papers/fresh-and-cryopreserved-ovarian-tissue-transplantation-khattak-malhas/185bdfffa77c58e3ab9ef1593fb81ce2/?utm_source=publicapi",
+    "doi": "10.1093/humupd/dmac003"
+   },
+   {
+    "title": "Ovarian function and reproductive outcome after ovarian tissue transplantation: a systematic review",
+    "author": "Sepideh Sheshpari",
+    "n_authors": 9,
+    "year": 2019,
+    "journal": "Journal of Translational Medicine",
+    "study_type": "systematic review",
+    "citations": 57,
+    "takeaway": "Ovarian tissue transplantation effectively restores hormonal function, endocrine balance, and fertility outcomes in patients with predisposing conditions and cancer treatments.",
+    "url": "https://consensus.app/papers/ovarian-function-and-reproductive-outcome-after-ovarian-sheshpari-shahnazi/dd4eb5ff7c1458acb8fd3c7e04029e10/?utm_source=publicapi",
+    "doi": "10.1186/s12967-019-02149-2"
+   }
+  ]
+ },
+ "123": {
+  "query": "Can gastropod snails regenerate eyes and tentacles?",
+  "n_results": 18,
+  "results": [
+   {
+    "title": "Role of the Age Factor in Eye Regeneration in the Gastropod Achatina fulica",
+    "author": "O. S. Tartakovskaya",
+    "n_authors": 3,
+    "year": 2003,
+    "journal": "Biology Bulletin of the Russian Academy of Sciences",
+    "study_type": "non-randomized experimental study",
+    "citations": 9,
+    "takeaway": "In the snail Achatina fulica, eye regeneration decreases with age, but the period of regeneration increases, with regenerated eyes remaining smaller than normal eyes even after six months.",
+    "url": "https://consensus.app/papers/role-of-the-age-factor-in-eye-regeneration-in-the-gastropod-tartakovskaya-borisenko/3ec9c0abef7b5ad78448f1434e4b0a79/?utm_source=publicapi",
+    "doi": "10.1023/a:1023847510325"
+   },
+   {
+    "title": "[Age factor in eye regeneration of the gastropod mollusk Achatina fulica].",
+    "author": "O. S. Tartakovskaia",
+    "n_authors": 3,
+    "year": 2003,
+    "journal": "Izvestiia Akademii nauk. Seriia biologicheskaia",
+    "study_type": "non-randomized experimental study",
+    "citations": 0,
+    "takeaway": "The ability to regenerate the eye in the snail Achatina fulica increases with age, but the number of regenerated tentacles decreases and the regeneration period increases.",
+    "url": "https://consensus.app/papers/age-factor-in-eye-regeneration-of-the-gastropod-mollusk-tartakovskaia-borisenko/22b74138db8b550186a8ec53bcf8f160/?utm_source=publicapi",
+    "doi": ""
+   },
+   {
+    "title": "Studies on eye regeneration in a snail, Helix aspersa.",
+    "author": "R. M. Eakin",
+    "n_authors": 2,
+    "year": 1973,
+    "journal": "The Journal of experimental zoology",
+    "study_type": "non-rct in vitro",
+    "citations": 37,
+    "takeaway": "Nerve fibers influence the regeneration of the eye in Helix aspersa snails, with a pigmented interstitial cell playing a prominent role in the tentacle regeneration process.",
+    "url": "https://consensus.app/papers/studies-on-eye-regeneration-in-a-snail-helix-aspersa-eakin-ferlatte/f8a833a658ac51e3b030a31f061426e0/?utm_source=publicapi",
+    "doi": "10.1002/jez.1401840107"
+   },
+   {
+    "title": "Clodronate Liposome-Mediated Phagocytic Hemocyte Depletion Affects the Regeneration of the Cephalic Tentacle of the Invasive Snail, Pomacea canaliculata",
+    "author": "G. Bergamini",
+    "n_authors": 10,
+    "year": 2023,
+    "journal": "Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 7,
+    "takeaway": "Clodronate liposomes temporarily deplete phagocytic hemocytes in freshwater snails, halting tentacle regeneration onset and altering gene expressions related to oxygen transport, immunity, clotting, and inflammation.",
+    "url": "https://consensus.app/papers/clodronate-liposomemediated-phagocytic-hemocyte-bergamini-sacchi/7150bbd71af65ec7b4a5ab2f3cde265f/?utm_source=publicapi",
+    "doi": "10.3390/biology12070992"
+   },
+   {
+    "title": "Implanted cerebral ganglia produce supernumerary eyes and tentacles in host snails",
+    "author": "S. Moffett",
+    "n_authors": 2,
+    "year": 1981,
+    "journal": "Journal of Experimental Zoology",
+    "study_type": "non-randomized experimental study",
+    "citations": 48,
+    "takeaway": "Implanted cerebral ganglia in host snails can produce supernumerary eyes and tentacles, connecting with the host nervous system and periphery.",
+    "url": "https://consensus.app/papers/implanted-cerebral-ganglia-produce-supernumerary-eyes-moffett-austin/57edf45cc8ed5986b3f2b9bc3a4add96/?utm_source=publicapi",
+    "doi": "10.1002/jez.1402160214"
+   },
+   {
+    "title": "Restoration of morphological and functional integrity in the regenerating eye of the giant African land snail Achatina fulica",
+    "author": "M. Bobkova",
+    "n_authors": 5,
+    "year": 2004,
+    "journal": "Acta Zoologica",
+    "study_type": "non-randomized experimental study",
+    "citations": 14,
+    "takeaway": "The regenerating eye of the giant African land snail Achatina fulica is essentially the same as the original eye, with the exception of a smaller size due to reduced retinal cells.",
+    "url": "https://consensus.app/papers/restoration-of-morphological-and-functional-integrity-in-bobkova-tartakovskaya/dc4cc7f77f265465bbd6b9d7abeae4ca/?utm_source=publicapi",
+    "doi": "10.1111/j.0001-7272.2004.00152.x"
+   }
+  ]
+ },
+ "99": {
+  "query": "What is the comparative regenerative capacity across gastropod molluscs?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Regeneration in the dorids exemplified by Onchidoris muricata (Gastropoda, Nudibranchia)",
+    "author": "E. Nikitenko",
+    "n_authors": 3,
+    "year": 2024,
+    "journal": "Ruthenica, Russian Malacological Journal",
+    "study_type": "non-randomized experimental study",
+    "citations": 0,
+    "takeaway": "Dorid molluscs, specifically Onchidoris muricata, show varying regenerative abilities in chemosensory organs and dorsal body outgrowths, likely linked to their unique subepidermal calcite spicule complex.",
+    "url": "https://consensus.app/papers/regeneration-in-the-dorids-exemplified-by-onchidoris-nikitenko-anisenko/56d3a4c51d5d52c69029368efb5df9e3/?utm_source=publicapi",
+    "doi": "10.35885/10.35885/ruthenica.2024.34(1).3"
+   },
+   {
+    "title": "Neural regeneration in gastropod molluscs.",
+    "author": "S. Moffett",
+    "n_authors": 1,
+    "year": 1995,
+    "journal": "Progress in neurobiology",
+    "study_type": "literature review",
+    "citations": 55,
+    "takeaway": "Snails exhibit neural regeneration after injuries, demonstrating adaptability and potential for future applications in promoting neural regeneration in mammals.",
+    "url": "https://consensus.app/papers/neural-regeneration-in-gastropod-molluscs-moffett/3136744d30c6536ba394022ac3d663c8/?utm_source=publicapi",
+    "doi": "10.1016/0301-0082(95)80014-y"
+   },
+   {
+    "title": "Molluscs on acid: gastropod shell repair and strength in acidifying oceans",
+    "author": "D. Coleman",
+    "n_authors": 3,
+    "year": 2014,
+    "journal": "Marine Ecology Progress Series",
+    "study_type": "non-randomized experimental study",
+    "citations": 71,
+    "takeaway": "Ocean acidification significantly reduces the survival and protection of less resistant mollusc species, potentially increasing predation pressure and competition within intertidal communities.",
+    "url": "https://consensus.app/papers/molluscs-on-acid-gastropod-shell-repair-and-strength-in-coleman-byrne/4ef7777c22cf59359ad5e34314ae61e9/?utm_source=publicapi",
+    "doi": "10.3354/meps10887"
+   },
+   {
+    "title": "Among-individual differences in risk-taking behavior are associated with shell repair rate but not growth in a marine gastropod",
+    "author": "T. Cornwell",
+    "n_authors": 3,
+    "year": 2024,
+    "journal": "Behavioral Ecology and Sociobiology",
+    "study_type": "non-randomized experimental study",
+    "citations": 1,
+    "takeaway": "Bolder individuals in the marine gastropod Buccinum undatum repair shells more slowly during the second stage of repair, but growth is not correlated with either boldness or repair rates.",
+    "url": "https://consensus.app/papers/amongindividual-differences-in-risktaking-behavior-are-cornwell-colvin/be3e456d82b15a5b9b487c87f1c87304/?utm_source=publicapi",
+    "doi": "10.1007/s00265-024-03520-0"
+   },
+   {
+    "title": "Relative cost of producing skeletal organic matrix versus calcification: Evidence from marine gastropods",
+    "author": "A. R. Palmer",
+    "n_authors": 1,
+    "year": 1983,
+    "journal": "Marine Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 148,
+    "takeaway": "Producing skeletal organic matrix is more metabolically demanding than calcification, potentially explaining the evolutionary loss of high organic matrix skeletal microstructures in major invertebrate groups.",
+    "url": "https://consensus.app/papers/relative-cost-of-producing-skeletal-organic-matrix-versus-palmer/19afeef3e72a59ee9886bead5bfb5788/?utm_source=publicapi",
+    "doi": "10.1007/bf00406014"
+   },
+   {
+    "title": "Deciphering regeneration through non-model animals: A century of experiments on cephalopod mollusks and an outlook at the future",
+    "author": "Fabio de Sio",
+    "n_authors": 2,
+    "year": 2023,
+    "journal": "Frontiers in Cell and Developmental Biology",
+    "study_type": "literature review",
+    "citations": 4,
+    "takeaway": "Cephalopod mollusks offer unique insights into regeneration mechanisms and their potential as valuable models for understanding complex cellular and molecular mechanisms in biology and medicine.",
+    "url": "https://consensus.app/papers/deciphering-regeneration-through-nonmodel-animals-a-sio-imperadore/7b5db403c50e51b2bf8574ab2a0e351f/?utm_source=publicapi",
+    "doi": "10.3389/fcell.2022.1072382"
+   }
+  ]
+ },
+ "46": {
+  "query": "Can freshwater snails regenerate amputated body parts?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "A New Protocol of Computer-Assisted Image Analysis Highlights the Presence of Hemocytes in the Regenerating Cephalic Tentacles of Adult Pomacea canaliculata",
+    "author": "G. Bergamini",
+    "n_authors": 4,
+    "year": 2021,
+    "journal": "International Journal of Molecular Sciences",
+    "study_type": null,
+    "citations": 7,
+    "takeaway": "A new computer-assisted image analysis protocol can help quantify hemocytes in regenerating tissues, aiding in understanding the role of immune-related cells in sensory organ regeneration.",
+    "url": "https://consensus.app/papers/a-new-protocol-of-computerassisted-image-analysis-bergamini-ahmad/20939824e04b5ed99a638724b9363dff/?utm_source=publicapi",
+    "doi": "10.3390/ijms22095023"
+   },
+   {
+    "title": "Clodronate Liposome-Mediated Phagocytic Hemocyte Depletion Affects the Regeneration of the Cephalic Tentacle of the Invasive Snail, Pomacea canaliculata",
+    "author": "G. Bergamini",
+    "n_authors": 10,
+    "year": 2023,
+    "journal": "Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 7,
+    "takeaway": "Clodronate liposomes temporarily deplete phagocytic hemocytes in freshwater snails, halting tentacle regeneration onset and altering gene expressions related to oxygen transport, immunity, clotting, and inflammation.",
+    "url": "https://consensus.app/papers/clodronate-liposomemediated-phagocytic-hemocyte-bergamini-sacchi/7150bbd71af65ec7b4a5ab2f3cde265f/?utm_source=publicapi",
+    "doi": "10.3390/biology12070992"
+   },
+   {
+    "title": "Model systems for regeneration: Hydra",
+    "author": "M. Vogg",
+    "n_authors": 3,
+    "year": 2019,
+    "journal": "Development",
+    "study_type": "literature review",
+    "citations": 92,
+    "takeaway": "Freshwater polyps serve as a powerful model system for studying regeneration, with recent results questioning the classical self-enhancement and long-range inhibition model and highlighting the need for integrative explanations incorporating biochemical and mechanical signaling.",
+    "url": "https://consensus.app/papers/model-systems-for-regeneration-hydra-vogg-galliot/1c23f533b59e5ae3b33b889465cabf03/?utm_source=publicapi",
+    "doi": "10.1242/dev.177212"
+   },
+   {
+    "title": "Eye regeneration in the mystery snail.",
+    "author": "M. Bever",
+    "n_authors": 2,
+    "year": 1988,
+    "journal": "The Journal of experimental zoology",
+    "study_type": "non-randomized experimental study",
+    "citations": 15,
+    "takeaway": "Mystery snails can regenerate their eyes completely after amputation, demonstrating a similar process to that of amphibian limbs.",
+    "url": "https://consensus.app/papers/eye-regeneration-in-the-mystery-snail-bever-borgens/c4284c368f555d2da2910aaae90a1b19/?utm_source=publicapi",
+    "doi": "10.1002/jez.1402450106"
+   },
+   {
+    "title": "Effect of temperature and body size on anterior and posterior regeneration in Hermodice carunculata (Polychaeta, Amphinomidae)",
+    "author": "Andrea Toso",
+    "n_authors": 5,
+    "year": 2024,
+    "journal": "Marine Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 6,
+    "takeaway": "Hermodice carunculata can efficiently regenerate anterior body parts in 12-20 weeks at 22°C, with larger worms surviving 100% mortality during blastema formation.",
+    "url": "https://consensus.app/papers/effect-of-temperature-and-body-size-on-anterior-and-toso-mammone/ae775c7f6b2c5bbe87d36eba34e8b86f/?utm_source=publicapi",
+    "doi": "10.1007/s00227-024-04468-5"
+   },
+   {
+    "title": "Electrical responses to amputation of the eye in the mystery snail.",
+    "author": "M. Bever",
+    "n_authors": 2,
+    "year": 1988,
+    "journal": "The Journal of experimental zoology",
+    "study_type": "non-randomized experimental study",
+    "citations": 8,
+    "takeaway": "Ionic current may control eye regeneration in the mystery snail, with wound healing processes occurring within 60 hours post-amputation.",
+    "url": "https://consensus.app/papers/electrical-responses-to-amputation-of-the-eye-in-the-bever-borgens/b0a71de33bb1502ebc701a403c61aca9/?utm_source=publicapi",
+    "doi": "10.1002/jez.1402450107"
+   }
+  ]
+ },
+ "47": {
+  "query": "Can the polychaete Ophryotrocha regenerate its anterior end?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Regeneration in the gonochoristic polychaete Ophryotrocha notoglandulata",
+    "author": "H. Pfannenstiel",
+    "n_authors": 1,
+    "year": 1974,
+    "journal": "Marine Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 13,
+    "takeaway": "The gonochoristic polychaete Ophryotrocha notoglandulata can regenerate both anterior and posterior segments, with regeneration capacity being identical in both male and female forms, and the prostomium not necessary for caudal regeneration.",
+    "url": "https://consensus.app/papers/regeneration-in-the-gonochoristic-polychaete-pfannenstiel/f79b296ad643598fa68ec5ba567816ca/?utm_source=publicapi",
+    "doi": "10.1007/bf00391902"
+   },
+   {
+    "title": "Morphological and molecular features of early regeneration in the marine annelid Ophryotrocha xiamen",
+    "author": "Ruanni Chen",
+    "n_authors": 4,
+    "year": 2022,
+    "journal": "Scientific Reports",
+    "study_type": "non-randomized experimental study",
+    "citations": 1,
+    "takeaway": "The marine annelid Ophryotrocha xiamen shows early regeneration, with wound healing achieved within one day and blastema formation one day later, and 243 genes identified in metabolism and signal transduction.",
+    "url": "https://consensus.app/papers/morphological-and-molecular-features-of-early-chen-mukhtar/e88b76dd87e55a39a06a8c03e7dd41ee/?utm_source=publicapi",
+    "doi": "10.1038/s41598-022-04870-3"
+   },
+   {
+    "title": "A Comprehensive Ultrastructure and Transcriptome Analyses of Early Regeneration in Ophryotrocha Xiamen Sp. Nov. (Annelida: Dorvilleidae)",
+    "author": "Ruanni Chen",
+    "n_authors": 5,
+    "year": 2020,
+    "journal": null,
+    "study_type": "other",
+    "citations": 0,
+    "takeaway": "Ophryotrocha Xiamen Sp. Nov. is a suitable model species for studying early regeneration mechanisms in annelids, with similar features to other invertebrates.",
+    "url": "https://consensus.app/papers/a-comprehensive-ultrastructure-and-transcriptome-chen-mukhtar/27e17d553feb5ace96d4c6869f3f4452/?utm_source=publicapi",
+    "doi": "10.21203/rs.3.rs-96086/v1"
+   },
+   {
+    "title": "A NOTE ON AN ABNORMAL",
+    "author": "Leonnates Jousseaumei",
+    "n_authors": 3,
+    "year": 2010,
+    "journal": null,
+    "study_type": "other",
+    "citations": 0,
+    "takeaway": "Polychaetes can regenerate lost or damaged parts, with new segments and heads emerging at the anterior end, after injury, and this power is extremely valuable for their survival.",
+    "url": "https://consensus.app/papers/a-note-on-an-abnormal-jousseaumei-family/89e0857e04a65fb293747f1f44451d3b/?utm_source=publicapi",
+    "doi": ""
+   },
+   {
+    "title": "Nature’s Secret Neuro-Regeneration Pathway in Axolotls, Polychaetes and Planarians for Human Therapeutic Target Pathways",
+    "author": "Nur Izzati Mansor",
+    "n_authors": 7,
+    "year": 2024,
+    "journal": "International Journal of Molecular Sciences",
+    "study_type": "literature review",
+    "citations": 2,
+    "takeaway": "Axolotls, polychaetes, and planarians can regenerate their neural systems after amputation, offering a potential new perspective on therapeutic approaches for human neuro-regeneration.",
+    "url": "https://consensus.app/papers/natures-secret-neuroregeneration-pathway-in-axolotls-mansor-balqis/4b6737cccf78525ebb587f924617a81d/?utm_source=publicapi",
+    "doi": "10.3390/ijms252211904"
+   },
+   {
+    "title": "Cellular and molecular profiles of anterior nervous system regeneration in Diopatra claparedii Grube, 1878 (Annelida, Polychaeta)",
+    "author": "Mohd Ulul Ilmie Ahmad Nazri",
+    "n_authors": 8,
+    "year": 2021,
+    "journal": "Heliyon",
+    "study_type": "non-randomized experimental study",
+    "citations": 0,
+    "takeaway": "The polychaete Diopatra claparedii Grube, 1878 shows cellular and molecular changes during early nervous system regeneration, providing insights into regeneration within Annelida and understanding neurodegenerative diseases.",
+    "url": "https://consensus.app/papers/cellular-and-molecular-profiles-of-anterior-nervous-nazri-mahmud/b3e9bd7ce530567980b18c6486c7e1cf/?utm_source=publicapi",
+    "doi": "10.1016/j.heliyon.2021.e06307"
+   }
+  ]
+ },
+ "118": {
+  "query": "Do annelids regenerate head and tail ends differently along the body axis?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Wnt/β-catenin signaling promotes posterior axial regeneration in non-regenerative tissue of the annelid Capitella teleta",
+    "author": "Lauren F. Kunselman",
+    "n_authors": 2,
+    "year": 2025,
+    "journal": "bioRxiv",
+    "study_type": "non-rct in vitro",
+    "citations": 3,
+    "takeaway": "Wnt/-catenin signaling activates latent regenerative potential in non-regenerating tissue, but additional cell signaling pathways are needed for complete regeneration.",
+    "url": "https://consensus.app/papers/wntcatenin-signaling-promotes-posterior-axial-kunselman-seaver/45840a42afb65f56a21b28d1a4c2c980/?utm_source=publicapi",
+    "doi": "10.1101/2025.01.13.632813"
+   },
+   {
+    "title": "Comparative Aspects of Annelid Regeneration: Towards Understanding the Mechanisms of Regeneration",
+    "author": "R. P. Kostyuchenko",
+    "n_authors": 2,
+    "year": 2021,
+    "journal": "Genes",
+    "study_type": null,
+    "citations": 47,
+    "takeaway": "Annelids exhibit diverse regeneration abilities, with some showing extensive regeneration and others showing limited tissue regeneration, highlighting the need to understand the cellular and molecular basis of regeneration in annelids.",
+    "url": "https://consensus.app/papers/comparative-aspects-of-annelid-regeneration-towards-kostyuchenko-kozin/9fc02328a0295983ac327c453893c96d/?utm_source=publicapi",
+    "doi": "10.3390/genes12081148"
+   },
+   {
+    "title": "Evolutionary Aspects of Annelid Regeneration",
+    "author": "V. G. Martinez-Acosta",
+    "n_authors": 2,
+    "year": 2015,
+    "journal": null,
+    "study_type": "literature review",
+    "citations": 16,
+    "takeaway": "Annelids vary in their ability to regenerate body segments, with tail regeneration being nearly universal and head regeneration depending on the number of segments lost.",
+    "url": "https://consensus.app/papers/evolutionary-aspects-of-annelid-regeneration-martinez-acosta-zoran/fccfb815eddf5ef3a80678f74773026f/?utm_source=publicapi",
+    "doi": "10.1002/9780470015902.a0022103.pub2"
+   },
+   {
+    "title": "What Role Do Annelid Neoblasts Play? A Comparison of the Regeneration Patterns in a Neoblast-Bearing and a Neoblast-Lacking Enchytraeid Oligochaete",
+    "author": "M. Myohara",
+    "n_authors": 1,
+    "year": 2012,
+    "journal": "PLoS ONE",
+    "study_type": "non-randomized experimental study",
+    "citations": 32,
+    "takeaway": "Annelid neoblasts are more essential for efficient asexual reproduction than for regeneration of missing body parts, as they do not show antero-posterior gradient of regeneration ability along the body axis.",
+    "url": "https://consensus.app/papers/what-role-do-annelid-neoblasts-play-a-comparison-of-the-myohara/178c3c7451d95fc9a6f091493628ffc0/?utm_source=publicapi",
+    "doi": "10.1371/journal.pone.0037319"
+   },
+   {
+    "title": "Regeneration in Annelids",
+    "author": "M. Zoran",
+    "n_authors": 1,
+    "year": 2010,
+    "journal": null,
+    "study_type": "literature review",
+    "citations": 6,
+    "takeaway": "Annelids can regenerate tail segments nearly universally, but the ability to regenerate head segments varies among species, suggesting regeneration ability may be an ancient trait lost during evolution.",
+    "url": "https://consensus.app/papers/regeneration-in-annelids-zoran/9f2429304aa15ed39e6cbc15a9c62c78/?utm_source=publicapi",
+    "doi": "10.1002/9780470015902.a0022103"
+   },
+   {
+    "title": "Bipolar head regeneration induced by artificial in (Annelida,",
+    "author": "Shishin Kawamoto",
+    "n_authors": 3,
+    "year": 2022,
+    "journal": null,
+    "study_type": "non-randomized experimental study",
+    "citations": 0,
+    "takeaway": "Bipolar head regeneration in the Enchytraeida Oligochaeta Enchytraeus japonensis worm occurs only after artificial amputation, with anesthesia before amputation increasing the frequency of bipolar head regeneration.",
+    "url": "https://consensus.app/papers/bipolar-head-regeneration-induced-by-artificial-in-kawamoto-yoshida-noro/3d36d7c1c90b530c93afa44c6a265104/?utm_source=publicapi",
+    "doi": ""
+   }
+  ]
+ },
+ "104": {
+  "query": "Does the environment induce body asymmetry in hermit crabs?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Environmentally induced subsymmetry in the hermit crab, Calcinus dapsiles Morgan (Decapoda, Diogenidae).",
+    "author": "G. J. Morgan",
+    "n_authors": 1,
+    "year": 2024,
+    "journal": null,
+    "study_type": "other",
+    "citations": 1,
+    "takeaway": "The hermit crab Calcinus dapsiles Morgan exhibits more symmetrical body shape and uropods than usual when living in a non-coiled shelter, suggesting environmental factors may influence their symmetry.",
+    "url": "https://consensus.app/papers/environmentally-induced-subsymmetry-in-the-hermit-crab-morgan/69c717b375535665b8e465fe879b863b/?utm_source=publicapi",
+    "doi": ""
+   },
+   {
+    "title": "CENTRAL AND PERIPHERAL ORIGINS OF ASYMMETRY IN THE ABDOMINAL MOTOR SYSTEM OF THE HERMIT CRAB *",
+    "author": "W. Chapple",
+    "n_authors": 1,
+    "year": 1977,
+    "journal": "Annals of the New York Academy of Sciences",
+    "study_type": "other",
+    "citations": 6,
+    "takeaway": "Hermit crabs' abdominal nervous system shows asymmetries in different directions, highlighting the complexity of laterality and the adaptation of their body to their environment.",
+    "url": "https://consensus.app/papers/central-and-peripheral-origins-of-asymmetry-in-the-chapple/de93a782d8c95f7fb2e3169cf2d23fdd/?utm_source=publicapi",
+    "doi": "10.1111/j.1749-6632.1977.tb41897.x"
+   },
+   {
+    "title": "Asymmetrical morphology and growth of the hermit crab Pagurus filholi (Decapoda, Anomura, Paguridae) reared in non-dextral shell conditions",
+    "author": "M. Imafuku",
+    "n_authors": 2,
+    "year": 2014,
+    "journal": "Crustaceana",
+    "study_type": "non-randomized experimental study",
+    "citations": 4,
+    "takeaway": "Hermit crab Pagurus filholi shows asymmetrical morphology when reared in non-dextral shell conditions, with the right uropod becoming extended and the right major cheliped becoming enlarged.",
+    "url": "https://consensus.app/papers/asymmetrical-morphology-and-growth-of-the-hermit-crab-imafuku-ikeda/3379e2f5f2e95d5c8a98a34a8ff10a8a/?utm_source=publicapi",
+    "doi": "10.1163/15685403-00003295"
+   },
+   {
+    "title": "Bergmann-Rensch Continuum Under Shell: Gender-Specific Trend in Response to Latitudinal Gradient",
+    "author": "V. Vale",
+    "n_authors": 3,
+    "year": 2024,
+    "journal": "Evolutionary Biology",
+    "study_type": "systematic review",
+    "citations": 1,
+    "takeaway": "Female hermit crabs show a gender-specific trend in body size in response to latitudinal gradients, suggesting that latitude increases the interpopulational body effect only in females.",
+    "url": "https://consensus.app/papers/bergmannrensch-continuum-under-shell-genderspecific-vale-freire/1cebc1b84a9652388287c40e9d604ffd/?utm_source=publicapi",
+    "doi": "10.1007/s11692-024-09628-5"
+   },
+   {
+    "title": "Genes for asymmetry easily overruled",
+    "author": "A. Harvey",
+    "n_authors": 1,
+    "year": 1998,
+    "journal": "Nature",
+    "study_type": "non-randomized experimental study",
+    "citations": 14,
+    "takeaway": "Hermit crab Clibanarius vittatus's asymmetry can be easily overridden by environmental factors, potentially aiding in the evolution of symmetrical king crabs and coconut crabs from hermit crab ancestors.",
+    "url": "https://consensus.app/papers/genes-for-asymmetry-easily-overruled-harvey/570a4b5de9eb5fed86fa20177dbf141b/?utm_source=publicapi",
+    "doi": "10.1038/32798"
+   },
+   {
+    "title": "Mechanisms causing size differences of the land hermit crab Coenobita rugosus among eco-islands in Southern Taiwan",
+    "author": "Chia-Hsuan Hsu",
+    "n_authors": 2,
+    "year": 2017,
+    "journal": "PLoS ONE",
+    "study_type": "non-randomized experimental study",
+    "citations": 17,
+    "takeaway": "Dongsha Island's land hermit crabs have a larger body size and faster growth due to their preference for seagrass over dicot leaves, suggesting a food hypothesis.",
+    "url": "https://consensus.app/papers/mechanisms-causing-size-differences-of-the-land-hermit-hsu-soong/e7099813ff37511aa67ad7aa576c50f4/?utm_source=publicapi",
+    "doi": "10.1371/journal.pone.0174319"
+   }
+  ]
+ },
+ "45": {
+  "query": "Can crustaceans regenerate specialized mouthpart appendages?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Autotomy and Regeneration of Appendages in Crustaceans: A Review",
+    "author": "Lei Liu",
+    "n_authors": 8,
+    "year": 2024,
+    "journal": "Journal of Ocean University of China",
+    "study_type": null,
+    "citations": 5,
+    "takeaway": "Autotomy in crustaceans is a self-protection mechanism that can affect foraging efficiency, growth, and reproduction, with chelicerae removal reducing cannibalism in commercial production.",
+    "url": "https://consensus.app/papers/autotomy-and-regeneration-of-appendages-in-crustaceans-a-liu-tao/185827e03f235b7395ef505a67bf0e13/?utm_source=publicapi",
+    "doi": "10.1007/s11802-024-5747-1"
+   },
+   {
+    "title": "Functional Study of the BMP Signaling Pathway in Appendage Regeneration of Exopalaemon carinicauda",
+    "author": "Chaofan Xing",
+    "n_authors": 12,
+    "year": 2025,
+    "journal": "Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 0,
+    "takeaway": "The BMP signaling pathway plays a critical role in the early stages of appendage regeneration in Exopalaemon carinicauda, affecting wound healing and blastema regeneration time.",
+    "url": "https://consensus.app/papers/functional-study-of-the-bmp-signaling-pathway-in-appendage-xing-li/69c99242ebf7554f84c8415d748529b0/?utm_source=publicapi",
+    "doi": "10.3390/biology14080940"
+   },
+   {
+    "title": "Studies on the regeneration of crustacean appendages",
+    "author": "G. Hooper",
+    "n_authors": 1,
+    "year": 1918,
+    "journal": null,
+    "study_type": "non-randomized experimental study",
+    "citations": 0,
+    "takeaway": "Crustacean appendage regeneration shows a similar direction of differentiation to embryonic development, suggesting that social pressure influences the direction of differentiation.",
+    "url": "https://consensus.app/papers/studies-on-the-regeneration-of-crustacean-appendages-hooper/3dcd95d9f29750dab5bd42f2d8b79e7d/?utm_source=publicapi",
+    "doi": "10.5962/bhl.title.70804"
+   },
+   {
+    "title": "Regenerated claws of the virile crayfish Faxonius virilis (Hagen, 1870) (Decapoda: Astacidea: Cambaridae) generate weaker pinching forces compared to original claws",
+    "author": "Z. Graham",
+    "n_authors": 4,
+    "year": 2021,
+    "journal": "Journal of Crustacean Biology",
+    "study_type": "other",
+    "citations": 14,
+    "takeaway": "Regenerated claws in virile crayfish Faxonius virilis generate weaker pinching forces (36% and 40% weaker in males and females) and have less muscle mass compared to original claws, potentially causing dishonest claws in crayfish.",
+    "url": "https://consensus.app/papers/regenerated-claws-of-the-virile-crayfish-faxonius-virilis-graham-vargas/30e8f8419ca95af7ad990c55c80fe446/?utm_source=publicapi",
+    "doi": "10.1093/jcbiol/ruab036"
+   },
+   {
+    "title": "CRISPR/Cas9 Mutagenesis Reveals Versatile Roles of Hox Genes in Crustacean Limb Specification and Evolution.",
+    "author": "Arnaud Martin",
+    "n_authors": 9,
+    "year": 2016,
+    "journal": "Current biology : CB",
+    "study_type": "non-randomized experimental study",
+    "citations": 176,
+    "takeaway": "Hox genes play diverse roles in crustacean limb specification and evolution, with abdominal-A and Abdominal-B essential for proper posterior patterning and Ubx affecting gill development.",
+    "url": "https://consensus.app/papers/crisprcas9-mutagenesis-reveals-versatile-roles-of-hox-martin-serano/1daf5997229f5011bee89995e10a5a07/?utm_source=publicapi",
+    "doi": "10.1016/j.cub.2015.11.021"
+   },
+   {
+    "title": "“Omics” data unveil early molecular response underlying limb regeneration in the Chinese mitten crab, Eriocheir sinensis",
+    "author": "Jun Wang",
+    "n_authors": 12,
+    "year": 2022,
+    "journal": "Science Advances",
+    "study_type": "other",
+    "citations": 45,
+    "takeaway": "The Chinese mitten crab's strong limb regeneration is facilitated by signal transduction and immune response, with novel genetic pathways identified.",
+    "url": "https://consensus.app/papers/omics-data-unveil-early-molecular-response-underlying-wang-chen/f961ed6ce08f5edabe39f8951a4d09d2/?utm_source=publicapi",
+    "doi": "10.1126/sciadv.abl4642"
+   }
+  ]
+ },
+ "22": {
+  "query": "Does the amount of melanin change during colour change in fish?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "A new insight into the pigmentation of the three-spined stickleback exposed to oxidative stress: day and night study",
+    "author": "E. Sokołowska",
+    "n_authors": 2,
+    "year": 2024,
+    "journal": "Frontiers in Marine Science",
+    "study_type": "non-randomized experimental study",
+    "citations": 5,
+    "takeaway": "Fish skin pigmentation can be used to assess their welfare and detect environmental toxic agents, but only in dorsal skin during the day.",
+    "url": "https://consensus.app/papers/a-new-insight-into-the-pigmentation-of-the-threespined-sokoowska-kulczykowska/dbe0b103181d585ea90a2ab4b0ee826d/?utm_source=publicapi",
+    "doi": "10.3389/fmars.2024.1401537"
+   },
+   {
+    "title": "Pigmentation and colour changing mechanism in fishes",
+    "author": "Mintumoni Pegu",
+    "n_authors": 2,
+    "year": 2025,
+    "journal": "Fish Physiology and Biochemistry",
+    "study_type": "literature review",
+    "citations": 5,
+    "takeaway": "Fish pigmentation is influenced by genetic, morphological, physiological, and environmental factors, with genes and nutritional contents playing crucial roles in pigment production and color change.",
+    "url": "https://consensus.app/papers/pigmentation-and-colour-changing-mechanism-in-fishes-pegu-singh/46466be1b42d5b9297cadae9ab06d53b/?utm_source=publicapi",
+    "doi": "10.1007/s10695-025-01549-0"
+   },
+   {
+    "title": "Effects of background adaptation on the skin color of Malaysian red tilapia",
+    "author": "Lan-mei Wang",
+    "n_authors": 6,
+    "year": 2020,
+    "journal": "Aquaculture",
+    "study_type": "non-randomized experimental study",
+    "citations": 29,
+    "takeaway": "Malaysian red tilapia's skin color is more affected by background color than body color, with white background resulting in paler skin and black background resulting in darker skin.",
+    "url": "https://consensus.app/papers/effects-of-background-adaptation-on-the-skin-color-of-wang-luo/a117fd7a5bd4576787daa3dea89355ec/?utm_source=publicapi",
+    "doi": "10.1016/j.aquaculture.2020.735061"
+   },
+   {
+    "title": "Response of body color change rearing under different light intensity conditions in farmed red spotted grouper, Epinephelus akaara",
+    "author": "Song-Hee Choi",
+    "n_authors": 4,
+    "year": 2020,
+    "journal": "Fisheries and Aquatic Sciences",
+    "study_type": "non-randomized experimental study",
+    "citations": 14,
+    "takeaway": "POMC mRNA and MC1R mRNA in red spotted grouper are involved in melanin synthesis and are controlled by light intensity, affecting body color changes during development.",
+    "url": "https://consensus.app/papers/response-of-body-color-change-rearing-under-different-choi-kim/4bcbf753594a5416a0e1f010f1ab3cab/?utm_source=publicapi",
+    "doi": "10.1186/s41240-020-00173-8"
+   },
+   {
+    "title": "Expression of genes for melanotropic peptides and their receptors for morphological color change in goldfish Carassius auratus.",
+    "author": "K. Mizusawa",
+    "n_authors": 5,
+    "year": 2017,
+    "journal": "General and comparative endocrinology",
+    "study_type": "non-randomized experimental study",
+    "citations": 30,
+    "takeaway": "Goldfish's morphological color changes are influenced by melanotropic peptides and their receptors, with mc5r playing a major role in reinforcing the function of MSH in morphological color changes.",
+    "url": "https://consensus.app/papers/expression-of-genes-for-melanotropic-peptides-and-their-mizusawa-yamamura/20b7c02cf73b5ff9aa052c7c64a490a7/?utm_source=publicapi",
+    "doi": "10.1016/j.ygcen.2017.06.012"
+   },
+   {
+    "title": "Background matching through fast and reversible melanin-based pigmentation plasticity in tadpoles comes with morphological and antioxidant changes",
+    "author": "H. C. Liedtke",
+    "n_authors": 5,
+    "year": 2023,
+    "journal": "Scientific Reports",
+    "study_type": "non-randomized experimental study",
+    "citations": 9,
+    "takeaway": "Tadpoles can rapidly and reversibly adjust their pigmentation to match environmental changes, leading to larger tail fins and improved redox status.",
+    "url": "https://consensus.app/papers/background-matching-through-fast-and-reversible-liedtke-lpez-hervas/86404b09c5e55916bd9e82b341a8c60e/?utm_source=publicapi",
+    "doi": "10.1038/s41598-023-39107-4"
+   }
+  ]
+ },
+ "102": {
+  "query": "Do muscle proteins adapt their thermal stability to an animal's body temperature?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Thermal Stability of Contractile Proteins in Bat Wing Muscles Explains Differences in Temperature Dependence of Whole-Muscle Shortening Velocity",
+    "author": "A. Rummel",
+    "n_authors": 3,
+    "year": 2022,
+    "journal": "Physiological and Biochemical Zoology",
+    "study_type": "other",
+    "citations": 3,
+    "takeaway": "Bat wing muscles' contractile properties are influenced by the thermal stability of myofibrillar ATPase, with forearm muscles having less thermal stability than pectoralis muscles, but no significant difference in acute temperature dependence of enzyme activity.",
+    "url": "https://consensus.app/papers/thermal-stability-of-contractile-proteins-in-bat-wing-rummel-swartz/c9ee063fb8dc598684065956034dd208/?utm_source=publicapi",
+    "doi": "10.1086/722449"
+   },
+   {
+    "title": "Influence of seasonal variations on the physicochemical properties and thermal stability of myofibrillar proteins in snakehead (Channa argus).",
+    "author": "Han Chen",
+    "n_authors": 7,
+    "year": 2025,
+    "journal": "Food chemistry",
+    "study_type": "bench experiment",
+    "citations": 0,
+    "takeaway": "Snakehead muscle proteins show seasonal variations in composition, physicochemical properties, and thermal stability, with summer snakehead being more thermally stable and exhibiting better protein quality.",
+    "url": "https://consensus.app/papers/influence-of-seasonal-variations-on-the-physicochemical-chen-gao/f5d02f710d395deaa4cab978790840d7/?utm_source=publicapi",
+    "doi": "10.1016/j.foodchem.2025.146628"
+   },
+   {
+    "title": "Physical and molecular bases of protein thermal stability and cold adaptation.",
+    "author": "F. Pucci",
+    "n_authors": 2,
+    "year": 2017,
+    "journal": "Current opinion in structural biology",
+    "study_type": "literature review",
+    "citations": 169,
+    "takeaway": "Protein thermal and cold stability and adaptation are complex and challenging, requiring further investigation for large-scale rational protein design.",
+    "url": "https://consensus.app/papers/physical-and-molecular-bases-of-protein-thermal-stability-pucci-rooman/c5edda81ee3f50438d3c9482707a2908/?utm_source=publicapi",
+    "doi": "10.1016/j.sbi.2016.12.007"
+   },
+   {
+    "title": "Coping with Thermal Challenges: Physiological Adaptations to Environmental Temperatures",
+    "author": "Glenn J. Tattersall",
+    "n_authors": 7,
+    "year": 2012,
+    "journal": "Comprehensive Physiology",
+    "study_type": "literature review",
+    "citations": 334,
+    "takeaway": "Animals adapt to environmental temperatures through biochemical modifications in proteins, allowing for physiological adjustments to maintain optimal body temperatures or defend against constant temperature changes.",
+    "url": "https://consensus.app/papers/coping-with-thermal-challenges-physiological-tattersall-sinclair/4c22d9b5301954619d1738d8be935897/?utm_source=publicapi",
+    "doi": "10.1002/cphy.c110055"
+   },
+   {
+    "title": "Dissecting the key residues crucial for the species-specific thermostability of muscle-type creatine kinase.",
+    "author": "Y. Gao",
+    "n_authors": 6,
+    "year": 2010,
+    "journal": "International journal of biological macromolecules",
+    "study_type": "other",
+    "citations": 4,
+    "takeaway": "Two residues near the dimer interface of muscle-type creatine kinase, the 46th and 146th residue, are crucial for species-specific thermal stability.",
+    "url": "https://consensus.app/papers/dissecting-the-key-residues-crucial-for-the-gao-wang/8eacffb66dae54008d165f3bee295ced/?utm_source=publicapi",
+    "doi": "10.1016/j.ijbiomac.2010.06.001"
+   },
+   {
+    "title": "Heat stability of fish muscle proteins",
+    "author": "R. Poulter",
+    "n_authors": 5,
+    "year": 2007,
+    "journal": "International Journal of Food Science and Technology",
+    "study_type": "bench experiment",
+    "citations": 48,
+    "takeaway": "Fish muscle proteins show varying heat stability, with more stable proteins found in fish found in higher ambient temperatures, while actins show similar thermal stability across all species.",
+    "url": "https://consensus.app/papers/heat-stability-of-fish-muscle-proteins-poulter-ledward/ef1586319a81590d824a60d2866e782e/?utm_source=publicapi",
+    "doi": "10.1111/j.1365-2621.1985.tb01918.x"
+   }
+  ]
+ },
+ "43": {
+  "query": "Can birds regenerate beak or bill tissue?",
+  "n_results": 20,
+  "results": [
+   {
+    "title": "Neurobiological basis of sensory perception: welfare implications of beak trimming.",
+    "author": "W. Kuenzel",
+    "n_authors": 1,
+    "year": 2007,
+    "journal": "Poultry science",
+    "study_type": "literature review",
+    "citations": 83,
+    "takeaway": "Beak trimming in the poultry industry can prevent head, feather, and vent pecking, but should be conservative and limited to young birds to avoid neuromas and deformed beaks.",
+    "url": "https://consensus.app/papers/neurobiological-basis-of-sensory-perception-welfare-kuenzel/d5cb4967c94956c0adf25505d84b2d3a/?utm_source=publicapi",
+    "doi": "10.1093/ps/86.6.1273"
+   },
+   {
+    "title": "Anatomical consequences of partial beak amputation (beak trimming) in turkeys.",
+    "author": "M. J. Gentle",
+    "n_authors": 3,
+    "year": 1995,
+    "journal": "Research in veterinary science",
+    "study_type": "non-randomized experimental study",
+    "citations": 30,
+    "takeaway": "Beak trimming in turkeys leads to significant tissue loss, but healing and regrowth are similar across all methods, with the Bio-Beaker producing the most tissue damage.",
+    "url": "https://consensus.app/papers/anatomical-consequences-of-partial-beak-amputation-beak-gentle-thorp/6289bc70bbc9583c89067becc907ec19/?utm_source=publicapi",
+    "doi": "10.1016/0034-5288(95)90070-5"
+   },
+   {
+    "title": "Understanding How Infrared Beak Treatment Affects the Beak Tissue and the Healing Response of Brown and White Feathered Layer Pullets",
+    "author": "S. Struthers",
+    "n_authors": 5,
+    "year": 2019,
+    "journal": "Animals : an Open Access Journal from MDPI",
+    "study_type": null,
+    "citations": 12,
+    "takeaway": "Infrared beak treatment effectively reduces beak growth and promotes healing in brown and white feathered layer chicks, with healing occurring by 21 days for both strains.",
+    "url": "https://consensus.app/papers/understanding-how-infrared-beak-treatment-affects-the-struthers-gupta/181d187d652a51768415f3481f5fc942/?utm_source=publicapi",
+    "doi": "10.3390/ani9090665"
+   },
+   {
+    "title": "Cellular, Molecular, and Genetic Mechanisms of Avian Beak Development and Evolution",
+    "author": "R. Schneider",
+    "n_authors": 1,
+    "year": 2024,
+    "journal": "Annual review of genetics",
+    "study_type": null,
+    "citations": 8,
+    "takeaway": "Avian beak development and evolution are influenced by cellular, molecular, and genetic mechanisms, with neural crest mesenchyme playing a key role in species-specific patterning and function.",
+    "url": "https://consensus.app/papers/cellular-molecular-and-genetic-mechanisms-of-avian-beak-schneider/af558d0d146b5bb3825cd6fca5feb217/?utm_source=publicapi",
+    "doi": "10.1146/annurev-genet-111523-101929"
+   },
+   {
+    "title": "Wound-Induced Regeneration in Feather Follicles: A Stepwise Strategy to Regenerate Stem Cells",
+    "author": "T. Jiang",
+    "n_authors": 5,
+    "year": 2025,
+    "journal": "Journal of Developmental Biology",
+    "study_type": "non-randomized experimental study",
+    "citations": 1,
+    "takeaway": "Feather follicles show remarkable resilience in wound healing, regenerating new feathers after various injuries using a stepwise strategy involving stem cells in the collar bulge, papillary ectoderm, and de-differentiated lower follicle sheath.",
+    "url": "https://consensus.app/papers/woundinduced-regeneration-in-feather-follicles-a-jiang-wu/0525ad4436845371adf4e1f10bc3734a/?utm_source=publicapi",
+    "doi": "10.3390/jdb13020010"
+   },
+   {
+    "title": "Repair and Regeneration.",
+    "author": "B. Purnell",
+    "n_authors": 2,
+    "year": 2017,
+    "journal": "Science",
+    "study_type": "other",
+    "citations": 290,
+    "takeaway": "This special issue highlights research on repair and regeneration mechanisms, with an eye towards therapeutic applications, to enhance the body's ability to repair and regenerate damaged tissues and organs.",
+    "url": "https://consensus.app/papers/repair-and-regeneration-purnell-hines/5cae9b95a49250fab742a66a4042c923/?utm_source=publicapi",
+    "doi": "10.1126/science.356.6342.1020"
+   }
+  ]
+ }
+}
