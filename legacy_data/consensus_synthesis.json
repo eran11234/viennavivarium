@@ -643,5 +643,65 @@
   "verdict": "Confirmed — regeneration taps growth machinery",
   "state": "The coupling of regeneration and growth is an active theme: regeneration reactivates developmental and growth programmes (Hox 'rebooting', morphogen-gradient scaling for proportional regrowth), and regenerative growth can alter overall growth dynamics.",
   "comparison": "Zuelzer's finding that regeneration accelerates the isopod's growth rate is an early empirical case for the regeneration-as-growth link — the idea, central to the institute's programme (Przibram's 'regeneration as growth-acceleration'), that regeneration taps the growth machinery. Modern work confirms regeneration reactivates growth and developmental programmes; uncited."
+ },
+ "132": {
+  "verdict": "Confirmed — annelid reproductive-organ regeneration",
+  "state": "Annelid (earthworm) reproductive-organ and whole-body regeneration is an active model field: earthworm prostate and clitellum systems are studied ex vivo, reproductive organs emerge in stereotyped sequences with body size, and immature worms regenerate comparably to adults.",
+  "comparison": "Part I of Janda's earthworm work confirms and details the capacity to regrow reproductive organs — exactly the annelid reproductive and germ regeneration now studied with modern models. Confirmed; uncited (companion to Part II)."
+ },
+ "138": {
+  "verdict": "Vindicated — systemic (thyroid) control of gill resorption",
+  "state": "Metamorphic gill resorption is now known to be driven systemically by thyroid hormone (locally fine-tuned by deiodinases) rather than by the gill's autonomous programme — gill resorption proceeds as part of coordinated, hormone-timed organ remodelling during metamorphosis.",
+  "comparison": "Kornfeld's demonstration that metamorphic gill-resorption depends on the whole organism — a systemic signal, not the gill's own programme — is an early, correct inference of the systemic (now known to be thyroid-hormone) control of metamorphic organ resorption. Vindicated; modern work names the hormone and the deiodinase timing. Uncited."
+ },
+ "140": {
+  "verdict": "Confirmed approach — instar growth; the constant ratio is approximate",
+  "state": "Instar-by-instar growth measurement is a standard method in insect biology, but the constant per-moult growth ratio (Dyar's/Przibram's rule) is now seen as only approximate, varying with species, diet and instar.",
+  "comparison": "Sztern's instar-by-instar quantification of the mantis growth curve adds to the institute's biometric growth programme (the 'Przibram's rule' lineage). Modern work keeps instar-based growth measurement as standard but finds the constant-ratio rule holds only roughly. Confirmed approach; uncited."
+ },
+ "141": {
+  "verdict": "Confirmed — pupal colour plasticity",
+  "state": "Environmentally cued pupal colouration in the cabbage white is established and increasingly molecular: pupal colour tracks substrate and light (a predator-protection adaptation), regulated by pigment-synthesis genes, with pupal development under hormonal (ecdysone) control.",
+  "comparison": "Brecher's 1924 cabbage-white study establishing the pupa's environmentally cued colour adaptation is one of her several papers on this now-confirmed plasticity, mapped today to pigment genes and ecdysone-timed pupal development. Confirmed; uncited."
+ },
+ "143": {
+  "verdict": "Explained — conditions for antenna→leg homeosis (Hox/position)",
+  "state": "Homeotic antenna-to-leg regeneration is understood through Hox and selector-gene control of appendage identity, with the conditions (amputation level, positional value) determining whether a leg or antenna regenerates fitting the positional-information framework.",
+  "comparison": "Brecher's careful definition of the conditions — notably amputation level — under which the stick insect Dixippus regenerates a leg where an antenna belongs is a controlled study of homeotic heteromorphosis, exactly the antenna/leg identity switch now explained by Hox genes and positional value. This paper itself cites Przibram's 1919 homeosis work; explained today, but uncited."
+ },
+ "146": {
+  "verdict": "Vindicated — limb three-axis patterning, now molecular",
+  "state": "The three-axis organisation and developmental potencies of the limb — the framework Harrison's grafting opened — is now molecular: the proximodistal (Shh/FGF), anteroposterior and dorsoventral axes are specified by defined signalling centres and morphogen gradients.",
+  "comparison": "This 1924 companion frames the urodele limb's three axes and potencies, interpreting Harrison's grafting results — the conceptual systematisation of limb-axis determination now resolved into molecular axis-patterning. Vindicated; uncited."
+ },
+ "147": {
+  "verdict": "Confirmed — DOPA in insect melanin chemistry",
+  "state": "DOPA's role in insect cuticular melanin is well established: tyrosine hydroxylase and DOPA decarboxylase produce DOPA and dopamine for melanisation, the chemical sites of melanin deposition are mapped, and the pathway is genetically dissectable (DDC knockout causes albinism).",
+  "comparison": "Przibram's study of DOPA's participation in cocoon melanin formation, and the localisation of melanisation's chemical sites, is an early contribution to the insect melanin-synthesis chemistry now fully mapped (tyrosinase, DOPA, DDC). Confirmed; uncited."
+ },
+ "150": {
+  "verdict": "Now clinical — testicular autograft preserves spermatogenesis",
+  "state": "Autologous testicular-tissue and spermatogonial-stem-cell transplantation is an active fertility-preservation strategy: grafted testicular tissue and stem cells maintain or restore spermatogenesis (now clinical for prepubertal cancer patients), with testicular organoids and in vitro spermatogenesis advancing.",
+  "comparison": "Koppanyi's 1924 finding that spermatogenesis persists in an autoplastically transplanted testis — the organ retaining germinal function when moved — is the male counterpart to Wiesner's ovary graft and an early demonstration of exactly what underpins today's testicular-tissue autotransplantation for fertility preservation. Vindicated and now clinical; uncited."
+ },
+ "153": {
+  "verdict": "Partly vindicated, partly refined — regeneration vs growth",
+  "state": "The deep link between regeneration and growth is supported by modern biology — regeneration reactivates growth and developmental programmes, with shared signalling and proportional regrowth — though 'regeneration as merely accelerated normal growth' is a simplification: regeneration also adds distinct wound-response and dedifferentiation steps.",
+  "comparison": "Przibram's thesis that regeneration is quantitatively a temporary acceleration of normal growth, unifying the two processes, captures a real and now-supported connection. Modern work both confirms the link and qualifies it — regeneration is more than accelerated growth. A foundational unifying idea, partly vindicated and partly refined. (Consensus retrieval here was noisy, matching 'regeneration' in forestry and governance.)"
+ },
+ "154": {
+  "verdict": "Confirmed — homeotic raptorial-leg regenerates (now evo-devo)",
+  "state": "The mantis raptorial foreleg is studied evolutionarily (the walking-to-raptorial transition, with muscle and morphology changes) and as a homeotic subject; producing raptorial legs as homeotic regenerates fits the Hox and positional control of appendage identity.",
+  "comparison": "Przibram's finding that raptorial legs can be produced as regenerates — a homeotic, heteromorphic outcome — is an early instance of appendage-identity transformation in the mantis, the very foreleg whose walking-to-raptorial evolution and developmental identity are now studied (and which Brecher cited in her 1924 antenna-foot work). Confirmed and explained in the Hox/evo-devo frame; uncited today."
+ },
+ "158": {
+  "verdict": "Vindicated — tyrosinase is an O2-dependent oxidase",
+  "state": "Tyrosinase biochemistry is well characterised: it is a copper-containing oxidase that requires molecular oxygen to convert tyrosine and DOPA toward melanin, so excluding air halts its activity; modern work also targets tyrosinase with inhibitors for hyperpigmentation.",
+  "comparison": "Przibram and Dembowski's finding that excluding air conserves tyrosinase — the melanin-forming enzyme being oxygen-sensitive and preservable anaerobically — is an early, correct observation of tyrosinase's oxygen dependence (it is an O2-requiring copper oxidase). The biochemistry is vindicated; uncited."
+ },
+ "160": {
+  "verdict": "Discredited claim — reframed as epigenetics",
+  "state": "This is another of Kammerer's neo-Lamarckian inheritance claims, now discredited; the legitimate modern descendant is epigenetic inheritance and developmental plasticity, with the heritability of enforced form-changes unconfirmed.",
+  "comparison": "Kammerer's report that experimentally enforced form-changes were inherited is part of his discredited Lamarckian programme; modern biology rejects the specific claim while the general inheritance-of-acquired-traits question lives on, transformed, in epigenetics. Unconfirmed; reassessed as cautionary history."
  }
 }
