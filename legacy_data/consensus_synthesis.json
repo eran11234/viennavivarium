@@ -433,5 +433,35 @@
   "verdict": "Live frontier — eye replantation, optic nerve the bottleneck",
   "state": "Eye replantation and transplantation is a live frontier: allogeneic whole-eye transplantation is now surgically feasible with partial promise, but functional vision restoration is limited by optic-nerve (retinal ganglion cell axon) regeneration — the central unsolved bottleneck.",
   "comparison": "Koppanyi's 1923 demonstration that eyes can be replanted and re-establish structure and some function is an early instance of exactly the whole-eye transplantation now pursued in medicine — and the limit he would have met, reconnecting the optic nerve, remains the field's key obstacle. The phenomenon is confirmed and the modern frontier echoes his result; his eye work also fed Sperry's chemoaffinity studies. Uncited."
+ },
+ "27": {
+  "verdict": "Live frontier — eye replantation / ocular regeneration",
+  "state": "Eye replantation and transplantation is a live frontier: whole-eye transplantation is now surgically feasible, and ocular-surface and retinal regeneration therapies (cell-based, growth-factor, tissue-engineered) are advancing — but functional recovery is limited by optic-nerve (retinal ganglion cell) regeneration.",
+  "comparison": "This second, physiology-focused part of Koppanyi's eye-replantation series further documents that a replanted eye recovers structure and some function — the autonomy-plus-partial-function result echoed in today's whole-eye transplantation and ocular regeneration work, with optic-nerve reconnection the persistent limit. Uncited."
+ },
+ "28": {
+  "verdict": "Live frontier — whole-eye transplantation",
+  "state": "Whole-eye transplantation has reached feasibility milestones: allogeneic transplants in macaques achieve graft survival with preserved structure, and combined whole-eye-and-facial transplantation is being explored for catastrophic trauma — though long-term viability and optic-nerve regeneration remain unsolved.",
+  "comparison": "Koppanyi's confirmation that a replanted eye can survive and partly recover directly prefigures modern whole-eye (and eye-plus-face) transplantation now achieving graft survival. The phenomenon is borne out; the obstacle he would have met — restoring the optic-nerve connection — is still the field's central challenge. Uncited."
+ },
+ "34": {
+  "verdict": "Confirmed — lens tolerates transplantation; lens regeneration now active",
+  "state": "Lens biology and regeneration is active: the lens can regenerate (notably via pigment-epithelial/Wolffian regeneration in newts and via lens-epithelial stem cells), and ocular stem-cell and transplantation approaches target lens, cornea and retina repair.",
+  "comparison": "Wiesner's demonstration that the adult crystalline lens can be replanted and survive — the lens tolerating transplantation like the whole eye — is an early result on lens graftability that complements the lens-regeneration biology now central to ocular regenerative medicine. Confirmed in spirit; lightly cited."
+ },
+ "37": {
+  "verdict": "Foundational — limb grafting is now standard",
+  "state": "Amphibian limb transplantation and regeneration is a mature molecular field: developed-limb and blastema grafting are standard tools, nerve-mediated FGF signalling drives regeneration, and transgenic reporters (ZRS/Shh) extend the work toward inducing regeneration elsewhere.",
+  "comparison": "This second part of Weiss's developed-limb transplantation work provided the surgical foundation for his functional and field studies — and for the grafting toolkit now routine in regeneration research. The technique is ubiquitous today; the 1923 paper is an uncited methodological ancestor."
+ },
+ "40": {
+  "verdict": "Confirmed — chromatophore-based colour change",
+  "state": "Fish physiological colour change is well understood as chromatophore-based: pigment translocation and chromatophore adjustment, under neural, hormonal and visual control, allow background matching and camouflage across fishes.",
+  "comparison": "Mayerhofer's pike experiments showing colour change with background and light via chromatophore adjustment are an early, correct account of exactly this chromatophore-mediated background adaptation, now mechanised. Confirmed; uncited."
+ },
+ "51": {
+  "verdict": "Confirmed — functional sense-organ regeneration in insects",
+  "state": "Sensory-organ (antenna and eye) regeneration in arthropods is studied and shown to restore function: regenerated antennae retain sensory functionality (e.g. in isopods), and insect appendage and sense-organ regeneration runs on redeployed developmental programmes.",
+  "comparison": "Werber's finding that the mealworm beetle regenerates excised sense organs — antenna and eye — within its moulting cycle is an early demonstration of functional sensory-organ regeneration in a holometabolous insect, the phenomenon now confirmed (regenerated arthropod antennae are functional) and dissected developmentally. Uncited."
  }
 }
