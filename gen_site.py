@@ -664,6 +664,7 @@ DISCOVER_CSS = r"""
 .dcardx{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:15px 16px;display:flex;flex-direction:column}
 .dcardx .stat{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:2px 9px;border-radius:20px;align-self:flex-start;margin-bottom:7px}
 .st-sb{background:#33485c;color:#f3efe6}.st-ll{background:#1d6e56;color:#fff}.st-ct{background:#355e7d;color:#fff}.st-fc{background:#9a6a1f;color:#fff}.st-dm{background:#9a9387;color:#fff}
+.synbadge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:1px 8px;margin-left:6px}
 .dcardx h3{font-family:Georgia,serif;font-size:17px;margin:0 0 3px;line-height:1.25}
 .dcardx .cm{font-size:12.5px;color:var(--muted);margin:0 0 8px}
 .dcardx .cm em{font-style:italic}
@@ -710,7 +711,7 @@ function card(pid){var p=P[pid];
   var lk='<a class="go" href="dossier/'+pid+'.html">Deep dive →</a>';
   if(p.read)lk+='<a href="papers/'+p.read+'.html">Translation</a>';
   lk+='<a href="reader.html?id='+pid+'">German</a>';
-  return '<article class="dcardx"><span class="stat '+(SC[p.st]||'st-dm')+'">'+esc(p.st)+'</span>'
+  return '<article class="dcardx"><span class="stat '+(SC[p.st]||'st-dm')+'">'+esc(p.st)+'</span>'+(p.syn?'<span class="synbadge">✦ read &amp; compared</span>':'')
    +'<h3>'+esc(p.t)+'</h3><p class="cm">'+esc(p.au||'')+' · '+p.y+(p.org&&p.org!=='—'?(' · <em>'+esc(p.org)+'</em>'):'')+'</p>'
    +(p.hook?'<p class="ck">'+esc(p.hook)+'</p>':'<p class="ck"></p>')
    +'<p class="cn">'+p.n+' modern papers'+(p.l?(' · latest '+p.l):'')+' · cited '+p.c+'× today</p>'
@@ -752,6 +753,8 @@ def gen_discover():
     A = json.load(open(ap, encoding="utf-8")) if os.path.exists(ap) else {}
     rp = os.path.join(ROOT, "legacy_data", "rediscovery.json")
     R = json.load(open(rp, encoding="utf-8")) if os.path.exists(rp) else {}
+    _synp = os.path.join(ROOT, "legacy_data", "consensus_synthesis.json")
+    SYN = json.load(open(_synp, encoding="utf-8")) if os.path.exists(_synp) else {}
     cat_by_id = {c["id"]: c for c in catalog}
     read_for = {t["id"]: t["page_slug"] for t in translations}
     ov = {int(k): v for k, v in R.get("org_override", {}).items()}
@@ -775,7 +778,9 @@ def gen_discover():
             id=pid, t=(c.get("title_en") or c.get("title") or "").replace("�", "ä"),
             de=(c.get("title") or "").replace("�", "ä"), au=c.get("author"), y=c.get("year"),
             org=org(c), tax=tax(c), st=d.get("status"), sb=1 if d.get("sleeping") else 0,
-            c=d.get("cites", 0), n=d.get("n_unique", 0), l=d.get("latest"), v=d.get("verdict"),
+            c=d.get("cites", 0), n=d.get("n_unique", 0), l=d.get("latest"),
+            v=(SYN.get(pid_s, {}).get("verdict") or d.get("verdict")),
+            syn=1 if SYN.get(pid_s) else 0,
             read=(read_for.get(pid) or ""), hook=hook[:175],
             fy=(fresh.get("year") if fresh else None), ft=((fresh.get("takeaway") or "")[:185] if fresh else ""))
         order.append(pid)
@@ -837,6 +842,7 @@ DOSSIER_CSS = r"""
 .statebox h2{border-bottom:0;margin:.1em 0 8px;font-size:20px}
 .verdict{display:inline-block;background:var(--accent2);color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em;padding:3px 11px;border-radius:20px;margin-bottom:8px}
 .stateprose{font-size:15.5px;line-height:1.65;margin:0 0 14px}
+.cmph{font-family:-apple-system,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin:4px 0 5px;font-weight:700}
 .dstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 14px}
 .dstats div{background:var(--paper);border:1px solid var(--rule);border-radius:9px;padding:10px 12px;text-align:center}
 .dstats b{display:block;font-family:Georgia,serif;font-size:24px;line-height:1}
@@ -869,6 +875,8 @@ def gen_dossier():
     org_ov = {int(k): v for k, v in R.get("org_override", {}).items()}
     mpath = os.path.join(ROOT, "legacy_data", "methodology.json")
     meth = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else {}
+    _synp = os.path.join(ROOT, "legacy_data", "consensus_synthesis.json")
+    SYN = json.load(open(_synp, encoding="utf-8")) if os.path.exists(_synp) else {}
     os.makedirs(os.path.join(SITE, "dossier"), exist_ok=True)
 
     def paper_html(r):
@@ -903,6 +911,11 @@ def gen_dossier():
         title_de = (c.get("title") or "").replace("�", "ä")
         read = ("../papers/" + read_for[pid] + ".html") if pid in read_for else None
         res = sorted(d.get("results", []), key=lambda r: (r.get("year") or 0), reverse=True)
+        _sy = SYN.get(pid_s) or {}
+        _verdict = _sy.get("verdict") or d.get("verdict") or "Still open today?"
+        _state = _sy.get("state") or d.get("state") or ""
+        _cmp_html = ('<h3 class="cmph">How this 1900s paper stands today</h3><p class="stateprose">'
+                     + html.escape(_sy["comparison"]) + '</p>') if _sy.get("comparison") else ''
         actions = '<a class="btn" href="../rediscovery.html">← Discover</a>'
         if read:
             actions += '<a class="btn primary" href="%s">Read the English translation</a>' % read
@@ -922,11 +935,12 @@ def gen_dossier():
     {('<p class="meth"><span class="lab">How</span>'+html.escape(m.get('manipulation') or '')+'</p>') if m.get('manipulation') else ''}
   </section>
   <section class="dsec statebox">
-    <span class="verdict">{html.escape(d.get('verdict') or 'Still open today?')}</span>
-    <h2>The state of the field today</h2>
-    <p class="stateprose">{html.escape(d.get('state') or '')}</p>
+    <span class="verdict">{html.escape(_verdict)}</span>
+    <h2>The state of the art today</h2>
+    <p class="stateprose">{html.escape(_state)}</p>
+    {_cmp_html}
     <div class="dstats">
-      <div><b>{d.get('n_unique',0)}</b><span>modern papers found</span></div>
+      <div><b>{d.get('n_unique',0)}</b><span>modern papers read</span></div>
       <div><b>{d.get('recent',0)}</b><span>since 2015</span></div>
       <div><b>{d.get('latest') or '—'}</b><span>most recent</span></div>
     </div>

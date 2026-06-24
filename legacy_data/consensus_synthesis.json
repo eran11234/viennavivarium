@@ -1,0 +1,32 @@
+{
+ "4": {
+  "verdict": "Extended — comparative allometry is thriving",
+  "state": "Quantitative growth and allometry in praying mantises is an active field. Modern work measures how predatory-strike mechanics, metabolic rate and compound-eye (ommatidia) number scale with body size across instars, sexes and species, and now traces that scaling to mechanism — the Insulin/TOR pathway and newly assembled mantis genomes.",
+  "comparison": "Przibram's instar-by-instar growth curve for a second mantis species (Tenodera, after Sphodromantis) is the direct ancestor of this comparative-scaling programme. Where he charted growth descriptively, modern studies add energetics and gene regulation — but the quantitative law of mantis growth he was reaching for is exactly what the field still pursues. His data go uncited."
+ },
+ "6": {
+  "verdict": "Vindicated — positional memory is now molecular",
+  "state": "Positional memory — how a regenerate 'knows' which structure to rebuild — is a central, increasingly molecular question in limb regeneration. Axolotl work locates it in connective-tissue cells, encoded by segment-specific histone marks (H3K27me3), Hand2 and the Prod1/Tig1 system, stabilised by a positive-feedback loop and even reprogrammable along the limb axis.",
+  "comparison": "The heteromorphic long bone Sciacchitano, Weiss and Przibram produced by an edge-restricted cut is a striking early demonstration that regenerative pattern follows positional information, not merely the wound. The 1930 paper posed precisely the question modern axolotl genetics now answers at the level of chromatin and signalling."
+ },
+ "8": {
+  "verdict": "Sleeping beauty — blastema potency now resolved",
+  "state": "The reptilian regeneration blastema is now well characterised. Lizard-tail regrowth proceeds through a self-organising, tumour-like blastema whose fibroblasts drive Hedgehog-dependent cartilage, regulated by osteoclast–fibroblast crosstalk and even snoRNA-accelerated growth; tellingly, lizards regrow tails but not limbs, a difference traced to epithelial–mesenchymal transition.",
+  "comparison": "Weiss's potency-testing of how determined versus plastic the lizard blastema is asks exactly what these molecular studies resolve: the blastema is only partially determined and yields an imperfect replacement (a cartilage rod, not true vertebrae). His 1930 extension of blastema-determination analysis from amphibians to a reptile is the conceptual forerunner, uncited."
+ },
+ "15": {
+  "verdict": "Mechanism found — light, melatonin, melanophores",
+  "state": "How light shapes amphibian pigment pattern is now understood at the cellular level: visual input and the melatonin/circadian system regulate melanophore differentiation and melanisation, specific light wavelengths change melanin levels, and salamander colour diversity is being traced to gene expression and RNA methylation.",
+  "comparison": "Kammerer's observation that transmitted coloured light affects the fire salamander's markings prefigures this light-to-pigment axis, but his account was phenomenological where modern work supplies the photic–melatonin–melanophore mechanism. A near-dormant early observation that current pigment-cell biology has effectively explained."
+ },
+ "16": {
+  "verdict": "Open & contested — plasticity versus genetics",
+  "state": "Whether the rearing environment can fix a colour pattern is the active field of developmental and transgenerational plasticity. Recent work documents environment-driven pigment plasticity and even multi-generational non-genetic inheritance (e.g. predator-induced morphology in Daphnia), while cautioning that some colour traits are strongly genetic and that 'transgenerational plasticity' needs tighter definition.",
+  "comparison": "Przibram and Dembowski's result — that a yellow versus black larval background shifts the adult salamander's spots — is an early, clean case of environmental determination of a supposedly fixed pattern, exactly the question epigenetics now contests. The phenomenon is supported in principle; whether such induction is truly heritable remains open and debated."
+ },
+ "22": {
+  "verdict": "Confirmed — absorbed into melanophore biology",
+  "state": "Fish colour change is now resolved as both rapid redistribution and regulated synthesis of melanin: melanophore number and melanin content shift with background under hormonal (thyroid, melanocortin/alpha-MSH) and retina-driven photoneuroendocrine control, with MITF/ERK and thyroid-hormone signalling identified.",
+  "comparison": "Kudo's measurement that the quantity of melanin itself changes during colour change — not merely its dispersal within chromatophores — is precisely the synthesis-versus-redistribution distinction now standard in pigment-cell physiology. The 1922 result is absorbed into, and confirmed by, modern melanophore biology."
+ }
+}
