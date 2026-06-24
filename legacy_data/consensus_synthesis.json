@@ -28,5 +28,170 @@
   "verdict": "Confirmed — absorbed into melanophore biology",
   "state": "Fish colour change is now resolved as both rapid redistribution and regulated synthesis of melanin: melanophore number and melanin content shift with background under hormonal (thyroid, melanocortin/alpha-MSH) and retina-driven photoneuroendocrine control, with MITF/ERK and thyroid-hormone signalling identified.",
   "comparison": "Kudo's measurement that the quantity of melanin itself changes during colour change — not merely its dispersal within chromatophores — is precisely the synthesis-versus-redistribution distinction now standard in pigment-cell physiology. The 1922 result is absorbed into, and confirmed by, modern melanophore biology."
+ },
+ "35": {
+  "verdict": "Now clinical — fertility preservation",
+  "state": "Autologous ovarian-tissue transplantation is established clinical medicine: tissue is cryopreserved before cancer treatment and re-grafted (orthotopic for conception, heterotopic otherwise) to restore both hormonal function and fertility, with documented pregnancies and robot-assisted and hydrogel-encapsulated refinements; current work targets follicle survival (rapamycin, adipose-derived stromal cells).",
+  "comparison": "Wiesner's 1923 proof that a rat's own ovary, grafted back, keeps working is the experimental seed of this now-routine procedure. What he showed in principle in the rat is, a century on, standard fertility-preservation practice in women — a textbook sleeping-beauty arc from lab curiosity to the clinic."
+ },
+ "43": {
+  "verdict": "Open frontier — limits of endotherm regeneration",
+  "state": "The modern consensus is that birds and mammals largely lost the broad regenerative capacity of fish and amphibians — a loss tied to the move onto land and to CNS/appendage selection — yet birds retain striking exceptions (regeneration of auditory hair cells), the beak is now a model of neural-crest-driven development, and differential organ regeneration is governed by pathways such as MAPK/ERK.",
+  "comparison": "Werber and Goldschmidt's report that waterfowl regenerate beak tissue staked out exactly this still-contested frontier — how much regeneration warm-blooded vertebrates retain. A century later the question (which endotherm tissues regrow, and why most do not) is central to regenerative medicine; their early positive avian case is rarely cited but squarely on theme."
+ },
+ "45": {
+  "verdict": "Extended — appendage identity is now Hox/evo-devo",
+  "state": "Crustacean appendage regeneration is an active evo-devo field: regrowth proceeds via BMP signalling and a defined cell-and-gene network that faithfully rebuilds complex microanatomy and sensory function, while Hox genes specify the identities of serially-homologous limbs (walking legs versus feeding maxillipeds) and their evolutionary transformation.",
+  "comparison": "Biberhofer's demonstration that the crayfish regrows one specific, specialised mouthpart-leg — the third maxilliped — is an early instance of exactly the serial-homology question Hox/evo-devo now answers: how a regenerate restores the correct identity of a single member of a repeated appendage series. The phenomenon is confirmed and mechanistically deepened; the 1905 paper is uncited."
+ },
+ "46": {
+  "verdict": "Model emerging — gastropod regeneration",
+  "state": "Gastropod regeneration is an emerging and increasingly tractable field: the apple snail Pomacea is now a genetic model that fully regrows camera-type eyes, phagocytic hemocytes have been shown to be required for tentacle regeneration, water calcium governs shell regrowth, and regenerative capacity varies markedly across mollusc groups.",
+  "comparison": "Cerny's early survey mapping which parts freshwater snails can rebuild is a direct precursor to this comparative, now-mechanistic programme. The mapping impulse he embodied — who-regenerates-what among gastropods — is precisely the modern comparative question, today pursued with genetics and cell biology rather than description."
+ },
+ "47": {
+  "verdict": "Now a model — Ophryotrocha anterior regeneration",
+  "state": "Polychaete anterior regeneration is a vigorous comparative field built on several model species (Ophryotrocha, Capitella, Platynereis, Pygospio): head-regeneration capacity varies by lineage and even with age, runs on molecular programs conserved across metazoans, and extends to germ-cell regeneration that challenges the germline–soma barrier.",
+  "comparison": "Czwiklitzer's 1905 account of Ophryotrocha regrowing its anterior end, head structures included, is essentially the organism's debut as a regeneration animal — and Ophryotrocha is now exactly such a laboratory model (with a sequenced mitogenome). The specific finding is confirmed and the genus has become a modern model, though the BVA original goes uncited."
+ },
+ "50": {
+  "verdict": "Sleeping beauty, waking — craniofacial regeneration",
+  "state": "Craniofacial and jaw regeneration is a fast-moving frontier: salamanders (newts and axolotls) regrow lower jaws complete with bone, cartilage and teeth using programs shared with limb regeneration, zebrafish regenerate jaw-joint cartilage, and the mechanisms — EGR1-activated periosteal stem cells, BMP signalling, DPSC-derived vesicles — are being harnessed for human craniofacial tissue engineering, though full tooth regeneration remains elusive.",
+  "comparison": "Werber's 1905 report that the lizard regrows jaw structures after their removal anticipated this field by a century, carrying reptilian regeneration beyond the familiar tail to the head — exactly where regenerative medicine now concentrates. A classic sleeping beauty: the question is intensely active (down to a 2026 newt-jaw study) while the founding observation goes uncited."
+ },
+ "55": {
+  "verdict": "Themes still active — colour change & regeneration",
+  "state": "Mantis colour change is now dissected genetically: pigment genes (Scarlet, ebony/tan), the Redboy pigment transporter and Wnt signalling govern background-matching, camouflage and sexual colour dimorphism, while insect appendage regeneration — with its developmental and reproductive trade-offs — is studied across many taxa.",
+  "comparison": "This founding paper established the Egyptian mantis as a tractable animal for exactly the two phenomena — colour change and regeneration — that remain active mantis research a century later. It was model-organism infrastructure: the animal endures as a study system while the 1906 paper itself goes uncited."
+ },
+ "61": {
+  "verdict": "Open & refined — the moulting-growth law",
+  "state": "The quantitative law of insect growth across moults — Dyar's rule and its relatives — remains under active scrutiny. Modern measurements find it holds only approximately: per-stage growth ratios vary by species and instar, and better exponential and multi-scale models have been proposed.",
+  "comparison": "Przibram's serial growth measurements on Sphodromantis fed exactly this search for a quantitative moulting-growth law (the lineage that became 'Przibram's rule'). The enterprise is alive and the rule's limits are precisely today's question; his data are an early contribution, now uncited."
+ },
+ "66": {
+  "verdict": "Explained — Hox identity and stage-dependent regen",
+  "state": "The genetic control of appendage identity and regeneration is now mapped: the Hox gene Antennapedia governs antenna-versus-leg (and wing) identity, and regenerative capacity is strongly stage- and age-dependent across arthropods (ladybird beetles, centipedes, annelids).",
+  "comparison": "Przibram's finding that mantis-larva antenna regenerates take a stage-dependent form — touching the heteromorphosis (antenna-to-leg) question — anticipates both the Hox control of antenna/leg identity and the stage-dependence of regeneration now documented. The 1917 observation is conceptually confirmed and molecularly explained, uncited."
+ },
+ "75": {
+  "verdict": "Mainstream now — environment × sex on traits",
+  "state": "How environment and sex jointly tune continuous traits is active eco-evo-devo: developmental temperature shapes sexual size dimorphism and appendage proportions across insects, fish and reptiles, and rodent tail morphology specifically tracks temperature, locomotion and local ecology.",
+  "comparison": "Przibram's reading of rat tail length as a conditional ('facultative') sex character — sex-differentiated yet environmentally tunable — prefigures exactly this modern framing of environment-by-sex interactions in continuous morphology. The specific case is rarely cited, but the conceptual question is now mainstream."
+ },
+ "76": {
+  "verdict": "Open & contested — transgenerational inheritance",
+  "state": "Whether a developmentally induced trait is inherited is now the substantial field of transgenerational epigenetic inheritance: temperature and heat exposure can transmit phenotypes and gene-expression changes across generations in Drosophila, C. elegans and fish via epigenetic marks — though effects are often partial and reversible, and mammalian evidence remains debated.",
+  "comparison": "Przibram's direct test — do tails lengthened or shortened by temperature pass to the offspring? — is precisely the transgenerational-plasticity experiment, run in the rat a century before the molecular era. The question is wide open and intensely studied; his Lamarckian framing was prescient even as the heritability stays contested."
+ },
+ "77": {
+  "verdict": "Vindicated — the developmental basis of Allen's rule",
+  "state": "The developmental basis of Allen's rule — temperature setting extremity proportions — is actively confirmed: developmental plasticity drives Allen's and Bergmann's rules in endotherms, temperature acts on bone and limb growth (even via DNA methylation in humans), and rodent tails are a canonical case.",
+  "comparison": "Przibram did not merely observe the effect — he quantified relative tail length's temperature coefficient, putting a number on how strongly temperature scales extremity growth, exactly the developmental mechanism behind Allen's rule now being dissected. A quantitative early result the field has effectively vindicated, though uncited."
+ },
+ "95": {
+  "verdict": "Live & contested — transgenerational epigenetics",
+  "state": "The thesis that the environment reaches the germ-plasm is now the field of transgenerational epigenetic inheritance: environmental stressors and toxicants can install heritable DNA-methylation epimutations, and somatic RNAs carried in extracellular vesicles can convey information to the gametes — though mammalian evidence remains inconclusive and 'somatic epigenetic resetting' is recognised as a genuine barrier.",
+  "comparison": "Secerov's amphibian contribution to the institute's boldest thesis — that the environment can act on the hereditary substance — names exactly the question modern epigenetics investigates and contests. The framing was a century early; whether such inheritance is robust, especially in vertebrates, remains the open battleground."
+ },
+ "99": {
+  "verdict": "Active comparative field — mollusc regeneration",
+  "state": "Comparative invertebrate regeneration is active and increasingly phylogenetic: regenerative capacity varies widely across mollusc groups (dorid nudibranchs, cephalopods, gastropods) and is read as an ancestral aquatic property variably retained, now mapped onto genome-based mollusc phylogenies.",
+  "comparison": "Czerny's survey of which parts freshwater snails and slugs can and cannot rebuild is an early entry in exactly this comparative who-regenerates-what programme across molluscs. The phenomenon-mapping he undertook is the descriptive ancestor of today's phylogenetic and molecular comparisons, though uncited."
+ },
+ "102": {
+  "verdict": "Reopened & qualified — protein thermal adaptation",
+  "state": "Thermal adaptation of proteins is a live field with a nuanced modern picture: many ectotherms do adjust the thermal stability of muscle and contractile proteins to their temperature — seasonally and across species, via amino-acid changes, structure and cellular environment — though the degree varies and some proteins are strongly conserved.",
+  "comparison": "Kryz's result — that the coagulation point of muscle plasma is fixed, independent of the temperature the animal lived at — staked out one side of exactly this question. Modern thermal biology largely finds the opposite (proteins often do acclimate), making his negative claim an early, now-qualified contribution to a still-open problem of how far protein thermostability tracks environmental temperature."
+ },
+ "104": {
+  "verdict": "Confirmed — shell-induced developmental plasticity",
+  "state": "Environment-induced body plasticity in hermit crabs and other crustaceans is well documented: the occupied shell's shape moulds abdominal and uropod morphology and even claw asymmetry (crabs reared in non-coiled or artificial shelters develop more symmetrical bodies), and the mechanical interaction between soft body and hard shell shapes form.",
+  "comparison": "Przibram's de-shelling experiment — showing the hermit crab's asymmetric abdomen differentiates according to the presence and shape of its shell — is an early, clean demonstration of exactly this shell-induced developmental plasticity, now confirmed and occasionally re-cited. The phenomenon stands and has been extended to mechanism."
+ },
+ "107": {
+  "verdict": "On-theme — why regeneration is kept or lost",
+  "state": "Why some lineages retain lifelong regeneration while others lose it is an active evolutionary question: regeneration is read as an ancestral aquatic property erased in many terrestrial animals by epigenetic and life-cycle changes, with continued moulting (as in house centipedes) linked to retained appendage regeneration.",
+  "comparison": "Przibram's deliberate choice of the ever-moulting bristletails — reasoning that lifelong moulting keeps regenerative capacity alive — anticipates precisely the modern framing that moulting, metamorphosis and life cycle govern regenerative retention. His 'of more general significance' claim was apt: the bristletail case bears directly on today's comparative question, though uncited."
+ },
+ "113": {
+  "verdict": "Reframed — epigenetics, not Lamarckism",
+  "state": "The broad phenomenon — environmentally induced phenotypes inherited via epigenetic marks — is a major active field, but it is carefully distinguished from true Lamarckism: reviews set strict criteria for transgenerational epigenetic inheritance, document germline environmental sensing, and stress both that mammalian evidence is inconclusive and that equating epigenetics with Lamarckism is a category error.",
+  "comparison": "Kammerer's claim that experimentally enforced colour changes are inherited is the archetypal neo-Lamarckian assertion — later discredited amid the midwife-toad affair. Modern epigenetics vindicates the general question (acquired states can sometimes be transmitted) while rejecting his strong Lamarckian interpretation and the specific colour-inheritance claim, which remains unconfirmed."
+ },
+ "118": {
+  "verdict": "Mechanism mapped — Wnt sets head/tail polarity",
+  "state": "Axial polarity in annelid (and planarian) regeneration is now mechanistically mapped: the canonical Wnt/beta-catenin pathway specifies posterior identity and re-establishes head-versus-tail patterning, supported by conserved positional-identity genes, while head- and tail-regeneration capacities differ markedly by species and life stage.",
+  "comparison": "Gluschkiewitsch's observation that the leech regenerates both ends but with different capacities front and back is an early statement of exactly the anterior–posterior polarity problem now solved at the level of Wnt signalling. The phenomenon is confirmed and the mechanism supplied; the 1907 paper is uncited."
+ },
+ "120": {
+  "verdict": "Fast-growing field — larval symbiosis",
+  "state": "Larval microbial and algal symbiosis is now a large field: insect and other aquatic larvae host environment-derived microbiomes that shape nutrition, development and survival — though the work centres on bacterial microbiomes more than the specific algal associations described here, and dragonfly larvae are studied largely as water-quality bioindicators.",
+  "comparison": "Kammerer's 1907 note of a dragonfly larva living with a filamentous alga is an early observation of larval-symbiont association, the broad phenomenon now central to microbiome ecology. Modern work has shifted toward bacterial microbiomes, so the specific algal symbiosis he saw remains comparatively under-studied — an early thread still partly open."
+ },
+ "123": {
+  "verdict": "Model emerging — invertebrate eye regeneration",
+  "state": "Invertebrate eye and tentacle regeneration is an emerging model field: the apple snail Pomacea fully regrows complex camera-type eyes and is now genetically tractable (with genome editing), phagocytic hemocytes are required for tentacle regeneration, and cnidarian tentacle regeneration is traced to stem cells and Zic4.",
+  "comparison": "Megusar's finding that the pond snail regrows its tentacle together with the eye it carries is an early demonstration of what is now a flagship invertebrate eye-regeneration system (the apple snail). The phenomenon is richly confirmed and mechanised; the 1907 observation is an uncited precursor."
+ },
+ "124": {
+  "verdict": "Reawakening — the caudal horn is now an evo-devo locus",
+  "state": "The silkworm's caudal horn has become a subject of evo-devo: a 2026 study shows cis-regulatory changes in the Wnt1/Wnt6 genes control the caudal-horn size difference between Bombyx mori and its wild relative, placing this larval appendage squarely in the genetics of pattern formation and the broader study of insect larval structures.",
+  "comparison": "Megusar's report that the silkworm caterpillar regenerates its caudal horn is an early functional probe of how this very appendage is built — exactly the question modern Wnt-based evo-devo of the Bombyx caudal horn now answers genetically. A near-dormant result that current work has, almost literally, reopened on the same structure."
+ },
+ "126": {
+  "verdict": "Active frontier — internal-organ regeneration",
+  "state": "Internal-organ regeneration in amphibians is an active, expanding goal: salamanders and Xenopus repair lung tissue — by epithelial proliferation and, in the axolotl, organ-wide proliferation that restores lung mass within weeks — using pathways shared with mammals, as salamander regeneration research deliberately extends to non-canonical organs such as lung and heart.",
+  "comparison": "Muftic's 1907 demonstration that amphibians regenerate lung tissue — carrying regeneration inside the body to an internal organ — anticipated precisely this now-active frontier of visceral-organ regeneration. The phenomenon is confirmed (down to 2024 Xenopus and axolotl lung studies) and is exactly where regenerative medicine looks; the original is uncited."
+ },
+ "129": {
+  "verdict": "Sleeping beauty, waking — insect wing regeneration",
+  "state": "Insect wing and appendage regeneration is a molecularly rich field centred on the Drosophila wing imaginal disc: a single wingless (Wnt) enhancer drives wing specification and regeneration, the Ras/MAPK pathway powers regenerative growth, and ecdysone coordinates regeneration with developmental timing — with even dietary induction of regeneration reported.",
+  "comparison": "Werber's 1907 finding that a fully metamorphic beetle can regrow excised wings is an early case of exactly this question — whether and how holometabolous insects regenerate wings — now answered in molecular detail in Drosophila. A sleeping beauty whose phenomenon is vindicated and mechanised, though uncited."
+ },
+ "130": {
+  "verdict": "Question resolved — regeneration closes before adulthood",
+  "state": "Drosophila wing regeneration is now finely resolved: it occurs in the larval and early-pupal imaginal disc via apoptosis-induced proliferation, governed by factors such as Zelda and regulatory lncRNAs, but the capacity closes during the larva-to-pupa transition (by roughly 34 hours after pupariation) as growth turns non-proliferative — so the fully formed adult fly essentially cannot regenerate a wing.",
+  "comparison": "Kammerer's experiment — can the adult fly, past all its moults, rebuild a removed wing? — probed exactly the limit modern work has pinned down: regenerative competence is confined to the disc stage and shuts off before adulthood. His framing of the question was apt; the modern answer is largely 'no, not in the imago', with the closing window mapped to the hour."
+ },
+ "134": {
+  "verdict": "Vindicated — starvation as a lever on growth (now TOR/IGF)",
+  "state": "Starvation and caloric restriction are central to growth and metabolic biology: undernutrition impairs growth-plate chondrogenesis and stunts growth via IGF-1 and nutrient signalling, TOR mediates feeding-dependent size plasticity, and starvation–refeeding triggers tissue-specific, often persistent metabolic adaptation across animals.",
+  "comparison": "Morgulis's use of inanition as an experimental lever on the growth problem — showing that starvation halts and reverses growth — is exactly the approach that became modern caloric-restriction and nutrient-signalling biology. The phenomenon and its logic are vindicated and mechanised (TOR, IGF-1); the 1912 study is an early, uncited instance."
+ },
+ "136": {
+  "verdict": "Major live field — environmental sex determination",
+  "state": "Environmental (temperature-dependent) sex determination in reptiles is a major, mechanistically advancing field: warmer incubation overrides genetic sex in lizards and turtles via the pSTAT3–Kdm6b pathway acting on germ cells, with serious climate-change implications for wild sex ratios.",
+  "comparison": "Secerov's reptilian contribution to 'the environment of the germ-plasm', with explicit attention to sex determination, points straight at what is now environmental and temperature-dependent sex determination — including in lacertid lizards like his own material. The environment-and-sex question he raised is a flourishing field; the early paper is uncited."
+ },
+ "139": {
+  "verdict": "Open & context-dependent — maternal-age effects",
+  "state": "Parental-age effects on offspring are an active life-history field with strongly context-dependent results: depending on species, older mothers produce larger or smaller offspring, or none detectable, with consequences for size, telomeres, longevity and fitness — frequently nonzero and sometimes transmitted via mitochondria or epigenetics.",
+  "comparison": "Przibram and Walther's clean negative result — freshly hatched mantises show no size increase with maternal age — is one data point in exactly this still-unsettled question. Modern work often finds effects in one direction or the other, so their null is neither confirmed nor refuted so much as absorbed into a literature showing the answer is species-dependent; their case is rarely revisited."
+ },
+ "142": {
+  "verdict": "Confirmed — pupal colour plasticity now genetic",
+  "state": "Environmentally cued pupal colour is well established and increasingly genetic: pupal colour plasticity tracks the pupation substrate and light (a predator-protection adaptation), is regulated by melanin-synthesis genes (tyrosine hydroxylase, laccase2, aristaless1), and is modulated by larval density and temperature.",
+  "comparison": "Brecher's result that Vanessid pupae tune their colour to light and background, as in the cabbage white, is an early, clean demonstration of exactly this pupal-colour plasticity now mapped to substrate cues and pigment genes. The phenomenon is amply confirmed and mechanised; her instalment is uncited."
+ },
+ "145": {
+  "verdict": "Largely vindicated — axis set by the cortex, not the furrow",
+  "state": "Amphibian axis specification is well understood: the dorsoventral axis is set by cortical rotation (and a parallel microtubule array) shortly after fertilisation, driven by maternal determinants and beta-catenin, so the first cleavage furrow is only statistically — not causally — aligned with the body axis, a relationship that varies across taxa.",
+  "comparison": "Przibram's finding — that the first cleavage furrow does not reliably coincide with the median plane, and the axis is fixed relative to the egg's natural pigment mark rather than the furrow — is essentially correct by modern lights: the axis is determined by cytoplasmic and cortical organisation, not the cleavage plane. His marking-based conclusion was largely right; cortical-rotation and molecular determinants later superseded the method and settled the question."
+ },
+ "151": {
+  "verdict": "Now a flagship model — Pleurodeles regeneration",
+  "state": "The Iberian ribbed newt Pleurodeles waltl is now a premier amphibian model for regeneration and development: its genome and transcriptome are sequenced, it supports transgenesis (Brainbow lineage tracing), heat-shock gene induction, muscle- and tendon-stem-cell work and immunogenetics — a fully modern molecular-genetic toolkit.",
+  "comparison": "Koppanyi's 1924 characterisation of Pleurodeles biology and husbandry is precisely the model-organism groundwork that made all this possible — the unglamorous but essential establishment of the animal as a tractable laboratory newt. A century later it is a flagship regeneration model, while the founding biology paper goes uncited."
+ },
+ "152": {
+  "verdict": "Textbook & confirmed — temperature sets tail length",
+  "state": "Temperature setting extremity (especially tail) length is textbook developmental plasticity and an active climate-biology topic: Allen's rule is confirmed in rodents specifically for tails (warmer development → longer tails), and ambient temperature shapes appendage size across mammals and birds, with implications for climate-driven body-shape change.",
+  "comparison": "Przibram and Wiesner's experiment — warming young rats lengthens the tail, the heat counterpart to their chemical-cooling work — is an early, direct causal demonstration of exactly the temperature-to-tail-length effect now formalised as the developmental basis of Allen's rule. The result is confirmed and canonical; the 1924 paper is uncited."
+ },
+ "157": {
+  "verdict": "Vindicated — the pigment chemistry he called for is now mapped",
+  "state": "The chemical and physiological causes of animal colouration are now thoroughly mapped: melanin via tyrosinase (eu- and pheomelanin), carotenoid-based colour and its enzymatic conversion (CYP2J19 and BDH1L turning yellow carotenoids into red ketocarotenoids), pterin pigments, and physiological colour change driven by pigment- and crystal-movement (dynein, cAMP).",
+  "comparison": "Przibram's 1919 reframing of animal colouration as a problem of underlying chemical and physiological causes — companion to his and Brecher's tyrosinase/DOPA extract experiments — set the agenda that pigment-cell biology has since fulfilled. The demand was answered: colour is now read in terms of the very enzymes and pigments he pointed to. Largely vindicated, though the paper is uncited."
  }
 }
