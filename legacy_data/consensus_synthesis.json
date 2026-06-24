@@ -253,5 +253,65 @@
   "verdict": "Themes endure — mantis as a model for colour & regeneration",
   "state": "Sphodromantis remains a studied mantis: recent work shows ontogenetic colour change even without environmental cues (a seasonal programme), alongside the broader active fields of mantis colour change, camouflage and appendage regeneration.",
   "comparison": "Przibram's 1906 paper established the Egyptian mantis as a tractable experimental insect for colour change and regeneration — model-organism groundwork (companion to Grosser & Przibram's study). The animal endures in research on exactly these phenomena; the founding paper is uncited."
+ },
+ "67": {
+  "verdict": "Confirmed — pupal colour plasticity",
+  "state": "Environmentally cued pupal colouration in the cabbage white and other butterflies is established and increasingly genetic: pupal melanisation tracks the background with developmental trade-offs, and pigment-pattern genes (such as the lncRNA cortex) are being mapped.",
+  "comparison": "Brecher's 1917 confirmation and extension of the cabbage-white pupa's environmentally cued colour adaptation is part of the foundational plasticity work the field now mechanises. The phenomenon is confirmed; the paper, like her companion pupal-colour studies, goes uncited."
+ },
+ "69": {
+  "verdict": "Foundational — nerve-dependence of regeneration",
+  "state": "Nerve-dependence of regeneration is a foundational, still-central principle: denervation blocks or attenuates amphibian limb (and even mammalian digit-tip) regeneration, and the mechanism is partly resolved — nerve-mediated FGF and anterior-gradient signalling drives the early regenerative phase.",
+  "comparison": "Weiss's 1925 demonstration that denervated amphibian limbs fail to regenerate is one of the origin points of the entire nerve-dependence field, which remains active and is now molecular. A genuinely foundational result: the principle he established is textbook, though the paper itself is uncited in current work."
+ },
+ "70": {
+  "verdict": "Vindicated — de-novo skeletal regeneration under the field",
+  "state": "That the regenerate's skeleton forms anew from the blastema under positional control — not by templating the old skeleton — is confirmed: salamander limb regeneration rebuilds skeletal elements de novo via scale-invariant Shh/Fgf8 signalling and positional information, though integration with the stump is imperfect.",
+  "comparison": "Weiss's result that limb regeneration is independent of the pre-existing skeleton — the new skeleton arising from the blastema under a regional determination field — is exactly the de-novo, position-controlled skeletal regeneration now documented molecularly. Vindicated; a classic in spirit, though the original goes uncited in current papers."
+ },
+ "81": {
+  "verdict": "Confirmed — neurochemical control of chromatophores",
+  "state": "Neurochemical control of chromatophores is established physiology: adrenergic (noradrenaline) and cholinergic (acetylcholine) signalling, alongside hormones (alpha-MSH/MCH), drive pigment-organelle movement and colour change in fish and cephalopods — now resolved to second messengers (cAMP) and motor proteins (dynein).",
+  "comparison": "Abolin's pharmacological experiments — specific drugs expanding or contracting specific chromatophores in the minnow — are an early demonstration of exactly this adrenergic, cholinergic and hormonal control of colour change. The phenomenon and its pharmacology are confirmed and deepened; the 1925 paper is uncited."
+ },
+ "86": {
+  "verdict": "Reframed — epigenetics, not Lamarckism",
+  "state": "Like Kammerer's other inheritance claims, this rests on the now-discredited neo-Lamarckian programme; the legitimate modern descendant is epigenetic inheritance and developmental plasticity of pigmentation, carefully distinguished from true Lamarckism, with the specific salamander colour-inheritance claim unconfirmed.",
+  "comparison": "Kammerer's report that enforced colour changes in the fire salamander are inherited is part of the body of work undone by the midwife-toad scandal. The general phenomenon — that environment can shape, and sometimes transmit, pigmentation — survives in epigenetics; his strong Lamarckian inheritance claim does not, and remains unconfirmed."
+ },
+ "88": {
+  "verdict": "Vindicated — systemic (thyroid) control of metamorphosis",
+  "state": "Systemic hormonal control of metamorphosis is foundational and molecular: thyroid hormone, via tissue-specific receptor subtypes, imposes the timing and coordination of metamorphic change across organs and species, aligning ontogenetic transitions with the environment.",
+  "comparison": "Uhlenhuth's finding that a transplanted eye metamorphoses in synchrony with its host — the whole organism imposing its developmental timing on an isolated part — is an early, elegant demonstration of systemic (now known to be thyroid-hormone) control of metamorphosis. The inference is fully vindicated; modern work simply names the hormone and its receptors."
+ },
+ "92": {
+  "verdict": "Partly echoed — cave eye/pigment plasticity vs evolution",
+  "state": "The evolution and plasticity of cave animals' eyes and pigment is an active field: troglomorphic eye and pigment loss is explained mainly by natural selection and neutral mutation (with some epigenetic contribution), while light exposure can partially restore retinal and pigment development in some amphibians.",
+  "comparison": "Kammerer's report that environmental light exposure elicits pigment and eye development in the normally pale, blind olm touches the plasticity side of cave-animal biology now studied in cavefish and tadpoles. Modern work frames eye/pigment regression chiefly through evolutionary genetics; the plasticity he saw is partly echoed, but his Lamarckian gloss is not supported."
+ },
+ "93": {
+  "verdict": "Confirmed — vision-dependent colour change",
+  "state": "Visually mediated colour change is established physiology: animals adjust their chromatophores to the background through visual (and dermal-photoreceptive) input, with the eyes and retina central to background matching across crustaceans and fishes.",
+  "comparison": "Megusar's finding that crustacean colour change tracks background and light and fails in blinded animals is an early, clean demonstration of the eye-dependent, visually mediated chromatophore response now standard in colour-change physiology. Confirmed; the 1912 paper is uncited."
+ },
+ "98": {
+  "verdict": "Vindicated — graft autonomy plus host modulation",
+  "state": "Eye and retinal transplantation is now a major regenerative-medicine field: grafted retinal tissue and organoids develop substantially on their own, but the host environment modulates their integration, maturation and survival (including host–graft synapse formation) — the balance of autonomy and host control Uhlenhuth described.",
+  "comparison": "Uhlenhuth's result that a transplanted eye develops largely autonomously while the host modulates its size through nutritive and spatial relations captures exactly that autonomy/host-integration balance central to today's retinal-transplant work; his eye-transplant programme also seeded Sperry's chemoaffinity hypothesis. The principle is vindicated, the original uncited."
+ },
+ "110": {
+  "verdict": "Confirmed — gonadal control of sex characters",
+  "state": "Gonadal and hormonal control of secondary sex characters is foundational endocrinology; in amphibians, sex determination and differentiation are now mapped to genetic (amh-type) and hormonal pathways, with the gonad's steroid output governing sexual phenotype.",
+  "comparison": "Brescia's linking of newt secondary sex characters to gonadal control — the amphibian counterpart to Steinach's mammalian puberty-gland work — anticipates the gonad-hormone control of sexual phenotype now standard, even as modern work adds the genetic sex-determination layer. Confirmed in principle; uncited."
+ },
+ "116": {
+  "verdict": "Answered — developmental genetics of pigment formation",
+  "state": "The developmental formation of animal pigment is richly understood: pigment-cell (melanocyte and chromatophore) development and patterning are controlled by gene-regulatory networks and cis-regulatory variation, studied in chick, Xenopus and zebrafish across melanin, carotenoid and pterin pigments.",
+  "comparison": "Winkler's analysis of the formation and origin of animal pigment is an early contribution to exactly this developmental account of pigmentation, now mapped to gene networks. The descriptive question he posed is answered molecularly; the 1910 paper — a companion to the institute's tyrosinase/DOPA work — is uncited."
+ },
+ "119": {
+  "verdict": "Discredited claim — reassessed as history",
+  "state": "This belongs to Kammerer's neo-Lamarckian salamander and midwife-toad programme, now treated as discredited; the legitimate modern question — transgenerational and epigenetic inheritance — is distinct and carefully bounded, and these specific inheritance claims are unconfirmed and historically reassessed.",
+  "comparison": "Kammerer's report that enforced reproductive adaptations were transmitted to Salamandra offspring is among the inheritance claims undone by the 1926 scandal. The general inheritance-of-acquired-traits question survives in epigenetics; his specific Lamarckian results do not, and are reassessed as cautionary history."
  }
 }
