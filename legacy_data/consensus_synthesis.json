@@ -193,5 +193,65 @@
   "verdict": "Vindicated — the pigment chemistry he called for is now mapped",
   "state": "The chemical and physiological causes of animal colouration are now thoroughly mapped: melanin via tyrosinase (eu- and pheomelanin), carotenoid-based colour and its enzymatic conversion (CYP2J19 and BDH1L turning yellow carotenoids into red ketocarotenoids), pterin pigments, and physiological colour change driven by pigment- and crystal-movement (dynein, cAMP).",
   "comparison": "Przibram's 1919 reframing of animal colouration as a problem of underlying chemical and physiological causes — companion to his and Brecher's tyrosinase/DOPA extract experiments — set the agenda that pigment-cell biology has since fulfilled. The demand was answered: colour is now read in terms of the very enzymes and pigments he pointed to. Largely vindicated, though the paper is uncited."
+ },
+ "9": {
+  "verdict": "Vindicated — the regulative limb field, now molecular",
+  "state": "Modern limb regeneration confirms the regulative principle Weiss invoked: a partial blastema can rebuild the whole pattern because positional identity is actively re-established — encoded in segment-specific H3K27me3, requiring dorsoventral cell contact (WNT10B, FGF2) and refined by genes such as Sall4 — though skeletal integration is imperfect.",
+  "comparison": "Weiss's demonstration that a complete limb regenerates even from a half cross-section is an early, clean proof of a regulative 'determination field' that restores the whole from incomplete material — exactly the positional regulation now mapped molecularly in the axolotl. The concept is vindicated; his term 'field' survives as positional information."
+ },
+ "11": {
+  "verdict": "Confirmed — position, not origin, dictates the organ",
+  "state": "That a blastema's fate is dictated by the regional field it occupies, not its tissue of origin, is borne out by modern axolotl work: limb formation requires dorsoventral cell contact and signalling (WNT10B, FGF2), positional and posterior identity is set by factors such as Hand2, and ectopic or grafted cells take on the identity of their position.",
+  "comparison": "Weiss's result — a tail-blastema placed in the limb field forms limb structures — is a striking early demonstration that a regional determination field, not the blastema's origin, dictates the organ. This is precisely the position-over-origin principle modern molecular regeneration confirms; the 1927 paper is its conceptual forerunner."
+ },
+ "36": {
+  "verdict": "Foundational — limb grafting is now standard",
+  "state": "Limb transplantation and regeneration in amphibians is a mature molecular field: developed-limb and blastema grafting are standard tools, nerve-mediated FGF signalling drives regeneration, and transgenic reporters (ZRS/Shh) and devices such as silk hydrogels extend the work toward inducing regeneration in less-regenerative species.",
+  "comparison": "Weiss's demonstration that developed amphibian limbs can be transplanted and incorporated provided the morphological foundation for his own functional and 'resonance' studies — and for the grafting toolkit that underpins modern regeneration research. The technique he pioneered is now routine; the 1923 paper is an uncited methodological ancestor."
+ },
+ "38": {
+  "verdict": "Founding endocrinology — vindicated and molecular",
+  "state": "Steinach's core insight — that gonadal (interstitial) secretions determine secondary sex characters, and that manipulating them reverses sex — is foundational endocrinology, now molecular: gonad transplants functionally integrate into the hypothalamic–pituitary–gonadal axis, hormones drive sex reversal across taxa (the androgenic gland in crustaceans, steroid signalling in fish), and gonadal sex differentiation is mapped to specific pathways.",
+  "comparison": "Steinach's 'puberty gland' experiments — implanting the opposite gonad to reverse or double sex characters and produce experimental hermaphrodites — are an origin point of hormonal sex-determination science. The principle is thoroughly vindicated; modern work supplies the molecules and the HPG-axis framework his organ-level experiments anticipated. (His was the most-cited paper in the corpus.)"
+ },
+ "39": {
+  "verdict": "Discredited claim — reassessed as history of science",
+  "state": "Kammerer's midwife-toad (Alytes) claims are now treated largely as a cautionary episode in the history of science; recent scholarship calls for an objective reassessment of his phenotypic-plasticity work, while the substantive question — inheritance of environmentally induced traits — lives on, transformed, in epigenetics rather than in his Lamarckian interpretation.",
+  "comparison": "Kammerer's report that environmentally enforced reproductive adaptations were inherited by Alytes descendants is the centrepiece of the neo-Lamarckian programme that collapsed with the 1926 nuptial-pad scandal. Modern biology rejects the specific claim and its Lamarckian reading; what survives is a more careful interest in his plasticity observations and the genuine, separate field of epigenetic inheritance."
+ },
+ "41": {
+  "verdict": "Themes endure — mantis colour change & regeneration",
+  "state": "Mantis biology is an active field across exactly Thomsen's themes: background-dependent colour change (now genetic — the Redboy transporter and pigment genes), colour vision and camouflage, raptorial-leg adaptation to prey, and appendage regeneration, with mantises a popular model for visually guided predation.",
+  "comparison": "Thomsen's documentation of rearing, colour change and regeneration in praying mantises extended the institute's mantis programme, surveying the very phenomena that remain central to mantis research today. A descriptive foundation whose themes endure while the 1909 paper itself goes uncited."
+ },
+ "42": {
+  "verdict": "Confirmed — chromatophore-based colour change",
+  "state": "Fish physiological colour change is well understood as chromatophore-based: pigment translocation and chromatophore proliferation (morphological colour change), coordinated by gap-junction communication and even dermal photoreception, allow background matching across fishes, loaches included.",
+  "comparison": "Secerov's experiments showing the stone loach changes colour with background and light via chromatophore adjustment are an early, correct account of exactly this chromatophore-mediated background adaptation. The phenomenon is confirmed and mechanised (gap junctions, dermal photoreception, chromatophore proliferation); the 1909 paper is an uncited precursor."
+ },
+ "44": {
+  "verdict": "Reinterpreted — ecology/genetics, not Lamarckian induction",
+  "state": "The reproductive divergence of Salamandra atra and S. salamandra (maculosa) is now understood through ecology, genetics and phylogeny — the shift to live birth tracks climate and altitude (a dry-climate hypothesis) rather than Lamarckian induction — while Kammerer's broader plasticity claims receive cautious historical reassessment.",
+  "comparison": "Kammerer's argument that the two salamanders' reproductive and morphological differences are environmentally induced, heritable adaptations is a Lamarckian/atavism claim later disputed. Modern work confirms the species genuinely differ but attributes this to genetic and climatic evolution, not inherited induction; his interpretation is rejected even as the salamanders remain a rich study system."
+ },
+ "48": {
+  "verdict": "Confirmed — regeneration declines with age and stage",
+  "state": "That regenerative capacity depends systematically on age, developmental stage and size is a well-established, active principle: across taxa (amphibians, damselfly larvae, annelids) younger stages regenerate better, capacity declines with age and through metamorphosis, and the molecular basis — a failure to activate regeneration genes, factors such as a MARCKS-like protein — is being worked out.",
+  "comparison": "Kammerer's 1905 finding that amphibian-larva regenerative capacity scales with age, stage and body size states exactly this now-confirmed age- and stage-dependence of regeneration. The principle is mainstream and increasingly molecular; his early systematic statement is uncited."
+ },
+ "49": {
+  "verdict": "Confirmed — regeneration governs claw asymmetry",
+  "state": "Claw asymmetry (heterochely) and its regulation by regeneration and autotomy is an active crustacean topic: losing or removing a claw reorganises the large/small asymmetry, claw regeneration is dissected mechanistically (mud crab, mitten crab, crayfish) down to stem-cell sources, and lateralisation and closing-force asymmetry are quantified.",
+  "comparison": "Przibram's result that removing a claw reorganises the heterochely — that regeneration governs which claw becomes dominant — is an early experimental demonstration of exactly the regeneration-and-asymmetry phenomenon now studied molecularly across decapods. Confirmed and extended; the 1905 paper is uncited."
+ },
+ "57": {
+  "verdict": "Induction plausible, inheritance unconfirmed",
+  "state": "Midwife-toad biology is now framed by genetics and climate: speciation proceeds through genetic hybrid incompatibilities and breeding phenology shifts with climate and weather — while Kammerer's claim that environmentally induced breeding changes are inherited remains unconfirmed.",
+  "comparison": "Kammerer's experimental alteration of how and where the midwife toad and tree frog breed is the 'induction' step that fed his later, discredited inheritance claims. Modern anuran biology accepts that environment shifts breeding behaviour (e.g. climate-driven phenology) but not that such changes are heritably fixed in his Lamarckian sense; the induction is plausible, the inheritance is not."
+ },
+ "59": {
+  "verdict": "Themes endure — mantis as a model for colour & regeneration",
+  "state": "Sphodromantis remains a studied mantis: recent work shows ontogenetic colour change even without environmental cues (a seasonal programme), alongside the broader active fields of mantis colour change, camouflage and appendage regeneration.",
+  "comparison": "Przibram's 1906 paper established the Egyptian mantis as a tractable experimental insect for colour change and regeneration — model-organism groundwork (companion to Grosser & Przibram's study). The animal endures in research on exactly these phenomena; the founding paper is uncited."
  }
 }
