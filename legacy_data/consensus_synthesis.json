@@ -583,5 +583,65 @@
   "verdict": "Answered — colour change is both skin-local and systemic",
   "state": "Fish colour change is understood as both locally and systemically controlled: chromatophores respond to local, neural and hormonal signals, and skin-pigment patterning has cell-autonomous genetic components — so the response is partly skin-intrinsic and partly imposed by the whole animal.",
   "comparison": "Secerov's skin-graft-plus-colour-change experiments — testing whether the loach's colour response is local to the skin or imposed by the whole animal — pose exactly the autonomy question modern pigment biology resolves as 'both'. His experimental logic of using grafts to separate local from systemic control is the right one; uncited."
+ },
+ "100": {
+  "verdict": "Largely bypassed — an extreme intergeneric cross, uncorroborated",
+  "state": "Fish hybridisation is a well-studied phenomenon in ecology and evolution (natural hybridisation, introgression, hybrid viability), but the modern emphasis is on hybridisation within and between closely related species and its genomic consequences, not on forced crosses between distant genera.",
+  "comparison": "Kammerer's claim that the river perch and ruffe — different genera — can be hybridised to yield intermediate offspring is a bold early hybridisation experiment that modern fish biology does not corroborate and treats such distant intergeneric crosses skeptically. The specific result is uncited; Consensus retrieval found little modern engagement with this exact claim (mostly perch ecology and toxicology)."
+ },
+ "106": {
+  "verdict": "Themes endure — mantis colour change & regeneration",
+  "state": "Mantis biology remains active across exactly these themes: background-dependent and ontogenetic colour change (now genetic — the Redboy transporter and pigment genes), sexual colour dimorphism, camouflage, and appendage regeneration.",
+  "comparison": "Przibram's establishment of the European mantis, like its Egyptian counterpart, as a rearable experimental insect for colour change and regeneration is model-organism groundwork whose themes endure in current mantis research. The animal persists as a study system; the 1907 paper was cited by contemporaries (Megušar and others) but is uncited today."
+ },
+ "108": {
+  "verdict": "Vindicated — the enzymatic (tyrosinase) theory of pigment",
+  "state": "The enzymatic theory of pigmentation is established and molecular: tyrosinase, with the tyrosinase-related proteins TYRP1/2, initiates and controls melanin biosynthesis (TYRP1 even requiring zinc), now characterised genetically and biochemically — tyrosinase has even been used to make synthetic melanin.",
+  "comparison": "Weindl's 1907 proposal that pigment arises through pre-formed tyrosinase enzymes — an enzymatic theory of animal pigmentation — is essentially correct and foundational: tyrosinase is indeed the melanin-forming enzyme, exactly as the institute's DOPA/tyrosinase programme proposed. Strongly vindicated; uncited."
+ },
+ "109": {
+  "verdict": "Confirmed — autotomy linked to regeneration",
+  "state": "Spider leg autotomy and regeneration is actively studied behaviourally and ecologically: spiders shed legs defensively and compensate functionally — rapidly adopting new gaits and recovering speed — while regeneration restores legs over moults.",
+  "comparison": "Otto Weiss's finding that the water spider sheds legs by autotomy and regenerates them — linking a defensive reflex to regenerative capacity — is an early statement of exactly this autotomy-plus-regeneration biology now studied for its adaptive value and functional (gait) compensation. Confirmed; uncited."
+ },
+ "111": {
+  "verdict": "Confirmed — crustacean chromatophore control",
+  "state": "Crustacean colour change is well characterised: prawns adjust their chromatophores (and pigments such as crustacyanin) to the background, with chromatophore number increasing on dark backgrounds and behavioural background-matching, under hormonal control.",
+  "comparison": "Fröhlich's early analysis of the prawn's colour-change reactions is a founding description of exactly the crustacean chromatophore control now dissected — crustacyanin, hormonal regulation and background-dependent chromatophore number in Palaemon and its relatives. Confirmed and deepened; uncited."
+ },
+ "112": {
+  "verdict": "Real but context-dependent — maternal-age effect on size",
+  "state": "Maternal-age effects on offspring size are an active but context-dependent field: older mothers may produce larger or smaller offspring depending on species, with sex-specific effects and mechanisms (including mitochondrial transmission) — no single universal direction.",
+  "comparison": "Halban's finding that egg and newborn size rise with the mother's age states one direction of the maternal-age effect now known to be real but species- and context-dependent (sometimes the reverse). His positive result is one data point in a literature that finds the effect genuine but variable; uncited — and a useful contrast to the institute's own mantis null result."
+ },
+ "114": {
+  "verdict": "Confirmed — specialized leg regeneration in arthropods",
+  "state": "Regeneration of specialised arthropod legs is well studied: different leg types regenerate (mostly in the larval/nymphal window, over moults) with functional recovery such as gait compensation, alongside specialisation like the raptorial foreleg — now approached molecularly.",
+  "comparison": "Megusar's documentation of how the differently specialised orthopteran legs (grasping, walking, jumping) regenerate when the animals are reared from young is an early comparative survey of exactly this specialised-appendage regeneration now studied functionally and molecularly across arthropods. Confirmed; uncited."
+ },
+ "115": {
+  "verdict": "Foundational concept — homeosis, now Hox/evo-devo",
+  "state": "Homeosis — the substitution of one body part for another — is a foundational concept of evo-devo, explained by Hox and selector genes; homeotic transformations (including in arthropod appendages, and even intracellular homeosis in ciliates) remain a standard analytic window on development and evolution.",
+  "comparison": "Przibram's synthesis 'Homoeosis in Arthropods' — establishing homeosis as a regular, analysable phenomenon frequently revealed through regeneration — helped systematise a concept (homeosis, after Bateson) that became central to evo-devo and Hox-gene biology. The concept is foundational and thriving; the 1910 paper is an uncited ancestor of homeotic-transformation research."
+ },
+ "117": {
+  "verdict": "Vindicated — the contractile vacuole as osmoregulator",
+  "state": "The contractile vacuole is established as the protist osmoregulatory organelle: its pulsation tracks the osmotic load (slowing or stopping in high-osmolarity media) and it expels water via membrane tubes, ion pumps and cytoplasmic pressure — now studied structurally and molecularly.",
+  "comparison": "Zuelzer's finding that seawater slows or stops the contractile vacuole, its pulsation tracking the osmotic load, is an early and correct demonstration of the organelle's osmoregulatory function, exactly as modern cell biology confirms. The inference is vindicated; uncited."
+ },
+ "121": {
+  "verdict": "Confirmed — regeneration of hormone-dependent sex characters",
+  "state": "Both amphibian regeneration and the hormonal control of secondary sex characters are well established; their intersection — regrowth of sex-related structures under endocrine control — fits modern endocrinology and regeneration, with androgens, estrogens and thyroid hormone governing such characters.",
+  "comparison": "Kammerer's finding that amphibians regenerate their secondary sexual characters — linking regeneration to the sex-character (hormonal) system — connects two now-mature fields; modern work confirms both the regeneration of such structures and their endocrine control. Confirmed in principle; uncited."
+ },
+ "128": {
+  "verdict": "Confirmed — claw-handedness reversal after loss",
+  "state": "Claw-asymmetry reversal after loss is established crustacean biology: losing the major claw triggers the remaining minor claw to transform into the major while the regenerate becomes the minor — a reversal now studied for the developmental and molecular basis of claw laterality, and inducible by substrate and use.",
+  "comparison": "Przibram's 'claw reversal' — after losing the large claw, the small claw takes over as large and the regenerate becomes small — is an early, precise description of exactly this handedness-reversal now confirmed and studied mechanistically in lobsters and crayfish. Confirmed and extended; cited by contemporaries (Kammerer), uncited today."
+ },
+ "131": {
+  "verdict": "Confirmed — regeneration taps growth machinery",
+  "state": "The coupling of regeneration and growth is an active theme: regeneration reactivates developmental and growth programmes (Hox 'rebooting', morphogen-gradient scaling for proportional regrowth), and regenerative growth can alter overall growth dynamics.",
+  "comparison": "Zuelzer's finding that regeneration accelerates the isopod's growth rate is an early empirical case for the regeneration-as-growth link — the idea, central to the institute's programme (Przibram's 'regeneration as growth-acceleration'), that regeneration taps the growth machinery. Modern work confirms regeneration reactivates growth and developmental programmes; uncited."
  }
 }
