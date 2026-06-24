@@ -403,5 +403,35 @@
   "verdict": "Confirmed — pupal colour plasticity",
   "state": "Environmentally cued pupal colouration in the cabbage white is established and increasingly genetic: pupal colour tracks pupation substrate and light as a predator-protection adaptation, regulated by melanin-synthesis genes with developmental trade-offs.",
   "comparison": "Brecher's 1922 result that the cabbage-white pupa matches its colour to the surrounding light and background is a clean instance of exactly this plasticity, now mapped to substrate cues and pigment genes. One of her several pupal-colour papers in the corpus; confirmed and uncited."
+ },
+ "17": {
+  "verdict": "Confirmed — pupal colour plasticity",
+  "state": "Environmentally cued pupal colouration is established and increasingly genetic across butterflies: pupal colour tracks substrate and light as a predator-protection adaptation, regulated by pigment genes (including the lncRNA cortex), with developmental trade-offs.",
+  "comparison": "Przibram and Brecher's result that Vanessid pupae match their colour to light and background, as the cabbage white does, is one of the institute's several demonstrations of this now-confirmed plasticity. The phenomenon is mainstream and increasingly molecular; the paper is uncited."
+ },
+ "18": {
+  "verdict": "Resolved in principle — the PD axis is determined yet reprogrammable",
+  "state": "The proximo-distal axis of the regenerating limb is now understood as encoded positional information that is normally stable but can be re-specified: retinoic acid proximalises blastema cells and factors such as Prod1/Tig1 and Hand2 set positional identity, so PD identity is firmly 'determined' yet experimentally reversible.",
+  "comparison": "Kurz's polarity-reversal experiments — testing whether limb polarity is fixed or reversible, a direct probe of how firmly the proximo-distal axis is determined — pose exactly the positional-determination question modern axolotl work answers: the axis is robustly determined but can be reprogrammed. The question is central and resolved in principle; this paper is uncited (and Consensus retrieval for it was thin)."
+ },
+ "20": {
+  "verdict": "Vindicated — pupation is a committed hormonal (ecdysone) signal",
+  "state": "The hormonal control of pupation is well understood: the steroid 20-hydroxyecdysone, with the brain's PTTH and juvenile hormone, triggers and times metamorphosis; once the critical period passes and the hormonal cascade is committed, pupation proceeds independently of the head and brain.",
+  "comparison": "Przibram's finding that caterpillars decapitated after a critical period still pupate — the trigger having been released into the body and no longer needing the head — is an early, elegant demonstration of exactly this: a circulating hormonal signal (now known to be ecdysone, downstream of brain PTTH) commits the animal to metamorphosis. The 'critical period' he identified is a real endocrine threshold; vindicated, with the hormone since named. Uncited."
+ },
+ "21": {
+  "verdict": "Confirmed — pupal colour plasticity",
+  "state": "Environmentally cued pupal colouration is established and increasingly genetic: pupal colour tracks pupation substrate and light, is regulated by melanin-synthesis genes and the lncRNA cortex, and shows developmental trade-offs across butterflies.",
+  "comparison": "Brecher's extension of the cabbage-white result to the Vanessids — pupae adapting their colour to light and background — broadened the evidence for exactly this plasticity, now mapped to substrate cues and pigment genes. Confirmed and mainstream; the paper is uncited."
+ },
+ "24": {
+  "verdict": "Foundational method — autografting is now standard",
+  "state": "Autologous (autoplastic) grafting is now a cornerstone of regenerative medicine and surgery: autografts avoid immune rejection and are used for skin, soft-tissue and organ reconstruction, with modern refinements such as micro-column harvesting, scaffold-guided regeneration and stem-cell-derived grafts.",
+  "comparison": "Przibram's codification of the autoplastic transplantation method — grafting tissue back onto the same animal as a controlled tool for regeneration and potency studies — anticipates the central role of autografts in both experimental regeneration and clinical reconstruction, precisely because same-animal grafts avoid rejection. The method is foundational and ubiquitous; the 1923 paper is uncited."
+ },
+ "25": {
+  "verdict": "Live frontier — eye replantation, optic nerve the bottleneck",
+  "state": "Eye replantation and transplantation is a live frontier: allogeneic whole-eye transplantation is now surgically feasible with partial promise, but functional vision restoration is limited by optic-nerve (retinal ganglion cell axon) regeneration — the central unsolved bottleneck.",
+  "comparison": "Koppanyi's 1923 demonstration that eyes can be replanted and re-establish structure and some function is an early instance of exactly the whole-eye transplantation now pursued in medicine — and the limit he would have met, reconnecting the optic nerve, remains the field's key obstacle. The phenomenon is confirmed and the modern frontier echoes his result; his eye work also fed Sperry's chemoaffinity studies. Uncited."
  }
 }
