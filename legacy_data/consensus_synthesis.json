@@ -703,5 +703,95 @@
   "verdict": "Discredited claim — reframed as epigenetics",
   "state": "This is another of Kammerer's neo-Lamarckian inheritance claims, now discredited; the legitimate modern descendant is epigenetic inheritance and developmental plasticity, with the heritability of enforced form-changes unconfirmed.",
   "comparison": "Kammerer's report that experimentally enforced form-changes were inherited is part of his discredited Lamarckian programme; modern biology rejects the specific claim while the general inheritance-of-acquired-traits question lives on, transformed, in epigenetics. Unconfirmed; reassessed as cautionary history."
+ },
+ "161": {
+  "verdict": "Confirmed — Wolffian lens regeneration, now single-cell",
+  "state": "Wolffian lens regeneration — the newt regrowing a lens from the dorsal iris by pigmented-epithelial-cell transdifferentiation — is a classic, now-molecular regeneration model: single-cell atlases of the regenerating iris, macrophage roles in fibrosis and inflammation, and the signalling of dorsal-iris competence are all characterised.",
+  "comparison": "Uhlenhuth's study of the amphibian regenerating a new lens from the depigmenting dorsal iris is an early contribution to Wolffian lens regeneration — still a flagship transdifferentiation model, now dissected to single-cell resolution. His attention to dorsal-iris depigmentation and 'stimulus physiology' anticipates the modern mechanistic account; confirmed, uncited."
+ },
+ "162": {
+  "verdict": "Echoed — ectopic lentoids inform lens competence",
+  "state": "Lens formation and ectopic lentoid bodies are studied in development and regeneration: fish ocular organoids form lenses via alternative morphogenesis, and lentoid bodies (from non-lens cells) inform lens-fate competence.",
+  "comparison": "Kolmer's documentation of a spontaneously formed second lens (lentoid) in a fish eye is an early natural-experiment observation bearing on lens-forming competence — exactly what modern lentoid and ocular-organoid work probes (cells beyond the lens can form lens tissue). A descriptive curiosity that prefigures lens-competence research; uncited."
+ },
+ "163": {
+  "verdict": "Reopened — inheritance of acquired traits, now epigenetics",
+  "state": "The inheritance of acquired characters — the theoretical crux of the institute's Lamarckian programme — is now reframed by epigenetics: some environmentally induced states can be transmitted via epigenetic marks, but this is bounded, mechanism-specific and distinct from classical Lamarckism, with the debate continuing.",
+  "comparison": "Demoll's even-handed weighing of the case for and against the inheritance of acquired characters is exactly the question modern transgenerational epigenetics has reopened on new terms. His balanced stance reads as prescient: the answer is 'sometimes, by specific epigenetic means', not the wholesale Lamarckism the institute's experiments sought. A measured early treatment, uncited."
+ },
+ "166": {
+  "verdict": "Descriptive value — intersex morphology and sex determination",
+  "state": "Intersex and hermaphrodite anatomy informs sex-determination and sexual-dimorphism research: intersex individuals show intermediate skeletal sex indicators, and sex determination is increasingly mapped genetically and hormonally across taxa.",
+  "comparison": "Stieve's documentation of the skeletal anatomy of a partial hermaphrodite — a natural intersex relevant to the sex-determination question — is an early descriptive contribution to intersex morphology, a phenomenon now used to probe how sex determination shapes the skeleton and how it can be intermediate. Descriptive value retained; uncited."
+ },
+ "167": {
+  "verdict": "Reinterpreted — nuclear cycles and clonal size in ciliates",
+  "state": "Ciliate nuclear reorganisation (conjugation and autogamy, the events once grouped as 'endomixis') and its physiological correlates are studied in Paramecium genetics, where the link between nuclear cycles and cell size, clonal vitality and clonal ageing remains of interest.",
+  "comparison": "Erdmann's linking of body-size variation to the endomixis cycle in pure Paramecium lines is an early attempt to tie a nuclear-reorganisation rhythm to biometric variation and clonal vitality. The term 'endomixis' was later reinterpreted (as autogamy and macronuclear events), but the underlying question — nuclear cycles governing clonal size and vitality — persists. Partly superseded in terminology, conceptually alive; uncited."
+ },
+ "168": {
+  "verdict": "Confirmed — iris-to-lens transdifferentiation (Wolffian)",
+  "state": "Wolffian lens regeneration is now resolved to single-cell and signalling detail: studies identify all major newt-iris cell types during regeneration and the macrophage and inflammatory regulation of the iris-to-lens transdifferentiation.",
+  "comparison": "Uhlenhuth's continued analysis of how the iris regenerates a lens — the conditions and tissue conversion of Wolffian regeneration — directly addresses the iris-to-lens transdifferentiation now mapped at single-cell resolution. Confirmed; uncited (companion to his 1919 study)."
+ },
+ "170": {
+  "verdict": "Confirmed — pupal colour chemistry, now pigment genetics",
+  "state": "Environmentally cued pupal colour adaptation in butterflies is now understood at the level of pigment genetics and physiology: background and temperature modulate pupal melanisation, and the genes controlling black, blue and yellow pupal pigments have been identified, including in Pieris.",
+  "comparison": "Brecher's sixth instalment, pinning down the 'chemism' — the pigment chemistry — behind the cabbage-white pupa's background-matched colour, is an early biochemical attack on what is now resolved as a pigment-pathway-and-environment system. His drive toward chemistry over mere description anticipates the modern molecular account; the phenomenon stands, his work uncited."
+ },
+ "171": {
+  "verdict": "Confirmed — tyrosinase–DOPA–melanin, now textbook",
+  "state": "The tyrosinase–DOPA–melanin pathway Brecher examined is now textbook biochemistry and a major drug target: tyrosinase oxidises DOPA en route to melanin, and inhibiting it anchors skin-whitening, anti-browning and melanoma research, with the enzymatic steps reconstructed in vitro.",
+  "comparison": "Brecher's demonstration that tyrosinase acts on DOPA to produce pigment identified the exact enzymatic step that underpins modern melanin biochemistry. The reaction he described is now a cornerstone — and a leading therapeutic and cosmetic target — yet the institute's contribution sits uncited beneath the vast literature it anticipated. Strongly confirmed."
+ },
+ "1": {
+  "verdict": "Confirmed — partial-limb regeneration and positional information",
+  "state": "Urodele limb regeneration is a premier model: newts and axolotls regrow limbs (and jaws, tendons) through a blastema governed by positional information, now mapped with single-cell, genomic and regeneration-specific gene-regulatory detail.",
+  "comparison": "Abolins's study of how the newt restores a leg mutilated only at the fibular margin probes positional information in the blastema — how a partial wound rebuilds exactly what is missing — which is precisely the question modern molecular regeneration addresses (positional cues, blastema patterning). The phenomenon is central and confirmed; his specific paper barely cited."
+ },
+ "2": {
+  "verdict": "Confirmed — positional rules of regenerative symmetry",
+  "state": "The rules of regenerative symmetry — how axial and positional cues determine a regenerate's handedness and completeness — are now molecular: confronting dorsal and ventral blastema tissue triggers limb formation in axolotls, with WNT and FGF signalling setting the axes.",
+  "comparison": "Burchhardt's finding that a regenerate's symmetry depends on how the limb is implanted into the body is an early demonstration of the positional-confrontation rules now formalised in axolotls (dorsoventral contact, with WNT10B and FGF2, drives outgrowth and symmetry). His grafting experiments prefigure modern positional-information regeneration; the principle holds, the paper near-uncited."
+ },
+ "7": {
+  "verdict": "Echoed — homeotic mis-regeneration, now Hox identity",
+  "state": "Heteromorphic and homeotic regeneration — regrowing the wrong structure at a wound site — is now understood through Hox-gene segmental identity and the endocrine (juvenile-hormone) control of insect regeneration and moulting.",
+  "comparison": "Staudinger's catalogue of heteromorphoses at the stick insect's spiracles and other unexpected sites documents homeotic mis-regeneration — a regenerate taking on the wrong identity — which modern work explains through segmental Hox identity and hormonal control of insect regeneration. A descriptive widening of the phenomenon that maps onto today's gene-identity framework; essentially uncited."
+ },
+ "13": {
+  "verdict": "Confirmed — temperature shapes extremity length (Allen's rule)",
+  "state": "Temperature's control of body proportion — shorter extremities in the cold, as in Allen's rule — is now supported as a developmental and plastic effect: rearing temperature shapes extremity length, with epigenetic mediation and clear relevance to climate-driven body-size change.",
+  "comparison": "This Przibram-school experiment — chemically cooling young rats and measuring the resulting shorter tails — is an early causal test of what is now framed as the developmental basis of Allen's rule: ambient temperature directly shapes extremity proportions, an effect modern work ties to plasticity and epigenetics. The causal claim is upheld by current thermal-developmental biology, though the specific paper is barely cited."
+ },
+ "19": {
+  "verdict": "Echoed — mantis foreleg form and appendage regeneration",
+  "state": "The mantis raptorial foreleg is an active subject of functional morphology — its form tuned by prey type, camouflage and phylogeny — while insect appendage regeneration is being resolved molecularly across species.",
+  "comparison": "Thomson's comparative notes on how the raptorial foreleg regenerates across mantid genera braid together two threads still alive today: the foreleg as a much-studied adaptive structure and appendage regeneration as a molecular model. His cross-genus framing anticipates current evolutionary-morphology treatments of the mantis strike limb; descriptive value retained, citation negligible."
+ },
+ "23": {
+  "verdict": "Historical marker — the institute's quantitative-biology programme",
+  "state": "Quantitative biology — measuring and modelling life mathematically — has become a foundational mode across the sciences, from systems biology to biological-variation statistics, exactly the programme this catalogue announced.",
+  "comparison": "This is not an experiment but a bibliography: Przibram gathering the institute's 1916–1919 quantitative-biology papers in English to advertise the programme's reach. Its interest today is historical — it documents how early and deliberately the Vivarium committed to a quantitative, measurement-driven biology, the very stance that now pervades the life sciences. No modern citation, but a revealing marker of the institute's ambition."
+ },
+ "26": {
+  "verdict": "Prefigured — eye replantation, now regenerative ophthalmology",
+  "state": "Eye and optic-nerve regeneration is intensely studied: fish and amphibians regenerate retina and (partially) optic nerve, and whole-eye transplantation is an active translational goal in mammals.",
+  "comparison": "Koppanyi's third eye-replantation paper — showing a transplanted eye can survive and grow in fishes — is part of an institute series that prefigures both modern fish-eye regeneration research and the contemporary push toward whole-eye transplantation. The growth of a replanted eye he documented anticipates today's regenerative-ophthalmology agenda; the series remains largely uncited."
+ },
+ "29": {
+  "verdict": "Confirmed — amphibian eye/retina regenerates function",
+  "state": "Amphibians' capacity to regenerate retina and recover vision — unlike mammals — is now a leading regeneration model, with the signalling pathways, transcription factors and epigenetics of retinal regrowth being mapped.",
+  "comparison": "This instalment, reporting that the amphibian eye can be replanted and recover structure and some function, sits at the root of what is now a flagship finding: amphibians and fish regenerate functional retina where mammals cannot. The functional recovery Koppanyi and Kolmer noted is exactly the capacity modern molecular work is trying to reverse-engineer into mammals; confirmed, uncited."
+ },
+ "30": {
+  "verdict": "Ahead of its time — mammalian whole-eye transplantation",
+  "state": "Whole-eye transplantation in mammals — long thought impossible — is now an active frontier: the first human whole-eye transplant has been reported and large-animal models advance steadily, with optic-nerve regeneration the central remaining barrier.",
+  "comparison": "Jellinek tackled the hardest case in the institute's eye series — replantation in mammals, where regenerative tolerance is least — and reached the same wall researchers face now: the mammalian eye can be transplanted, but restoring optic-nerve connection and vision is the obstacle. A century on, whole-eye transplantation is real yet vision-restoration still pending, making his framing strikingly current; uncited."
+ },
+ "31": {
+  "verdict": "Not upheld — head-transplant claim unsubstantiated",
+  "state": "Insect tissue grafting and appendage regeneration are well established and now molecular, but Finkler's specific claim — that whole heads could be exchanged (even between sexes) with lasting survival and functional integration — was contentious in its day and has not been substantiated.",
+  "comparison": "Finkler's head-transplantation reports were among the institute's most sensational and most disputed; this instalment, swapping Hydrophilus heads between sexes, pushed the claim furthest. Modern insect science readily grafts tissues and dissects appendage regeneration, but offers no support for functional whole-head exchange between sexes — the dramatic version of the claim did not survive scrutiny. A cautionary, largely superseded episode."
  }
 }
