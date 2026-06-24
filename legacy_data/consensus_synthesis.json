@@ -793,5 +793,80 @@
   "verdict": "Not upheld — head-transplant claim unsubstantiated",
   "state": "Insect tissue grafting and appendage regeneration are well established and now molecular, but Finkler's specific claim — that whole heads could be exchanged (even between sexes) with lasting survival and functional integration — was contentious in its day and has not been substantiated.",
   "comparison": "Finkler's head-transplantation reports were among the institute's most sensational and most disputed; this instalment, swapping Hydrophilus heads between sexes, pushed the claim furthest. Modern insect science readily grafts tissues and dissects appendage regeneration, but offers no support for functional whole-head exchange between sexes — the dramatic version of the claim did not survive scrutiny. A cautionary, largely superseded episode."
+ },
+ "32": {
+  "verdict": "Not upheld — replanted-head function unconfirmed",
+  "state": "Insect tissue grafting and appendage regeneration are well established and now molecular, but the strong claim that a replanted insect head retains integrated functional capacity was disputed in its day and has not been confirmed.",
+  "comparison": "This first instalment of Finkler's head-transplant series claims replanted insect heads retain functional capacity. As with the rest of the series, modern insect science supports tissue grafting and appendage regeneration but not a functionally integrated replanted head; the result was contested at the time and remains unsubstantiated."
+ },
+ "33": {
+  "verdict": "Not upheld — head-driven colour change unconfirmed",
+  "state": "Insect tissue grafting, regeneration and pigment genetics are all well established today, but there is no support for the claim that transplanting a head between individuals redirects the recipient's colouration.",
+  "comparison": "This instalment extends Finkler's contested head-transplant work to a claim that the replanted head influences the recipient's colour. Modern insect biology offers no support for cross-individual head transplants steering pigmentation; like the rest of the series the dramatic claim has not held up, even though tissue grafting and pigment genetics themselves are sound."
+ },
+ "53": {
+  "verdict": "Prescient choice — lancelet regeneration and chordate evolution",
+  "state": "Amphioxus (the lancelet) is now a key model for chordate evolution and the ancestral state of regeneration: its genome is sequenced and its limited regenerative capacity is studied to infer how chordate regeneration evolved.",
+  "comparison": "Biberhofer's early study of regeneration in the lancelet chose an animal now prized for exactly that phylogenetic reason — as a basal chordate, amphioxus anchors questions about how regeneration evolved across the chordate line. His choice of organism was prescient; the regeneration biology of amphioxus is an active, genome-enabled field today, though his paper is barely cited."
+ },
+ "58": {
+  "verdict": "Confirmed — gravity as a developmental cue (now space biology)",
+  "state": "Gravitational biology is now an established field: both micro- and hyper-gravity measurably alter embryonic development, stem-cell differentiation and neural patterning across animals, a question driven largely by spaceflight research.",
+  "comparison": "Megusar's experiment — perturbing a beetle's embryonic development with abnormal gravity to test whether gravity is a developmental cue — posed precisely the question modern gravitational and space biology answers in the affirmative: altered gravity disturbs development across species. A century before spaceflight made it routine, the institute was already manipulating gravity as a developmental variable; confirmed in spirit, uncited."
+ },
+ "90": {
+  "verdict": "Confirmed — Mendelian mouse genetics of the waltzing trait",
+  "state": "Mouse genetics has become a foundational discipline: classic variants like the waltzing/circling phenotype are traced to specific genes (such as Cdh23), and structured crosses like the Collaborative Cross dissect complex traits with precision.",
+  "comparison": "Hammerschlag's crosses of Japanese dancing mice with European field mice to track inheritance of the waltzing trait are early Mendelian mouse genetics on a phenotype now molecularly understood (the circling behaviour maps to inner-ear genes). The hereditary-analysis approach became the backbone of mouse genetics; the specific study is little cited, but its method and even its strain remain recognisable today."
+ },
+ "101": {
+  "verdict": "Confirmed — woodlouse regrows a functional antenna",
+  "state": "Regeneration in terrestrial isopods is confirmed and characterised: Porcellio scaber regrows its antenna and the regenerate is functionally sensory, recovering its role even if the segment number differs.",
+  "comparison": "Klintz's report that the woodlouse regenerates its antenna is directly confirmed by current work — a 2025 study shows the regenerated antenna of Porcellio scaber recovers its sensory function, with only the number of segments reduced. The phenomenon he documented in 1907 holds in exactly the same species; one of the cleaner century-spanning confirmations in the corpus, though his paper goes uncited."
+ },
+ "103": {
+  "verdict": "Confirmed — salinity acclimation and osmoregulation in fish",
+  "state": "Fish osmoregulation and salinity acclimation are now a deep field: euryhaline teleosts adjust to salt via ionocytes, hormonal control, gut microbiota and metabolic remodelling, with limits set by species physiology — and salinity tolerance is recognised as a driver of freshwater–marine transitions in evolution.",
+  "comparison": "Neudorfer's experiments acclimating freshwater fish to salt water, within limits, are early osmoregulation physiology — the same capacity now dissected to ionocytes, hormones and gut-microbiome remodelling, and recognised as a key axis of fish evolution and aquaculture. The bounded, experimental acclimation he found matches the modern picture; confirmed, uncited."
+ },
+ "105": {
+  "verdict": "Confirmed — autotomy clears faulty regenerates",
+  "state": "Autotomy and subsequent regeneration are well characterised in arthropods — a self-protective, recoverable loss with rapid behavioural and morphological compensation — and the molecular control of decapod limb regeneration is being mapped.",
+  "comparison": "Przibram's observation that arthropods automatically cast off a malformed regenerate — discarding faulty regrowth so it can be redone — describes a regenerative quality-control behaviour squarely within the modern autotomy-and-regeneration framework (autotomy as a recoverable, adaptive self-amputation). The phenomenon is real and actively studied; his early articulation of the 'shed-and-retry' logic is uncited but apt."
+ },
+ "122": {
+  "verdict": "Holds — a negative case in comparative regeneration",
+  "state": "Regenerative capacity is now known to vary enormously across arthropods and animals generally — from near-whole-body regeneration to almost none — and explaining that variation, including why some lineages regenerate poorly, is an open comparative question.",
+  "comparison": "Klintz's documentation of the cyclopoid copepods' poor regenerative capacity is a deliberate negative case — informative precisely because these crustaceans regenerate so little, in contrast to the prolific limb regeneration of decapods. Comparative regeneration biology still grapples with exactly this puzzle of why capacity varies so widely across related groups; his negative result remains a valid data point, uncited."
+ },
+ "137": {
+  "verdict": "Confirmed framing — limited but real mammalian regeneration",
+  "state": "The limits of mammalian regeneration are a central question today: most mammals regenerate poorly compared with lizards and salamanders, but exceptions — digit tips, the spiny mouse Acomys, some tail and skin regeneration — show the capacity is not wholly absent and is being actively probed.",
+  "comparison": "Klintz's experiments testing how far dormice and other mammals regenerate the tail asked the precise question now driving regenerative medicine: why are warm-blooded vertebrates such poor regenerators, and where do exceptions lie? Modern discoveries of mammalian digit-tip and Acomys regeneration vindicate the framing that mammalian capacity is limited but real. The question is alive; the paper uncited."
+ },
+ "144": {
+  "verdict": "Prefigured — visceral-organ transplantation and immune tolerance",
+  "state": "Organ transplantation is now routine medicine and transplant immunology a major science, while urodele amphibians are studied for their unusual immune tolerance and regenerative capacity — making visceral-organ grafting in newts relevant to both fields.",
+  "comparison": "Ehrenpreis's test of whether the spleen — a visceral organ — could be transplanted and survive in adult newts is an early organ-transplantation experiment in a species now valued for its immune tolerance and regeneration. What was an exploratory graft is, a century on, both routine clinical practice in mammals and a live research question in amphibian transplant immunology; the specific study is essentially uncited."
+ },
+ "155": {
+  "verdict": "Anticipated — antenna-to-leg homeosis, now Hox genetics",
+  "state": "Homeotic transformations — one body part developing in the identity of another, as in antenna-to-leg — are now explained by Hox genes (the Antennapedia complex), a cornerstone of developmental genetics; analogous intracellular homeosis is even described in single-celled ciliates.",
+  "comparison": "Przibram's finding of tarsal (leg) segments growing where antennal parts belong is a textbook homeotic transformation — antenna into leg — observed through regeneration decades before the Antennapedia Hox genes explained exactly this swap. It is one of the corpus's most striking anticipations of modern developmental genetics: the phenomenon he saw is now a canonical illustration of Hox identity control, though his paper predates and goes uncited by that literature."
+ },
+ "173": {
+  "verdict": "Partly overturned — temperature does affect reproduction",
+  "state": "Modern reproductive physiology shows temperature and reproduction are intertwined: core body-temperature rhythms track the ovulatory cycle (and help predict conception), while environmental heat stress measurably reduces fertility and offspring survival — though the intrinsic length of the cycle is relatively robust.",
+  "comparison": "Przibram reported a negative result — that the female cycle and pregnancy were independent of temperature, contrasting with his temperature-dependent tail-length work. Modern data complicate this: the intrinsic cycle is fairly robust, but body-temperature rhythms do track ovulation and environmental heat stress clearly impairs reproduction. His clean dissociation thus holds only partly; the temperature–reproduction link is real, just subtler than a simple proportionality. Uncited."
+ },
+ "89": {
+  "verdict": "Partly vindicated — the germline barrier is permeable",
+  "state": "The Weismann barrier — the doctrine that the germline is sealed off from somatic and environmental influence — is now known to be permeable in specific ways: environmental and metabolic signals can leave epigenetic marks in the germline, and transgenerational epigenetic inheritance is an established, if bounded, phenomenon.",
+  "comparison": "Walther's argument — in the institute's Lamarckian spirit — that the germ-plasm is not sealed off from its environment directly challenges Weismann's barrier, and modern germline epigenetics has shown that challenge to be partly right: the germline is not fully insulated, and environmental signals can reach it via epigenetic marks. Wrong in the strong Lamarckian form, but prescient in insisting the barrier is not absolute; entirely uncited (dormant)."
+ },
+ "175": {
+  "verdict": "Vindicated in principle — growth rate as a generator of form",
+  "state": "The idea that form emerges from rates of growth is now formalised in allometry, growth-curve models (von Bertalanffy and successors) and the study of developmental tempo and heterochrony — rate differences are a recognised engine of morphological diversity.",
+  "comparison": "Przibram's programmatic claim that form is a product of growth velocity prefigures the rate-based morphology now standard in biology: allometric scaling, von Bertalanffy-type growth models and heterochrony all treat differential growth rate as a generator of form. His 'form and velocity' thesis reads as an early, explicit statement of a principle that quantitative and developmental biology later made rigorous; dormant and uncited, but conceptually on target."
  }
 }
