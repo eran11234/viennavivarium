@@ -463,5 +463,65 @@
   "verdict": "Confirmed — functional sense-organ regeneration in insects",
   "state": "Sensory-organ (antenna and eye) regeneration in arthropods is studied and shown to restore function: regenerated antennae retain sensory functionality (e.g. in isopods), and insect appendage and sense-organ regeneration runs on redeployed developmental programmes.",
   "comparison": "Werber's finding that the mealworm beetle regenerates excised sense organs — antenna and eye — within its moulting cycle is an early demonstration of functional sensory-organ regeneration in a holometabolous insect, the phenomenon now confirmed (regenerated arthropod antennae are functional) and dissected developmentally. Uncited."
+ },
+ "52": {
+  "verdict": "Confirmed — comparative jaw regeneration",
+  "state": "Jaw and craniofacial regeneration is an active comparative field: salamanders (newts and axolotls) regrow lower jaws complete with bone, cartilage and teeth using limb-regeneration-like programmes, while amniotes largely cannot — giving exactly the cross-group differences in regenerative extent.",
+  "comparison": "Werber's 1906 comparison — that both reptiles and amphibians regenerate jaw structures, with differences in extent between the groups — anticipates the modern comparative picture (amphibians regenerate jaws richly, reptiles and amniotes less so). The phenomenon and the cross-group difference are confirmed; uncited, and a companion to his lizard-jaw sleeping-beauty paper."
+ },
+ "54": {
+  "verdict": "Confirmed — fin regeneration is now a flagship model",
+  "state": "Fish fin regeneration is a premier regeneration model: zebrafish and Polypterus regrow fins via a blastema dependent on BMP and FGF signalling, with fin rays carrying a 'remembered' positional identity — shared and derived mechanisms with tetrapod limb regeneration.",
+  "comparison": "Bogacki's demonstration that European freshwater fishes regenerate amputated fins with characteristic regrowth patterns is an early description of exactly the fin regeneration now central to the field, down to positional memory and BMP/FGF control. Confirmed and richly mechanised; lightly cited."
+ },
+ "56": {
+  "verdict": "Foundational — Hydra model and algal symbiosis",
+  "state": "Hydra is a flagship model for regeneration, patterning and symbiosis: its epithelial stemness powers whole-body regeneration, and the green-hydra–Zoochlorella symbiosis is studied as a model 'metaorganism' (algal recognition and uptake, symbiont effects on the microbiome and energy balance).",
+  "comparison": "Hadzi's preliminary biology of Hydra — documenting the green hydra's Zoochlorella symbiosis and basic feeding and biology as groundwork for an experimental biology of the polyp — is exactly the model-organism foundation that made Hydra a cornerstone of regeneration and symbiosis research. The symbiosis he described is now a studied metaorganism; the 1906 paper is uncited."
+ },
+ "60": {
+  "verdict": "Prescient analogy — echoed in biomineralisation & self-assembly",
+  "state": "The crystal–organism analogy survives in two modern guises: biomineralisation (organisms control crystal growth — biogenic guanine crystals, crystallisation by particle attachment) and the physics of self-assembly and symmetry-breaking, where crystal growth, regeneration after breakage, and symmetry are actively studied.",
+  "comparison": "Przibram's 'crystal analogies' — using crystals as physical models for organic growth, regeneration and symmetry, a reductionist frame for Entwicklungsmechanik — anticipates both modern biomineralisation (organisms literally growing controlled crystals) and the physics-of-life view that growth and symmetry obey general self-organising principles. The analogy was prescient and is echoed (crystals even 'regenerate' after breakage); the 1906 essay is an uncited conceptual ancestor."
+ },
+ "62": {
+  "verdict": "Prescient — an early physics of animal movement (active matter)",
+  "state": "Treating animal movement as a stochastic, physical process is now the field of active matter and collective behaviour: random-walk and Poisson models describe microbial and insect navigation, and collective motion (locusts, fish) is modelled as order/disorder transitions arising from local stochastic interactions.",
+  "comparison": "Karl Przibram — the physicist brother — describing the movement of lower organisms as a disordered, quasi-random process, a physics of behaviour, is a strikingly early instance of what is now active-matter and stochastic-movement science. The conceptual move (apply statistical physics to behaviour) is exactly today's framework; the 1917 paper is an uncited forerunner."
+ },
+ "63": {
+  "verdict": "Vindicated — temperature-scaling of physiology (now TPC/Q10)",
+  "state": "How temperature scales physiological rates is a central, formalised field: thermal performance curves (and proposals for a 'universal' TPC), Q10/Arrhenius relations and aerobic-scope concepts quantify temperature's effect on development, metabolism and survival across animals.",
+  "comparison": "Przibram's determination of temperature quotients for the mantis's vital processes is an early quantitative thermal-physiology measurement — exactly the temperature-scaling of rates now formalised in thermal performance curves and Q10 analysis. The quantitative approach is vindicated and standard; the 1917 paper is uncited."
+ },
+ "64": {
+  "verdict": "Vindicated in principle — temperature reaches the germ line",
+  "state": "The idea that the environment, notably temperature, reaches the germ line is now substantiated in specific ways: temperature affects spermatogenesis and gametes, thermosensory neurons regulate germline transposons and heritable expression (in C. elegans), and thermal exposure alters germline epigenetic marks in fish — a real, if bounded, channel for environmental effects on heredity.",
+  "comparison": "Przibram's thesis that the environment — especially temperature — penetrates to and modifies the germ-plasm names exactly this now-active channel. His framing is vindicated in principle (temperature does reach, and can mark, the germ line); the magnitude and true heritability remain the contested frontier. Uncited."
+ },
+ "65": {
+  "verdict": "Confirmed — fiddler-crab claw development and regeneration",
+  "state": "Fiddler-crab claw development and regeneration is studied behaviourally and molecularly: the great claw's form has ecological consequences (mating success, density effects), and decapod claw regeneration is increasingly dissected at the gene level.",
+  "comparison": "Przibram's documentation that the fiddler crab's great claw passes through characteristic transitory forms — a developmental sequence revealed in regeneration — is an early morphological account of exactly the claw development and regeneration now studied molecularly and ecologically. The descriptive sequence stands; lightly cited."
+ },
+ "71": {
+  "verdict": "Confirmed — the reach of the regenerative field",
+  "state": "The spatial reach and cellular basis of the urodele limb's regenerative field is well characterised: blastema formation can be induced from limb surfaces, dermal fibroblasts are a key multipotent source, and signalling (even induced regeneration via factor cocktails) is being mapped.",
+  "comparison": "Weiss's finding that the urodele limb can regenerate from its lateral surfaces — revealing the spatial reach of its regenerative field — probes exactly the extent and source of the blastema-forming field now studied molecularly (dermal-fibroblast contribution, induced lateral regeneration). Consistent with modern findings; lightly cited."
+ },
+ "72": {
+  "verdict": "Confirmed — quantitative wing morphometrics, now automated",
+  "state": "Quantitative wing morphometrics is a standard, now-automated field: geometric morphometrics and computer-vision tools (such as WingAnalogy) measure wing shape, asymmetry and their adaptive and seasonal variation across butterflies and other insects.",
+  "comparison": "Weiss's angle measurements on the butterfly wing — treating wing form as measurable morphometric data — prefigure modern quantitative wing morphometrics, now automated and applied to adaptation and asymmetry. The morphometric approach he took is mainstream; lightly cited."
+ },
+ "73": {
+  "verdict": "Vindicated — Hydra head/foot polarity, now Wnt organisers",
+  "state": "Hydra axial determination is a model for patterning: head and foot organisers run on Wnt/beta-catenin gradients (Wnt promotes the head and activates foot regeneration), reinforced by mechano-chemical feedback (tissue strain, actin-fibre organisation) and epigenetic regulation (H4K20me1), with foot and head behaving as distinct polar systems.",
+  "comparison": "Burt's finding that the head and foot of Hydra behave as unipotent systems, each regenerating along its own polarity, is an early statement of the axial determination now mechanised as opposing Wnt-based head/foot organisers with mechano-chemical feedback. The polar-organiser concept is vindicated; the 1925 paper is uncited."
+ },
+ "74": {
+  "verdict": "Confirmed — temperature sets tail length (Allen's rule)",
+  "state": "Temperature directly setting extremity and tail length is textbook developmental plasticity and an active climate-biology topic: Allen's rule is confirmed in rodents specifically for tails (warmer development → longer tails), with implications for climate-driven body-shape change.",
+  "comparison": "Przibram's direct experimental demonstration that rearing temperature sets tail length — warmer rats growing longer tails — is the same temperature-to-proportion effect now formalised as the developmental basis of Allen's rule, with rodent tails the canonical case. Confirmed and canonical; lightly cited, and a companion to his other rat-tail temperature papers."
  }
 }
