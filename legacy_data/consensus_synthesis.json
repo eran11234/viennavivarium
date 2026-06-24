@@ -313,5 +313,65 @@
   "verdict": "Discredited claim — reassessed as history",
   "state": "This belongs to Kammerer's neo-Lamarckian salamander and midwife-toad programme, now treated as discredited; the legitimate modern question — transgenerational and epigenetic inheritance — is distinct and carefully bounded, and these specific inheritance claims are unconfirmed and historically reassessed.",
   "comparison": "Kammerer's report that enforced reproductive adaptations were transmitted to Salamandra offspring is among the inheritance claims undone by the 1926 scandal. The general inheritance-of-acquired-traits question survives in epigenetics; his specific Lamarckian results do not, and are reassessed as cautionary history."
+ },
+ "125": {
+  "verdict": "Confirmed — beetle appendage regeneration is now a model",
+  "state": "Beetle appendage regeneration is an active model system: ladybird beetles regenerate legs via a blastema (chiefly in the larval/pupal window), with capacity that is stage-specific and diet- and temperature-dependent and carries reproductive trade-offs, now imaged in 3D by micro-CT and dissected molecularly.",
+  "comparison": "Megusar's survey of which beetle appendages regenerate and how is an early comparative map of exactly the coleopteran regeneration now studied mechanistically. The descriptive groundwork stands; modern work supplies the cells, genes and imaging, while the 1907 paper goes uncited."
+ },
+ "127": {
+  "verdict": "Now molecular — feline eye-colour genetics",
+  "state": "The genetics of cat eye (and coat) colour is now resolved at the gene level: dominant blue eyes map to specific variants (PAX3 in Maine Coons, the DBE loci), sex-linked orange to an Arhgap36 deletion, with links to pigment-cell (neural-crest) development and to deafness.",
+  "comparison": "Przibram's inheritance experiments on asymmetric, odd-eyed colour in Angora cats are an early genetic analysis of exactly the trait now mapped to specific genes and to the pigment/neural-crest pathways underlying odd-eyedness and associated deafness. The phenotypic inheritance he tracked is now molecular; the 1907 paper is uncited."
+ },
+ "133": {
+  "verdict": "Confirmed — limb-forming potency now molecular",
+  "state": "The regenerative potencies of the newt limb are now dissected molecularly: blastema-niche genes and microRNAs, Shh (via ZRS reporters) and FGF signalling — with FGF10 important in development but not adult regeneration — define which cells and signals rebuild a limb.",
+  "comparison": "Kurz's mapping of the leg-forming potencies the developed newt limb retains — which tissues and amputation levels can still rebuild a leg — poses exactly the potency question now answered at the level of blastema cell types and signalling. The phenomenological map is the ancestor of today's molecular one; uncited."
+ },
+ "135": {
+  "verdict": "Foundational but approximate — 'Przibram's rule'",
+  "state": "The constant per-moult growth ratio formalised here ('Przibram's rule': roughly 2.09x mass and 1.26x linear dimension per instar) is now seen as an approximation: modern measurements find insects often violate the Dyar/Przibram constant (the silkworm among them), and the broader field of allometry seeks better exponential and geometric models.",
+  "comparison": "This paper is the empirical origin of 'Przibram's rule' — that body size increases by a fixed ratio each moult. It remains a named reference point in growth biology, but the modern verdict is that the rule holds only approximately and varies by species and structure: a foundational first approximation, now refined. It is among the corpus's most-cited works."
+ },
+ "148": {
+  "verdict": "Landmark question — but the resonance mechanism was superseded",
+  "state": "The problem Weiss opened — how motor coordination is established when nerves reconnect to muscles — is central to modern neuromuscular control and prosthetics: rewiring motor axons into target muscles restores coordinated function, and electro-neuromuscular interfaces achieve high-fidelity control. His specific 'resonance' (myotypic specificity) hypothesis was, however, largely superseded by activity-dependent and connectional accounts — notably via his own student Sperry.",
+  "comparison": "Weiss's finding that transplanted limbs move in exact synchrony with the host's homologous limb regardless of which nerves reach them grounded his influential resonance principle. The phenomenon — functional, coordinated reinnervation — is real and central to today's nerve-transfer and prosthetics work, but his proposed mechanism was overturned: a landmark whose question endures more than its answer."
+ },
+ "149": {
+  "verdict": "Foundational — transplantation + regeneration united",
+  "state": "Modern regeneration research routinely combines transplantation and regeneration in one system (the axolotl), showing that grafted limb tissue retains regenerative capacity governed by appendage-specific stem-cell programs (e.g. TGF-beta-dependent), distinct from primary-axis regeneration.",
+  "comparison": "Weiss's demonstration that transplanted limbs retain the capacity to regenerate — uniting transplantation and regeneration in one system — anticipates the standard modern paradigm of grafting plus regeneration in the axolotl. The combined approach he pioneered is now ubiquitous; the 1924 paper is an uncited methodological forerunner."
+ },
+ "156": {
+  "verdict": "Vindicated — pigment biochemistry now mapped",
+  "state": "The biochemistry of animal colouration is now thoroughly characterised: melanin synthesis (the tyrosinase pathway, transporters like slc45a2), carotenoid uptake and conversion enzymes, and pterins are mapped across model systems such as zebrafish and Xenopus.",
+  "comparison": "Przibram and Brecher's preliminary biochemical experiments on the substances responsible for colour opened exactly the line — pigment chemistry — that modern molecular pigment-cell biology has fulfilled. The agenda is vindicated; the 1919 paper, a companion to the tyrosinase/DOPA work, is uncited."
+ },
+ "159": {
+  "verdict": "Confirmed — pupal colour plasticity",
+  "state": "Environmentally cued pupal colouration is established and increasingly genetic: pupal colour and melanisation track the pupation substrate and light (a predator-protection adaptation) and are regulated by pigment-synthesis genes, with developmental trade-offs.",
+  "comparison": "Brecher's 1919 demonstration that the cabbage-white pupa's colour adapts to light and background is part of the foundational plasticity work the field now mechanises. The phenomenon is amply confirmed; this instalment, like her companion pupal-colour papers, goes uncited."
+ },
+ "164": {
+  "verdict": "Vindicated — antagonistic sex hormones",
+  "state": "The antagonism of male and female sex hormones in shaping sexual phenotype is foundational endocrinology, now molecular: gonadal sex differentiation hinges on opposing pathways (e.g. Amh/androgen versus estrogen, with newly identified female-determining factors), and the androgen–estrogen balance governs secondary sex characters across vertebrates.",
+  "comparison": "Steinach's artificial double-glands reproducing the effects of natural hermaphrodite glands — evidence that male and female puberty-gland secretions antagonise one another — anticipates the modern antagonistic-pathway model of sexual differentiation. The principle of opposing sex hormones is vindicated; modern work names the molecules. Uncited."
+ },
+ "165": {
+  "verdict": "Refuted — no gonadal basis for sexual orientation",
+  "state": "Modern science finds no distinctive gonadal histology associated with sexual orientation; orientation is understood as a normal human variation with complex, partly biological correlates (neurodevelopmental, genetic, familial) and is no longer pathologised — homosexuality was removed from the DSM decades ago.",
+  "comparison": "Steinach extended his puberty-gland theory to sexual orientation, claiming a distinctive testicular histology in homosexual men — a claim later science does not support and that belongs to a now-discredited, harmful tradition of locating orientation in the gonad. Modern biology places orientation's correlates in neurodevelopment and genetics, not gonad histology; the specific claim is refuted, and the paper is of historical and cautionary interest only."
+ },
+ "169": {
+  "verdict": "Loosely echoed — temperature acts on the endocrine system",
+  "state": "The broad idea that temperature and environment act on the endocrine reproductive system is supported in modern terms: temperature influences gonadal development, sex determination and reproductive timing across animals (temperature-dependent sex determination, thermal effects on steroidogenesis) — though the early framing is dated.",
+  "comparison": "Steinach and Kammerer's linking of elevated temperature to changes in the puberty gland and sexual maturation loosely prefigures the modern recognition that temperature acts on the endocrine and reproductive system. The specific framing ('climate and virility') is dated and the work goes uncited; only the general environment–endocrine link survives."
+ },
+ "172": {
+  "verdict": "Confirmed — wavelength-specific control of pupal colour",
+  "state": "Wavelength-specific (spectral) control of biological colour and photoresponses is well established: particular light wavelengths drive pigmentation and developmental or behavioural responses, with butterfly photoreceptor spectral tuning and pineal/retinal wavelength-dependent behaviour now characterised.",
+  "comparison": "This fifth-part study pinned the pupal-colour response to specific spectral regions of light, controlling for other factors — an early, careful demonstration of wavelength-specific control of an environmentally cued colour, exactly the spectral-response phenomenon now mapped to photoreceptors and pigment pathways. Confirmed and refined; uncited."
  }
 }
