@@ -523,5 +523,65 @@
   "verdict": "Confirmed — temperature sets tail length (Allen's rule)",
   "state": "Temperature directly setting extremity and tail length is textbook developmental plasticity and an active climate-biology topic: Allen's rule is confirmed in rodents specifically for tails (warmer development → longer tails), with implications for climate-driven body-shape change.",
   "comparison": "Przibram's direct experimental demonstration that rearing temperature sets tail length — warmer rats growing longer tails — is the same temperature-to-proportion effect now formalised as the developmental basis of Allen's rule, with rodent tails the canonical case. Confirmed and canonical; lightly cited, and a companion to his other rat-tail temperature papers."
+ },
+ "78": {
+  "verdict": "Vindicated — the DOPA test for melanogenesis",
+  "state": "The DOPA reaction validated here underlies modern histochemistry of melanogenesis: tyrosinase acting on tyrosine and DOPA within melanosomes is the established melanin-synthesis pathway, now studied genetically (slc45a2, tyrosinase) across zebrafish, mammals and beyond.",
+  "comparison": "Sato and Brecher's demonstration that the DOPA reaction agrees between frozen sections and extracts — confirming the histochemically detected enzyme is the same one assayed biochemically — validated the DOPA test for locating melanin formation, a method foundational to a century of pigment-cell histochemistry. The validation holds; the enzyme and pathway are now molecular. Uncited."
+ },
+ "79": {
+  "verdict": "Vindicated — tyrosine/DOPA as the melanin substrate",
+  "state": "The substrate question for vertebrate melanin is firmly answered: tyrosinase converts tyrosine to DOPA to dopachrome to melanin — the canonical pathway, now mapped genetically and structurally across vertebrates.",
+  "comparison": "This companion study, asking whether DOPA or tyrosine yields the chromogen in vertebrates and confirming the section/extract agreement, probed the substrate of vertebrate melanin synthesis — now firmly established as tyrosine and DOPA acted on by tyrosinase. Vindicated; uncited."
+ },
+ "80": {
+  "verdict": "Confirmed — timing of DOPA/melanisation, now genetic",
+  "state": "The timing and genetics of insect melanin-precursor (DOPA) production is well resolved: tyrosine hydroxylase and DOPA decarboxylase (DDC) control DOPA and dopamine for cuticular melanisation (DDC knockout causes albinism), with stage-specific deployment during larval-to-pupal transitions.",
+  "comparison": "Sciacchitano's pinpointing of when DOPA — the melanin precursor — forms during cocoon construction is an early timing study of exactly the DOPA/melanisation pathway now mapped to specific enzymes (TH, DDC) and their developmental timing in insects. The temporal-control question is answered genetically; uncited."
+ },
+ "82": {
+  "verdict": "Vindicated — limb three-axis patterning, now molecular",
+  "state": "The three-axis organisation and developmental potencies of the limb — the framework Harrison's grafting experiments opened — is now molecular: the proximodistal (Shh/FGF), anteroposterior and dorsoventral axes of the limb bud and blastema are specified by defined signalling centres and morphogen gradients.",
+  "comparison": "Przibram's framing of how the urodele limb's three axes and developmental potencies are organised — interpreting Harrison's transplantation experiments — is an early conceptual systematisation of limb-axis determination, exactly the problem now resolved into Shh/FGF/Wnt axis-patterning. The scaffold he built on Harrison's work is vindicated by molecular axis biology; uncited."
+ },
+ "83": {
+  "verdict": "Thesis vindicated, inheritance claim not — plasticity vs Lamarckism",
+  "state": "That external conditions drive organic (phenotypic) variation is now the well-developed field of phenotypic plasticity and eco-evo-devo: the environment shapes development and variation through mechanisms from mechanical stress in growing tissues to gene-environment interaction.",
+  "comparison": "Kammerer's presentation of external living conditions as a driver of organic variation — the theoretical core of his environmental programme — anticipates the modern consensus that the environment is a major source of phenotypic variation. The general thesis is vindicated; his specific Lamarckian claim that such variation is heritably fixed is not. (Consensus retrieval here was noisy, matching 'organic' in unrelated senses.)"
+ },
+ "84": {
+  "verdict": "Vindicated — graded DV potency, now morphogen gradients",
+  "state": "That morphogenetic capacity is regionally graded along body axes is foundational and molecular: morphogen gradients (Dpp/BMP, Shh) pattern the dorsoventral axis, now demonstrated even in organoids (dorsoventral spinal-cord and brain patterning by localised morphogens).",
+  "comparison": "Przibram's finding that form-building capacity is unevenly distributed along the dorso-ventral axis — morphogenetic potency regionally graded — is an early statement of exactly the graded, axis-dependent developmental potential now explained by morphogen gradients (BMP/Shh) patterning the DV axis. The concept is vindicated and mechanised; uncited."
+ },
+ "85": {
+  "verdict": "Confirmed — homeotic heteromorphosis, now Hox-framed",
+  "state": "Homeotic regeneration — an ordered but wrong organ regenerating in place of another — is understood as Hox and positional misspecification; in insects, antenna-versus-eye and antenna-versus-leg identity is governed by developmental selector genes, and regenerated sense organs such as antennae are functional.",
+  "comparison": "Janda's report that an antenna-like organ regenerates in place of a removed eye — a classic homeotic heteromorphosis — is an early instance of the phenomenon now framed by Hox/selector-gene control of organ identity. Confirmed and conceptually explained; uncited."
+ },
+ "87": {
+  "verdict": "Imaginative analogy — cross-taxon growth laws, not universal",
+  "state": "Foraminiferal chamber growth is now quantitatively studied (automated 3D growth-trajectory reconstruction), and cross-taxon growth-law comparisons remain a theme in allometry — though a single universal law spanning foraminifera and mantids is not a modern claim.",
+  "comparison": "Przibram's striking analogy — that foraminiferan shell-chamber addition follows a progression like the mantid moulting series, a shared quantitative growth law across distant taxa — exemplifies his search for universal growth laws. Modern foraminiferal growth is quantified and cross-taxon scaling is studied, but the specific universal-law claim is not pursued; an imaginative early comparison, uncited."
+ },
+ "91": {
+  "verdict": "Confirmed — annelid reproductive-organ regeneration",
+  "state": "Annelid (earthworm) reproductive-organ and whole-body regeneration is an active model field: earthworm prostate and clitellum systems are used to study regeneration and stem cells, and annelids regenerate complex structures — including germ cells — challenging the germline–soma barrier.",
+  "comparison": "Janda's demonstration that the earthworm regenerates its reproductive organs — an unusually demanding restitution of a whole organ system — is an early instance of exactly the annelid reproductive-organ and germ regeneration now studied with earthworm prostate models and clitellum stem cells. Confirmed and mechanistically pursued; uncited."
+ },
+ "94": {
+  "verdict": "Live & contested — environment reaches the germ line",
+  "state": "The germ line is now known to be influenced by the environment — its epigenome altered by stress, pollution and temperature — reopening the question of environmental effects on heredity, though robustly bounded and debated.",
+  "comparison": "Przibram's thesis that the germ-plasm is open to its environment — a channel for environmental effects on heredity — is the conceptual seed of transgenerational epigenetic inheritance, where environmental signals can mark the germline epigenome. It is vindicated as a live question (a 2016 epigenetics review cites this very paper as a Przibram/Steinach precedent); the strength and heritability remain contested."
+ },
+ "96": {
+  "verdict": "Live & contested — environment as a factor in heredity",
+  "state": "Whether the surroundings of the germ plasm influence heredity is the active field of transgenerational epigenetics: temperature, heat and pollution can alter the germline epigenome and gamete development, providing a real channel for environmental effects on inheritance.",
+  "comparison": "Congdon's treatment of the germ plasm as influenced by its surroundings — environment as a factor in heredity — is, like the institute's other germ-plasm papers, an early articulation of what is now transgenerational epigenetics. The general channel is supported; the specific heritability claims remain bounded and debated. Uncited."
+ },
+ "97": {
+  "verdict": "Answered — colour change is both skin-local and systemic",
+  "state": "Fish colour change is understood as both locally and systemically controlled: chromatophores respond to local, neural and hormonal signals, and skin-pigment patterning has cell-autonomous genetic components — so the response is partly skin-intrinsic and partly imposed by the whole animal.",
+  "comparison": "Secerov's skin-graft-plus-colour-change experiments — testing whether the loach's colour response is local to the skin or imposed by the whole animal — pose exactly the autonomy question modern pigment biology resolves as 'both'. His experimental logic of using grafts to separate local from systemic control is the right one; uncited."
  }
 }
