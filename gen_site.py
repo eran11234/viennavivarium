@@ -663,7 +663,13 @@ DISCOVER_CSS = r"""
 .dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;margin-top:6px}
 .dcardx{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:15px 16px;display:flex;flex-direction:column}
 .dcardx .stat{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:2px 9px;border-radius:20px;align-self:flex-start;margin-bottom:7px}
-.st-sb{background:#33485c;color:#f3efe6}.st-ll{background:#1d6e56;color:#fff}.st-ct{background:#355e7d;color:#fff}.st-fc{background:#9a6a1f;color:#fff}.st-dm{background:#9a9387;color:#fff}
+.st-sb{background:#33485c;color:#f3efe6}.st-qc{background:#2e6f6a;color:#fff}.st-ll{background:#1d6e56;color:#fff}.st-st{background:#9a6a1f;color:#fff}.st-cl{background:#8a3a3a;color:#fff}.st-rr{background:#9a9387;color:#fff}
+.csbi{display:inline-block;margin-left:8px;background:rgba(255,255,255,.14);color:#e7dcc4;font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 10px;border-radius:20px}
+.taxnote{margin:18px 0 4px;background:var(--card);border:1px solid var(--rule);border-left:4px solid #33485c;border-radius:10px;padding:13px 16px}
+.taxnote p{font-size:13.8px;line-height:1.6;margin:0 0 9px;max-width:84ch;color:#3c3833}
+.taxleg{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:6px 16px}
+.taxleg li{font-size:12.5px;color:var(--muted);line-height:1.5}
+.taxleg .stat{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:5px}
 .synbadge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:1px 8px;margin-left:6px}
 .dcardx h3{font-family:Georgia,serif;font-size:17px;margin:0 0 3px;line-height:1.25}
 .dcardx .cm{font-size:12.5px;color:var(--muted);margin:0 0 8px}
@@ -681,13 +687,13 @@ DISCOVER_JS = r"""
 (function(){
 var D=window.DISCOVER, P=D.papers;
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-var SC={'Sleeping beauty':'st-sb','Living legacy':'st-ll','Cited today':'st-ct','Faintly cited':'st-fc','Dormant':'st-dm'};
+var SC={'Sleeping Beauty':'st-sb','Quiet Classic':'st-qc','Living Legacy':'st-ll','Stirring':'st-st','Contested Legacy':'st-cl','Rightly Rested':'st-rr'};
 // ---------- sleeping-beauty carousel ----------
 var sb=D.sleeping, ci=0, timer=null, playing=true;
 function slide(pid){var p=P[pid];var now=(p.org&&p.org!=='—')?('<span class="cmeta"> </span>'):'';
   var today=p.ft?('<p class="ctoday"><b>Today'+(p.fy?(' ('+p.fy+')'):'')+':</b> '+esc(p.ft)+'</p>'):(p.hook?('<p class="ctoday"><b>Today:</b> '+esc(p.hook)+'</p>'):'');
-  return '<div class="cslide on"><span class="cverdict">'+esc(p.v||'Sleeping beauty')+'</span>'
-   +'<h3>'+esc(p.t)+'</h3><p class="cmeta">'+esc(p.au||'')+' · '+p.y+(p.org&&p.org!=='—'?(' · <em>'+esc(p.org)+'</em>'):'')+' · '+p.n+' modern papers</p>'
+  return '<div class="cslide on"><span class="cverdict">'+esc(p.v||'Sleeping Beauty')+'</span><span class="csbi">☾ Sleeping-Beauty Index '+(p.sbi!=null?p.sbi:'—')+'</span>'
+   +'<h3>'+esc(p.t)+'</h3><p class="cmeta">'+esc(p.au||'')+' · '+p.y+(p.org&&p.org!=='—'?(' · <em>'+esc(p.org)+'</em>'):'')+' · cited '+p.c+'× today · '+p.n+' modern papers</p>'
    +today+'<a class="cgo" href="dossier/'+pid+'.html">Open the full dossier →</a></div>';}
 function showCar(i){ci=(i+sb.length)%sb.length;document.getElementById('carousel').innerHTML=slide(sb[ci]);
   var dots=document.getElementById('sbdots').children;for(var k=0;k<dots.length;k++)dots[k].className=(k===ci?'on':'');}
@@ -714,7 +720,7 @@ function card(pid){var p=P[pid];
   return '<article class="dcardx"><span class="stat '+(SC[p.st]||'st-dm')+'">'+esc(p.st)+'</span>'+(p.syn?'<span class="synbadge">✦ read &amp; compared</span>':'')
    +'<h3>'+esc(p.t)+'</h3><p class="cm">'+esc(p.au||'')+' · '+p.y+(p.org&&p.org!=='—'?(' · <em>'+esc(p.org)+'</em>'):'')+'</p>'
    +(p.hook?'<p class="ck">'+esc(p.hook)+'</p>':'<p class="ck"></p>')
-   +'<p class="cn">'+p.n+' modern papers'+(p.l?(' · latest '+p.l):'')+' · cited '+p.c+'× today</p>'
+   +'<p class="cn">'+p.n+' modern papers'+(p.l?(' · latest '+p.l):'')+' · cited '+p.c+'× today'+(p.sb?(' · <b>☾ SBI '+p.sbi+'</b>'):'')+'</p>'
    +'<div class="lk">'+lk+'</div></article>';}
 function render(){var q=st.q.toLowerCase();
   var list=D.order.filter(function(pid){var p=P[pid];
@@ -726,6 +732,7 @@ function render(){var q=st.q.toLowerCase();
   else if(st.sort==='year')list.sort(function(a,b){return P[b].y-P[a].y;});
   else if(st.sort==='cites')list.sort(function(a,b){return P[b].c-P[a].c;});
   else if(st.sort==='recent')list.sort(function(a,b){return (P[b].l||0)-(P[a].l||0);});
+  else if(st.sort==='sbi')list.sort(function(a,b){return (P[b].sbi||0)-(P[a].sbi||0);});
   document.getElementById('grid').innerHTML=list.map(card).join('');
   document.getElementById('count').textContent=list.length+' of '+D.order.length+' papers';}
 chips();
@@ -778,6 +785,7 @@ def gen_discover():
             id=pid, t=(c.get("title_en") or c.get("title") or "").replace("�", "ä"),
             de=(c.get("title") or "").replace("�", "ä"), au=c.get("author"), y=c.get("year"),
             org=org(c), tax=tax(c), st=d.get("status"), sb=1 if d.get("sleeping") else 0,
+            sbi=d.get("sbi"),
             c=d.get("cites", 0), n=d.get("n_unique", 0), l=d.get("latest"),
             v=(SYN.get(pid_s, {}).get("verdict") or d.get("verdict")),
             syn=1 if SYN.get(pid_s) else 0,
@@ -786,12 +794,14 @@ def gen_discover():
         order.append(pid)
         if d.get("sleeping"):
             sleeping.append(pid)
-    order.sort(key=lambda pid: (0 if papers[str(pid)]["sb"] else 1, -(papers[str(pid)]["n"] or 0)))
-    sleeping.sort(key=lambda pid: (-(papers[str(pid)]["l"] or 0), -(papers[str(pid)]["n"] or 0)))
+    order.sort(key=lambda pid: (0 if papers[str(pid)]["sb"] else 1, -(papers[str(pid)]["sbi"] or 0), -(papers[str(pid)]["n"] or 0)))
+    sleeping.sort(key=lambda pid: -(papers[str(pid)]["sbi"] or 0))
     stats = dict(papers=len(papers), modern=sum(p["n"] for p in papers.values()),
-                 sleeping=len(sleeping), legacy=sum(1 for p in papers.values() if p["st"] == "Living legacy"))
+                 sleeping=len(sleeping),
+                 legacy=sum(1 for p in papers.values() if p["st"] == "Living Legacy"),
+                 confirmed=sum(1 for p in papers.values() if p["st"] in ("Sleeping Beauty", "Quiet Classic")))
     data = dict(papers=papers, order=order, sleeping=sleeping, stats=stats,
-                statuses=["Sleeping beauty", "Living legacy", "Cited today", "Faintly cited", "Dormant"],
+                statuses=["Sleeping Beauty", "Quiet Classic", "Living Legacy", "Stirring", "Contested Legacy", "Rightly Rested"],
                 taxa=sorted(set(p["tax"] for p in papers.values())), unfinished=R.get("unfinished", []))
     os.makedirs(DATA, exist_ok=True)
     open(os.path.join(DATA, "discover.js"), "w", encoding="utf-8").write(
@@ -799,8 +809,8 @@ def gen_discover():
     body = ('<p class="kicker">The corpus in the light of today’s science</p>'
             '<h1>Discover</h1>'
             '<p class="lede dlede">All ' + str(stats["papers"]) + ' Vivarium papers (1904–1930), each set against the current literature — '
-            '<b>' + str(stats["modern"]) + ' modern papers</b> retrieved from the Consensus API. See what became the state of the art, '
-            'and what is still waiting to be rediscovered.</p>'
+            '<b>' + str(stats["modern"]) + ' modern papers</b> retrieved from the Consensus API, then read and compared one by one. '
+            'Every paper is placed on two axes — how much today’s science <em>remembers</em> it, and whether its ideas actually <em>held up</em>.</p>'
             '<section class="sbwrap"><div class="sbhead"><span class="sbeyebrow">☾ The search for sleeping beauties</span>'
             '<div class="sbnav"><button id="sbPrev" aria-label="previous">‹</button>'
             '<button id="sbtoggle" aria-label="play/pause">⏸</button><button id="sbNext" aria-label="next">›</button></div></div>'
@@ -809,11 +819,27 @@ def gen_discover():
             '<div><b>' + str(stats["papers"]) + '</b><span>papers, 1904–1930</span></div>'
             '<div><b>' + str(stats["modern"]) + '</b><span>modern papers via Consensus</span></div>'
             '<div><b>' + str(stats["sleeping"]) + '</b><span>sleeping beauties</span></div>'
+            '<div><b>' + str(stats["confirmed"]) + '</b><span>forgotten yet confirmed</span></div>'
             '<div><b>' + str(stats["legacy"]) + '</b><span>living legacies</span></div></div>'
+            '<div class="taxnote">'
+            '<p><b>A new way to read the corpus.</b> Citation counts alone reward <em>notoriety</em>, not correctness — '
+            'some of the institute’s most-cited papers are its most <em>refuted</em> (Kammerer’s inheritance claims, '
+            'Steinach’s sexual-orientation theory), while genuinely confirmed work sits almost uncited. So each paper is placed on '
+            'two axes: <b>recognition</b> (how often today’s literature cites it) and <b>vindication</b> (whether its science held up, '
+            'from the read-and-compare verdicts). The <b>☾ Sleeping-Beauty Index</b> ranks the forgotten-yet-vindicated.</p>'
+            '<ul class="taxleg">'
+            '<li><span class="stat st-sb">Sleeping Beauty</span> forgotten, yet confirmed — the rediscovery prizes</li>'
+            '<li><span class="stat st-qc">Quiet Classic</span> lightly cited, but vindicated</li>'
+            '<li><span class="stat st-ll">Living Legacy</span> well cited, and it held up</li>'
+            '<li><span class="stat st-st">Stirring</span> forgotten; the idea is alive but unsettled</li>'
+            '<li><span class="stat st-cl">Contested Legacy</span> famous, but refuted</li>'
+            '<li><span class="stat st-rr">Rightly Rested</span> forgotten, and it did not hold</li>'
+            '</ul></div>'
             '<div class="explorer"><input id="q" class="search" placeholder="Search title, author, or organism…">'
             '<div id="statuschips" class="chips"></div>'
             '<div class="exrow"><select id="taxsel"></select>'
             '<select id="sortsel"><option value="modern">Sort: most modern papers</option>'
+            '<option value="sbi">Sort: sleeping-beauty index</option>'
             '<option value="recent">Sort: most recent work</option>'
             '<option value="cites">Sort: most cited today</option>'
             '<option value="year">Sort: paper year</option></select>'
@@ -841,6 +867,9 @@ DOSSIER_CSS = r"""
 .statebox{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:12px;padding:16px 18px}
 .statebox h2{border-bottom:0;margin:.1em 0 8px;font-size:20px}
 .verdict{display:inline-block;background:var(--accent2);color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em;padding:3px 11px;border-radius:20px;margin-bottom:8px}
+.dcat{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 10px;border-radius:20px;margin:0 0 8px 7px}
+.dcat .sbii{opacity:.8;font-weight:600;margin-left:5px}
+.dcat.st-sb{background:#33485c;color:#f3efe6}.dcat.st-qc{background:#2e6f6a;color:#fff}.dcat.st-ll{background:#1d6e56;color:#fff}.dcat.st-st{background:#9a6a1f;color:#fff}.dcat.st-cl{background:#8a3a3a;color:#fff}.dcat.st-rr{background:#9a9387;color:#fff}
 .stateprose{font-size:15.5px;line-height:1.65;margin:0 0 14px}
 .cmph{font-family:-apple-system,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin:4px 0 5px;font-weight:700}
 .dstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 14px}
@@ -916,6 +945,12 @@ def gen_dossier():
         _state = _sy.get("state") or d.get("state") or ""
         _cmp_html = ('<h3 class="cmph">How this 1900s paper stands today</h3><p class="stateprose">'
                      + html.escape(_sy["comparison"]) + '</p>') if _sy.get("comparison") else ''
+        _status = d.get("status") or ""
+        _sbi = d.get("sbi")
+        _SCLS = {"Sleeping Beauty": "st-sb", "Quiet Classic": "st-qc", "Living Legacy": "st-ll",
+                 "Stirring": "st-st", "Contested Legacy": "st-cl", "Rightly Rested": "st-rr"}
+        _sbi_html = ('<span class="sbii">☾ SBI %s</span>' % _sbi) if (d.get("sleeping") and _sbi is not None) else ''
+        _cat_html = ('<span class="dcat %s">%s%s</span>' % (_SCLS.get(_status, "st-rr"), html.escape(_status), _sbi_html)) if _status else ''
         actions = '<a class="btn" href="../rediscovery.html">← Discover</a>'
         if read:
             actions += '<a class="btn primary" href="%s">Read the English translation</a>' % read
@@ -935,7 +970,7 @@ def gen_dossier():
     {('<p class="meth"><span class="lab">How</span>'+html.escape(m.get('manipulation') or '')+'</p>') if m.get('manipulation') else ''}
   </section>
   <section class="dsec statebox">
-    <span class="verdict">{html.escape(_verdict)}</span>
+    <span class="verdict">{html.escape(_verdict)}</span>{_cat_html}
     <h2>The state of the art today</h2>
     <p class="stateprose">{html.escape(_state)}</p>
     {_cmp_html}
