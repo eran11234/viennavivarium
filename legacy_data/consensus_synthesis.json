@@ -373,5 +373,35 @@
   "verdict": "Confirmed — wavelength-specific control of pupal colour",
   "state": "Wavelength-specific (spectral) control of biological colour and photoresponses is well established: particular light wavelengths drive pigmentation and developmental or behavioural responses, with butterfly photoreceptor spectral tuning and pineal/retinal wavelength-dependent behaviour now characterised.",
   "comparison": "This fifth-part study pinned the pupal-colour response to specific spectral regions of light, controlling for other factors — an early, careful demonstration of wavelength-specific control of an environmentally cued colour, exactly the spectral-response phenomenon now mapped to photoreceptors and pigment pathways. Confirmed and refined; uncited."
+ },
+ "174": {
+  "verdict": "Endures — Bateson's rule and positional duplication",
+  "state": "Supernumerary, mirror-symmetric appendage formation (Bateson's rule) remains a touchstone in developmental biology, now understood through positional information and symmetry-breaking: confronting tissues of mismatched positional identity at a wound generate mirror-image duplications, studied in limb regeneration and appendage development.",
+  "comparison": "Przibram's 'triple-formation at a break' — appendages regenerating as mirror-symmetric triples as a general rule across the animal kingdom — is an early articulation of Bateson's rule, the positional/symmetry principle still invoked for supernumerary limbs. The rule endures as a named concept; modern work supplies the positional-information mechanism. Conceptually alive though uncited."
+ },
+ "3": {
+  "verdict": "Confirmed — salamander skeletal restitution",
+  "state": "Salamander skeletal and connective-tissue restitution is actively studied: newts regenerate bone, tendon (in two phases) and other skeletal tissue, with genome and transcriptome tools illuminating regeneration-specific gene expression.",
+  "comparison": "This paper's demonstration that the newt regenerates long bones after partial internal removal — skeletal restitution within an otherwise intact limb — is an early instance of the internal skeletal regeneration salamanders are now known for and that modern molecular work dissects. Confirmed, though only lightly cited."
+ },
+ "5": {
+  "verdict": "Confirmed — compound-eye scaling, now mechanistic",
+  "state": "How the compound eye scales with body size — both ommatidial size and number — is an active topic, now traced to the Insulin/TOR pathway and developmental genetics, with 3D-reconstruction methods quantifying ommatidia across insects.",
+  "comparison": "This study's quantification that both facet size and number increase as the mantis grows is an early, direct measurement of compound-eye scaling now pursued mechanistically (Insulin/TOR, eye-development genes). The descriptive scaling result is confirmed and deepened; lightly cited."
+ },
+ "10": {
+  "verdict": "Confirmed — tissue origins of the regenerate, now lineage-traced",
+  "state": "The tissue origins of the limb regenerate are now traced with lineage tools: regeneration draws on defined cell sources for each tissue (the epidermis from wound epithelium), with shared and derived mechanisms across axolotl, zebrafish and Polypterus fins.",
+  "comparison": "Weiss's establishment of the origin of the skin in the limb regenerate — clarifying which tissue supplies the new epidermis — is an early version of the lineage question now answered by modern fate-mapping (the wound epidermis as epidermal source). The question he posed is standard in regeneration biology; the 1927 paper is uncited."
+ },
+ "12": {
+  "verdict": "Confirmed — neonatal rodents track ambient temperature",
+  "state": "Developmental thermoregulation in rodents is well characterised: neonatal rodents are not fully homeothermic and depend on ambient temperature — a fact central to modern lab-animal practice (housing near thermoneutrality, ~28-29°C, to avoid cold stress) and to neonatal thermal-physiology research.",
+  "comparison": "de Hahn's finding that young brown rats are not yet fully homeothermic, their body temperature tracking the environment, states exactly the neonatal-thermoregulation fact now standard in rodent physiology and husbandry. Confirmed and modestly cited — and it underpins the institute's own rat tail-length-versus-temperature experiments."
+ },
+ "14": {
+  "verdict": "Confirmed — pupal colour plasticity",
+  "state": "Environmentally cued pupal colouration in the cabbage white is established and increasingly genetic: pupal colour tracks pupation substrate and light as a predator-protection adaptation, regulated by melanin-synthesis genes with developmental trade-offs.",
+  "comparison": "Brecher's 1922 result that the cabbage-white pupa matches its colour to the surrounding light and background is a clean instance of exactly this plasticity, now mapped to substrate cues and pigment genes. One of her several pupal-colour papers in the corpus; confirmed and uncited."
  }
 }
