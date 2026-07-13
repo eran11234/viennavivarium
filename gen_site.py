@@ -189,7 +189,7 @@ def gen_legacy():
 <div id="list" class="legacy"></div>
 """
     page("legacy.html", "Legacy", "Legacy", body,
-         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="data/summaries.js"></script><script src="data/methodology.js"></script><script src="assets/legacy.js"></script>')
+         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="data/summaries.js"></script><script src="data/methodology.js"></script><script src="data/discidx.js"></script><script src="assets/legacy.js"></script>')
 
 # ---------------------------------------------------------------- analytics
 def gen_analytics():
@@ -236,7 +236,7 @@ def gen_reader():
 <p id="rmiss" class="muted" style="display:none">Paper not found. <a href="catalog.html">Back to the catalog</a>.</p>
 """
     page("reader.html", "Reader", None, body,
-         foot='<script src="data/catalog.js"></script><script src="assets/reader.js"></script>')
+         foot='<script src="data/catalog.js"></script><script src="data/discidx.js"></script><script src="assets/reader.js"></script>')
 
 # ---------------------------------------------------------------- legacy map
 def gen_map():
@@ -1106,6 +1106,11 @@ def gen_reading_pages():
     cat_by_id = {c["id"]: c for c in catalog}
     _sp = os.path.join(ROOT, "legacy_data", "citation_summaries.json")
     SUMM = json.load(open(_sp, encoding="utf-8")) if os.path.exists(_sp) else {}
+    # Discover cross-link: which papers have a dossier, and their verdict
+    _ap = os.path.join(ROOT, "legacy_data", "consensus_all.json")
+    _A = json.load(open(_ap, encoding="utf-8")) if os.path.exists(_ap) else {}
+    _synp = os.path.join(ROOT, "legacy_data", "consensus_synthesis.json")
+    _SYN = json.load(open(_synp, encoding="utf-8")) if os.path.exists(_synp) else {}
     # cross-link indices: paper -> author cards, and organism groupings for "related papers"
     _AUTH = json.load(open(os.path.join(ROOT, "legacy_data", "authors.json"), encoding="utf-8"))
     pid2auth = {}
@@ -1197,16 +1202,27 @@ def gen_reading_pages():
                    + redis_link
                    + (('<p class="ck">More on %s</p>%s' % (html.escape(_org_label), rel_html)) if rel_html else '')
                    + '</section>')
+        _pid = c["id"]
+        _dd = _A.get(str(_pid)) or {}
+        _dv = (_SYN.get(str(_pid)) or {}).get("verdict") or ""
+        _doss_btn = ('<a class="btn" href="../dossier/%d.html">☾ Discover dossier</a>' % _pid) if _dd else ''
+        _doss_chip = ('<span class="badge dverd">%s%s</span>' % (
+            html.escape(_dd.get("status") or ""),
+            (" · SBI %s" % _dd.get("sbi")) if _dd.get("sleeping") else "")) if _dd.get("status") else ''
+        _doss_line = ('<p class="dverdline">☾ <b>Today:</b> %s <a href="../dossier/%d.html">see the full dossier →</a></p>'
+                      % (html.escape(_dv), _pid)) if _dv else ''
         body = f"""
 <article class="reading">
   <p class="kicker"><a href="../catalog.html">Catalog</a> · BVA · {t['year']}</p>
   <h1>{html.escape(t['title_en'])}</h1>
   <p class="detitle">{html.escape(t['title_de'])}</p>
   <p class="byline">{html.escape(t['author'])} · {html.escape(t['journal'])} · DOI {doi_a}</p>
-  <div class="badges">{layer_badge(c['layer'])} {('<span class=badge org>'+html.escape(c['organism'])+'</span>') if c['organism'] else ''} {'<span class="badge wip">in progress</span>' if wip else '<span class="badge done">full text</span>'}</div>
+  <div class="badges">{layer_badge(c['layer'])} {('<span class=badge org>'+html.escape(c['organism'])+'</span>') if c['organism'] else ''} {'<span class="badge wip">in progress</span>' if wip else '<span class="badge done">full text</span>'} {_doss_chip}</div>
+  {_doss_line}
   <div class="actionbar">
     <a class="btn primary" href="{reader_sxs}">⇆ Read German side-by-side</a>
     <a class="btn" href="{reader_one}">German reader</a>
+    {_doss_btn}
     <a class="btn" href="{pdf_rel}" download>↓ Download PDF</a>
     {('<a class="btn" href="https://doi.org/'+doi+'" target="_blank">DOI ↗</a>') if doi else ''}
   </div>
@@ -1339,6 +1355,9 @@ table#cat{border-collapse:collapse;width:100%;font-size:14px}
 .dsctaleg li{font-size:12px;color:#b9c6d3;line-height:1.5}
 .dsctabtn{position:relative;z-index:2;flex:0 0 auto;background:#cdb98a;color:#26313d;font-weight:700;font-size:14px;padding:10px 18px;border-radius:9px;text-decoration:none;white-space:nowrap}
 .dsctabtn:hover{background:#fff;text-decoration:none}
+.badge.dverd{background:#33485c;color:#f3efe6;border-color:#33485c}
+.dverdline{font-size:14px;line-height:1.55;margin:8px 0 0;padding:8px 12px;border-left:3px solid #33485c;background:#f4f1ea;border-radius:0 8px 8px 0;color:#3c3833}
+.dverdline b{color:#33485c}
 @media(max-width:680px){.dscta{flex-direction:column;align-items:flex-start}}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#d8cfbe;margin-right:5px;vertical-align:middle}
 .dot.on{background:var(--accent)}
@@ -1543,11 +1562,15 @@ function renderPaper(id){
  var arr=(window.CITATIONS&&window.CITATIONS[id])||[],lg=L[id]||{},NT=window.NOTES||{};
  var sci=arr.filter(function(x){return !x.h;}),hist=arr.filter(function(x){return x.h;});
  var en=c.has_translation?('<a class="btn" href="papers/'+c.slug+'.html">Read English translation →</a>'):'';
+ var _di=(window.DISCIDX||{})[id];
+ var doss=_di?('<a class="btn" href="dossier/'+id+'.html">☾ Discover dossier</a>'):'';
+ var vchip=_di?(' <span class="badge dverd" title="'+esc(_di.v||'')+'">'+esc(_di.st)+(_di.sb?(' · SBI '+_di.sbi):'')+'</span>'):'';
  var head='<p class="kicker"><a href="legacy.html">‹ Legacy explorer</a> · '+esc(c.convergence||'')+'</p>'+
   '<h2 style="font-family:Georgia,serif;font-size:23px;margin:.1em 0">'+esc(c.title_en||c.title)+'</h2>'+
   ((c.title&&c.title!==c.title_en)?'<p style="font-style:italic;color:var(--muted);margin:.1em 0">('+esc(c.title)+')</p>':'')+
-  '<p class="sub" style="font-size:14px;color:#4a463f">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+(c.layer?' · <span class="badge l'+c.layer+'">Layer '+c.layer+'</span>':'')+(c.rediscovery?' <span class="badge redis">rediscovery target</span>':'')+'</p>'+
-  '<div class="actionbar" style="margin:12px 0"><a class="btn primary" href="reader.html?id='+id+'">Read original (PDF)</a>'+en+(c.doi?'<a class="btn" target="_blank" href="https://doi.org/'+c.doi+'">DOI ↗</a>':'')+'</div>';
+  '<p class="sub" style="font-size:14px;color:#4a463f">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+(c.layer?' · <span class="badge l'+c.layer+'">Layer '+c.layer+'</span>':'')+(c.rediscovery?' <span class="badge redis">rediscovery target</span>':'')+vchip+'</p>'+
+  ((_di&&_di.v)?('<p class="dverdline">☾ <b>Today:</b> '+esc(_di.v)+'</p>'):'')+
+  '<div class="actionbar" style="margin:12px 0"><a class="btn primary" href="reader.html?id='+id+'">Read original (PDF)</a>'+en+doss+(c.doi?'<a class="btn" target="_blank" href="https://doi.org/'+c.doi+'">DOI ↗</a>':'')+'</div>';
  function it(x){var note=NT[id+':'+x.k]||'';var doi=x.d?(' · <a target="_blank" href="https://doi.org/'+x.d+'">doi</a>'):'';
   var vr=(window.VERIFIED&&window.VERIFIED[id+':'+x.k])?' <span title="Written from the citing work\'s full text, read via the publisher or an open archive" style="background:#1d6e56;color:#fff;border-radius:4px;padding:1px 6px;font-size:10px;font-weight:600;white-space:nowrap">✓ verified from source</span>':'';
   return '<div class="litem"><div class="ti">'+esc(x.et||x.t||'(untitled)')+'</div>'+
@@ -1639,6 +1662,8 @@ var acts='<a class="btn primary" href="'+pdf+'" download>↓ Download PDF</a>';
 if(en){acts+='<a class="btn" href="'+en+'">Read English translation</a>';
  acts+= sxs?('<a class="btn" href="reader.html?id='+id+'">Single view</a>')
           :('<a class="btn" href="reader.html?id='+id+'&sxs=1">⇆ Side-by-side English</a>');}
+var _di=(window.DISCIDX||{})[id];
+if(_di)acts+='<a class="btn" href="dossier/'+id+'.html">☾ Discover dossier</a>';
 if(doi)acts+='<a class="btn" href="https://doi.org/'+C.doi+'" target="_blank">DOI ↗</a>';
 var ttl=C.title_en||C.title;
 head.innerHTML='<p class="kicker"><a href="catalog.html">Catalog</a> · BVA · '+C.year+'</p>'+
