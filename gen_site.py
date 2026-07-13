@@ -105,7 +105,22 @@ def gen_index():
 def gen_catalog():
     body = """
 <h1>Catalog</h1>
-<p class="lede">All papers in the corpus. Search and filter; <strong>click any row to see the modern works that cite it</strong>, use the Read column to open the translation or German original, or follow <b>☾ Dossier</b> to that paper's verdict against today's science on <a href="rediscovery.html">Discover</a>.</p>
+<p class="lede">All papers in the corpus. Search and filter; <strong>click any row to see the modern works that cite it</strong>, or use the Read column to open the translation or German original.</p>
+<section class="dscta">
+  <div class="dsctatext">
+    <h2>☾ Every paper, judged against today's science</h2>
+    <p>The <b>Today</b> column carries each paper's verdict from <b>Discover</b>, where all 174 were read against the current literature and placed on two axes — how much modern science <em>remembers</em> them, and whether their ideas <em>held up</em>. Click any chip or <b>☾ Dossier</b> to open that paper's full dossier.</p>
+    <ul class="dsctaleg">
+      <li><span class="cstat cst-sb">Sleeping Beauty</span> forgotten, yet confirmed</li>
+      <li><span class="cstat cst-qc">Quiet Classic</span> lightly cited, but vindicated</li>
+      <li><span class="cstat cst-ll">Living Legacy</span> well cited, and it held up</li>
+      <li><span class="cstat cst-st">Stirring</span> alive but unsettled</li>
+      <li><span class="cstat cst-cl">Contested Legacy</span> famous, but refuted</li>
+      <li><span class="cstat cst-rr">Rightly Rested</span> forgotten, and it did not hold</li>
+    </ul>
+  </div>
+  <a class="dsctabtn" href="rediscovery.html">Open Discover →</a>
+</section>
 <div class="filters">
   <input id="q" type="search" placeholder="Search author, title, organism…">
   <select id="layer"><option value="">Any legacy layer</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
@@ -1314,6 +1329,17 @@ table#cat{border-collapse:collapse;width:100%;font-size:14px}
 #cat .cverd{font-size:11.5px;color:var(--muted);line-height:1.35;margin-top:3px}
 .dosslink{white-space:nowrap;font-weight:600;color:var(--accent2)}
 #cat tr.hit td{background:#fdf6e0;box-shadow:inset 3px 0 0 var(--accent2)}
+.dscta{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:16px 0 6px;padding:15px 18px;border-radius:12px;background:linear-gradient(135deg,#1d2733,#33485c);color:#f3efe6;position:relative;overflow:hidden}
+.dscta::after{content:"☾";position:absolute;right:6px;top:-34px;font-size:120px;opacity:.07}
+.dsctatext{flex:1 1 460px;position:relative;z-index:2}
+.dscta h2{font-family:Georgia,serif;font-size:19px;margin:0 0 5px;color:#fff;border:0}
+.dscta p{font-size:13.8px;line-height:1.6;margin:0 0 10px;color:#dfe6ee;max-width:82ch}
+.dscta p b{color:#cdb98a}
+.dsctaleg{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:5px 14px}
+.dsctaleg li{font-size:12px;color:#b9c6d3;line-height:1.5}
+.dsctabtn{position:relative;z-index:2;flex:0 0 auto;background:#cdb98a;color:#26313d;font-weight:700;font-size:14px;padding:10px 18px;border-radius:9px;text-decoration:none;white-space:nowrap}
+.dsctabtn:hover{background:#fff;text-decoration:none}
+@media(max-width:680px){.dscta{flex-direction:column;align-items:flex-start}}
 .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#d8cfbe;margin-right:5px;vertical-align:middle}
 .dot.on{background:var(--accent)}
 .rd{font-size:11px;color:var(--accent)}
