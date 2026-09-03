@@ -508,7 +508,13 @@ def build():
       "01_Przibram_1924_Amphibian-embryo": "Archiv f. mikroskopische Anatomie u. Entwicklungsmechanik 102 (1924)",
       "02_Steinach_1916_Puberty-glands": "Archiv f. Entwicklungsmechanik 42 (1916)",
     }
-    INPROG = {"05_Kammerer_1909_Alytes-inheritance", "07_Przibram_1921_Form-velocity"}
+    # Both former entries were verified complete against the German scans (June 2026):
+    # 07_Przibram_1921_Form-velocity — the whole two-page Referat, checked page by page;
+    # 05_Kammerer_1909_Alytes-inheritance — all 8 sections of the paper's own table of
+    # contents, 40k words, spot-checked against the scan. Its plates XVI–XVII are absent
+    # from the source PDF (99 pages = pp. 447–545, text only), which is the same situation
+    # as the 115 other translations already published as complete.
+    INPROG = set()
     by_trans = {c["trans_slug"]: c for c in catalog if c["trans_slug"]}
     translations = []
     for slug, c in by_trans.items():

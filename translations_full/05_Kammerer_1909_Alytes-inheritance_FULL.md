@@ -14,7 +14,7 @@ Received on 13 July 1909.
 
 *Archiv für Entwicklungsmechanik der Organismen*, vol. 28 (1909), pp. 447–545.
 
-> **Full translation.** A complete English rendering of this monograph — the introduction; the recapitulation of results from earlier work; the distinguishing of brood-care by experimental means (the temperature, epidemic, and moisture experiments, with their lettered sub-cases); the exploitation of the reproductive change (control series and descendant series); the summary; the plate legends; and the bibliography. OCR artefacts were corrected against the page images. **Kammerer's inheritance claims are rendered exactly as he states them; this translation reports them, it does not endorse them.** The claims were later disputed (the 1926 nuptial-pad scandal).
+> **Full translation.** A complete English rendering of this monograph — the introduction; the recapitulation of results from earlier work; the distinguishing of brood-care by experimental means (the temperature, epidemic, and moisture experiments, with their lettered sub-cases); the exploitation of the reproductive change (control series and descendant series); the summary; the plate legends; and the bibliography. OCR artefacts were corrected against the page images. Plates XVI–XVII are absent from the source scan (bound separately from the article); their legends are translated in full in section VIII. **Kammerer's inheritance claims are rendered exactly as he states them; this translation reports them, it does not endorse them.** The claims were later disputed (the 1926 nuptial-pad scandal).
 
 ### Table of Contents.
 
@@ -899,4 +899,4 @@ All figures relate to *Alytes obstetricans* and are drawn in natural size; Fig. 
 
 ---
 
-*Translator's note.* Complete translation, rendering Kammerer's claims as claimed, not as endorsed. This is the midwife-toad work at the centre of the Kammerer/Lamarckism controversy; its modern attention is overwhelmingly historiographic. *Geburtshelferkröte* = midwife toad; *Brutpflege* = brood-care.
+*Translator's note.* Complete translation of the full 99-page monograph (*Archiv für Entwicklungsmechanik* 28, pp. 447–545), rendering Kammerer's claims as claimed, not as endorsed. **Plates XVI and XVII are not reproduced:** they were bound separately from the article and are absent from the source scan, which runs to the end of the text. Every plate legend is translated in section VIII, so the figures are fully described even though the images are unavailable. This is the midwife-toad work at the centre of the Kammerer/Lamarckism controversy; its modern attention is overwhelmingly historiographic. *Geburtshelferkröte* = midwife toad; *Brutpflege* = brood-care.

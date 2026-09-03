@@ -14,4 +14,4 @@ Hans **Przibram.**
 
 ---
 
-*Translator's note.* A one-page review (*Referat*) by Hans Przibram of a physics paper by his brother Karl Przibram; one of the corpus's genuinely uncited ‘lost’ items, it states the BVA's signature ambition — a physics of form. Translated in full.
+*Translator's note.* Complete translation, checked page by page against the German scan. A one-page review (*Referat*) by Hans Przibram of a physics paper by his brother Karl Przibram; one of the corpus's genuinely uncited ‘lost’ items, it states the BVA's signature ambition — a physics of form. Translated in full.
