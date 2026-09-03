@@ -1401,7 +1401,7 @@ td.meth{font-size:12.5px;color:#4a463f}
 .text table{border-collapse:collapse;margin:14px 0;font-size:14px;display:block;overflow-x:auto;max-width:100%;width:max-content}
 .text th,.text td{border:1px solid var(--rule);padding:5px 9px}
 .text blockquote{border-left:3px solid var(--rule);margin:14px 0;padding:4px 16px;color:#534e46;background:#fbf8f2}
-.toc{align-self:start}
+.toc{align-self:start;position:static}
 .text pre{overflow-x:auto;max-width:100%;background:#fbf8f2;border:1px solid var(--rule);border-radius:8px;padding:10px 12px;font-size:13px;line-height:1.45}
 .tocbox{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:12px 14px;font-family:-apple-system,sans-serif;font-size:13.5px;margin-bottom:14px}
 .tocbox p{margin:0 0 6px;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
