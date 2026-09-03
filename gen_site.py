@@ -1148,24 +1148,7 @@ def gen_reading_pages():
         reader_sxs = f"../reader.html?id={pid}&sxs=1"
         reader_one = f"../reader.html?id={pid}"
         notice = '<div class="notice">This translation is still being finalized (figures or full text in progress).</div>' if wip else ""
-        # legacy panel
-        cites = lg.get("citations", [])[:8]
-        clist = "".join(
-            f'<li>{ (str(x["year"])+" · ") if x.get("year") else ""}{html.escape(x.get("author") or "")} — {html.escape((x.get("title") or "")[:120])}'
-            f'{" <a href=https://doi.org/"+x["doi"]+">doi</a>" if x.get("doi") else ""}</li>'
-            for x in cites)
-        redis = '<span class="badge redis">rediscovery target</span>' if lg.get("rediscovery") else ""
-        lp = f"""<section class="legacypanel">
-        <h2>Legacy</h2>
-        <div class="lstats">
-          <div><b>{lg.get('cited_by_count',0)}</b><span>cited today</span></div>
-          <div><b>{lg.get('n_parallels',0)}</b><span>modern parallels</span></div>
-          <div><b>{html.escape(lg.get('modern') or c.get('genus') or '—')}</b><span>organism now</span></div>
-        </div>
-        {redis}
-        {('<div style="margin:10px 0;padding:11px 13px;border-left:3px solid var(--accent2);background:#eef2f5;border-radius:7px"><h3 style="margin:.1em 0 .35em;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent2)">How later science draws on this work</h3><p style="margin:0;font-size:13.5px;line-height:1.6">'+html.escape(SUMM[str(pid)])+'</p></div>') if str(pid) in SUMM else ''}
-        {'<h3>Cited by today</h3><ul class="cites">'+clist+'</ul>' if clist else '<p class="muted">No modern citations recorded.</p>'}
-        </section>"""
+        # (Legacy panel removed — its content now lives in the Discover dossier.)
         # connections panel: author bio(s), this paper's rediscovery card, related papers (same organism)
         auth_links = "".join(
             '<a class="cnchip" href="../authors.html#a-%s">%s &rarr;</a>' % (html.escape(k), html.escape(nm))
@@ -1229,7 +1212,7 @@ def gen_reading_pages():
   {notice}
   <div class="cols">
     <div class="text">{frag}</div>
-    <aside class="toc">{('<div class=tocbox><p>On this page</p>'+toc_html+'</div>') if toc_html else ''}{lp}{connect}</aside>
+    <aside class="toc">{('<div class=tocbox><p>On this page</p>'+toc_html+'</div>') if toc_html else ''}{connect}</aside>
   </div>
   <footer class="cite">Cite: {html.escape(t['author'])} ({t['year']}), “{html.escape(t['title_de'])},” {html.escape(t['journal'])}. English translation, Vienna Vivarium in English.</footer>
 </article>"""
