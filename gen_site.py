@@ -33,7 +33,7 @@ STATS = dict(papers=len(catalog), trans=len(translations),
 NAV = [("index.html", "Home"), ("catalog.html", "Catalog"),
        ("map.html", "Map"), ("translations.html", "Translations"),
        ("rediscovery.html", "Discover"), ("authors.html", "Authors"),
-       ("legacy.html", "Legacy"), ("analytics.html", "Analytics"), ("about.html", "About")]
+       ("analytics.html", "Analytics"), ("about.html", "About")]
 
 # ---------------------------------------------------------------- shell
 def page(path, title, active, body, prefix="", head="", foot=""):
@@ -903,6 +903,15 @@ DOSSIER_CSS = r"""
 .dstats b{display:block;font-family:Georgia,serif;font-size:24px;line-height:1}
 .dstats span{font-size:11.5px;color:var(--muted)}
 .openq{font-size:14.5px;line-height:1.6;margin:4px 0 0;padding-top:10px;border-top:1px dashed var(--rule)}
+.summbox{margin:0 0 14px;padding:12px 14px;border-left:3px solid var(--accent2);background:#eef2f5;border-radius:0 8px 8px 0}
+.summbox h3{margin:.1em 0 .4em;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent2)}
+.summbox p{margin:0;font-size:14px;line-height:1.62}
+.citelist{display:flex;flex-direction:column;gap:11px}
+.citework{border:1px solid var(--rule);border-radius:9px;padding:10px 13px;background:var(--card)}
+.citehd{margin:0;font-size:14px;line-height:1.5}
+.citehd b{font-family:Georgia,serif}
+.citenote{margin:6px 0 0;font-size:13.5px;line-height:1.6;color:#4a463f;padding-top:6px;border-top:1px dashed var(--rule)}
+.histtag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;background:#9a9387;color:#fff;border-radius:20px;padding:1px 8px}
 .facets{margin:0;padding-left:20px;font-size:15px;line-height:1.5}
 .facets li{margin:5px 0;color:#2f2c28}
 .conslist{margin-top:4px}
@@ -932,7 +941,51 @@ def gen_dossier():
     meth = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else {}
     _synp = os.path.join(ROOT, "legacy_data", "consensus_synthesis.json")
     SYN = json.load(open(_synp, encoding="utf-8")) if os.path.exists(_synp) else {}
+
+    def _ld(name):
+        p = os.path.join(ROOT, "legacy_data", name)
+        return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+    # direct reception: who actually cites the BVA paper (folded in from the old Legacy panel)
+    ENR = _ld("citations_enriched.json")      # per paper -> works[]
+    CNOTES = _ld("citation_notes.json")       # "<pid>:<oa_id>" -> curated prose note
+    CTITLES = _ld("citation_titles.json")     # oa_id -> English title
+    CSUMM = _ld("citation_summaries.json")    # pid -> "how later science draws on this work"
     os.makedirs(os.path.join(SITE, "dossier"), exist_ok=True)
+
+    def cited_by_html(pid_s):
+        rec = ENR.get(pid_s) or {}
+        works = sorted(rec.get("works", []), key=lambda w: (w.get("year") or 0), reverse=True)
+        summ = CSUMM.get(pid_s)
+        if not works and not summ:
+            return ""
+        def _t(s):  # sources carry (sometimes doubly) encoded entities — fully decode, then escape once
+            s = s or ""
+            for _ in range(3):
+                u = html.unescape(s)
+                if u == s:
+                    break
+                s = u
+            return html.escape(s)
+        sm = ('<div class="summbox"><h3>How later science draws on this work</h3><p>'
+              + _t(summ) + '</p></div>') if summ else ''
+        items = ""
+        for w in works:
+            a = w.get("authors") or []
+            who = _t(a[0] if a else "") + (" et al." if len(a) > 1 else "")
+            ttl = CTITLES.get(w.get("oa_id")) or w.get("title") or "(untitled)"
+            doi = ('<a href="https://doi.org/%s" target="_blank" rel="noopener">doi ↗</a>' % w["doi"]) if w.get("doi") else ''
+            tag = '<span class="histtag">history of science</span>' if w.get("historiographic") else ''
+            note = CNOTES.get("%s:%s" % (pid_s, w.get("oa_id")))
+            nt = ('<p class="citenote">' + _t(note) + '</p>') if note else ''
+            items += ('<div class="citework"><p class="citehd"><b>' + str(w.get("year") or "n.d.") + '</b> · '
+                      + who + ' — ' + _t(ttl) + ' ' + doi + ' ' + tag + '</p>' + nt + '</div>')
+        n = len(works)
+        return ('<section class="dsec"><h2>Who cites this paper '
+                + ('<span class="cnt">(%d work%s)</span>' % (n, "" if n == 1 else "s") if n else '')
+                + '</h2>' + sm
+                + (('<div class="citelist">' + items + '</div>') if items
+                   else '<p class="muted">No modern citations recorded.</p>')
+                + '</section>')
 
     def paper_html(r):
         bits = [str(r.get("year") or "")]
@@ -1008,6 +1061,7 @@ def gen_dossier():
     </div>
     <p class="openq"><span class="lab">The paper’s open question</span>{html.escape(cur[1])}</p>
   </section>
+  {cited_by_html(pid_s)}
   <section class="dsec">
     <h2>Questions put to Consensus</h2>
     <ul class="facets">{''.join('<li>'+html.escape(f['q'])+'</li>' for f in d.get('facets',[]))}</ul>
