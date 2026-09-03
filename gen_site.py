@@ -1279,7 +1279,9 @@ function mount(html,cls){app.innerHTML=html;
   function reveal(){app.querySelectorAll('.stopcard,.findings').forEach(function(e){e.classList.add('in');});
     app.querySelectorAll('.opt').forEach(function(e,i){setTimeout(function(){e.classList.add('in');},reduced?0:70*i+120);});}
   requestAnimationFrame(function(){requestAnimationFrame(reveal);});setTimeout(reveal,700); // rAF is paused in background tabs
-  if(cls!=='keep')window.scrollTo({top:Math.max(0,(document.getElementById('tourtop')||app).getBoundingClientRect().top+window.scrollY-70),behavior:reduced?'auto':'smooth'});}
+  // after a choice, bring the trail + new card into view (the hero stays above, out of the way)
+  var anchor=state.path.length?trailEl:(document.getElementById('tourtop')||app);
+  if(cls!=='keep')window.scrollTo({top:Math.max(0,anchor.getBoundingClientRect().top+window.scrollY-66),behavior:reduced?'auto':'smooth'});}
 function renderOptions(){var o=pickOptions();return '<div class="opts" id="opts">'+o.map(function(x,i){return optHTML(x,i+1);}).join('')+'</div>';}
 function view(){renderTrail();
   var n=state.path.length;
@@ -1700,8 +1702,8 @@ footer.site p{margin:.3em 0}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:34px 0}
 .tourpanel{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;margin:26px 0 8px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#1d2733,#33485c);color:#f3efe6;text-decoration:none;box-shadow:0 18px 44px rgba(29,39,51,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
 .tourpanel:hover{transform:translateY(-3px);box-shadow:0 26px 54px rgba(29,39,51,.3);text-decoration:none}
-.tp-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;min-height:300px;padding:4px}
-.tp-imgs img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:8px;filter:saturate(.9) contrast(1.02);transition:transform .8s ease}
+.tp-imgs{display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;align-content:center}
+.tp-imgs img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center top;display:block;border-radius:8px;filter:saturate(.9) contrast(1.02);transition:transform .8s ease}
 .tourpanel:hover .tp-imgs img{transform:scale(1.04)}
 .tp-text{padding:30px 32px 28px;display:flex;flex-direction:column;justify-content:center}
 .tp-text .kicker{color:#cdb98a;margin:0 0 4px}
@@ -1709,7 +1711,7 @@ footer.site p{margin:.3em 0}
 .tp-text p{color:#dfe6ee;font-size:15.5px;line-height:1.6;margin:0 0 18px}
 .tp-btn{align-self:flex-start;background:#cdb98a;color:#26313d;font-weight:700;font-size:14.5px;padding:10px 18px;border-radius:9px}
 .tourpanel:hover .tp-btn{background:#fff}
-@media(max-width:760px){.tourpanel{grid-template-columns:1fr}.tp-imgs{min-height:200px;grid-template-rows:1fr}.tp-imgs img:nth-child(n+3){display:none}.tp-text{padding:22px 20px}.tp-text h2{font-size:25px}}
+@media(max-width:760px){.tourpanel{grid-template-columns:1fr}.tp-imgs img:nth-child(n+3){display:none}.tp-imgs img{aspect-ratio:3/2}.tp-text{padding:22px 20px}.tp-text h2{font-size:25px}}
 .stats div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px}
 .stats b{display:block;font-family:Georgia,serif;font-size:30px}
 .stats span{font-size:13px;color:var(--muted)}
