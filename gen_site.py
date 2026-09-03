@@ -43,7 +43,7 @@ BUILD_ID = _time.strftime("%Y%m%d%H%M")  # cache-buster for the stylesheet: GitH
 # --- Get-involved form -------------------------------------------------------
 # FORM_ENDPOINT: paste your Formspree form URL here (https://formspree.io/f/xxxxxxxx).
 # While it is empty, the form falls back to opening the visitor's mail client addressed to CONTACT_EMAIL.
-FORM_ENDPOINT = ""
+FORM_ENDPOINT = "https://formspree.io/f/xyeyjrpd"
 CONTACT_EMAIL = "eran.witz@gmail.com"
 SITE_DESC = ("The Biologische Versuchsanstalt (Vienna 'Vivarium') corpus in English: 175 papers from the "
              "institute's zoological department (1904–1930) with full translations, the German originals, "
