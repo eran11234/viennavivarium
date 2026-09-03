@@ -1398,7 +1398,7 @@ td.meth{font-size:12.5px;color:#4a463f}
 .text{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.72;max-width:70ch}
 .text h2{font-size:21px;margin-top:1.5em}.text h3{font-size:17px}
 .text img{max-width:100%;height:auto;display:block;margin:14px auto;border:1px solid var(--rule);background:#fff;padding:4px}
-.text table{border-collapse:collapse;margin:14px 0;font-size:14px}
+.text table{border-collapse:collapse;margin:14px 0;font-size:14px;display:block;overflow-x:auto;max-width:100%;width:max-content}
 .text th,.text td{border:1px solid var(--rule);padding:5px 9px}
 .text blockquote{border-left:3px solid var(--rule);margin:14px 0;padding:4px 16px;color:#534e46;background:#fbf8f2}
 .toc{align-self:start}
