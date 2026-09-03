@@ -37,6 +37,8 @@ NAV = [("index.html", "Home"), ("tour.html", "Tour"), ("catalog.html", "Catalog"
 
 # ---------------------------------------------------------------- shell
 SITE_URL = "https://eran11234.github.io/viennavivarium/"
+import time as _time
+BUILD_ID = _time.strftime("%Y%m%d%H%M")  # cache-buster for the stylesheet: GitHub Pages serves assets with max-age=600
 SITE_DESC = ("The Biologische Versuchsanstalt (Vienna 'Vivarium') corpus in English: 175 papers from the "
              "institute's zoological department (1904–1930) with full translations, the German originals, "
              "and every paper read against today's science.")
@@ -69,7 +71,7 @@ def page(path, title, active, body, prefix="", head="", foot="", desc=None):
 <meta property="og:title" content="{html.escape(ttl)}"><meta property="og:description" content="{d}"><meta property="og:url" content="{url}">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="{FAVICON}">
-<link rel="stylesheet" href="{prefix}assets/style.css">{head}
+<link rel="stylesheet" href="{prefix}assets/style.css?v={BUILD_ID}">{head}
 </head><body>
 <header class="site"><div class="wrap nav">
 <a class="brand" href="{prefix}index.html"><span class="b1">Vienna Vivarium</span><span class="b2">the BVA corpus in English</span></a>
