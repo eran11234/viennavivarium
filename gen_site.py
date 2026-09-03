@@ -1254,7 +1254,7 @@ function themeName(t){return (T.themes[t]||t);}
 function statusCls(st){return {'Sleeping Beauty':'st-sb','Quiet Classic':'st-qc','Living Legacy':'st-ll','Stirring':'st-st','Contested Legacy':'st-cl','Rightly Rested':'st-rr'}[st]||'';}
 function optHTML(o,k){var s=o.s;
   return '<button class="opt" data-id="'+esc(s.id)+'"><span class="okey">'+k+'</span>'+(o.wild?'<span class="wild">sidestep</span>':'')
-   +'<div class="oimg"><img src="'+esc(s.thumb)+'" alt="" loading="lazy" style="object-position:center '+(s.pos||'top')+'"></div>'
+   +'<div class="oimg"><img src="'+esc(s.thumb)+'" alt="" decoding="async" style="object-position:center '+(s.pos||'top')+'"></div>'
    +'<div class="otxt"><b>'+esc(s.title)+'</b><span>'+esc(s.teaser)+'</span></div></button>';}
 function stopHTML(s){var l=s.live||{}, chips='';
   if(l.st)chips+='<span class="chip '+statusCls(l.st)+'">'+esc(l.st)+(l.sb?(' · SBI '+l.sbi):'')+'</span>';
@@ -1275,9 +1275,10 @@ function renderTrail(){var h='';state.path.forEach(function(id,i){var s=byId[id]
    +'<button class="tbtn" id="trestart" '+(n?'':'disabled')+'>↺ New tour</button>';
   document.getElementById('tfind').onclick=function(){showFindings(true);};
   document.getElementById('trestart').onclick=restart;}
-function mount(html,cls){app.innerHTML=html;requestAnimationFrame(function(){requestAnimationFrame(function(){
-  app.querySelectorAll('.stopcard,.findings').forEach(function(e){e.classList.add('in');});
-  app.querySelectorAll('.opt').forEach(function(e,i){setTimeout(function(){e.classList.add('in');},reduced?0:70*i+120);});});});
+function mount(html,cls){app.innerHTML=html;
+  function reveal(){app.querySelectorAll('.stopcard,.findings').forEach(function(e){e.classList.add('in');});
+    app.querySelectorAll('.opt').forEach(function(e,i){setTimeout(function(){e.classList.add('in');},reduced?0:70*i+120);});}
+  requestAnimationFrame(function(){requestAnimationFrame(reveal);});setTimeout(reveal,700); // rAF is paused in background tabs
   if(cls!=='keep')window.scrollTo({top:Math.max(0,(document.getElementById('tourtop')||app).getBoundingClientRect().top+window.scrollY-70),behavior:reduced?'auto':'smooth'});}
 function renderOptions(){var o=pickOptions();return '<div class="opts" id="opts">'+o.map(function(x,i){return optHTML(x,i+1);}).join('')+'</div>';}
 function view(){renderTrail();
@@ -1317,7 +1318,11 @@ function findingsHTML(){
    +'<div class="nums"><div><b data-n="'+papers.length+'">0</b><span>papers met</span></div><div><b data-n="'+held.length+'">0</b><span>held up today</span></div><div><b data-n="'+sb.length+'">0</b><span>sleeping beauties</span></div><div><b data-n="'+people.length+'">0</b><span>people</span></div></div>'
    +lines+sbl+'<h3>Your path</h3>'+strip
    +'<div class="fbtns"><button class="primary" id="fkeep">Keep exploring ↓</button><button id="fshare">Share this path</button><a href="rediscovery.html">Open Discover</a><button id="frestart">Start a new tour</button></div></section>';}
-function countUp(){app.querySelectorAll('.findings b[data-n]').forEach(function(b){var n=+b.getAttribute('data-n');if(reduced||n===0){b.textContent=n;return;}var t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/900);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
+function countUp(){app.querySelectorAll('.findings b[data-n]').forEach(function(b){var n=+b.getAttribute('data-n');
+  if(reduced||n===0||document.hidden){b.textContent=n;return;}
+  var t0=null,done=false;function fin(){if(!done){done=true;b.textContent=n;}}
+  function step(ts){if(done)return;if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/900);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);else fin();}
+  requestAnimationFrame(step);setTimeout(fin,1400);});}
 function showFindings(scroll){var ex=document.getElementById('findings');if(ex){ex.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});return;}
   var cur=document.getElementById('stopcard');var d=document.createElement('div');d.innerHTML=findingsHTML();var f=d.firstChild;app.insertBefore(f,cur||app.firstChild);
   requestAnimationFrame(function(){requestAnimationFrame(function(){f.classList.add('in');});});countUp();bind();if(scroll)f.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});}
