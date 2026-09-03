@@ -36,13 +36,39 @@ NAV = [("index.html", "Home"), ("catalog.html", "Catalog"),
        ("analytics.html", "Analytics"), ("about.html", "About")]
 
 # ---------------------------------------------------------------- shell
-def page(path, title, active, body, prefix="", head="", foot=""):
+SITE_URL = "https://eran11234.github.io/viennavivarium/"
+SITE_DESC = ("The Biologische Versuchsanstalt (Vienna 'Vivarium') corpus in English: 175 papers from the "
+             "institute's zoological department (1904–1930) with full translations, the German originals, "
+             "and every paper read against today's science.")
+FAVICON = ("data:image/svg+xml," + "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E"
+           "%3Crect width='64' height='64' rx='12' fill='%2333485c'/%3E"
+           "%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' "
+           "text-anchor='middle' fill='%23f3efe6'%3EV%3C/text%3E%3C/svg%3E")
+
+def _title_trim(s, n=70):
+    """Trim a long title at a word boundary for <title>/og:title."""
+    s = (s or "").strip()
+    if len(s) <= n:
+        return s
+    cut = s[:n].rsplit(" ", 1)[0].rstrip(" ,;:—-")
+    return cut + "…"
+
+def page(path, title, active, body, prefix="", head="", foot="", desc=None):
     nav = "".join(
         f'<a class="{"on" if active==h else ""}" href="{prefix}{href}">{h}</a>'
         for href, h in NAV)
+    ttl = _title_trim(title)
+    d = html.escape((desc or SITE_DESC).strip())
+    url = SITE_URL + path
     doc = f"""<!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{title} · Vienna Vivarium in English</title>
+<title>{html.escape(ttl)} · Vienna Vivarium in English</title>
+<meta name="description" content="{d}">
+<link rel="canonical" href="{url}">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Vienna Vivarium in English">
+<meta property="og:title" content="{html.escape(ttl)}"><meta property="og:description" content="{d}"><meta property="og:url" content="{url}">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="{FAVICON}">
 <link rel="stylesheet" href="{prefix}assets/style.css">{head}
 </head><body>
 <header class="site"><div class="wrap nav">
@@ -70,15 +96,23 @@ def gen_index():
         {'<span class="badge wip">in progress</span>' if t['status']!='complete' else '<span class="badge done">full text</span>'}
         </a>'''
         for t in translations if t['status']=='complete')
+    # live counts for the stats strip: curated people on the Authors page, and the
+    # strict sleeping-beauty set from the Discover re-evaluation
+    _ap = os.path.join(ROOT, "legacy_data", "authors.json")
+    n_people = len(json.load(open(_ap, encoding="utf-8"))["people"]) if os.path.exists(_ap) else STATS["authors"]
+    _cp = os.path.join(ROOT, "legacy_data", "consensus_all.json")
+    _CA = json.load(open(_cp, encoding="utf-8")) if os.path.exists(_cp) else {}
+    n_sleep = sum(1 for v in _CA.values() if v.get("sleeping"))
+    n_confirmed = sum(1 for v in _CA.values() if v.get("status") in ("Sleeping Beauty", "Quiet Classic", "Living Legacy"))
     body = f"""
 <section class="hero">
   <p class="kicker">An orientation platform for researchers</p>
   <h1>The Vienna Vivarium, in English</h1>
-  <p class="lede">The Biologische Versuchsanstalt (1902–1945) was one of the first institutes for experimental biology. This platform opens its early publications to English-language researchers: a searchable catalog of <strong>{STATS['papers']} papers</strong> ({STATS['y0']}–{STATS['y1']}), full English <strong>translations</strong> with figures, the German originals, and a citation-<strong>legacy</strong> layer showing where this work still touches living science.</p>
+  <p class="lede">The Biologische Versuchsanstalt (1902–1945) was one of the first institutes for experimental biology. This platform opens the complete published output of its zoological department to English-language researchers: a searchable catalog of <strong>{STATS['papers']} papers</strong> ({STATS['y0']}–{STATS['y1']}), full English <strong>translations</strong> with figures, the German originals — and every paper <strong>read against today's science</strong>, to show which of these forgotten results the field has since rediscovered.</p>
   <div class="cta">
     <a class="btn primary" href="catalog.html">Browse the catalog</a>
     <a class="btn" href="translations.html">Read translations</a>
-    <a class="btn" href="legacy.html">Explore the legacy</a>
+    <a class="btn" href="rediscovery.html">☾ Discover what held up</a>
   </div>
 </section>
 <figure class="heroimg">
@@ -88,8 +122,9 @@ def gen_index():
 <section class="stats">
   <div><b>{STATS['papers']}</b><span>papers cataloged</span></div>
   <div><b>{STATS['trans']}</b><span>English translations</span></div>
-  <div><b>{STATS['authors']}</b><span>authors</span></div>
-  <div><b>{STATS['redis']}</b><span>rediscovery targets</span></div>
+  <div><b>{n_people}</b><span>authors</span></div>
+  <div><b>{n_confirmed}</b><span>results confirmed by today's science</span></div>
+  <div><b>{n_sleep}</b><span>sleeping beauties</span></div>
 </section>
 <section>
   <h2>Featured translations</h2>
@@ -97,9 +132,15 @@ def gen_index():
 </section>
 <section class="how">
   <h2>How to use this platform</h2>
-  <p>The <a href="catalog.html">Catalog</a> is the map of the whole corpus — filter by author, organism, phenomenon, or legacy depth, and jump to a paper's English translation (where one exists) or its German original. The <a href="translations.html">Translations</a> are full reading pages with the original plates and a side-by-side view against the scanned German. The <a href="legacy.html">Legacy</a> explorer surfaces the papers whose organisms are still studied today but whose original work goes uncited — the corpus's live edges. <a href="analytics.html">Analytics</a> shows the shape of the institute's output over four decades.</p>
+  <p>The <a href="catalog.html">Catalog</a> is the map of the whole corpus — filter by author, organism, phenomenon, method, or today's verdict, and jump to a paper's English translation (where one exists) or its German original. The <a href="translations.html">Translations</a> are full reading pages with the original plates and a side-by-side view against the scanned German. <a href="rediscovery.html">Discover</a> sets every paper against the current literature: which results became textbook science, which are still contested, and which <em>sleeping beauties</em> the field has rediscovered without ever citing them. <a href="authors.html">Authors</a> gives the people behind the papers, the <a href="map.html">Map</a> lays the corpus out by organism, and <a href="analytics.html">Analytics</a> shows the shape of the institute's output over its four decades.</p>
 </section>"""
     page("index.html", "Home", "Home", body)
+    # GitHub Pages serves 404.html for any missing path
+    page("404.html", "Page not found", "", """
+<section class="hero"><p class="kicker">404</p><h1>That page isn’t here</h1>
+<p class="lede">The address may have changed as the platform grew. Try the <a href="catalog.html">Catalog</a> to find a paper,
+<a href="rediscovery.html">Discover</a> for its standing today, or the <a href="index.html">home page</a>.</p>
+<div class="cta"><a class="btn primary" href="catalog.html">Browse the catalog</a><a class="btn" href="index.html">Home</a></div></section>""")
 
 # ---------------------------------------------------------------- catalog
 def gen_catalog():
@@ -213,15 +254,19 @@ def gen_about():
     body = f"""
 <h1>About this platform</h1>
 <div class="prose">
-<p>The <strong>Biologische Versuchsanstalt</strong> (BVA, the “Vivarium”) operated in Vienna's Prater from 1902 to 1945 — among the world's first institutions dedicated to experimental biology, founded by Hans Przibram, Leopold von Portheim, and Wilhelm Figdor. Its researchers studied regeneration, growth, inheritance, sex determination, and coloration across an unusually wide range of organisms.</p>
-<h2>What this platform is</h2>
-<p>An orientation layer for researchers who do not read German. It assembles, in one place: a searchable <strong>catalog</strong> of {STATS['papers']} papers ({STATS['y0']}–{STATS['y1']}); full English <strong>translations</strong> with the original figures; the scanned German <strong>originals</strong>; and a <strong>legacy</strong> analysis linking each paper to the modern works that cite it and to parallel research on the same organisms.</p>
+<h2>The institute</h2>
+<p>The <strong>Biologische Versuchsanstalt</strong> (BVA, the “Vivarium”) was among the world's first institutions dedicated to experimental biology. In 1902 the zoologist <strong>Hans Przibram</strong> and the botanists <strong>Leopold von Portheim</strong> and <strong>Wilhelm Figdor</strong> bought the former aquarium of the 1873 World Exposition in Vienna's Prater and, from its official opening on 1 January 1903, ran it as a private research institute with their own money. It grew to four departments — zoological (Przibram), botanical (Figdor and Portheim), physico-chemical (Wolfgang Pauli Sr., 1907–1914) and physiological (Eugen Steinach, from 1913) — and in 1914 the founders donated it to the Imperial Academy of Sciences. Paul Kammerer, Paul Weiss, Leonore Brecher and the young Karl von Frisch all worked there; between 1920 and 1934, 39 of its 109 listed workers were women.</p>
+<p>After the Anschluss of 1938 Przibram and Portheim were barred from their own institute and its Jewish staff dismissed. Przibram died in Theresienstadt in 1944; Leonore Brecher, Helene Jacobi, Martha Geiringer, Henny Burchardt and Heinrich Kun were murdered in the camps; the building burned in the last days of the war in 1945. The authoritative account is Gerd B. Müller (ed.), <em>Vivarium: Experimental, Quantitative, and Theoretical Biology at Vienna's Biologische Versuchsanstalt</em> (MIT Press, 2017), on which the institutional history here relies.</p>
+<h2>What the corpus is</h2>
+<p>From 1907 to 1925 the zoological department had its own section in Wilhelm Roux's <em>Archiv für Entwicklungsmechanik der Organismen</em>, the “Arbeiten der Zoologischen Abteilung der Biologischen Versuchsanstalt in Wien”; by 1930, when the institute's publications there stopped, <strong>175 articles</strong> had appeared — more than a tenth of the journal's output in those years. This platform contains that series <strong>in full</strong>: all {STATS['papers']} papers ({STATS['y0']}–{STATS['y1']}). It does not cover the botanical, physico-chemical or physiological departments' publications, which appeared elsewhere, nor Przibram's seven-volume <em>Experimental-Zoologie</em>.</p>
+<h2>What this platform does</h2>
+<p>It is an orientation layer for researchers who do not read German. It assembles, in one place: a searchable <strong>catalog</strong> of the series; full English <strong>translations</strong> with the original figures ({STATS['trans']} of {STATS['papers']}); the scanned German <strong>originals</strong>; the people behind the papers; and, on <strong>Discover</strong>, every paper read against the current literature — a summary of the state of the art, a verdict on whether the paper's claim held up, the modern works that actually cite it, and a ranked search for <em>sleeping beauties</em>: results the field has since confirmed without ever citing their Viennese origin.</p>
 <h2>How the translations were made</h2>
-<p>Each German paper was OCR-corrected against the scanned source and translated in full, preserving numbered points, tables, and figure legends. Historical species names are kept as in the original, with modern equivalents noted (e.g. <em>Triton</em> → <em>Triturus</em>). Two translations remain in progress.</p>
+<p>Each German paper was OCR-corrected against the scanned source and translated in full, preserving numbered points, tables, and figure legends. Historical species names are kept as in the original, with modern equivalents noted (e.g. <em>Triton</em> → <em>Triturus</em>). Two translations remain in progress and are marked as such.</p>
 <h2>How to cite</h2>
-<p>Cite the original publication, noting the English translation and this platform as the access point, e.g.: <em>Author (Year), “Original German title,” Archiv … ; English translation, Vienna Vivarium in English.</em></p>
-<h2>Sources &amp; data</h2>
-<p>Citation and parallel-work data derive from OpenAlex. Corpus metadata, legacy layers, and convergence axes are part of the project's ongoing analysis and should be treated as scholarly working material.</p>
+<p>Cite the original publication, noting the English translation and this platform as the access point, e.g.: <em>Author (Year), “Original German title,” Archiv für Entwicklungsmechanik …; English translation, Vienna Vivarium in English.</em></p>
+<h2>Sources, data &amp; limits</h2>
+<p>Citation data (who cites each paper today) derive from <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a>. The modern literature on each paper's questions was retrieved once, at build time, from the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API (June 2026); the state-of-the-art summaries, verdicts and sleeping-beauty index were written and computed from that retrieval and are a research aid, not a settled historiographic judgment. Portraits on the Authors page are public-domain images via Wikimedia Commons, credited in place. Corpus metadata, legacy layers and convergence axes are part of the project's ongoing analysis and should be treated as scholarly working material; corrections are welcome.</p>
 </div>"""
     page("about.html", "About", "About", body)
 
@@ -1072,8 +1117,9 @@ def gen_dossier():
   </section>
   <footer class="cite">Modern literature retrieved via the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API (June 2026) for this paper’s open questions; takeaways are Consensus’s one-line summaries of each study. A research aid, not a settled verdict.</footer>
 </article>"""
-        page(f"dossier/{pid}.html", title_en[:60], "Rediscover", body,
-             head="<style>" + DOSSIER_CSS + "</style>", prefix="../")
+        page(f"dossier/{pid}.html", title_en, "Rediscover", body,
+             head="<style>" + DOSSIER_CSS + "</style>", prefix="../",
+             desc=(f"{c.get('author') or ''} ({c.get('year')}). {_verdict}. " + (_state or ""))[:300])
         n += 1
     print("dossier pages:", n)
 
@@ -1209,7 +1255,7 @@ def gen_reading_pages():
             for k, nm in pid2auth.get(pid, []))
         redis_link = ('<p class="ck">Rediscovery</p>'
                       '<a class="cnredis" href="../dossier/%d.html">Modern state of the field &rarr;</a>' % pid
-                      ) if lg.get("rediscovery") else ""
+                      ) if (lg.get("rediscovery") and str(pid) in _A) else ""
         _g = (c.get("genus") or "").strip().lower()
         _x = (c.get("taxon") or "").strip().lower()
         _seen = {pid}; _rel = []; _from_genus = 0
@@ -1270,7 +1316,9 @@ def gen_reading_pages():
   </div>
   <footer class="cite">Cite: {html.escape(t['author'])} ({t['year']}), “{html.escape(t['title_de'])},” {html.escape(t['journal'])}. English translation, Vienna Vivarium in English.</footer>
 </article>"""
-        page(f"papers/{ps}.html", t["title_en"][:60], "Translations", body, prefix="../")
+        page(f"papers/{ps}.html", t["title_en"], "Translations", body, prefix="../",
+             desc=(f"English translation of {t['author']} ({t['year']}), “{t['title_de']}” — "
+                   f"Biologische Versuchsanstalt, Vienna. With original figures and the German scan side by side.")[:300])
 
 # ---------------------------------------------------------------- assets / copy
 def _cp(src, dst):
@@ -1338,7 +1386,7 @@ footer.site p{margin:.3em 0}
 .btn:hover{border-color:#cdc4b1;text-decoration:none}
 .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
 .btn.primary:hover{background:#683224}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:34px 0}
 .stats div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px}
 .stats b{display:block;font-family:Georgia,serif;font-size:30px}
 .stats span{font-size:13px;color:var(--muted)}
@@ -1365,7 +1413,7 @@ footer.site p{margin:.3em 0}
 .filters input[type=search],.filters select{padding:8px 11px;border:1px solid var(--rule);border-radius:8px;background:var(--card);font-size:14px}
 .filters #q{flex:1;min-width:220px}
 .chk{display:flex;align-items:center;gap:6px;font-size:14px;color:#4a463f}
-.tablewrap{border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+.tablewrap{border:1px solid var(--rule);border-radius:10px;background:var(--card);overflow-x:auto;-webkit-overflow-scrolling:touch}
 table#cat{border-collapse:collapse;width:100%;font-size:14px}
 #cat th,#cat td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
 #cat th{position:sticky;top:62px;z-index:5;background:var(--card);font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);cursor:default;box-shadow:0 1px 0 var(--rule)}

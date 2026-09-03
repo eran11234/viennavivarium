@@ -449,15 +449,16 @@
   },
   {
    "key": "burchhardt",
-   "name": "Burchhardt",
-   "years": "",
-   "role": "",
-   "bio": "Contributed to the corpus: the symmetry of a regenerate depends on how the limb is set in the body — bearing on the rules of regenerative symmetry.",
+   "name": "Henny Burchardt",
+   "years": "d. 1944",
+   "role": "Researcher, zoological department",
+   "bio": "Henny (Henriette) Burchardt worked in the institute's zoological department in its final productive years; her 1930 paper on limbs implanted through the urodele body — showing that a regenerate's symmetry follows how the limb is set in the host — is among the last of the institute's Archiv series and is confirmed almost point for point by modern positional-information work in axolotls. After the 1938 Anschluss she was among the BVA staff persecuted as Jewish. She was murdered at Auschwitz-Birkenau in 1944, one of five former institute researchers killed by the Nazi regime (with Leonore Brecher, Helene Jacobi, Martha Geiringer and Heinrich Kun). Her name is misspelt 'Burchhardt' in most later bibliographies; the byline of her own paper reads Henny Burchardt.",
    "link": "",
-   "featured": false,
+   "featured": true,
    "papers": [
     2
-   ]
+   ],
+   "_bio_source": "Müller (ed.), Vivarium, MIT Press 2017, ch. 1 timeline and ch. 4 (citing Taschwer et al. 2016; Gedenkbuch 2015); paper byline."
   },
   {
    "key": "burt",

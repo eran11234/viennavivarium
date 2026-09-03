@@ -426,6 +426,9 @@ def build():
     TITLES_DE = json.load(open(_dp, encoding="utf-8")) if os.path.exists(_dp) else {}
     _fp = os.path.join(ROOT, "legacy_data", "fffd_fixes.json")
     FFFD = json.load(open(_fp, encoding="utf-8")) if os.path.exists(_fp) else {}
+    # author-name corrections verified against the paper's own byline (id -> {author, author_full})
+    _afp = os.path.join(ROOT, "legacy_data", "authors_fix.json")
+    AUTHOR_FIX = json.load(open(_afp, encoding="utf-8")) if os.path.exists(_afp) else {}
     def defffd(s):
         if not s or "�" not in s: return s
         # match a whole word-core (may contain several U+FFFD), ignoring surrounding quotes/punctuation
@@ -439,6 +442,10 @@ def build():
         ds = ds_match(year, author, s["title"])
         title_de = ds.get("title") or clean(pr.get("title")) or clean(s["title"])
         author_full = ds.get("author_full") or author
+        _af = AUTHOR_FIX.get(str(pid))
+        if _af:
+            author = _af.get("author") or author
+            author_full = _af.get("author_full") or author
         organism = clean(s.get("organism")) or clean(pr.get("organism"))
         phenomena = pr.get("phenomena") or [p.strip() for p in (s.get("phenomena") or "").split(",") if p.strip()]
         layer = layer_num(s.get("layer")) or layer_num(ds.get("layer"))
