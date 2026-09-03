@@ -39,6 +39,12 @@ NAV = [("index.html", "Home"), ("tour.html", "Tour"), ("catalog.html", "Catalog"
 SITE_URL = "https://eran11234.github.io/viennavivarium/"
 import time as _time
 BUILD_ID = _time.strftime("%Y%m%d%H%M")  # cache-buster for the stylesheet: GitHub Pages serves assets with max-age=600
+
+# --- Get-involved form -------------------------------------------------------
+# FORM_ENDPOINT: paste your Formspree form URL here (https://formspree.io/f/xxxxxxxx).
+# While it is empty, the form falls back to opening the visitor's mail client addressed to CONTACT_EMAIL.
+FORM_ENDPOINT = ""
+CONTACT_EMAIL = "eran.witz@gmail.com"
 SITE_DESC = ("The Biologische Versuchsanstalt (Vienna 'Vivarium') corpus in English: 175 papers from the "
              "institute's zoological department (1904–1930) with full translations, the German originals, "
              "and every paper read against today's science.")
@@ -75,11 +81,11 @@ def page(path, title, active, body, prefix="", head="", foot="", desc=None):
 </head><body>
 <header class="site"><div class="wrap nav">
 <a class="brand" href="{prefix}index.html"><span class="b1">Vienna Vivarium</span><span class="b2">the BVA corpus in English</span></a>
-<nav>{nav}</nav></div></header>
+<nav>{nav}</nav><a class="getinv" href="{prefix}contribute.html"><span class="gi-dot"></span>Get involved</a></div></header>
 <main class="wrap">{body}</main>
 <footer class="site"><div class="wrap">
 <p>Biologische Versuchsanstalt (the “Vivarium”), Vienna · {STATS['papers']} papers, {STATS['y0']}–{STATS['y1']} · {STATS['trans']} English translations.</p>
-<p class="muted">An orientation platform for researchers. Translations and corpus analysis are scholarly working documents; cite the original alongside the translation.</p>
+<p class="muted">An orientation platform for researchers. Translations and corpus analysis are scholarly working documents; cite the original alongside the translation. Corrections, collaborations and contributions are welcome — <a href="{prefix}contribute.html">get involved</a>.</p>
 </div></footer>{foot}</body></html>"""
     with open(os.path.join(SITE, path), "w", encoding="utf-8") as f:
         f.write(doc)
@@ -285,9 +291,89 @@ def gen_about():
 <h2>How to cite</h2>
 <p>Cite the original publication, noting the English translation and this platform as the access point, e.g.: <em>Author (Year), “Original German title,” Archiv für Entwicklungsmechanik …; English translation, Vienna Vivarium in English.</em></p>
 <h2>Sources, data &amp; limits</h2>
-<p>Citation data (who cites each paper today) derive from <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a>. The modern literature on each paper's questions was retrieved once, at build time, from the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API (June 2026); the state-of-the-art summaries, verdicts and sleeping-beauty index were written and computed from that retrieval and are a research aid, not a settled historiographic judgment. Portraits on the Authors page are public-domain images via Wikimedia Commons, credited in place. Corpus metadata, legacy layers and convergence axes are part of the project's ongoing analysis and should be treated as scholarly working material; corrections are welcome.</p>
+<p>Citation data (who cites each paper today) derive from <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a>. The modern literature on each paper's questions was retrieved once, at build time, from the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API (June 2026); the state-of-the-art summaries, verdicts and sleeping-beauty index were written and computed from that retrieval and are a research aid, not a settled historiographic judgment. Portraits on the Authors page are public-domain images via Wikimedia Commons, credited in place. Corpus metadata, legacy layers and convergence axes are part of the project's ongoing analysis and should be treated as scholarly working material; corrections, collaborations and contributions are welcome — <a href="contribute.html">get involved</a>.</p>
 </div>"""
     page("about.html", "About", "About", body)
+
+# ---------------------------------------------------------------- get involved
+def gen_contribute():
+    """The always-reachable 'Get involved' page: an on-site form posting to Formspree
+    (FORM_ENDPOINT); until that is configured it falls back to the visitor's mail client."""
+    ways = [
+        ("collab", "Research collaboration", "historians, biologists or philosophers of science who want to work with the corpus, co-author, or build on the Discover verdicts"),
+        ("translate", "Translate or check a translation", "German readers who can review, correct or improve a rendering"),
+        ("context", "Add context, citations or corrections", "point to modern work that cites a paper, fix a fact, or extend a biography"),
+        ("archive", "Share archives, images or family material", "descendants, archivists and institutions holding letters, photographs or documents"),
+        ("support", "Support the project", "the platform is independent and unfunded; if you could help financially or with hosting, we would like to hear from you"),
+        ("other", "Something else", "any other way you would like to be part of this"),
+    ]
+    opts = "".join(
+        '<label class="ck"><input type="checkbox" name="ways" value="%s"><span>%s<small>%s</small></span></label>'
+        % (k, html.escape(t), html.escape(d)) for k, t, d in ways)
+    body = f"""
+<div class="cwrap">
+<section class="chero"><p class="kicker">Get involved</p>
+<h1>Help bring the Vivarium back into the conversation</h1>
+<p>This platform is the work of a small, independent project. Everything on it — {STATS['trans']} translations, {STATS['papers']} papers read against today's science, the biographies — can be improved by people who know something we don't. If you would like to collaborate, correct, add, or contribute in any other way, tell us a little about yourself below.</p></section>
+<div class="cgrid">
+<form class="cform" id="cform" novalidate>
+  <label for="f-name">Your name</label>
+  <input type="text" id="f-name" name="name" autocomplete="name" required>
+  <label for="f-email">Email</label>
+  <input type="email" id="f-email" name="email" autocomplete="email" required>
+  <label for="f-aff">Affiliation or background <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+  <input type="text" id="f-aff" name="affiliation" placeholder="e.g. University of Vienna · historian of biology · descendant of a BVA researcher">
+  <label>How would you like to be involved?</label>
+  <div class="opt-row">{opts}</div>
+  <label for="f-msg">Tell us more</label>
+  <textarea id="f-msg" name="message" placeholder="What draws you to the project, what you could offer, or what you would like from us."></textarea>
+  <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+  <input type="hidden" name="_subject" value="Vienna Vivarium — get involved">
+  <button class="send" type="submit" id="fsend">Send</button>
+  <p class="note" id="fnote"></p>
+  <div class="err" id="ferr"></div>
+</form>
+<div class="done" id="fdone"><h3>Thank you.</h3><p>Your message is on its way. We read everything and will reply personally, usually within a few days.</p><p><a href="tour.html">Take the tour</a> · <a href="rediscovery.html">Open Discover</a> · <a href="catalog.html">Browse the catalog</a></p></div>
+<aside class="caside">
+  <div class="box"><h2>What helps most right now</h2><ul>
+    <li><b>Modern citations we missed.</b> If a paper here is cited or used in work we haven't found, tell us — the verdicts on Discover depend on it.</li>
+    <li><b>The people.</b> Many of the {len(json.load(open(os.path.join(ROOT, "legacy_data", "authors.json"), encoding="utf-8"))["people"])} authors have only a line of biography. Dates, places, photographs, descendants.</li>
+    <li><b>Translation checks.</b> Every rendering was made carefully, but a second German reader on any paper is welcome.</li>
+    <li><b>Collaboration.</b> The corpus, the verdicts and the citation data are open to joint research.</li>
+  </ul></div>
+  <div class="box donate"><h2>Supporting the project</h2><p>The platform runs without institutional funding. If you or your organisation would like to support it — financially, with hosting, or by helping it find an institutional home — tick <em>Support the project</em> and we will be in touch.</p></div>
+  <div class="box"><h2>Prefer email?</h2><p>Write to <a id="cmail" href="#">the project</a> directly.</p></div>
+</aside>
+</div></div>"""
+    js = r"""
+(function(){
+var EP=%s, MAIL=%s;
+var f=document.getElementById('cform'),send=document.getElementById('fsend'),note=document.getElementById('fnote'),err=document.getElementById('ferr'),done=document.getElementById('fdone');
+var cm=document.getElementById('cmail');cm.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Vienna Vivarium — get involved');cm.textContent=MAIL;
+note.textContent=EP?'Your details go only to the project; no newsletter, no sharing.':'This opens your email program with your details filled in.';
+function vals(){var d=new FormData(f),ways=d.getAll('ways');return {name:d.get('name')||'',email:d.get('email')||'',affiliation:d.get('affiliation')||'',ways:ways,message:d.get('message')||'',gotcha:d.get('_gotcha')||''};}
+function mailto(v){var body='Name: '+v.name+'\nEmail: '+v.email+'\nAffiliation: '+v.affiliation+'\nInvolvement: '+v.ways.join(', ')+'\n\n'+v.message;
+  location.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Vienna Vivarium — get involved')+'&body='+encodeURIComponent(body);}
+f.addEventListener('submit',function(e){e.preventDefault();err.style.display='none';
+  var v=vals();
+  if(!v.name.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.email)){err.textContent='Please give your name and a valid email address so we can reply.';err.style.display='block';return;}
+  if(v.gotcha){return;}
+  if(!EP){mailto(v);return;}
+  send.disabled=true;send.textContent='Sending…';
+  var fd=new FormData(f);fd.set('ways',v.ways.join(', '));
+  fetch(EP,{method:'POST',body:fd,headers:{'Accept':'application/json'}}).then(function(r){
+    if(r.ok){f.style.display='none';done.style.display='block';done.scrollIntoView({behavior:'smooth',block:'start'});}
+    else{throw new Error('status '+r.status);}
+  }).catch(function(){send.disabled=false;send.textContent='Send';
+    err.innerHTML='Sending failed. <a href="#" id="fmail">Send it by email instead</a>.';err.style.display='block';
+    document.getElementById('fmail').onclick=function(ev){ev.preventDefault();mailto(v);};});
+});
+})();
+""" % (json.dumps(FORM_ENDPOINT), json.dumps(CONTACT_EMAIL))
+    page("contribute.html", "Get involved", None, body, foot="<script>" + js + "</script>",
+         desc="Collaborate with, correct, or contribute to the Vienna Vivarium project: research collaboration, translation checks, archives and family material, or support.")
+    print("contribute.html:", "Formspree endpoint set" if FORM_ENDPOINT else "no endpoint yet — mailto fallback")
+
 
 # ---------------------------------------------------------------- reader (side-by-side)
 def gen_reader():
@@ -1688,6 +1774,43 @@ header.site{position:sticky;top:0;z-index:20;background:rgba(247,244,238,.95);ba
 .brand .b2{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 nav a{margin-left:18px;font-size:14.5px;color:var(--ink)}
 nav a.on{color:var(--accent);font-weight:600}
+.getinv{display:inline-flex;align-items:center;gap:7px;margin-left:22px;background:#33485c;color:#fff;font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:20px;text-decoration:none;white-space:nowrap;flex:0 0 auto;box-shadow:0 2px 8px rgba(29,39,51,.18);transition:background .2s,transform .2s}
+.getinv:hover{background:#1d2733;text-decoration:none;transform:translateY(-1px)}
+.getinv .gi-dot{width:8px;height:8px;border-radius:50%;background:#cdb98a;box-shadow:0 0 0 0 rgba(205,185,138,.6);animation:gipulse 2.4s ease-out infinite}
+@keyframes gipulse{0%{box-shadow:0 0 0 0 rgba(205,185,138,.6)}70%{box-shadow:0 0 0 7px rgba(205,185,138,0)}100%{box-shadow:0 0 0 0 rgba(205,185,138,0)}}
+@media(prefers-reduced-motion:reduce){.getinv .gi-dot{animation:none}}
+@media(max-width:860px){.getinv{margin-left:10px;padding:7px 11px;font-size:12.5px}}
+/* contribute page */
+.cwrap{max-width:900px}
+.chero{background:linear-gradient(135deg,#1d2733,#33485c);border-radius:18px;padding:30px 32px 28px;color:#f3efe6;position:relative;overflow:hidden;margin-top:10px}
+.chero::after{content:"✦";position:absolute;right:10px;top:-30px;font-size:160px;opacity:.06}
+.chero .kicker{color:#cdb98a}.chero h1{color:#fff;font-family:Georgia,serif;font-size:34px;margin:.1em 0 .3em;line-height:1.15}
+.chero p{color:#dfe6ee;font-size:16px;line-height:1.6;max-width:70ch;margin:0}
+.cgrid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:26px;margin-top:22px;align-items:start}
+.cform{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:22px 24px}
+.cform label{display:block;font-size:13px;font-weight:600;letter-spacing:.02em;color:#3c3833;margin:14px 0 6px}
+.cform label:first-child{margin-top:0}
+.cform input[type=text],.cform input[type=email],.cform textarea{width:100%;box-sizing:border-box;font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--rule);border-radius:9px;background:var(--paper);color:var(--ink)}
+.cform input:focus,.cform textarea:focus{outline:none;border-color:#33485c;box-shadow:0 0 0 3px rgba(51,72,92,.15)}
+.cform textarea{min-height:130px;resize:vertical}
+.cform .opt-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cform .ck{display:flex;gap:9px;align-items:flex-start;font-size:14px;font-weight:400;padding:9px 11px;border:1px solid var(--rule);border-radius:9px;background:var(--paper);cursor:pointer;margin:0;letter-spacing:0;line-height:1.4;color:var(--ink)}
+.cform .ck:has(input:checked){border-color:#33485c;background:#eef2f5}
+.cform .ck input{margin-top:3px;flex:0 0 auto}
+.cform .ck small{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.cform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cform .send{margin-top:18px;background:#33485c;color:#fff;font:inherit;font-weight:700;font-size:15px;padding:12px 20px;border:0;border-radius:10px;cursor:pointer}
+.cform .send:hover{background:#1d2733}.cform .send:disabled{opacity:.6;cursor:default}
+.cform .note{font-size:12.5px;color:var(--muted);margin:10px 0 0;line-height:1.5}
+.cform .done{display:none;background:#eef5f1;border:1px solid #cfe3d8;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.6}
+.cform .done h3{margin:0 0 6px;font-family:Georgia,serif;font-size:20px}
+.cform .err{display:none;background:#fbf2dd;border:1px solid #e7d4ac;border-radius:10px;padding:12px 14px;font-size:14px;margin-top:12px;line-height:1.5}
+.caside .box{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+.caside h2{font-family:Georgia,serif;font-size:18px;margin:0 0 8px;border:0}
+.caside p,.caside li{font-size:14px;line-height:1.6;color:#3c3833;margin:0 0 8px}
+.caside ul{padding-left:18px;margin:0}
+.caside .box.donate{border-left:4px solid #cdb98a}
+@media(max-width:760px){.cgrid{grid-template-columns:1fr}.cform .opt-row{grid-template-columns:1fr}.chero h1{font-size:27px}}
 footer.site{margin-top:60px;border-top:1px solid var(--rule);padding:26px 0;font-size:13.5px;color:var(--muted)}
 footer.site p{margin:.3em 0}
 .hero{padding:30px 0 8px}
@@ -2282,7 +2405,7 @@ def main():
     write_css(); write_js()
     open(os.path.join(DATA, "site.js"), "w").write("window.SITE=" + json.dumps({"fullPdfs": FULL}) + ";")
     open(os.path.join(SITE, ".nojekyll"), "w").write("")
-    gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader()
+    gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader(); gen_contribute()
     gen_citations(); gen_methodology(); gen_discover(); gen_dossier(); gen_authors(); gen_reading_pages(); copy_assets()
     gen_tour()  # after copy_assets: it thumbnails figures/portraits that copy_assets puts in place
     print("Generated site at", SITE, "| FULL_PDFS =", FULL)
