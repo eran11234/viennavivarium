@@ -30,7 +30,7 @@ STATS = dict(papers=len(catalog), trans=len(translations),
              authors=len({c["author"] for c in catalog}),
              redis=sum(1 for c in catalog if c["rediscovery"]))
 
-NAV = [("index.html", "Home"), ("catalog.html", "Catalog"),
+NAV = [("index.html", "Home"), ("tour.html", "Tour"), ("catalog.html", "Catalog"),
        ("map.html", "Map"), ("translations.html", "Translations"),
        ("rediscovery.html", "Discover"), ("authors.html", "Authors"),
        ("analytics.html", "Analytics"), ("about.html", "About")]
@@ -104,6 +104,13 @@ def gen_index():
     _CA = json.load(open(_cp, encoding="utf-8")) if os.path.exists(_cp) else {}
     n_sleep = sum(1 for v in _CA.values() if v.get("sleeping"))
     n_confirmed = sum(1 for v in _CA.values() if v.get("status") in ("Sleeping Beauty", "Quiet Classic", "Living Legacy"))
+    # four tour thumbnails for the featured panel (gen_tour writes assets/tour/<id>.jpg later in the build)
+    _tp = os.path.join(ROOT, "legacy_data", "tour.json")
+    _tour_pick = ["eye-replant-amphibian", "midwife-toad", "positional-memory", "the-building"]
+    if os.path.exists(_tp):
+        _ids = {s["id"] for s in json.load(open(_tp, encoding="utf-8"))["stops"]}
+        _tour_pick = [i for i in _tour_pick if i in _ids]
+    tour_imgs = "".join('<img src="assets/tour/%s.jpg" alt="" loading="lazy">' % i for i in _tour_pick)
     body = f"""
 <section class="hero">
   <p class="kicker">An orientation platform for researchers</p>
@@ -115,6 +122,15 @@ def gen_index():
     <a class="btn" href="rediscovery.html">☾ Discover what held up</a>
   </div>
 </section>
+<a class="tourpanel" href="tour.html">
+  <div class="tp-imgs">{tour_imgs}</div>
+  <div class="tp-text">
+    <p class="kicker">New here? Take the tour</p>
+    <h2>Let your curiosity lead</h2>
+    <p>A personal tour through the corpus: at every step, choose which of three or four images pulls you in — a regrown eye, a scandal, a physics of form, a name misspelt for a century — and after a few steps see what you found. A different hand every visit.</p>
+    <span class="tp-btn">Start the tour →</span>
+  </div>
+</a>
 <figure class="heroimg">
   <img src="assets/img/vivarium-building.jpg" alt="The Biologische Versuchsanstalt building in the Vienna Prater, with VIVARIUM inscribed on the façade" loading="lazy">
   <figcaption>The Biologische Versuchsanstalt — the “Vivarium” — in the Vienna Prater. Built in 1873 as an aquarium-exhibition hall, it became, from 1902, the world's first private institute for experimental biology. The name <em>VIVARIUM</em> is still legible on the façade.</figcaption>
@@ -1125,6 +1141,295 @@ def gen_dossier():
     print("dossier pages:", n)
 
 
+# ---------------------------------------------------------------- guided tour
+TOUR_CSS = r"""
+.tourwrap{max-width:1040px}
+.tourhero{background:linear-gradient(135deg,#1d2733,#33485c);border-radius:18px;padding:34px 34px 30px;color:#f3efe6;position:relative;overflow:hidden;margin-top:10px}
+.tourhero::after{content:"☾";position:absolute;right:-6px;top:-40px;font-size:200px;opacity:.06}
+.tourhero .kicker{color:#cdb98a}
+.tourhero h1{color:#fff;font-family:Georgia,serif;font-size:36px;margin:.1em 0 .25em;line-height:1.15}
+.tourhero p{color:#dfe6ee;font-size:16.5px;line-height:1.6;max-width:70ch;margin:0}
+.tourhero .skip{display:inline-block;margin-top:14px;color:#cdb98a;font-size:13.5px}
+/* trail */
+.trail{position:sticky;top:62px;z-index:9;display:flex;align-items:center;gap:12px;background:rgba(247,244,238,.94);backdrop-filter:blur(6px);border:1px solid var(--rule);border-radius:12px;padding:8px 12px;margin:14px 0 6px}
+.trail .steps{display:flex;align-items:center;gap:0;flex:1;overflow:hidden}
+.trail .tn{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 0 0 1.5px #33485c;flex:0 0 auto;transform:scale(.6);opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
+.trail .tn.in{transform:scale(1);opacity:1}
+.trail .ln{width:16px;height:2px;background:#33485c;opacity:.35;flex:0 0 auto}
+.trail .cnt{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.trail .tbtn{font-size:12.5px;border:1px solid var(--rule);background:var(--card);border-radius:20px;padding:5px 12px;cursor:pointer;color:var(--ink);font-family:inherit;white-space:nowrap}
+.trail .tbtn.primary{background:#33485c;color:#fff;border-color:#33485c}
+.trail .tbtn:disabled{opacity:.4;cursor:default}
+/* stop (fact) card */
+.stopcard{background:var(--card);border:1px solid var(--rule);border-radius:16px;overflow:hidden;margin:16px 0 8px;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
+.stopcard.in{opacity:1;transform:none}
+.stopcard .simg{position:relative;height:340px;overflow:hidden;background:#e9e3d6}
+.stopcard .simg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transform:scale(1.02);transition:transform 9s ease-out}
+.stopcard.in .simg img{transform:scale(1.09)}
+.stopcard .simg .grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(29,39,51,.78) 100%)}
+.stopcard .simg h2{position:absolute;left:24px;right:24px;bottom:18px;margin:0;color:#fff;font-family:Georgia,serif;font-size:30px;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.stopcard .sbody{padding:18px 24px 20px}
+.stopcard .chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}
+.stopcard .chip{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;padding:3px 10px;border-radius:20px;background:#eee8dc;color:#3c3833}
+.stopcard .chip.st-sb{background:#33485c;color:#f3efe6}.stopcard .chip.st-qc{background:#2e6f6a;color:#fff}.stopcard .chip.st-ll{background:#1d6e56;color:#fff}.stopcard .chip.st-st{background:#9a6a1f;color:#fff}.stopcard .chip.st-cl{background:#8a3a3a;color:#fff}.stopcard .chip.st-rr{background:#9a9387;color:#fff}
+.stopcard .chip.v{background:#f1ece1;color:#26313d;font-weight:600;letter-spacing:0;font-size:11.5px}
+.stopcard p.fact{font-size:17px;line-height:1.65;margin:0 0 14px;max-width:72ch;font-family:Georgia,serif}
+.stopcard .slinks{display:flex;flex-wrap:wrap;gap:8px}
+.stopcard .slinks a{font-size:13px;border:1px solid var(--rule);border-radius:8px;padding:6px 12px;text-decoration:none;color:var(--ink);background:var(--paper)}
+.stopcard .slinks a.go{background:#33485c;color:#fff;border-color:#33485c}
+/* options */
+.prompt{font-family:Georgia,serif;font-size:22px;margin:26px 0 12px;color:var(--ink)}
+.prompt small{display:block;font-family:-apple-system,sans-serif;font-size:12.5px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.opt{position:relative;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--card);cursor:pointer;text-align:left;padding:0;font-family:inherit;color:var(--ink);opacity:0;transform:translateY(18px);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,opacity .45s,border-color .2s}
+.opt.in{opacity:1;transform:none}
+.opt:hover,.opt:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px rgba(29,39,51,.16);border-color:#cdb98a;outline:none}
+.opt .oimg{height:150px;overflow:hidden;background:#e9e3d6}
+.opt .oimg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .6s ease}
+.opt:hover .oimg img{transform:scale(1.07)}
+.opt .otxt{padding:12px 14px 14px}
+.opt .otxt b{display:block;font-family:Georgia,serif;font-size:16px;line-height:1.25;margin-bottom:5px}
+.opt .otxt span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
+.opt .okey{position:absolute;top:10px;left:10px;width:24px;height:24px;border-radius:50%;background:rgba(29,39,51,.85);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.opt .wild{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;letter-spacing:.04em;background:#cdb98a;color:#26313d;border-radius:20px;padding:2px 8px;text-transform:uppercase}
+.opt.chosen{border-color:#33485c;box-shadow:0 0 0 3px rgba(51,72,92,.25)}
+.opts.leaving .opt:not(.chosen){opacity:.15;transform:scale(.97)}
+/* findings */
+.findings{background:linear-gradient(135deg,#1d2733,#33485c);color:#f3efe6;border-radius:18px;padding:26px 28px 24px;margin:18px 0 8px;position:relative;overflow:hidden;opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.findings.in{opacity:1;transform:none}
+.findings::after{content:"✦";position:absolute;right:14px;top:-30px;font-size:150px;opacity:.06}
+.findings .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cdb98a;font-weight:600;margin:0 0 6px}
+.findings h2{color:#fff;font-family:Georgia,serif;font-size:27px;margin:0 0 14px;line-height:1.2;border:0}
+.findings .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:0 0 16px}
+.findings .nums div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 12px 10px;text-align:center}
+.findings .nums b{display:block;font-family:Georgia,serif;font-size:32px;line-height:1;color:#fff}
+.findings .nums span{font-size:11.5px;color:#b9c6d3;display:block;margin-top:4px}
+.findings h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#cdb98a;margin:14px 0 8px;font-family:-apple-system,sans-serif}
+.findings .sbl{display:flex;flex-direction:column;gap:8px;margin:0 0 6px}
+.findings .sbl a{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.07);border-radius:10px;padding:8px 12px;text-decoration:none;color:#f3efe6}
+.findings .sbl a:hover{background:rgba(255,255,255,.14);text-decoration:none}
+.findings .sbl img{width:44px;height:44px;border-radius:8px;object-fit:cover;flex:0 0 auto}
+.findings .sbl b{display:block;font-size:14px;line-height:1.3}
+.findings .sbl span{font-size:12px;color:#b9c6d3}
+.findings p.line{font-size:15px;line-height:1.6;color:#dfe6ee;margin:0 0 6px;max-width:78ch}
+.findings .fbtns{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+.findings .fbtns button,.findings .fbtns a{font-family:inherit;font-size:13.5px;font-weight:600;border-radius:9px;padding:9px 15px;cursor:pointer;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;text-decoration:none}
+.findings .fbtns .primary{background:#cdb98a;color:#26313d;border-color:#cdb98a}
+.findings .fbtns .primary:hover{background:#fff}
+.findings .strip{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 2px}
+.findings .strip img{width:52px;height:52px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,.25)}
+@media(max-width:680px){.tourhero{padding:24px 20px}.tourhero h1{font-size:28px}.stopcard .simg{height:230px}.stopcard .simg h2{font-size:23px}.opts{grid-template-columns:1fr 1fr}.opt .oimg{height:120px}}
+@media(prefers-reduced-motion:reduce){.stopcard,.opt,.findings,.trail .tn{transition:none!important}.stopcard .simg img{transition:none!important;transform:none!important}}
+"""
+
+TOUR_JS = r"""
+(function(){
+var T=window.TOUR, S=T.stops, byId={}; S.forEach(function(s){byId[s.id]=s;});
+var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var app=document.getElementById('tour'), trailEl=document.getElementById('trail');
+var state={path:[]}, sessionSeed=Math.floor(Math.random()*1e9);
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+// deterministic shuffle per (session, path) so back/forward re-show the same options
+function hashStr(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function shuffle(a,r){for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function pickOptions(){
+  var r=rng(hashStr(sessionSeed+'|'+state.path.join('.')));
+  var visited={}; state.path.forEach(function(i){visited[i]=1;});
+  var pool=S.filter(function(s){return !visited[s.id];});
+  if(!state.path.length){ return shuffle(pool.filter(function(s){return s.entry;}),r).slice(0,4).map(function(s){return {s:s};}); }
+  var cur=byId[state.path[state.path.length-1]], ct={}; cur.tags.forEach(function(t){ct[t]=1;});
+  var related=[],other=[];
+  pool.forEach(function(s){var o=0;s.tags.forEach(function(t){if(ct[t])o++;});(o?related:other).push({s:s,o:o,k:r()});});
+  related.sort(function(a,b){return b.o-a.o||a.k-b.k;});
+  // never show two cards with the same image, and never repeat the current image
+  var used={}; used[cur.thumb]=1;
+  function ok(x){if(used[x.s.thumb])return false;used[x.s.thumb]=1;return true;}
+  var picks=shuffle(related.slice(0,7),r).filter(ok).slice(0,3);
+  var wild=shuffle(other,r).filter(ok)[0]; if(wild){wild.wild=true;picks.push(wild);}
+  var i=0; while(picks.length<4&&i<related.length){var c=related[i++];if(picks.indexOf(c)<0&&ok(c))picks.push(c);}
+  return shuffle(picks,r).slice(0,4);
+}
+function themeName(t){return (T.themes[t]||t);}
+function statusCls(st){return {'Sleeping Beauty':'st-sb','Quiet Classic':'st-qc','Living Legacy':'st-ll','Stirring':'st-st','Contested Legacy':'st-cl','Rightly Rested':'st-rr'}[st]||'';}
+function optHTML(o,k){var s=o.s;
+  return '<button class="opt" data-id="'+esc(s.id)+'"><span class="okey">'+k+'</span>'+(o.wild?'<span class="wild">sidestep</span>':'')
+   +'<div class="oimg"><img src="'+esc(s.thumb)+'" alt="" loading="lazy" style="object-position:center '+(s.pos||'top')+'"></div>'
+   +'<div class="otxt"><b>'+esc(s.title)+'</b><span>'+esc(s.teaser)+'</span></div></button>';}
+function stopHTML(s){var l=s.live||{}, chips='';
+  if(l.st)chips+='<span class="chip '+statusCls(l.st)+'">'+esc(l.st)+(l.sb?(' · SBI '+l.sbi):'')+'</span>';
+  if(l.v)chips+='<span class="chip v">'+esc(l.v)+'</span>';
+  if(l.c!=null)chips+='<span class="chip">cited '+l.c+'× today</span>';
+  if(s.year)chips+='<span class="chip">'+esc(s.year)+'</span>';
+  var links=(s.links||[]).map(function(x,i){return '<a class="'+(i===0?'go':'')+'" href="'+esc(x.href)+'">'+esc(x.label)+'</a>';}).join('');
+  return '<article class="stopcard" id="stopcard"><div class="simg"><img src="'+esc(s.thumb)+'" alt="" style="object-position:center '+(s.pos||'top')+'"><div class="grad"></div><h2>'+esc(s.title)+'</h2></div>'
+   +'<div class="sbody"><div class="chips">'+chips+'</div><p class="fact">'+esc(s.body)+'</p><div class="slinks">'+links+'</div></div></article>';}
+function promptHTML(){var p=T.prompts[Math.floor(Math.random()*T.prompts.length)];var n=state.path.length;
+  var hint=n===0?'Every visit deals a different hand. Press 1–4 to choose.':(n<T.findAt?('Step '+(n+1)+' — a finding is '+(T.findAt-n)+' step'+(T.findAt-n===1?'':'s')+' away'):'Keep going, or open your findings above');
+  return '<h2 class="prompt">'+esc(p)+'<small>'+esc(hint)+'</small></h2>';}
+function renderTrail(){var h='';state.path.forEach(function(id,i){var s=byId[id];if(i)h+='<i class="ln"></i>';h+='<img class="tn in" src="'+esc(s.thumb)+'" title="'+esc(s.title)+'" alt="">';});
+  var n=state.path.length;
+  trailEl.innerHTML='<div class="steps">'+(h||'<span class="cnt">Your path will appear here</span>')+'</div>'
+   +'<span class="cnt">'+(n?('Step '+n):'Start')+'</span>'
+   +'<button class="tbtn primary" id="tfind" '+(n>=3?'':'disabled')+'>✦ Findings</button>'
+   +'<button class="tbtn" id="trestart" '+(n?'':'disabled')+'>↺ New tour</button>';
+  document.getElementById('tfind').onclick=function(){showFindings(true);};
+  document.getElementById('trestart').onclick=restart;}
+function mount(html,cls){app.innerHTML=html;requestAnimationFrame(function(){requestAnimationFrame(function(){
+  app.querySelectorAll('.stopcard,.findings').forEach(function(e){e.classList.add('in');});
+  app.querySelectorAll('.opt').forEach(function(e,i){setTimeout(function(){e.classList.add('in');},reduced?0:70*i+120);});});});
+  if(cls!=='keep')window.scrollTo({top:Math.max(0,(document.getElementById('tourtop')||app).getBoundingClientRect().top+window.scrollY-70),behavior:reduced?'auto':'smooth'});}
+function renderOptions(){var o=pickOptions();return '<div class="opts" id="opts">'+o.map(function(x,i){return optHTML(x,i+1);}).join('')+'</div>';}
+function view(){renderTrail();
+  var n=state.path.length;
+  if(!n){mount(promptHTML()+renderOptions(),'keep');bind();return;}
+  var cur=byId[state.path[n-1]];
+  var html=stopHTML(cur);
+  if(n===T.findAt)html=findingsHTML()+html;
+  html+=promptHTML()+renderOptions();
+  mount(html);bind();}
+function bind(){app.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){choose(b.getAttribute('data-id'),b);};});
+  var kb=document.getElementById('fkeep');if(kb)kb.onclick=function(){var o=document.getElementById('opts');if(o)o.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});};
+  var rs=document.getElementById('frestart');if(rs)rs.onclick=restart;
+  var sh=document.getElementById('fshare');if(sh)sh.onclick=function(){var u=location.href.split('#')[0]+'#p='+state.path.join('.');
+    if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){sh.textContent='Link copied ✓';});}else{prompt('Copy this link',u);}};}
+function choose(id,btn){var o=document.getElementById('opts');if(o){o.classList.add('leaving');if(btn)btn.classList.add('chosen');}
+  setTimeout(function(){state.path.push(id);history.pushState({p:state.path.slice()},'','#p='+state.path.join('.'));view();},reduced?0:330);}
+function restart(){state.path=[];history.pushState({p:[]},'',location.pathname);view();}
+function findingsHTML(){
+  var stops=state.path.map(function(i){return byId[i];});
+  var seen={},papers=[];stops.forEach(function(s){if(s.pid&&!seen[s.pid]){seen[s.pid]=1;papers.push(s);}});
+  var held=papers.filter(function(s){return s.live&&['Sleeping Beauty','Quiet Classic','Living Legacy'].indexOf(s.live.st)>=0;});
+  var sb=papers.filter(function(s){return s.live&&s.live.st==='Sleeping Beauty';});
+  var failed=papers.filter(function(s){return s.live&&['Contested Legacy','Rightly Rested'].indexOf(s.live.st)>=0;});
+  var people=stops.filter(function(s){return s.author||s.tags.indexOf('people')>=0;});
+  var tagc={};stops.forEach(function(s){s.tags.forEach(function(t){if(T.themes[t])tagc[t]=(tagc[t]||0)+1;});});
+  var themes=Object.keys(tagc).sort(function(a,b){return tagc[b]-tagc[a];}).slice(0,3).map(themeName);
+  var most=papers.filter(function(s){return s.live}).sort(function(a,b){return (b.live.c||0)-(a.live.c||0);})[0];
+  var least=held.slice().sort(function(a,b){return (a.live.c||0)-(b.live.c||0);})[0];
+  var head=themes.length?('Your tour ran through '+(themes.length>1?themes.slice(0,-1).join(', ')+' and '+themes[themes.length-1]:themes[0])+'.'):'Your tour so far.';
+  var lines='';
+  if(most&&least&&most!==least)lines+='<p class="line">The most-cited paper you met was <b>'+esc(most.title)+'</b> ('+most.live.c+' citations — '+esc(most.live.v||most.live.st)+'). The least-cited result that held up was <b>'+esc(least.title)+'</b>, cited '+least.live.c+' time'+(least.live.c===1?'':'s')+' in a century.</p>';
+  if(failed.length)lines+='<p class="line">'+failed.length+' of the claims you met did <em>not</em> survive: '+failed.map(function(s){return esc(s.title);}).join('; ')+'.</p>';
+  var sbl=sb.length?('<h3>Sleeping beauties you met</h3><div class="sbl">'+sb.map(function(s){return '<a href="dossier/'+s.pid+'.html"><img src="'+esc(s.thumb)+'" alt=""><div><b>'+esc(s.title)+'</b><span>SBI '+s.live.sbi+' · cited '+s.live.c+'× · '+esc(s.live.v||'')+'</span></div></a>';}).join('')+'</div>'):'';
+  var strip='<div class="strip">'+stops.map(function(s){return '<img src="'+esc(s.thumb)+'" title="'+esc(s.title)+'" alt="">';}).join('')+'</div>';
+  return '<section class="findings" id="findings"><p class="eyebrow">✦ What you found</p><h2>'+esc(head)+'</h2>'
+   +'<div class="nums"><div><b data-n="'+papers.length+'">0</b><span>papers met</span></div><div><b data-n="'+held.length+'">0</b><span>held up today</span></div><div><b data-n="'+sb.length+'">0</b><span>sleeping beauties</span></div><div><b data-n="'+people.length+'">0</b><span>people</span></div></div>'
+   +lines+sbl+'<h3>Your path</h3>'+strip
+   +'<div class="fbtns"><button class="primary" id="fkeep">Keep exploring ↓</button><button id="fshare">Share this path</button><a href="rediscovery.html">Open Discover</a><button id="frestart">Start a new tour</button></div></section>';}
+function countUp(){app.querySelectorAll('.findings b[data-n]').forEach(function(b){var n=+b.getAttribute('data-n');if(reduced||n===0){b.textContent=n;return;}var t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/900);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);});}
+function showFindings(scroll){var ex=document.getElementById('findings');if(ex){ex.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});return;}
+  var cur=document.getElementById('stopcard');var d=document.createElement('div');d.innerHTML=findingsHTML();var f=d.firstChild;app.insertBefore(f,cur||app.firstChild);
+  requestAnimationFrame(function(){requestAnimationFrame(function(){f.classList.add('in');});});countUp();bind();if(scroll)f.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});}
+var _mount=mount;mount=function(h,c){_mount(h,c);countUp();};
+document.addEventListener('keydown',function(e){if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;var k=parseInt(e.key,10);if(k>=1&&k<=4){var b=app.querySelectorAll('.opt')[k-1];if(b)b.click();}});
+window.addEventListener('popstate',function(e){state.path=(e.state&&e.state.p)||readHash();view();});
+function readHash(){var m=location.hash.match(/p=([^&]+)/);return m?m[1].split('.').filter(function(i){return byId[i];}):[];}
+state.path=readHash();history.replaceState({p:state.path.slice()},'');view();
+})();
+"""
+
+
+def gen_tour():
+    """The guided tour: an image-led, randomised choose-your-thread introduction.
+    Content lives in legacy_data/tour.json; live verdict/status/SBI/citation data
+    are merged in at build time so the tour never drifts from the Discover data."""
+    tp = os.path.join(ROOT, "legacy_data", "tour.json")
+    if not os.path.exists(tp):
+        return
+    TR = json.load(open(tp, encoding="utf-8"))
+    ap = os.path.join(ROOT, "legacy_data", "consensus_all.json")
+    A = json.load(open(ap, encoding="utf-8")) if os.path.exists(ap) else {}
+    sp = os.path.join(ROOT, "legacy_data", "consensus_synthesis.json")
+    SYN = json.load(open(sp, encoding="utf-8")) if os.path.exists(sp) else {}
+    cat_by_id = {c["id"]: c for c in catalog}
+    slug2id = {t["trans_slug"]: t["id"] for t in translations}
+    read_for = {t["id"]: t["page_slug"] for t in translations}
+    apth = os.path.join(ROOT, "legacy_data", "authors.json")
+    AUTH = {p["key"]: p for p in json.load(open(apth, encoding="utf-8"))["people"]} if os.path.exists(apth) else {}
+    n_sleep = sum(1 for v in A.values() if v.get("sleeping"))
+    n_conf = sum(1 for v in A.values() if v.get("status") in ("Sleeping Beauty", "Quiet Classic", "Living Legacy"))
+    fill = {"n_sleep": n_sleep, "n_confirmed": n_conf, "n_papers": STATS["papers"], "n_trans": STATS["trans"]}
+    tdir = os.path.join(SITE, "assets", "tour")
+    os.makedirs(tdir, exist_ok=True)
+
+    def thumb(src, dst, maxw=720):
+        # always regenerate: the whole set takes ~3 s and a stop's image mapping can change
+        try:
+            from PIL import Image
+            im = Image.open(src)
+            if im.mode not in ("RGB", "L"):
+                im = im.convert("RGB")
+            w, h = im.size
+            if w > maxw:
+                im = im.resize((maxw, int(h * maxw / w)), Image.LANCZOS)
+            im.convert("RGB").save(dst, "JPEG", quality=82, optimize=True, progressive=True)
+        except Exception:
+            import shutil
+            shutil.copyfile(src, dst)
+
+    stops = []
+    for s in TR["stops"]:
+        img = s["img"]
+        rel = img if img.startswith(("figures/", "assets/")) else "figures/%s/%s" % (s.get("slug", ""), img)
+        src = os.path.join(SITE, rel)
+        if not os.path.exists(src):
+            print("tour: missing image for", s["id"], rel)
+            continue
+        dst = os.path.join(tdir, s["id"] + ".jpg")
+        thumb(src, dst)
+        pid = s.get("pid") or slug2id.get(s.get("slug"))
+        c = cat_by_id.get(pid) if pid else None
+        live = None
+        if pid and str(pid) in A:
+            d = A[str(pid)]
+            live = dict(st=d.get("status"), sb=1 if d.get("sleeping") else 0, sbi=d.get("sbi"),
+                        c=d.get("cites", 0), v=(SYN.get(str(pid), {}).get("verdict") or ""))
+        links = []
+        if pid and str(pid) in A:
+            links.append({"label": "Open the dossier", "href": "dossier/%d.html" % pid})
+        if pid and pid in read_for:
+            links.append({"label": "Read the translation", "href": "papers/%s.html" % read_for[pid]})
+        if s.get("author") and s["author"] in AUTH:
+            links.append({"label": AUTH[s["author"]]["name"], "href": "authors.html#a-%s" % s["author"]})
+        links += s.get("links", [])
+        body = s["body"]
+        for k, v in fill.items():
+            body = body.replace("{{%s}}" % k, str(v))
+        stops.append(dict(id=s["id"], title=s["title"], teaser=s["teaser"], body=body,
+                          thumb="assets/tour/%s.jpg" % s["id"], pos=s.get("pos", "top"),
+                          tags=s.get("tags", []), entry=bool(s.get("entry")), pid=pid,
+                          author=s.get("author"), year=(c.get("year") if c else None),
+                          live=live, links=links))
+    themes = {"regeneration": "regeneration", "limbs": "limb regeneration", "eyes": "eyes and lenses",
+              "transplant": "transplantation", "inheritance": "inheritance", "scandal": "the scandals",
+              "colour": "colour and pigment", "hormones": "hormones and sex", "growth": "growth and form",
+              "temperature": "temperature", "physics": "the physics of form", "people": "the people",
+              "women": "the institute's women", "war": "the institute's fate", "institute": "the institute",
+              "sleeping": "sleeping beauties", "genetics": "genetics before genes", "legacy": "living legacies",
+              "insects": "insects", "fish": "fishes", "amphibia": "amphibians", "mammals": "mammals",
+              "crustacea": "crustaceans", "method": "how this site judges papers"}
+    data = dict(stops=stops, prompts=TR.get("prompts", ["What next?"]), themes=themes, findAt=6,
+                stats=dict(sleep=n_sleep, confirmed=n_conf))
+    os.makedirs(DATA, exist_ok=True)
+    open(os.path.join(DATA, "tour.js"), "w", encoding="utf-8").write(
+        "window.TOUR=" + json.dumps(data, ensure_ascii=False) + ";")
+    body = ('<div class="tourwrap" id="tourtop">'
+            '<section class="tourhero"><p class="kicker">A personal tour</p>'
+            '<h1>Take me through the Vivarium</h1>'
+            '<p>One of the first institutes for experimental biology, Vienna, 1903–1938: ' + str(STATS["papers"]) +
+            ' papers, a scandal, a physics of form, and results the world rediscovered without ever citing them. '
+            'Choose what interests you; the tour follows your curiosity through ' + str(len(stops)) + ' stops and, after a few steps, shows you what you found.</p>'
+            '<a class="skip" href="catalog.html">I know what I’m looking for — take me to the catalog →</a></section>'
+            '<div id="trail" class="trail"></div>'
+            '<div id="tour"></div></div>')
+    page("tour.html", "Tour", "Tour", body,
+         head="<style>" + TOUR_CSS + "</style>",
+         foot='<script src="data/tour.js"></script><script>' + TOUR_JS + '</script>',
+         desc="A personal, image-led tour of the Vienna Vivarium corpus: choose what interests you and discover which century-old results modern science has confirmed.")
+    print("tour.html:", len(stops), "stops |", sum(1 for s in stops if s["entry"]), "entry points")
+
+
 def gen_citations():
     """Emit the slim per-paper citing-works list (for bubbles) + the composed paragraphs."""
     enr_path = os.path.join(ROOT, "legacy_data", "citations_enriched.json")
@@ -1388,6 +1693,18 @@ footer.site p{margin:.3em 0}
 .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
 .btn.primary:hover{background:#683224}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:34px 0}
+.tourpanel{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;margin:26px 0 8px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,#1d2733,#33485c);color:#f3efe6;text-decoration:none;box-shadow:0 18px 44px rgba(29,39,51,.22);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.tourpanel:hover{transform:translateY(-3px);box-shadow:0 26px 54px rgba(29,39,51,.3);text-decoration:none}
+.tp-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:4px;min-height:300px;padding:4px}
+.tp-imgs img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:8px;filter:saturate(.9) contrast(1.02);transition:transform .8s ease}
+.tourpanel:hover .tp-imgs img{transform:scale(1.04)}
+.tp-text{padding:30px 32px 28px;display:flex;flex-direction:column;justify-content:center}
+.tp-text .kicker{color:#cdb98a;margin:0 0 4px}
+.tp-text h2{color:#fff;font-family:Georgia,serif;font-size:31px;margin:0 0 10px;line-height:1.15;border:0}
+.tp-text p{color:#dfe6ee;font-size:15.5px;line-height:1.6;margin:0 0 18px}
+.tp-btn{align-self:flex-start;background:#cdb98a;color:#26313d;font-weight:700;font-size:14.5px;padding:10px 18px;border-radius:9px}
+.tourpanel:hover .tp-btn{background:#fff}
+@media(max-width:760px){.tourpanel{grid-template-columns:1fr}.tp-imgs{min-height:200px;grid-template-rows:1fr}.tp-imgs img:nth-child(n+3){display:none}.tp-text{padding:22px 20px}.tp-text h2{font-size:25px}}
 .stats div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px}
 .stats b{display:block;font-family:Georgia,serif;font-size:30px}
 .stats span{font-size:13px;color:var(--muted)}
@@ -1958,6 +2275,7 @@ def main():
     open(os.path.join(SITE, ".nojekyll"), "w").write("")
     gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader()
     gen_citations(); gen_methodology(); gen_discover(); gen_dossier(); gen_authors(); gen_reading_pages(); copy_assets()
+    gen_tour()  # after copy_assets: it thumbnails figures/portraits that copy_assets puts in place
     print("Generated site at", SITE, "| FULL_PDFS =", FULL)
     print("pages:", sorted(os.path.basename(p) for p in glob.glob(os.path.join(SITE, "*.html"))))
     print("reading pages:", len(glob.glob(os.path.join(SITE, "papers", "*.html"))))

@@ -1,0 +1,1098 @@
+{
+ "_schema": "stops[]: id, title, teaser (option label), body (fact), img (filename within figures/<slug>/ or a path under figures/ or assets/), pos (top|center), tags, entry (bool), slug (translation slug → pid + reading page), pid (override), author (authors.json key). Text in {{...}} is filled at build time.",
+ "prompts": [
+  "What would you like to know next?",
+  "Which of these pulls you in?",
+  "Pick a thread to follow",
+  "Curious about any of these?",
+  "Where next?",
+  "Choose what interests you"
+ ],
+ "stops": [
+  {
+   "id": "positional-memory",
+   "entry": true,
+   "slug": "94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration",
+   "img": "Fig_1.jpg",
+   "pos": "top",
+   "title": "The newt that regrew the wrong bone",
+   "teaser": "A newt regrew its leg — with the bone in the wrong place",
+   "body": "In 1930 Sciacchitano, Weiss and Przibram cut newt legs along one edge and found the regenerate sometimes rebuilt a heteromorphic long bone — a patterned mistake showing that regrowth follows positional information, not just the wound. 'Positional memory' is now a central question in limb regeneration, traced in axolotls to histone marks and signalling loops. The 1930 paper has been cited once.",
+   "tags": [
+    "regeneration",
+    "limbs",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "burchardt-symmetry",
+   "slug": "163_Burchhardt_1930_Urodele-symmetry",
+   "img": "Fig_1.jpg",
+   "pos": "top",
+   "author": "burchhardt",
+   "title": "Limbs pushed through a newt's body",
+   "teaser": "She threaded limbs through a newt's body to test symmetry",
+   "body": "Henny Burchardt's 1930 experiment implanted amputated limbs through the bodies of newts and larvae and watched what regrew: sometimes a copy, sometimes a mirror image, depending on how the limb sat in its host. Modern axolotl work confirms that confronting dorsal and ventral tissue sets a regenerate's symmetry. Burchardt was murdered at Auschwitz in 1944; her name was misspelt in bibliographies for a century.",
+   "tags": [
+    "regeneration",
+    "limbs",
+    "people",
+    "women",
+    "war"
+   ]
+  },
+  {
+   "id": "half-limb",
+   "slug": "13_Weiss_1926_Whole-regenerate-half",
+   "img": "Fig_12.jpg",
+   "pos": "center",
+   "title": "A whole leg from half a stump",
+   "teaser": "Cut a limb lengthwise — a whole limb still grows back",
+   "body": "Paul Weiss showed in 1926 that half the cross-section of a newt limb regenerates a complete limb. The stump behaves as a self-organising field, not a template. This became the 'morphogenetic field', an idea that shaped twentieth-century developmental biology — and one of the corpus's best-remembered papers.",
+   "tags": [
+    "regeneration",
+    "limbs",
+    "legacy"
+   ]
+  },
+  {
+   "id": "no-skeleton",
+   "slug": "03_Weiss_1925_Limb-skeleton",
+   "img": "Fig_1.jpg",
+   "pos": "top",
+   "title": "Regeneration without a skeleton",
+   "teaser": "Remove the bones first — the limb regrows them anyway",
+   "body": "In 1925 Weiss removed the skeleton from newt limbs before amputation. The regenerate rebuilt bone from scratch, proving the old skeleton is not the source of the new one. It is the most-cited regeneration paper in the corpus, and modern work confirms that skeletal regeneration is directed by the surrounding field.",
+   "tags": [
+    "regeneration",
+    "limbs",
+    "legacy"
+   ]
+  },
+  {
+   "id": "tail-blastema-limb",
+   "slug": "18_Weiss_1927_Blastem-potency",
+   "img": "Fig_1.jpg",
+   "pos": "top",
+   "title": "A tail bud that grew a leg",
+   "teaser": "Move a tail's growth bud to the leg region — what grows?",
+   "body": "Weiss transplanted the regeneration blastema of a tail into a newt's limb field in 1927. It grew a limb. The blastema's fate was set by its new position, not its origin — a potency test that anticipated today's resolution of what blastema cells can and cannot become.",
+   "tags": [
+    "regeneration",
+    "limbs"
+   ]
+  },
+  {
+   "id": "skin-origin",
+   "slug": "37_Weiss_1927_Skin-origin-regenerate",
+   "img": "Fig_3.jpg",
+   "pos": "center",
+   "title": "Where does the new skin come from?",
+   "teaser": "Tracing the tissues that build a regrown limb",
+   "body": "Weiss asked in 1927 which tissues supply the skin of a regenerating limb, and found the regenerate's parts come from the corresponding old tissues rather than from a single all-purpose cell. Lineage-tracing in axolotls confirmed it decades later: cells keep a memory of their tissue of origin.",
+   "tags": [
+    "regeneration",
+    "limbs"
+   ]
+  },
+  {
+   "id": "long-bone",
+   "slug": "138_FlatscherPrzibram_1930_Newt-long-bone-regeneration",
+   "img": "Fig_1.jpg",
+   "pos": "top",
+   "title": "Regrowing a bone from inside a limb",
+   "teaser": "Remove part of a bone inside the leg — does it come back?",
+   "body": "Flatscher and Przibram removed sections of long bone from within newt limbs in 1930, without amputating, and followed the restitution. Salamanders restore skeletal defects in place; the paper is one of the last in the series and among the least cited, though the result stands.",
+   "tags": [
+    "regeneration",
+    "limbs",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "woodlouse-2025",
+   "slug": "169_Klintz_1907_Antenna-regeneration",
+   "img": "Taf_XXIV.jpg",
+   "pos": "top",
+   "title": "The woodlouse antenna, confirmed in 2025",
+   "teaser": "A 1907 observation confirmed in the same species in 2025",
+   "body": "Klintz reported in 1907 that the common woodlouse regrows its antenna. A 2025 study on the very same species, Porcellio scaber, found the regenerated antenna recovers its sensory function, with only its segment count reduced. One of the cleanest century-spanning confirmations in the corpus — and the 1907 paper is essentially uncited.",
+   "tags": [
+    "regeneration",
+    "insects",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "antenna-leg-hox",
+   "slug": "156_Przibram_1919_Beetle-antenna-tarsus",
+   "img": "Plate_IV.jpg",
+   "pos": "top",
+   "title": "Legs where antennae should be",
+   "teaser": "Beetles that regrew leg parts on their antennae",
+   "body": "Przibram documented in 1919 that beetles regenerating an antenna sometimes grew tarsal — leg — segments in its place. This is a homeotic transformation, the classic 'antenna into leg', decades before the Antennapedia Hox genes explained exactly this swap. A textbook phenomenon, seen through regeneration first.",
+   "tags": [
+    "regeneration",
+    "insects",
+    "sleeping",
+    "genetics"
+   ]
+  },
+  {
+   "id": "homoeosis",
+   "slug": "41_Przibram_1910_Homoeosis-arthropods",
+   "img": "Fig_1.jpg",
+   "pos": "top",
+   "title": "The wrong organ in the right place",
+   "teaser": "'Homoeosis' — when a regenerate takes on another organ's identity",
+   "body": "In 1910 Przibram gathered the cases in which an arthropod regenerates the wrong structure at a wound — an antenna where an eye was, a leg where an antenna was — and named the phenomenon homoeosis. It became a central idea of developmental genetics once Hox genes were found to set the identity of each segment.",
+   "tags": [
+    "regeneration",
+    "insects",
+    "genetics"
+   ]
+  },
+  {
+   "id": "claw-reversal",
+   "slug": "109_Przibram_1907_Claw-reversal-decapods",
+   "img": "Taf_XI.jpg",
+   "pos": "top",
+   "title": "The crab that swaps its big claw",
+   "teaser": "Lose the large claw, and the small one grows large instead",
+   "body": "Przibram showed in 1905–07 that when a crustacean loses its large claw, the remaining small claw grows into the large one and the regenerate comes back small — 'claw reversal'. Handedness in claws is regulated by the whole animal, not fixed in the limb. Still cited, still studied in fiddler crabs and lobsters.",
+   "tags": [
+    "regeneration",
+    "crustacea",
+    "legacy"
+   ]
+  },
+  {
+   "id": "autotomy-shed",
+   "slug": "154_Przibram_1907_Malformed-regenerate-shedding",
+   "img": "Fig_2.jpg",
+   "pos": "bottom",
+   "title": "Casting off a botched regenerate",
+   "teaser": "When a regrown limb comes out wrong, some animals shed it",
+   "body": "Przibram observed in 1907 that arthropods automatically cast off malformed regenerates — discarding a faulty regrowth so it can be redone. Modern work frames autotomy as an adaptive, recoverable self-amputation; his 'shed-and-retry' logic sits squarely within it, uncited.",
+   "tags": [
+    "regeneration",
+    "insects",
+    "crustacea",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "lancelet",
+   "slug": "160_Biberhofer_1906_Amphioxus-regeneration",
+   "img": "Fig_2.jpg",
+   "pos": "center",
+   "title": "Regeneration in the lancelet",
+   "teaser": "Why study regeneration in an animal that barely has a head?",
+   "body": "Biberhofer chose amphioxus, the lancelet, in 1906 — a basal chordate now prized precisely because it anchors the question of how regeneration evolved along the chordate line. Its genome is sequenced and its limited regenerative power studied for that reason. A prescient choice of animal, barely cited.",
+   "tags": [
+    "regeneration",
+    "evolution",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "leech-polarity",
+   "slug": "92_Gluschkiewitsch_1907_Clepsine-regeneration",
+   "img": "Fig_IV.jpg",
+   "pos": "top",
+   "title": "A leech regrows a head or a tail",
+   "teaser": "Which end grows back depends on where you cut",
+   "body": "Gluschkiewitsch cut the leech Clepsine at its front and back ends in 1907 and mapped what regrew at each. The head–tail decision in regenerating worms is now known to be set by Wnt signalling — a mechanism mapped in planarians a century later. Two citations.",
+   "tags": [
+    "regeneration",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "hydra",
+   "slug": "06_Hadzi_1906_Hydra",
+   "img": "Fig_5.jpg",
+   "pos": "center",
+   "title": "Hydra, before it was a model",
+   "teaser": "Early experiments on the freshwater polyp that never dies",
+   "body": "Jovan Hadži's 1906 experiments on Hydra came before the polyp became one of biology's canonical regeneration models. Hadži went on to become a leading Slovenian zoologist. The animal he chose can regenerate from a fragment and shows no sign of ageing — questions the Prater was already asking.",
+   "tags": [
+    "regeneration",
+    "cnidaria"
+   ]
+  },
+  {
+   "id": "dormice-tail",
+   "slug": "171_Klintz_1914_Tail-regeneration",
+   "img": "Taf_VII.jpg",
+   "pos": "top",
+   "title": "Can a mammal regrow its tail?",
+   "teaser": "Dormice, and the limits of mammalian regeneration",
+   "body": "Klintz tested how far dormice and other mammals regenerate the tail in 1914. His question — why are warm-blooded vertebrates such poor regenerators, and where are the exceptions? — now drives regenerative medicine, with digit tips and the spiny mouse Acomys as the modern exceptions. The paper has one citation.",
+   "tags": [
+    "regeneration",
+    "mammals",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "poor-regenerators",
+   "pid": 122,
+   "img": "figures/61_Zuelzer_1907_Regeneration-growth-rate/Plate_XV.jpg",
+   "pos": "top",
+   "title": "The animals that barely regenerate",
+   "teaser": "A deliberate negative result: copepods hardly regrow anything",
+   "body": "Klintz's 1907 experiments documented how poorly cyclopoid copepods regenerate — an informative negative case beside the prolific crabs and shrimps. Why regenerative capacity varies so widely between related groups is still an open comparative question.",
+   "tags": [
+    "regeneration",
+    "crustacea"
+   ]
+  },
+  {
+   "id": "jaw-regeneration",
+   "slug": "141_Werber_1906_Reptile-jaw-regeneration",
+   "img": "figures/52_Weiss_1930_Blastem-potency-test/Fig_3.jpg",
+   "pos": "center",
+   "title": "Regrowing a jaw",
+   "teaser": "Lizards and salamanders that regrow their jaws",
+   "body": "Werber's 1905–06 papers documented jaw regeneration in the lizard Lacerta and in amphibians. Craniofacial regeneration is a live field now — adult newts regenerate lower jaws with bone, cartilage and teeth — and the comparative question Werber opened is still being asked.",
+   "tags": [
+    "regeneration",
+    "reptiles"
+   ]
+  },
+  {
+   "id": "fin-regeneration",
+   "slug": "135_Bogacki_1906_Fish-fin-regeneration",
+   "img": "Taf_III.jpg",
+   "pos": "top",
+   "title": "The fish fin, before zebrafish",
+   "teaser": "Fin regeneration in European freshwater fish, 1906",
+   "body": "Bogacki's 1906 experiments on fin regeneration in European freshwater fishes prefigure today's zebrafish fin — one of the most-used regeneration models in biology. Confirmed in principle; the original goes almost uncited.",
+   "tags": [
+    "regeneration",
+    "fish"
+   ]
+  },
+  {
+   "id": "eye-replant-amphibian",
+   "entry": true,
+   "pid": 29,
+   "img": "figures/151_Jellinek_1923_Eye-replantation/Plate_II.jpg",
+   "pos": "top",
+   "title": "Replanting an eye",
+   "teaser": "They took an eye out, put it back — and it worked",
+   "body": "In 1923 Koppányi and Kolmer replanted amphibian eyes and found they recovered structure and some function. Amphibians and fish regenerate functional retina where mammals cannot — a capacity modern molecular work is trying to reverse-engineer into humans. The institute's eye series sits at the root of it.",
+   "tags": [
+    "eyes",
+    "transplant",
+    "regeneration"
+   ]
+  },
+  {
+   "id": "mammal-eye",
+   "pid": 30,
+   "img": "figures/17_Uhlenhuth_1913_Salamander-eye-metamorphosis/Plate_XVII.jpg",
+   "pos": "top",
+   "title": "The hardest case: a mammal's eye",
+   "teaser": "The mammalian eye transplant, a century early",
+   "body": "Jellinek took on the hardest case in 1923 — replanting eyes in mammals — and hit the wall researchers still face: the eye can be transplanted, but reconnecting the optic nerve is the obstacle. The first human whole-eye transplant was reported in 2023; vision restoration is still pending. The framing is strikingly current.",
+   "tags": [
+    "eyes",
+    "transplant",
+    "mammals",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "second-lens",
+   "slug": "140_Kolmer_1920_Second-lens-finding",
+   "img": "Fig_1.jpg",
+   "pos": "center",
+   "title": "A second lens that grew by itself",
+   "teaser": "A catfish eye with two lenses",
+   "body": "Kolmer found a spontaneously formed second lens — a lentoid — in the eye of a catfish in 1920. Ectopic lentoids are now studied to probe which cells retain lens-forming competence; fish ocular organoids form lenses by alternative routes. A natural experiment that prefigured lens-competence research.",
+   "tags": [
+    "eyes"
+   ]
+  },
+  {
+   "id": "lens-from-iris",
+   "slug": "107_Uhlenhuth_1919_Lens-regeneration-I",
+   "img": "Taf_XVI.jpg",
+   "pos": "top",
+   "title": "A new lens from the iris",
+   "teaser": "Newts rebuild a lens from the coloured part of the eye",
+   "body": "Uhlenhuth studied how the newt regenerates a lens from the depigmenting dorsal iris — Wolffian lens regeneration. It remains a flagship model of one cell type turning into another, now mapped at single-cell resolution with macrophages regulating the process. Confirmed, uncited.",
+   "tags": [
+    "eyes",
+    "regeneration"
+   ]
+  },
+  {
+   "id": "uhlenhuth-sperry",
+   "slug": "20_Uhlenhuth_1912_Amphibian-eye-transplant",
+   "img": "Fig_1.jpg",
+   "pos": "center",
+   "title": "The eye transplant that reached Sperry",
+   "teaser": "Cited, decades later, in the theory of how neurons find their targets",
+   "body": "Uhlenhuth's amphibian eye transplants of 1912–13 were later drawn on by Roger Sperry in founding the chemoaffinity hypothesis of how nerves wire up. The grafts kept their own developmental timing while the host modulated them. Uhlenhuth emigrated to the United States.",
+   "tags": [
+    "eyes",
+    "transplant",
+    "people",
+    "legacy"
+   ]
+  },
+  {
+   "id": "head-transplant",
+   "slug": "168_Finkler_1923_Insect-head-transplant-III",
+   "img": "figures/129_Janda_1913_Antenna-heteromorphosis-eyes/Taf_I.jpg",
+   "pos": "top",
+   "title": "The insect head transplants that didn't hold",
+   "teaser": "A claim that insect heads could be swapped between sexes",
+   "body": "Finkler's 1923 trilogy claimed replanted insect heads stayed functional, could be exchanged between sexes, and steered the recipient's colour. It was disputed then and has never been substantiated. Modern insect science grafts tissues and dissects appendage regeneration — but offers no support for a working transplanted head.",
+   "tags": [
+    "transplant",
+    "insects",
+    "scandal"
+   ]
+  },
+  {
+   "id": "ovary-transplant",
+   "slug": "82_Wiesner_1923_Transplanted-ovaries",
+   "img": "Plate_V.jpg",
+   "pos": "top",
+   "title": "Transplanted ovaries that still worked",
+   "teaser": "Ovaries moved within a rat kept functioning — fertility preservation, 1923",
+   "body": "B. P. Wiesner showed in 1923 that ovaries transplanted within the same rat remain functional. Ovarian tissue autotransplantation is now clinical practice for preserving fertility through cancer treatment. Four citations in a century.",
+   "tags": [
+    "transplant",
+    "hormones",
+    "sleeping",
+    "mammals"
+   ]
+  },
+  {
+   "id": "testis-graft",
+   "slug": "121_Koppanyi_1924_Transplanted-testis-spermatogenesis",
+   "img": "Fig_1.jpg",
+   "pos": "center",
+   "title": "A transplanted testis kept making sperm",
+   "teaser": "Spermatogenesis continued in a moved testis",
+   "body": "Koppányi's 1924 autograft of the newt testis maintained spermatogenesis — the germ line survived transplantation. Testicular tissue grafting is now used clinically to preserve fertility. Confirmed, lightly cited.",
+   "tags": [
+    "transplant",
+    "hormones"
+   ]
+  },
+  {
+   "id": "spleen-newt",
+   "slug": "172_Ehrenpreis_1924_Spleen-transplantation",
+   "img": "Fig_5.jpg",
+   "pos": "center",
+   "title": "A spleen in a newt",
+   "teaser": "The first visceral-organ transplant in an adult newt",
+   "body": "Ehrenpreis tested in 1924 whether the spleen — a visceral organ — could be transplanted and survive in adult newts. Organ transplantation is now routine medicine and transplant immunology a major science; newts are studied for their unusual immune tolerance. One citation.",
+   "tags": [
+    "transplant"
+   ]
+  },
+  {
+   "id": "koppanyi-georgetown",
+   "pid": 151,
+   "img": "figures/131_Koppanyi_1923_Eye-replantation-III/Plate_III.jpg",
+   "pos": "top",
+   "author": "koppanyi",
+   "title": "From replanted eyes to founding a pharmacology department",
+   "teaser": "The eye-transplanter who became a founder of American pharmacology",
+   "body": "Theodore Koppányi performed the institute's sensational eye transplants in the early 1920s, then emigrated and became a founding figure of pharmacology at Georgetown, author of more than 500 papers. His 1924 experiments on the ribbed newt Pleurodeles — now a flagship regeneration model — have zero citations.",
+   "tags": [
+    "people",
+    "eyes",
+    "transplant",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "midwife-toad",
+   "entry": true,
+   "pid": 39,
+   "img": "figures/40_Kammerer_1906_Midwife-toad-reproduction/Plate_V.jpg",
+   "pos": "top",
+   "title": "The midwife toad",
+   "teaser": "The experiment behind biology's most famous scandal",
+   "body": "Kammerer forced midwife toads, which normally breed on land, to breed in water — and claimed their descendants inherited the change, down to the nuptial pads of water-breeding frogs. In 1926 a museum specimen was found injected with India ink; Kammerer shot himself weeks later. The 1909 paper is among the corpus's most cited — and its claim is discredited.",
+   "tags": [
+    "inheritance",
+    "scandal",
+    "amphibia"
+   ]
+  },
+  {
+   "id": "notoriety",
+   "slug": "15_Kammerer_1907_Reproductive-adaptations-II",
+   "img": "Plate_I.jpg",
+   "pos": "top",
+   "title": "Most cited, most refuted",
+   "teaser": "Why the corpus's most-cited papers are its failures",
+   "body": "Counting citations, Kammerer's discredited inheritance papers top the corpus. They are cited because they were notorious, not because they were right — while results modern science has confirmed sit almost uncited. This is why every paper here is judged on two axes, recognition and vindication, not one.",
+   "tags": [
+    "inheritance",
+    "scandal",
+    "method"
+   ]
+  },
+  {
+   "id": "epigenetics-reframe",
+   "slug": "100_Kammerer_1913_Inherited-colour-changes-big",
+   "img": "Taf_IX.jpg",
+   "pos": "top",
+   "title": "Kammerer, reframed by epigenetics",
+   "teaser": "The Lamarckian claim that modern biology partly reopened",
+   "body": "Kammerer's colour-inheritance work in fire salamanders was long dismissed along with the man. Transgenerational epigenetics has since reopened the question on new terms: some environmentally induced states can be transmitted — bounded, mechanism-specific, and not the wholesale Lamarckism he sought. His 1913 paper is now read as history of science and as a case for reassessment.",
+   "tags": [
+    "inheritance",
+    "genetics",
+    "legacy",
+    "amphibia"
+   ]
+  },
+  {
+   "id": "germ-plasm",
+   "slug": "173_Walther_1913_Germ-plasm-environment",
+   "img": "figures/83_Secerov_1912_Germ-plasm-environment/Taf_XXIX.jpg",
+   "pos": "top",
+   "title": "Is the germ line sealed off?",
+   "teaser": "A 1913 argument against Weismann's barrier",
+   "body": "Walther argued, in the institute's spirit, that the germ-plasm is not sealed off from its environment — a direct challenge to Weismann's barrier. Modern germline epigenetics shows the barrier is permeable in specific ways. Wrong in its strong Lamarckian form, prescient in insisting the wall is not absolute; the paper has never been cited.",
+   "tags": [
+    "inheritance",
+    "genetics",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "salamander-light",
+   "pid": 15,
+   "img": "figures/73_PrzibramDembowski_1922_Larva-environment-colour/Taf_IV.jpg",
+   "pos": "top",
+   "title": "Salamanders in coloured light",
+   "teaser": "Kammerer's least-known experiment turned out right",
+   "body": "In 1922 Kammerer kept fire salamanders under transmitted coloured light and recorded how their markings changed. Unlike his inheritance claims, this one held: the mechanism — light acting through melatonin on pigment cells — has since been found. Two citations, and one of the corpus's strongest sleeping beauties.",
+   "tags": [
+    "colour",
+    "inheritance",
+    "sleeping",
+    "amphibia"
+   ]
+  },
+  {
+   "id": "proteus-olm",
+   "slug": "39_Kammerer_1912_Proteus-experiments",
+   "img": "Plate_XXI.jpg",
+   "pos": "top",
+   "title": "The blind cave olm, brought into the light",
+   "teaser": "What happens to a cave salamander raised in daylight?",
+   "body": "Kammerer reared the olm — the blind, pale cave salamander Proteus — in light in 1912 and reported darkening skin and further-developed eyes. The claims on plasticity are distinct from his inheritance claims and are treated with caution today; the olm itself has become a model for longevity and cave adaptation, and the paper is still cited.",
+   "tags": [
+    "amphibia",
+    "colour",
+    "inheritance"
+   ]
+  },
+  {
+   "id": "demoll-weighs",
+   "slug": "148_Demoll_1920_Soma-germ-inheritance",
+   "img": "Plate_I.jpg",
+   "pos": "top",
+   "title": "Weighing Lamarckism, even-handedly",
+   "teaser": "A 1920 essay that asked the question modern epigenetics reopened",
+   "body": "Demoll weighed the case for and against inheritance of acquired characters without taking the institute's side. His balanced stance reads as prescient: the modern answer is 'sometimes, by specific epigenetic means' — not the wholesale Lamarckism the experiments sought.",
+   "tags": [
+    "inheritance",
+    "method"
+   ]
+  },
+  {
+   "id": "kammerer-life",
+   "pid": 44,
+   "img": "assets/img/authors/kammerer.jpg",
+   "pos": "top",
+   "author": "kammerer",
+   "title": "Paul Kammerer",
+   "teaser": "The institute's most famous and most controversial figure",
+   "body": "Kammerer used fire salamanders, midwife toads and the olm to argue that environmentally induced characters could be inherited. After the 1926 nuptial-pad revelation he took his own life. His 1904 salamander paper, the corpus's earliest, is still cited — now reinterpreted through ecology and genetics rather than Lamarckian induction.",
+   "tags": [
+    "people",
+    "scandal",
+    "inheritance"
+   ]
+  },
+  {
+   "id": "pupal-colour",
+   "entry": true,
+   "slug": "29_Brecher_1919_Pieris-pupal-colours",
+   "img": "figures/43_Brecher_1924_Pieris-pupal-colours/Plate_I.jpg",
+   "pos": "top",
+   "title": "Butterfly pupae that match their background",
+   "teaser": "Pupae that turn green or brown to match where they hang",
+   "body": "Leonore Brecher spent two decades showing how light and background govern the colour of butterfly pupae — the cabbage white, the Vanessids. Pupal colour plasticity is now studied at the level of pigment genetics, with the genes for black, blue and yellow pupal pigments identified. Confirmed; her papers are lightly cited.",
+   "tags": [
+    "colour",
+    "insects"
+   ]
+  },
+  {
+   "id": "tyrosinase-dopa",
+   "pid": 171,
+   "img": "figures/38_PrzibramDembowski_1919_Tyrosinase-conservation/Plate_VI.jpg",
+   "pos": "top",
+   "title": "Tyrosinase + DOPA = melanin",
+   "teaser": "The enzyme step behind all dark pigment, found here in 1921",
+   "body": "Brecher showed that the enzyme tyrosinase acts on DOPA to produce pigment — the exact enzymatic step at the heart of melanin biochemistry. It is textbook now and a major drug target in dermatology and melanoma research. The institute's contribution sits uncited beneath the literature it anticipated.",
+   "tags": [
+    "colour",
+    "chemistry",
+    "legacy"
+   ]
+  },
+  {
+   "id": "crustacean-see-colour",
+   "slug": "09_Megusar_1912_Crustacean-colour",
+   "img": "Plate_XXXV.jpg",
+   "pos": "top",
+   "title": "Colour change that needs eyes",
+   "teaser": "Blind the crustacean and it stops matching its background",
+   "body": "Megušar's 1912 experiments on crustacean colour change established that the response depends on vision — the animal must see its background. Vision-dependent control of pigment cells is confirmed and well cited: one of the corpus's living legacies.",
+   "tags": [
+    "colour",
+    "crustacea",
+    "legacy"
+   ]
+  },
+  {
+   "id": "adrenaline-minnow",
+   "slug": "16_Abolin_1925_Fish-colour-chemicals",
+   "img": "Plate_III.jpg",
+   "pos": "top",
+   "title": "Adrenaline on a minnow's skin",
+   "teaser": "Chemicals that make fish pale or dark within minutes",
+   "body": "Abolin applied pituitary extract and adrenaline to minnows in 1925 and watched their black and yellow pigment cells respond. Neurochemical control of chromatophores is confirmed biology today, and the paper is still cited.",
+   "tags": [
+    "colour",
+    "fish",
+    "hormones",
+    "legacy"
+   ]
+  },
+  {
+   "id": "pike-colour",
+   "slug": "44_Mayerhofer_1909_Pike-colour-change",
+   "img": "Plate_XVIII.jpg",
+   "pos": "top",
+   "title": "The pike changes colour",
+   "teaser": "Colour-change experiments on the pike, 1909",
+   "body": "Mayerhofer's 1909 experiments tracked how the pike darkens and pales with its surroundings and its state. Fish colour change is now understood through hormones, nerves and light acting on pigment cells; the pike paper is still modestly cited.",
+   "tags": [
+    "colour",
+    "fish"
+   ]
+  },
+  {
+   "id": "fish-melanin",
+   "slug": "65_Kudo_1922_Fish-melanin-colour",
+   "img": "Plate_VIII.jpg",
+   "pos": "top",
+   "title": "Does the pigment move, or vanish?",
+   "teaser": "Measuring melanin as fish change colour",
+   "body": "Kudô asked in 1922 whether a fish that pales has less melanin or merely redistributes it, measuring the amount across five species. The answer — pigment moves within cells far more than it is destroyed — was absorbed into melanophore biology. Kudô was one of two Japanese researchers who published in the series.",
+   "tags": [
+    "colour",
+    "fish",
+    "people"
+   ]
+  },
+  {
+   "id": "brecher-life",
+   "slug": "102_Brecher_1917_Pieris-pupal-colours",
+   "img": "Plate_VI.jpg",
+   "pos": "top",
+   "author": "brecher",
+   "title": "Leonore Brecher",
+   "teaser": "Among the first women to seek habilitation in Vienna — and refused",
+   "body": "Brecher took her doctorate in 1916 on pupal colouration and became one of the institute's most productive scientists. The University of Vienna denied her habilitation in 1926. Dismissed within days of the 1938 Anschluss because she was Jewish, she was deported to Maly Trostinec in September 1942 and murdered on arrival.",
+   "tags": [
+    "people",
+    "women",
+    "colour",
+    "war"
+   ]
+  },
+  {
+   "id": "puberty-gland",
+   "entry": true,
+   "slug": "02_Steinach_1916_Puberty-glands",
+   "img": "Plate_XIX.jpg",
+   "pos": "top",
+   "title": "The puberty gland",
+   "teaser": "The paper that helped found endocrinology",
+   "body": "Steinach showed that the interstitial cells of the gonads — his 'puberty gland' — secrete the sex hormones, transplanting testes and ovaries to masculinise and feminise animals. It is the corpus's most-cited paper and is vindicated in molecular detail. Founding endocrinology, done in the Prater.",
+   "tags": [
+    "hormones",
+    "legacy"
+   ]
+  },
+  {
+   "id": "steinach-operation",
+   "pid": 38,
+   "img": "assets/img/authors/steinach.jpg",
+   "pos": "top",
+   "author": "steinach",
+   "title": "The 'Steinach operation'",
+   "teaser": "The rejuvenation surgery W. B. Yeats paid for",
+   "body": "Steinach's vasoligature — a partial vasectomy claimed to rejuvenate ageing men — made him world-famous in the 1920s; Yeats was among those 'Steinached'. He was nominated for a Nobel Prize repeatedly. Jewish, he was lecturing in Switzerland at the Anschluss and never returned; he died there in 1944.",
+   "tags": [
+    "people",
+    "hormones"
+   ]
+  },
+  {
+   "id": "steinach-refuted",
+   "slug": "24_Steinach_1920_Homosexual-gonad",
+   "img": "Plate_III.jpg",
+   "pos": "top",
+   "title": "The Steinach paper that failed",
+   "teaser": "The founder of endocrinology — and a claim now refuted",
+   "body": "In 1920 Steinach claimed a histological basis in the testis for male homosexuality. The theory is comprehensively refuted, and it was used in disturbing ways. It is heavily cited — as notoriety, not confirmation. Same author as the corpus's greatest success; opposite fate. Papers are judged here, not names.",
+   "tags": [
+    "hormones",
+    "scandal"
+   ]
+  },
+  {
+   "id": "climate-virility",
+   "slug": "34_SteinachKammerer_1920_Climate-virility",
+   "img": "Fig_1.jpg",
+   "pos": "center",
+   "title": "Climate and virility",
+   "teaser": "Steinach and Kammerer together: does warmth change the gonads?",
+   "body": "The institute's two most famous names co-wrote 'Climate and Virility' in 1920, asking whether temperature reshapes the gonads and sexual characters. Temperature effects on reproduction are real but subtler than they hoped; the paper is still cited, mostly as history.",
+   "tags": [
+    "hormones",
+    "temperature",
+    "inheritance"
+   ]
+  },
+  {
+   "id": "female-cycle-temp",
+   "pid": 173,
+   "img": "figures/91_Przibram_1925_Rat-tail-offspring/Fig_XVII.jpg",
+   "pos": "top",
+   "title": "Does temperature change the female cycle?",
+   "teaser": "Przibram said no — modern data say 'partly'",
+   "body": "Przibram reported in 1921 that the rat's female cycle and pregnancy were independent of temperature, in contrast to tail length. Modern reproductive physiology complicates this: the cycle is fairly robust, but body-temperature rhythms track ovulation and heat stress impairs fertility. One of the few corpus results partly overturned.",
+   "tags": [
+    "hormones",
+    "temperature",
+    "mammals"
+   ]
+  },
+  {
+   "id": "warm-rats-tails",
+   "entry": true,
+   "pid": 152,
+   "img": "figures/155_Hammerschlag_1912_Dancing-mice-breeding/Taf_IX.jpg",
+   "pos": "top",
+   "title": "Warm rats grow longer tails",
+   "teaser": "Raise a young rat's body temperature — its tail grows longer",
+   "body": "Przibram and Wiesner raised the body temperature of young rats and measured longer tails; cooling shortened them. It is a direct causal test of what is now called the developmental basis of Allen's rule — warmer animals grow longer extremities. Textbook-level biology today. The 1924 paper has zero citations.",
+   "tags": [
+    "temperature",
+    "growth",
+    "sleeping",
+    "mammals"
+   ]
+  },
+  {
+   "id": "form-velocity",
+   "pid": 175,
+   "img": "figures/136_Przibram_1924_Limb-axial-ratios/Fig_k_m.jpg",
+   "pos": "center",
+   "title": "A physics of form",
+   "teaser": "Two brothers — a zoologist and a physicist — and a rule for shapes",
+   "body": "In 1921 Hans Przibram reviewed his physicist brother Karl's idea that growth velocity generates form: fast growth gives elongated, branched shapes, slow growth compact ones — in electric discharges, crystals and organisms alike. Allometry and growth models later made the rate-based view rigorous. The review has never been cited.",
+   "tags": [
+    "physics",
+    "growth",
+    "sleeping",
+    "people"
+   ]
+  },
+  {
+   "id": "przibram-rule",
+   "entry": true,
+   "slug": "04_Przibram-Megusar_1912_Sphodromantis-growth",
+   "img": "figures/22_Przibram_1906_Mantis-rearing/Plate_17.jpg",
+   "pos": "top",
+   "title": "Przibram's rule",
+   "teaser": "A mantis doubles in weight at every moult — a rule still taught",
+   "body": "Measuring praying mantises instar by instar, Przibram and Megušar proposed that body mass roughly doubles at each moult and length grows by the cube root of two. 'Przibram's rule' entered the textbooks of insect growth — approximate, but foundational — and the 1912 paper is the corpus's second most-cited.",
+   "tags": [
+    "growth",
+    "insects",
+    "legacy"
+   ]
+  },
+  {
+   "id": "gravity-cue",
+   "slug": "164_Megusar_1906_Gravitation-effects",
+   "img": "figures/49_Megusar_1907_Coleoptera-regeneration/Plate_V.jpg",
+   "pos": "top",
+   "title": "Gravity as a developmental cue",
+   "teaser": "Spinning beetle eggs to ask whether gravity shapes development",
+   "body": "Megušar disturbed beetle embryos with abnormal gravitational action in 1906 — a clinostat and a centrifuge — to test whether gravity is a developmental cue. Space biology now answers yes: micro- and hypergravity measurably alter embryonic development. A century before spaceflight made it routine, the Prater had the experiment.",
+   "tags": [
+    "growth",
+    "physics",
+    "sleeping",
+    "insects"
+   ]
+  },
+  {
+   "id": "headless-caterpillars",
+   "pid": 20,
+   "img": "figures/101_PrzibramBrecher_1919_Pieris-pupal-colours/Plate_VIII.jpg",
+   "pos": "top",
+   "title": "Headless caterpillars still pupate",
+   "teaser": "Remove a caterpillar's head — it can still turn into a pupa",
+   "body": "Przibram found in 1922 that decapitated butterfly caterpillars could still pupate: the commitment to metamorphose had already been made. This is now understood as the hormonal commitment to moulting — a vindicated early glimpse of insect endocrinology.",
+   "tags": [
+    "growth",
+    "insects",
+    "hormones"
+   ]
+  },
+  {
+   "id": "starvation-growth",
+   "slug": "71_Morgulis_1912_Inanition-growth",
+   "img": "figures/53_Kurz_1922_Polarity-reversal-newt-leg/Plate_VII.jpg",
+   "pos": "top",
+   "title": "Starvation as a lever on growth",
+   "teaser": "What starving a newt reveals about growth and repair",
+   "body": "Morgulis's 1912 studies of inanition used starvation as an experimental lever on growth and regeneration — anticipating today's understanding of how nutrient signalling governs growth and repair. Vindicated in spirit; lightly cited.",
+   "tags": [
+    "growth",
+    "regeneration"
+   ]
+  },
+  {
+   "id": "salt-water-fish",
+   "pid": 103,
+   "img": "figures/33_Secerov_1909_Loach-colour-change/Plate_XXII.jpg",
+   "pos": "top",
+   "title": "Freshwater fish, moved to salt water",
+   "teaser": "How far can a freshwater fish be pushed into the sea?",
+   "body": "Neudörfer acclimated freshwater fishes to salt water in 1907 and found the limits. Osmoregulation is now a deep field — ionocytes, hormones, gut microbiome — and salinity tolerance is recognised as a driver of fish evolution and a key to aquaculture. Confirmed, uncited.",
+   "tags": [
+    "fish",
+    "environment",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "dancing-mice",
+   "slug": "155_Hammerschlag_1912_Dancing-mice-breeding",
+   "img": "Taf_IX.jpg",
+   "pos": "top",
+   "title": "Japanese dancing mice",
+   "teaser": "Crossing waltzing mice to track how the trait is inherited",
+   "body": "Hammerschlag crossed Japanese dancing mice with European field mice in 1912 to follow the waltzing trait. It is early Mendelian mouse genetics on a phenotype now traced to inner-ear genes. The method became the backbone of mouse genetics; the paper has four citations.",
+   "tags": [
+    "inheritance",
+    "genetics",
+    "mammals",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "mantis-eye-scaling",
+   "slug": "147_PrzibramBrecher_1930_Sphodromantis-growth",
+   "img": "figures/68_GrosserPrzibram_1906_Egyptian-mantis/Taf_VII.jpg",
+   "pos": "top",
+   "title": "How a mantis's eye grows",
+   "teaser": "Counting facets in a growing compound eye",
+   "body": "Przibram and Brecher measured how the mantis compound eye adds facets and enlarges them across instars in 1930. Compound-eye scaling is now a mechanistic question in developmental biology. Confirmed; five citations.",
+   "tags": [
+    "growth",
+    "insects",
+    "eyes"
+   ]
+  },
+  {
+   "id": "embryo-position",
+   "slug": "01_Przibram_1924_Amphibian-embryo",
+   "img": "Plate_II.jpg",
+   "pos": "top",
+   "title": "Marking an egg to find the embryo",
+   "teaser": "Where on a newt's egg will the embryo form?",
+   "body": "Przibram marked newt eggs with natural and artificial spots in 1924 to follow where the embryo's axis would form. He concluded the axis is set by the egg's cortex rather than the cleavage furrow — largely vindicated. Vogt's landmark fate-mapping cited it as a precedent; almost no one has since.",
+   "tags": [
+    "development",
+    "sleeping"
+   ]
+  },
+  {
+   "id": "the-building",
+   "entry": true,
+   "img": "assets/img/vivarium-building.jpg",
+   "pos": "center",
+   "title": "An aquarium from the 1873 World's Fair",
+   "teaser": "The building: a fairground aquarium turned laboratory",
+   "body": "In 1902 the zoologist Hans Przibram and the botanists Leopold von Portheim and Wilhelm Figdor bought the former aquarium of Vienna's 1873 World Exposition, in the Prater, and turned it into one of the world's first institutes for experimental biology — with their own money. It opened on 1 January 1903. The name VIVARIUM is still legible on the façade.",
+   "tags": [
+    "institute",
+    "people"
+   ],
+   "links": [
+    {
+     "label": "About the institute",
+     "href": "about.html"
+    }
+   ]
+  },
+  {
+   "id": "prater-map",
+   "img": "assets/img/prater-map-1883.jpg",
+   "pos": "center",
+   "title": "The Prater, 1883",
+   "teaser": "Where in Vienna was the Vivarium?",
+   "body": "The institute stood in the Wurstelprater — Vienna's fairground — in a building that began as an aquarium exhibition hall. Research on regeneration and heredity went on a few steps from the carousels; the public aquarium was reopened in 1932 to help pay the bills.",
+   "tags": [
+    "institute"
+   ],
+   "links": [
+    {
+     "label": "About the institute",
+     "href": "about.html"
+    }
+   ]
+  },
+  {
+   "id": "series-175",
+   "entry": true,
+   "img": "figures/128_Przibram_1907_European-mantis-rearing/Taf_XXVI.jpg",
+   "pos": "top",
+   "title": "175 papers, exactly",
+   "teaser": "What this corpus is — and what it isn't",
+   "body": "From 1907 the zoological department had its own section in Roux's Archiv für Entwicklungsmechanik. By 1930, when the institute's publications there stopped for reasons still unclear, 175 articles had appeared — more than a tenth of the journal's output. This site holds that series in full: {{n_trans}} of {{n_papers}} papers translated, and every one read against today's science.",
+   "tags": [
+    "institute",
+    "method"
+   ],
+   "links": [
+    {
+     "label": "Browse the catalog",
+     "href": "catalog.html"
+    },
+    {
+     "label": "About the corpus",
+     "href": "about.html"
+    }
+   ]
+  },
+  {
+   "id": "sleeping-beauties-intro",
+   "entry": true,
+   "img": "figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_18_19.jpg",
+   "pos": "top",
+   "title": "Sleeping beauties",
+   "teaser": "Results the world rediscovered without ever citing them",
+   "body": "A 'sleeping beauty' here is a paper cited four times or fewer in a century whose central result modern science has since confirmed. There are {{n_sleep}} of them, ranked by an index that rewards being forgotten, being right, and sitting in a field that is racing ahead. Most are about regeneration. In all, {{n_confirmed}} of the {{n_papers}} papers have held up.",
+   "tags": [
+    "method",
+    "sleeping"
+   ],
+   "links": [
+    {
+     "label": "See all sleeping beauties",
+     "href": "rediscovery.html"
+    }
+   ]
+  },
+  {
+   "id": "women-39",
+   "img": "figures/118_Zuelzer_1910_Seawater-pulsating-vacuole/Taf_XXVI.jpg",
+   "pos": "top",
+   "title": "39 of 109",
+   "teaser": "Between 1920 and 1934, more than a third of the staff were women",
+   "body": "Of 109 listed workers at the institute between 1920 and 1934, 39 were women — Leonore Brecher, Margarete Zuelzer, Rhoda Erdmann, Auguste Jellinek, Henny Burchardt among them. Przibram is credited with actively supporting women scientists at a time when the University of Vienna would not habilitate them.",
+   "tags": [
+    "institute",
+    "women",
+    "people"
+   ],
+   "links": [
+    {
+     "label": "The people",
+     "href": "authors.html"
+    }
+   ]
+  },
+  {
+   "id": "anschluss-1938",
+   "entry": true,
+   "img": "assets/img/authors/przibram-h.jpg",
+   "pos": "top",
+   "author": "przibram-h",
+   "title": "1938: barred from their own institute",
+   "teaser": "What happened to the founders after the Anschluss",
+   "body": "After the Anschluss, Przibram and Portheim were denied access to the building they had bought and given to the Academy, and the Jewish staff were dismissed. Portheim escaped to London. Hans Przibram fled to the Netherlands, was deported, and died in Theresienstadt in 1944; his wife Elisabeth took her own life. The building burned in the last days of the war.",
+   "tags": [
+    "institute",
+    "war",
+    "people"
+   ]
+  },
+  {
+   "id": "five-murdered",
+   "img": "figures/163_Burchhardt_1930_Urodele-symmetry/Fig_3.jpg",
+   "pos": "center",
+   "title": "Five researchers murdered",
+   "teaser": "The institute's staff killed in the camps",
+   "body": "Five former researchers of the institute were murdered by the Nazi regime: Leonore Brecher and Helene Jacobi at Maly Trostinec in 1942; Martha Geiringer and Henny Burchardt at Auschwitz-Birkenau in 1943 and 1944; Heinrich Kun in a camp in Yugoslavia. Two of them — Brecher and Burchardt — have papers in this corpus.",
+   "tags": [
+    "war",
+    "people",
+    "women"
+   ],
+   "links": [
+    {
+     "label": "Henny Burchardt",
+     "href": "authors.html#a-burchhardt"
+    },
+    {
+     "label": "Leonore Brecher",
+     "href": "authors.html#a-brecher"
+    }
+   ]
+  },
+  {
+   "id": "megusar-1916",
+   "slug": "58_Megusar_1910_Orthoptera-leg-regeneration",
+   "img": "Plate_XII.jpg",
+   "pos": "top",
+   "title": "Franz Megušar, killed in 1916",
+   "teaser": "The institute's most productive regeneration student died in the war",
+   "body": "A Slovenian zoologist who joined in 1904, Megušar worked across beetles, snails, crustaceans and amphibians and co-authored Przibram's rule. He was killed on 3 August 1916 as an Austrian officer-cadet. Przibram's obituary of him is the one non-research item among these 175 papers.",
+   "tags": [
+    "people",
+    "war",
+    "regeneration"
+   ]
+  },
+  {
+   "id": "weiss-rockefeller",
+   "pid": 9,
+   "img": "assets/img/authors/weiss-p.jpg",
+   "pos": "top",
+   "author": "weiss-p",
+   "title": "Paul Weiss",
+   "teaser": "From Prater regeneration experiments to the Rockefeller Institute",
+   "body": "Weiss's 1920s limb experiments here grounded his concept of the morphogenetic field. Denied habilitation in Vienna in 1926, he left for the United States in 1927, worked with Ross Harrison at Yale, and became one of the twentieth century's leading developmental biologists at Chicago and Rockefeller. His Vienna papers are the corpus's best-cited regeneration work.",
+   "tags": [
+    "people",
+    "regeneration",
+    "legacy"
+   ]
+  },
+  {
+   "id": "von-frisch",
+   "img": "figures/48_Frohlich_1910_Palaemon-colour-change/Plate_XIII.jpg",
+   "pos": "top",
+   "title": "Karl von Frisch's first experiments",
+   "teaser": "A future Nobel laureate did his doctoral experiments here",
+   "body": "Karl von Frisch performed the experiments for his doctoral thesis at the institute in 1909–10, on colour change in fish — long before the honeybee dances that won him the Nobel Prize in 1973. His fish papers appeared elsewhere, so they are not in this series, but the Prater was where he began.",
+   "tags": [
+    "people",
+    "fish",
+    "institute",
+    "colour"
+   ],
+   "links": [
+    {
+     "label": "About the institute",
+     "href": "about.html"
+    }
+   ]
+  },
+  {
+   "id": "japanese-visitors",
+   "pid": 78,
+   "img": "figures/65_Kudo_1922_Fish-melanin-colour/Plate_IX.jpg",
+   "pos": "top",
+   "title": "Visitors from Japan",
+   "teaser": "Sato and Kudô: the institute's international reach",
+   "body": "Two Japanese researchers, Kudô and Kunio Sato, published in the series in the 1920s — on melanin in fish colour change and on the DOPA reaction for pigment-forming cells. They show the Prater institute drawing scientists from across the world in the years before its destruction.",
+   "tags": [
+    "people",
+    "colour"
+   ]
+  },
+  {
+   "id": "zuelzer",
+   "pid": 117,
+   "img": "assets/img/authors/zuelzer.jpg",
+   "pos": "top",
+   "author": "zuelzer",
+   "title": "Margarete Zuelzer",
+   "teaser": "A pioneering woman protozoologist",
+   "body": "Zuelzer, with a Heidelberg doctorate from 1904, worked at the institute on the contractile vacuole and the effects of seawater on protozoa, later leading a protozoa laboratory in Berlin. Her 1910 paper anticipated the vacuole's role as an osmoregulator — confirmed today.",
+   "tags": [
+    "people",
+    "women"
+   ]
+  },
+  {
+   "id": "erdmann",
+   "pid": 167,
+   "img": "assets/img/authors/erdmann.jpg",
+   "pos": "top",
+   "author": "erdmann",
+   "title": "Rhoda Erdmann",
+   "teaser": "The cell-culture pioneer who passed through the Prater",
+   "body": "Erdmann's 1920 paper on Paramecium linked body size to the nuclear-reorganisation cycle. She went on to found Germany's first institute for cell research in Berlin and was persecuted after 1933. Her work here is little cited; her name is not.",
+   "tags": [
+    "people",
+    "women"
+   ]
+  },
+  {
+   "id": "dembowski",
+   "pid": 16,
+   "img": "assets/img/authors/dembowski.jpg",
+   "pos": "top",
+   "author": "dembowski",
+   "title": "Jan Dembowski",
+   "teaser": "A Polish visitor who co-wrote the pigment papers",
+   "body": "Dembowski worked with Przibram on the conservation of tyrosinase and on salamander colouration in 1919–22 before a career in Poland, where he later became president of the Academy of Sciences. The pigment chemistry he helped map is textbook today.",
+   "tags": [
+    "people",
+    "colour"
+   ]
+  },
+  {
+   "id": "karl-przibram",
+   "img": "figures/146_Przibram_1917_Temperature-quotients/Taf_2.jpg",
+   "pos": "center",
+   "author": "przibram-k",
+   "title": "The physicist brother",
+   "teaser": "Karl Przibram brought a physicist's eye to how animals wander",
+   "body": "Hans Przibram's younger brother Karl, a physicist known for radioactivity and colour centres in crystals, contributed one paper: on the 'disordered movement' of lower animals — an early brush with what is now the physics of active matter. He too was persecuted after 1938 and emigrated.",
+   "tags": [
+    "people",
+    "physics"
+   ]
+  }
+ ]
+}
