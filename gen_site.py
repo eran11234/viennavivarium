@@ -316,6 +316,7 @@ def gen_contribute():
 <h1>Help bring the Vivarium back into the conversation</h1>
 <p>This platform is the work of a small, independent project. Everything on it — {STATS['trans']} translations, {STATS['papers']} papers read against today's science, the biographies — can be improved by people who know something we don't. If you would like to collaborate, correct, add, or contribute in any other way, tell us a little about yourself below.</p></section>
 <div class="cgrid">
+<div class="cmain">
 <form class="cform" id="cform" novalidate>
   <label for="f-name">Your name</label>
   <input type="text" id="f-name" name="name" autocomplete="name" required>
@@ -334,6 +335,7 @@ def gen_contribute():
   <div class="err" id="ferr"></div>
 </form>
 <div class="done" id="fdone"><h3>Thank you.</h3><p>Your message is on its way. We read everything and will reply personally, usually within a few days.</p><p><a href="tour.html">Take the tour</a> · <a href="rediscovery.html">Open Discover</a> · <a href="catalog.html">Browse the catalog</a></p></div>
+</div>
 <aside class="caside">
   <div class="box"><h2>What helps most right now</h2><ul>
     <li><b>Modern citations we missed.</b> If a paper here is cited or used in work we haven't found, tell us — the verdicts on Discover depend on it.</li>
@@ -1802,8 +1804,8 @@ nav a.on{color:var(--accent);font-weight:600}
 .cform .send{margin-top:18px;background:#33485c;color:#fff;font:inherit;font-weight:700;font-size:15px;padding:12px 20px;border:0;border-radius:10px;cursor:pointer}
 .cform .send:hover{background:#1d2733}.cform .send:disabled{opacity:.6;cursor:default}
 .cform .note{font-size:12.5px;color:var(--muted);margin:10px 0 0;line-height:1.5}
-.cform .done{display:none;background:#eef5f1;border:1px solid #cfe3d8;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.6}
-.cform .done h3{margin:0 0 6px;font-family:Georgia,serif;font-size:20px}
+.cmain .done{display:none;background:#eef5f1;border:1px solid #cfe3d8;border-radius:12px;padding:18px 20px;font-size:15px;line-height:1.6}
+.cmain .done h3{margin:0 0 6px;font-family:Georgia,serif;font-size:20px}
 .cform .err{display:none;background:#fbf2dd;border:1px solid #e7d4ac;border-radius:10px;padding:12px 14px;font-size:14px;margin-top:12px;line-height:1.5}
 .caside .box{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:18px 20px;margin-bottom:14px}
 .caside h2{font-family:Georgia,serif;font-size:18px;margin:0 0 8px;border:0}
