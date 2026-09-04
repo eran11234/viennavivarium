@@ -67,6 +67,8 @@ def page(path, title, active, body, prefix="", head="", foot="", desc=None):
         for href, h in NAV)
     ttl = _title_trim(title)
     d = html.escape((desc or SITE_DESC).strip())
+    # version every site script the same way as the stylesheet, so CSS and JS never mismatch after a deploy
+    foot = re.sub(r'src="((?:\.\./)?(?:assets|data)/[^"?]+\.js)"', r'src="\1?v=' + BUILD_ID + '"', foot)
     url = SITE_URL + path
     doc = f"""<!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
