@@ -1875,6 +1875,7 @@ table#cat{border-collapse:collapse;width:100%;font-size:13.5px}
 #cat .ti{font-weight:500}#cat .de{color:var(--muted);font-style:italic;font-size:13px}
 #cat td.today{max-width:170px;min-width:120px}
 #cat td:last-child{min-width:96px}
+#cat td:nth-child(2){overflow-wrap:anywhere;max-width:150px}
 .cstat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:20px;text-decoration:none;white-space:nowrap}
 .cstat:hover{text-decoration:none;filter:brightness(1.12)}
 .cst-sb{background:#33485c;color:#f3efe6}.cst-qc{background:#2e6f6a;color:#fff}.cst-ll{background:#1d6e56;color:#fff}
