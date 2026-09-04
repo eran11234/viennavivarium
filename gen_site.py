@@ -1867,15 +1867,16 @@ footer.site p{margin:.3em 0}
 .chk{display:flex;align-items:center;gap:6px;font-size:14px;color:#4a463f}
 .tablewrap{border:1px solid var(--rule);border-radius:10px;background:var(--card)}
 table#cat{border-collapse:collapse;width:100%;font-size:13.5px}
-#cat th,#cat td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
+#cat th,#cat td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--rule);vertical-align:top}
 #cat th{position:sticky;top:62px;z-index:5;background:var(--card);font-size:12.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);cursor:default;box-shadow:0 1px 0 var(--rule)}
 #cat td.num,#cat th.num{text-align:right}
 #cat tr:hover td{background:#fbf8f2}
 #cat tbody tr{cursor:pointer}
 #cat .ti{font-weight:500}#cat .de{color:var(--muted);font-style:italic;font-size:13px}
-#cat td.today{max-width:170px;min-width:120px}
+#cat td.today{max-width:200px;min-width:150px}
 #cat td:last-child{min-width:96px}
-#cat td:nth-child(2){overflow-wrap:anywhere;max-width:150px}
+#cat td:nth-child(2){min-width:104px;max-width:160px}
+#cat td:last-child{white-space:nowrap}
 .cstat{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;padding:2px 8px;border-radius:20px;text-decoration:none;white-space:nowrap}
 .cstat:hover{text-decoration:none;filter:brightness(1.12)}
 .cst-sb{background:#33485c;color:#f3efe6}.cst-qc{background:#2e6f6a;color:#fff}.cst-ll{background:#1d6e56;color:#fff}
@@ -2022,9 +2023,9 @@ function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','
 function row(c){
  var d=di(c);
  var read;
- if(c.has_translation){read='<a href="papers/'+c.slug+'.html"><span class="dot on"></span>English</a> · <a href="reader.html?id='+c.id+'">German</a>';}
+ if(c.has_translation){read='<a href="papers/'+c.slug+'.html"><span class="dot on"></span>English</a><br><a href="reader.html?id='+c.id+'">German</a>';}
  else {read='<a href="reader.html?id='+c.id+'">Read original</a>';}
- if(d)read+=' · <a class="dosslink" href="dossier/'+c.id+'.html">☾ Dossier</a>';
+ if(d)read+='<br><a class="dosslink" href="dossier/'+c.id+'.html">☾ Dossier</a>';
  var lay=c.layer?('<span class="badge l'+c.layer+'">L'+c.layer+'</span>'):'';
  var rd=c.rediscovery?' <span class="rd">◆ rediscovery</span>':'';
  var today='—';
@@ -2033,7 +2034,7 @@ function row(c){
    +(d.sb?('<span class="csbi">☾ '+d.sbi+'</span>'):'')
    +(d.v?('<div class="cverd">'+esc(d.v)+'</div>'):'');
  }
- return '<tr class="crow" data-id="'+c.id+'"><td>'+c.year+'</td><td>'+esc(c.author)+'</td>'+
+ return '<tr class="crow" data-id="'+c.id+'"><td>'+c.year+'</td><td>'+esc(c.author).replace(/([\/;,])\s*/g,'$1\u200b')+'</td>'+
  '<td><div class="ti">'+esc(c.title_en||c.title)+'</div>'+((c.title&&c.title!==c.title_en)?'<div class="de">('+esc(c.title)+')</div>':'')+'</td>'+
  '<td><em>'+esc(c.organism)+'</em>'+rd+'</td>'+
  '<td class="meth">'+esc(MLAB[mcl(c)]||mcl(c)||'—')+((METH[c.id]&&METH[c.id].full)?' <span class="mfull" title="full methodology summary">●</span>':'')+'</td>'+
