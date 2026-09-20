@@ -510,15 +510,6 @@ REDISC_JS = r"""
 (function(){
 var R=window.REDISCOVERY, MG=R.stats.maxgap||63;
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
-function hl(escaped,term){
-  if(!term)return escaped;
-  var t=String(term).trim(); if(t.length<2)return escaped;
-  var parts=t.split(/\s+/).filter(function(x){return x.length>1;}).map(hlEsc);
-  if(!parts.length)return escaped;
-  var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
-  return escaped.replace(re,'<mark class="hlt">$1</mark>');
-}
 
 function links(c){var L=[];
   if(c.read)L.push('<a class="tlink" href="'+c.read+'">Read translation</a>');
@@ -880,6 +871,16 @@ DISCOVER_JS = r"""
 (function(){
 var D=window.DISCOVER, P=D.papers;
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+// --- search-term highlighting: applied to ALREADY-ESCAPED html, so it can never break markup ---
+function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function hl(escaped,term){
+  if(!term)return escaped;
+  var t=String(term).trim(); if(t.length<2)return escaped;
+  var parts=t.split(/\s+/).filter(function(x){return x.length>1;}).map(hlEsc);
+  if(!parts.length)return escaped;
+  var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
+  return escaped.replace(re,'<mark class="hlt">$1</mark>');
+}
 var SC={'Sleeping Beauty':'st-sb','Quiet Classic':'st-qc','Living Legacy':'st-ll','Stirring':'st-st','Contested Legacy':'st-cl','Rightly Rested':'st-rr'};
 // ---------- sleeping-beauty carousel ----------
 var sb=D.sleeping, ci=0, timer=null, playing=true;
