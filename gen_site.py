@@ -510,6 +510,16 @@ REDISC_JS = r"""
 (function(){
 var R=window.REDISCOVERY, MG=R.stats.maxgap||63;
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function hl(escaped,term){
+  if(!term)return escaped;
+  var t=String(term).trim(); if(t.length<2)return escaped;
+  var parts=t.split(/\s+/).filter(function(x){return x.length>1;}).map(hlEsc);
+  if(!parts.length)return escaped;
+  var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
+  return escaped.replace(re,'<mark class="hlt">$1</mark>');
+}
+
 function links(c){var L=[];
   if(c.read)L.push('<a class="tlink" href="'+c.read+'">Read translation</a>');
   if(c.pdf)L.push('<a class="tlink" href="pdfs/'+encodeURIComponent(c.pdf)+'" download>German PDF</a>');
@@ -896,13 +906,13 @@ function chips(){var counts={};D.order.forEach(function(pid){var s=P[pid].st;cou
   var h='<button class="chip on" data-s="all">All ‹'+D.order.length+'›</button>';
   D.statuses.forEach(function(s){if(counts[s])h+='<button class="chip" data-s="'+esc(s)+'">'+esc(s)+'<span class="cc">'+counts[s]+'</span></button>';});
   document.getElementById('statuschips').innerHTML=h;}
-function card(pid){var p=P[pid];
+function card(pid){var p=P[pid];var Q=st.q.trim();
   var lk='<a class="go" href="dossier/'+pid+'.html">Deep dive →</a>';
   if(p.read)lk+='<a href="papers/'+p.read+'.html">Translation</a>';
   lk+='<a href="reader.html?id='+pid+'">German</a>';
   lk+='<a href="catalog.html?id='+pid+'">Catalog ↗</a>';
   return '<article class="dcardx"><span class="stat '+(SC[p.st]||'st-dm')+'">'+esc(p.st)+'</span>'+(p.syn?'<span class="synbadge">✦ read &amp; compared</span>':'')
-   +'<h3>'+esc(p.t)+'</h3><p class="cm">'+esc(p.au||'')+' · '+p.y+(p.org&&p.org!=='—'?(' · <em>'+esc(p.org)+'</em>'):'')+'</p>'
+   +'<h3>'+hl(esc(p.t),Q)+'</h3><p class="cm">'+hl(esc(p.au||''),Q)+' · '+p.y+(p.org&&p.org!=='—'?(' · <em>'+hl(esc(p.org),Q)+'</em>'):'')+'</p>'
    +(p.hook?'<p class="ck">'+esc(p.hook)+'</p>':'<p class="ck"></p>')
    +'<p class="cn">'+p.n+' modern papers'+(p.l?(' · latest '+p.l):'')+' · cited '+p.c+'× today'+(p.sb?(' · <b>☾ SBI '+p.sbi+'</b>'):'')+'</p>'
    +'<div class="lk">'+lk+'</div></article>';}
@@ -1897,6 +1907,10 @@ table#cat{border-collapse:collapse;width:100%;font-size:13.5px}
 #cat .csbi{display:inline-block;font-size:10px;font-weight:700;color:#33485c;margin-left:4px}
 #cat .cverd{font-size:11.5px;color:var(--muted);line-height:1.35;margin-top:3px}
 .dosslink{font-weight:600;color:var(--accent2)}
+/* search-term highlighting in result lists */
+mark.hlt{background:#fde9a9;color:inherit;border-radius:3px;padding:0 1px;font-weight:600;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#cat .cverd mark.hlt,.dcardx .ck mark.hlt{font-weight:600}
+@media(prefers-contrast:more){mark.hlt{background:#ffd54a;outline:1px solid #a8801a}}
 #cat tr.hit td{background:#fdf6e0;box-shadow:inset 3px 0 0 var(--accent2)}
 .dscta{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:16px 0 6px;padding:15px 18px;border-radius:12px;background:linear-gradient(135deg,#1d2733,#33485c);color:#f3efe6;position:relative;overflow:hidden}
 .dscta::after{content:"☾";position:absolute;right:6px;top:-34px;font-size:120px;opacity:.07}
@@ -2033,8 +2047,20 @@ function mcl(c){var m=METH[c.id];return m?(m.cluster||''):'';}
 var ms={};D.forEach(function(c){var m=mcl(c);if(m)ms[m]=(ms[m]||0)+1;});
 Object.keys(ms).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=(MLAB[k]||k)+' ('+ms[k]+')';method.appendChild(o);});
 function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]})}
+// --- search-term highlighting: applied to ALREADY-ESCAPED html, so it can never break markup ---
+function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function hl(escaped,term){
+  if(!term)return escaped;
+  var t=String(term).trim(); if(t.length<2)return escaped;
+  var parts=t.split(/\s+/).filter(function(x){return x.length>1;}).map(hlEsc);
+  if(!parts.length)return escaped;
+  // never match inside a tag or an &entity;
+  var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
+  return escaped.replace(re,'<mark class="hlt">$1</mark>');
+}
 function row(c){
  var d=di(c);
+ var Q=(q.value||'').trim();
  var read;
  if(c.has_translation){read='<a href="papers/'+c.slug+'.html"><span class="dot on"></span>English</a><br><a href="reader.html?id='+c.id+'">German</a>';}
  else {read='<a href="reader.html?id='+c.id+'">Read original</a>';}
@@ -2047,9 +2073,9 @@ function row(c){
    +(d.sb?('<span class="csbi">☾ '+d.sbi+'</span>'):'')
    +(d.v?('<div class="cverd">'+esc(d.v)+'</div>'):'');
  }
- return '<tr class="crow" data-id="'+c.id+'"><td>'+c.year+'</td><td>'+esc(c.author).replace(/([\/;,])\s*/g,'$1\u200b')+'</td>'+
- '<td><div class="ti">'+esc(c.title_en||c.title)+'</div>'+((c.title&&c.title!==c.title_en)?'<div class="de">('+esc(c.title)+')</div>':'')+'</td>'+
- '<td><em>'+esc(c.organism)+'</em>'+rd+'</td>'+
+ return '<tr class="crow" data-id="'+c.id+'"><td>'+c.year+'</td><td>'+hl(esc(c.author).replace(/([\/;,])\s*/g,'$1\u200b'),Q)+'</td>'+
+ '<td><div class="ti">'+hl(esc(c.title_en||c.title),Q)+'</div>'+((c.title&&c.title!==c.title_en)?'<div class="de">('+hl(esc(c.title),Q)+')</div>':'')+'</td>'+
+ '<td><em>'+hl(esc(c.organism),Q)+'</em>'+rd+'</td>'+
  '<td class="meth">'+esc(MLAB[mcl(c)]||mcl(c)||'—')+((METH[c.id]&&METH[c.id].full)?' <span class="mfull" title="full methodology summary">●</span>':'')+'</td>'+
  '<td>'+lay+'</td><td class="num">'+(c.citations||0)+'</td><td class="today">'+today+'</td><td>'+read+'</td></tr>';
 }
@@ -2103,6 +2129,16 @@ list=document.getElementById('list'),count=document.getElementById('count');
 var cv={};C.forEach(function(c){if(c.convergence)cv[c.convergence]=(cv[c.convergence]||0)+1});
 Object.keys(cv).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;conv.appendChild(o)});
 function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]})}
+function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function hl(escaped,term){
+  if(!term)return escaped;
+  var t=String(term).trim(); if(t.length<2)return escaped;
+  var parts=t.split(/\s+/).filter(function(x){return x.length>1;}).map(hlEsc);
+  if(!parts.length)return escaped;
+  var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
+  return escaped.replace(re,'<mark class="hlt">$1</mark>');
+}
+
 var PID=new URLSearchParams(location.search).get('id');
 if(PID){renderPaper(parseInt(PID,10));return;}
 function renderPaper(id){
@@ -2154,9 +2190,10 @@ function item(c){
  var lg=L[c.id]||{};var cites=(lg.citations||[]).slice(0,10);
  var cl=cites.map(function(x){return '<li>'+(x.year?x.year+' · ':'')+esc(x.author)+' — '+esc((x.title||'').slice(0,120))+(x.doi?' <a target=_blank href="https://doi.org/'+x.doi+'">doi</a>':'')+'</li>'}).join('');
  var link=c.has_translation?'<a href="papers/'+c.slug+'.html">English translation →</a>':'<a href="reader.html?id='+c.id+'">read original →</a>';
- return '<div class="litem"><div class="h"><div><div class="ti">'+esc(c.title_en||c.title)+'</div>'+
- ((c.title&&c.title!==c.title_en)?'<div class="de" style="font-style:italic;color:var(--muted);font-size:12.5px;margin:1px 0 2px">('+esc(c.title)+')</div>':'')+
- '<div class="sub">'+esc(c.author)+' · '+c.year+' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':'')+'</div></div>'+
+ var Q=(q.value||'').trim();
+ return '<div class="litem"><div class="h"><div><div class="ti">'+hl(esc(c.title_en||c.title),Q)+'</div>'+
+ ((c.title&&c.title!==c.title_en)?'<div class="de" style="font-style:italic;color:var(--muted);font-size:12.5px;margin:1px 0 2px">('+hl(esc(c.title),Q)+')</div>':'')+
+ '<div class="sub">'+hl(esc(c.author),Q)+' · '+c.year+' · <em>'+hl(esc(c.organism),Q)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':'')+'</div></div>'+
  '<div style="text-align:right">'+(c.rediscovery?'<span class="badge redis">rediscovery target</span><br>':'')+(c.layer?'<span class="badge l'+c.layer+'">L'+c.layer+'</span>':'')+'</div></div>'+
  '<div class="kv"><span><b>'+(lg.cited_by_count||0)+'</b> cited today</span><span><b>'+(lg.n_parallels||0)+'</b> modern parallels</span><span>'+esc(c.convergence||'')+'</span></div>'+
  (cl?'<details><summary>Show modern citations</summary><ul class="cites">'+cl+'</ul></details>':'')+
@@ -2238,6 +2275,16 @@ if(sxs&&en){
 if(typeof d3==='undefined'){return;}
 var C=(window.CATALOG||[]).slice(), L=window.LEGACY||{};
 function esc(s){return (s||'').replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+
+function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function hl(escaped,term){
+  if(!term)return escaped;
+  var t=String(term).trim(); if(t.length<2)return escaped;
+  var parts=t.split(/\s+/).filter(function(x){return x.length>1;}).map(hlEsc);
+  if(!parts.length)return escaped;
+  var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
+  return escaped.replace(re,'<mark class="hlt">$1</mark>');
+}
 var THEMES=[['Regeneration',/regenerat/],['Transplantation',/transplant|graft|implant/],
 ['Coloration',/colou?r|pigment|farb|chromat/],['Growth & form',/growth|wachstum|instar|moult|molt|größe|form/],
 ['Heredity',/inherit|hered|vererb|lamarck|bastard|hybrid/],['Sex & hormones',/sex|gonad|pubert|endocrin|hormon|intersex|zwitter|erotiz/],
