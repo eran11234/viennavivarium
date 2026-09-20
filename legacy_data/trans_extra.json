@@ -206,7 +206,7 @@
  },
  "106_Brecher_1922_Vanessid-pupal-colours": {
   "id": 21,
-  "pdf": "1922_Przibram-Brecher_Die-Farbmodifikationen-der-Stabheuschrecke-Dixippus-morosus-Br-et-Redt.pdf",
+  "pdf": "1922_Brecher_Die-Puppenfarbungen-der-Vanessiden-Vanessa-Io-V-urticae-Pyrameis-cardu.pdf",
   "title_en": "The pupal colourations of the Vanessids (Vanessa io, V. urticae, Pyrameis cardui, P. atalanta)"
  },
  "107_Uhlenhuth_1919_Lens-regeneration-I": {
@@ -538,5 +538,25 @@
   "id": 89,
   "pdf": "1913_Walther_Die-Umwelt-des-Keimplasmas.pdf",
   "title_en": "The environment of the germ-plasm"
+ },
+ "174_GrosserPrzibram_1906_Dogfish-malformations": {
+  "id": 55,
+  "pdf": "1906_GrosserPrzibram_Einige-Mißbildungen-beim-Dornhai-Acanthias-vulgaris-Risso.pdf",
+  "title_en": "Some malformations in the spiny dogfish (Acanthias vulgaris Risso)"
+ },
+ "175_PrzibramBrecher_1922_Dixippus-colour-modifications": {
+  "id": 17,
+  "pdf": "1922_Przibram-Brecher_Die-Farbmodifikationen-der-Stabheuschrecke-Dixippus-morosus-Br-et-Redt.pdf",
+  "title_en": "The colour modifications of the stick insect Dixippus morosus Br. et Redt."
+ },
+ "176_Przibram_1919_Causes-of-colouration-II": {
+  "id": 157,
+  "pdf": "1919_Przibram_Ursachen-tierischer-Farbkleidung.pdf",
+  "title_en": "Causes of Animal Colouration. II. Theory"
+ },
+ "177_SatoBrecher_1925_Dopa-tyrosine-chromogen": {
+  "id": 79,
+  "pdf": "1925_Sato-Brecher_Kann-Dopa-oder-Tyrosin-das-Chromogen-bei-Wirbeltieren-abgeben.pdf",
+  "title_en": "Can Dopa or tyrosine yield the chromogen in vertebrates?"
  }
 }

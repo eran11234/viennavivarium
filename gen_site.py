@@ -161,6 +161,17 @@ def gen_index():
   <p>The <a href="catalog.html">Catalog</a> is the map of the whole corpus — filter by author, organism, phenomenon, method, or today's verdict, and jump to a paper's English translation (where one exists) or its German original. The <a href="translations.html">Translations</a> are full reading pages with the original plates and a side-by-side view against the scanned German. <a href="rediscovery.html">Discover</a> sets every paper against the current literature: which results became textbook science, which are still contested, and which <em>sleeping beauties</em> the field has rediscovered without ever citing them. <a href="authors.html">Authors</a> gives the people behind the papers, the <a href="map.html">Map</a> lays the corpus out by organism, and <a href="analytics.html">Analytics</a> shows the shape of the institute's output over its four decades.</p>
 </section>"""
     page("index.html", "Home", "Home", body)
+    # Redirect stubs for pages whose URL changed after a metadata correction (legacy_data/redirects.json: old -> new)
+    _rp = os.path.join(ROOT, "legacy_data", "redirects.json")
+    if os.path.exists(_rp):
+        for old, new in json.load(open(_rp, encoding="utf-8")).items():
+            os.makedirs(os.path.dirname(os.path.join(SITE, old)) or SITE, exist_ok=True)
+            depth = old.count("/"); pre = "../" * depth
+            open(os.path.join(SITE, old), "w", encoding="utf-8").write(
+                f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title>'
+                f'<meta http-equiv="refresh" content="0; url={pre}{new}"><link rel="canonical" href="{SITE_URL}{new}">'
+                f'</head><body><p>This page has moved to <a href="{pre}{new}">{new}</a>.</p></body></html>')
+        print("redirects:", len(json.load(open(_rp, encoding="utf-8"))))
     # GitHub Pages serves 404.html for any missing path
     page("404.html", "Page not found", "", """
 <section class="hero"><p class="kicker">404</p><h1>That page isn’t here</h1>
