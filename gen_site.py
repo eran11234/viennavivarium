@@ -660,7 +660,9 @@ def gen_authors():
             '<div class="astats"><div><b>%d</b><span>contributors</span></div>'
             '<div><b>%d</b><span>principal figures</span></div>'
             '<div><b>%d</b><span>papers, 1904–1930</span></div></div>'
-            % (A["stats"]["people"], A["stats"]["featured"], STATS["papers"])
+            # counted, never read from A["stats"] — that field goes stale the moment
+            # someone is added or promoted (it said 17 while 19 were featured)
+            % (len(A["people"]), len(feat), STATS["papers"])
             + '<h2 class="asec">Principal figures</h2><div class="agrid feat">'
             + "".join(card(p, False) for p in feat) + '</div>'
             + '<h2 class="asec">Further contributors</h2>'
