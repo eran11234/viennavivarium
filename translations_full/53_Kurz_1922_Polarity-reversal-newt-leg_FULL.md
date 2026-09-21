@@ -160,7 +160,7 @@ The plate contains seven X-ray figures, labelled:
 
 ---
 
-Translator's notes (for the editor; not part of the source):
+Translator's note (not part of the source):
 - The printed source names the author as **"Oskar Kurz"** (title page and running heads of pp. 188, 189, 190). The assignment header gives "Wilhelm Kurz." The printed form "Oskar Kurz" has been followed.
 - The text-figure on printed p. 189 is captioned **"Abb. 1—4."** and consists of line-drawing sketches with sub-figures 1a/1b, 2a/2b, 3a/3b, 4a/4b (referenced in the running text as "Textabb."). On p. 189 the visible sub-figures are 3a, 3b, 4a, 4b; sub-figures 1a–2b belong to the same composite figure.
 - The reading "*Re hi Bein*" = right hind-leg ("rechtes hinteres Bein"), "*Li hi Bein*"/"*li hi Bein*" = left hind-leg ("linkes hinteres Bein"); these are the printed abbreviations in the figure-explanations and are retained with bracketed glosses.

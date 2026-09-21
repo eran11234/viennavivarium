@@ -432,7 +432,7 @@ The larvae of the praying mantises, which take a long time to metamorphosis, thu
 
 hatching?) tempo, and lay back [accomplish], within a certain time-segment of the metamorphosis, the aliquot part of the length-increase (of their thorax, their tibia, and so forth).
 
-[The single complete paragraph carried over from p.35 ends here; the remainder of p.36 belongs to paragraphs beginning on p.36 and is outside the assigned range.] In doing so, the moults need to set in neither after the lapse of a definite absolute time, nor of a definite time-segment relative to the variable total duration of the metamorphosis, nor after the attainment of a definite absolute size (the relative size, according to these findings and on the assumption of uniform growth velocity, is already excluded of itself). From this there emerges the assuredly remarkable fact that the moults do not influence the growth tempo (apart from occasioning step-form intervals); this admittedly contributes to an understanding of the possibility of an alteration of the number of moults (as well as of the occurrence of a premature moult after amputations). The rapidly developing individuals behave differently, in that the compressed course of the metamorphosis expresses itself in a steep rise of the developmental velocity toward the end of the same.
+[The single complete paragraph carried over from p.35 ends here; the remainder of p.36 belongs to paragraphs beginning on p.36 and is outside this section.] In doing so, the moults need to set in neither after the lapse of a definite absolute time, nor of a definite time-segment relative to the variable total duration of the metamorphosis, nor after the attainment of a definite absolute size (the relative size, according to these findings and on the assumption of uniform growth velocity, is already excluded of itself). From this there emerges the assuredly remarkable fact that the moults do not influence the growth tempo (apart from occasioning step-form intervals); this admittedly contributes to an understanding of the possibility of an alteration of the number of moults (as well as of the occurrence of a premature moult after amputations). The rapidly developing individuals behave differently, in that the compressed course of the metamorphosis expresses itself in a steep rise of the developmental velocity toward the end of the same.
 
 For our control animal (Diagram A) the growth velocities are, for example, in the nymphal stage 0.129 (mm per day) for the thorax, 0.149 for the femur, 0.055 for the tibia; in the preceding larval stage 0.075, respectively 0.100 and 0.025, as against the average of 0.085, respectively 0.074 and 0.044. A slight rise of the growth velocity at the imaginal moult is, moreover, to be noted in the others as well.
 
@@ -1068,11 +1068,11 @@ Eierpaket [Egg packet]: I. — Geschlecht [Sex]: ♂ — Katalog-Nr. [Catalogue 
 
 ---
 
-All six tables (Tabelle 3b–3g) on the assigned pages 57–62 have been translated in full. Source page images: `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/img/22_Przibram_1906_Mantis-rearing/p057.png` through `p062.png` (rotated 90°; read upright via crops in `/tmp/mantis/`).
+All six tables (Tabelle 3b–3g) on these pages 57–62 have been translated in full. read upright via crops in `/tmp/mantis/`).
 
-Notes on the source for the reviewer:
-- These pages contain ONLY tables — no running prose paragraphs begin on pages 57–62, so the paragraph-ownership rule yields only the tables, their column/row headers, and their footnotes.
-- Page 56 (Tabelle 3a, control specimen I) is the lead-in template and is outside the assigned range; its footnote 3 continues onto p57 but begins on p56, so it is not included here.
+Notes on the source:
+- These pages contain ONLY tables — no running prose paragraphs begin on pages 57–62, so the paragraph-boundary convention yields only the tables, their column/row headers, and their footnotes.
+- Page 56 (Tabelle 3a, control specimen I) is the lead-in template and is outside this section; its footnote 3 continues onto p57 but begins on p56, so it is not included here.
 - Many cells are genuinely empty in the original (printed as a centred dot "."); these are preserved as "." in the Markdown.
 - Fractions are rendered as ½, ⅓, etc.; the author's "+" and "—" suffixes on measurements (indicating slightly more/less) are preserved exactly. Brace marks "{" / "}" in the original group several Tarsus segments under one bracketed value; preserved inline.
 - Specimen identifiers (Eierpaket / Geschlecht / Katalog-Nr.) are given above each table since they occupy a merged vertical cell in the original.

@@ -811,7 +811,7 @@ Since the sexes in rats and mice as a rule differ in size, and the greater relat
 
 [Bottom summary rows for the three groups:] **alle N** — 1,219 (25° column) | 1,387 (20° column) | 1,308 (15° column).
 
-[End of Table VI. Tables II and III begin on the following page (p. 490) and are outside the assigned range.] **Table II.** House rat (Hausratte), without regard to generation. Dependence of the body–tail relation on body warmth at various, constantly held external temperatures.
+[End of Table VI. Tables II and III begin on the following page (p. 490) and are outside this section.] **Table II.** House rat (Hausratte), without regard to generation. Dependence of the body–tail relation on body warmth at various, constantly held external temperatures.
 
 | Alter in Wochen → | Außentemp. °C | Würfe (II) | K:S (II) | ♂ (II) | ♀ (II) | Würfe (III–V) | K:S (III–V) | ♂ (III–V) | ♀ (III–V) | Würfe (VIII–IX) | K:S (VIII–IX) | ♂ (VIII–IX) | ♀ (VIII–IX) | Würfe (XI) | K:S (XI) | ♂ (XI) | ♀ (XI) |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|

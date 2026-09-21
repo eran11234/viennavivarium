@@ -1837,7 +1837,7 @@ Column headers:
 | B. of the yellow | Box No. 3 | 5 |  |  |  |  |  |
 | B. of the yellow | Box No. 2 | 5 |  |  |  |  |  |
 | B. of the yellow | Box No. 1 | 5 |  |  |  |  |  |
-| **Total** | | **983** |  |  |  |  |  | *(Page 195 contains only the right-hand continuation columns of Table II, which begins on the preceding page (p. 194); per the ownership rule it is rendered with the portion that begins on the earlier page and is not repeated here.)*
+| **Total** | | **983** |  |  |  |  |  | *(Page 195 contains only the right-hand continuation columns of Table II, which begins on the preceding page (p. 194); per the section convention it is rendered with the portion that begins on the earlier page and is not repeated here.)*
 
 ## Tabelle 1. Determination of the coagulation points and reactions of the extracts of the pupa with acids and alkalis on the blood as well as on the aqueous extract of the remaining pupal parts.
 

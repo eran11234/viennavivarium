@@ -137,7 +137,7 @@ We must, however, take into account a difference between the Arthropoda and the 
 
 Our curves begin with high values, which fall off steeply, then bend over quite abruptly, and now tend to approach a horizontal more and more and ever more gradually. It will not be superfluous to recall that by regeneration-velocity I do not wish to understand the absolute increase in size of the regenerate from moult to moult or during an equal time, but the quotient of the later size divided by the earlier. It is solely to this that it is to be attributed that my representation of the course of regeneration **Figs. 11)–31).** [A large grid of regeneration curves; the panels labelled 21), 22), 18), 20), 24), 27), 28), 28a), 23), 23*), 28a*), 26), 31), 30) and further series numbers. The horizontal axis of each panel is marked with the moult-intervals x+1, 2, 3, 4, 5, etc., the vertical axis showing the regeneration-velocity values.]  *(figure not reproduced)*
 
-> Note: The translation continues onto page 8, beyond the assigned range. The paragraph beginning at the foot of page 6/7 ("It is solely to this that it is to be attributed that my representation of the course of regeneration …") completes on page 8 as: "… deviates from that of earlier authors, who (cf. e.g. Durban) give first a small regeneration-velocity, then a rapid rise to the culmination point, finally an almost horizontal course. I believe that my new conception corresponds much better to the character of living growth, in which indeed every newly formed part itself again becomes the starting-point of further development and mass-production." — *Page 8 lies outside the assigned pages (1–7) and is included here only to close the running paragraph; it should be translated in full by the owner of page 8.* […continuation from p.7:] …which differs from earlier authors, who (cf. e.g. Durban) at first indicate a slight regeneration-velocity, then a rapid rise toward the culmination-point, and finally an almost horizontal course. I believe that my new conception corresponds much better to the character of living growth, in which indeed every newly-formed part itself again becomes the starting-point of further development and mass-production.
+> Note: The translation continues onto page 8, beyond this section. The paragraph beginning at the foot of page 6/7 ("It is solely to this that it is to be attributed that my representation of the course of regeneration …") completes on page 8 as: "… deviates from that of earlier authors, who (cf. e.g. Durban) give first a small regeneration-velocity, then a rapid rise to the culmination point, finally an almost horizontal course. I believe that my new conception corresponds much better to the character of living growth, in which indeed every newly formed part itself again becomes the starting-point of further development and mass-production." — *Page 8 lies outside these pages (1–7) and is included here only to close the running paragraph; it should be translated in full by the owner of page 8.* […continuation from p.7:] …which differs from earlier authors, who (cf. e.g. Durban) at first indicate a slight regeneration-velocity, then a rapid rise toward the culmination-point, and finally an almost horizontal course. I believe that my new conception corresponds much better to the character of living growth, in which indeed every newly-formed part itself again becomes the starting-point of further development and mass-production.
 
 **31)** *(curve; figure not reproduced)*
 
@@ -791,9 +791,9 @@ Specimen Nr. 56.
 
 ---
 
-*(End of the tables-section content beginning on pages 15–21; item 20) Calianassa subterranea begins on p. 22 and is not part of this chunk.)*
+*(End of the tables-section content beginning on pages 15–21; item 20) Calianassa subterranea begins on p. 22 and is not part of this section.)*
 
-**Translation note (provenance):** The above renders every paragraph and table beginning on source pages 15–21 of Przibram (1919). Source pages 16–22 are printed in rotated landscape and arranged in two or three side-by-side sub-columns; I have transcribed each numbered entry in its printed order and reproduced all numeric values, including the infinity symbols (∞), the "?" entries ("? = papilla below the measurement unit"), the asterisked values, the exclamation-marked italic quotients (e.g. *1.024!*), and the bracketed editorial/footnote remarks exactly as printed. In this revision the four Homarus tables on p. 19 (Nr. 82, Nr. 100, the 3rd right leg, and the 1st right swimmeret) have been re-aligned to their correct row-labels per the source page; a spurious "4. Htg." column header on the Alpheus dentipes 2-specimen table (p. 21) and a spurious ">" prefix on one italic quotient (Nr. 44, second leg-table, p. 18) have been removed. Authoritative page images: `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/img/36_Przibram_1919_Regeneration-as-growth/p015.png`–`p022.png`.
+**Translation note (provenance):** The above renders every paragraph and table beginning on source pages 15–21 of Przibram (1919). Source pages 16–22 are printed in rotated landscape and arranged in two or three side-by-side sub-columns; I have transcribed each numbered entry in its printed order and reproduced all numeric values, including the infinity symbols (∞), the "?" entries ("? = papilla below the measurement unit"), the asterisked values, the exclamation-marked italic quotients (e.g. *1.024!*), and the bracketed editorial/footnote remarks exactly as printed. In this revision the four Homarus tables on p. 19 (Nr. 82, Nr. 100, the 3rd right leg, and the 1st right swimmeret) have been re-aligned to their correct row-labels per the source page; a spurious "4. Htg." column header on the Alpheus dentipes 2-specimen table (p. 21) and a spurious ">" prefix on one italic quotient (Nr. 44, second leg-table, p. 18) have been removed.
 
 ### 20) *Calianassa subterranea.*¹
 
@@ -1265,18 +1265,17 @@ Specimen Nr. 56.
 | » div. d. Wachstumsqu. d. Beines d. Gegenseite | | | ∞ | >21,185 | 1,374 | | | | | | | |
 | rounded to 1 decimal place (abgerundet auf 1 Dezimalstelle) | | | ∞ | >21,2 | 1,4 | | | | | | | |
 
-*(Here ends the table belonging to §§ 31–32; §§ 33 ff. — "33) Fundulus majalis." etc. — begin on p. 29 and lie outside this assignment.)*
+*(Here ends the table belonging to §§ 31–32; §§ 33 ff. — "33) Fundulus majalis." etc. — begin on p. 29 and lie outside this section.)*
 
 ---
 
-**Translator's notes on the transcription (pages 22–28, table continued onto 29):**
+**Translator's note on the transcription (pages 22–28, table continued onto 29):**
 
 - These pages consist almost entirely of large landscape data-tables (printed sideways). Within each specimen block the original prints the measured series on one line and, on the line below, the **growth-acceleration ratios** of successive measurements connected by braces; I have reproduced these ratios as a separate "*ratio*" sub-row, with each ratio placed between the two measurements it links.
 - Period abbreviations preserved throughout: **K.** = Knackschere (snapping-claw), **Z.** = Zwickschere (pincer-claw), **r.** = rechts (right), **l.** = links (left), **aut.** = autotomiert, **Reg.** = Regenerat/Regeneration, **Htg./Häutung** = molt, **Op.** = Operation, **totex./totalext.** = Totalexstirpation (total extirpation), **a:c, b:c** = ratios of rows a and b to row c (thoracic length/breadth), **»** = ditto mark.
-- Files used (authoritative page images), absolute paths: `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/img/36_Przibram_1919_Regeneration-as-growth/p022.png` through `p029.png`. The OCR text files were garbled and not usable.
 - **Uncertain/damaged readings**, flagged inline above: (1) p.22, S.327 Nr.42 (*Calianassa subterranea*) — the upper sub-table is ink-damaged and carries a handwritten "1.15" annotation; the middle measurement and first ratio are not fully recoverable. (2) p.24, the caption of §24 has a handwritten correction over the word "normale". (3) Several values carry a printed "!" emphasis mark in the original (e.g. 1,307!, 1,431!, 1,366!, 1,088!) which I have retained, and ">" / "<" comparison signs are copied exactly. (4) p.23 *Carcinus* Nr.11, third row / 2. Htg.: the figure is smudged and not recoverable.
 
-*(Continuation of §32, "Regeneration of the hind legs…", whose table began on p. 28 (a non-owned page). The remaining rows of that table are physically printed at the top of owned p. 29 and are reproduced here, faithfully labeled, as a clearly-marked continuation block. The p. 28 translator may already have reproduced these rows — confirm to avoid duplication.)*
+*(Continuation of §32, "Regeneration of the hind legs…", whose table began on p. 28 (an adjacent page). The remaining rows of that table are physically printed at the top of p. 29 and are reproduced here, faithfully labeled, as a clearly-marked continuation block. The p. 28 translator may already have reproduced these rows — confirm to avoid duplication.)*
 
 | Label | | | | | | | | | |
 |---|---|---|---|---|---|---|---|---|---|
@@ -1299,7 +1298,7 @@ Specimen Nr. 56.
 | &nbsp;&nbsp;» (further division) | ∞ | >21,185 | 1,374 | | | | | | |
 | &nbsp;&nbsp;rounded to 1 decimal place | ∞ | >21,2 | 1,4 | | | | | | |
 
-*(End of the §32 continuation. The text owned on pages 29–35 begins here:)*
+*(End of the §32 continuation. The text on pages 29–35 begins here:)*
 
 ## 33) *Fundulus majalis.*
 
@@ -1848,12 +1847,11 @@ Increase-quotient per week : ∞ &nbsp; 2,80 &nbsp; (1,60) &nbsp; *1,265* &nbsp;
 
 ---
 
-**Notes on this translation (file paths, for the reviewing/parent agent):**
+**Translator's note.**
 
-- Source page images (authoritative): `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/img/36_Przibram_1919_Regeneration-as-growth/p029.png` … `p035.png` (plus `p028.png`, `p036.png` for continuity).
 - Pages 29–35 are an entirely **landscape (90°-rotated) numerical protocol appendix**; the page content was read by rotating each page clockwise and upscaling it in strips.
-- **Ownership decision:** the top table of p. 29 is the spill-over continuation of **§32** (which begins on non-owned p. 28). It is reproduced here with its correct German labels (3g α / 3g β / 4m α / Average / rounded to 1 decimal place; and per-Ex. Growth-increase quotient / division / rounded rows) as a clearly-marked continuation block. Confirm whether the p. 28 translator already reproduced these rows to avoid duplication.
-- Sections fully owned and translated: **§§33–57** (pp. 29–35). The §35 heading is **"Schiefer Schwanzabschnitt" (Oblique tail section)** with subsections a) distal end and b) basal end — *Fundulus heteroclitus* is §36, not §35. §40 is **"Terminaler Abschnitt der Schwanzflosse" (Terminal section of the caudal fin)**. §56 (*Triton cristatus*) begins on p. 34; §57 begins on p. 35; both end within the owned range. The §56—57 cumulative-treatment block begins on non-owned p. 36 and is therefore excluded.
+- **Editorial decision:** the top table of p. 29 is the spill-over continuation of **§32** (which begins on adjacent p. 28). It is reproduced here with its correct German labels (3g α / 3g β / 4m α / Average / rounded to 1 decimal place; and per-Ex. Growth-increase quotient / division / rounded rows) as a clearly-marked continuation block. Confirm whether the p. 28 translator already reproduced these rows to avoid duplication.
+- Sections translated here: **§§33–57** (pp. 29–35). The §35 heading is **"Schiefer Schwanzabschnitt" (Oblique tail section)** with subsections a) distal end and b) basal end — *Fundulus heteroclitus* is §36, not §35. §40 is **"Terminaler Abschnitt der Schwanzflosse" (Terminal section of the caudal fin)**. §56 (*Triton cristatus*) begins on p. 34; §57 begins on p. 35; both end within this section. The §56—57 cumulative-treatment block begins on adjacent p. 36 and is therefore excluded.
 - **Layout caveat:** pp. 32–33 are printed in **two columns** (left = the "I." series §§46–50; right = the "II." series §§51–55), linearized here in printed reading order. On p. 33, the left column begins at §48 and the right column at §53; §48 is "then KCl" and §49 is "then CaCl₂" (these were swapped in the draft and are corrected here).
 - Faithful-transcription flags preserved exactly as printed: "!", "?", parenthesized bracket-values, "<"/">" before figures (incl. the "<1,001" in §52 c) and the "*" footnote markers with their captions. Taxonomic names kept exactly as printed (incl. *Diemyctylus (viridescens?)*, *Fundulus majalis/heteroclitus*, *Carassius auratus*, *Triton cristatus*).
 

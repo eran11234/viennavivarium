@@ -80,7 +80,7 @@ At the transplantation of black skin onto white ears the transplanted piece usua
 
 ---
 
-**Translator's note on the apparatus:** The eight source pages 1–8 (journal pagination 616–623) of this chunk contain **no printed/numbered footnotes** in the body. The page images carry no separate footnote lines, no table, and no figure caption within the running text other than the in-text figure and plate references (Fig. 1–18; Pl. VIII/IX, Pl. XII; Plates XXII–XXV), which are reproduced inline above. Per the OMIT-NOTHING rule every sentence of the running text has been rendered.
+**Translator's note on the apparatus:** The eight source pages 1–8 (journal pagination 616–623) of this section contain **no printed/numbered footnotes** in the body. The page images carry no separate footnote lines, no table, and no figure caption within the running text other than the in-text figure and plate references (Fig. 1–18; Pl. VIII/IX, Pl. XII; Plates XXII–XXV), which are reproduced inline above. Per the OMIT-NOTHING rule every sentence of the running text has been rendered.
 
 The data thus agree, those of Loeb with those of Carnot and Deflandre.
 

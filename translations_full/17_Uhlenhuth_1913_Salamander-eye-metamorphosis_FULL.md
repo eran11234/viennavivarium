@@ -310,7 +310,7 @@ In all the experiments of the series in question (Series XVIII) there were used 
 *A* of 16. III. 1912.
 *B* of IX. 1912.
 
-> *(continued — this page opens with the table rows of the entry whose header, “Series XVIII. Part B (see Schema V),” stands at the foot of the preceding page (p.21): A of 16. III. 1912, B of IX. 1912. The running prose belonging to the owned pages begins below the figures.)*
+> *(continued — this page opens with the table rows of the entry whose header, “Series XVIII. Part B (see Schema V),” stands at the foot of the preceding page (p.21): A of 16. III. 1912, B of IX. 1912. The running prose belonging to the pages begins below the figures.)*
 
 | | | |
 |---|---|---|

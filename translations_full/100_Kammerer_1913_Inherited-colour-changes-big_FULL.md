@@ -1419,6 +1419,41 @@ Figure-internal labels include: *typ.* (typica), *taen.* (taeniata), *Mutter* (m
 
 > *Archiv f. Entwicklungsmechanik. XXXVI.* — 13
 
+
+## Figures
+
+**Taf. IX.**
+
+![](figures/100_Kammerer_1913_Inherited-colour-changes-big/Taf_IX.jpg)
+
+**Taf. X.**
+
+![](figures/100_Kammerer_1913_Inherited-colour-changes-big/Taf_X.jpg)
+
+**Taf. XI.**
+
+![](figures/100_Kammerer_1913_Inherited-colour-changes-big/Taf_XI.jpg)
+
+**Taf. XII.**
+
+![](figures/100_Kammerer_1913_Inherited-colour-changes-big/Taf_XII.jpg)
+
+**Taf. XIII.**
+
+![](figures/100_Kammerer_1913_Inherited-colour-changes-big/Taf_XIII.jpg)
+
+**Taf. XIV.**
+
+![](figures/100_Kammerer_1913_Inherited-colour-changes-big/Taf_XIV.jpg)
+
+**Taf. XV.**
+
+![](figures/100_Kammerer_1913_Inherited-colour-changes-big/Taf_XV.jpg)
+
+**Taf. XVI.**
+
+![](figures/100_Kammerer_1913_Inherited-colour-changes-big/Taf_XVI.jpg)
+
 ---
 
 *Translator's note.* One of the Biologische Versuchsanstalt (Vienna Vivarium) papers flagged on the project site as a modern rediscovery target. Claims are rendered as stated in the original, not endorsed.

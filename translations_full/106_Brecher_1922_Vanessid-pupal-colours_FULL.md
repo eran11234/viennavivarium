@@ -627,7 +627,7 @@ The critical stage for colour-influencing is the quiet stage, and when the cater
 
 As regards the colour-sensitivity during the hanging stage, it must be noted, in order to assess the results without doubt, that the influencing during the hanging stage could take place in the way that the brought-in caterpillars avoided the differently coloured underlay, settled on the upperside, that is, again on the fixated caterpillars of the new surroundings, and that in this way a falsification of the normal course of the stages occurred, if otherwise one ought to have exposed the hanging caterpillars to the early times of day in coloured surroundings.
 
-[continuation, not owned: ...acting colours, for the determination of whether the colour-sensation for the pupal colouration would have to run its course without result, since upon caterpillars in this stage no influencing could take place any longer.]
+[continuation, outside this section: ...acting colours, for the determination of whether the colour-sensation for the pupal colouration would have to run its course without result, since upon caterpillars in this stage no influencing could take place any longer.]
 
 And likewise one must regard Poulton's "Conflicting colours experiments", which he carried out with already hanging caterpillars, somewhat sceptically.
 

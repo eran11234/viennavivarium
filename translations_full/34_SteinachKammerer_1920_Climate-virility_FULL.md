@@ -144,7 +144,7 @@ Within the stables as well as the warmth-chambers the rats were kept in equally 
 
 ##### a) Macroscopic findings.
 
-As material served the albino of the wandering rat [Wanderratte] (*Epimys norvegicus* Erxl. = *Mus decumanus* Pall.). On these Przibram (1910a) had already noticed that at 30 and 35° C peculiarities arise "which are reminiscent of the no-longer-warm earth-burrows [Erdställe]: the pelt becomes scantier, the sexual urge appears ... already de- *[The opening sentence continues one begun on the unowned page 7; it is reproduced here in full because its conclusion stands on the owned page 8.]*
+As material served the albino of the wandering rat [Wanderratte] (*Epimys norvegicus* Erxl. = *Mus decumanus* Pall.). On these Przibram (1910a) had already noticed that at 30 and 35° C peculiarities arise "which are reminiscent of the no-longer-warm earth-burrows [Erdställe]: the pelt becomes scantier, the sexual urge appears ... already de- *[The opening sentence continues one begun on the unowned page 7; it is reproduced here in full because its conclusion stands on the page 8.]*
 
 …of lesser size, and the overall size in general lags behind that of the animals kept cooler. Particularly striking in the males of the white rats kept at elevated temperature is the strong development of the testicles, all the more so since, according to Donaldson's measurements, it is precisely the testicles of normally reared white rats that are much less developed than those of the wild grey ones. "In these heat-
 
@@ -225,7 +225,7 @@ The differences in the development of the interstitium are presented by plate-fi
 
 Apart from the extreme case of plate-fig. 3 (resp. 5 — see also the table below, Prot.-No. 49), which was only observed a single time to such a degree, the differences in the spreading of the interstitial cells are, however, not everywhere so striking that they could be recognized at first glance and instructively presented on depicted sections.
 
-*[The owned paragraph that began on page 14 ends here, with the first sentence on page 15 ("…presented on depicted sections."). The remainder of page 15 is not part of this assignment (cover-only). It is reproduced below solely as context, including the footnote whose marker falls on the unowned sentence.]*
+*[The paragraph that began on page 14 ends here, with the first sentence on page 15 ("…presented on depicted sections."). The remainder of page 15 is not part of this assignment (cover-only). It is reproduced below solely as context, including the footnote whose marker falls on the unowned sentence.]*
 
 > Therefore the procedure was for the first time chosen of counting the Leydig intermediate cells that compose the tissue of the puberty gland, for the purpose of judging its abundance.¹
 >

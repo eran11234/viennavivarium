@@ -219,7 +219,7 @@ It may also be pointed out that the higher-standing Apterygogenea, the Collembol
 
 3) Also a non-operated sexually mature example of *Machilis* completed yet another moult, so that probably also
 
-[continues onto p.629, outside owned pages] normally, in this animal group, the moults are continued after the attainment of sexual maturity.
+[continues onto p.629, outside pages] normally, in this animal group, the moults are continued after the attainment of sexual maturity.
 
 4) In all these phenomena there is expressed the position of the Apterygogenea as the lowest stem of the insects, which still exhibits manifold relations to the millipedes (lowest Tracheata) and to the Crustacea (lowest Arthropoda of all).
 

@@ -103,7 +103,7 @@ For the simpler designation of the various manners of operation I shall in what 
 
 077 ... Amputation of the *arm* [Armes] and *Replantation* at its own amputation-place.
 
-*[The section "Einheilung der Transplantate" (Healing-In of the Transplants), its table, and the surrounding text begin on p.8 and belong to the next chunk. The enumerated list of operation-codes (01/028/065/071/077) above closes the text that begins on pp.1–7.]*
+*[The section "Einheilung der Transplantate" (Healing-In of the Transplants), its table, and the surrounding text begin on p.8 and belong to the next section. The enumerated list of operation-codes (01/028/065/071/077) above closes the text that begins on pp.1–7.]*
 
 ### Healing-In of the Transplants.
 

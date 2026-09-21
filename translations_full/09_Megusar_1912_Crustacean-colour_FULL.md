@@ -1047,9 +1047,9 @@ Records of *Gelasimus pugnax* Smith.
 
 ---
 
-**Notes on scope and assembly (for the editor):**
-- Pages 78–84 in this chunk consist almost entirely of the large multi-page data tables of Versuch II ("b) im Dunkeln," pp.79–80) and Versuch III ("Amputation beider Augen samt Augenstiele," pp.81–84). There is no running prose on these pages other than the table titles, sub-headings, and the single footnote.
-- p.78 is the right-hand half of the Versuch II "a) im Licht" table whose title and left half begin on p.77; it is owned by the previous chunk and is therefore not reproduced.
+**Translator's note on scope and assembly:**
+- Pages 78–84 in this section consist almost entirely of the large multi-page data tables of Versuch II ("b) im Dunkeln," pp.79–80) and Versuch III ("Amputation beider Augen samt Augenstiele," pp.81–84). There is no running prose on these pages other than the table titles, sub-headings, and the single footnote.
+- p.78 is the right-hand half of the Versuch II "a) im Licht" table whose title and left half begin on p.77; it belongs to the previous section and is therefore not reproduced.
 - The tables are printed across left/right two-page spreads (identifier columns on the verso, colour-state columns on the recto). I have recombined each spread into a single wide Markdown table per block, preserving every printed cell, date, number, taxon-free entry, and the dash placeholders. Where the original prints a colour only in the first one or two data rows of a time-of-day column and dashes for the following days, I have noted this.
 - The single footnote (¹, anchored to "Versuchsreihe β" on p.83/84, text spanning the bottom of the p.83–84 spread) is translated in full.
 
@@ -1266,7 +1266,7 @@ Microscopic observations of the chromatophore state at different times of day in
 | **11. VI. 11** — 12ʰ at night | 21° C | — | 1,3 / 1,2 | 1,5 / 1,2 | 1,2 / 1,3 | Animal rather dark. On 18. VI. 1911 the animal cast off its old skin. The extremity previously examined for chromatophore state underwent an increase in chromatophores. The chromatophores observed up to now are no longer to be found in their fresh form. The animal drags its right hindmost walking-leg behind it, and while the chromatophores on all the other extremities are in the strongest expansion, on the leg that is only loosely connected with the body they are most strongly contracted. |
 | **29. VI. 11** — 7ʰ early | 23° C | — | — | — | — | On account of confluence of the chromatophores first measurement impossible. After the observation both eyes were amputated from the animal at the base together with the eye-stalks, whereupon a slight contraction took place. One hour after the operation the animal died. The chromatophores are in expansion. The animal appears brownish-black. |
 
-*(End of Table C and of the assigned text; page 99 / printed 560 begins a new summary table headed* Gelasimus pugnax *Smith, which lies outside this chunk.)*
+*(End of Table C and of the text of this section; page 99 / printed 560 begins a new summary table headed* Gelasimus pugnax *Smith, which lies outside this section.)*
 
 ## Gelasimus pugnax Smith.
 
@@ -1743,7 +1743,7 @@ Maintenance of several specimens in a common container on white and black ground
 
 ---
 
-**Notes on this chunk for the assembler:**
+**Notes on this section for the assembler:**
 
 - All content on pages 127–133 is tabular (three successive landscape observation-protocol tables); there is no separate running prose other than the section/sub-section headings that begin on page 130. No footnotes or figures occur on these pages.
 - The container designation is printed as **"Ps₁ lwn"** (first table, pp. 127–129), **"Pl wn"** (table on pp. 130–132), and **"P₁ lwn"** (pp. 133–134) — transcribed as printed.
@@ -2220,10 +2220,10 @@ Column headers: **Designation of the experimental container** | **Date and appro
 
 *Translation notes (file pages 169–175 correspond to printed pages 630–636).*
 
-- The material on these pages is one large landscape protocol that alternates between two table types: the detailed chromatophore protocol (pp. 169–170, 172–173, 175) and the general colour-state overview under section **C** (pp. 171, 174). Section heading **C** and sub-headings **a) White background** / **b) Black background** begin on pp. 171/174 and are owned here.
+- The material on these pages is one large landscape protocol that alternates between two table types: the detailed chromatophore protocol (pp. 169–170, 172–173, 175) and the general colour-state overview under section **C** (pp. 171, 174). Section heading **C** and sub-headings **a) White background** / **b) Black background** begin on pp. 171/174 and are included here.
 - In the protocol tables, the two stacked numbers in each chromatophore cell are the printed expansion-degree grades; they are shown together in the cell where they appear (in the protocol they sit under the white-chromatophore description). Where a single grade sat clearly in one column, it is shown there.
 - Animal/container designations are preserved exactly as printed: **P₂dschwn**, **Plwgbldt** (container "A — Pl w gbldt"), **Plschwgbldt** (container "A — Pl schw gbldt"). The dagger (✝) marks the date of death as printed.
-- The leading partial at the very top of p.169 belongs to the previous chunk (the F₂dschwn block ending 28. IV. 11 on p.168) and was skipped; the P₂dschwn block begins fresh on p.169. The 30. III. 11 block on p.175 continues onto p.176; only its rows that begin on p.175 (through "³/₄12ʰ at night") are translated here.
+- The leading partial at the very top of p.169 belongs to the previous section (the F₂dschwn block ending 28. IV. 11 on p.168) and was skipped; the P₂dschwn block begins fresh on p.169. The 30. III. 11 block on p.175 continues onto p.176; only its rows that begin on p.175 (through "³/₄12ʰ at night") are translated here.
 
 **Subsection a) (continued): White ground** — *Vessel: Plschw gbldt*
 
@@ -2698,7 +2698,7 @@ Macroscopic and microscopic illustrations of adaptation of normal and blinded an
 ---
 
 Notes on the translation (for the assembling editor, not part of the output):
-- The owned range is pages 197–203 (printed 658–664). Point 8) and point 9) (the concluding summary points) both begin and end on p197 and are owned. Point 7) and the descriptive prose preceding it are on p196 (printed 657) and are not owned.
+- This section covers pages 197–203 (printed 658–664). Point 8) and point 9) (the concluding summary points) both begin and end on p197 and are included. Point 7) and the descriptive prose preceding it are on p196 (printed 657) and lie outside this section.
 - Section structure: end of the numbered summary (points 8, 9) → **Literaturverzeichnis** (bibliography, p197–199) → **Erklärung der Abbildungen** (plate explanations, p199–203), covering Tafel XXV (Gelasimus), Tafel XXVI (Potamobius astacus), Tafel XXVII (Palaemon rectirostris), and Tafel XXVIII (Palaemon rectirostris + Palaemonetes varians, Figs 7–16).
 - p204 is the plate image (Tafel XXV / "Archiv f. Entwicklungsmechanik BVA XXXIII") with no body text.
 - The author's abbreviated experimental-protocol cross-reference codes (e.g. **A III l₅**, **A I a₅**, **A I d₅**, **(A d b) 1**, **A (P I a schw)n**, **P₁ d schw n**, **P₂ d schw n**, **I P d schw gbdt**, **P l w gbdt**, **P₂ l w n**) are reproduced as printed; they index his protocols and are not expandable from these pages. They are transcribed from the page images as closely as the printing allows.
@@ -2731,7 +2731,7 @@ Notes on the translation (for the assembling editor, not part of the output):
 ---
 
 Notes on the translation (for the assembling editor, not part of the output):
-- Owned range: image-pages 204–208. Image-pages 204–207 are the lithographic plates Taf. XXV–XXVIII (numbered drawings plus standard journal/plate marginalia only — no running prose). Image-page 208 is printed page 665 (running header "Experimente über den Farbwechsel der Crustaceen 665"), which carries the figure legends owned here: Figs. 17, 18, 19. The legends for Figs. 11–16 sit on the prior continuity page (printed 664 / image p203) and belong to the previous chunk.
+- This section: image-pages 204–208. Image-pages 204–207 are the lithographic plates Taf. XXV–XXVIII (numbered drawings plus standard journal/plate marginalia only — no running prose). Image-page 208 is printed page 665 (running header "Experimente über den Farbwechsel der Crustaceen 665"), which carries the figure legends included here: Figs. 17, 18, 19. The legends for Figs. 11–16 sit on the prior continuity page (printed 664 / image p203) and belong to the previous chunk.
 - Plate marginal imprints transcribed from the page edges: "Archiv für Entwicklungsmechanik Bd. XXXIII." (left edge), "Verlag von Wilhelm Engelmann, Leipzig" (centre, plates XXV–XXVII), "F. Megušar del." (draftsman credit), and "Taf. XXV–XXVIII" (right edge).
 - The author's abbreviated experimental-protocol cross-reference codes **P₂lrn** (Fig. 17) and **P₂lgn** (Fig. 18) are reproduced as printed; the second character is the lowercase letter "l" (the light/condition index used throughout his protocol codes, cf. P₂ l w n etc. on earlier plates), not a digit. They index his protocols and are not expandable from these pages.
 - Fraction time-notations (½1ʰ, ¼12ʰ) are the German "halb/viertel" clock conventions; rendered with Unicode fractions. Hour notation rendered with superscript ʰ as in the original.

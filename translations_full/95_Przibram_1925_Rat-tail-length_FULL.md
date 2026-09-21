@@ -319,7 +319,7 @@ It is to me of especial value that *Sumner*'s measurements of the K.S.-Relation 
 
 Since males and females in the mouse-like animals are distinguished, besides by the tail length, also by other external characters, the question must be examined whether these too, and in what manner, depend on the temperature. Already long ago I described the enlargement of the testis under the influence of heat (1909; Phylogenese 1910), which has been further investigated by several authors (*Sumner* 1915, S. 334; *Steinach* and *Kammerer* 1920; *Hart* 1922; *C. R. Moore* and *Quick* 1924). It is thereby a matter not only of a functional state, as *Sumner* meant, and therefore, in every tail and body measurement that is carried out on the male, the size of the testicles may play a part insofar as they influence the position of the anus to the tail root and thereby could shift the use of the same as tail starting-point. *Sumner* expressed himself, with regard to the following objection, literally in the following words (1915, S. 431): "The only really reliable difference between the sexes, with regard to the characters considered, referred to tail length; the tails of the females, as they were measured by me, were somewhat longer. This difference may depend entirely on the displacement of the anus, on account of the presence of the testicles, and may not concern the length of the tail itself."
 
-This completes my owned pages (15–21, with the paragraph finishing on page 22).
+This completes my pages (15–21, with the paragraph finishing on page 22).
 
 and thereby the use of this same [point] as the tail's starting-point could become shifted. *Sumner* expressed himself, with respect to his mice, literally (1915, S. 431), rendered into German as follows:
 
@@ -676,9 +676,9 @@ Row group **1 — Mammalia Glires** (printed p.538):
 
 ## Tabelle XIV. Temperaturae sexuales.
 
-*(Tabelle XIV begins on the preview/cover page p. 538, which lies outside the owned page range and is therefore not reproduced here. The owned continuation of the table — beginning with row **1 (cont.)**, E. *Lepus*, on p. 539 — follows below.)*
+*(Tabelle XIV begins on the preview/cover page p. 538, which lies outside this section and is therefore not reproduced here. The continuation of the table — beginning with row **1 (cont.)**, E. *Lepus*, on p. 539 — follows below.)*
 
-> Header of Tabelle XIV (columns a–p), repeated on the owned continuation page: **a** Classis et Ordo · **b** Genus · **c** Species · **d** Varietas · **e** Numerus ♂♂ · **f** Numerus ♀♀ · **g** Numerus casuum · **h** Aetas vitae · **i** Ext. temp. (external temperature) · **k** Int. temperat. ♂ °C · **l** Int. temperat. ♀ °C · **m** diff. ♂−♀ · **n** Autor · **o** Anno · **p** Pag.
+> Header of Tabelle XIV (columns a–p), repeated on the continuation page: **a** Classis et Ordo · **b** Genus · **c** Species · **d** Varietas · **e** Numerus ♂♂ · **f** Numerus ♀♀ · **g** Numerus casuum · **h** Aetas vitae · **i** Ext. temp. (external temperature) · **k** Int. temperat. ♂ °C · **l** Int. temperat. ♀ °C · **m** diff. ♂−♀ · **n** Autor · **o** Anno · **p** Pag.
 
 | a | b | c | d | e ♂♂ | f ♀♀ | g cas. | h Aetas vitae | i Ext. temp./Meth. | k ♂ °C | l ♀ °C | m diff. ♂−♀ | n Autor | o Anno | p Pag. |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -1006,8 +1006,8 @@ Columns: **Gattung** (Genus) | **Art** (Species) | **Stamm, Herkunft** (Strain, 
 ---
 
 **Notes on the rendering (translator):**
-- The owned pages (printed pp. 539–547 = images p043–p051) consist almost entirely of large tables (Tabellen XIV [continuation]–XXI); there is no running prose on these pages other than the table titles/captions, the repeated running headers, and footnotes — all of which are translated above.
-- Tabelle XIV begins on the preview/cover page (printed p. 538 = image p042), which lies outside the owned range; per the ownership rule its content is withheld and only the owned continuation (printed p. 539) is reproduced. The shared header is restated for legibility.
+- The pages (printed pp. 539–547 = images p043–p051) consist almost entirely of large tables (Tabellen XIV [continuation]–XXI); there is no running prose on these pages other than the table titles/captions, the repeated running headers, and footnotes — all of which are translated above.
+- Tabelle XIV begins on the preview/cover page (printed p. 538 = image p042), which lies outside this section; per the section convention its content is withheld and only the continuation (printed p. 539) is reproduced. The shared header is restated for legibility.
 - **Tabelle XVI** is the black house rat (*Epimys rattus*) table with observed/computed K : S and τ values for age-weeks "VIII—IV" (as printed) and "LXI—LXXII"; it is a different table from the *Mus musculus* (*Sumner*) data, which appears separately in **Tabelle XVIII**.
 - Tabelle XVII (footnote ³): the marker ³) appears in the table on the value 40,00 (♀♀, 40°), but only footnotes ¹) and ²) are printed on the page; no text for ³) appears there. The III—IV "berechnet τ°" column header carries τ₃₅ = 37,80 for the ♂♂ block and τ₃₅ = 37,90 for the ♀♀ block.
 - In Tabelle XVIII the "berechnet" column (col. 6) is a single computed column (τ_♂ = τ_♂♀ − 0,16); the observed τ° values (col. 5, in parentheses where interpolated) and the computed values (col. 6) are kept in separate columns.

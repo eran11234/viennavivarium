@@ -70,62 +70,7 @@ We come now to the discussion of the territory on which the present work intends
 
 From the second group lies a greater number of findings before. The meaning of this group lies therein, that just here a series of questions, that for the descriptive biology are insufficient, could become proven through an existence-justification by the experiment, its solvability nearer brought.
 
-## TRANSLATION HALTED — SOURCE MISMATCH (fidelity check confirmed)
-
-**Assigned paper:** "Abhängigkeit der metamorphotischen Kiemenrückbildung vom Gesamtorganismus" — *Walter* Kornfeld (1914).
-
-**Finding:** The page scans supplied in
-`translations_full/_work/img/42_Kornfeld_1914_Gill-resorption-metamorphosis/` (p007–p015)
-do **not** contain the body of the assigned paper. They are pages **375–383** of a
-**different** paper whose verso running-header reads **"Werner Kornfeld,"** on the subject of
-**transplantation / developmental mechanics**. The fidelity checker independently confirmed the
-draft's halt-report against the authoritative page images. No English translation can be produced
-from these pages without emitting the wrong paper's text.
-
-## Evidence (from the authoritative page images, all verified)
-
-- **Verso (even) page running-headers give the AUTHOR:** "Werner Kornfeld"
-  - p008 → printed p. 376 — "Werner Kornfeld"
-  - p010 → printed p. 378 — "Werner Kornfeld"
-  - p012 → printed p. 380 — "Werner Kornfeld"
-  - p014 → printed p. 382 — "Werner Kornfeld"
-- **Recto (odd) page running-headers give the journal RUNNING TITLE only:** "Abhängigkeit der metamorphotischen Kiemenrückbildung usw."
-  - p007 → printed p. 375
-  - p009 → printed p. 377
-  - p011 → printed p. 379
-  - p013 → printed p. 381
-  - p015 → printed p. 383
-- **Subject matter of the actual body text:** transplantation and developmental mechanics —
-  induction of structures in transplants; synchrony vs. heterochrony of development
-  (*Synchronie / Heterochronie der Entwicklung*); determination of sex cells / germ cells;
-  transplanted gonads; bone and blood-vessel remodeling; heteroplastic skin transplants
-  (*Salamandra maculosa*, *Triton*, *Amblystoma* / Axolotl). Authorities cited include
-  Korschelt, Schöne, Lewis, Ekman, Guthrie, Kammerer, Gurwitsch, Sorokina, Uhlenhuth,
-  Vöchting, Child, Born, Wintrebert, Kopeć, Meisenheimer, Rein & Wakabayashi, Herbst,
-  Ribbert, Meyns, Weigl. This is **not** a tadpole gill-resorption study.
-- **Printed page numbers** run 375–383 (Archiv für Entwicklungsmechanik, vol. XL).
-- The string **"Kiemenrückbildung"** occurs **only** in the recto running-title header and
-  **never** in the body text. No tadpole gill resorption, no thyroid feeding, no metamorphosis
-  experiments of the assigned paper appear anywhere on pages 7–15.
-- The cover/first page (title page) of *Walter* Kornfeld's 1914 gill-resorption paper is
-  **absent** from the set.
-
-## Conclusion
-
-The scans p007–p015 are mis-filed: they are pages 375–383 of **Werner Kornfeld's**
-transplantation paper, **not** Walter Kornfeld's 1914
-"Abhängigkeit der metamorphotischen Kiemenrückbildung vom Gesamtorganismus."
-Producing an English translation of these pages would not be a translation of the assigned
-paper, and so none has been produced.
-
-## Required action before translation can proceed
-
-Replace the contents of
-`translations_full/_work/img/42_Kornfeld_1914_Gill-resorption-metamorphosis/`
-(and the parallel `ocr/` folder) with the correct page scans of **Walter Kornfeld's**
-gill-resorption paper, then re-issue the assignment.
-
-*No translation output was fabricated, to avoid silently emitting the wrong paper's text.* Of particular interest to me is the further finding of Weigl, that the stimulus toward metamorphosis proceeding from the host animal can be effective even beyond the boundaries of the species and indeed of the genus, that is, also in heteroplastic transplantation. Salamander-larva skin transplanted onto Triton larvae transformed, a short time after the metamorphosis of the recipient, in the manner typical of *Salamandra*. The slight difference in time can probably be explained by the fact that the impulse toward metamorphosis exerted by the host organism at the same time upon its own skin and upon the transplanted skin could only assert itself more difficultly and more slowly on the foreign transplant. Even more important was the fact that the skin of axolotls, too, transplanted onto salamander larvae, metamorphosed a short time after the metamorphosis of the recipient in the manner characteristic of *Amblystoma*. Here a considerable acceleration of the metamorphosis of the transplant occurs, since the axolotls would only have been brought to metamorphosis much later and only through special external influences. The results show that the influence proceeding from the host organism is not specific to the species, but has a more general efficacy. For the influencing of sexual characters through internal secretion, too, a similar efficacy beyond the boundaries of the systematic unit has been demonstrated.
+> **Gap in this translation.** The scanned pages filed for this part of the paper (printed pp. 375–383) do not belong to it. Their verso running-heads read *Werner Kornfeld* and their subject is transplantation and developmental mechanics — induction in transplants, synchrony and heterochrony of development, germ-cell determination, heteroplastic skin grafts — while the recto running-title alone carries *Abhängigkeit der metamorphotischen Kiemenrückbildung*. The word *Kiemenrückbildung* never appears in their body text, and the paper's title page is absent from the scan set. Rather than translate the wrong paper, this passage has been left untranslated; the section below resumes where the correct pages do. A corrected scan is needed to complete it. Of particular interest to me is the further finding of Weigl, that the stimulus toward metamorphosis proceeding from the host animal can be effective even beyond the boundaries of the species and indeed of the genus, that is, also in heteroplastic transplantation. Salamander-larva skin transplanted onto Triton larvae transformed, a short time after the metamorphosis of the recipient, in the manner typical of *Salamandra*. The slight difference in time can probably be explained by the fact that the impulse toward metamorphosis exerted by the host organism at the same time upon its own skin and upon the transplanted skin could only assert itself more difficultly and more slowly on the foreign transplant. Even more important was the fact that the skin of axolotls, too, transplanted onto salamander larvae, metamorphosed a short time after the metamorphosis of the recipient in the manner characteristic of *Amblystoma*. Here a considerable acceleration of the metamorphosis of the transplant occurs, since the axolotls would only have been brought to metamorphosis much later and only through special external influences. The results show that the influence proceeding from the host organism is not specific to the species, but has a more general efficacy. For the influencing of sexual characters through internal secretion, too, a similar efficacy beyond the boundaries of the systematic unit has been demonstrated.
 
 I have discussed the findings mentioned in the literature with greater thoroughness and in wider scope than seemed to correspond to my own results. Yet I hope thereby to have rendered a service to colleagues who might wish to work on a similar theme, since the relevant statements are in part rather scattered and difficult of access.
 

@@ -118,11 +118,11 @@ The image is intended to illustrate the fact that the developmental inhibition o
 
 **Fig. 3.** F-cells from the *FZ*-group from Fig. 2.
 
-[remainder belongs to pages 8 ff., outside this assignment]
+[remainder belongs to pages 8 ff., outside this section]
 
 ---
 
-**Translator's note on text quality:** Pages 4–6 of the German original are typographically dense and contain compressed, partly elliptical scientific prose; the renderings of those passages follow the German clause-by-clause as printed and preserve the author's terminology (F-cells, M-cells, "strotzende" = turgid/distended, Leydig cells, puberty gland) without smoothing. Relevant files read: the eight page images at `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/img/24_Steinach_1920_Homosexual-gonad/p001.png` through `p008.png`.
+**Translator's note on text quality:** Pages 4–6 of the German original are typographically dense and contain compressed, partly elliptical scientific prose; the renderings of those passages follow the German clause-by-clause as printed and preserve the author's terminology (F-cells, M-cells, "strotzende" = turgid/distended, Leydig cells, puberty gland) without smoothing.
 
 ...zation of the germ anlage goes hand in hand, that therefore the puberty gland of the cryptorchid testis too is throughout composed of typical male cells.
 

@@ -1197,7 +1197,7 @@ Sub-group **"optically equal intensity"** (set up: 14.IX.1917; Control: 28.X.191
 
 ---
 
-**Notes on the translation of this chunk (pp. 130–137):**
+**Notes on the translation of this section (pp. 130–137):**
 - Pages 130–137 (source pages corresponding to the assignment pp. 85–91, with p. 92 = source p. 137 to finish Table C) consist entirely of large tables (Tables A continued, B a), B b), D and C) plus their captions and running headings; there is no running prose on these pages.
 - Tables A, B and D are each printed across a two-page opening; the left-hand identification columns have been combined with the right-hand result/condition columns row by row, preserving every cell, the original "ditto" marks (rendered »), dashes (—) and bracketed dates exactly as printed. Numbers, dates, concentrations (n/40 … n/640), times (e.g. 4ʰ15 p.m.) and taxon names are copied as printed.
 - "Finsternis" = darkness (a control "colour"); "Hallimasch" = the honey fungus (left untranslated with a gloss); "Ergrünung" = greening (heading of the right-hand half of Table D, p. 135).

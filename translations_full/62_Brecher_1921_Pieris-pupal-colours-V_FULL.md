@@ -132,11 +132,7 @@ These three experiments were set up at a room temperature of 20–21°. The meas
 
 > ¹) For this experiment the caterpillar container had not been surrounded on the outside with paper, since it was indeed set into a vessel that was in any case completely light-impermeable.
 
----
-
-**Translator's notes.** The German on pp. 2–7 is clean, coherent scientific prose; there is no compositorial duplication or broken type in the original. The text of pp. 2–7 has been translated in full. The closing clause of the sentence beginning at the foot of p. 7 ("…the correspondingly reduced perforated flame was…") is completed in square brackets from the opening of p. 8 ("…left burning, interrupted, two days before the introduction of the caterpillars, until after their pupation") to give a readable sentence boundary; the remainder of p. 8 lies outside this chunk. "Ultraroten Strahlen" is rendered "ultrared rays" (the author's term for infrared). The footnote on the title page (printed at the foot of p. 1) and the figure-1 caption (printed within p. 6) are placed inline near their reference points.
-
-By regulating the burner flame and the distance of the Bunsen burner from the vessel, the desired degree of 33½–34° was attained in the upper part of the vessel and, as one could ascertain from the readings of the thermometer projecting into the upper part of the vessel taken several times daily, two days before as well as immediately after the conclusion of the experiment, it was maintained nearly constant.
+--- By regulating the burner flame and the distance of the Bunsen burner from the vessel, the desired degree of 33½–34° was attained in the upper part of the vessel and, as one could ascertain from the readings of the thermometer projecting into the upper part of the vessel taken several times daily, two days before as well as immediately after the conclusion of the experiment, it was maintained nearly constant.
 
 The caterpillars pupated much more rapidly in the warmth than under the other conditions.
 
@@ -256,7 +252,7 @@ As regards now the pupae from the first experiment with interposition of rhodani
 
 The lowering of the general light intensity by paper covering has yielded no result analogous to the results of the rhodanium-potassium iron-vitriol interposition. We have here pupae with undiminished opacity and distinct saddle as also with the white normal ones. On the other hand, another difference of these pupae compared with the white normal ones, as well as compared with those of the other interpositions, is striking, namely that the results here are not uniform, but that, beside non-green, pale pupae, there have also arisen some of the green colour-type — half-green ones — such as otherwise do not occur in white. This is a result similar to the one known to us for the darkness effect — the occurrence of half-green beside non-green types. Through the lowering of the intensity, presumably the effect of the white is in part abolished — as is its degreening effect is concerned — abolished, and, as in the darkness, the tendency to stronger greening inherent in many caterpillars can evidently now also come to expression, without being degreened by white light.
 
-*[Translation owned through page 14; the sentence running onto page 15 is completed here. Subsequent text on page 15 belongs to the next chunk.]*
+*[This section runs through page 14; the sentence running onto page 15 is completed here. Subsequent text on page 15 belongs to the next section.]*
 
 ### C. Effect of warmth other than radiant warmth in Weiß. (Warmth and cold.)
 
@@ -868,29 +864,6 @@ The schematic drawing represents the experimental arrangement of a single experi
 3. Group: two very dark pupae, which pupated in Darkness at medium temperature, on the outer side of the inner lining of black paper, in B, hence shut off from the light only by a single black paper wrapping.
 4. Group: two medium pupae from Darkness-Cold. Their ground colour is greener, and the vanishing of the white saddle and of the whitish tone in the remaining ground colour is more complete than in the pupae from Darkness at normal temperature from A.
 5. Group: two dark pupae from Darkness at increased humidity content. They are darker than those from the previous group and especially than those from Darkness-normal A.
-
-
-## Figures
-
-**Fig. 1.**
-
-![](figures/62_Brecher_1921_Pieris-pupal-colours-V/Fig_1.jpg)
-
-**Fig. 2.**
-
-![](figures/62_Brecher_1921_Pieris-pupal-colours-V/Fig_2.jpg)
-
-**Fig. 3.**
-
-![](figures/62_Brecher_1921_Pieris-pupal-colours-V/Fig_3.jpg)
-
-**Fig. A.**
-
-![](figures/62_Brecher_1921_Pieris-pupal-colours-V/Fig_A.jpg)
-
-**Fig. B.**
-
-![](figures/62_Brecher_1921_Pieris-pupal-colours-V/Fig_B.jpg)
 
 ---
 

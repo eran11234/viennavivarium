@@ -232,8 +232,6 @@ Animal O, amputated for the second time, showed — the first time after the sec
 
 Repeated amputations have, then, according to what was reported above, an increasing growth-elevation as after-effect. One further proof of the fact of the elevated growth in regeneration was furnished by Animal 14. This [animal] had, after four molts, completely regenerated the half-amputated feelers, namely the left second leg and the right third leg, the sixth leg-pair, and the furca. To my astonishment I noticed, after the further molts, that the regenerated feelers had grown further. They now had a considerable length, [greater] than normal feelers exhibit. It was then, instead of [normal] regeneration, hypertrophic regeneration (Plate XV Fig. 2) — because by "hypertrophy" one usually understands multiple formations, it is probably better to designate a case arising from this as "hypertrophic regeneration" — that Animal 13 exhibited. Usually the feelers regenerate the most rapidly, somewhat rapidly the furca; the legs require — probably because they are the most complicated structures — the longest time for their complete rebuilding. Here, even when the latter were entirely restored, I entered the animals in the tables (experiment protocols) as "completely regenerated," although feeler and furca were often already regrown at the first of the four molts. Animal 13a had needed 22 days up to a molt after the amputation, then 11 days; after [a further] 11 days the furca and feeler were completely regenerated. After a further 11 days the legs too required regeneration, [and] the animal had accordingly "completely regenerated." At the molt following 16 days thereafter, the renewed growth of the antenna was not, as otherwise with repeated regeneration, arrested, but rather it must have proceeded with the same velocity as during the regeneration. For the feelers indeed showed already in Animal 14, at one molt not inconsiderably retarded, the prolongation; in comparison to the length of this molt, the prolongation [was], in comparison to the slowly molting isopods, comparable. That now after the amputation the molting-accelerated growth at the half-amputated isopods [was] comparable, 9½ mm long, but it stopped before the completion of the regeneration of the hypertrophic regenerate. With non-operated isopods such an abnormal prolongation of individual body parts has not come into sight.
 
-*(Paragraph completed; remainder of p.382 — section "E. Zusammenfassung der Hauptergebnisse" — begins a new paragraph on p.382 and is outside the owned pages 15–21.)*
-
 ## E. Summary of the Principal Results.
 
 1) In normal, non-amputated specimens of the water-louse (*Asellus aquaticus* L.), the increase in body length occurs in time-segments that lengthen progressively from moult to moult.
@@ -398,10 +396,9 @@ Curves of the moulting-velocities of *Asellus aquaticus*. Explanation see in the
 
 ---
 
-**Translation / fidelity notes (file paths and caveats):**
+**Translator's note.**
 
-- Page images read (authoritative): `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/img/61_Zuelzer_1907_Regeneration-growth-rate/p021.png` through `p029.png`.
-- The leading partial paragraph at the top of p022 (printed p.382: "wiesen jetzt ebenso wie das erstemal … bei nicht operierten Aselln ist mir eine abnorme Verlängerung einzelner Körperteile nie zu Gesicht gekommen.") began on p021 and was therefore **skipped** per the ownership rule. Owned text begins at section **E. Zusammenfassung der Hauptergebnisse**.
+- The leading partial paragraph at the top of p022 (printed p.382: "wiesen jetzt ebenso wie das erstemal … bei nicht operierten Aselln ist mir eine abnorme Verlängerung einzelner Körperteile nie zu Gesicht gekommen.") began on p021 and was therefore **skipped** per the section convention. Owned text begins at section **E. Zusammenfassung der Hauptergebnisse**.
 - **Table I correction:** the left/identity columns of Table I (Nr.; date of first captivity-moult; date of first amputation; size; type of amputation; first moult after amputation) were verified row-by-row against p024. The table has **25 rows (Nr. 1–25)**. The continuation columns (3rd–7th moult and Remarks) come from the faint right-hand page p025; their cell-to-row alignment beyond the first moults carries residual uncertainty.
 - Tables II and III are each printed as a two-page spread; the continuation (right-page) columns are faint and the row-to-cell mapping carries residual uncertainty and should be spot-checked against the page images before publication.
 - Marginally truncated remarks at the right page edge were completed in brackets: "(z. 2. Male am[p.]…)" = "(amputated for the 2nd time…)"; "Hypertroph. Re[g.]" = "hypertrophic regeneration".
@@ -409,7 +406,7 @@ Curves of the moulting-velocities of *Asellus aquaticus*. Explanation see in the
 
 **Tabelle III.** Duration of the molting intervals and increment in relation to the relationship between operation date and molting date.
 
-*(Two-page spread: the row keys and columns through the 2nd molt appear on p. 388; the columns from the 3rd molt onward begin on p. 389. The two halves are combined into a single table below. The owned page (p. 389) carries the molt-3 through molt-7 columns; the left columns are reproduced from the facing page so each lettered row remains coherent.)*
+*(Two-page spread: the row keys and columns through the 2nd molt appear on p. 388; the columns from the 3rd molt onward begin on p. 389. The two halves are combined into a single table below. The page (p. 389) carries the molt-3 through molt-7 columns; the left columns are reproduced from the facing page so each lettered row remains coherent.)*
 
 | | Date of last molt before amp. | Date of 1st amp. | Kind of amputation | 1st molt in captivity | Size mm | Reg. | 2nd molt in captivity | Size mm | Reg. | 3rd molt in captivity | Size mm | Reg. | 4th molt in captivity | Size mm | Reg. | 5th molt in captivity | Size mm | Reg. | 6th molt in captivity | Size mm | Reg. | 7th molt in captivity | Size mm | Reg. |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -675,13 +672,9 @@ Curves of the moulting-velocities of *Asellus aquaticus*. Explanation see in the
 
 > The day-counts and regeneration annotations are reproduced as printed in the rotated original; where a fraction (e.g. ½, ¾, ⅛) follows a number it is given in the source as the increment notation, and the parenthetical "(amp. N)" entries reference the molt-number at which the further amputation was performed.
 
----
-
-*(Table VIII begins on the following page, p. 396, which lies outside the assigned range and is therefore not included here.)*
+*(Table VIII begins on the following page, p. 396, which lies outside this section and is therefore not included here.)*
 
 ---
-
-**Translator's fidelity note on this section.** Tables III–VII are all printed as facing-page (or, for Table VII, landscape) spreads; the two halves of each spread have been combined here into single tables so every printed cell on the assigned pages (pp. 29–35) appears together with the row keys it belongs to. The owned pages carry: p. 29 = Table III, molt-3 through molt-7 columns (left columns carried over from p. 388 for coherence); p. 30 = left columns of Tables IV and VI; p. 31 = right columns of Tables IV and VI; p. 32 = Table V left; p. 33 = Table V right plus the thirteen "Anmerkungen" footnotes; pp. 34–35 = the rotated Table VII. The footnote dates (Anmerkungen 1–13) and the legible left-hand entries of Table III were re-verified against the page images; in particular footnotes 4 (Tier 36), 7 (Tier 40), 8 (Tier 41) and 11 (Tier 45) read 24., 24., 23. and 26. I. respectively, and row F of Table III reads "Bein r. 3, l. 4" and row K "amp. Fühler l. ½, r. ⅓" (the "l." denoting *links*, left). Tables IV and VI were subsequently re-verified cell-by-cell against 300-DPI (1800×2700) renders of pp. 390–391: their left-hand blocks (lettered/numbered rows, amputation dates, "Art der Amputation," and the 1st-molt — for Tab. VI the 1st-through-4th-molt — date/size columns) are now high-confidence, and the lettered row keys a–r (Tab. IV) and the numbered/lettered row keys 13, 16, 17, 18, 22, 5a, C, Q, O, f, 44, 45 plus the 3rd-amputation row for animal 16 (Tab. VI) have been restored. Their right-hand continuation columns (Tab. IV from the 2nd molt, Tab. VI from the 5th molt, both printed on p. 391) contain several cells that span multiple lines or are merged across rows in the original; these are reproduced as printed but carry residual alignment uncertainty. Many interior cells of Tables V and VII are faint, partly cropped at the gutter, or — in the rotated Table VII — too compressed to resolve unambiguously at the available scan resolution; such cells are transcribed as best determined from the authoritative page images and should be spot-checked against the originals before publication, rather than treated as certain. No printed cell, footnote, caption, or column has been omitted. Source image paths: `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/img/61_Zuelzer_1907_Regeneration-growth-rate/p028.png` through `p036.png`.
 
 ## Tabelle VIII. Graphische und statistische Darstellung aller Möglich-
 
@@ -770,17 +763,6 @@ The first sub-column carries a two-part heading ("Verzögerung d. 1. Häutg. n. 
 
 > M. Zuelzer del. — Verlag von Wilhelm Engelmann in Leipzig. — Lith. Anst. v. Johannes Arndt, Jena.
 > *(M. Zuelzer drew [this]. — Published by Wilhelm Engelmann in Leipzig. — Lithographic establishment of Johannes Arndt, Jena.)*
-
-
-## Figures
-
-**Plate XV.**
-
-![](figures/61_Zuelzer_1907_Regeneration-growth-rate/Plate_XV.jpg)
-
-**Plate XVII.**
-
-![](figures/61_Zuelzer_1907_Regeneration-growth-rate/Plate_XVII.jpg)
 
 ---
 

@@ -330,10 +330,9 @@ Whoever knows the mode of life of all these species will not for a moment be in 
 
 **Translator's notes (not part of the translation):**
 
-- The leading partial paragraph at the top of printed p.90 ("…Spiraculum hin herausquellen. Die Kiemenhöhle der Kaulquappen besitzt also…") is the tail of a sentence that began on the previous sheet (printed p.89), which is outside the owned range (43–49); per the ownership rule it was correctly skipped.
-- The final paragraph owned within pages 43–49 begins on printed p.96 ("Daß die Knoblauchkröte schon im März…" = "That the garlic-toad holds its spawning-business already in March…") and runs onto printed p.97, ending "…awakens them from their dry-sleep to new life." Because it begins on an owned page it is translated in full, even though it spills onto p.97.
+- The leading partial paragraph at the top of printed p.90 ("…Spiraculum hin herausquellen. Die Kiemenhöhle der Kaulquappen besitzt also…") is the tail of a sentence that began on the previous sheet (printed p.89), which is outside this section (43–49); per the section convention it was correctly skipped.
+- The final paragraph within pages 43–49 begins on printed p.96 ("Daß die Knoblauchkröte schon im März…" = "That the garlic-toad holds its spawning-business already in March…") and runs onto printed p.97, ending "…awakens them from their dry-sleep to new life." Because it begins on an included page it is translated in full, even though it spills onto p.97.
 - The German verb rendered "croak [die]" (p.94) is *krepieren* — a coarse/colloquial word for "to die," used here of the lake-frog larvae.
-- Source page images: `translations_full/_work/img/40_Kammerer_1906_Midwife-toad-reproduction/p043.png` through `p050.png` (printed pages 90–97).
 
 …no amphibian, let alone a tender tadpole, is capable of enduring. But if quite abundant slimy algae or another soft bottom-sediment are present in the drying-out basin, then the tadpoles, simultaneously with the sinking of the water-level, sink ever deeper and deeper into the mud; they become enclosed by it on all sides; in dense clumps they lie motionless and well-sheltered, [awaiting] the rain-shower—which only must not let itself be waited for all too long—that wakes them out of their dry-sleep to new life.
 
@@ -513,18 +512,15 @@ Let us grasp the résumé in yet another way, whereby we range into it some find
 
 ---
 
-**Translator's notes on this chunk (pages 78–84, printed 125–131; point 7 finished onto p.85, printed 132):**
+**Translator's notes on this section (pages 78–84, printed 125–131; point 7 finished onto p.85, printed 132):**
 
-- The chunk begins with the small-print *Versuchsanordnung* (experimental arrangement) paragraph that opens p.78 (rendered as a blockquote per the small-print convention); the running paragraph from the leading partial on p.77 (printed 124) is excluded, as it belongs to the preceding chunk.
+- This section begins with the small-print *Versuchsanordnung* (experimental arrangement) paragraph that opens p.78 (rendered as a blockquote per the small-print convention); the running paragraph from the leading partial on p.77 (printed 124) is excluded, as it belongs to the preceding section.
 - Pages 82–83 (printed 129–130) contain the *Zusammenfassung* / résumé. The German on those pages is in fact perfectly well-formed, coherent scholarly prose; it has been translated as continuous, parsable English following the source closely. (An earlier draft mistook these pages for a garbled scan and rendered them as fragmentary word-salad; that was incorrect and has been fully retranslated.)
 - p.80: the German lists eight numbered developmental phenomena (erstens–achtens). The second paragraph refers to "those adduced under thirdly and, self-evidently, those under sixthly and seventhly" (drittens; sechstens und siebentes) — not "third and fourth … sixth and seventh."
 - p.80–81: the German states there remain **three** developmental phenomena (erstens / zweitens / drittens), not two. The second point ("at the muscle-part of the tail no lateral thickening whatever was to be noticed") was restored; the numbering was corrected from the draft's mislabeled "firstly … thirdly."
 - p.84 footnote ¹) is placed after the paragraph that carries the footnote marker, per the footnote convention.
-- p.85 (printed 132) numbered points 8) through 15) lie on the context-only page and beyond the owned range (78–84); only point 7), which begins on p.84, is finished onto p.85 and included here. They are therefore intentionally not translated in this chunk.
+- p.85 (printed 132) numbered points 8) through 15) lie on the context-only page and beyond this section (78–84); only point 7), which begins on p.84, is finished onto p.85 and included here. They are therefore intentionally not translated in this section.
 
-**Relevant file paths (absolute):**
-- `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/img/40_Kammerer_1906_Midwife-toad-reproduction/p078.png` … `p085.png` (authoritative page images)
-- `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/ocr/40_Kammerer_1906_Midwife-toad-reproduction/p078.txt` … `p085.txt` (OCR consulted)
 
 8) Sometimes captive midwife toads [Geburtshelferkröten] lay their egg-strings in the water; these are drawn out of the cloaca of the females by their males (obstetric assistance [Geburtshilfe]) and fertilized, but the winding around the male's thighs does not take place (no brood-care).
 

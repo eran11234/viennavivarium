@@ -127,7 +127,7 @@ Also the marbling of the upper-head, as well as the female [marbling], lets itse
 
 Thus, as one is now experienced, in the foregoing the secondary sex characters [have been treated]; from the castration onto the regeneration of the secondary sex characters [it is] investigated, with which the analogous regeneration-processes at the normal animals (at the control-animals) are discussed. In order to be able to gain as much insight as possible into the relations, easier indications were guided, and these, insofar as it corresponded for these purposes to the work, expanded.
 
-*(continues on page 410, outside this assignment: Section IV. The Regeneration of Secondary Sex Characters of Male Newts.)*
+*(continues on page 410, outside this section: Section IV. The Regeneration of Secondary Sex Characters of Male Newts.)*
 
 ## IV. Regeneration of secondary sex characters in male newts.
 

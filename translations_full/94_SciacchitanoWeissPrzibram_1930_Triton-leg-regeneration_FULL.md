@@ -92,10 +92,10 @@ h) In this series the middle toe was again removed, but in addition a deeper inc
 
 ---
 
-**Translation notes (for the calling script, not part of the rendered Markdown):**
+**Translator's note.**
 
-- Page-to-image mapping: image files p001–p008 correspond to printed pages 300–307 (p007 header = "306", p008 header = "307"). Image files p001–p007 are the owned/authoritative pages; p008 (printed page 307) is cover-only.
-- Pages 1–7 fully translated. The paragraph "h)" that begins on p.7 finishes onto p.8 (printed 307), ending "...They regenerated again." The next paragraph "i)" ("Wir haben das Auftreten von Mehrfachbildungen…") begins on p.8 and is outside the assigned range, so it is not translated.
+- Page-to-image mapping: image files p001–p008 correspond to printed pages 300–307 (p007 header = "306", p008 header = "307"). Image files p001–p007 are the authoritative pages; p008 (printed page 307) is cover-only.
+- Pages 1–7 fully translated. The paragraph "h)" that begins on p.7 finishes onto p.8 (printed 307), ending "...They regenerated again." The next paragraph "i)" ("Wir haben das Auftreten von Mehrfachbildungen…") begins on p.8 and is outside this section, so it is not translated.
 - Front matter (bracketed institute line, full German title + English rendering, authors, "With 37 text figures", received date, Table of Contents) translated faithfully.
 - Figures are not reproduced; all captions/legends translated: Fig. 1 caption + its key (t/i/f/c, I–IV, 1–5), Fig. 2–7 caption block. The Fig. 8–10 caption block (Abb. 8. Triton Nr. 8; Abb. 9. Triton Nr. 1; Abb. 10. Triton Nr. 8) sits on p.8 (page 307) and is therefore not rendered; the inline references (Fig. 8/9/10) within the f) and h) paragraphs are preserved.
 - Period terms preserved with German in brackets where load-bearing: "Bruchdreifachbildung" (triple-formation-at-the-break), "Spannungsverband" (tension association), "parallel-gleichasymmetrisch" (parallel-equiasymmetric), "distant"/"proximant" wound surfaces, BATESONian rules.
@@ -103,9 +103,8 @@ h) In this series the middle toe was again removed, but in addition a deeper inc
 - Author surnames printed in small caps rendered in normal case.
 - Footnote 1 (p.1) placed after its paragraph per the "> ¹" convention.
 
-Source page images at: `/Users/eranhorowitz/Documents/Claude/Projects/BVA/translations_full/_work/img/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/p001.png` through `p008.png`.
 
-> *[Continuation of section h), which began on p. 306. This is the tail of a paragraph carried over from the preceding (non-owned) page.]*
+> *[Continuation of section h), which began on p. 306. This is the tail of a paragraph carried over from the preceding (adjacent) page.]*
 
 …tion (Nr. 9); five animals welded the cleft wound completely shut and regenerated a single digit (Nr. 4–7, 10); three newts, finally, produced
 

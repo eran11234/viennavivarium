@@ -300,7 +300,7 @@ In order to obtain clearer results, it was necessary to undertake corrections to
 
 tered into the Table D¹). These corrections were so much the more necessary, as in this case, in consequence of the technical treatment, the form of the ganglion and thus the size of the individual dimensions only more or less suffers¹).
 
-(... continuation beyond owned pages ...)
+(... continuation beyond pages ...)
 
 Apparently this became evident in specimen No. 11, preserved in the moult interval VII–VIII. As is recorded in the "Remarks" of the excerpt from the protocol (Tab. A), the object (mesothorax) was crushed through carelessness, and indeed the pressure occurred in the height-direction of the animal, so that the object was crushed almost flat. The ganglion of specimen No. 11 also shows, in the height dimension, a number improbably small at first glance, namely 28 (Tab. D β, No. 11 Height), whereas the length [shows] too large a number, namely 70 (Tab. D β, No. 11 Length), i.e. the length of the ganglion in a larva in the moult interval VII–VIII would then be greater than in the imago (e.g. in specimen No. 9, Tab. D β Length). It is clear that here, as a result of the pressure, the height was reduced in favour of the length, whereby the width remained almost unchanged. This change in height was also at once recognizable in the whole cross-section. But even there, where the displacements in the size of the individual dimensions did not become so obviously evident, an assumption of such [displacements] is more than justified, because, owing to the smallness of the objects, a greater or lesser pressure in one direction or another cannot be avoided in the technical processing.
 

@@ -714,7 +714,7 @@ On the cast-off skin the corresponding leg-stumps, from which the regeneration t
 
 The regeneration-process began here, as is evident from the larval-skin, roughly at the half femur (right middle leg), at the first tarsal segment (right hind leg), and at the first third of the femur (left hind leg). The regenerates show in general a still quite embryonal character. This holds especially for the left hind leg, where on the regenerate the segmentation of the tarsus is not even indicated; rather, it is represented by a cone-shaped stump, even without an anlage of the claw (Fig. 32a).
 
-[End of owned range. The text continues onto p.50, which is outside the assigned ownership range.]
+[End of this section. The text continues onto p.50, which is outside this section.]
 
 ## V. Extract from the experimental protocols.
 

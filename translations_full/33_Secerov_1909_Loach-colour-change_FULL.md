@@ -410,7 +410,7 @@ Unfortunately I could not, for every colour, follow the adaptation of the two ty
 
 ---
 
-> **[Translator's note]** The sentence beginning at the foot of p. 21 ("Unfortunately I could not...") is completed by its continuation at the top of p. 22 and is given above. The remaining text and Table XVI on p. 22 (p. 650) lie wholly on the following source page and are outside the owned range, so they are not translated here.
+> **[Translator's note]** The sentence beginning at the foot of p. 21 ("Unfortunately I could not...") is completed by its continuation at the top of p. 22 and is given above. The remaining text and Table XVI on p. 22 (p. 650) lie wholly on the following source page and are outside this section, so they are not translated here.
 
 …both types for a longer time, because some animals died off. Thus the green-coloured animal perished on 20. III. 08 under red, on 5. XII. 08 the one under orange, on 8. XII. 08 the one under green, on 22. XII. 08 the one under blue colour, the red-coloured animals on 5. XII. 08 under violet and blue colour. I subsequently inserted new animals, thus under violet colour a red-coloured specimen from 25. I. 09. The end result of the adaptation one sees from the following table. The data refer, with red (r), green (g), orange-coloured (o) culture, to the red-coloured animal; with blue (b) culture, to the green-coloured animal; and with the violet (v) culture, to both different types.
 
@@ -468,9 +468,9 @@ If the decomposition of the Pigmente proceeds continuously, and if the number of
 
 ---
 
-**Translator's note on ownership boundaries:** The text at the very top of p.22 (the continuation of the experiment chronology that began on p.21, listing the dates on which the various animals died and introducing Table XVI) physically occupies the owned page p.22 and is therefore translated and included here, beginning mid-sentence at the page break. Table XVI (which sits physically on p.22) is included. The summary paragraph (1) that begins on p.28 is finished onto p.29; the remaining summary points (2–6), which begin and continue on p.29, lie outside the owned range and are not translated here.
+**Translator's note on section boundaries:** The text at the very top of p.22 (the continuation of the experiment chronology that began on p.21, listing the dates on which the various animals died and introducing Table XVI) physically occupies the page p.22 and is therefore translated and included here, beginning mid-sentence at the page break. Table XVI (which sits physically on p.22) is included. The summary paragraph (1) that begins on p.28 is finished onto p.29; the remaining summary points (2–6), which begin and continue on p.29, lie outside this section and are not translated here.
 
-**Source/printed page mapping** (file page → printed page number): p022→650, p023→651, p024→652, p025→653, p026→654, p027→655, p028→656, p029→657. The `` markers above use the assignment's file-page numbering (22–29). Note: the prose runs continuously across these printed pages and does not align cleanly with the file-page markers in every case; markers are placed at the actual physical page breaks of the source images.
+**Source/printed page mapping** (file page → printed page number): p022→650, p023→651, p024→652, p025→653, p026→654, p027→655, p028→656, p029→657. Page markers above use the scan's page numbering (22–29). Note: the prose runs continuously across these printed pages and does not align cleanly with the file-page markers in every case; markers are placed at the actual physical page breaks of the source images.
 
 **Verified table cells (Table XVI)** were read directly from the magnified image; key uncertain readings confirmed: "v" first-type back cell = "grün (schmutzig)" [green (dirty)]; second-type back cell = "rötlich, ins Violette (schwach)" [reddish, towards violet (faint)]; anal/ventral-fin "r" cell = "weiß, ins Rötliche" [white, towards reddish]; "Flecken" "o" cell = "schwach ausgebld." [weakly developed].
 

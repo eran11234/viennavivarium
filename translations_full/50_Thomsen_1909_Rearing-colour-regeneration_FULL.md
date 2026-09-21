@@ -1238,8 +1238,8 @@ The following table reproduces the rearing record across pages 55–57. Column h
 
 ---
 
-Translation notes (not part of the source; provided for the calling script):
-- Owned pages 50–56 fully translated; page 57 included only for the table that begins within the owned pages (Table I continues from p.55–57). The leading partial line on p.50 (4γ continuation, "jünger das operierte Stadium…") belongs to a paragraph beginning on p.49 and was rendered as the standalone numbered point 4γ that begins at the top of p.50 in the print.
+Translator's note:
+- Pages 50–56 fully translated; page 57 included only for the table that begins within the pages (Table I continues from p.55–57). The leading partial line on p.50 (4γ continuation, "jünger das operierte Stadium…") belongs to a paragraph beginning on p.49 and was rendered as the standalone numbered point 4γ that begins at the top of p.50 in the print.
 - Running heads ("Aufzucht, Farbwechsel und Regeneration der Gottesanbeterinnen. III." / "Hans Przibram" / page numbers 610–617 / "40*") are page furniture and were not rendered as body text. Note: the running heads and the Literaturverzeichnis attribute authorship to **Hans Przibram**, not Thomsen as given in the assignment header.
 - Summary-point numbering follows the print exactly: 6a) (number of moults); 6bα), 6bβ) (increase in size, growth-increase); 6cα), 6cβ), 6cγ) (average increase, average duration, average rate of growth per moulting-interval); 6d), 6e), 6f) (temperature quotients).
 - The big rearing table is rotated 90° in the source (foldout). Reproduced as Markdown with the arithmetic operators (−, =, :, =) preserved as printed in their own columns. "g.br." = greenish-brown (grünbraun); "oliv" = olive; "licht-braun" = light brown. Empty cells indicate no entry printed. "?" reproduced as printed.

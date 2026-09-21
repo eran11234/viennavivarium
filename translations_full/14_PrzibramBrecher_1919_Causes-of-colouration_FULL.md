@@ -1068,7 +1068,7 @@ Column headers:
 
 *(No new rows begin on p.71 beyond the completion of rows 76–96 already given above; the narrative dates and colour-tones for those rows are incorporated into the merged tables.)* 153 — Causes of Animal Colouration. I.
 
-*(Right-hand block of the spread. The left-hand columns of these rows — Or.-Nr. and the experimental conditions — stand on the facing page 152, which belongs to the preceding chunk. First the right-half of the illumination table "II. 2. a" (rows whose left side is on p. 152), then the right-half of the temperature table "II. 2. b. Temperature-sensitivity of the Tyrosinase," rows 80–96.)*
+*(Right-hand block of the spread. The left-hand columns of these rows — Or.-Nr. and the experimental conditions — stand on the facing page 152, which belongs to the preceding section. First the right-half of the illumination table "II. 2. a" (rows whose left side is on p. 152), then the right-half of the temperature table "II. 2. b. Temperature-sensitivity of the Tyrosinase," rows 80–96.)*
 
 | Date of set-up of the reaction | Data of the sequence of onset of the samples in consequence of the experimental conditions: colour-papers resp. gelatines (colours standing in round brackets are tones of the samples themselves) |
 |---|---|
@@ -1488,7 +1488,7 @@ For Or.-Nr. 156–161 the table carries a single brace spanning all six rows des
 | 261 | " | " | " | " | rat's blood | " | 3 | 7. II. 17 |
 | 262 | " | " | " | " | " | " | 3 | " | **[p. 167 — running head: "Ursachen tierischer Farbkleidung. I." / 167]**
 
-These pages are entirely **tables** (the experimental appendix), printed across **facing-page spreads**: the verso pages (166/168/170/172) carry the left-hand identification columns, while the recto pages 167/169/171/173 (the owned recto pages) carry the **right-hand continuation columns**. Each continuation table below is reproduced together with the left-hand columns of the same rows (read from the facing verso) so that no cell is omitted, with each source page anchored by its `` comment.
+These pages are entirely **tables** (the experimental appendix), printed across **facing-page spreads**: the verso pages (166/168/170/172) carry the left-hand identification columns, while the recto pages 167/169/171/173 (the recto pages) carry the **right-hand continuation columns**. Each continuation table below is reproduced together with the left-hand columns of the same rows (read from the facing verso) so that no cell is omitted, with each source page anchored by its `` comment.
 
 Right-hand (continuation) columns of the tyrosinase table (rows Or.-Nr. 243–257), headed:
 
@@ -2263,7 +2263,7 @@ Then (each 1 cm³):
 
 ---
 
-*[Note on assignment scope: Pages 99–105 are entirely occupied by Table A (the species/reaction protocol table, continuing across the spreads 180/181, 182/183, 184/185) and Table B (spread 186/187). There is no running prose, no footnotes, and no figure captions on these pages. On the right-hand reaction pages (181, 183, 185) the original prints no Or.-No. column; the Or.-No. values shown here are keyed from the facing left-hand pages (180, 182, 184) and are not themselves printed on the owned pages. The left-hand half of the 180/181 spread (p. 180: species, protocol, solvent, starting colour for Or.-No. 389–407) lies outside this chunk.]*
+*[Note on scope: Pages 99–105 are entirely occupied by Table A (the species/reaction protocol table, continuing across the spreads 180/181, 182/183, 184/185) and Table B (spread 186/187). There is no running prose, no footnotes, and no figure captions on these pages. On the right-hand reaction pages (181, 183, 185) the original prints no Or.-No. column; the Or.-No. values shown here are keyed from the facing left-hand pages (180, 182, 184) and are not themselves printed on the pages. The left-hand half of the 180/181 spread (p. 180: species, protocol, solvent, starting colour for Or.-No. 389–407) lies outside this section.]*
 
 ## Table C.
 
