@@ -1,0 +1,68 @@
+{
+ "_schema": "Reader-facing context notes for papers whose content needs framing before it is read: claims about sexual orientation, intersex people, and race, and material obtained from people who could not refuse. Keyed by paper id. Fields: category (short label), severity (high|medium), heading, paras[] (plain text, rendered as <p>), where[] (pages that must show it: read|dossier), short (one line — reserved for the catalog row, NOT rendered yet). gen_site.py renders these at the TOP of the reading page and dossier every build — a paper listed here cannot be published without its note. Author-level context lives in the author's biography in authors.json, not here.",
+
+ "165": {
+  "category": "Sexual orientation",
+  "severity": "high",
+  "heading": "Before you read this",
+  "short": "Claims a gonadal basis for sexual orientation. The claim is false; the tissue came from attempted “cure” surgery.",
+  "where": ["read", "dossier"],
+  "paras": [
+   "This paper claims that homosexual men have a distinctive testicular histology — that sexual orientation is visible in the gonad. It is wrong. No such difference exists. Research places the correlates of sexual orientation in neurodevelopment and genetics, not in gonadal tissue, and homosexuality is not a disease: it was removed from the American Psychiatric Association's diagnostic manual in 1973 and from the World Health Organization's classification in 1990.",
+   "The tissue described here was taken from six men whose testicles were surgically removed by the Viennese surgeon Robert Lichtenstern and replaced with donor testicles, as an attempted cure for their homosexuality. Same-sex acts were a criminal offence in Austria at the time and remained so until 1971. The operations did not work.",
+   "The translation is published because the history of this idea matters. It is a documented origin of the attempt to locate sexual orientation in the body and to correct it surgically — a tradition that ran through the twentieth century and survives in the conversion practices still in circulation today. Steinach's text is rendered as he wrote it. None of it is endorsed."
+  ]
+ },
+
+ "164": {
+  "category": "Sexual orientation",
+  "severity": "high",
+  "heading": "Before you read this",
+  "short": "Sound hormone biology; also reports conversion surgery on a homosexual man as a success.",
+  "where": ["read", "dossier"],
+  "paras": [
+   "The animal endocrinology in this paper is sound, and is why it carries a positive verdict here: male and female gonadal secretions really do act against one another in shaping sexual characteristics, as modern work on opposing sex-differentiation pathways confirms.",
+   "The paper also reports, approvingly, the surgical castration of a homosexual man and the implantation of a donor testicle, describing the outcome as the removal of his “abnormal, homosexual erotisation”, and notes that Lichtenstern had since operated on further such cases. That claim is false and the practice was harmful. Sexual orientation has no gonadal basis and is not a medical condition.",
+   "The verdict recorded on this page applies to the hormone antagonism. It does not apply to that."
+  ]
+ },
+
+ "38": {
+  "category": "Sexual orientation",
+  "severity": "medium",
+  "heading": "Before you read this",
+  "short": "Foundational endocrinology; extends the theory to human homosexuality, which it does not support.",
+  "where": ["read", "dossier"],
+  "paras": [
+   "This is the most-cited paper in the corpus, and its central finding — that gonadal secretions determine secondary sexual characteristics — is foundational endocrinology.",
+   "Steinach also extends the framework to human homosexuality and “hermaphroditism”, treating both as conditions arising from a mixed gonad. That extension is not supported by later science and belongs to a harmful tradition of locating sexual orientation in the body. The vindication recorded on this page is of the hormonal work, not of that."
+  ]
+ },
+
+ "166": {
+  "category": "Intersex · human remains",
+  "severity": "high",
+  "heading": "Before you read this",
+  "short": "Anatomy of a named intersex person whose body came from a penal institution; 1920 language throughout.",
+  "where": ["read", "dossier"],
+  "paras": [
+   "This paper is an anatomical description of one person: an intersex individual, identified only by the initials K. H., who died in a penal institution and whose body was sent to the Leipzig anatomical institute in 1918. The language is that of 1920 pathology — the person is a “case”, their body a “malformation”.",
+   "Their own account of themselves is reported and then dismissed. Stieve records that they had been baptised and raised as a girl, were registered as male after an official examination at twenty, felt themselves from their twenties onward to be a man, and always wished to wear women's clothing — and then tells the reader to treat these statements “with the greatest caution”. It is the only testimony the person left, and it appears here inside an account written to overrule it.",
+   "Intersex variation is not a malformation. Current medicine describes these as differences of sex development, and intersex people have been clear about the harm done by a century of treating their bodies as specimens.",
+   "On the author, see the note in Hermann Stieve's biography on the Authors page."
+  ]
+ },
+
+ "169": {
+  "category": "Race",
+  "severity": "high",
+  "heading": "Before you read this",
+  "short": "Applies heat-rat results to human populations, with sections on “the influence of race”.",
+  "where": ["read", "dossier"],
+  "paras": [
+   "The general idea in this paper — that temperature acts on the endocrine and reproductive system — survives in modern terms, and that is what the verdict on this page refers to.",
+   "A substantial part of the paper does something else. It carries the heat-rat results over to human populations, with sections headed “Influence of race”, “climatic races” and “primary races”, and draws direct comparisons between people living in the tropics and animals. This is racial-typological anthropology. Human populations do not divide into biological races, no claim made here about racial difference has any standing, and this style of argument is part of the intellectual history that racial science was built from.",
+   "The text is translated in full rather than cut, because a corpus that quietly drops the passages it finds embarrassing is not a record. It is rendered as written and none of it is endorsed."
+  ]
+ }
+}

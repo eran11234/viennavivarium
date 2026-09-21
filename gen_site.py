@@ -24,6 +24,26 @@ legacy = json.load(open(os.path.join(DATA, "legacy.json"), encoding="utf-8"))
 translations = json.load(open(os.path.join(DATA, "translations.json"), encoding="utf-8"))
 tr_by_slug = {t["trans_slug"]: t for t in translations}
 
+# Reader-facing context notes for papers that need framing before they are read
+# (sexual orientation, intersex people, race, remains obtained from people who
+# could not refuse). Rendered at the TOP of the reading page and the dossier, so
+# a listed paper cannot be published without its note. See legacy_data/sensitivity.json.
+_sensp = os.path.join(ROOT, "legacy_data", "sensitivity.json")
+SENS = json.load(open(_sensp, encoding="utf-8")) if os.path.exists(_sensp) else {}
+SENS = {k: v for k, v in SENS.items() if not k.startswith("_")}
+
+def sens_html(pid, where):
+    """The context block for one paper, or '' if it needs none."""
+    s = SENS.get(str(pid))
+    if not s or where not in (s.get("where") or ["read", "dossier"]):
+        return ""
+    paras = "".join("<p>%s</p>" % html.escape(p) for p in s.get("paras", []))
+    cat = ('<span class="senscat">%s</span>' % html.escape(s["category"])) if s.get("category") else ""
+    return ('<aside class="senswarn sev-%s" role="note" aria-label="Context note">'
+            '<p class="sensh">%s%s</p>%s</aside>'
+            % (html.escape(s.get("severity") or "medium"), cat,
+               html.escape(s.get("heading") or "Before you read this"), paras))
+
 YEARS = [c["year"] for c in catalog]
 STATS = dict(papers=len(catalog), trans=len(translations),
              y0=min(YEARS), y1=max(YEARS),
@@ -624,7 +644,8 @@ def gen_authors():
                   % (n, "papers" if n != 1 else "paper"))
         summary = ('<summary class="asum">' + pic
                    + '<div class="abody"><div class="ahead"><h2>%s</h2>%s%s</div>' % (html.escape(p["name"]), yrs, role)
-                   + '<p class="abio">%s</p>' % html.escape(p["bio"])
+                   + "".join('<p class="abio">%s</p>' % html.escape(_b.strip())
+                             for _b in re.split(r"\n\s*\n", p["bio"]) if _b.strip())
                    + toggle + '</div></summary>')
         detail = ('<div class="adetail"><div class="apapers"><span class="lab">Wrote</span> %s</div>%s</div>'
                   % (chips, link))
@@ -1220,6 +1241,7 @@ def gen_dossier():
   {('<p class="detitle">'+html.escape(title_de)+'</p>') if title_de and title_de != title_en else ''}
   <p class="byline">{html.escape(c.get('author') or '')} · {c.get('year')}</p>
   <div class="actionbar">{actions}</div>
+  {sens_html(pid, "dossier")}
   <section class="dsec">
     <h2>What this paper did</h2>
     <p class="whatd">{html.escape(cur[0])}</p>
@@ -1729,6 +1751,7 @@ def gen_reading_pages():
   <p class="byline">{html.escape(t['author'])} · {html.escape(t['journal'])} · DOI {doi_a}</p>
   <div class="badges">{layer_badge(c['layer'])} {('<span class=badge org>'+html.escape(c['organism'])+'</span>') if c['organism'] else ''} {'<span class="badge wip">in progress</span>' if wip else '<span class="badge done">full text</span>'} {_doss_chip}</div>
   {_doss_line}
+  {sens_html(pid, "read")}
   <div class="actionbar">
     <a class="btn primary" href="{reader_sxs}">⇆ Read German side-by-side</a>
     <a class="btn" href="{reader_one}">German reader</a>
@@ -1962,6 +1985,15 @@ td.meth{font-size:12.5px;color:#4a463f}
 .reading .badges{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
 .actionbar{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
 .notice{background:#fbf2dd;border:1px solid #e7d4ac;color:#7a5a1c;border-radius:8px;padding:10px 14px;font-size:14px;margin:12px 0}
+/* reader-facing context note (sensitivity.json) — top of reading page + dossier */
+.senswarn{background:#fbf6ef;border:1px solid #d9c7ae;border-left:5px solid #8a5a2b;border-radius:10px;padding:15px 20px 6px;margin:18px 0 6px;max-width:74ch;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.senswarn.sev-high{background:#fbf3ee;border-left-color:#8a3a3a;border-color:#dcc0b4}
+.senswarn .sensh{margin:0 0 9px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#8a5a2b}
+.senswarn.sev-high .sensh{color:#8a3a3a}
+.senswarn .senscat{display:inline-block;background:#8a5a2b;color:#fbf6ef;border-radius:4px;padding:2px 8px;margin-right:9px;letter-spacing:.05em}
+.senswarn.sev-high .senscat{background:#8a3a3a}
+.senswarn p{margin:0 0 11px;font-size:14.5px;line-height:1.62;color:#3c3833}
+@media(max-width:600px){.senswarn{padding:13px 15px 4px}.senswarn p{font-size:14px}}
 .cols{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:34px;margin-top:18px}
 .text{font-family:Georgia,"Times New Roman",serif;font-size:17px;line-height:1.72;max-width:70ch}
 .text h2{font-size:21px;margin-top:1.5em}.text h3{font-size:17px}
