@@ -137,7 +137,7 @@ the blind rats sought the vessel more frequently. Of a complete training on the 
 
 # Die Replantation von Augen. VII.
 
-> **Note on the source pages and authorship.** These pages (printed pp. 88–96) do not carry Koppányi's own paper. *Die Replantation von Augen. VII.* is the running title of the collected series, not of this contribution: the author byline at the head of every page reads **Auguste Jellinek**, and the text is a study of rats learning to discriminate feeding vessels by colour, comparing sighted, blinded and transplanted-eye animals. What follows is a faithful translation of what is actually printed on these pages. The attribution of this item in the catalogue is therefore under review — it appears to be Jellinek's own contribution to the eye-replantation series.
+> **Note on the source and authorship.** *Die Replantation von Augen. VII.* is the running title of the collected series, not of this contribution. The author byline at the head of every page reads **Auguste Jellinek**, and the text is her study of rats learning to discriminate feeding vessels by colour, comparing sighted, blinded and transplanted-eye animals — a functional test of whether a replanted eye restores useful vision. The catalogue lists the paper under her name accordingly.
 
 --- The learning curve I b α shows a weakly rising course. From this one concludes a — albeit only slight — preference for the vessel.
 

@@ -594,15 +594,16 @@
   },
   {
    "key": "jellinek",
-   "name": "Jellinek",
+   "name": "Auguste Jellinek",
    "years": "",
-   "role": "",
-   "bio": "Contributed to the corpus: tests how far eye replantation succeeds in mammals — the hardest case, with the least regenerative tolerance.",
+   "role": "Researcher, physiology/zoology",
+   "bio": "Auguste Jellinek contributed to the institute's eye-replantation series: her 1923 study tested whether a replanted eye restores useful vision, training rats to discriminate feeding vessels by colour and comparing sighted, blinded and transplanted-eye animals. It is a functional rather than histological test — an unusually modern experimental design for the question. She is one of the women named among the institute's scientific staff in the standard history of the Vivarium; between 1920 and 1934, 39 of its 109 listed workers were women.",
    "link": "",
-   "featured": false,
+   "featured": true,
    "papers": [
     30
-   ]
+   ],
+   "_bio_source": "Paper byline; Müller (ed.), Vivarium (MIT Press 2017), ch. 1 on the institute's women scientists."
   },
   {
    "key": "halban",

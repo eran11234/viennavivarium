@@ -1,6 +1,5 @@
 {
  "_schema": "Open provenance/attribution issues found during translation, keyed by paper id. Each: slug, severity, summary, evidence, action_needed. These were surfaced by the translation agents and converted from internal halt-reports into tracked issues (Sept 2026). They are NOT resolved.",
-
  "138": {
   "slug": "42_Kornfeld_1914_Gill-resorption-metamorphosis",
   "severity": "gap",
@@ -15,18 +14,17 @@
   "action_needed": "Obtain the correct scans for the missing printed pages and translate them. Separately, settle the author's forename: the catalog says only 'Kornfeld', the translation's own byline reads 'Werner Kornfeld', and the halt-report treats the gill paper as by 'Walter Kornfeld'. The title page is needed to decide.",
   "reader_note_placed": true
  },
-
  "_153_koppanyi": {
   "slug": "153_Koppanyi_1923_Eye-replantation-long",
-  "severity": "attribution",
-  "summary": "The pages translated under Koppanyi's eye-replantation title are in fact a study by Auguste Jellinek on rats learning to discriminate feeding vessels by colour.",
+  "severity": "resolved",
+  "summary": "The pages carry Auguste Jellinek's study, not Koppanyi's own text; the running title is the series title. The catalogue already attributes the paper to Jellinek, so nothing is mis-stated publicly.",
   "evidence": [
    "'Die Replantation von Augen. VII.' is the collected-volume series title, not this paper's title.",
    "The page-top author byline on every page reads 'Auguste Jellinek'.",
    "Content: sighted, blind and transplanted-eye rats compared on a colour-discrimination learning task.",
    "The translation faithfully renders what is actually on the pages (printed pp. 89-95)."
   ],
-  "action_needed": "Decide whether this should be catalogued under Auguste Jellinek as her own contribution to the eye-replantation series. Jellinek is named in Mueller (ed.), Vivarium (MIT Press 2017) among the institute's women scientists and currently has only a stub biography on the Authors page; this may be her paper.",
+  "action_needed": "None for attribution. Remaining: the translation file is still named after Koppanyi (internal only), and Jellinek's biography on the Authors page is a stub worth expanding now that her forename is confirmed.",
   "reader_note_placed": true
  }
 }
