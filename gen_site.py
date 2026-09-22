@@ -73,6 +73,47 @@ FAVICON = ("data:image/svg+xml," + "%3Csvg xmlns='http://www.w3.org/2000/svg' vi
            "%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' "
            "text-anchor='middle' fill='%23f3efe6'%3EV%3C/text%3E%3C/svg%3E")
 
+# --- Downloadable snapshots --------------------------------------------------
+# Built by hand and uploaded as GitHub Release assets (Release assets, not the
+# Pages site: Pages has a ~1 GB soft limit and the site alone is already ~590 MB).
+# TO REFRESH: rebuild the site, rezip, upload to a NEW dated release, then bump
+# SNAPSHOT_DATE, REL_BASE and the sizes below. Nothing else needs changing.
+SNAPSHOT_DATE = "22 September 2026"
+REL_TAG = "snapshot-2026-09-22"
+REL_BASE = "https://github.com/eran11234/viennavivarium/releases/download/" + REL_TAG + "/"
+REPO_ZIP = "https://github.com/eran11234/viennavivarium/archive/refs/heads/main.zip"
+DOWNLOADS = [
+    dict(key="site", size="588 MB", primary=True,
+         href=REL_BASE + "viennavivarium-site-2026-09-22.zip",
+         name="Complete offline site",
+         lede="The whole website, working without an internet connection.",
+         what=["All 175 English translations, with their figures",
+               "All 175 German originals as PDFs",
+               "The catalog, the guided tour, the map, and all 174 dossiers",
+               "497 figure and plate scans"],
+         how="Unzip and open <code>index.html</code>. Nothing to install, no server needed.",
+         who="Best if you want to read, browse or keep the corpus."),
+    dict(key="data", size="7.6 MB", primary=False,
+         href=REL_BASE + "viennavivarium-data-2026-09-22.zip",
+         name="Research bundle",
+         lede="Every text and every data file, without the scans.",
+         what=["All 175 translations as Markdown",
+               "<code>catalog.csv</code> — one row per paper, with verdicts, citations and links",
+               "The full working data: verdicts, citations, methodology, syntheses, biographies",
+               "The original corpus spreadsheet"],
+         how="Unzip and start with <code>catalog.csv</code>, or point a script at the folder.",
+         who="Best for analysis, text mining, or handing the corpus to an AI."),
+    dict(key="source", size="~560 MB", primary=False, href=REPO_ZIP,
+         name="Source repository",
+         lede="Everything the site is built from, plus the build scripts.",
+         what=["The German PDFs and the translation sources",
+               "<code>build_site.py</code> and <code>gen_site.py</code>",
+               "The full revision history, if you clone rather than download"],
+         how="Needs Python 3 and pandoc to render the site. "
+             "<code>git clone https://github.com/eran11234/viennavivarium.git</code>",
+         who="Best if you want to change something or run your own copy."),
+]
+
 def _title_trim(s, n=70):
     """Trim a long title at a word boundary for <title>/og:title."""
     s = (s or "").strip()
@@ -108,6 +149,7 @@ def page(path, title, active, body, prefix="", head="", foot="", desc=None):
 <footer class="site"><div class="wrap">
 <p>Biologische Versuchsanstalt (the “Vivarium”), Vienna · {STATS['papers']} papers, {STATS['y0']}–{STATS['y1']} · {STATS['trans']} English translations.</p>
 <p class="muted">An orientation platform for researchers. Translations and corpus analysis are scholarly working documents; cite the original alongside the translation. Corrections, collaborations and contributions are welcome — <a href="{prefix}contribute.html">get involved</a>.</p>
+<p class="fdl"><a class="dlbtn" href="{prefix}download.html"><span class="dlarrow">&darr;</span> Download the whole corpus<small>translations, German originals and all the data — {SNAPSHOT_DATE}</small></a></p>
 </div></footer>{foot}</body></html>"""
     with open(os.path.join(SITE, path), "w", encoding="utf-8") as f:
         f.write(doc)
@@ -409,6 +451,92 @@ f.addEventListener('submit',function(e){e.preventDefault();err.style.display='no
          desc="Collaborate with, correct, or contribute to the Vienna Vivarium project: research collaboration, translation checks, archives and family material, or support.")
     print("contribute.html:", "Formspree endpoint set" if FORM_ENDPOINT else "no endpoint yet — mailto fallback")
 
+
+# ---------------------------------------------------------------- download
+def gen_download():
+    """Three dated snapshots of the corpus, served as GitHub Release assets."""
+    def card(d):
+        what = "".join("<li>%s</li>" % x for x in d["what"])
+        return (
+            '<section class="dlcard%s">'
+            '<div class="dlhead"><h2>%s</h2><span class="dlsize">%s</span></div>'
+            '<p class="dllede">%s</p>'
+            '<ul class="dlwhat">%s</ul>'
+            '<p class="dlhow">%s</p>'
+            '<a class="dlget%s" href="%s"%s>&darr; Download</a>'
+            '<p class="dlwho">%s</p>'
+            '</section>'
+            % (" prime" if d["primary"] else "", html.escape(d["name"]), html.escape(d["size"]),
+               html.escape(d["lede"]), what, d["how"],
+               " prime" if d["primary"] else "", d["href"],
+               ' download' if d["href"].startswith(REL_BASE) else '',
+               html.escape(d["who"])))
+    body = f"""
+<div class="dlwrap">
+<p class="kicker">Take the whole thing with you</p>
+<h1>Download the corpus</h1>
+<p class="lede">Everything on this site can be downloaded and kept. The translations, the German
+originals, the figures and the analysis are all here — nothing is held back behind the website.
+Pick whichever shape suits what you want to do.</p>
+<p class="dlsnap">Snapshot of <b>{SNAPSHOT_DATE}</b> · {STATS['papers']} papers · {STATS['trans']} translations ·
+<a href="https://github.com/eran11234/viennavivarium/releases/tag/{REL_TAG}">all files on GitHub &rarr;</a></p>
+
+<div class="dlgrid">{''.join(card(d) for d in DOWNLOADS)}</div>
+
+<section class="dlnote">
+  <h2>Before you use it</h2>
+  <p><b>This is a snapshot, not a living copy.</b> The site keeps changing — translations get
+  corrected, verdicts revised, biographies written. For anything you intend to quote or rely on,
+  check the live page. Each zip carries a <code>README.txt</code> with its contents and date.</p>
+  <p><b>Cite the original alongside the translation.</b> Every reading page carries the full original
+  reference and its DOI where one exists; <code>catalog.csv</code> in the research bundle carries
+  them in a column.</p>
+  <p><b>The verdicts are the project's own judgements</b>, not a settled consensus. Each paper was read
+  against the current literature and placed on two axes — recognition and vindication — which are kept
+  deliberately separate, because citation counts partly measure notoriety rather than correctness.
+  Disagreement is useful; <a href="contribute.html">tell us</a>.</p>
+  <p><b>Five papers carry a context note</b> — claims about sexual orientation, about race, and one
+  anatomical study of a named intersex person whose body came from a penal institution. The translations
+  are complete and unedited and the notes sit alongside them, not inside them. If you quote from those
+  papers, please carry the context with the quotation.</p>
+  <p><b>Rights.</b> The German originals were published 1904–1930 in <i>Archiv für Entwicklungsmechanik
+  der Organismen</i>; their status varies by author and jurisdiction, and the scanned editions may carry
+  their own terms. The translations and the analysis are this project's own work, and no reuse licence has
+  been set for them yet — <a href="contribute.html">get in touch</a> before redistributing or republishing.</p>
+</section>
+</div>"""
+    page("download.html", "Download", None, body,
+         head="<style>" + DOWNLOAD_CSS + "</style>",
+         desc=("Download the complete Vienna Vivarium corpus: 175 English translations, the German "
+               "originals, figures and the full corpus analysis, as an offline site or a research bundle."))
+    print("download.html:", len(DOWNLOADS), "bundles |", SNAPSHOT_DATE)
+
+DOWNLOAD_CSS = r"""
+.dlwrap{max-width:1040px}
+.dlwrap .lede{max-width:72ch;font-size:16.5px;line-height:1.6}
+.dlsnap{font-size:13.5px;color:var(--muted);border-top:1px solid var(--rule);padding-top:11px;margin:16px 0 22px}
+.dlgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.dlcard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:18px 19px 17px;display:flex;flex-direction:column;height:100%}
+.dlcard.prime{border:1.5px solid #8a5a2b;background:#fdfaf5}
+.dlhead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px}
+.dlhead h2{font-family:Georgia,serif;font-size:18.5px;margin:0;border:0;padding:0}
+.dlsize{font-size:12px;font-weight:700;letter-spacing:.04em;color:#6b6459;background:var(--paper);border:1px solid var(--rule);border-radius:20px;padding:3px 10px;white-space:nowrap}
+.dlcard.prime .dlsize{background:#8a5a2b;color:#fdfaf5;border-color:#8a5a2b}
+.dllede{font-size:14.5px;color:#3c3833;margin:0 0 11px;line-height:1.5}
+.dlwhat{margin:0 0 12px;padding-left:18px;font-size:13.5px;line-height:1.55;color:#4a463f}
+.dlwhat li{margin-bottom:4px}
+.dlhow{font-size:13px;color:var(--muted);line-height:1.55;margin:0 0 15px;padding-top:11px;border-top:1px solid var(--rule)}
+.dlhow code,.dlnote code{background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:1px 5px;font-size:12.5px;word-break:break-all}
+.dlget{margin-top:auto;display:block;text-align:center;background:var(--card);color:var(--ink);border:1px solid #cdc4b1;border-radius:8px;padding:10px 14px;font-size:14.5px;font-weight:600;text-decoration:none}
+.dlget:hover{background:#fff;border-color:#8a5a2b;text-decoration:none}
+.dlget.prime{background:#8a5a2b;color:#fdfaf5;border-color:#8a5a2b}
+.dlget.prime:hover{background:#74491f;color:#fff}
+.dlwho{font-size:12.5px;color:var(--muted);margin:9px 0 0;text-align:center;line-height:1.45}
+.dlnote{margin-top:28px;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:20px 24px 8px;max-width:80ch}
+.dlnote h2{font-family:Georgia,serif;font-size:19px;margin:0 0 12px;border:0;padding:0}
+.dlnote p{font-size:14.5px;line-height:1.62;color:#3c3833;margin:0 0 13px}
+@media(max-width:900px){.dlgrid{grid-template-columns:1fr}.dlcard{height:auto}}
+"""
 
 # ---------------------------------------------------------------- reader (side-by-side)
 def gen_reader():
@@ -1868,6 +1996,13 @@ nav a.on{color:var(--accent);font-weight:600}
 @media(max-width:760px){.cgrid{grid-template-columns:1fr}.cform .opt-row{grid-template-columns:1fr}.chero h1{font-size:27px}}
 footer.site{margin-top:60px;border-top:1px solid var(--rule);padding:26px 0;font-size:13.5px;color:var(--muted)}
 footer.site p{margin:.3em 0}
+/* footer download button (target: download.html) */
+.fdl{margin-top:18px !important}
+.dlbtn{display:inline-flex;align-items:baseline;gap:9px;flex-wrap:wrap;background:var(--card);border:1px solid #cdc4b1;border-radius:9px;padding:11px 18px;color:var(--ink);font-size:14.5px;font-weight:600;text-decoration:none}
+.dlbtn:hover{background:#fff;border-color:#8a5a2b;text-decoration:none}
+.dlbtn .dlarrow{font-weight:700;color:#8a5a2b}
+.dlbtn small{font-weight:400;font-size:12.5px;color:var(--muted)}
+@media(max-width:600px){.dlbtn{width:100%;justify-content:center;text-align:center}}
 .hero{padding:30px 0 8px}
 .heroimg{margin:26px 0 4px}
 .heroimg img{width:100%;height:auto;display:block;border:1px solid var(--rule);border-radius:10px;filter:sepia(.18) contrast(1.02)}
@@ -2509,7 +2644,7 @@ def main():
     write_css(); write_js()
     open(os.path.join(DATA, "site.js"), "w").write("window.SITE=" + json.dumps({"fullPdfs": FULL}) + ";")
     open(os.path.join(SITE, ".nojekyll"), "w").write("")
-    gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader(); gen_contribute()
+    gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader(); gen_contribute(); gen_download()
     gen_citations(); gen_methodology(); gen_discover(); gen_dossier(); gen_authors(); gen_reading_pages(); copy_assets()
     gen_tour()  # after copy_assets: it thumbnails figures/portraits that copy_assets puts in place
     print("Generated site at", SITE, "| FULL_PDFS =", FULL)
