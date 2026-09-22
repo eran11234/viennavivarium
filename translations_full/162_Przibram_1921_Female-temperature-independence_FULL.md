@@ -11,7 +11,7 @@ By
 
 *Archiv für Entwicklungsmechanik der Organismen*, vol. 48 (1921).
 
-> **Full translation.** A complete English rendering of the running text of “Temperature-Independence of the Female [Sex-Ratio / development]” (Przibram, 1921), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
+> **Full translation.** A complete English rendering of the running text of “Temperature-Independence of the Female Period and Gravidity in Rats” (Przibram, 1921), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
 
 ### Table of Contents.
 

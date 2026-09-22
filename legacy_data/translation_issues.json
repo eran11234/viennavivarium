@@ -26,5 +26,42 @@
   ],
   "action_needed": "None for attribution. Remaining: the translation file is still named after Koppanyi (internal only), and Jellinek's biography on the Authors page is a stub worth expanding now that her forename is confirmed.",
   "reader_note_placed": true
+ },
+ "55": {
+  "slug": "174_GrosserPrzibram_1906_Dogfish-malformations",
+  "severity": "open",
+  "summary": "This paper had no modern-literature assessment of its own: the record filed under it described a different paper (the 1906 Egyptian praying-mantis study), so its dossier has been withdrawn rather than left showing the wrong science.",
+  "evidence": [
+   "The Consensus questions stored for id55 asked about colour change and limb regeneration in praying mantises; the paper is about four malformed spiny dogfish from Trieste.",
+   "The stored methodology record read 'Established the Egyptian mantis as a tractable experimental insect' — that is id59's paper, and id59 carries its own correct copy.",
+   "The organism override also said 'Sphodromantis bioculata (praying mantis)'.",
+   "Root cause: this catalogue row was mistitled as a mantis paper when the assessments were written; the title was later corrected, but the assessment was not."
+  ],
+  "action_needed": "Re-run the Consensus retrieval with questions about teratology, malformation as evidence for developmental rules, and Bateson's rule, then write the read-and-compare synthesis. Needs the Consensus API key. Until then the paper is catalogued and translated but carries no verdict.",
+  "reader_note_placed": false
+ },
+ "17": {
+  "slug": "175_PrzibramBrecher_1922_Dixippus-colour-modifications",
+  "severity": "open",
+  "summary": "Same fault as id55: the stored assessment described a cabbage-white pupal-colour paper, not this stick-insect study. The dossier has been withdrawn rather than left wrong.",
+  "evidence": [
+   "The stored verdict read 'Confirmed — pupal colour plasticity' and duplicated id14's record, which is the genuine Pieris pupa paper.",
+   "Dixippus morosus is hemimetabolous and has no pupal stage; the study scores adult females after the imaginal moult.",
+   "Root cause: this row was mistitled as a Pieris paper when the assessments were written; the title was later corrected, the assessment was not."
+  ],
+  "action_needed": "Re-run the Consensus retrieval for light-dependent colour polyphenism in adult stick insects and write the synthesis. Note that two of the paper's six summary points claim transmission of modifications across parthenogenetic generations — part of the institute's abandoned inheritance programme — so the eventual verdict should not be a flat 'Confirmed'.",
+  "reader_note_placed": false
+ },
+ "_eye_series_numbering": {
+  "slug": "126_Koppanyi_1923_Eye-replantation-II / 131_Koppanyi_1923_Eye-replantation-III",
+  "severity": "open",
+  "summary": "The part numbers of the eye-replantation series disagree between the PDF filenames and the papers' own printed subtitles. Not resolved, and not guessed at.",
+  "evidence": [
+   "id27's PDF is filed as 'Die-Replantation-von-Augen-II-Physiology.pdf' and the site title says '(II: physiology)', but the paper's own H2 reads 'III. The Physiology of Replanted Mammalian Eyes.'",
+   "That paper's bibliography cites a Part II ('Haltbarkeit und Funktionsprufung', Akadem. Anz. 7/8, 1921) as a separate, earlier item.",
+   "id26 is filed as '(III: growth)'. There are six papers in this cluster (ids 25-30), so renumbering one risks a collision."
+  ],
+  "action_needed": "Resolve against the title pages of the whole series before changing any label. The printed subtitle is likely authoritative over the scan filename, but the series needs settling as a set, not one paper at a time.",
+  "reader_note_placed": false
  }
 }

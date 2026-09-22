@@ -59,20 +59,15 @@
   "state": "Craniofacial and jaw regeneration is a fast-moving frontier: salamanders (newts and axolotls) regrow lower jaws complete with bone, cartilage and teeth using programs shared with limb regeneration, zebrafish regenerate jaw-joint cartilage, and the mechanisms — EGR1-activated periosteal stem cells, BMP signalling, DPSC-derived vesicles — are being harnessed for human craniofacial tissue engineering, though full tooth regeneration remains elusive.",
   "comparison": "Werber's 1905 report that the lizard regrows jaw structures after their removal anticipated this field by a century, carrying reptilian regeneration beyond the familiar tail to the head — exactly where regenerative medicine now concentrates. A classic sleeping beauty: the question is intensely active (down to a 2026 newt-jaw study) while the founding observation goes uncited."
  },
- "55": {
-  "verdict": "Themes still active — colour change & regeneration",
-  "state": "Mantis colour change is now dissected genetically: pigment genes (Scarlet, ebony/tan), the Redboy pigment transporter and Wnt signalling govern background-matching, camouflage and sexual colour dimorphism, while insect appendage regeneration — with its developmental and reproductive trade-offs — is studied across many taxa.",
-  "comparison": "This founding paper established the Egyptian mantis as a tractable animal for exactly the two phenomena — colour change and regeneration — that remain active mantis research a century later. It was model-organism infrastructure: the animal endures as a study system while the 1906 paper itself goes uncited."
- },
  "61": {
   "verdict": "Open & refined — the moulting-growth law",
   "state": "The quantitative law of insect growth across moults — Dyar's rule and its relatives — remains under active scrutiny. Modern measurements find it holds only approximately: per-stage growth ratios vary by species and instar, and better exponential and multi-scale models have been proposed.",
   "comparison": "Przibram's serial growth measurements on Sphodromantis fed exactly this search for a quantitative moulting-growth law (the lineage that became 'Przibram's rule'). The enterprise is alive and the rule's limits are precisely today's question; his data are an early contribution, now uncited."
  },
  "66": {
-  "verdict": "Explained — Hox identity and stage-dependent regen",
+  "verdict": "Negative result — no antenna-to-leg switch at this stage",
   "state": "The genetic control of appendage identity and regeneration is now mapped: the Hox gene Antennapedia governs antenna-versus-leg (and wing) identity, and regenerative capacity is strongly stage- and age-dependent across arthropods (ladybird beetles, centipedes, annelids).",
-  "comparison": "Przibram's finding that mantis-larva antenna regenerates take a stage-dependent form — touching the heteromorphosis (antenna-to-leg) question — anticipates both the Hox control of antenna/leg identity and the stage-dependence of regeneration now documented. The 1917 observation is conceptually confirmed and molecularly explained, uncited."
+  "comparison": "Przibram set out in 1917 to obtain leg (tarsal) structures on regenerating mantis antennae and did not get them: of 87 specimens, 44 reared to imago, he reports not a single clear foot-formation, and the malformations he did see 'can nowhere be clearly homologized' with foot characters. The successful homeotic regenerates came two years later (1919). Modern Hox work explains why the switch is possible but conditional on stage and context — which is precisely what this honest negative was measuring. Read as a null result, it stands."
  },
  "75": {
   "verdict": "Mainstream now — environment × sex on traits",
@@ -275,7 +270,7 @@
   "comparison": "Abolin's pharmacological experiments — specific drugs expanding or contracting specific chromatophores in the minnow — are an early demonstration of exactly this adrenergic, cholinergic and hormonal control of colour change. The phenomenon and its pharmacology are confirmed and deepened; the 1925 paper is uncited."
  },
  "86": {
-  "verdict": "Reframed — epigenetics, not Lamarckism",
+  "verdict": "Reframed — epigenetics, not Lamarckism (the salamander work only)",
   "state": "Like Kammerer's other inheritance claims, this rests on the now-discredited neo-Lamarckian programme; the legitimate modern descendant is epigenetic inheritance and developmental plasticity of pigmentation, carefully distinguished from true Lamarckism, with the specific salamander colour-inheritance claim unconfirmed.",
   "comparison": "Kammerer's report that enforced colour changes in the fire salamander are inherited is part of the body of work undone by the midwife-toad scandal. The general phenomenon — that environment can shape, and sometimes transmit, pigmentation — survives in epigenetics; his strong Lamarckian inheritance claim does not, and remains unconfirmed."
  },
@@ -305,7 +300,7 @@
   "comparison": "Brescia's linking of newt secondary sex characters to gonadal control — the amphibian counterpart to Steinach's mammalian puberty-gland work — anticipates the gonad-hormone control of sexual phenotype now standard, even as modern work adds the genetic sex-determination layer. Confirmed in principle; uncited."
  },
  "116": {
-  "verdict": "Answered — developmental genetics of pigment formation",
+  "verdict": "Answered — developmental genetics of pigment formation (the animal work only)",
   "state": "The developmental formation of animal pigment is richly understood: pigment-cell (melanocyte and chromatophore) development and patterning are controlled by gene-regulatory networks and cis-regulatory variation, studied in chick, Xenopus and zebrafish across melanin, carotenoid and pterin pigments.",
   "comparison": "Winkler's analysis of the formation and origin of animal pigment is an early contribution to exactly this developmental account of pigmentation, now mapped to gene networks. The descriptive question he posed is answered molecularly; the 1910 paper — a companion to the institute's tyrosinase/DOPA work — is uncited."
  },
@@ -403,11 +398,6 @@
   "verdict": "Confirmed — pupal colour plasticity",
   "state": "Environmentally cued pupal colouration in the cabbage white is established and increasingly genetic: pupal colour tracks pupation substrate and light as a predator-protection adaptation, regulated by melanin-synthesis genes with developmental trade-offs.",
   "comparison": "Brecher's 1922 result that the cabbage-white pupa matches its colour to the surrounding light and background is a clean instance of exactly this plasticity, now mapped to substrate cues and pigment genes. One of her several pupal-colour papers in the corpus; confirmed and uncited."
- },
- "17": {
-  "verdict": "Confirmed — pupal colour plasticity",
-  "state": "Environmentally cued pupal colouration is established and increasingly genetic across butterflies: pupal colour tracks substrate and light as a predator-protection adaptation, regulated by pigment genes (including the lncRNA cortex), with developmental trade-offs.",
-  "comparison": "Przibram and Brecher's result that Vanessid pupae match their colour to light and background, as the cabbage white does, is one of the institute's several demonstrations of this now-confirmed plasticity. The phenomenon is mainstream and increasingly molecular; the paper is uncited."
  },
  "18": {
   "verdict": "Resolved in principle — the PD axis is determined yet reprogrammable",
@@ -650,7 +640,7 @@
   "comparison": "Part I of Janda's earthworm work confirms and details the capacity to regrow reproductive organs — exactly the annelid reproductive and germ regeneration now studied with modern models. Confirmed; uncited (companion to Part II)."
  },
  "138": {
-  "verdict": "Vindicated — systemic (thyroid) control of gill resorption",
+  "verdict": "Vindicated — the whole organism times gill resorption",
   "state": "Metamorphic gill resorption is now known to be driven systemically by thyroid hormone (locally fine-tuned by deiodinases) rather than by the gill's autonomous programme — gill resorption proceeds as part of coordinated, hormone-timed organ remodelling during metamorphosis.",
   "comparison": "Kornfeld's demonstration that metamorphic gill-resorption depends on the whole organism — a systemic signal, not the gill's own programme — is an early, correct inference of the systemic (now known to be thyroid-hormone) control of metamorphic organ resorption. Vindicated; modern work names the hormone and the deiodinase timing. Uncited."
  },
@@ -680,9 +670,9 @@
   "comparison": "Przibram's study of DOPA's participation in cocoon melanin formation, and the localisation of melanisation's chemical sites, is an early contribution to the insect melanin-synthesis chemistry now fully mapped (tyrosinase, DOPA, DDC). Confirmed; uncited."
  },
  "150": {
-  "verdict": "Now clinical — testicular autograft preserves spermatogenesis",
+  "verdict": "Now clinical — whole-testis grafting preserves spermatogenesis",
   "state": "Autologous testicular-tissue and spermatogonial-stem-cell transplantation is an active fertility-preservation strategy: grafted testicular tissue and stem cells maintain or restore spermatogenesis (now clinical for prepubertal cancer patients), with testicular organoids and in vitro spermatogenesis advancing.",
-  "comparison": "Koppanyi's 1924 finding that spermatogenesis persists in an autoplastically transplanted testis — the organ retaining germinal function when moved — is the male counterpart to Wiesner's ovary graft and an early demonstration of exactly what underpins today's testicular-tissue autotransplantation for fertility preservation. Vindicated and now clinical; uncited."
+  "comparison": "Koppányi's 1924 finding that spermatogenesis persists in a testis transplanted free into the body cavity — the organ keeping its germinal function when moved, including between species and between the sexes — is the male counterpart to Wiesner's ovary graft and an early demonstration of what underpins today's testicular-tissue transplantation for fertility preservation. Vindicated in principle; note that the grafts here were not autologous, so the modern clinical parallel is to the technique rather than to the donor relationship."
  },
  "153": {
   "verdict": "Partly vindicated, partly refined — regeneration vs growth",

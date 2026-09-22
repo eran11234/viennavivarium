@@ -1,50 +1,58 @@
 {
  "_schema": "Reader-facing context notes for papers whose content needs framing before it is read: claims about sexual orientation, intersex people, and race, and material obtained from people who could not refuse. Keyed by paper id. Fields: category (short label), severity (high|medium), heading, paras[] (plain text, rendered as <p>), where[] (pages that must show it: read|dossier), short (one line — reserved for the catalog row, NOT rendered yet). gen_site.py renders these at the TOP of the reading page and dossier every build — a paper listed here cannot be published without its note. Author-level context lives in the author's biography in authors.json, not here.",
-
  "165": {
   "category": "Sexual orientation",
   "severity": "high",
   "heading": "Before you read this",
   "short": "Claims a gonadal basis for sexual orientation. The claim is false; the tissue came from attempted “cure” surgery.",
-  "where": ["read", "dossier"],
+  "where": [
+   "read",
+   "dossier"
+  ],
   "paras": [
    "This paper claims that homosexual men have a distinctive testicular histology — that sexual orientation is visible in the gonad. It is wrong. No such difference exists. Research places the correlates of sexual orientation in neurodevelopment and genetics, not in gonadal tissue, and homosexuality is not a disease: it was removed from the American Psychiatric Association's diagnostic manual in 1973 and from the World Health Organization's classification in 1990.",
    "The tissue described here was taken from six men whose testicles were surgically removed by the Viennese surgeon Robert Lichtenstern and replaced with donor testicles, as an attempted cure for their homosexuality. Same-sex acts were a criminal offence in Austria at the time and remained so until 1971. The operations did not work.",
    "The translation is published because the history of this idea matters. It is a documented origin of the attempt to locate sexual orientation in the body and to correct it surgically — a tradition that ran through the twentieth century and survives in the conversion practices still in circulation today. Steinach's text is rendered as he wrote it. None of it is endorsed."
   ]
  },
-
  "164": {
   "category": "Sexual orientation",
   "severity": "high",
   "heading": "Before you read this",
   "short": "Sound hormone biology; also reports conversion surgery on a homosexual man as a success.",
-  "where": ["read", "dossier"],
+  "where": [
+   "read",
+   "dossier"
+  ],
   "paras": [
    "The animal endocrinology in this paper is sound, and is why it carries a positive verdict here: male and female gonadal secretions really do act against one another in shaping sexual characteristics, as modern work on opposing sex-differentiation pathways confirms.",
    "The paper also reports, approvingly, the surgical castration of a homosexual man and the implantation of a donor testicle, describing the outcome as the removal of his “abnormal, homosexual erotisation”, and notes that Lichtenstern had since operated on further such cases. That claim is false and the practice was harmful. Sexual orientation has no gonadal basis and is not a medical condition.",
    "The verdict recorded on this page applies to the hormone antagonism. It does not apply to that."
   ]
  },
-
  "38": {
   "category": "Sexual orientation",
   "severity": "medium",
   "heading": "Before you read this",
   "short": "Foundational endocrinology; extends the theory to human homosexuality, which it does not support.",
-  "where": ["read", "dossier"],
+  "where": [
+   "read",
+   "dossier"
+  ],
   "paras": [
    "This is the most-cited paper in the corpus, and its central finding — that gonadal secretions determine secondary sexual characteristics — is foundational endocrinology.",
    "Steinach also extends the framework to human homosexuality and “hermaphroditism”, treating both as conditions arising from a mixed gonad. That extension is not supported by later science and belongs to a harmful tradition of locating sexual orientation in the body. The vindication recorded on this page is of the hormonal work, not of that."
   ]
  },
-
  "166": {
   "category": "Intersex · human remains",
   "severity": "high",
   "heading": "Before you read this",
   "short": "Anatomy of a named intersex person whose body came from a penal institution; 1920 language throughout.",
-  "where": ["read", "dossier"],
+  "where": [
+   "read",
+   "dossier"
+  ],
   "paras": [
    "This paper is an anatomical description of one person: an intersex individual, identified only by the initials K. H., who died in a penal institution and whose body was sent to the Leipzig anatomical institute in 1918. The language is that of 1920 pathology — the person is a “case”, their body a “malformation”.",
    "Their own account of themselves is reported and then dismissed. Stieve records that they had been baptised and raised as a girl, were registered as male after an official examination at twenty, felt themselves from their twenties onward to be a man, and always wished to wear women's clothing — and then tells the reader to treat these statements “with the greatest caution”. It is the only testimony the person left, and it appears here inside an account written to overrule it.",
@@ -52,17 +60,155 @@
    "On the author, see the note in Hermann Stieve's biography on the Authors page."
   ]
  },
-
  "169": {
   "category": "Race",
   "severity": "high",
   "heading": "Before you read this",
   "short": "Applies heat-rat results to human populations, with sections on “the influence of race”.",
-  "where": ["read", "dossier"],
+  "where": [
+   "read",
+   "dossier"
+  ],
   "paras": [
    "The general idea in this paper — that temperature acts on the endocrine and reproductive system — survives in modern terms, and that is what the verdict on this page refers to.",
    "A substantial part of the paper does something else. It carries the heat-rat results over to human populations, with sections headed “Influence of race”, “climatic races” and “primary races”, and draws direct comparisons between people living in the tropics and animals. This is racial-typological anthropology. Human populations do not divide into biological races, no claim made here about racial difference has any standing, and this style of argument is part of the intellectual history that racial science was built from.",
    "The text is translated in full rather than cut, because a corpus that quietly drops the passages it finds embarrassing is not a record. It is rendered as written and none of it is endorsed."
+  ]
+ },
+ "86": {
+  "category": "Race",
+  "severity": "high",
+  "heading": "Before you read this",
+  "short": "Carries the salamander result over to African peoples' skin colour as inherited, soil-induced camouflage.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "The salamander experiments in this paper are real work, and the verdict on this page refers to them. Chapter IX does something else.",
+   "There Kammerer carries the result over to human populations. He quotes Schweinfurth's African travel writing at length on the Bongo, Dinka, Schilluk and Nuer — peoples whose skin colour Schweinfurth describes as matching the soil they live on — then corrects him for having called the match accidental, holding that ground colour is “the decisive factor”. In his own voice he adds that “with the Negroes a heat- and irradiation-melanism may come into consideration”. Since the treatise argues throughout that such induced colour is heritable and accumulates across generations, the effect is a claim that African peoples' skin colour is an acquired, soil-induced, inherited camouflage.",
+   "That is false, and it is racial determinism. Human skin pigmentation is ordinary population genetic variation shaped by long-term selection, principally on ultraviolet exposure; it is not induced by the colour of the ground, and it is not an inherited acquired characteristic. Human populations do not divide into biological races.",
+   "The translation is given in full rather than cut, because a corpus that quietly drops its embarrassments is not a record."
+  ]
+ },
+ "116": {
+  "category": "Race · human subjects",
+  "severity": "high",
+  "heading": "Before you read this",
+  "short": "Its second half rests on cross-racial human skin grafting, reported with nothing said about consent.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "Winkler's own experiments were on mice, tree frogs, newts, lizards, tadpoles and axolotls. The second part of the paper rests on something else.",
+   "It opens by surveying nineteenth-century experiments in which patches of skin were cut from Black people and grafted onto white people, and the reverse — and Winkler then says he set up his own mouse series in analogy with them. The people appear only as “a negro”, “negroes”, “pigmented persons”, “Europeans”. Nothing is said about who they were, how they came to be operated on, or whether they agreed; one cited source is titled, in French, a note on epidermal grafts in the different human races.",
+   "The racial framing is the source literature's, and Winkler carries it across without comment. The verdict on this page refers to the animal work."
+  ]
+ },
+ "174": {
+  "category": "Disability · human remains",
+  "severity": "medium",
+  "heading": "Before you read this",
+  "short": "Disabled people, including named children, catalogued as numbered specimens alongside animals.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "This is a comparative catalogue running, in Przibram's own phrase, “from the plant-animals up to man”, and disabled and malformed people enter it as numbered specimens in the same series as crayfish claws, beetle legs and lambs.",
+   "A three-headed boy is case No. 10, followed by a three-headed sheep cited “for the sake of the most complete possible enumeration”. A three-legged boy, a twelve-year-old girl whose foot is dissected bone by bone in print, and a young woman named in the text — whose supernumerary arm was removed surgically, and whose operation report is quoted — appear among cases 256–260. There are tables of human hand and foot polydactyly, and specimens drawn from surgical-college teratological collections in London whose provenance the paper does not examine.",
+   "The argument those cases serve — Bateson's rule — is sound, and is what the verdict refers to. The people described did not consent to become evidence for it."
+  ]
+ },
+ "31": {
+  "category": "Sexual orientation",
+  "severity": "medium",
+  "heading": "Before you read this",
+  "short": "Discusses same-sex mating in beetles as “pederasty” and “perversion”, drawing on period sexology.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "The animals in this paper are water beetles. The vocabulary is not.",
+   "A page and a half of the opening section treats same-sex mating in beetles as “pederasty”, “perversion” and “perversities”, including a long approving quotation from another entomologist, with Finkler glossing the term himself as meaning homosexuality. His own worry is that such behaviour would contaminate his criteria for “typically male” and “typically female” conduct, and he reports with relief that his species showed none. The literature he draws on is the human sexology of the day.",
+   "No person appears in the paper and nothing is proposed for anyone. The note is here because that vocabulary carried real consequences for people at the time, and a reader should meet it knowing what it is."
+  ]
+ },
+ "90": {
+  "category": "Disability · heredity",
+  "severity": "medium",
+  "heading": "Before you read this",
+  "short": "The mice are a model for “hereditary-degenerative deaf-mutism of man”; the verdict stops at the mouse genetics.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "The mouse breeding is the method, not the subject. Hammerschlag, an ear specialist, states at the outset that the experiments exist to establish the inheritance laws of what he calls “hereditary-degenerative deaf-mutism of man”, and that mice were chosen because they breed fastest.",
+   "Deafness in people is framed throughout as a hereditary-degenerative pathology with an aetiology and a clinical picture, with dogs, cats and mice as its animal analogues. The paper proposes nothing for anyone and involves no human subject — but this is the hereditary-deafness research tradition, and hereditary deafness later became a named category in interwar sterilisation law.",
+   "The verdict on this page is about the mouse genetics."
+  ]
+ },
+ "96": {
+  "category": "Race",
+  "severity": "medium",
+  "heading": "Before you read this",
+  "short": "Anchored on a colonial-era claim that “various races” in the tropics run warmer.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "The paper's own measurements are rat thermometry. Its human anchor is not.",
+   "Its first sentence sets up the problem by citing the claim that “various races” in the tropics run nearly a degree warmer than the same races in the north temperate zone — and that comparison is then reused as the benchmark validating the rat result, concluding that heat shifts body temperature about equally in man and rat. Congdon measured no people himself; the racial data is second-hand, and nothing is said about who was measured, where, or under what conditions.",
+   "Comparative racial physiology of this kind has no standing. The verdict on this page refers to the rat work."
+  ]
+ },
+ "23": {
+  "category": "Race",
+  "severity": "medium",
+  "heading": "Before you read this",
+  "short": "Reports approvingly that anthropometric measurement can sort people into races.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "This is Przibram's review essay on the quantitative programme in biology, and the verdict on this page celebrates that programme.",
+   "Closing his review of MacLeod, he reports without qualification that Bertillonage — the anthropometric system used in criminalistics — contains, given enough measured characters, not only a person's individual identity but “the belonging to definite races”, so that people can be placed into a system by measurement. He treats sorting humans by race and sorting animals or plants by species as one and the same operation.",
+   "It is a single unqualified sentence rather than an argument, and there is no eugenic proposal anywhere in the paper. It is flagged because anthropometric race classification is precisely what this programme was later used to justify."
+  ]
+ },
+ "25": {
+  "category": "Human experimentation (proposed)",
+  "severity": "medium",
+  "heading": "Before you read this",
+  "short": "Closes by proposing human eye transplants, including a primate-to-human graft, for cosmetic purposes.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "After thirty pages of eye transplants in fish, amphibians and rodents, the paper closes by proposing to move to people.",
+   "Koppányi suggests transplanting real eyes into human sockets in place of glass ones, “even merely for cosmetic purposes”, and states that nothing has emerged to obstruct either the re-insertion of human eyes or their replacement by an eye from a species closely related to man — a primate-to-human graft. He sets out a sequence: larger mammals first, then veterinary practice, then physicians.",
+   "No operation on a person is reported and none was carried out. The proposal belongs to the same Vienna decade as the gland-grafting vogue, which is why this page carries a note rather than an unqualified verdict."
+  ]
+ },
+ "16": {
+  "category": "A named colleague's health",
+  "severity": "medium",
+  "heading": "Before you read this",
+  "short": "Publishes a named colleague's mental illness to discredit his science.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "In the polemical section of this paper Przibram defends Kammerer against a critic by publishing the mental illness of Franz Megušar — a colleague at the same institute, named in full, whose own papers are in this corpus and who has a biography on this site.",
+   "He calls him “a mentally ill man” and “a sick man”, points to an obituary in which he had already said so, and offers to supply his case history privately by letter. Megušar had been killed in the First World War in 1916 and was not alive to answer.",
+   "The passage is translated in full rather than cut, because the record is the point. It is flagged so that a reader meets it as what it is — a man's health used as an argument against his work."
   ]
  }
 }

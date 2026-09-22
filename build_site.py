@@ -429,6 +429,10 @@ def build():
     # author-name corrections verified against the paper's own byline (id -> {author, author_full})
     _afp = os.path.join(ROOT, "legacy_data", "authors_fix.json")
     AUTHOR_FIX = json.load(open(_afp, encoding="utf-8")) if os.path.exists(_afp) else {}
+    # organism corrections (id -> [organism, modern]); see rediscovery.json org_override
+    _rdp = os.path.join(ROOT, "legacy_data", "rediscovery.json")
+    ORG_OVERRIDE = (json.load(open(_rdp, encoding="utf-8")).get("org_override", {})
+                    if os.path.exists(_rdp) else {})
     def defffd(s):
         if not s or "�" not in s: return s
         # match a whole word-core (may contain several U+FFFD), ignoring surrounding quotes/punctuation
@@ -447,6 +451,13 @@ def build():
             author = _af.get("author") or author
             author_full = _af.get("author_full") or author
         organism = clean(s.get("organism")) or clean(pr.get("organism"))
+        # A few spreadsheet rows carry the wrong organism. rediscovery.json's
+        # org_override is the single source of truth for those; apply it HERE so the
+        # correction reaches catalog.json (and so the reading page, which reads the
+        # catalog) — not only the dossier, which reads org_override directly.
+        _oo = ORG_OVERRIDE.get(str(pid))
+        if _oo:
+            organism = _oo[0] or organism
         phenomena = pr.get("phenomena") or [p.strip() for p in (s.get("phenomena") or "").split(",") if p.strip()]
         layer = layer_num(s.get("layer")) or layer_num(ds.get("layer"))
         conv = clean(s.get("convergence_axis"))

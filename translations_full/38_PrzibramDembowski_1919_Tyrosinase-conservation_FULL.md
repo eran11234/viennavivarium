@@ -135,11 +135,11 @@ The reaction goes on [forward] thus also in the sealed-by-fusion tube, it remain
 ---
 
 Translator's note:
-- Source pages 1–7 correspond to printed pages 259–266 (title page = printed 259; the Table of Contents and section 1.A also fall on printed 260, which is image p001/p002). This section runs through printed p.266 (image p007). Section "c) Regression…" ends mid-sentence at the bottom of printed p.266 with "Die Angeh-"; that sentence continues onto printed p.267 (image p008). Per the page-boundary convention, the sentence began on the page, so its completion from p008 top ("farbe der zugeschmolzenen Probe ist dagegen regelmäßig rein violett") is: "The colour-development-colour of the sealed-by-fusion sample is, on the contrary, regularly pure violet." The continuation proper belongs to the next section.
-- IMPORTANT CORRECTIONS made to the prior draft: The prior draft contained extensive fabricated/hallucinated text on printed pp. 261–266 (e.g. invented sentences about "Twofold warming up its yield", "auygesprochene Verschiedenheiten", long strings of bracketed German interspersed with invented English) that do not correspond to the legible German on the page images. Those passages have been retranslated directly from the page images. The German on pp. 261–262 (toluene/photobromination) is genuinely dense and contains embedded quotations whose syntax is elliptical; it is NOT, however, OCR-garbled to the degree the prior draft claimed. Renderings remain close to the German; truly ambiguous spots are flagged "*as printed*" or "*see note*".
-- The numeric table on printed p.263 was transcribed exactly from the page image: Energy % = 36.1 / 44.7 / 19.2; Side-chain substitution after photobromination % = 49.3 / 29.8 / 19.2; wavelengths yellow 579 / green 546 / blue 436 / together 405 μμ / violet.
-- The Ostwald colour-key parenthesis on printed p.265 is partly compressed in the original print (the bracketed colour↔striking-line assignments overlap); rendered as literally as the page allows with the uncertainty flagged.
-- The plate line, received date, and footnote 1 on the title page are included in full.
+- Source pages 1–7 correspond to printed pages 259–266 (title page = printed 259). Section "c) Regression…" ends mid-sentence at the foot of printed p. 266 with "Die Angeh-"; the sentence completes at the top of printed p. 267 ("farbe der zugeschmolzenen Probe ist dagegen regelmäßig rein violett") and is rendered here as: "The colour-development-colour of the sealed-by-fusion sample is, on the contrary, regularly pure violet."
+- The German on printed pp. 261–262 (toluene and photobromination) is dense, and contains embedded quotations whose syntax is elliptical. Renderings stay close to the German; genuinely ambiguous places are flagged "*as printed*" or "*see note*".
+- The numeric table on printed p. 263 was transcribed from the page image, not the OCR: Energy % = 36.1 / 44.7 / 19.2; side-chain substitution after photobromination % = 49.3 / 29.8 / 19.2; wavelengths yellow 579 / green 546 / blue 436 / together 405 μμ / violet.
+- The Ostwald colour-key parenthesis on printed p. 265 is partly compressed in the original printing, the bracketed colour-to-line assignments overlapping; it is rendered as literally as the page allows, with the uncertainty marked.
+- The plate line, the received date and footnote 1 on the title page are given in full.
 
 ...colour of the fused-shut sample, by contrast, is regularly pure violet; in only a few cases was blue observed. Likewise, violet is, as is known, the onset-colour [Angehfarbe] of the tyrosinases obtained from various insects and especially from the butterfly pupae. The pupa contains in its blood both chromogen and tyrosinase, mixed and shut off from the outer world; it thus corresponds to our fused-shut little tube. The rapid colouration of many insects during metamorphosis would perhaps be attributable to the sudden, abundant access of oxygen. It follows from this that the different onset-colour of the ferments taken from different animals need not speak against their eventual identity.¹
 
@@ -299,20 +299,11 @@ Przibram u. Dembowski, Konservierung der Tyrosinase. — Verlag von Julius Sprin
 ---
 
 Translator's note:
-- Page mapping confirmed against the images: image p008 = printed 267, p009 = 268, p010 = 269, p011 = 270, p012 = 271, p013 = 272, p014 = Plate VI. (The "287/288" that appeared in OCR for p008/p009 were misreads of "267/268".)
-- Section boundary: image p007 (printed 266) ends "...geht die Halimasch-Tyrosinase intensiv rosa bis rot an. Die Angeh-"; image p008 (printed 267) begins "farbe der zugeschmolzenen Probe ist dagegen regelmäßig rein violett." The split word is "Angeh-farbe". The preceding section, which covers p.266, translated that bridging sentence and flagged its continuation as belonging here; so this section reproduces the p.267 opening with a leading ellipsis to ensure nothing is lost.
-- CORRECTIONS made to the prior draft of pp. 267–272:
-  • p.267: The sentence "...daß die verschiedene Angehfarbe der aus verschiedenen Tieren genommenen Fermente nicht gegen deren eventuelle Identität zu sprechen braucht" was previously mistranslated/inverted ("exclusion of air... most diverse enzymes, which need not correspond to any eventual identity of pigment"). Corrected to: "the different onset-colour of the ferments taken from different animals need not speak against their eventual identity."
-  • p.267 footnote ¹ ("Anm. während des Druckes...") was garbled; retranslated from the image.
-  • p.267 lead-in to section 3.A and the lettered lists a)–d) (both the "similarities" list and the "apparent contradictions" list) were heavily garbled; all retranslated directly from the legible German.
-  • p.268: "BrH (Bromwasserstoff)" — corrected the draft's "HBr" in the prose to "BrH" to match the source ordering (gloss retained). The two displayed formulae are as printed (C₆H₅CH₃ + Br₂ = C₆H₅·CH₂Br + HBr ; C₆H₅CH₃ + 2 Br = C₆H₄Br·CH₃ + HBr); transient compound "Br₂ + O".
-  • p.269 (3.B top, 3.C) and p.269/270 (3.D): the draft's renderings were garbled; all retranslated.
-  • p.270 ("In technischer Hinsicht..." paragraph) and Summary points 1–6: the draft's renderings were garbled; all retranslated.
-  • p.270 Summary point 5: the draft read "oxygen-free animal body"; the German is "im sauerstoffreichen tierischen Körper" = "in the oxygen-RICH animal body" — corrected (meaning was inverted).
-  • p.272 plate explanation: the draft read "Pappenfärbungen"; the German is "Puppenfärbungen" (pupa-colourations) — corrected.
-- "Fällung im Blau" on p.272 is correctly "precipitation in the blue" (image shows ä, = Fällung).
-- Bibliography (p.271) was already correct in the draft and is preserved verbatim, including the Polish names Dłuska / Czarnecky / Lahocinsky and the volume/page numbers (691/516/560; 525; 387; 83/199; 299) and years.
-- Day-numbers in the plate explanation verified against the image: Abb. 1 = 12-day, Abb. 2 = 15-day, Abb. 3 = 20-day pre-irradiation; cuvettes provided with 1 cm³ tyrosin, one drop tyrosinase each.
+- Page mapping, confirmed against the images: printed 267–272, then Plate VI. (The "287/288" in the OCR were misreadings of "267/268".)
+- Section boundary: printed p. 266 ends "…geht die Halimasch-Tyrosinase intensiv rosa bis rot an. Die Angeh-" and printed p. 267 begins "farbe der zugeschmolzenen Probe ist dagegen regelmäßig rein violett." The split word is "Angeh-farbe"; the bridging sentence is given in the preceding section and repeated here with a leading ellipsis so that nothing is lost.
+- Two renderings worth flagging, because the German reverses what a reader might expect. Printed p. 267: "…daß die verschiedene Angehfarbe der aus verschiedenen Tieren genommenen Fermente nicht gegen deren eventuelle Identität zu sprechen braucht" — the different onset-colour of the ferments taken from different animals need *not* speak against their eventual identity. Printed p. 270, Summary point 5: the German is "im sauerstoffreichen tierischen Körper", the oxygen-**rich** animal body.
+- Printed p. 268: "BrH (Bromwasserstoff)" is given in the source's letter order, with the gloss retained. The two displayed formulae are as printed (C₆H₅CH₃ + Br₂ = C₆H₅·CH₂Br + HBr ; C₆H₅CH₃ + 2 Br = C₆H₄Br·CH₃ + HBr); the transient compound is "Br₂ + O".
+- Printed p. 272, plate explanation: the German is "Puppenfärbungen" — pupa-colourations.
 
 
 ## Figures

@@ -391,8 +391,8 @@
  },
  "org_override": {
   "55": [
-   "Sphodromantis bioculata",
-   "praying mantis"
+   "Acanthias vulgaris (spiny dogfish)",
+   "sharks & dogfishes"
   ],
   "107": [
    "Lepismatidae (bristletails)",
@@ -405,6 +405,10 @@
   "102": [
    "fish & amphibian muscle",
    "—"
+  ],
+  "10": [
+   "Triton cristatus (crested newt)",
+   "newts & salamanders"
   ]
  }
 }

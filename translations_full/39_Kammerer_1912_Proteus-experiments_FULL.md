@@ -884,9 +884,7 @@ Fig. 29. Kopf desselben Tieres, etwas vergrößert, von der Seite.
 
 Fig. 30. Kopf desselben Tieres, etwas vergrößert, von vorn.
 
-Pages 113, 114 and 115 are full-page photographic plates. The OCR layer for them contains only garbled halftone noise plus the sideways-printed plate header ("Archiv für Entwicklungsmechanik XXXIII") and the publisher line in the margins; the plates carry no body text or captions on the page itself. Per the figures rule, the figures are not reproduced; each plate is noted with a placeholder. The figure captions belonging to these plates live in the running "Erklärung der Figuren" (Explanation of Figures), which on the page 116 (printed p. 461) runs from Fig. 31 through Fig. 42 and includes the "Tafel XXIV. Augen im Detail." sub-header.
-
-Here is the faithful translation of the text on pages 113–116.
+Pages 113, 114 and 115 are full-page photographic plates. They carry no body text or captions of their own, only the sideways-printed plate header ("Archiv für Entwicklungsmechanik XXXIII") and the publisher line in the margins. The captions belonging to them are printed as running text in the "Erklärung der Figuren" (Explanation of Figures), which on printed p. 461 runs from Fig. 31 through Fig. 42 and includes the "Tafel XXIV. Augen im Detail." sub-header; those captions are translated below.
 
 *(Full-page photographic plate of whole-animal habitus photographs; margin header "Archiv für Entwicklungsmechanik XXXIII" and publisher line printed sideways. No body text or captions on the page itself. Figures not reproduced.)* *(Full-page photographic plate of whole-animal and head photographs; margin header "Archiv für Entwicklungsmechanik XXXIII" and publisher line printed sideways. No body text or captions on the page itself. Figures not reproduced.)* *(Full-page photographic plate of histological eye sections — the meridional eye sections and eye-coat detail figures belonging to "Tafel XXIV. Augen im Detail."; margin header "Archiv für Entwicklungsmechanik XXXIII" and publisher line printed sideways. No body text or captions on the page itself. Figures not reproduced.)* *(Running head: "Experimente über Fortpflanzung usw. bei Proteus anguinus Laur. — 461". Continuation of the Explanation of Figures; the captions below accompany the photographic plates and are printed as running text on this page — printed page 461.)*
 
@@ -917,14 +915,6 @@ Note: Owing to its hardness, the lens was in most median sections of this large 
 **Fig. 41.** Right eye of a newborn normal *Proteus* at 10-fold magnification (comparable with Fig. 4c, Plate III in ZELLER 1889, kept at the same magnification).  *(figure not reproduced)*
 
 **Fig. 42.** The same eye after regeneration of the cranial half of the bulb, likewise magnified 10-fold.  *(figure not reproduced)*
-
----
-
-NOTES FOR THE EDITOR (not part of the translation):
-- Pages 113, 114, 115 are **full-page photographic plates** containing only embedded figures plus the sideways-printed plate header "Archiv für Entwicklungsmechanik XXXIII" and the publisher line. They carry **no body text or captions on the page itself**. Per the figures rule, figures are not reproduced; each plate is noted with a placeholder. The rotated plate numbers in the top-right margins are only partly legible in the scan, so I have described each plate by its visible content (whole animals; heads; histological eye sections) rather than asserting a plate number that cannot be confirmed from the image. From the captions, the figure plates correspond to **Tafel XXII** (Pigmentierung und Hungerreduktion, Figs. 1–24), **Tafel XXIII** (Augenvergrößerung in situ, Figs. 25–36) and **Tafel XXIV** (Augen im Detail, Figs. 37–42).
-- The figure captions ("Erklärung der Figuren") are printed as continuous running text. On the page **116 (printed p. 461)**, the captions that BEGIN there are **Fig. 31 through Fig. 42**, plus the **"Tafel XXIV. Augen im Detail." / "Plate XXIV. Eyes in detail."** sub-header (which appears between Fig. 36 and Fig. 37, not before Fig. 31) — all translated in full above.
-- Captions Fig. 25–30 and the "Tafel XXIII" header begin on p. 112 (printed p. 460), which is outside this section (a leading partial that began earlier). Fig. 31 begins fresh at the top of p. 461, so the explanation text included here starts cleanly there. Nothing runs onto p. 117 from these pages.
-- Correction applied vs. the prior draft: in **Fig. 38** the closing layer "Augenkapsel" had been mistranslated as "the outer capsule"; corrected to "the eye-capsule" (consistent with Fig. 40, where the same word "Augenkapsel" is rendered "eye-capsule"). In **Figs. 32–34**, "größer" is rendered "larger" (literal) rather than "enlarged".
 
 
 ## Figures
