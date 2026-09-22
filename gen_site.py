@@ -74,17 +74,19 @@ FAVICON = ("data:image/svg+xml," + "%3Csvg xmlns='http://www.w3.org/2000/svg' vi
            "text-anchor='middle' fill='%23f3efe6'%3EV%3C/text%3E%3C/svg%3E")
 
 # --- Downloadable snapshots --------------------------------------------------
-# Built by hand and uploaded as GitHub Release assets (Release assets, not the
-# Pages site: Pages has a ~1 GB soft limit and the site alone is already ~590 MB).
-# TO REFRESH: rebuild the site, rezip, upload to a NEW dated release, then bump
-# SNAPSHOT_DATE, REL_BASE and the sizes below. Nothing else needs changing.
-SNAPSHOT_DATE = "22 September 2026"
-REL_TAG = "snapshot-2026-09-22"
+# Rebuilt by CI on EVERY push (make_bundles.py) and uploaded to the "latest"
+# release, so the Download page can never serve a snapshot older than the live
+# site. Release assets rather than files in the Pages site: Pages has a ~1 GB
+# soft limit and the site alone is already ~590 MB.
+# The tag and filenames are fixed, so these URLs never need updating; the date
+# below is stamped at build time and therefore always matches what CI uploaded.
+SNAPSHOT_DATE = _time.strftime("%d %B %Y").lstrip("0")
+REL_TAG = "latest"
 REL_BASE = "https://github.com/eran11234/viennavivarium/releases/download/" + REL_TAG + "/"
 REPO_ZIP = "https://github.com/eran11234/viennavivarium/archive/refs/heads/main.zip"
 DOWNLOADS = [
-    dict(key="site", size="588 MB", primary=True,
-         href=REL_BASE + "viennavivarium-site-2026-09-22.zip",
+    dict(key="site", size="~590 MB", primary=True,
+         href=REL_BASE + "viennavivarium-site.zip",
          name="Complete offline site",
          lede="The whole website, working without an internet connection.",
          what=["All 175 English translations, with their figures",
@@ -93,8 +95,8 @@ DOWNLOADS = [
                "497 figure and plate scans"],
          how="Unzip and open <code>index.html</code>. Nothing to install, no server needed.",
          who="Best if you want to read, browse or keep the corpus."),
-    dict(key="data", size="7.6 MB", primary=False,
-         href=REL_BASE + "viennavivarium-data-2026-09-22.zip",
+    dict(key="data", size="~8 MB", primary=False,
+         href=REL_BASE + "viennavivarium-research-bundle.zip",
          name="Research bundle",
          lede="Every text and every data file, without the scans.",
          what=["All 175 translations as Markdown",
@@ -478,16 +480,19 @@ def gen_download():
 <p class="lede">Everything on this site can be downloaded and kept. The translations, the German
 originals, the figures and the analysis are all here — nothing is held back behind the website.
 Pick whichever shape suits what you want to do.</p>
-<p class="dlsnap">Snapshot of <b>{SNAPSHOT_DATE}</b> · {STATS['papers']} papers · {STATS['trans']} translations ·
+<p class="dlsnap">Built <b>{SNAPSHOT_DATE}</b> · {STATS['papers']} papers · {STATS['trans']} translations ·
+rebuilt automatically whenever the site changes ·
 <a href="https://github.com/eran11234/viennavivarium/releases/tag/{REL_TAG}">all files on GitHub &rarr;</a></p>
 
 <div class="dlgrid">{''.join(card(d) for d in DOWNLOADS)}</div>
 
 <section class="dlnote">
   <h2>Before you use it</h2>
-  <p><b>This is a snapshot, not a living copy.</b> The site keeps changing — translations get
-  corrected, verdicts revised, biographies written. For anything you intend to quote or rely on,
-  check the live page. Each zip carries a <code>README.txt</code> with its contents and date.</p>
+  <p><b>It is still a copy, not the live thing.</b> Both bundles are rebuilt automatically every time
+  the site changes, so what you download matches what is published here — but once it is on your
+  disk it stops tracking. Translations get corrected and verdicts revised; for anything you intend
+  to quote or rely on, check the live page. Each zip carries a <code>README.txt</code> giving the
+  date it was built.</p>
   <p><b>Cite the original alongside the translation.</b> Every reading page carries the full original
   reference and its DOI where one exists; <code>catalog.csv</code> in the research bundle carries
   them in a column.</p>

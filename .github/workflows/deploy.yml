@@ -9,7 +9,7 @@ on:
   workflow_dispatch:        # also allow manual runs from the Actions tab
 
 permissions:
-  contents: read
+  contents: write      # needed to publish the download bundles to the "latest" release
   pages: write
   id-token: write
 
@@ -45,6 +45,42 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: vivarium_site
+
+      # Rebuild the downloadable bundles from the site we just built, and replace
+      # the assets on the "latest" release. Without this the Download page drifts
+      # behind the site silently — it once served a four-hour-old archive still
+      # carrying material the site had already corrected. ~90s.
+      - name: Build download bundles
+        run: python make_bundles.py
+
+      - name: Publish bundles to the "latest" release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          BUILT=$(date -u '+%d %B %Y at %H:%M UTC')
+          NOTES=$(printf '%s\n' \
+            "The complete Vienna Vivarium corpus, rebuilt automatically from the live site." \
+            "" \
+            "**Built:** $BUILT · commit \`${GITHUB_SHA:0:7}\`" \
+            "" \
+            "| | Size | What it is |" \
+            "|---|---|---|" \
+            "| \`viennavivarium-site.zip\` | ~590 MB | The whole browsable site. Unzip, open \`index.html\`, works offline — all 175 translations, all 175 German PDFs, the figures, catalog, tour, map and dossiers. |" \
+            "| \`viennavivarium-research-bundle.zip\` | ~8 MB | Translations as Markdown, \`catalog.csv\`, and every data file. No PDFs or figures. For analysis. |" \
+            "" \
+            "Each zip carries a \`README.txt\` with its contents, the verdict methodology, the context notes, and citation and rights." \
+            "" \
+            "These assets are replaced on every push to main, so this release always matches <https://eran11234.github.io/viennavivarium/>.")
+          if gh release view latest >/dev/null 2>&1; then
+            gh release edit latest --title "Corpus download — always current" --notes "$NOTES"
+          else
+            gh release create latest --title "Corpus download — always current" --notes "$NOTES"
+          fi
+          gh release upload latest \
+            dist/viennavivarium-site.zip \
+            dist/viennavivarium-research-bundle.zip \
+            --clobber
 
   deploy:
     needs: build

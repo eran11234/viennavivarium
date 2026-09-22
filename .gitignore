@@ -9,6 +9,7 @@
 !/README.md
 !/build_site.py
 !/gen_site.py
+!/make_bundles.py
 !/enrich_citations.py
 !/BVA Corpus Analysis.xlsx
 !/legacy_data
@@ -32,15 +33,8 @@ translations_full/_work/*
 # The .docx renders aren't used by the site (it builds from the .md):
 translations_full/*.docx
 
-# Never commit the generated output (CI builds it) or zips:
+# Never commit the generated output (CI builds it), the bundles, or zips:
 /vivarium_site/
+/dist/
 /site/
 *.zip
-
-# verification harness (dev tools)
-!tools/
-!tools/verify/
-!tools/verify/*.py
-!tools/verify/*.md
-!tools/verify/*.txt
-!tools/verify/*.json
