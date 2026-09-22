@@ -1,5 +1,5 @@
 {
- "_schema": "The hierarchical tour: Institute -> programmes -> researchers -> articles. gen_site.gen_tour() builds the tree from this plus the catalog. 'assign' pins papers whose phenomena tags would put them in the wrong programme (every other paper is placed by its tags; see PROGRAMME_OF_PHENOMENON in gen_site.py). 'pictures' records which image was chosen for each paper and why; the images themselves are in legacy_data/tour_src/<id>.jpg. Covers never come from a paper that carries a context note. Papers whose note concerns human subjects or remains (164, 165, 166, 174) show their title page, never a figure.",
+ "_schema": "The hierarchical tour: Institute -> programmes -> researchers -> articles. gen_site.gen_tour() builds the tree from this plus the catalog. 'assign' pins papers whose phenomena tags would put them in the wrong programme (every other paper is placed by its tags; see PROGRAMME_OF_PHENOMENON in gen_site.py). 'pictures' records which image was chosen for each paper and why; the images themselves are in legacy_data/tour_src/<id>.jpg. Covers never come from a paper that carries a context note. Papers whose note concerns human subjects or remains (164, 165, 166, 174) show their title page, never a figure. 'bio_stops' lists old tour stops that were about a person or the institute rather than the paper they pointed at; at the article level those papers use their own read-and-compare text instead.",
  "root": {
   "title": "The Vivarium",
   "place": "Vienna, 1902–1938",
@@ -970,5 +970,17 @@
   "175": {
    "kind": "titlepage"
   }
- }
+ },
+ "bio_stops": [
+  "brecher-life",
+  "kammerer-life",
+  "koppanyi-georgetown",
+  "megusar-1916",
+  "weiss-rockefeller",
+  "zuelzer",
+  "dembowski",
+  "japanese-visitors",
+  "steinach-operation",
+  "notoriety"
+ ]
 }

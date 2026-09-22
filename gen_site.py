@@ -1993,7 +1993,10 @@ def gen_tour():
     A, SYN, SENS = ld("consensus_all.json"), ld("consensus_synthesis.json"), ld("sensitivity.json")
     METH = ld("methodology.json")
     STOPS = {}
+    skip = set(TT.get("bio_stops", []))   # stops about a person, not about the paper they point at
     for s in (ld("tour.json").get("stops") or []):        # the curated, fact-checked stop texts
+        if s["id"] in skip:
+            continue
         STOPS.setdefault(s.get("pid") or s.get("slug"), s)
     AUTH = json.load(open(os.path.join(ROOT, "legacy_data", "authors.json"), encoding="utf-8"))["people"]
     cat_by_id = {c["id"]: c for c in catalog}
