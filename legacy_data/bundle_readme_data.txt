@@ -38,7 +38,7 @@ data/                  The project's working data. The ones most worth knowing:
                          citation_notes.json       per-citation curated notes
                          citation_verified.json    citations checked against the
                                                    citing paper's own text
-                         authors.json              60 people, with biographies
+                         authors.json              58 people, with biographies
                          sensitivity.json          papers needing reader context
                                                    before they are read
                          translation_issues.json   known gaps and provenance issues

@@ -1,0 +1,974 @@
+{
+ "_schema": "The hierarchical tour: Institute -> programmes -> researchers -> articles. gen_site.gen_tour() builds the tree from this plus the catalog. 'assign' pins papers whose phenomena tags would put them in the wrong programme (every other paper is placed by its tags; see PROGRAMME_OF_PHENOMENON in gen_site.py). 'pictures' records which image was chosen for each paper and why; the images themselves are in legacy_data/tour_src/<id>.jpg. Covers never come from a paper that carries a context note. Papers whose note concerns human subjects or remains (164, 165, 166, 174) show their title page, never a figure.",
+ "root": {
+  "title": "The Vivarium",
+  "place": "Vienna, 1902–1938",
+  "intro": "In an old aquarium hall in the Prater, a small private institute asked what living bodies do when you cut, graft, heat, darken or starve them — and published 175 papers on the answers. They fall into six big questions. Choose one, and follow it down to the people and the papers."
+ },
+ "programmes": [
+  {
+   "id": "regen",
+   "title": "Regeneration",
+   "question": "How does a body rebuild what it has lost?",
+   "accent": "#8a5a2b",
+   "cover": 1,
+   "intro": "The institute's founding obsession and its largest body of work. Its researchers cut limbs, claws, antennae, jaws, eyes, tails and wings from more than forty species, from snails to a goose, and watched what grew back — sometimes the right thing, sometimes a mirror image, sometimes a leg where an antenna should be. Those wrong regenerates proved the most revealing: they showed that a stump remembers position, the problem limb-regeneration biology is still working out."
+  },
+  {
+   "id": "graft",
+   "title": "Transplantation and the body's plan",
+   "question": "What does a part know about where it is?",
+   "accent": "#2e6f6a",
+   "cover": 36,
+   "intro": "Move a piece of an animal somewhere else and see whether it obeys its origin or its new neighbours. Paul Weiss grafted whole limbs, and the growth-buds of regenerating ones, onto newts; Theodor Koppányi replanted eyes in fish, frogs and rats; Walter Finkler swapped the heads of beetles. The answer that kept coming back — position, not origin — helped found the idea of the developmental field."
+  },
+  {
+   "id": "colour",
+   "title": "Colour and light",
+   "question": "Where does colour come from, and why does it change?",
+   "accent": "#9a6a1f",
+   "cover": 67,
+   "intro": "Why is a pupa green on a green leaf and brown against bark? Leonore Brecher spent a decade on butterfly pupae, finding which wavelengths of light switch their colour, while she and Hans Przibram chased pigment into the test tube and helped pin melanin to the enzyme tyrosinase acting on DOPA — chemistry now in every textbook. Fish, crabs and mantises that change colour in minutes complete the programme."
+  },
+  {
+   "id": "sex",
+   "title": "Sex and the gonad",
+   "question": "What makes an animal male or female — and what changes if you swap the glands?",
+   "accent": "#8a3a3a",
+   "cover": 150,
+   "intro": "Eugen Steinach's physiology department transplanted testes and ovaries between animals and showed that the gonads' secretions shape sexual characteristics — a founding result of endocrinology. The same programme was carried over to people. Steinach claimed a gonadal basis for homosexuality, and surgeons replaced men's testicles as a 'cure'; the claim is false and the operations did harm. Several papers in this programme carry a context note, shown before you open them.",
+   "caution": true
+  },
+  {
+   "id": "heredity",
+   "title": "Environment and inheritance",
+   "question": "Can the environment reach the next generation?",
+   "accent": "#33485c",
+   "cover": 119,
+   "intro": "The institute's boldest and most contested question. Przibram's long series on the 'environment of the germ-plasm' reared rats at controlled temperatures and measured their tails — warm rats grow longer ones, a result that holds. Paul Kammerer went much further, claiming that salamanders, toads and olms passed environmentally forced changes on to their offspring. None of those inheritance claims was replicated; modern epigenetics has reopened the question without vindicating his answers."
+  },
+  {
+   "id": "growth",
+   "title": "Growth, form and number",
+   "question": "Is there a mathematics of living form?",
+   "accent": "#5b5470",
+   "cover": 72,
+   "intro": "Przibram wanted biology to be as quantitative as physics. He weighed and measured praying mantises through every moult and found they roughly double in weight each time — 'Przibram's rule' — compared the growth of shells with the growth of crystals, and asked whether form itself follows from the speed of growth. Much of this work lives in tables rather than pictures; its spirit lives on in allometry and the physics of development."
+  }
+ ],
+ "blurbs": {
+  "regen": {
+   "przibram-h": "The founder's own regeneration work ran from crab claws that swap handedness after loss, through beetles growing leg segments on their antennae — the phenomenon he called homoeosis — to the 1930 limb experiments now read as early evidence of positional memory.",
+   "weiss-p": "In four years in the mid-1920s he showed that a newt limb regenerates without its skeleton, depends on its nerves, and can rebuild a whole limb from half a stump — the experiments behind his idea of a regeneration field.",
+   "werber": "Isaak Werber cut jaws from lizards and salamanders, antennae, eyes and wings from mealworm beetles, and the bill from a goose — testing how far regeneration reaches, from insects up to birds.",
+   "megusar": "Franz Megušar followed regeneration across the invertebrates — pond-snail eyes and tentacles, the silkworm's tail horn, beetle legs, the specialised limbs of mantises and grasshoppers — before he was killed in the First World War.",
+   "janda": "Viktor Janda showed that an earthworm can regrow its reproductive organs, and found antenna-like structures growing where cockroaches' eyes had been.",
+   "klintz": "Klintz tested regeneration at its limits: the woodlouse antenna, which regrows (confirmed in the same species in 2025); copepods, which barely regenerate at all; and the tails of dormice and rats.",
+   "kammerer": "Before the inheritance experiments that made him famous, Kammerer showed that amphibian larvae lose regenerative power as they age, and that a fly cannot regrow a wing once adult.",
+   "uhlenhuth": "Eduard Uhlenhuth studied the newt's most startling trick: regrowing a lost lens from the rim of the iris.",
+   "biberhofer": "Biberhofer tested regeneration in the crayfish's mouthparts and in the lancelet Amphioxus, a distant relative of the vertebrates.",
+   "cerny": "Adolf Černý asked how much of their bodies freshwater snails and slugs can rebuild.",
+   "burchhardt": "Henny Burchardt threaded limbs through the bodies of newts and watched which way their regenerates grew, showing that symmetry follows how the limb sits in its host. She was murdered at Auschwitz in 1944.",
+   "weiss-o": "Otto Weiss linked the water spider's ability to shed a leg with its ability to regrow one.",
+   "brecher": "Leonore Brecher worked out the conditions under which a stick insect regrows a leg in place of an antenna."
+  },
+  "graft": {
+   "weiss-p": "Weiss grafted fully developed limbs onto newts and found they grew, moved and even regenerated in their new place; transplanting the growth-bud of a regenerating limb, he showed its fate is set by where it lands, not where it came from.",
+   "przibram-h": "Przibram devised the free-grafting method the institute used, and asked how an embryo and a limb set up their axes — head and tail, back and belly — in experiments now read as early morphogen biology.",
+   "koppanyi": "Theodor Koppányi replanted eyes in fish, amphibians and rats and tested whether they could see again — a series that ended by proposing to try it in people.",
+   "finkler": "Walter Finkler swapped the heads of water beetles between males and females and claimed the new heads took over. The claims were never substantiated.",
+   "uhlenhuth": "Uhlenhuth moved salamander eyes to the back of the neck and found they metamorphosed exactly when their host did — timed by the body, not by the eye.",
+   "jellinek": "Auguste Jellinek trained rats to tell feeding dishes apart by colour and compared sighted, blinded and replanted-eye animals — a direct test of whether a replanted eye can see.",
+   "megusar": "Megušar turned developing eggs against gravity to see how it steers early development."
+  },
+  "colour": {
+   "brecher": "Leonore Brecher's decade-long series on butterfly pupae mapped which wavelengths of light make them green or brown, and her chemistry with Przibram helped establish that melanin comes from tyrosinase acting on DOPA. Dismissed in 1938 because she was Jewish, she was murdered at Maly Trostinec in 1942.",
+   "przibram-h": "Przibram's colour work began with praying mantises reared at different temperatures and moved into the chemistry of pigment itself, in the series he called Causes of Animal Colouration.",
+   "dembowski": "Jan Dembowski worked with Przibram and Brecher on how air and light govern pigment formation.",
+   "secerov": "Slavko Šećerov showed that a fish's colour change is steered both locally, in the skin, and through the eyes.",
+   "winkler": "Ferdinand Winkler studied how pigment forms in grafted skin, and with Brecher tested the DOPA reaction on frozen sections.",
+   "kammerer": "Kammerer reared fire salamanders in coloured light and followed how their markings changed.",
+   "megusar": "Megušar showed that crustaceans change colour according to what they see."
+  },
+  "sex": {
+   "steinach": "Eugen Steinach's physiology department showed by transplantation that the gonads' secretions shape sexual characteristics — founding endocrinology. He also applied the theory to human homosexuality; that claim is false and did harm, and his papers carry context notes.",
+   "kammerer": "Kammerer showed that sexual characteristics regrow under the influence of the gonads, and co-wrote 'Climate and Virility' with Steinach — a paper whose chapters on human 'races' carry a context note.",
+   "koppanyi": "Koppányi showed that a whole testis grafted into a newt's body cavity goes on producing sperm."
+  },
+  "heredity": {
+   "kammerer": "Paul Kammerer claimed that midwife toads, salamanders and olms passed environmentally forced changes on to their offspring. None of it was replicated, and the midwife-toad affair of 1926 ended his career; these remain the most famous and most contested experiments in the corpus.",
+   "przibram-h": "Przibram's Environment of the Germ-Plasm series reared rats at controlled temperatures: warm rats grow longer tails, a result that holds. Whether the change passes to the next generation was never settled.",
+   "secerov": "Šećerov contributed to the germ-plasm series, including early work on temperature and sex.",
+   "zuelzer": "Margarete Zuelzer showed how the contractile vacuole of single-celled animals responds to seawater — its role in regulating water. She died at Westerbork in 1943.",
+   "bierensdehaan": "J. A. Bierens de Haan, visiting from Amsterdam, measured how closely young rats' body temperature follows the air around them, and what cooling does to their tails."
+  },
+  "growth": {
+   "przibram-h": "Przibram measured praying mantises through every moult and found they roughly double in weight each time — 'Przibram's rule' — and looked for laws of form in crystals, shells and the speed of growth.",
+   "przibram-k": "Karl Przibram, Hans's brother and a physicist, applied the statistics of molecular motion to the wandering of small animals.",
+   "morgulis": "Sergius Morgulis studied how starvation slows and reshapes growth.",
+   "zuelzer": "Zuelzer asked whether regrowing a lost part slows an animal's overall growth.",
+   "koppanyi": "Koppányi described the biology of the ribbed newt Pleurodeles, today a flagship regeneration model.",
+   "weiss-p": "Weiss measured the angles of butterfly-wing veins.",
+   "brecher": "With Przibram, Brecher measured how the compound eye scales as a mantis grows.",
+   "megusar": "Megušar co-authored the first of the mantis growth measurements."
+  }
+ },
+ "assign": {
+  "9": "regen",
+  "16": "colour",
+  "17": "colour",
+  "18": "graft",
+  "20": "graft",
+  "23": "growth",
+  "44": "heredity",
+  "55": "regen",
+  "56": "regen",
+  "57": "heredity",
+  "90": "heredity",
+  "100": "heredity",
+  "104": "growth",
+  "120": "heredity",
+  "127": "heredity",
+  "133": "regen",
+  "139": "growth",
+  "141": "colour",
+  "142": "colour",
+  "143": "regen",
+  "157": "colour",
+  "163": "heredity",
+  "167": "heredity",
+  "174": "regen",
+  "84": "graft",
+  "94": "heredity",
+  "95": "heredity",
+  "89": "heredity",
+  "136": "heredity",
+  "60": "growth",
+  "87": "growth",
+  "175": "growth",
+  "69": "regen",
+  "70": "regen",
+  "1": "regen",
+  "3": "regen",
+  "6": "regen",
+  "161": "regen",
+  "168": "regen",
+  "162": "regen",
+  "122": "regen",
+  "91": "regen",
+  "132": "regen",
+  "75": "heredity",
+  "58": "graft",
+  "83": "heredity",
+  "68": "regen"
+ },
+ "pictures": {
+  "1": {
+   "kind": "figure",
+   "score": 80.3,
+   "src": "figures/157_Abolins_1930_Fibular-leg-regeneration/Fig_5.jpg",
+   "page": null
+  },
+  "2": {
+   "kind": "figure",
+   "score": 80.2,
+   "src": "figures/163_Burchhardt_1930_Urodele-symmetry/Fig_3.jpg",
+   "page": null
+  },
+  "3": {
+   "kind": "figure",
+   "score": 72.9,
+   "src": "figures/138_FlatscherPrzibram_1930_Newt-long-bone-regeneration/Fig_1.jpg",
+   "page": null
+  },
+  "4": {
+   "kind": "titlepage"
+  },
+  "5": {
+   "kind": "figure",
+   "score": 73.0,
+   "src": "figures/147_PrzibramBrecher_1930_Sphodromantis-growth/Fig_2.jpg",
+   "page": null
+  },
+  "6": {
+   "kind": "plate",
+   "score": 72.2,
+   "src": null,
+   "page": 3
+  },
+  "7": {
+   "kind": "figure",
+   "score": 63.3,
+   "src": "figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_2_Abb_3.jpg",
+   "page": null
+  },
+  "8": {
+   "kind": "figure",
+   "score": 95.6,
+   "src": "figures/52_Weiss_1930_Blastem-potency-test/Fig_6.jpg",
+   "page": null
+  },
+  "9": {
+   "kind": "figure",
+   "score": 63.8,
+   "src": "figures/13_Weiss_1926_Whole-regenerate-half/Fig_12.jpg",
+   "page": null
+  },
+  "10": {
+   "kind": "figure",
+   "score": 88.3,
+   "src": "figures/37_Weiss_1927_Skin-origin-regenerate/Fig_7.jpg",
+   "page": null
+  },
+  "11": {
+   "kind": "figure",
+   "score": 89.6,
+   "src": "figures/18_Weiss_1927_Blastem-potency/Fig_1.jpg",
+   "page": null
+  },
+  "12": {
+   "kind": "titlepage"
+  },
+  "13": {
+   "kind": "titlepage"
+  },
+  "14": {
+   "kind": "plate",
+   "score": 78.8,
+   "src": null,
+   "page": 38
+  },
+  "15": {
+   "kind": "plate",
+   "score": 65.5,
+   "src": null,
+   "page": 22
+  },
+  "16": {
+   "kind": "plate",
+   "score": 56.3,
+   "src": null,
+   "page": 40
+  },
+  "17": {
+   "kind": "titlepage"
+  },
+  "18": {
+   "kind": "figure",
+   "score": 68.5,
+   "src": "figures/53_Kurz_1922_Polarity-reversal-newt-leg/Plate_VII.jpg",
+   "page": null
+  },
+  "19": {
+   "kind": "titlepage"
+  },
+  "20": {
+   "kind": "titlepage"
+  },
+  "21": {
+   "kind": "titlepage"
+  },
+  "22": {
+   "kind": "figure",
+   "score": 86.9,
+   "src": "figures/65_Kudo_1922_Fish-melanin-colour/Plate_VIII.jpg",
+   "page": null
+  },
+  "23": {
+   "kind": "titlepage"
+  },
+  "24": {
+   "kind": "titlepage"
+  },
+  "25": {
+   "kind": "titlepage"
+  },
+  "26": {
+   "kind": "figure",
+   "score": 84.3,
+   "src": "figures/131_Koppanyi_1923_Eye-replantation-III/Plate_III.jpg",
+   "page": null
+  },
+  "27": {
+   "kind": "plate",
+   "score": 102.2,
+   "src": null,
+   "page": 18
+  },
+  "28": {
+   "kind": "plate",
+   "score": 74.3,
+   "src": null,
+   "page": 6
+  },
+  "29": {
+   "kind": "plate",
+   "score": 96.8,
+   "src": null,
+   "page": 12
+  },
+  "30": {
+   "kind": "plate",
+   "score": 60.8,
+   "src": null,
+   "page": 10
+  },
+  "31": {
+   "kind": "titlepage"
+  },
+  "32": {
+   "kind": "plate",
+   "score": 74.6,
+   "src": null,
+   "page": 15
+  },
+  "33": {
+   "kind": "titlepage"
+  },
+  "34": {
+   "kind": "figure",
+   "score": 105.3,
+   "src": "figures/139_Wiesner_1923_Lens-replantation/Fig_4_Abb_5.jpg",
+   "page": null
+  },
+  "35": {
+   "kind": "figure",
+   "score": 80.4,
+   "src": "figures/82_Wiesner_1923_Transplanted-ovaries/Plate_V.jpg",
+   "page": null
+  },
+  "36": {
+   "kind": "figure",
+   "score": 86.4,
+   "src": "figures/30_Weiss_1923_Transplanted-developed-limbs/Fig_2.jpg",
+   "page": null
+  },
+  "37": {
+   "kind": "plate",
+   "score": 54.2,
+   "src": null,
+   "page": 13
+  },
+  "38": {
+   "kind": "figure",
+   "score": 101.4,
+   "src": "figures/02_Steinach_1916_Puberty-glands/Plate_XX.jpg",
+   "page": null
+  },
+  "39": {
+   "kind": "titlepage"
+  },
+  "40": {
+   "kind": "titlepage"
+  },
+  "41": {
+   "kind": "figure",
+   "score": 59.9,
+   "src": "figures/50_Thomsen_1909_Rearing-colour-regeneration/Plate_XXI.jpg",
+   "page": null
+  },
+  "42": {
+   "kind": "plate",
+   "score": 72.2,
+   "src": null,
+   "page": 32
+  },
+  "43": {
+   "kind": "titlepage"
+  },
+  "44": {
+   "kind": "titlepage"
+  },
+  "45": {
+   "kind": "titlepage"
+  },
+  "46": {
+   "kind": "titlepage"
+  },
+  "47": {
+   "kind": "figure",
+   "score": 68.7,
+   "src": "figures/74_Czwiklitzer_1905_Ophryotrocha-regeneration/Fig_1.jpg",
+   "page": null
+  },
+  "48": {
+   "kind": "titlepage"
+  },
+  "49": {
+   "kind": "titlepage"
+  },
+  "50": {
+   "kind": "titlepage",
+   "why": "no strong figure"
+  },
+  "51": {
+   "kind": "titlepage"
+  },
+  "52": {
+   "kind": "plate",
+   "score": 86.3,
+   "src": null,
+   "page": 15
+  },
+  "53": {
+   "kind": "titlepage",
+   "why": "no strong figure"
+  },
+  "54": {
+   "kind": "figure",
+   "score": 76.0,
+   "src": "figures/135_Bogacki_1906_Fish-fin-regeneration/Taf_III.jpg",
+   "page": null
+  },
+  "55": {
+   "kind": "plate",
+   "score": 94.8,
+   "src": null,
+   "page": 16
+  },
+  "56": {
+   "kind": "titlepage"
+  },
+  "57": {
+   "kind": "plate",
+   "score": 72.8,
+   "src": null,
+   "page": 93
+  },
+  "58": {
+   "kind": "titlepage"
+  },
+  "59": {
+   "kind": "plate",
+   "score": 83.6,
+   "src": null,
+   "page": 46
+  },
+  "60": {
+   "kind": "titlepage"
+  },
+  "61": {
+   "kind": "figure",
+   "score": 65.9,
+   "src": "figures/87_Przibram_1917_Sphodromantis-growth-measurements/Plate_I.jpg",
+   "page": null
+  },
+  "62": {
+   "kind": "titlepage"
+  },
+  "63": {
+   "kind": "titlepage"
+  },
+  "64": {
+   "kind": "figure",
+   "score": 72.4,
+   "src": "figures/45_Przibram_1917_Germ-plasm-environment/Fig_1.jpg",
+   "page": null
+  },
+  "65": {
+   "kind": "titlepage"
+  },
+  "66": {
+   "kind": "figure",
+   "score": 55.9,
+   "src": "figures/75_Przibram_1917_Sphodromantis-antenna-regeneration/Plate_IV.jpg",
+   "page": null
+  },
+  "67": {
+   "kind": "figure",
+   "score": 95.5,
+   "src": "figures/102_Brecher_1917_Pieris-pupal-colours/Plate_VII.jpg",
+   "page": null
+  },
+  "68": {
+   "kind": "titlepage"
+  },
+  "69": {
+   "kind": "titlepage"
+  },
+  "70": {
+   "kind": "figure",
+   "score": 81.2,
+   "src": "figures/03_Weiss_1925_Limb-skeleton/Fig_3.jpg",
+   "page": null
+  },
+  "71": {
+   "kind": "figure",
+   "score": 58.4,
+   "src": "figures/117_Weiss_1925_Lateral-limb-regeneration/Plate_I.jpg",
+   "page": null
+  },
+  "72": {
+   "kind": "figure",
+   "score": 102.1,
+   "src": "figures/142_Weiss_1925_Butterfly-wing-angles/Fig_2.jpg",
+   "page": null
+  },
+  "73": {
+   "kind": "plate",
+   "score": 63.4,
+   "src": null,
+   "page": 13
+  },
+  "74": {
+   "kind": "titlepage",
+   "why": "both candidates were tables"
+  },
+  "75": {
+   "kind": "titlepage"
+  },
+  "76": {
+   "kind": "figure",
+   "score": 50.3,
+   "src": "figures/91_Przibram_1925_Rat-tail-offspring/Fig_XVII.jpg",
+   "page": null
+  },
+  "77": {
+   "kind": "titlepage"
+  },
+  "78": {
+   "kind": "titlepage"
+  },
+  "79": {
+   "kind": "titlepage"
+  },
+  "80": {
+   "kind": "titlepage"
+  },
+  "81": {
+   "kind": "plate",
+   "score": 111.1,
+   "src": null,
+   "page": 35
+  },
+  "82": {
+   "kind": "titlepage"
+  },
+  "83": {
+   "kind": "titlepage"
+  },
+  "84": {
+   "kind": "titlepage"
+  },
+  "85": {
+   "kind": "titlepage"
+  },
+  "86": {
+   "kind": "figure",
+   "score": 100.1,
+   "src": "figures/100_Kammerer_1913_Inherited-colour-changes-big/Taf_XIII.jpg",
+   "page": null
+  },
+  "87": {
+   "kind": "titlepage"
+  },
+  "88": {
+   "kind": "plate",
+   "score": 54.9,
+   "src": null,
+   "page": 50
+  },
+  "89": {
+   "kind": "plate",
+   "score": 84.9,
+   "src": null,
+   "page": 25
+  },
+  "90": {
+   "kind": "figure",
+   "score": 65.9,
+   "src": "figures/155_Hammerschlag_1912_Dancing-mice-breeding/Taf_IX.jpg",
+   "page": null
+  },
+  "91": {
+   "kind": "figure",
+   "score": 77.2,
+   "src": "figures/115_Janda_1912_Criodrilus-gonad-regeneration/Taf_XIX.jpg",
+   "page": null
+  },
+  "92": {
+   "kind": "plate",
+   "score": 91.0,
+   "src": null,
+   "page": 112
+  },
+  "93": {
+   "kind": "figure",
+   "score": 46.2,
+   "src": "figures/09_Megusar_1912_Crustacean-colour/Plate_LVI.jpg",
+   "page": null
+  },
+  "94": {
+   "kind": "titlepage"
+  },
+  "95": {
+   "kind": "figure",
+   "score": 96.5,
+   "src": "figures/83_Secerov_1912_Germ-plasm-environment/Taf_XXIX.jpg",
+   "page": null
+  },
+  "96": {
+   "kind": "titlepage"
+  },
+  "97": {
+   "kind": "titlepage"
+  },
+  "98": {
+   "kind": "figure",
+   "score": 75.2,
+   "src": "figures/20_Uhlenhuth_1912_Amphibian-eye-transplant/Fig_2.jpg",
+   "page": null
+  },
+  "99": {
+   "kind": "plate",
+   "score": 89.1,
+   "src": null,
+   "page": 8
+  },
+  "100": {
+   "kind": "figure",
+   "score": 63.6,
+   "src": "figures/116_Kammerer_1907_Perch-ruffe-hybrid/Plate_XXII.jpg",
+   "page": null
+  },
+  "101": {
+   "kind": "figure",
+   "score": 61.4,
+   "src": "figures/169_Klintz_1907_Antenna-regeneration/Taf_XXIV.jpg",
+   "page": null
+  },
+  "102": {
+   "kind": "titlepage"
+  },
+  "103": {
+   "kind": "titlepage"
+  },
+  "104": {
+   "kind": "titlepage"
+  },
+  "105": {
+   "kind": "figure",
+   "score": 60.8,
+   "src": "figures/154_Przibram_1907_Malformed-regenerate-shedding/Fig_1.jpg",
+   "page": null
+  },
+  "106": {
+   "kind": "titlepage"
+  },
+  "107": {
+   "kind": "titlepage"
+  },
+  "108": {
+   "kind": "titlepage"
+  },
+  "109": {
+   "kind": "titlepage"
+  },
+  "110": {
+   "kind": "titlepage"
+  },
+  "111": {
+   "kind": "plate",
+   "score": 86.7,
+   "src": null,
+   "page": 7
+  },
+  "112": {
+   "kind": "titlepage"
+  },
+  "113": {
+   "kind": "figure",
+   "score": 63.9,
+   "src": "figures/78_Kammerer_1910_Inherited-colour-changes/Taf_XIV.jpg",
+   "page": null
+  },
+  "114": {
+   "kind": "titlepage"
+  },
+  "115": {
+   "kind": "plate",
+   "score": 86.3,
+   "src": null,
+   "page": 30
+  },
+  "116": {
+   "kind": "figure",
+   "score": 79.9,
+   "src": "figures/23_Winkler_1910_Pigment-formation/Plate_XXIII.jpg",
+   "page": null
+  },
+  "117": {
+   "kind": "figure",
+   "score": 59.6,
+   "src": "figures/118_Zuelzer_1910_Seawater-pulsating-vacuole/Taf_XXVI.jpg",
+   "page": null
+  },
+  "118": {
+   "kind": "titlepage",
+   "why": "no strong figure"
+  },
+  "119": {
+   "kind": "figure",
+   "score": 40.9,
+   "src": "figures/15_Kammerer_1907_Reproductive-adaptations-II/Plate_I.jpg",
+   "page": null
+  },
+  "120": {
+   "kind": "titlepage"
+  },
+  "121": {
+   "kind": "titlepage"
+  },
+  "122": {
+   "kind": "titlepage"
+  },
+  "123": {
+   "kind": "figure",
+   "score": 51.8,
+   "src": "figures/80_Megusar_1907_Limnaea-eye-tentacle-regeneration/Taf_IV.jpg",
+   "page": null
+  },
+  "124": {
+   "kind": "titlepage"
+  },
+  "125": {
+   "kind": "titlepage"
+  },
+  "126": {
+   "kind": "plate",
+   "score": 57.5,
+   "src": null,
+   "page": 14
+  },
+  "127": {
+   "kind": "titlepage"
+  },
+  "128": {
+   "kind": "figure",
+   "score": 55.4,
+   "src": "figures/109_Przibram_1907_Claw-reversal-decapods/Taf_XI.jpg",
+   "page": null
+  },
+  "129": {
+   "kind": "titlepage"
+  },
+  "130": {
+   "kind": "figure",
+   "score": 69.9,
+   "src": "figures/70_Kammerer_1907_Dipteran-wing-regeneration/Fig_4.jpg",
+   "page": null
+  },
+  "131": {
+   "kind": "titlepage"
+  },
+  "132": {
+   "kind": "titlepage"
+  },
+  "133": {
+   "kind": "figure",
+   "score": 48.0,
+   "src": "figures/21_Kurz_1912_Triton-leg-potencies/Fig_1.jpg",
+   "page": null
+  },
+  "134": {
+   "kind": "titlepage"
+  },
+  "135": {
+   "kind": "titlepage"
+  },
+  "136": {
+   "kind": "plate",
+   "score": 76.0,
+   "src": null,
+   "page": 7
+  },
+  "137": {
+   "kind": "plate",
+   "score": 106.7,
+   "src": null,
+   "page": 25
+  },
+  "138": {
+   "kind": "figure",
+   "score": 101.1,
+   "src": "figures/42_Kornfeld_1914_Gill-resorption-metamorphosis/Plate_IX.jpg",
+   "page": null
+  },
+  "139": {
+   "kind": "titlepage"
+  },
+  "140": {
+   "kind": "figure",
+   "score": 100.0,
+   "src": "figures/51_Sztern_1914_Sphodromantis-growth/Plate_XVII_Figs_17_22.jpg",
+   "page": null
+  },
+  "141": {
+   "kind": "figure",
+   "score": 73.1,
+   "src": "figures/43_Brecher_1924_Pieris-pupal-colours/Fig_1.jpg",
+   "page": null
+  },
+  "142": {
+   "kind": "titlepage"
+  },
+  "143": {
+   "kind": "figure",
+   "score": 73.5,
+   "src": "figures/125_Brecher_1924_Dixippus-antenna-legs/Fig_4.jpg",
+   "page": null
+  },
+  "144": {
+   "kind": "figure",
+   "score": 88.8,
+   "src": "figures/172_Ehrenpreis_1924_Spleen-transplantation/Fig_6.jpg",
+   "page": null
+  },
+  "145": {
+   "kind": "figure",
+   "score": 41.7,
+   "src": "figures/01_Przibram_1924_Amphibian-embryo/Plate_II.jpg",
+   "page": null,
+   "why": "2nd candidate"
+  },
+  "146": {
+   "kind": "figure",
+   "score": 73.6,
+   "src": "figures/136_Przibram_1924_Limb-axial-ratios/Fig_q.jpg",
+   "page": null
+  },
+  "147": {
+   "kind": "titlepage"
+  },
+  "148": {
+   "kind": "figure",
+   "score": 100.3,
+   "src": "figures/12_Weiss_1924_Transplanted-limb-function/Fig_4.jpg",
+   "page": null
+  },
+  "149": {
+   "kind": "figure",
+   "score": 91.5,
+   "src": "figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_4.jpg",
+   "page": null
+  },
+  "150": {
+   "kind": "figure",
+   "score": 98.1,
+   "src": "figures/121_Koppanyi_1924_Transplanted-testis-spermatogenesis/Fig_8.jpg",
+   "page": null
+  },
+  "151": {
+   "kind": "titlepage"
+  },
+  "152": {
+   "kind": "titlepage"
+  },
+  "153": {
+   "kind": "figure",
+   "score": 47.0,
+   "src": "figures/36_Przibram_1919_Regeneration-as-growth/Figure_2.jpg",
+   "page": null
+  },
+  "154": {
+   "kind": "figure",
+   "score": 40.3,
+   "src": "figures/122_Przibram_1919_Raptorial-legs-regenerates/Plate_I.jpg",
+   "page": null
+  },
+  "155": {
+   "kind": "plate",
+   "score": 91.6,
+   "src": null,
+   "page": 17
+  },
+  "156": {
+   "kind": "titlepage"
+  },
+  "157": {
+   "kind": "titlepage"
+  },
+  "158": {
+   "kind": "plate",
+   "score": 78.0,
+   "src": null,
+   "page": 13
+  },
+  "159": {
+   "kind": "figure",
+   "score": 72.1,
+   "src": "figures/29_Brecher_1919_Pieris-pupal-colours/Fig_1.jpg",
+   "page": null
+  },
+  "160": {
+   "kind": "plate",
+   "score": 78.6,
+   "src": null,
+   "page": 48
+  },
+  "161": {
+   "kind": "figure",
+   "score": 103.8,
+   "src": "figures/107_Uhlenhuth_1919_Lens-regeneration-I/Taf_XVIII.jpg",
+   "page": null
+  },
+  "162": {
+   "kind": "figure",
+   "score": 100.1,
+   "src": "figures/140_Kolmer_1920_Second-lens-finding/Fig_2.jpg",
+   "page": null
+  },
+  "163": {
+   "kind": "figure",
+   "score": 92.4,
+   "src": "figures/148_Demoll_1920_Soma-germ-inheritance/Plate_I.jpg",
+   "page": null
+  },
+  "164": {
+   "kind": "titlepage",
+   "why": "human subject — no figure used as decoration"
+  },
+  "165": {
+   "kind": "titlepage",
+   "why": "human subject — no figure used as decoration"
+  },
+  "166": {
+   "kind": "titlepage",
+   "why": "human subject — no figure used as decoration"
+  },
+  "167": {
+   "kind": "figure",
+   "score": 48.5,
+   "src": "figures/103_Erdmann_1920_Endomixis-paramaecium/Diagram_12.jpg",
+   "page": null
+  },
+  "168": {
+   "kind": "titlepage"
+  },
+  "169": {
+   "kind": "figure",
+   "score": 98.5,
+   "src": "figures/34_SteinachKammerer_1920_Climate-virility/Fig_1.jpg",
+   "page": null
+  },
+  "170": {
+   "kind": "titlepage"
+  },
+  "171": {
+   "kind": "titlepage"
+  },
+  "172": {
+   "kind": "titlepage"
+  },
+  "173": {
+   "kind": "titlepage"
+  },
+  "174": {
+   "kind": "titlepage",
+   "why": "human subject — no figure used as decoration"
+  },
+  "175": {
+   "kind": "titlepage"
+  }
+ }
+}

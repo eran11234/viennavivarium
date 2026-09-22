@@ -43,5 +43,15 @@
   "author": "Przibram",
   "author_full": "Hans Przibram",
   "_source": "Title page and every running head of the 1909 paper read 'Hans Przibram'; the translation's own byline reads 'Hans Przibram'. The corpus spreadsheet said 'Thomsen'."
+ },
+ "12": {
+  "author": "Bierens de Haan",
+  "author_full": "J. A. Bierens de Haan",
+  "_source": "The translation's byline reads 'J. A. Bierens de Haan (Amsterdam)'. The corpus spreadsheet had 'de Hahn', which also created a spurious second person on the Authors page."
+ },
+ "13": {
+  "author": "Bierens de Haan / Przibram",
+  "author_full": "J. A. Bierens de Haan and Hans Przibram",
+  "_source": "Byline: 'J. A. Bierens de Haan and Hans Przibram (Amsterdam). (Vienna).'"
  }
 }

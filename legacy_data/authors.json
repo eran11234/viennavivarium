@@ -20,6 +20,7 @@
     20,
     23,
     24,
+    41,
     49,
     55,
     59,
@@ -585,10 +586,11 @@
    "name": "J. A. Bierens de Haan",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: lowering body temperature shortens the tail — the cold end of Przibram's temperature-controls-proportion series.",
+   "bio": "A Dutch zoologist from Amsterdam who came to the Vivarium to work in Przibram's temperature programme. His two 1922 papers measure how closely the body temperature of young brown rats tracks the air around them, and what happens to tail length when that temperature is lowered by chemical means — part of the series Przibram called the Environment of the Germ-Plasm.",
    "link": "",
    "featured": false,
    "papers": [
+    12,
     13
    ]
   },
@@ -812,18 +814,6 @@
    ]
   },
   {
-   "key": "thomsen",
-   "name": "Thomsen",
-   "years": "",
-   "role": "",
-   "bio": "Contributed to the corpus: documents rearing, colour change and regeneration in praying mantises, extending the BVA's mantis program.",
-   "link": "",
-   "featured": false,
-   "papers": [
-    41
-   ]
-  },
-  {
    "key": "thomson",
    "name": "Thomson",
    "years": "",
@@ -857,18 +847,6 @@
    "featured": false,
    "papers": [
     108
-   ]
-  },
-  {
-   "key": "dehahn",
-   "name": "de Hahn",
-   "years": "",
-   "role": "",
-   "bio": "Contributed to the corpus: young rats are not yet fully homeothermic — their body temperature tracks the ambient temperature.",
-   "link": "",
-   "featured": false,
-   "papers": [
-    12
    ]
   }
  ],

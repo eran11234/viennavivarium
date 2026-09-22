@@ -178,13 +178,9 @@ def gen_index():
     _CA = json.load(open(_cp, encoding="utf-8")) if os.path.exists(_cp) else {}
     n_sleep = sum(1 for v in _CA.values() if v.get("sleeping"))
     n_confirmed = sum(1 for v in _CA.values() if v.get("status") in ("Sleeping Beauty", "Quiet Classic", "Living Legacy"))
-    # four tour thumbnails for the featured panel (gen_tour writes assets/tour/<id>.jpg later in the build)
-    _tp = os.path.join(ROOT, "legacy_data", "tour.json")
-    _tour_pick = ["eye-replant-amphibian", "midwife-toad", "positional-memory", "the-building"]
-    if os.path.exists(_tp):
-        _ids = {s["id"] for s in json.load(open(_tp, encoding="utf-8"))["stops"]}
-        _tour_pick = [i for i in _tour_pick if i in _ids]
-    tour_imgs = "".join('<img src="assets/tour/%s.jpg" alt="" loading="lazy">' % i for i in _tour_pick)
+    # four programme covers for the featured panel (gen_tour writes assets/tree/prog-<id>-c.jpg later in the build)
+    tour_imgs = "".join('<img src="assets/tree/prog-%s-c.jpg" alt="" loading="lazy">' % i
+                        for i in ("regen", "colour", "graft", "heredity"))
     body = f"""
 <section class="hero">
   <p class="kicker">An orientation platform for researchers</p>
@@ -200,8 +196,8 @@ def gen_index():
   <div class="tp-imgs">{tour_imgs}</div>
   <div class="tp-text">
     <p class="kicker">New here? Take the tour</p>
-    <h2>Let your curiosity lead</h2>
-    <p>A personal tour through the corpus: at every step, choose which of three or four images pulls you in — a regrown eye, a scandal, a physics of form, a name misspelt for a century — and after a few steps see what you found. A different hand every visit.</p>
+    <h2>From six big questions down to the papers</h2>
+    <p>Start with what the institute wanted to know — how a body rebuilds what it has lost, where colour comes from, whether the environment reaches the next generation — then go inside to the researchers who chased each question and the papers they wrote, illustrated with their own plates.</p>
     <span class="tp-btn">Start the tour →</span>
   </div>
 </a>
@@ -575,7 +571,7 @@ def gen_map():
 </div>
 """
     page("map.html", "Map", "Map", body,
-         head='<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>',
+         head='<script src="assets/d3.v7.min.js"></script>',
          foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="assets/map.js"></script>')
 
 REDISC_CSS = r"""
@@ -1423,298 +1419,710 @@ def gen_dossier():
 
 # ---------------------------------------------------------------- guided tour
 TOUR_CSS = r"""
-.tourwrap{max-width:1040px}
-.tourhero{background:linear-gradient(135deg,#1d2733,#33485c);border-radius:18px;padding:34px 34px 30px;color:#f3efe6;position:relative;overflow:hidden;margin-top:10px}
-.tourhero::after{content:"☾";position:absolute;right:-6px;top:-40px;font-size:200px;opacity:.06}
-.tourhero .kicker{color:#cdb98a}
-.tourhero h1{color:#fff;font-family:Georgia,serif;font-size:36px;margin:.1em 0 .25em;line-height:1.15}
-.tourhero p{color:#dfe6ee;font-size:16.5px;line-height:1.6;max-width:70ch;margin:0}
-.tourhero .skip{display:inline-block;margin-top:14px;color:#cdb98a;font-size:13.5px}
-/* trail */
-.trail{position:sticky;top:62px;z-index:9;display:flex;align-items:center;gap:12px;background:rgba(247,244,238,.94);backdrop-filter:blur(6px);border:1px solid var(--rule);border-radius:12px;padding:8px 12px;margin:14px 0 6px}
-.trail .steps{display:flex;align-items:center;gap:0;flex:1;overflow:hidden}
-.trail .tn{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 0 0 1.5px #33485c;flex:0 0 auto;transform:scale(.6);opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
-.trail .tn.in{transform:scale(1);opacity:1}
-.trail .ln{width:16px;height:2px;background:#33485c;opacity:.35;flex:0 0 auto}
-.trail .cnt{font-size:12.5px;color:var(--muted);white-space:nowrap}
-.trail .tbtn{font-size:12.5px;border:1px solid var(--rule);background:var(--card);border-radius:20px;padding:5px 12px;cursor:pointer;color:var(--ink);font-family:inherit;white-space:nowrap}
-.trail .tbtn.primary{background:#33485c;color:#fff;border-color:#33485c}
-.trail .tbtn:disabled{opacity:.4;cursor:default}
-/* stop (fact) card */
-.stopcard{background:var(--card);border:1px solid var(--rule);border-radius:16px;overflow:hidden;margin:16px 0 8px;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
-.stopcard.in{opacity:1;transform:none}
-.stopcard .simg{position:relative;height:340px;overflow:hidden;background:#e9e3d6}
-.stopcard .simg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transform:scale(1.02);transition:transform 9s ease-out}
-.stopcard.in .simg img{transform:scale(1.09)}
-.stopcard .simg .grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(29,39,51,.78) 100%)}
-.stopcard .simg h2{position:absolute;left:24px;right:24px;bottom:18px;margin:0;color:#fff;font-family:Georgia,serif;font-size:30px;line-height:1.15;text-shadow:0 2px 12px rgba(0,0,0,.5)}
-.stopcard .sbody{padding:18px 24px 20px}
-.stopcard .chips{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 12px}
-.stopcard .chip{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.03em;padding:3px 10px;border-radius:20px;background:#eee8dc;color:#3c3833}
-.stopcard .chip.st-sb{background:#33485c;color:#f3efe6}.stopcard .chip.st-qc{background:#2e6f6a;color:#fff}.stopcard .chip.st-ll{background:#1d6e56;color:#fff}.stopcard .chip.st-st{background:#9a6a1f;color:#fff}.stopcard .chip.st-cl{background:#8a3a3a;color:#fff}.stopcard .chip.st-rr{background:#9a9387;color:#fff}
-.stopcard .chip.v{background:#f1ece1;color:#26313d;font-weight:600;letter-spacing:0;font-size:11.5px}
-.stopcard p.fact{font-size:17px;line-height:1.65;margin:0 0 14px;max-width:72ch;font-family:Georgia,serif}
-.stopcard .slinks{display:flex;flex-wrap:wrap;gap:8px}
-.stopcard .slinks a{font-size:13px;border:1px solid var(--rule);border-radius:8px;padding:6px 12px;text-decoration:none;color:var(--ink);background:var(--paper)}
-.stopcard .slinks a.go{background:#33485c;color:#fff;border-color:#33485c}
-/* options */
-.prompt{font-family:Georgia,serif;font-size:22px;margin:26px 0 12px;color:var(--ink)}
-.prompt small{display:block;font-family:-apple-system,sans-serif;font-size:12.5px;color:var(--muted);margin-top:4px;letter-spacing:.02em}
-.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
-.opt{position:relative;border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--card);cursor:pointer;text-align:left;padding:0;font-family:inherit;color:var(--ink);opacity:0;transform:translateY(18px);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,opacity .45s,border-color .2s}
-.opt.in{opacity:1;transform:none}
-.opt:hover,.opt:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px rgba(29,39,51,.16);border-color:#cdb98a;outline:none}
-.opt .oimg{height:150px;overflow:hidden;background:#e9e3d6}
-.opt .oimg img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .6s ease}
-.opt:hover .oimg img{transform:scale(1.07)}
-.opt .otxt{padding:12px 14px 14px}
-.opt .otxt b{display:block;font-family:Georgia,serif;font-size:16px;line-height:1.25;margin-bottom:5px}
-.opt .otxt span{font-size:13px;color:var(--muted);line-height:1.45;display:block}
-.opt .okey{position:absolute;top:10px;left:10px;width:24px;height:24px;border-radius:50%;background:rgba(29,39,51,.85);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
-.opt .wild{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;letter-spacing:.04em;background:#cdb98a;color:#26313d;border-radius:20px;padding:2px 8px;text-transform:uppercase}
-.opt.chosen{border-color:#33485c;box-shadow:0 0 0 3px rgba(51,72,92,.25)}
-.opts.leaving .opt:not(.chosen){opacity:.15;transform:scale(.97)}
-/* findings */
-.findings{background:linear-gradient(135deg,#1d2733,#33485c);color:#f3efe6;border-radius:18px;padding:26px 28px 24px;margin:18px 0 8px;position:relative;overflow:hidden;opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1)}
-.findings.in{opacity:1;transform:none}
-.findings::after{content:"✦";position:absolute;right:14px;top:-30px;font-size:150px;opacity:.06}
-.findings .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cdb98a;font-weight:600;margin:0 0 6px}
-.findings h2{color:#fff;font-family:Georgia,serif;font-size:27px;margin:0 0 14px;line-height:1.2;border:0}
-.findings .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:0 0 16px}
-.findings .nums div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:12px 12px 10px;text-align:center}
-.findings .nums b{display:block;font-family:Georgia,serif;font-size:32px;line-height:1;color:#fff}
-.findings .nums span{font-size:11.5px;color:#b9c6d3;display:block;margin-top:4px}
-.findings h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#cdb98a;margin:14px 0 8px;font-family:-apple-system,sans-serif}
-.findings .sbl{display:flex;flex-direction:column;gap:8px;margin:0 0 6px}
-.findings .sbl a{display:flex;gap:12px;align-items:center;background:rgba(255,255,255,.07);border-radius:10px;padding:8px 12px;text-decoration:none;color:#f3efe6}
-.findings .sbl a:hover{background:rgba(255,255,255,.14);text-decoration:none}
-.findings .sbl img{width:44px;height:44px;border-radius:8px;object-fit:cover;flex:0 0 auto}
-.findings .sbl b{display:block;font-size:14px;line-height:1.3}
-.findings .sbl span{font-size:12px;color:#b9c6d3}
-.findings p.line{font-size:15px;line-height:1.6;color:#dfe6ee;margin:0 0 6px;max-width:78ch}
-.findings .fbtns{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
-.findings .fbtns button,.findings .fbtns a{font-family:inherit;font-size:13.5px;font-weight:600;border-radius:9px;padding:9px 15px;cursor:pointer;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;text-decoration:none}
-.findings .fbtns .primary{background:#cdb98a;color:#26313d;border-color:#cdb98a}
-.findings .fbtns .primary:hover{background:#fff}
-.findings .strip{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 2px}
-.findings .strip img{width:52px;height:52px;border-radius:8px;object-fit:cover;border:2px solid rgba(255,255,255,.25)}
-@media(max-width:680px){.tourhero{padding:24px 20px}.tourhero h1{font-size:28px}.stopcard .simg{height:230px}.stopcard .simg h2{font-size:23px}.opts{grid-template-columns:1fr 1fr}.opt .oimg{height:120px}}
-@media(prefers-reduced-motion:reduce){.stopcard,.opt,.findings,.trail .tn{transition:none!important}.stopcard .simg img{transition:none!important;transform:none!important}}
+/* ---- the stage: full-bleed, dark, so the plates glow ---- */
+main.wrap{max-width:none;padding:0}
+footer.site{margin-top:0}
+/* overflow-x:clip, NOT overflow:hidden: hidden would make the stage the sticky
+   container and push the breadcrumb bar 62px down instead of pinning it */
+.tstage{--ink:#ece6d8;--dim:#a8a192;--line:rgba(236,230,216,.14);--bg:#121418;--paper:#e9e0cb;
+  position:relative;background:var(--bg);color:var(--ink);min-height:calc(100vh - 63px);overflow-x:clip}
+.tstage a,.tstage a:hover{color:inherit;text-decoration:none}
+.tcrumbs{position:sticky;top:63px;z-index:30;display:flex;flex-wrap:wrap;align-items:center;gap:4px 2px;
+  padding:11px 22px;font:500 13.5px/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:rgba(18,20,24,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.tcrumbs button{all:unset;cursor:pointer;color:var(--dim);padding:3px 7px;border-radius:6px;transition:color .2s,background .2s}
+.tcrumbs button:hover{color:var(--ink);background:rgba(236,230,216,.08)}
+.tcrumbs button:focus-visible{outline:2px solid #cdb98a;outline-offset:1px}
+.tcrumbs .sep{color:#5d584f;padding:0 1px}
+.tcrumbs .here{color:var(--ink);padding:3px 7px;font-weight:600}
+
+/* ---- overview: six questions as living cells ---- */
+.tmap{position:relative;height:calc(100vh - 110px);min-height:600px;
+  background:radial-gradient(ellipse 70% 80% at 66% 52%,#1d222a 0%,#15181d 55%,#121418 100%)}
+.tmap svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tmap-intro{position:absolute;left:34px;top:30px;bottom:24px;z-index:5;width:min(390px,32vw);display:flex;flex-direction:column;
+  transition:opacity .45s}
+.tmap-intro .k{font:600 11.5px/1.2 -apple-system,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#cdb98a;margin:0 0 10px}
+.tmap-intro h1{font:400 50px/1 Georgia,"Times New Roman",serif;margin:0 0 14px;color:#fff;letter-spacing:-.015em}
+.tmap-intro .lead{font:15px/1.62 Georgia,serif;color:#cfc8b8;margin:0 0 20px}
+.tlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px;overflow:auto}
+.tlist button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:12px 1fr auto;gap:2px 11px;align-items:baseline;
+  width:100%;padding:9px 12px 10px 10px;border-radius:10px;transition:background .25s,transform .25s}
+.tlist button:hover,.tlist button.on{background:rgba(236,230,216,.07);transform:translateX(4px)}
+.tlist button:focus-visible{outline:2px solid #cdb98a}
+.tlist .dot{width:10px;height:10px;border-radius:50%;background:var(--c);box-shadow:0 0 12px var(--c);align-self:center;grid-row:1/3}
+.tlist b{font:400 17px/1.25 Georgia,serif;color:#fff}
+.tlist i{font:italic 13.5px/1.4 Georgia,serif;color:#a9a293;grid-column:2}
+.tlist .n{font:600 11px/1 -apple-system,sans-serif;letter-spacing:.08em;color:#8f887a;grid-column:3;grid-row:1}
+.tmap-intro .hint{margin-top:auto;padding-top:14px;font:500 12.5px/1.45 -apple-system,sans-serif;color:#7f786b}
+.tmap-intro .hint b{color:#cdb98a;font-weight:600}
+.tmap.zoomed .tmap-intro{opacity:0;pointer-events:none}
+.pg{transition:opacity .35s}
+.pg.dim{opacity:.26}
+.floater{animation:float var(--fd,9s) ease-in-out var(--fdel,0s) infinite alternate}
+@keyframes float{from{transform:translate(0,-3px)}to{transform:translate(0,4px)}}
+circle.disc{cursor:pointer;transition:fill-opacity .35s,stroke-width .35s}
+.pg.hi circle.disc{fill-opacity:.26;stroke-width:2.4}
+circle.ring{fill:none;stroke:rgba(236,230,216,.1);stroke-width:.8;pointer-events:none}
+circle.leaf{cursor:pointer;stroke:rgba(10,11,14,.7);stroke-width:.8;transform-box:fill-box;transform-origin:center;
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),stroke .2s}
+circle.leaf:hover{transform:scale(2.5);stroke:#fff;stroke-width:.5}
+.tl-arc{font-family:Georgia,serif;fill:#f3ede0;letter-spacing:.01em;pointer-events:none;transition:opacity .4s}
+.ttip{position:absolute;z-index:20;pointer-events:none;max-width:280px;padding:10px 13px;border-radius:10px;
+  background:rgba(12,13,16,.95);border:1px solid var(--line);font:13px/1.45 -apple-system,sans-serif;color:#e8e2d4;
+  opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s;box-shadow:0 12px 34px rgba(0,0,0,.55)}
+.ttip.on{opacity:1;transform:none}
+.ttip b{font:15px/1.3 Georgia,serif;display:block;color:#fff;margin:2px 0}
+.ttip .y{color:#cdb98a;font-weight:600;font-size:12px;letter-spacing:.06em}
+
+/* ---- portals ---- */
+.tportal{position:relative;z-index:10;background:var(--bg);min-height:calc(100vh - 110px)}
+.phero{position:relative;height:min(66vh,640px);min-height:420px;overflow:hidden;background:#0b0c0f;
+  display:flex;align-items:center;justify-content:flex-end;padding-right:5.5%;box-sizing:border-box}
+.phero .hbg{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);object-fit:cover;
+  filter:blur(28px) saturate(.75) brightness(.4);transform:scale(1.05)}
+.phero .shade{position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(18,20,24,0) 55%,rgba(18,20,24,.96) 100%),
+  linear-gradient(90deg,rgba(18,20,24,.72) 0%,rgba(18,20,24,.2) 58%,rgba(18,20,24,0) 100%)}
+.hplate{position:relative;z-index:2;transform:rotate(-1.2deg);max-width:44%;flex:0 1 auto;
+  background:var(--paper);padding:12px;border-radius:3px;display:block;cursor:zoom-in;
+  box-shadow:0 34px 80px rgba(0,0,0,.62),0 2px 0 rgba(255,255,255,.2) inset;animation:plate .9s cubic-bezier(.2,.8,.2,1) both .1s}
+.hplate img{display:block;max-width:100%;object-fit:contain;mix-blend-mode:multiply}
+@keyframes plate{from{opacity:0;transform:translateY(14px) rotate(1.5deg) scale(.96)}to{opacity:1;transform:rotate(-1.2deg)}}
+.phero .htext{position:absolute;left:0;bottom:0;z-index:2;padding:0 34px 36px;max-width:min(52%,760px)}
+.phero .medal{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid rgba(236,230,216,.85);
+  box-shadow:0 10px 30px rgba(0,0,0,.5);filter:sepia(.35);margin:0 0 14px;display:block;background:#222}
+.phero .kick{font:600 11.5px/1.3 -apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--acc,#cdb98a);margin:0 0 10px;
+  filter:brightness(1.5) saturate(.8)}
+.phero h1{font:400 clamp(32px,4.4vw,58px)/1.04 Georgia,serif;margin:0 0 12px;color:#fff;letter-spacing:-.015em;text-wrap:balance}
+.phero .q{font:italic clamp(17px,1.8vw,21px)/1.38 Georgia,serif;color:#efe8d8;margin:0 0 12px;max-width:44ch}
+.phero .intro{font:15.5px/1.62 Georgia,serif;color:#d6cfbf;margin:0;max-width:62ch}
+.htext > *{animation:rise .8s cubic-bezier(.2,.8,.2,1) both}
+.htext > *:nth-child(2){animation-delay:.07s}.htext > *:nth-child(3){animation-delay:.14s}
+.htext > *:nth-child(4){animation-delay:.21s}.htext > *:nth-child(5){animation-delay:.28s}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.caution{margin:22px 34px 0;padding:14px 18px;border-radius:11px;border:1px solid rgba(214,120,110,.35);
+  border-left:4px solid #c9695e;background:rgba(138,58,58,.14);font:14.5px/1.6 -apple-system,sans-serif;color:#eadbd6;max-width:900px}
+.caution b{color:#ffcfc6}
+
+/* cards: every picture sits on the same paper, like a specimen card */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:20px;padding:24px 34px 54px}
+.psec{padding:6px 34px 0;margin:26px 0 0;font:600 11.5px/1.3 -apple-system,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.card{box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;
+  background:#1b1e24;border:1px solid var(--line);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .4s;
+  animation:rise .62s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0) * 42ms)}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(0,0,0,.6);border-color:rgba(236,230,216,.34)}
+.card:focus-visible{outline:2px solid #cdb98a;outline-offset:3px}
+.card .cimg{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--paper)}
+.card .cimg .pic{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:12px;box-sizing:border-box;
+  mix-blend-mode:multiply;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.card:hover .cimg .pic{transform:scale(1.05)}
+.card .cimg .port{position:absolute;left:12px;bottom:10px;width:58px;height:58px;border-radius:50%;object-fit:cover;
+  border:3px solid var(--paper);filter:sepia(.3);box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.card .cbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card .cy{font:600 11px/1 -apple-system,sans-serif;letter-spacing:.12em;color:var(--acc,#cdb98a);filter:brightness(1.5) saturate(.8)}
+.card .ct{font:17px/1.28 Georgia,serif;color:#fff;margin:0}
+.card .cs{font:13.5px/1.5 -apple-system,sans-serif;color:var(--dim);margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.card .cmeta{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px;padding-top:6px}
+.chip{font:600 11px/1 -apple-system,sans-serif;letter-spacing:.02em;padding:5px 9px;border-radius:20px;background:rgba(236,230,216,.08);color:#d9d2c3;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.chip.v{background:rgba(205,185,138,.14);color:#e7d6ab}
+.chip.note{background:rgba(201,105,94,.22);color:#ffc9c0}
+.chip.note::before{content:"◆ ";font-size:9px}
+.card.more .cimg{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.card.more .cimg img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply}
+
+/* article */
+.art{padding:26px 34px 34px;max-width:980px}
+.art .de{font:italic 16px/1.45 Georgia,serif;color:var(--dim);margin:0 0 8px}
+.art .au{font:14px/1.5 -apple-system,sans-serif;color:#cfc8b8;margin:0 0 20px}
+.art .note{margin:0 0 22px;padding:14px 18px;border-radius:11px;border:1px solid rgba(214,120,110,.35);border-left:4px solid #c9695e;
+  background:rgba(138,58,58,.14);font:14.5px/1.6 -apple-system,sans-serif;color:#eadbd6}
+.art .note .nh{font:700 11px/1 -apple-system,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#ff9f92;display:block;margin-bottom:7px}
+.art .note a{color:#ffcfc6;text-decoration:underline}
+.art .body{font:18px/1.72 Georgia,serif;color:#e4ddcd;margin:0 0 20px;max-width:68ch}
+.art .verd{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 24px}
+.art .verd .lab{font:600 11px -apple-system,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.art .acts{display:flex;flex-wrap:wrap;gap:10px}
+.abtn{font:600 14px/1 -apple-system,sans-serif;padding:13px 18px;border-radius:9px;
+  border:1px solid rgba(236,230,216,.28);color:#ece6d8;background:rgba(236,230,216,.04);transition:background .2s,border-color .2s,transform .2s}
+.abtn:hover{background:rgba(236,230,216,.12);border-color:rgba(236,230,216,.6);transform:translateY(-1px)}
+.abtn.pri{background:var(--acc,#8a5a2b);border-color:transparent;color:#fff}
+.abtn.pri:hover{filter:brightness(1.15)}
+
+/* the picture that flies between levels */
+.tflip{position:fixed;z-index:60;pointer-events:none;background:#e9e0cb;overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.55);will-change:left,top,width,height}
+.tflip img{width:100%;height:100%;object-fit:contain;padding:4%;box-sizing:border-box;mix-blend-mode:multiply;display:block}
+
+@media(max-width:980px){
+  .tmap{height:auto;min-height:0;padding-bottom:10px}
+  .tmap-intro{position:relative;left:0;top:0;bottom:auto;width:auto;padding:22px 20px 0}
+  .tmap-intro h1{font-size:38px}
+  .tmap-intro .lead{font-size:14.5px;margin-bottom:6px}
+  .tlist,.tmap-intro .hint{display:none}
+  .tmap svg{position:relative;height:78vh;min-height:460px}
+  .phero{display:block;height:auto;min-height:0;padding:24px 0 0}
+  .hplate{transform:rotate(-1deg);max-width:78%;width:max-content;margin:0 auto 18px;animation:none}
+  .hplate img{max-height:none}
+  .phero .htext{position:relative;max-width:none;padding:0 20px 26px}
+  .pgrid{grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:12px;padding:18px 16px 40px}
+  .card .cs{-webkit-line-clamp:3}
+  .art,.psec{padding-left:18px;padding-right:18px}
+  .caution{margin-left:16px;margin-right:16px}
+  .tcrumbs{padding:9px 12px;font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .floater,.hplate,.card,.htext > *{animation:none!important}
+  .card,.card .cimg .pic,circle.leaf{transition:none}
+}
 """
 
 TOUR_JS = r"""
 (function(){
-var T=window.TOUR, S=T.stops, byId={}; S.forEach(function(s){byId[s.id]=s;});
-var reduced=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-var app=document.getElementById('tour'), trailEl=document.getElementById('trail');
-var state={path:[]}, sessionSeed=Math.floor(Math.random()*1e9);
-function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-// deterministic shuffle per (session, path) so back/forward re-show the same options
-function hashStr(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
-function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
-function shuffle(a,r){for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
-function pickOptions(){
-  var r=rng(hashStr(sessionSeed+'|'+state.path.join('.')));
-  var visited={}; state.path.forEach(function(i){visited[i]=1;});
-  var pool=S.filter(function(s){return !visited[s.id];});
-  if(!state.path.length){ return shuffle(pool.filter(function(s){return s.entry;}),r).slice(0,4).map(function(s){return {s:s};}); }
-  var cur=byId[state.path[state.path.length-1]], ct={}; cur.tags.forEach(function(t){ct[t]=1;});
-  var related=[],other=[];
-  pool.forEach(function(s){var o=0;s.tags.forEach(function(t){if(ct[t])o++;});(o?related:other).push({s:s,o:o,k:r()});});
-  related.sort(function(a,b){return b.o-a.o||a.k-b.k;});
-  // never show two cards with the same image, and never repeat the current image
-  var used={}; used[cur.thumb]=1;
-  function ok(x){if(used[x.s.thumb])return false;used[x.s.thumb]=1;return true;}
-  var picks=shuffle(related.slice(0,7),r).filter(ok).slice(0,3);
-  var wild=shuffle(other,r).filter(ok)[0]; if(wild){wild.wild=true;picks.push(wild);}
-  var i=0; while(picks.length<4&&i<related.length){var c=related[i++];if(picks.indexOf(c)<0&&ok(c))picks.push(c);}
-  return shuffle(picks,r).slice(0,4);
+'use strict';
+var T=window.TREE; if(!T||!window.d3){return;}
+var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+var TOUCH=window.matchMedia&&matchMedia('(hover: none)').matches;
+function $(s,r){return (r||document).querySelector(s);}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+var mapEl=$('#tmap'), svgEl=$('#tsvg'), portal=$('#tportal'), crumbs=$('#tcrumbs'), tip=$('#ttip'), intro=$('#tmapintro');
+var PROG={}; T.progs.forEach(function(p){PROG[p.id]=p;});
+function P(id){return T.papers[String(id)];}
+function sleep(ms){return new Promise(function(r){setTimeout(r,RM?0:ms);});}
+function anim(el,frames,opts){
+  if(RM||!el.animate){return Promise.resolve();}
+  return new Promise(function(res){var a=el.animate(frames,opts);a.onfinish=res;a.oncancel=res;});}
+var EASE='cubic-bezier(.2,.8,.2,1)';
+function shortT(s,n){s=s||'';return s.length>n?s.slice(0,n-1).replace(/\s+\S*$/,'')+'…':s;}
+// the site stylesheet sets smooth scrolling; the transitions need a real jump so they can measure where things land
+function toTop(){window.scrollTo({top:0,left:0,behavior:'instant'});}
+
+/* ================================================================ routing */
+// a route is {p: programme, r: person key within it (or "_further"), a: paper id}
+function parse(){var h=decodeURIComponent(location.hash.replace(/^#\/?/,'')).split('/').filter(Boolean);
+  var rt={p:h[0]||null,r:h[1]||null,a:h[2]||null};
+  if(rt.p&&!PROG[rt.p]) rt={p:null,r:null,a:null};
+  if(rt.r&&rt.r!=='_further'&&!T.people[rt.p+'/'+rt.r]){rt.r=null;rt.a=null;}
+  if(rt.a&&!P(rt.a)) rt.a=null;
+  if(rt.a&&!rt.r) rt.a=null;
+  return rt;}
+function hashOf(rt){return '#/'+[rt.p,rt.r,rt.a].filter(Boolean).map(encodeURIComponent).join('/');}
+function depth(rt){return rt.a?3:rt.r?2:rt.p?1:0;}
+function same(a,b){return a.p===b.p&&a.r===b.r&&a.a===b.a;}
+function isParent(a,b){return depth(a)===depth(b)-1&&(!a.p||a.p===b.p)&&(!a.r||a.r===b.r);}
+var cur={p:null,r:null,a:null}, pending=null, busy=false, queued=false;
+function go(rt,opts){pending=opts||{};var h=hashOf(rt);if(location.hash===h){route();}else{location.hash=h;}}
+window.addEventListener('hashchange',route);
+
+/* ================================================================ breadcrumbs */
+function drawCrumbs(rt){
+  var parts=[{label:T.root.title,rt:{p:null,r:null,a:null}}];
+  if(rt.p) parts.push({label:PROG[rt.p].title,rt:{p:rt.p,r:null,a:null}});
+  if(rt.r) parts.push({label:rt.r==='_further'?'Further contributors':T.people[rt.p+'/'+rt.r].name,rt:{p:rt.p,r:rt.r,a:null}});
+  if(rt.a) parts.push({label:P(rt.a).year+' · '+shortT(P(rt.a).t,52),rt:rt});
+  crumbs.innerHTML=parts.map(function(x,i){
+    if(i===parts.length-1) return '<span class="here" aria-current="page">'+esc(x.label)+'</span>';
+    return '<button type="button" data-h="'+esc(hashOf(x.rt))+'">'+esc(x.label)+'</button><span class="sep">›</span>';
+  }).join('');}
+crumbs.addEventListener('click',function(e){var b=e.target.closest('button[data-h]');if(b){location.hash=b.getAttribute('data-h');}});
+
+/* ================================================================ the map: six cells */
+var svg=d3.select(svgEl), world, defs, W=0, H=0, cells=[], view=null, entered=false;
+function box(){var r=svgEl.getBoundingClientRect();return {w:r.width,h:r.height,wide:window.innerWidth>980};}
+function layout(){
+  var b=box(); W=b.w; H=b.h;
+  var x0=b.wide?Math.min(470,W*0.35):8, y0=b.wide?20:8, aw=W-x0-14, ah=H-y0-14;
+  var tot=d3.sum(T.progs,function(p){return p.n;}), fill=b.wide?0.5:0.54;
+  for(var attempt=0;attempt<8;attempt++){
+    var k=Math.sqrt(fill*aw*ah/(Math.PI*tot));
+    var ns=T.progs.map(function(p,i){var a=-Math.PI/2+i/T.progs.length*2*Math.PI;
+      return {id:p.id,r:k*Math.sqrt(p.n),x:x0+aw/2+Math.cos(a)*aw*0.24,y:y0+ah/2+Math.sin(a)*ah*0.24};});
+    var sim=d3.forceSimulation(ns).stop()
+      .force('c',d3.forceCollide(function(d){return d.r+26;}).strength(1).iterations(4))
+      .force('x',d3.forceX(x0+aw/2).strength(0.05)).force('y',d3.forceY(y0+ah/2).strength(0.09));
+    for(var t=0;t<360;t++){sim.tick();ns.forEach(function(d){
+      d.x=Math.max(x0+d.r+6,Math.min(x0+aw-d.r-6,d.x));d.y=Math.max(y0+d.r+28,Math.min(y0+ah-d.r-6,d.y));});}
+    var bad=false;
+    for(var i=0;i<ns.length;i++)for(var j=i+1;j<ns.length;j++){
+      if(Math.hypot(ns[i].x-ns[j].x,ns[i].y-ns[j].y)<ns[i].r+ns[j].r+20) bad=true;}
+    if(!bad) return ns;
+    fill*=0.88;
+  }
+  return ns;}
+function inner(pr,R){
+  var kids=pr.people.map(function(k){return {key:k,kids:T.people[k].papers.map(function(id){return {id:id,pers:k};})};});
+  if(pr.further.length) kids.push({key:pr.id+'/_further',kids:pr.further.map(function(id){return {id:id,pers:pr.id+'/_further'};})});
+  var h=d3.hierarchy({kids:kids},function(d){return d.kids;}).sum(function(d){return d.kids?0:1;})
+    .sort(function(a,b){return b.value-a.value;});
+  return d3.pack().size([2*R,2*R]).padding(function(d){return d.depth===0?Math.max(4,R*0.04):1.1;})(h);}
+function arc(cx,cy,r){ // an arc over the top of a circle, for its title to ride on
+  var a0=-Math.PI*0.94, a1=-Math.PI*0.06;
+  return 'M'+(cx+r*Math.cos(a0))+','+(cy+r*Math.sin(a0))+' A'+r+','+r+' 0 0,1 '+(cx+r*Math.cos(a1))+','+(cy+r*Math.sin(a1));}
+function buildMap(){
+  var ns=layout(); cells=ns;
+  svg.attr('viewBox','0 0 '+W+' '+H); svg.selectAll('*').remove();
+  defs=svg.append('defs');
+  world=svg.append('g').attr('class','world');
+  var seen={};
+  ns.forEach(function(n,ci){
+    var pr=PROG[n.id]; n.pack=inner(pr,n.r);
+    var outer=world.append('g').attr('class','pg').attr('data-p',n.id).attr('transform','translate('+(n.x-n.r)+','+(n.y-n.r)+')');
+    var g=outer.append('g').attr('class','floater').style('--fd',(7+ci*1.3)+'s').style('--fdel',(-ci*1.7)+'s');
+    g.append('circle').attr('class','disc').attr('cx',n.r).attr('cy',n.r).attr('r',n.r)
+      .attr('fill',pr.accent).attr('fill-opacity',0.14).attr('stroke',pr.accent).attr('stroke-width',1.5)
+      .attr('tabindex',0).attr('role','button').attr('aria-label',pr.title+' — '+pr.n+' papers')
+      .on('mouseenter',function(e){hl(n.id,true);showTip('<b>'+esc(pr.title)+'</b>'+esc(pr.q),e);})
+      .on('mousemove',moveTip).on('mouseleave',function(){hl(n.id,false);hideTip();})
+      .on('click',function(e){e.stopPropagation();enterProg(n.id);})
+      .on('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();enterProg(n.id);}});
+    n.pack.children&&n.pack.children.forEach(function(c){
+      g.append('circle').attr('class','ring').attr('cx',c.x).attr('cy',c.y).attr('r',c.r);});
+    n.pack.leaves().forEach(function(l){
+      var id=l.data.id, p=P(id), pat='pi'+id+'-'+n.id;
+      if(!seen[pat]){seen[pat]=1;
+        var pt=defs.append('pattern').attr('id',pat).attr('patternContentUnits','objectBoundingBox').attr('width',1).attr('height',1);
+        pt.append('rect').attr('width',1).attr('height',1).attr('fill','#e9e0cb');
+        pt.append('image').attr('href',p.img.b).attr('width',1).attr('height',1).attr('preserveAspectRatio','xMidYMid slice')
+          .style('mix-blend-mode','multiply');
+        // documents (papers with no figure) take their programme's colour, so the real pictures stand out
+        if(p.kind==='titlepage') pt.append('rect').attr('width',1).attr('height',1).attr('fill',pr.accent).attr('fill-opacity',0.62);}
+      g.append('circle').attr('class','leaf').attr('cx',l.x).attr('cy',l.y).attr('r',l.r).attr('fill','url(#'+pat+')')
+        .datum({id:id,pers:l.data.pers,prog:n.id,x:l.x,y:l.y,r:l.r,cell:n})
+        .style('pointer-events',TOUCH?'none':null)
+        .on('mouseenter',function(e,d){d3.select(this.parentNode.parentNode).raise();d3.select(this).raise();hl(n.id,true);
+          showTip('<span class="y">'+p.year+'</span><b>'+esc(shortT(p.t,96))+'</b>'+esc(p.au)+
+            (p.sens?'<br><span style="color:#ffb3a8">◆ '+esc(p.sens.c)+' — context note</span>':''),e);})
+        .on('mousemove',moveTip).on('mouseleave',function(){hl(n.id,false);hideTip();})
+        .on('click',function(e,d){e.stopPropagation();hideTip();var k=d.pers.split('/');
+          go({p:n.id,r:k[1],a:String(id)},{fromLeaf:d});});});
+    // the title rides the rim, so it never covers a picture
+    var fs=Math.max(12,Math.min(20,(n.r*Math.PI*0.88)/(pr.title.length*0.56)));
+    defs.append('path').attr('id','arc-'+n.id).attr('d',arc(n.r,n.r,n.r+fs*0.55));
+    g.append('text').attr('class','tl-arc').style('font-size',fs+'px').append('textPath')
+      .attr('href','#arc-'+n.id).attr('startOffset','50%').attr('text-anchor','middle').text(pr.title);
+  });
+  svg.on('click',null);
+  view=[W/2,H/2,Math.min(W,H)]; zoomTo(view);
+  if(!entered&&!RM){entered=true;entrance();}
 }
-function themeName(t){return (T.themes[t]||t);}
-function statusCls(st){return {'Sleeping Beauty':'st-sb','Quiet Classic':'st-qc','Living Legacy':'st-ll','Stirring':'st-st','Contested Legacy':'st-cl','Rightly Rested':'st-rr'}[st]||'';}
-function optHTML(o,k){var s=o.s;
-  return '<button class="opt" data-id="'+esc(s.id)+'"><span class="okey">'+k+'</span>'+(o.wild?'<span class="wild">sidestep</span>':'')
-   +'<div class="oimg"><img src="'+esc(s.thumb)+'" alt="" decoding="async" style="object-position:center '+(s.pos||'top')+'"></div>'
-   +'<div class="otxt"><b>'+esc(s.title)+'</b><span>'+esc(s.teaser)+'</span></div></button>';}
-function stopHTML(s){var l=s.live||{}, chips='';
-  if(l.st)chips+='<span class="chip '+statusCls(l.st)+'">'+esc(l.st)+(l.sb?(' · SBI '+l.sbi):'')+'</span>';
-  if(l.v)chips+='<span class="chip v">'+esc(l.v)+'</span>';
-  if(l.c!=null)chips+='<span class="chip">cited '+l.c+'× today</span>';
-  if(s.year)chips+='<span class="chip">'+esc(s.year)+'</span>';
-  var links=(s.links||[]).map(function(x,i){return '<a class="'+(i===0?'go':'')+'" href="'+esc(x.href)+'">'+esc(x.label)+'</a>';}).join('');
-  return '<article class="stopcard" id="stopcard"><div class="simg"><img src="'+esc(s.thumb)+'" alt="" style="object-position:center '+(s.pos||'top')+'"><div class="grad"></div><h2>'+esc(s.title)+'</h2></div>'
-   +'<div class="sbody"><div class="chips">'+chips+'</div><p class="fact">'+esc(s.body)+'</p><div class="slinks">'+links+'</div></div></article>';}
-function promptHTML(){var p=T.prompts[Math.floor(Math.random()*T.prompts.length)];var n=state.path.length;
-  var hint=n===0?'Every visit deals a different hand. Press 1–4 to choose.':(n<T.findAt?('Step '+(n+1)+' — a finding is '+(T.findAt-n)+' step'+(T.findAt-n===1?'':'s')+' away'):'Keep going, or open your findings above');
-  return '<h2 class="prompt">'+esc(p)+'<small>'+esc(hint)+'</small></h2>';}
-function renderTrail(){var h='';state.path.forEach(function(id,i){var s=byId[id];if(i)h+='<i class="ln"></i>';h+='<img class="tn in" src="'+esc(s.thumb)+'" title="'+esc(s.title)+'" alt="">';});
-  var n=state.path.length;
-  trailEl.innerHTML='<div class="steps">'+(h||'<span class="cnt">Your path will appear here</span>')+'</div>'
-   +'<span class="cnt">'+(n?('Step '+n):'Start')+'</span>'
-   +'<button class="tbtn primary" id="tfind" '+(n>=3?'':'disabled')+'>✦ Findings</button>'
-   +'<button class="tbtn" id="trestart" '+(n?'':'disabled')+'>↺ New tour</button>';
-  document.getElementById('tfind').onclick=function(){showFindings(true);};
-  document.getElementById('trestart').onclick=restart;}
-function mount(html,cls){app.innerHTML=html;
-  function reveal(){app.querySelectorAll('.stopcard,.findings').forEach(function(e){e.classList.add('in');});
-    app.querySelectorAll('.opt').forEach(function(e,i){setTimeout(function(){e.classList.add('in');},reduced?0:70*i+120);});}
-  requestAnimationFrame(function(){requestAnimationFrame(reveal);});setTimeout(reveal,700); // rAF is paused in background tabs
-  // after a choice, bring the trail + new card into view (the hero stays above, out of the way)
-  var anchor=state.path.length?trailEl:(document.getElementById('tourtop')||app);
-  if(cls!=='keep')window.scrollTo({top:Math.max(0,anchor.getBoundingClientRect().top+window.scrollY-66),behavior:reduced?'auto':'smooth'});}
-function renderOptions(){var o=pickOptions();return '<div class="opts" id="opts">'+o.map(function(x,i){return optHTML(x,i+1);}).join('')+'</div>';}
-function view(){renderTrail();
-  var n=state.path.length;
-  if(!n){mount(promptHTML()+renderOptions(),'keep');bind();return;}
-  var cur=byId[state.path[n-1]];
-  var html=stopHTML(cur);
-  if(n===T.findAt)html=findingsHTML()+html;
-  html+=promptHTML()+renderOptions();
-  mount(html);bind();}
-function bind(){app.querySelectorAll('.opt').forEach(function(b){b.onclick=function(){choose(b.getAttribute('data-id'),b);};});
-  var kb=document.getElementById('fkeep');if(kb)kb.onclick=function(){var o=document.getElementById('opts');if(o)o.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});};
-  var rs=document.getElementById('frestart');if(rs)rs.onclick=restart;
-  var sh=document.getElementById('fshare');if(sh)sh.onclick=function(){var u=location.href.split('#')[0]+'#p='+state.path.join('.');
-    if(navigator.clipboard){navigator.clipboard.writeText(u).then(function(){sh.textContent='Link copied ✓';});}else{prompt('Copy this link',u);}};}
-function choose(id,btn){var o=document.getElementById('opts');if(o){o.classList.add('leaving');if(btn)btn.classList.add('chosen');}
-  setTimeout(function(){state.path.push(id);history.pushState({p:state.path.slice()},'','#p='+state.path.join('.'));view();},reduced?0:330);}
-function restart(){state.path=[];history.pushState({p:[]},'',location.pathname);view();}
-function findingsHTML(){
-  var stops=state.path.map(function(i){return byId[i];});
-  var seen={},papers=[];stops.forEach(function(s){if(s.pid&&!seen[s.pid]){seen[s.pid]=1;papers.push(s);}});
-  var held=papers.filter(function(s){return s.live&&['Sleeping Beauty','Quiet Classic','Living Legacy'].indexOf(s.live.st)>=0;});
-  var sb=papers.filter(function(s){return s.live&&s.live.st==='Sleeping Beauty';});
-  var failed=papers.filter(function(s){return s.live&&['Contested Legacy','Rightly Rested'].indexOf(s.live.st)>=0;});
-  var people=stops.filter(function(s){return s.author||s.tags.indexOf('people')>=0;});
-  var tagc={};stops.forEach(function(s){s.tags.forEach(function(t){if(T.themes[t])tagc[t]=(tagc[t]||0)+1;});});
-  var themes=Object.keys(tagc).sort(function(a,b){return tagc[b]-tagc[a];}).slice(0,3).map(themeName);
-  var most=papers.filter(function(s){return s.live}).sort(function(a,b){return (b.live.c||0)-(a.live.c||0);})[0];
-  var least=held.slice().sort(function(a,b){return (a.live.c||0)-(b.live.c||0);})[0];
-  var head=themes.length?('Your tour ran through '+(themes.length>1?themes.slice(0,-1).join(', ')+' and '+themes[themes.length-1]:themes[0])+'.'):'Your tour so far.';
-  var lines='';
-  if(most&&least&&most!==least)lines+='<p class="line">The most-cited paper you met was <b>'+esc(most.title)+'</b> ('+most.live.c+' citations — '+esc(most.live.v||most.live.st)+'). The least-cited result that held up was <b>'+esc(least.title)+'</b>, cited '+least.live.c+' time'+(least.live.c===1?'':'s')+' in a century.</p>';
-  if(failed.length)lines+='<p class="line">'+failed.length+' of the claims you met did <em>not</em> survive: '+failed.map(function(s){return esc(s.title);}).join('; ')+'.</p>';
-  var sbl=sb.length?('<h3>Sleeping beauties you met</h3><div class="sbl">'+sb.map(function(s){return '<a href="dossier/'+s.pid+'.html"><img src="'+esc(s.thumb)+'" alt=""><div><b>'+esc(s.title)+'</b><span>SBI '+s.live.sbi+' · cited '+s.live.c+'× · '+esc(s.live.v||'')+'</span></div></a>';}).join('')+'</div>'):'';
-  var strip='<div class="strip">'+stops.map(function(s){return '<img src="'+esc(s.thumb)+'" title="'+esc(s.title)+'" alt="">';}).join('')+'</div>';
-  return '<section class="findings" id="findings"><p class="eyebrow">✦ What you found</p><h2>'+esc(head)+'</h2>'
-   +'<div class="nums"><div><b data-n="'+papers.length+'">0</b><span>papers met</span></div><div><b data-n="'+held.length+'">0</b><span>held up today</span></div><div><b data-n="'+sb.length+'">0</b><span>sleeping beauties</span></div><div><b data-n="'+people.length+'">0</b><span>people</span></div></div>'
-   +lines+sbl+'<h3>Your path</h3>'+strip
-   +'<div class="fbtns"><button class="primary" id="fkeep">Keep exploring ↓</button><button id="fshare">Share this path</button><a href="rediscovery.html">Open Discover</a><button id="frestart">Start a new tour</button></div></section>';}
-function countUp(){app.querySelectorAll('.findings b[data-n]').forEach(function(b){var n=+b.getAttribute('data-n');
-  if(reduced||n===0||document.hidden){b.textContent=n;return;}
-  var t0=null,done=false;function fin(){if(!done){done=true;b.textContent=n;}}
-  function step(ts){if(done)return;if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/900);b.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step);else fin();}
-  requestAnimationFrame(step);setTimeout(fin,1400);});}
-function showFindings(scroll){var ex=document.getElementById('findings');if(ex){ex.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});return;}
-  var cur=document.getElementById('stopcard');var d=document.createElement('div');d.innerHTML=findingsHTML();var f=d.firstChild;app.insertBefore(f,cur||app.firstChild);
-  requestAnimationFrame(function(){requestAnimationFrame(function(){f.classList.add('in');});});countUp();bind();if(scroll)f.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});}
-var _mount=mount;mount=function(h,c){_mount(h,c);countUp();};
-document.addEventListener('keydown',function(e){if(e.target&&/INPUT|TEXTAREA|SELECT/.test(e.target.tagName))return;var k=parseInt(e.key,10);if(k>=1&&k<=4){var b=app.querySelectorAll('.opt')[k-1];if(b)b.click();}});
-window.addEventListener('popstate',function(e){state.path=(e.state&&e.state.p)||readHash();view();});
-function readHash(){var m=location.hash.match(/p=([^&]+)/);return m?m[1].split('.').filter(function(i){return byId[i];}):[];}
-state.path=readHash();history.replaceState({p:state.path.slice()},'');view();
+function zoomTo(v){ // v = [world x at centre, world y at centre, world size spanning min(W,H)]
+  view=v; var k=Math.min(W,H)/v[2];
+  world.attr('transform','translate('+(W/2-v[0]*k)+','+(H/2-v[1]*k)+') scale('+k+')');
+  mapEl.classList.toggle('zoomed',k>1.05);}
+function zoomView(t,dur){
+  var i=d3.interpolateZoom(view,t);
+  if(RM||!dur){zoomTo(t);return Promise.resolve();}
+  return new Promise(function(res){svg.transition().duration(dur).ease(d3.easeCubicInOut)
+    .tween('zoom',function(){return function(x){zoomTo(i(x));};}).on('end',res).on('interrupt',res);});}
+function entrance(){
+  world.selectAll('circle.disc').each(function(){var r=+this.getAttribute('r');
+    d3.select(this).attr('r',0).transition().duration(900).ease(d3.easeBackOut.overshoot(1.2)).attr('r',r);});
+  world.selectAll('circle.ring').attr('opacity',0).transition().delay(500).duration(700).attr('opacity',1);
+  world.selectAll('circle.leaf').each(function(){var r=+this.getAttribute('r');
+    d3.select(this).attr('r',0).transition().delay(380+Math.random()*1100).duration(560).ease(d3.easeBackOut.overshoot(1.6)).attr('r',r);});
+  world.selectAll('text.tl-arc').attr('opacity',0).transition().delay(700).duration(800).attr('opacity',1);}
+function hl(id,on){
+  world.selectAll('g.pg').classed('dim',function(){return on&&this.getAttribute('data-p')!==id;})
+    .classed('hi',function(){return on&&this.getAttribute('data-p')===id;});
+  $$('.tlist button').forEach(function(b){b.classList.toggle('on',on&&b.getAttribute('data-p')===id);});}
+function showTip(h,e){tip.innerHTML=h;tip.classList.add('on');moveTip(e);}
+function hideTip(){tip.classList.remove('on');}
+function moveTip(e){var r=mapEl.getBoundingClientRect();var x=e.clientX-r.left+18,y=e.clientY-r.top+16;
+  if(x+290>r.width) x=e.clientX-r.left-296; if(y+120>r.height) y=e.clientY-r.top-110;
+  tip.style.left=x+'px';tip.style.top=y+'px';}
+function screenOf(n,leaf){ // where a cell (or a paper inside it) is on screen now
+  var k=Math.min(W,H)/view[2], s=svgEl.getBoundingClientRect(), tx=W/2-view[0]*k, ty=H/2-view[1]*k;
+  var wx=leaf?(n.x-n.r+leaf.x):n.x, wy=leaf?(n.y-n.r+leaf.y):n.y, wr=leaf?leaf.r:n.r;
+  return {x:s.left+tx+wx*k, y:s.top+ty+wy*k, r:wr*k};}
+function enterProg(id){hideTip();hl(id,false);go({p:id,r:null,a:null},{fromCell:id});}
+function drawIntro(){
+  intro.innerHTML='<p class="k">'+esc(T.root.place)+'</p><h1>'+esc(T.root.title)+'</h1><p class="lead">'+esc(T.root.intro)+'</p>'+
+    '<ol class="tlist">'+T.progs.map(function(p){return '<li><button type="button" data-p="'+p.id+'" style="--c:'+p.accent+'">'+
+      '<span class="dot"></span><b>'+esc(p.title)+'</b><span class="n">'+p.n+'</span><i>'+esc(p.q)+'</i></button></li>';}).join('')+'</ol>'+
+    '<p class="hint">'+(TOUCH?'<b>Tap a circle</b> to go inside.':'Every dot is a paper — <b>hover</b> to see it, <b>click</b> a circle or a question to go inside.')+'</p>';
+  $$('.tlist button').forEach(function(b){var id=b.getAttribute('data-p');
+    b.addEventListener('mouseenter',function(){hl(id,true);});b.addEventListener('mouseleave',function(){hl(id,false);});
+    b.addEventListener('focus',function(){hl(id,true);});b.addEventListener('blur',function(){hl(id,false);});
+    b.addEventListener('click',function(){enterProg(id);});});}
+var rs=null;
+window.addEventListener('resize',function(){clearTimeout(rs);rs=setTimeout(function(){if(!mapEl.hidden)buildMap();else sizePlates();},180);});
+
+/* ================================================================ portals */
+function img(p,sz){return p&&p.img?p.img[sz]:'';}
+// re-fit the plate to the viewport as it is NOW: on a phone the first paint can report a viewport
+// twice the real height, and rotating the device changes it again
+function sizePlates(){var im=$('.hplate img',portal);if(!im||!im.dataset.pw) return;
+  var z=plateSize(+im.dataset.pw,+im.dataset.ph); if(z){im.style.width=z.w+'px';im.style.height=z.h+'px';}}
+window.addEventListener('load',sizePlates);
+// the plate's exact pixel size, known before the image downloads, so animations can land on it
+function plateSize(pw,ph){
+  if(!pw||!ph) return null;
+  var wide=window.innerWidth>980, hw=portal.clientWidth||window.innerWidth;
+  var maxW=(wide?hw*0.44:hw*0.78)-24, maxH=wide?Math.min(window.innerHeight*0.66,640)*0.78:window.innerHeight*0.44;
+  var k=Math.min(maxW/pw,maxH/ph,1.6);
+  return {w:Math.round(pw*k),h:Math.round(ph*k)};}
+function heroHTML(o){
+  return '<header class="phero" style="--acc:'+o.acc+'">'+
+    '<img class="hbg" src="'+esc(o.bg)+'" alt="">'+'<div class="shade"></div>'+
+    (o.plate?'<a class="hplate" href="'+esc(o.plate)+'" target="_blank" rel="noopener" title="Open the full image"><img src="'+esc(o.plate)+'" alt="'+esc(o.alt||'')+'"'+
+      (function(){var z=plateSize(o.pw,o.ph);return z?' data-pw="'+o.pw+'" data-ph="'+o.ph+'" width="'+z.w+'" height="'+z.h+'" style="width:'+z.w+'px;height:'+z.h+'px"':'';})()+'></a>':'')+
+    '<div class="htext">'+(o.medal?'<img class="medal" src="'+esc(o.medal)+'" alt="Portrait of '+esc(o.title)+'">':'')+
+    '<p class="kick">'+o.kick+'</p><h1>'+esc(o.title)+'</h1>'+
+    (o.q?'<p class="q">'+esc(o.q)+'</p>':'')+(o.intro?'<p class="intro">'+esc(o.intro)+'</p>':'')+'</div></header>';}
+function paperCard(id,rt,i){
+  var p=P(id), chips='';
+  if(p.sens) chips+='<span class="chip note" title="'+esc(p.sens.s)+'">'+esc(p.sens.c)+'</span>';
+  if(p.v) chips+='<span class="chip v">'+esc(shortT(p.v,46))+'</span>';
+  return '<a class="card" style="--i:'+i+'" href="'+hashOf(rt)+'" data-id="'+id+'">'+
+    '<div class="cimg"><img class="pic" src="'+esc(img(p,'c'))+'" alt="" loading="lazy"></div>'+
+    '<div class="cbody"><span class="cy">'+p.year+'</span><h3 class="ct">'+esc(shortT(p.t,110))+'</h3>'+
+    '<p class="cs">'+esc(p.au)+'</p><div class="cmeta">'+chips+'</div></div></a>';}
+function personCard(k,pr,i){
+  var r=T.people[k], n=r.papers.length, sub=r.blurb||[r.years,r.role].filter(Boolean).join(' · ');
+  return '<a class="card" style="--i:'+i+'" href="'+hashOf({p:pr.id,r:r.key,a:null})+'">'+
+    '<div class="cimg"><img class="pic" src="'+esc(r.img?r.img.c:'')+'" alt="" loading="lazy">'+
+    (r.portrait?'<img class="port" src="'+esc(r.portrait)+'" alt="">':'')+'</div>'+
+    '<div class="cbody"><span class="cy">'+n+' PAPER'+(n===1?'':'S')+(r.years?' · '+esc(r.years):'')+'</span>'+
+    '<h3 class="ct">'+esc(r.name)+'</h3><p class="cs">'+esc(sub)+'</p></div></a>';}
+function furtherCard(pr,i){
+  var ims=pr.further.slice(0,6).map(function(id){return '<img src="'+esc(img(P(id),'b'))+'" alt="" loading="lazy">';}).join('');
+  return '<a class="card more" style="--i:'+i+'" href="'+hashOf({p:pr.id,r:'_further',a:null})+'">'+
+    '<div class="cimg">'+ims+'</div><div class="cbody"><span class="cy">'+pr.further.length+' PAPERS · '+pr.furtherPeople.length+' PEOPLE</span>'+
+    '<h3 class="ct">Further contributors</h3><p class="cs">Assistants, visitors and students who each left a single paper on this question.</p></div></a>';}
+function renderProg(pr){
+  var cards=pr.people.map(function(k,i){return personCard(k,pr,i);}).join('');
+  if(pr.further.length) cards+=furtherCard(pr,pr.people.length);
+  return heroHTML({acc:pr.accent,bg:pr.img.c,plate:pr.img.d,pw:pr.img.w,ph:pr.img.h,alt:'A figure from one of the papers',
+      kick:pr.n+' papers · '+pr.y0+'–'+pr.y1+' · '+pr.people.length+' researchers',title:pr.title,q:pr.q,intro:pr.intro})+
+    (pr.caution?'<div class="caution"><b>Before you go further.</b> Some papers in this programme make claims about human sexuality, intersex people and race that are false and did real harm. Each carries a context note — marked ◆ on its card and shown in full before the paper.</div>':'')+
+    '<p class="psec">The researchers</p><div class="pgrid">'+cards+'</div>';}
+function renderPerson(pr,rk){
+  var ids,name,sub,plate,medal,kick,bg,pw,ph;
+  if(rk==='_further'){ids=pr.further;name='Further contributors';
+    sub='Assistants, visitors and students who each left a single paper on '+pr.title.toLowerCase()+'.';
+    var f=ids.map(P).filter(function(p){return p.kind!=='titlepage';})[0]||P(ids[0]);
+    plate=img(f,'d');bg=img(f,'c');pw=f.img.w;ph=f.img.h;kick=esc(pr.title)+' · '+ids.length+' papers';}
+  else{var r=T.people[pr.id+'/'+rk];ids=r.papers;name=r.name;sub=r.blurb;plate=r.img?r.img.d:'';bg=r.img?r.img.c:'';medal=r.portrait;
+    pw=r.img&&r.img.w;ph=r.img&&r.img.h;
+    kick=esc(pr.title)+' · '+ids.length+' paper'+(ids.length===1?'':'s')+(r.years?' · '+esc(r.years):'');}
+  var cards=ids.map(function(id,i){return paperCard(id,{p:pr.id,r:rk,a:String(id)},i);}).join('');
+  return heroHTML({acc:pr.accent,bg:bg,plate:plate,pw:pw,ph:ph,kick:kick,title:name,intro:sub,medal:medal})+
+    '<p class="psec">'+(rk==='_further'?'Their papers':'Papers on this question')+'</p><div class="pgrid">'+cards+'</div>';}
+function renderArticle(pr,rk,aid){
+  var p=P(aid);
+  var note=p.sens?'<div class="note"><span class="nh">◆ '+esc(p.sens.c)+' — read this first</span>'+esc(p.sens.s)+
+      ' The full note is at the top of the '+(p.read?'<a href="'+esc(p.read)+'">reading page</a>':'reading page')+'.</div>':'';
+  var acts='';
+  if(p.read) acts+='<a class="abtn pri" href="'+esc(p.read)+'">Read the English translation →</a>';
+  if(p.dos) acts+='<a class="abtn" href="'+esc(p.dos)+'">☾ How it stands today</a>';
+  acts+='<a class="abtn" href="'+esc(p.pdf)+'">The German original</a>';
+  var sib=(rk==='_further'?pr.further:T.people[pr.id+'/'+rk].papers).filter(function(x){return String(x)!==String(aid);});
+  var who=rk==='_further'?'this group':T.people[pr.id+'/'+rk].name;
+  return heroHTML({acc:pr.accent,bg:img(p,'c'),plate:img(p,'d'),pw:p.img.w,ph:p.img.h,alt:p.kind==='titlepage'?'The paper\'s title page':'A figure from the paper',
+      kick:p.year+' · '+esc(pr.title),title:p.t})+
+    '<div class="art" style="--acc:'+pr.accent+'">'+(p.de&&p.de!==p.t?'<p class="de">'+esc(p.de)+'</p>':'')+
+    '<p class="au">'+esc(p.au)+'</p>'+note+(p.text?'<p class="body">'+esc(p.text)+'</p>':'')+
+    (p.v?'<div class="verd"><span class="lab">Today</span><span class="chip v">'+esc(p.v)+'</span>'+(p.st?'<span class="chip">'+esc(p.st)+(p.sbi?' · SBI '+p.sbi:'')+'</span>':'')+'</div>':'')+
+    '<div class="acts">'+acts+'</div></div>'+
+    (sib.length?'<p class="psec">More from '+esc(who)+'</p><div class="pgrid">'+
+      sib.map(function(id,i){return paperCard(id,{p:pr.id,r:rk,a:String(id)},i);}).join('')+'</div>':'');}
+function renderPortal(rt){
+  var pr=PROG[rt.p];
+  portal.style.setProperty('--acc',pr.accent);
+  portal.innerHTML=rt.a?renderArticle(pr,rt.r,rt.a):rt.r?renderPerson(pr,rt.r):renderProg(pr);
+  sizePlates(); requestAnimationFrame(sizePlates);
+  document.title=(rt.a?P(rt.a).t:rt.r?(rt.r==='_further'?'Further contributors':T.people[rt.p+'/'+rt.r].name):pr.title)+' · Tour · Vienna Vivarium in English';}
+portal.addEventListener('click',function(e){
+  var a=e.target.closest('a.card');if(!a||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0) return;
+  pending={src:a.querySelector('.cimg')};});
+
+/* ================================================================ transitions */
+function plateRect(){var h=$('.hplate',portal);return h?h.getBoundingClientRect():null;}
+function plateSrc(){var i=$('.hplate img',portal);return i?(i.currentSrc||i.src):'';}
+function fly(url,from,to,dur,r0,r1){
+  if(RM) return Promise.resolve(null);
+  var d=document.createElement('div');d.className='tflip';d.innerHTML='<img alt="" src="'+esc(url)+'">';
+  var f={left:from.left+'px',top:from.top+'px',width:from.width+'px',height:from.height+'px',borderRadius:r0||'14px'};
+  Object.keys(f).forEach(function(k){d.style[k]=f[k];});
+  document.body.appendChild(d);
+  return anim(d,[f,{left:to.left+'px',top:to.top+'px',width:to.width+'px',height:to.height+'px',borderRadius:r1||'3px'}],
+              {duration:dur||720,easing:EASE,fill:'forwards'}).then(function(){return d;});}
+function showMap(){mapEl.hidden=false;portal.hidden=true;portal.innerHTML='';portal.removeAttribute('style');
+  var b=box(); if(!world||Math.abs(b.w-W)>2||Math.abs(b.h-H)>2) buildMap();}
+function showPortal(){mapEl.hidden=true;portal.hidden=false;}
+function overlay(){var top=crumbs.getBoundingClientRect().bottom;
+  Object.assign(portal.style,{position:'fixed',left:'0',right:'0',top:top+'px',bottom:'0',overflow:'hidden',zIndex:'40'});return top;}
+function unoverlay(){['position','left','right','top','bottom','overflow','zIndex'].forEach(function(k){portal.style[k]='';});}
+async function mapToPortal(rt,o){
+  var s;
+  if(o.fromCell){var n=cells.find(function(c){return c.id===o.fromCell;});
+    await zoomView([n.x,n.y,2*n.r*1.1],760); s=screenOf(n);}
+  else{s=screenOf(o.fromLeaf.cell,o.fromLeaf);}
+  renderPortal(rt); portal.hidden=false; var top=overlay();
+  var cx=s.x, cy=s.y-top, R=Math.hypot(Math.max(cx,innerWidth-cx),Math.max(cy,innerHeight-top-cy))+8;
+  await anim(portal,[{clipPath:'circle('+Math.max(5,s.r)+'px at '+cx+'px '+cy+'px)'},{clipPath:'circle('+R+'px at '+cx+'px '+cy+'px)'}],
+             {duration:o.fromCell?700:860,easing:EASE});
+  unoverlay(); mapEl.hidden=true; toTop();}
+async function portalToMap(fromP){
+  toTop();
+  mapEl.hidden=false; var b=box(); if(!world||Math.abs(b.w-W)>2||Math.abs(b.h-H)>2) buildMap();
+  var n=cells.find(function(c){return c.id===fromP;});
+  zoomTo([n.x,n.y,2*n.r*1.1]);
+  var s=screenOf(n), top=overlay();
+  var cx=s.x, cy=s.y-top, R=Math.hypot(Math.max(cx,innerWidth-cx),Math.max(cy,innerHeight-top-cy))+8;
+  await anim(portal,[{clipPath:'circle('+R+'px at '+cx+'px '+cy+'px)'},{clipPath:'circle('+s.r+'px at '+cx+'px '+cy+'px)'}],
+             {duration:560,easing:'cubic-bezier(.6,0,.4,1)'});
+  portal.hidden=true;portal.innerHTML='';portal.removeAttribute('style');
+  await zoomView([W/2,H/2,Math.min(W,H)],820);}
+async function deeper(rt,srcBox){
+  // the clicked card's picture lifts off and becomes the plate on the next level
+  var from=srcBox&&srcBox.getBoundingClientRect(); var si=srcBox&&$('.pic',srcBox); var url=si&&(si.currentSrc||si.src);
+  await anim(portal,[{opacity:1},{opacity:0}],{duration:230,easing:'ease-out'});
+  renderPortal(rt); portal.style.opacity='0'; toTop();
+  var pl=$('.hplate',portal);
+  if(pl) pl.style.animation='none';
+  var to=plateRect();
+  if(from&&to&&url&&from.width>0){
+    if(pl) pl.style.visibility='hidden';
+    portal.style.transition='opacity .45s'; portal.style.opacity='1';
+    var d=await fly(url,from,to,760,'0px','3px');
+    if(pl) pl.style.visibility='';
+    if(d) anim(d,[{opacity:1},{opacity:0}],{duration:200}).then(function(){d.remove();});
+    portal.style.transition='';
+  }else{portal.style.opacity='';await anim(portal,[{opacity:0},{opacity:1}],{duration:320});}}
+async function shallower(rt,child){
+  // back up a level: the plate shrinks back into the card it came from
+  if(scrollY>40){window.scrollTo({top:0,behavior:RM?'auto':'smooth'});await sleep(320);}
+  var from=plateRect(), url=plateSrc();
+  await anim(portal,[{opacity:1},{opacity:0}],{duration:200});
+  renderPortal(rt); portal.style.opacity='0';
+  var sel=child.a?'a.card[data-id="'+child.a+'"]':'a.card[href="'+hashOf({p:child.p,r:child.r,a:null})+'"]';
+  var card=$(sel,portal); if(card) card.scrollIntoView({block:'center',behavior:'instant'});
+  var ci=card&&$('.cimg',card), to=ci&&ci.getBoundingClientRect();
+  portal.style.opacity='';
+  if(from&&to&&url){ci.style.visibility='hidden';
+    var d=await fly(url,from,to,640,'3px','0px'); ci.style.visibility=''; if(d) d.remove();}}
+async function crossfade(rt){
+  await anim(portal,[{opacity:1},{opacity:0}],{duration:180});
+  renderPortal(rt); toTop();
+  await anim(portal,[{opacity:0},{opacity:1}],{duration:320});}
+
+/* ================================================================ router */
+async function route(){
+  if(busy){queued=true;return;}
+  var rt=parse(), prev=cur, o=pending||{}; pending=null;
+  if(same(rt,prev)&&(depth(rt)===0?!mapEl.hidden:!portal.hidden)) return;
+  busy=true; drawCrumbs(rt); hideTip();
+  try{
+    if(depth(rt)===0){
+      if(depth(prev)>0&&!portal.hidden&&!RM) await portalToMap(prev.p);
+      else{showMap();zoomTo([W/2,H/2,Math.min(W,H)]);}
+      document.title='Tour · Vienna Vivarium in English';
+    }else if(!mapEl.hidden&&(o.fromCell||o.fromLeaf)&&!RM){await mapToPortal(rt,o);}
+    else if(portal.hidden){renderPortal(rt);showPortal();toTop();}
+    else if(o.src){await deeper(rt,o.src);}
+    else if(isParent(rt,prev)){await shallower(rt,prev);}
+    else{await crossfade(rt);}
+  }catch(err){renderPortal(rt);showPortal();if(window.console)console.error(err);}
+  finally{cur=rt;busy=false;if(queued){queued=false;pending=null;route();}}}
+document.addEventListener('keydown',function(e){
+  if(e.key!=='Escape'||depth(cur)===0) return;
+  var up={p:cur.p,r:cur.r,a:null}; if(!cur.a){if(cur.r)up.r=null;else up.p=null;} location.hash=hashOf(up);});
+
+// first paint
+var start=parse(); cur=start; drawCrumbs(start); drawIntro(); buildMap();
+if(depth(start)>0){renderPortal(start);showPortal();}
 })();
 """
 
 
+# ---------------------------------------------------------------- guided tour (hierarchical)
+# Institute -> six research programmes -> the researchers who pursued each -> their articles.
+# Content: legacy_data/tour_tree.json (programmes, intros, per-programme researcher blurbs,
+# assignment overrides, picture choices). Pictures: legacy_data/tour_src/<id>.jpg, chosen by
+# locating the figure region on each page (text masked out) and reviewed by eye.
+# The overview is a zoomable circle-pack; entering a programme opens "picture portals".
+
+PROGRAMME_OF_PHENOMENON = {
+    "regeneration": "regen", "heteromorphosis": "regen",
+    "transplantation": "graft", "developmental_mechanics": "graft",
+    "pigmentation": "colour", "color_change": "colour", "light_effects": "colour",
+    "sex_determination": "sex",
+    "inheritance_of_acquired": "heredity", "thermal_modification": "heredity",
+    "salinity_osmotic": "heredity", "hybridization": "heredity",
+    "growth": "growth", "morphology": "growth", "behavior": "growth", "gravity_effects": "growth",
+}
+# most specific first: a paper tagged both "regeneration" and "sex_determination" is about sex
+PHENOMENON_PRIORITY = ["sex_determination", "inheritance_of_acquired", "hybridization", "pigmentation",
+                       "color_change", "light_effects", "thermal_modification", "salinity_osmotic",
+                       "heteromorphosis", "transplantation", "growth", "morphology", "gravity_effects",
+                       "behavior", "regeneration", "developmental_mechanics"]
+
+
+def _smart_square(im, side):
+    """Square crop centred on the detail (edge energy), not the geometric middle."""
+    from PIL import Image, ImageFilter
+    im = im.convert("RGB"); w, h = im.size; s = min(w, h)
+    if w != h:
+        small = im.copy(); small.thumbnail((160, 160))
+        e = small.convert("L").filter(ImageFilter.FIND_EDGES); px = e.load()
+        sw, sh = small.size; ss = min(sw, sh)
+        if sw > sh:
+            cols = [sum(px[x, y] for y in range(sh)) for x in range(sw)]
+            x0 = max(range(sw - ss + 1), key=lambda i: sum(cols[i:i + ss]))
+            x = int(x0 * w / sw); im = im.crop((x, 0, x + s, s))
+        else:
+            rows = [sum(px[x, y] for x in range(sw)) for y in range(sh)]
+            y0 = max(range(sh - ss + 1), key=lambda i: sum(rows[i:i + ss]))
+            y = int(y0 * h / sh); im = im.crop((0, y, s, y + s))
+    return im.resize((side, side), Image.LANCZOS)
+
+
 def gen_tour():
-    """The guided tour: an image-led, randomised choose-your-thread introduction.
-    Content lives in legacy_data/tour.json; live verdict/status/SBI/citation data
-    are merged in at build time so the tour never drifts from the Discover data."""
-    tp = os.path.join(ROOT, "legacy_data", "tour.json")
+    from PIL import Image
+    tp = os.path.join(ROOT, "legacy_data", "tour_tree.json")
     if not os.path.exists(tp):
         return
-    TR = json.load(open(tp, encoding="utf-8"))
-    ap = os.path.join(ROOT, "legacy_data", "consensus_all.json")
-    A = json.load(open(ap, encoding="utf-8")) if os.path.exists(ap) else {}
-    sp = os.path.join(ROOT, "legacy_data", "consensus_synthesis.json")
-    SYN = json.load(open(sp, encoding="utf-8")) if os.path.exists(sp) else {}
+    TT = json.load(open(tp, encoding="utf-8"))
+
+    def ld(name):
+        p = os.path.join(ROOT, "legacy_data", name)
+        return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+    A, SYN, SENS = ld("consensus_all.json"), ld("consensus_synthesis.json"), ld("sensitivity.json")
+    METH = ld("methodology.json")
+    STOPS = {}
+    for s in (ld("tour.json").get("stops") or []):        # the curated, fact-checked stop texts
+        STOPS.setdefault(s.get("pid") or s.get("slug"), s)
+    AUTH = json.load(open(os.path.join(ROOT, "legacy_data", "authors.json"), encoding="utf-8"))["people"]
     cat_by_id = {c["id"]: c for c in catalog}
-    slug2id = {t["trans_slug"]: t["id"] for t in translations}
     read_for = {t["id"]: t["page_slug"] for t in translations}
-    apth = os.path.join(ROOT, "legacy_data", "authors.json")
-    AUTH = {p["key"]: p for p in json.load(open(apth, encoding="utf-8"))["people"]} if os.path.exists(apth) else {}
-    n_sleep = sum(1 for v in A.values() if v.get("sleeping"))
-    n_conf = sum(1 for v in A.values() if v.get("status") in ("Sleeping Beauty", "Quiet Classic", "Living Legacy"))
-    fill = {"n_sleep": n_sleep, "n_confirmed": n_conf, "n_papers": STATS["papers"], "n_trans": STATS["trans"]}
-    tdir = os.path.join(SITE, "assets", "tour")
-    os.makedirs(tdir, exist_ok=True)
+    slug_of = {t["id"]: t["trans_slug"] for t in translations}
 
-    def thumb(src, dst, maxw=720):
-        # always regenerate: the whole set takes ~3 s and a stop's image mapping can change
-        try:
-            from PIL import Image
-            im = Image.open(src)
-            if im.mode not in ("RGB", "L"):
-                im = im.convert("RGB")
-            w, h = im.size
-            if w > maxw:
-                im = im.resize((maxw, int(h * maxw / w)), Image.LANCZOS)
-            im.convert("RGB").save(dst, "JPEG", quality=82, optimize=True, progressive=True)
-        except Exception:
-            import shutil
-            shutil.copyfile(src, dst)
+    out = os.path.join(SITE, "assets", "tree"); os.makedirs(out, exist_ok=True)
+    srcdir = os.path.join(ROOT, "legacy_data", "tour_src")
 
-    stops = []
-    for s in TR["stops"]:
-        img = s["img"]
-        rel = img if img.startswith(("figures/", "assets/")) else "figures/%s/%s" % (s.get("slug", ""), img)
-        src = os.path.join(SITE, rel)
+    def cut(pid, key=None):
+        """b = 180px square (bubbles), c = 560px card, d = 1200px detail/hero."""
+        key = key or "p%s" % pid
+        src = os.path.join(srcdir, "%s.jpg" % pid)
         if not os.path.exists(src):
-            print("tour: missing image for", s["id"], rel)
-            continue
-        dst = os.path.join(tdir, s["id"] + ".jpg")
-        thumb(src, dst)
-        pid = s.get("pid") or slug2id.get(s.get("slug"))
-        c = cat_by_id.get(pid) if pid else None
-        live = None
-        if pid and str(pid) in A:
-            d = A[str(pid)]
-            live = dict(st=d.get("status"), sb=1 if d.get("sleeping") else 0, sbi=d.get("sbi"),
-                        c=d.get("cites", 0), v=(SYN.get(str(pid), {}).get("verdict") or ""))
-        links = []
-        if pid and str(pid) in A:
-            links.append({"label": "Open the dossier", "href": "dossier/%d.html" % pid})
-        if pid and pid in read_for:
-            links.append({"label": "Read the translation", "href": "papers/%s.html" % read_for[pid]})
-        if s.get("author") and s["author"] in AUTH:
-            links.append({"label": AUTH[s["author"]]["name"], "href": "authors.html#a-%s" % s["author"]})
-        links += s.get("links", [])
-        body = s["body"]
-        for k, v in fill.items():
-            body = body.replace("{{%s}}" % k, str(v))
-        stops.append(dict(id=s["id"], title=s["title"], teaser=s["teaser"], body=body,
-                          thumb="assets/tour/%s.jpg" % s["id"], pos=s.get("pos", "top"),
-                          tags=s.get("tags", []), entry=bool(s.get("entry")), pid=pid,
-                          author=s.get("author"), year=(c.get("year") if c else None),
-                          live=live, links=links))
-    themes = {"regeneration": "regeneration", "limbs": "limb regeneration", "eyes": "eyes and lenses",
-              "transplant": "transplantation", "inheritance": "inheritance", "scandal": "the scandals",
-              "colour": "colour and pigment", "hormones": "hormones and sex", "growth": "growth and form",
-              "temperature": "temperature", "physics": "the physics of form", "people": "the people",
-              "women": "the institute's women", "war": "the institute's fate", "institute": "the institute",
-              "sleeping": "sleeping beauties", "genetics": "genetics before genes", "legacy": "living legacies",
-              "insects": "insects", "fish": "fishes", "amphibia": "amphibians", "mammals": "mammals",
-              "crustacea": "crustaceans", "method": "how this site judges papers"}
-    data = dict(stops=stops, prompts=TR.get("prompts", ["What next?"]), themes=themes, findAt=6,
-                stats=dict(sleep=n_sleep, confirmed=n_conf))
-    os.makedirs(DATA, exist_ok=True)
-    open(os.path.join(DATA, "tour.js"), "w", encoding="utf-8").write(
-        "window.TOUR=" + json.dumps(data, ensure_ascii=False) + ";")
-    body = ('<div class="tourwrap" id="tourtop">'
-            '<section class="tourhero"><p class="kicker">A personal tour</p>'
-            '<h1>Take me through the Vivarium</h1>'
-            '<p>One of the first institutes for experimental biology, Vienna, 1903–1938: ' + str(STATS["papers"]) +
-            ' papers, a scandal, a physics of form, and results the world rediscovered without ever citing them. '
-            'Choose what interests you; the tour follows your curiosity through ' + str(len(stops)) + ' stops and, after a few steps, shows you what you found.</p>'
-            '<a class="skip" href="catalog.html">I know what I’m looking for — take me to the catalog →</a></section>'
-            '<div id="trail" class="trail"></div>'
-            '<div id="tour"></div></div>')
+            return None
+        im = Image.open(src).convert("RGB")
+        _smart_square(im, 180).save(os.path.join(out, key + "-b.jpg"), "JPEG", quality=78, optimize=True)
+        c = im.copy(); c.thumbnail((560, 700), Image.LANCZOS)
+        c.save(os.path.join(out, key + "-c.jpg"), "JPEG", quality=80, optimize=True, progressive=True)
+        d = im.copy(); d.thumbnail((1200, 1200), Image.LANCZOS)
+        d.save(os.path.join(out, key + "-d.jpg"), "JPEG", quality=82, optimize=True, progressive=True)
+        return {"b": "assets/tree/%s-b.jpg" % key, "c": "assets/tree/%s-c.jpg" % key,
+                "d": "assets/tree/%s-d.jpg" % key, "w": d.size[0], "h": d.size[1]}
+
+    # ---- papers -> programmes
+    assign = {int(k): v for k, v in TT.get("assign", {}).items()}
+    pics = TT.get("pictures", {})
+
+    def programme_of(c):
+        if c["id"] in assign:
+            return assign[c["id"]]
+        ph = c.get("phenomena") or []
+        for p in PHENOMENON_PRIORITY:
+            if p in ph:
+                return PROGRAMME_OF_PHENOMENON[p]
+        return "growth"
+
+    papers = {}
+    for c in catalog:
+        pid = c["id"]; ps = str(pid)
+        img = cut(pid)
+        sy = SYN.get(ps) or {}; a = A.get(ps) or {}
+        stop = STOPS.get(pid) or STOPS.get(slug_of.get(pid))
+        if stop:
+            text = stop["body"]
+        elif sy.get("comparison"):
+            text = sy["comparison"]
+        else:
+            m = METH.get(ps) or {}
+            text = m.get("finding") or m.get("whats_new") or ""
+        # keep the card text to a readable length, cut at a sentence
+        if len(text) > 520:
+            cutat = text.rfind(". ", 0, 520)
+            text = text[:cutat + 1] if cutat > 200 else text[:517] + "…"
+        s = SENS.get(ps)
+        pk = (pics.get(ps) or {}).get("kind", "titlepage")
+        papers[ps] = dict(
+            id=pid, year=c["year"], t=c.get("title_en") or c.get("title") or "",
+            de=c.get("title") or "", au=c.get("author_full") or c.get("author") or "",
+            img=img, kind=pk, text=text,
+            v=sy.get("verdict") or "", st=a.get("status") or "",
+            sbi=a.get("sbi") if a.get("sleeping") else None,
+            sens=({"c": s["category"], "s": s.get("short", ""), "sev": s.get("severity", "medium")} if s else None),
+            read=("papers/%s.html" % read_for[pid]) if pid in read_for else None,
+            dos=("dossier/%d.html" % pid) if ps in A else None,
+            pdf="reader.html?id=%d" % pid,
+            prog=programme_of(c))
+
+    # ---- researchers within each programme
+    blurbs = TT.get("blurbs", {})
+    progs = []
+    people = {}
+    for P in TT["programmes"]:
+        pid_list = [int(k) for k, v in papers.items() if v["prog"] == P["id"]]
+        pset = set(pid_list)
+        principal, further_people = [], []
+        for person in AUTH:
+            mine = sorted([i for i in person["papers"] if i in pset], key=lambda i: cat_by_id[i]["year"])
+            if not mine:
+                continue
+            key = "%s/%s" % (P["id"], person["key"])
+            is_principal = len(mine) >= 2 or person.get("featured") or person["key"] in blurbs.get(P["id"], {})
+            # the person's picture: portrait if we have one, else their strongest figure here
+            fig = sorted(mine, key=lambda i: (papers[str(i)]["kind"] == "titlepage",
+                                              -((pics.get(str(i)) or {}).get("score") or 0)))[0]
+            rec = dict(key=person["key"], name=person["name"], years=person.get("years", ""),
+                       role=person.get("role", ""), blurb=blurbs.get(P["id"], {}).get(person["key"], ""),
+                       portrait=("assets/" + person["img"]) if person.get("img") else None,
+                       img=papers[str(fig)]["img"], papers=mine)
+            people[key] = rec
+            (principal if is_principal else further_people).append(key)
+        principal.sort(key=lambda k: (-len(people[k]["papers"]), people[k]["name"]))
+        further_people.sort(key=lambda k: people[k]["name"])
+        further = sorted({i for k in further_people for i in people[k]["papers"]},
+                         key=lambda i: cat_by_id[i]["year"])
+        yrs = [cat_by_id[i]["year"] for i in pid_list]
+        cov = cut(P["cover"], key="prog-%s" % P["id"])   # c = blurred backdrop + homepage, d = the plate
+        progs.append(dict(id=P["id"], title=P["title"], q=P["question"], intro=P["intro"],
+                          accent=P.get("accent", "#8a5a2b"), caution=bool(P.get("caution")),
+                          n=len(pid_list), y0=min(yrs), y1=max(yrs), img=cov,
+                          people=principal, further=further, furtherPeople=further_people))
+
+    R = TT["root"]
+    data = dict(root=dict(title=R["title"], place=R["place"], intro=R["intro"], n=STATS["papers"]),
+                progs=progs, people=people, papers=papers)
+    open(os.path.join(DATA, "tree.js"), "w", encoding="utf-8").write(
+        "window.TREE=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";")
+
+    body = ('<div class="tstage" id="tstage">'
+            '<nav class="tcrumbs" id="tcrumbs" aria-label="Where you are in the tour"></nav>'
+            '<div class="tmap" id="tmap">'
+            '<div class="tmap-intro" id="tmapintro"></div>'
+            '<svg id="tsvg" role="img" aria-label="The corpus as nested circles: six research programmes, their researchers and their papers"></svg>'
+            '<div class="ttip" id="ttip" role="tooltip"></div>'
+            '</div>'
+            '<div class="tportal" id="tportal" hidden></div>'
+            '</div>'
+            '<noscript><p style="padding:20px">The tour needs JavaScript. '
+            'The same material is in the <a href="catalog.html">catalog</a> and on the '
+            '<a href="authors.html">authors</a> page.</p></noscript>')
     page("tour.html", "Tour", "Tour", body,
          head="<style>" + TOUR_CSS + "</style>",
-         foot='<script src="data/tour.js"></script><script>' + TOUR_JS + '</script>',
-         desc="A personal, image-led tour of the Vienna Vivarium corpus: choose what interests you and discover which century-old results modern science has confirmed.")
-    print("tour.html:", len(stops), "stops |", sum(1 for s in stops if s["entry"]), "entry points")
+         foot='<script src="assets/d3.v7.min.js"></script><script src="data/tree.js"></script>'
+              '<script>' + TOUR_JS + '</script>',
+         desc="A guided tour of the Vienna Vivarium: from six big questions down to the researchers "
+              "who pursued them and the papers they wrote, with the figures from the papers.")
+    n_img = sum(1 for v in papers.values() if v["kind"] != "titlepage")
+    print("tour.html: %d programmes | %d researcher nodes | %d papers (%d with a figure) " %
+          (len(progs), len(people), len(papers), n_img))
 
 
 def gen_citations():
@@ -1938,6 +2346,11 @@ def copy_assets():
     for fn in pdfs:
         _cp(os.path.join(ARTICLES, fn), os.path.join(pdir, fn))
     # site imagery (historical photos / map) committed under legacy_data/img
+    # vendored libraries (served locally so the offline download works without a network)
+    vend = os.path.join(ROOT, "legacy_data", "vendor", "d3.v7.9.0.min.js")
+    if os.path.exists(vend):
+        os.makedirs(os.path.join(SITE, "assets"), exist_ok=True)
+        shutil.copyfile(vend, os.path.join(SITE, "assets", "d3.v7.min.js"))
     imgsrc = os.path.join(ROOT, "legacy_data", "img")
     if os.path.isdir(imgsrc):
         for root, _dirs, files in os.walk(imgsrc):

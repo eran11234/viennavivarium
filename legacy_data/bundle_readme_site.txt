@@ -26,9 +26,10 @@ dossier/          172 dossiers: each paper read against the current literature.
                   (Three of the 175 carry no verdict: a 1917 obituary, which reports no
                   experiment, and two whose assessments were withdrawn for redoing.)
 catalog.html      All 175 papers, searchable and sortable.
-tour.html         A 74-stop guided walk through the corpus.
+tour.html         The guided tour: from six big questions down to the researchers
+                  and their articles, with the figures from the papers.
 map.html          Force-directed map of the whole corpus.
-authors.html      60 people, with biographies.
+authors.html      58 people, with biographies.
 data/             The underlying JSON the pages are built from.
 
 For the data on its own — translations as Markdown, the catalog as CSV, every
