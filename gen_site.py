@@ -837,6 +837,7 @@ def gen_rediscovery():
 
 DISCOVER_CSS = r"""
 .dlede{max-width:78ch;font-size:16.5px;line-height:1.6}
+.ledenote{display:block;margin-top:9px;font-size:14px;color:var(--muted)}
 .sbwrap{margin:22px 0 8px;background:linear-gradient(135deg,#1d2733,#33485c);border-radius:16px;padding:18px 20px 20px;color:#f3efe6;position:relative;overflow:hidden}
 .sbwrap::after{content:"☾";position:absolute;right:-10px;top:-26px;font-size:150px;opacity:.07}
 .sbhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;position:relative;z-index:2}
@@ -1032,16 +1033,19 @@ def gen_discover():
              for p in papers.values()}, ensure_ascii=False) + ";")
     body = ('<p class="kicker">The corpus in the light of today’s science</p>'
             '<h1>Discover</h1>'
-            '<p class="lede dlede">All ' + str(stats["papers"]) + ' Vivarium papers (1904–1930), each set against the current literature — '
+            '<p class="lede dlede">All ' + str(stats["papers"]) + ' Vivarium <em>research</em> papers (1904–1930), each set against the current literature — '
             '<b>' + str(stats["modern"]) + ' modern papers</b> retrieved from the Consensus API, then read and compared one by one. '
             'Every paper is placed on two axes — how much today’s science <em>remembers</em> it, and whether its ideas actually <em>held up</em>. '
-            'Each card links back to its full <a href="catalog.html">Catalog</a> entry, and the Catalog carries these verdicts in its <b>Today</b> column.</p>'
+            'Each card links back to its full <a href="catalog.html">Catalog</a> entry, and the Catalog carries these verdicts in its <b>Today</b> column. '
+            '<span class="ledenote">The <a href="catalog.html">Catalog</a> holds 175 items; the one without a verdict here is '
+            'Przibram’s 1917 <a href="papers/88-hans-przibram-1917.html">obituary of Franz Megušar</a>, which reports no '
+            'experiment — there is nothing to set against the literature. It is translated and catalogued like the rest.</span></p>'
             '<section class="sbwrap"><div class="sbhead"><span class="sbeyebrow">☾ The search for sleeping beauties</span>'
             '<div class="sbnav"><button id="sbPrev" aria-label="previous">‹</button>'
             '<button id="sbtoggle" aria-label="play/pause">⏸</button><button id="sbNext" aria-label="next">›</button></div></div>'
             '<div id="carousel" class="carousel"></div><div id="sbdots" class="sbdots"></div></section>'
             '<div class="rstats">'
-            '<div><b>' + str(stats["papers"]) + '</b><span>papers, 1904–1930</span></div>'
+            '<div><b>' + str(stats["papers"]) + '</b><span>research papers, 1904–1930</span></div>'
             '<div><b>' + str(stats["modern"]) + '</b><span>modern papers via Consensus</span></div>'
             '<div><b>' + str(stats["sleeping"]) + '</b><span>sleeping beauties</span></div>'
             '<div><b>' + str(stats["confirmed"]) + '</b><span>forgotten yet confirmed</span></div>'
