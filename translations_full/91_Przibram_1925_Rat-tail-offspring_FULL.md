@@ -1167,7 +1167,7 @@ Header — Feuchtigkeit %: 28 | 30 | 38 | 45 | 45 | 95 | 67 | 67 | 99 | 68 | 70 
 
 > Running head (recto p. 603): „Ratten, Mus (Epimys) decumanus Pall. und M. (E.) rattus L."
 
-*[End of pages 50–56 (printed pp. 597–603). The cover spans pp. 49–57; p. 49 (the end of an earlier pedigree table) and p. 57 are outside this section. Page 57 (printed p. 604) begins **Tabelle XXXIII** — „Abhängigkeit der Körperschwanzrelation von der Außentemperatur der Elternumwelt: Transgression und Reapparation bei Mäusen, nach den Versuchen von Sumner (1909—1915) analog unseren Tabellen für Ratten zusammengestellt" — and is therefore not reproduced here.]* **Tabelle XXXIII.** Dependence of the body–tail ratio on the outside temperature of the parental environment: transgression and reapparition in mice, compiled from the experiments of Sumner (1909–1915) analogously to our tables for rats.
+**Tabelle XXXIII.** Dependence of the body–tail ratio on the outside temperature of the parental environment: transgression and reapparition in mice, compiled from the experiments of Sumner (1909–1915) analogously to our tables for rats.
 
 The table is grouped under three head-columns — **hoch** ("high"), **mittel** ("medium"), and **tief** ("low") — each subdivided into "versetzt" (transferred) and "verblieben" (remained) columns; the "verblieben" columns give Θ°C and K:S, the "versetzt" columns give only K:S. (Italic = exceptions; "K:S" = body-to-tail ratio; "Θ°C" = outside temperature.)
 
@@ -1402,4 +1402,4 @@ Data:
 
 ---
 
-*Translator's note.* One of the Biologische Versuchsanstalt (Vienna Vivarium) papers flagged on the project site as a modern rediscovery target. Claims are rendered as stated in the original, not endorsed.
+*Translator's note.* Claims are rendered as stated in the original, not endorsed.

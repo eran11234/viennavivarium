@@ -14,7 +14,7 @@ Received on 31 August 1907.
 
 *Archiv für Entwicklungsmechanik der Organismen*, vol. 25 (1907).
 
-> **Full translation.** A complete English rendering of the second communication of Kammerer's work on the inheritance of enforced reproductive adaptations — in *Salamandra* (*atra*/*maculosa*) and the midwife toad (*Alytes*) — with the tables and figure legends. **Kammerer's inheritance and atavism claims are rendered exactly as he states them; this translation reports them, it does not endorse them** (later disputed).
+> **Full translation.** A complete English rendering of the first and second communications of Kammerer's work on the inheritance of enforced reproductive adaptations — the offspring of the late-born *Salamandra maculosa* and the early-born *Salamandra atra* — with the tables and figure legends. **Kammerer's inheritance and atavism claims are rendered exactly as he states them; this translation reports them, it does not endorse them** (later disputed).
 
 ### Table of Contents
 

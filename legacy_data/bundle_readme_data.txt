@@ -13,25 +13,29 @@ you want the browsable site with those, see the Download page linked above.
 WHAT IS HERE
 ------------
 catalog.csv            One row per paper, 175 rows. The practical starting point.
-                       Columns: id, year, author, English and German titles,
-                       journal, DOI, organism/genus/taxon, citation count, legacy
-                       layer, Discover status, sleeping-beauty flag and index,
-                       the read-and-compare verdict, how many modern papers were
-                       read against it, any context-note category, the matching
-                       translation filename, and URLs for the reading page and
-                       dossier.
+                       Columns: id, year, authors, English and German titles,
+                       journal, DOI, organism, taxon; where the paper's claim
+                       stands today (standing, verdict, why), any open question
+                       and how it could be tested, what the paper offers, what
+                       the assessment rests on and its confidence; how current
+                       research uses it; its citing works by era; any
+                       context-note category; the translation filename; and
+                       URLs for the reading page and dossier.
 
 translations/          All 175 translations as Markdown, one file per paper.
                        Figure references point at filenames that live in the
                        full site bundle, not here.
 
 data/                  The project's working data. The ones most worth knowing:
-                         consensus_all.json        modern literature retrieved per
-                                                   paper (7,481 papers, via the
-                                                   Consensus API)
-                         consensus_synthesis.json  the hand-written verdict, state
-                                                   of the field, and comparison for
-                                                   each of 172 papers
+                         assessment.json           where each paper's claim stands,
+                                                   what it offers, how it is used
+                                                   today, citations by era
+                         paper_fixes.json          catalogue corrections checked
+                                                   against each paper's title page
+                         consensus_all.json        related modern literature per
+                                                   paper (topical search via the
+                                                   Consensus API; these papers do
+                                                   not cite the originals)
                          methodology.json          structured summary of what each
                                                    paper did
                          citations_enriched.json   who cites each paper (OpenAlex)
@@ -42,28 +46,58 @@ data/                  The project's working data. The ones most worth knowing:
                          sensitivity.json          papers needing reader context
                                                    before they are read
                          translation_issues.json   known gaps and provenance issues
-                         tour.json                 the guided tour's 74 stops
-                         rediscovery.json          rediscovery targets and the
-                                                   institute's unfinished programmes
+                         tour_tree.json            the guided tour: six questions,
+                                                   researchers, pictures
 
 site-data/             The same corpus after the build step, as the website
-                       consumes it: catalog.json, translations.json, legacy.json.
+                       consumes it: catalog.json and translations.json.
 
 BVA Corpus Analysis.xlsx
                        The original working spreadsheet the corpus was built from.
 
 
-A NOTE ON THE VERDICTS
-----------------------
-Each paper was read against the current literature and given a verdict, a
-state-of-the-field paragraph, and an explicit comparison. Papers are placed on
-two axes: recognition (how much today's science cites it) and vindication
-(whether the science held up). These are deliberately separate, because citation
-counts partly measure notoriety — some of the institute's most-cited papers are
-among its most thoroughly refuted.
+HOW THE PAPERS WERE ASSESSED
+----------------------------
+In September 2026 every paper was re-read from its full translation, with every
+work that cites it (OpenAlex) and a search of the related modern literature, and
+judged under one written rubric. Three things are recorded (assessment.json):
 
-These are the project's own scholarly judgements, not a settled consensus. They
-are a research aid. Disagreement is welcome and useful.
+  standing   established      later work confirmed this paper's own result, or
+                              explicitly credits it for a result now standard
+             consistent       the phenomenon is accepted today, but this paper's
+                              result was never re-tested (an early instance)
+             revised          holds only in part, or for other reasons
+             unresolved       a specific point was never settled; open/test say
+                              what is open and how it could be tested
+             not_supported    contradicted, not replicated, or resting on a
+                              rejected framework
+             no_claim         obituary, review, methods paper, description
+  use        tested / precedent (cited in science since 1990, usually as an
+             early description or background) / historians / none (no citing
+             work since 1990)
+  offers     testable, data, method, organism (an unusual system), history
+
+Where the more modest label was defensible, it was chosen; when a paper made two
+claims with different fates, its central claim decides and the other is named.
+Each assessment records what it rests on and how confident it is.
+
+These readings replaced an earlier scheme ("sleeping beauties", a
+sleeping-beauty index, "legacy layers", statuses such as "Quiet Classic") that
+mistook general acceptance of a phenomenon for confirmation of a particular
+paper, and citation counts for present-day use. It has been withdrawn and is
+not included here.
+
+These are careful readings, not a consensus of the field: a research aid.
+Disagreement is welcome and useful.
+
+
+PLEASE NOTE
+-----------
+These papers are historical documents, reproduced for study, not as
+endorsements, and we are not responsible for their content. Some data may be
+wrong or harmful: early twentieth-century science sometimes used methods and
+arguments that would be considered unscientific or harmful today. The
+translations and assessments may also contain errors.
 
 
 CONTEXT NOTES
@@ -80,9 +114,9 @@ translations are complete and unedited — the notes sit alongside them, never
 inside them, and nothing has been cut. If you quote from these papers, please
 carry the context with the quotation.
 
-Note for anyone running text analysis over this corpus: three papers carry no
-verdict (a 1917 obituary with no experiment, and two whose assessments were
-withdrawn for redoing), so consensus_synthesis.json has 172 entries, not 175.
+Every paper, including the 1917 obituary (standing: no_claim), has an entry in
+assessment.json. Two papers (ids 17 and 55) have no related-literature search in
+consensus_all.json, so that file has 172 entries, not 175.
 
 
 CITATION AND RIGHTS

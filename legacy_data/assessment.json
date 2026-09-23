@@ -1,0 +1,4337 @@
+{
+ "_about": "Where each paper's own claim stands today (standing, verdict, why), what it offers a researcher now (offers; open/test where a specific question is open), how current research uses it (use) and its citation history by era (cites). Written in September 2026 by readers working from each paper's full English translation, its citation record (OpenAlex) and a search of the related modern literature (Consensus), under one rubric, and checked paper by paper. 'use': tested = re-tested or its data used in current work; precedent = cited in scientific work since 1990, usually as an early description or background; historians = cited since 1990 only in history of science; none = no citation since 1990. 'cites': citing works in OpenAlex by era; to1945_self counts works by authors who also published in this corpus.",
+ "1": {
+  "standing": "consistent",
+  "verdict": "Fibular-edge excisions regrow fibulae and triple limbs; consistent, never re-tested",
+  "why": "Abolins found that excising the newt fibula with its surrounding tissue often restores a fibula-like bone, that knee half-sections regrow feet with a single zeugopodial bone, and produced mirror-image triple limbs; these fit later partial-limb findings but were never re-tested.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "Whether excising the fibula together with its surrounding soft tissue, rather than the bone alone, reliably restores a fibula-like bone, as in over half his cases, and whether that bone forms anew or from fibula remnants.",
+  "test": "Axolotl or Pleurodeles: excise the fibula alone versus with its fibular soft tissue, with and without its end pieces; lineage-trace Prrx1-positive connective tissue; score restored fibulae by micro-CT and histology at 6–12 months.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 3,
+   "to1945": 1,
+   "to1945_self": 1,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "2": {
+  "standing": "consistent",
+  "verdict": "Reversed limb stumps regrow mirror-image distal parts; consistent, not re-tested",
+  "why": "Burchardt pushed newt limbs through the body; in two adults the proximally facing cut end regrew a mirror-image distal limb, in larvae the distal end regrew; this fits the later rule that cut surfaces form only distal parts, but was never re-tested.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 2,
+   "to1945": 1,
+   "to1945_self": 1,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "3": {
+  "standing": "unresolved",
+  "verdict": "Half-removed newt long bones regrow, some mirrored; open, never re-tested",
+  "why": "Flat-Hauser and Przibram report that newt long bones half-removed inside the intact limb regrow: proximal halves usually restore the distal half, distal halves at most a mirror image of themselves; modern axolotl work treats large bone defects as non-regenerating unaided.",
+  "offers": [
+   "testable",
+   "data"
+  ],
+  "open": "Whether a terminal half of a salamander long bone regrows inside an intact limb (typical distally, mirror-image proximally), when modern studies report that large mid-shaft defects fail to regenerate unaided; terminal half-removals were never repeated.",
+  "test": "Axolotl or Pleurodeles: remove the proximal or distal half of radius or femur versus matched mid-shaft segments; follow 12–18 months by micro-CT and histology; lineage-trace Prrx1+ periskeletal cells; score typical versus mirror-image ends.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 2,
+   "to1945_self": 1,
+   "mid": 3,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "4": {
+  "standing": "revised",
+  "verdict": "Tenodera weight rises about 2.2-fold per moult; doubling rule approximate",
+  "why": "In Tenodera, weight rose about 2.2-fold per moult (941 exuviae from 302 animals) with ratios rising in later instars, and pronotum length rose 1.35-fold rather than 1.26; his own data show the doubling rule is approximate, as later per-instar studies find across insects.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 7,
+   "to1945": 5,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "5": {
+  "standing": "consistent",
+  "verdict": "Mantis eyes add and enlarge facets over moults; consistent, not re-measured",
+  "why": "Facet number roughly doubled and facet length rose about 3.8-fold from hatchling to adult Sphodromantis; growth of hemimetabolous insect eyes by adding and enlarging ommatidia is accepted, but his 'doubling principle' reading is not, and the mantis counts were not repeated.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether Sphodromantis doubles its facet number mainly between the sixth and ninth stages, while facet length grows only about 1.4-fold over those moults, as Przibram inferred from one mother, her hatchlings and earlier exuviae measurements.",
+  "test": "Rear Sphodromantis lineola individually; image the corneal cuticle of every exuvia and the adult eye by SEM or micro-CT; count facets along fixed meridians and measure facet diameters instar by instar, in both sexes.",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 5,
+   "to1945": 2,
+   "to1945_self": 0,
+   "mid": 2,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "6": {
+  "standing": "consistent",
+  "verdict": "Edge-cut newt legs form triple limbs and a mirror tibia; never re-tested",
+  "why": "The paper reports edge-excision experiments on newt legs, experimentally produced Bateson-rule triplications, and one X-rayed case in which a mirror-image tibia replaced the excised fibula; this fits later double-half limb findings but was never re-tested, and one case proves little.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether excising the fibular edge of a newt leg can make a second, mirror-image tibia form in place of the fibula, as in one X-rayed newt (Weiss no. 170); the claim rests on that single case.",
+  "test": "Pleurodeles or axolotl: repeat the oblique fibular-edge excision including the fifth toe in 20 or more animals; image the regenerated lower-leg skeleton by micro-CT after 8–10 months; score tibia- versus fibula-shaped elements and their symmetry.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 1,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "7": {
+  "standing": "consistent",
+  "verdict": "Spiracle plate regrows as mirror image of its partner; never re-tested",
+  "why": "Staudinger found that a removed posterior plate of a stick-insect spiracle can regrow as a mirror-image copy of the anterior plate, and traced a spiracle-like head structure to an attached mandibular tendon; mirror-image regeneration fits later insect work, but spiracles were never re-examined.",
+  "offers": [
+   "organism",
+   "testable"
+  ],
+  "open": "Whether the regrown posterior spiracle plate, which takes the form of the anterior plate, arises by reversed outgrowth from the anterior plate or from posterior tissue switching identity; the author left this undecided and it has not been re-examined.",
+  "test": "Carausius morosus: remove the posterior closing plate of the first thoracic spiracle in 20 or more young nymphs; mark anterior-plate cells with DiI, immunostain the regenerate for Engrailed, and score plate type after two moults.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 1,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "8": {
+  "standing": "consistent",
+  "verdict": "Lizard tail blastema grew a tail at forelimb site; consistent, not re-tested",
+  "why": "Two-week lizard tail blastemas grafted to the forelimb site mostly scarred over, but in eight cases grew into complete, curved tails without spinal cord; that lizards regrow tails but not limbs is confirmed today, yet this graft was never repeated.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "Whether a lizard tail blastema grafted away from the spinal cord can still build a patterned tail, and from what age; Weiss’s cord-free tails came from two-week blastemas, and later work ties tail patterning to the ependymal tube.",
+  "test": "Podarcis muralis (Weiss’s Lacerta muralis) or leopard geckos: graft 7-, 10- and 14-day tail blastemas, with or without their ependymal tube, to a forelimb amputation site; after months score cartilage tube, muscle segments, scales and Shh expression.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 13,
+   "to1945": 3,
+   "to1945_self": 0,
+   "mid": 9,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "9": {
+  "standing": "revised",
+  "verdict": "Whole feet from halved lower legs; 'field' explanation superseded",
+  "why": "Weiss obtained whole, correctly asymmetric feet from surgically halved newt lower legs and concluded that a field, not parts of the stump, patterns the regenerate; modern work locates positional identity in stump connective-tissue cells (Hand2/Shh, H3K27me3), superseding that explanation.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "Whether Weiss's whole, asymmetric feet truly arose from an anterior-only or posterior-only half, or depended on opposite-half cells introduced by the skin flap taken from the removed half, has not been re-examined.",
+  "test": "Axolotl: repeat the split-zeugopod operation using a GFP-labelled skin flap from the removed half, or a flap from the same half; score whole versus partial autopods and Shh/Fgf8 expression in each blastema.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 34,
+   "to1945": 17,
+   "to1945_self": 3,
+   "mid": 15,
+   "modern_sci": 2,
+   "modern_hist": 0
+  }
+ },
+ "10": {
+  "standing": "consistent",
+  "verdict": "Regenerate epidermis from old epidermis, dermis from blastema; consistent, not re-tested",
+  "why": "Weiss covered de-skinned newt limbs with a sleeve of lung before amputating and found the regenerate’s epidermis grew from old epidermis while its dermis formed anew from the blastema; later lineage tracing agrees, though this experiment was never repeated.",
+  "offers": [
+   "organism",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 16,
+   "to1945": 12,
+   "to1945_self": 4,
+   "mid": 4,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "11": {
+  "standing": "not_supported",
+  "verdict": "Young tail blastema turned limb in limb field; not supported",
+  "why": "Weiss reported limb parts from young tail blastemas grafted beside the newt forelimb with a diverted nerve (3 of 9), concluding blastemas lack organ identity; the grafts were unmarked, diverted nerves can induce limbs from host tissue, and blastema cells retain their origin’s identity.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "Whether young tail-blastema cells can form limb tissue in the limb field, or whether Weiss’s limb parts came from host cells recruited by the diverted nerve; his limb-forming grafts beside the limb were unlabelled.",
+  "test": "Axolotl: graft 7–14-day tail blastemas from GFP-transgenic donors beside the forelimb of white hosts with a deviated brachial nerve, plus wound-and-nerve controls without graft; score GFP cells in any limb skeleton, muscle and dermis.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 30,
+   "to1945": 22,
+   "to1945_self": 2,
+   "mid": 7,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "12": {
+  "standing": "consistent",
+  "verdict": "Young rats' body temperature varies with ambient; consistent with later work",
+  "why": "Found rectal temperature of 24-day-old rats reared at 10–35 °C rising about 0.7 °C per 5 °C, and females warmer than males at 38–54 days; incomplete thermoregulation in young rodents is accepted, but these values were not re-measured.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 12,
+   "to1945": 9,
+   "to1945_self": 3,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "13": {
+  "standing": "consistent",
+  "verdict": "Drug-lowered body temperature shortened rat tail growth; consistent, not repeated",
+  "why": "Antipyrine or quinine injections that cooled 3–4-week-old rats by about 2–3 °C for hours reduced relative tail growth in small, partly inconsistent series; not repeated, though cooler growth giving shorter rodent tails is accepted and now tied to local tissue temperature.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "historians",
+  "cites": {
+   "total": 4,
+   "to1945": 3,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "14": {
+  "standing": "revised",
+  "verdict": "Ultraviolet-darkening claim untested; black-surface ultraviolet explanation does not hold",
+  "why": "Reported that added ultraviolet darkens P. brassicae pupae and that black and red surfaces act through reflected ultraviolet; hue-specific effects fit her 1924 findings, but black paper reflects little ultraviolet and the irradiation result has not been re-tested.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "Whether ultraviolet light, independent of heat and background brightness, increases melanisation of Pieris brassicae pupae, as her quartz-lamp irradiation experiments reported.",
+  "test": "Keep wandering P. brassicae larvae on white or yellow backgrounds under matched visible LED light with or without added UV-A at constant temperature; quantify pupal melanisation by reflectance spectrometry.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 6,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "15": {
+  "standing": "unresolved",
+  "verdict": "Light colour shifts salamander pattern; not re-tested, generational claim unsupported",
+  "why": "Claimed yellow or violet light transmitted through coloured bells makes metamorphosing salamanders yellower or blacker through light colour rather than intensity; that colour-quality effect has not been re-tested under controlled light, and his claim that pattern style changes only across generations is not supported.",
+  "offers": [
+   "testable",
+   "data",
+   "history"
+  ],
+  "open": "Whether light colour itself, at matched intensity and without background-brightness differences, changes the yellow area of metamorphosing fire salamanders, as Kammerer’s coloured-bell rearing claimed.",
+  "test": "Rear sibling Salamandra salamandra larvae under narrow-band yellow versus blue LED light at equal photon flux on a neutral substrate; measure dorsal yellow area at metamorphosis by calibrated imaging and count melanophores and xanthophores.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "historians",
+  "cites": {
+   "total": 2,
+   "to1945": 1,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "16": {
+  "standing": "established",
+  "verdict": "Larval background shifts salamander pattern, confirmed; ultraviolet and tyrosinase explanation superseded",
+  "why": "Found that fire-salamander larvae kept in yellow or black surroundings metamorphose yellower or blacker; Sanchez & Pröhl 2019, varying larval background albedo in the same species, confirmed the carry-over into post-metamorphic colour, but Przibram’s ultraviolet-reflection and tyrosinase explanation was superseded.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "modern literature",
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 5,
+   "to1945": 2,
+   "to1945_self": 1,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 2
+  }
+ },
+ "17": {
+  "standing": "revised",
+  "verdict": "Light shifts stick-insect colour types; inheritance of induced colour not supported",
+  "why": "Reported that illumination shifts stick-insect colour types via light-sensitive tyrosinase and that induced colours increase in parthenogenetic offspring; environmental influence on colour is accepted, but the tyrosinase mechanism is superseded and the transmission claim, confounded by season, is not supported.",
+  "offers": [
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 9,
+   "to1945": 9,
+   "to1945_self": 4,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "18": {
+  "standing": "consistent",
+  "verdict": "Inverted newt knee-pieces regrow feet; consistent with later reversal experiments",
+  "why": "Of sixteen crested newts given an inverted knee-piece, four regenerated feet, mostly double, from the piece’s originally proximal-facing end; limb pieces forming distal parts whatever their orientation is accepted from later reversal experiments, but this one was not repeated.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 11,
+   "to1945": 7,
+   "to1945_self": 3,
+   "mid": 4,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "19": {
+  "standing": "consistent",
+  "verdict": "Mantid raptorial forelegs regenerate in young nymphs; consistent, never re-tested",
+  "why": "Thomson showed that the raptorial forelegs of two more mantid genera regenerate after amputation in young nymphs, as miniatures with fewer tarsal segments, against Bordage's claimed autotomy-regeneration link; this matches later insect leg-regeneration knowledge, but mantid forelegs were not re-tested.",
+  "offers": [
+   "organism",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 2,
+   "to1945": 2,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "20": {
+  "standing": "consistent",
+  "verdict": "Headless caterpillars pupate but lose background colour-matching; consistent, never re-tested",
+  "why": "Decapitated Pieris and Vanessa caterpillars still pupated but lost background colour-matching, giving uniform medium pupae; that the head is needed for pupal colour-matching is accepted, but this was not re-tested, and headless pupation had already been reported by Conte and Vaney.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 7,
+   "to1945_self": 5,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "21": {
+  "standing": "established",
+  "verdict": "Background sets Vanessid pupal colour; credited in modern work, mechanism superseded",
+  "why": "Showed Vanessid pupae turn dark on black, light on white, gold on yellow; a 2013 swallowtail study credits it for pupation-site cues setting pupal colour and 2009 hormonal work on the painted lady cites it; her ultraviolet, infrared and tyrosinase explanation was superseded.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "citing works",
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 14,
+   "to1945": 4,
+   "to1945_self": 4,
+   "mid": 4,
+   "modern_sci": 5,
+   "modern_hist": 1
+  }
+ },
+ "22": {
+  "standing": "revised",
+  "verdict": "Melanin rises with prolonged darkening; rapid darkening is redistribution, not synthesis",
+  "why": "Reported more extractable melanin in darkened than pale fish skin after blinding, black backgrounds, darkness, narcosis or death, concluding darkening is pigment increase, not just dispersion; long-term increases match later morphological colour change, but minutes-scale darkening is now explained by melanosome redistribution.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 9,
+   "to1945": 8,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "23": {
+  "standing": "no_claim",
+  "verdict": "Book reviews of Loeb, D'Arcy Thompson and MacLeod; no empirical claim",
+  "why": "Short German reviews of Loeb's, D'Arcy Thompson's and MacLeod's quantitative-biology books; they report no data, and the reviewer's asides, such as citing Kammerer's cave animals as inheriting light-induced eyes and colour, rest on claims now rejected.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 2,
+   "to1945": 2,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "24": {
+  "standing": "no_claim",
+  "verdict": "Methods and terminology for self-holding grafts; no testable claim",
+  "why": "A methods and programme paper defining ‘autophoric’ grafts, held in place by the host’s own tissues without sutures, and setting out eye-graft questions; ‘autophoric’ means self-holding, not autologous, and there is no experimental result to judge.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 6,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "25": {
+  "standing": "revised",
+  "verdict": "Replanted eyes regain sight; holds for fish and amphibians, not rats",
+  "why": "Eyes replanted into the orbit were reported to heal and regain sight in fish, amphibians and rats; recovery in fish and amphibians fits their optic-nerve regeneration, but sight in rats is not supported, since cut mammalian optic nerves do not regenerate.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 13,
+   "to1945": 10,
+   "to1945_self": 4,
+   "mid": 3,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "26": {
+  "standing": "not_supported",
+  "verdict": "Replanted rat eyes regain sight; not supported, and success was rare",
+  "why": "Replanted rat eyes were said to regain optic pupil reflexes and visually guided behaviour, yet only two functional eyes survived from thirty rats operated in 1922; cut mammalian optic nerves do not regenerate, and whole-eye transplants have still not restored vision.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 3,
+   "to1945": 2,
+   "to1945_self": 2,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "27": {
+  "standing": "consistent",
+  "verdict": "Grafted eyes grow at the donor’s rate; consistent, never re-tested",
+  "why": "A smooth-newt eye grafted onto a young fire salamander grew only to newt-eye size, from which Koppányi concluded that growth rate is set by the graft; donor-set growth of grafted eyes is accepted, but this observation was not re-tested.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 5,
+   "to1945_self": 2,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "28": {
+  "standing": "not_supported",
+  "verdict": "Optic nerves regrow after eye replantation in rats; not supported",
+  "why": "Kolmer described optic fibres regrowing to the chiasma after eye replantation in rats and a rabbit; cut adult mammalian optic nerves do not regenerate, and he found similar fibres beside a disintegrated graft, though his amphibian findings fit later work.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 6,
+   "to1945_self": 2,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "29": {
+  "standing": "revised",
+  "verdict": "Grafted eyes recolour without pigment immigration; only partly holds",
+  "why": "Grafted eyes reportedly changed iris and fundus colour from within, not by pigment immigration, and orbital but not neck grafts restored blinded animals’ colour change; eye-dependent colour change is accepted, but an albino eye darkening within 48 hours cannot be making its own melanin.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "precedent",
+  "cites": {
+   "total": 4,
+   "to1945": 2,
+   "to1945_self": 2,
+   "mid": 1,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "30": {
+  "standing": "not_supported",
+  "verdict": "Two rats with replanted eyes learned visual tasks; not supported",
+  "why": "Two rats with replanted eyes learned brightness discriminations that blinded rats did not, but with one animal per condition, scores of 57–68% correct overlapping one blind rat’s 60%, and no optic-nerve regeneration in mammals, restored sight is not supported.",
+  "offers": [
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 4,
+   "to1945": 4,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "31": {
+  "standing": "not_supported",
+  "verdict": "Exchanged insect heads regain full function; not supported",
+  "why": "Heads exchanged between beetles, including between Hydrophilus and Dytiscus, were said to heal on and regain full function, shown by swimming, feeding and dyed faeces; functional head replantation in insects has not been substantiated by later work.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 2,
+   "to1945": 2,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "32": {
+  "standing": "not_supported",
+  "verdict": "Exchanged heads carry sex-typical mating behaviour; head grafts never substantiated",
+  "why": "Hydrophilus females given male heads mounted females, while males with female heads stayed passive; the result depends on functional head exchange, which was never substantiated, although later insect work does place courtship control in the nervous system rather than the gonads.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 1,
+   "to1945": 1,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "33": {
+  "standing": "not_supported",
+  "verdict": "Transplanted head imposes its colour on the body; not supported",
+  "why": "A transplanted head was said to impose its colour on the recipient’s body via its eyes, even on adult beetle cuticle and already-coloured butterfly pupae; this rests on unconfirmed functional head grafts and conflicts with pupal colour being fixed at pupation.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 3,
+   "to1945": 3,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "34": {
+  "standing": "consistent",
+  "verdict": "Adult fish and amphibian lenses survive replantation; consistent, never re-tested",
+  "why": "Crystalline lenses of adult fish and amphibians were replanted within and between species and reportedly healed in and stayed clear; this fits the lens being avascular and graft-tolerant, but these adult replantations were not re-tested.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 5,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "35": {
+  "standing": "consistent",
+  "verdict": "Ovaries grafted into the rat uterus yielded donor-derived young; consistent, not re-tested",
+  "why": "Rat ovaries placed loose in the uterus of recently pregnant, ovariectomised hosts gave litters whose coat colour proved donor origin, with no host influence on colour; donor-derived litters from ovarian grafts are routine today, but this intrauterine method was never re-tested.",
+  "offers": [
+   "method",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 4,
+   "to1945": 3,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "36": {
+  "standing": "consistent",
+  "verdict": "Grafted larval salamander limbs heal, grow and move; consistent, never re-tested",
+  "why": "Fully formed limbs of larval fire salamanders, grafted beside or in place of other limbs, healed in 70 of 81 animals, grew, metamorphosed and later moved actively; such limb grafting is routine today, but this experiment was not repeated.",
+  "offers": [
+   "method",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 21,
+   "to1945": 17,
+   "to1945_self": 6,
+   "mid": 1,
+   "modern_sci": 1,
+   "modern_hist": 2
+  }
+ },
+ "37": {
+  "standing": "consistent",
+  "verdict": "Orientation-matched limb grafts suppressed stump regeneration; consistent, never re-tested",
+  "why": "In fire-salamander larvae a limb grafted onto an amputation stump with matching orientation suppressed the stump’s regenerate (4 of 4 cases), while imperfectly fitted grafts let a regenerate form and push the graft aside; this fits later positional-disparity models but was not re-tested.",
+  "offers": [
+   "organism",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 12,
+   "to1945": 11,
+   "to1945_self": 6,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "38": {
+  "standing": "revised",
+  "verdict": "Gonad grafts shape sex characters; antagonism theory revised, human extension false",
+  "why": "Cross-sex and dual gonad grafts in castrated young guinea pigs produced feminised, masculinised and mixed-sex animals, repeated by Sand (1919); Steinach’s explanation by mutually antagonistic sex glands gave way to pituitary feedback, and his analogy to human homosexuality is false.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 65,
+   "to1945": 53,
+   "to1945_self": 5,
+   "mid": 5,
+   "modern_sci": 5,
+   "modern_hist": 2
+  }
+ },
+ "39": {
+  "standing": "not_supported",
+  "verdict": "Heat-forced midwife-toad breeding habits said inherited; never replicated",
+  "why": "Kammerer reported that midwife toads kept hot bred in water without brood care and that descendants kept this habit, with aquatic egg traits and, by the third–fourth generation, male nuptial pads; this inheritance was never replicated, and Arntzen (2022) calls it unconfirmed.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 23,
+   "to1945": 10,
+   "to1945_self": 4,
+   "mid": 0,
+   "modern_sci": 4,
+   "modern_hist": 9
+  }
+ },
+ "40": {
+  "standing": "consistent",
+  "verdict": "Pike colour response to light needs the eyes; consistent, not re-tested",
+  "why": "Mayerhofer showed blinded pike stop responding to light but still respond to electrical, thermal and excitement stimuli, and that seeing pike pale when lit from below; eye-mediated background adaptation is accepted, but his light-dependent belly pigmentation in blinded pike was not re-tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether blinded juvenile pike grow new belly pigment in light but lose pigment in darkness, as he reported without counts, and whether light acts there through skin or pineal photoreceptors; no modern re-test is known.",
+  "test": "Enucleate hatchery-reared Esox lucius juveniles (15–20 mm); keep groups in light or darkness beside sham-operated controls at equal temperature; count ventral melanophores in weekly photographs for ten weeks; cover the pineal window in a further group.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 15,
+   "to1945": 13,
+   "to1945_self": 3,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "41": {
+  "standing": "unresolved",
+  "verdict": "Mantis colour crosses suggest brown dominant; not re-tested",
+  "why": "Przibram’s colour crosses suggested brown is dominant to green in Sphodromantis, independent of rearing temperature, while regenerated four-segment tarsi were not inherited in 2,605 offspring; that non-inheritance fits modern genetics, but the colour inheritance has not been re-tested.",
+  "offers": [
+   "testable",
+   "data"
+  ],
+  "open": "Whether adult green versus brown in Sphodromantis is inherited with brown dominant, as his small inbred crosses suggested; the 2025 S. viridis study examined ontogenetic colour change, not crosses, and mantis species differ.",
+  "test": "Rear full-sib Sphodromantis families from green×green, brown×brown and green×brown pairs under identical constant conditions; score adult colour by spectrophotometry at the final moult; test Mendelian ratios and map any locus by genotyping.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 21,
+   "to1945": 21,
+   "to1945_self": 11,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "42": {
+  "standing": "revised",
+  "verdict": "Loach matches background shade via eyes; pigment-conversion explanation rejected",
+  "why": "Secerov showed the stone loach lightens or darkens to its background only in light and with its eyes, as modern fish physiology accepts; his claim that light turns black pigment into like-coloured pigments (Wiener principle), giving hue matching, is not supported.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "Whether the belly pigmentation that blinded loaches (and pike, Mayerhofer 1909) develop in light but not in darkness is driven by extra-ocular photoreception, and which receptor mediates it.",
+  "test": "Rear enucleated or eyeless (rx3 mutant) juvenile zebrafish or medaka in light versus darkness; count ventral melanophores over weeks; repeat in lines lacking candidate non-visual opsins to identify the receptor.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 20,
+   "to1945": 13,
+   "to1945_self": 5,
+   "mid": 5,
+   "modern_sci": 2,
+   "modern_hist": 0
+  }
+ },
+ "43": {
+  "standing": "consistent",
+  "verdict": "Young geese and ducks regrow cut bill tips; consistent, histology not re-examined",
+  "why": "Werber and Goldschmidt found that bill tips cut from three-week-old geese and ducks regrew within four to six weeks, with bone, epidermis and fewer tactile corpuscles but no glands; bill regrowth after trimming in young poultry is familiar, but the histology was not re-examined.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 6,
+   "to1945": 6,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "44": {
+  "standing": "unresolved",
+  "verdict": "Forced salamander birth-mode switch reported; never re-tested",
+  "why": "Kammerer reported that water-deprived fire salamanders come to bear few metamorphosed young fed on sibling eggs, like alpine salamanders, and that embryo numbers fall with altitude; neither the forced switch nor the cline was re-tested, and the paper makes no inheritance claim.",
+  "offers": [
+   "testable",
+   "data"
+  ],
+  "open": "Whether larviparous fire salamander females denied water can, within their lifetime, shift to bearing few metamorphosed young nourished by sibling eggs; no replication or refutation is recorded, and modern pueriparity work studies wild lineages, not induction.",
+  "test": "Keep captive-bred larviparous Salamandra salamandra females with and without water access over three or more gestations; record stage, size and number of young at birth, and check uterine contents for sibling-egg feeding by ultrasound.",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 41,
+   "to1945": 32,
+   "to1945_self": 10,
+   "mid": 3,
+   "modern_sci": 1,
+   "modern_hist": 5
+  }
+ },
+ "45": {
+  "standing": "consistent",
+  "verdict": "Crayfish regrows its third maxilliped; consistent, never re-tested",
+  "why": "After total extirpation the crayfish regrew its third maxilliped and gill, passing through walking-leg-like stages; decapod appendage regeneration is accepted, but this result was never re-examined and his explanation from the crayfish’s ‘lower’ phylogenetic rank is not a modern one.",
+  "offers": [],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 2,
+   "to1945": 2,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "46": {
+  "standing": "consistent",
+  "verdict": "Freshwater snails regrow tentacles; consistent, never independently re-tested",
+  "why": "Planorbis corneus and Paludina vivipara regrew amputated tentacles, contrary to Carrière’s negative result, and the male Paludina’s penis-bearing right tentacle regrew without its club; snail tentacle regeneration is accepted, but these results were never re-tested beyond the author’s own 1907 follow-up.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 3,
+   "to1945": 3,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "47": {
+  "standing": "consistent",
+  "verdict": "Ophryotrocha regrows only part of its anterior end; consistent, untested",
+  "why": "Ophryotrocha did not rebuild its anterior end once two or more segments were lost, but replaced partial first-segment losses and occasionally remodelled segment two into an antenna-bearing first segment; variable annelid head regeneration is accepted, but this species was never re-tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether Ophryotrocha puerilis fails to regenerate its anterior segments, eyes and jaw apparatus after losing two or more segments, or whether post-operative degeneration, seen in most animals, caused it; and whether segment two can become a first segment.",
+  "test": "Cut cultured O. puerilis behind segment 1, 2, 3 or 6 in filtered seawater; over six weeks score prostomium, antennae, eyes and jaws by imaging, with EdU labelling and neural staining, and record degeneration against sham-handled controls.",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 4,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "48": {
+  "standing": "consistent",
+  "verdict": "Regeneration capacity falls with larval stage and age; consistent, never re-tested",
+  "why": "Anuran hindlimbs regenerated only up to a set limb stage, and not in older overwintered larvae whose limbs had not reached it; newts regenerated more slowly after metamorphosis; species size had no effect; stage-dependent loss is accepted, but these comparisons were never re-tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether chronological age, apart from developmental stage, ends hindlimb regeneration in tadpoles, as Kammerer inferred from overwintered larvae that failed to regenerate at limb stages where one-summer larvae did.",
+  "test": "Hold Xenopus laevis tadpoles at an early limb stage (NF 52–54) for months with methimazole, or use overwintering bullfrog tadpoles; amputate hindlimbs alongside young stage-matched controls; score regenerate completeness by skeletal staining after six weeks.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 25,
+   "to1945": 17,
+   "to1945_self": 4,
+   "mid": 7,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "49": {
+  "standing": "revised",
+  "verdict": "Claw loss reshapes claw asymmetry; observation holds, explanation superseded",
+  "why": "Przibram surveyed claw asymmetry in living and fossil decapods and showed claw loss can reverse, equalise or directly restore it, as later work bears out; his orthogenetic explanation and denial that use shapes individual asymmetry were superseded: lobster claw type depends on juvenile use.",
+  "offers": [
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "tested",
+  "use_note": "Taxonomic work on hermit crabs and swimming crabs still cites its account of claw asymmetry as a developmental and taxonomic character.",
+  "cites": {
+   "total": 23,
+   "to1945": 12,
+   "to1945_self": 5,
+   "mid": 2,
+   "modern_sci": 9,
+   "modern_hist": 0
+  }
+ },
+ "50": {
+  "standing": "consistent",
+  "verdict": "Lizards regrow jaw tips without bone; consistent, never re-tested",
+  "why": "Sand lizards regrew excised jaw tips with granular scales and cartilage instead of bone (connective tissue, on his own 1906 re-examination); a 2021 reptile-regeneration review cites it as regeneration beyond the tail, but it was never re-tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether lizard jaw-tip regenerates ever form bone and teeth: Werber saw cartilage on poorly preserved 1905 sections, connective tissue in 1906, and left later ossification open; the regenerated teeth were seen only with a hand lens.",
+  "test": "Excise premaxillary and symphyseal jaw tips in sand or wall lizards (Podarcis muralis); at one, three and twelve months, score bone, cartilage and teeth in the regenerate by micro-CT and histology (Alcian blue, alizarin red).",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 10,
+   "to1945": 5,
+   "to1945_self": 2,
+   "mid": 4,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "51": {
+  "standing": "unresolved",
+  "verdict": "Larval antenna regrows; eye regeneration claimed from two animals, untested",
+  "why": "Werber reported that mealworm larvae regrew an excised antenna (eight segments instead of eleven) and an excised eye, a case he said was unknown in insects; the eye claim rests on two survivors without histology and has never been re-tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether a beetle larva truly regenerates an excised eye, or whether Werber’s adult ‘regenerated’ eye grew from eye primordium left in place; his two survivors were never examined histologically.",
+  "test": "Remove the larval stemmata and surrounding head epidermis in Tribolium carrying the eye marker 3xP3-EGFP (or in Tenebrio), rear to adults, and score eye formation by fluorescence, histology and ommatidia counts versus sham controls.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 8,
+   "to1945": 8,
+   "to1945_self": 5,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "52": {
+  "standing": "consistent",
+  "verdict": "Newts regrow jaw tips fully, frogs and lizards less; consistent",
+  "why": "Newts regrew jaw tips completely, teeth and bone included, small frogs and tadpoles did but large frogs did not, and lizards and geckos did without bone; the newt result matches modern newt and axolotl studies, but the frog and reptile results were never re-tested.",
+  "offers": [],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 4,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "53": {
+  "standing": "revised",
+  "verdict": "Lancelets can regenerate; later work found more capacity than claimed",
+  "why": "Biberhofer reported anterior-end regeneration in one of two surviving lancelets, against Nusbaum’s negative result, and judged the capacity relatively slight; later amputation studies, which cite it as an early report of poor capacity, found that adult lancelets regenerate the tail well.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "citing works",
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 3,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 2,
+   "modern_hist": 0
+  }
+ },
+ "54": {
+  "standing": "revised",
+  "verdict": "Fins regrow with markings; the body-axis rule does not generalise",
+  "why": "Tail fins regrew wherever cut and the perch’s black fin markings re-formed, as later work bears out, but his rule that fins on the body’s long axis regenerate best, based on pectoral fins that failed to regrow, fails in zebrafish and Polypterus.",
+  "offers": [],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 6,
+   "to1945": 5,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "55": {
+  "standing": "no_claim",
+  "verdict": "Four malformed dogfish described; no general claim to assess",
+  "why": "The paper describes four malformed spiny-dogfish specimens (accessory head fin, gills on the upper jaw, finless tail, two anterior duplications) with explanations the authors leave open; nothing general to adjudicate, judged from the paper itself since no modern literature was searched.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 7,
+   "to1945": 5,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "56": {
+  "standing": "unresolved",
+  "verdict": "Darkness keeps symbiotic algae out of hydra eggs; never re-tested",
+  "why": "Hadži found that in darkness or green light symbiotic algae did not enter green-hydra eggs, one of which still hatched, a claim never re-tested; his view, with Graff, that the algae give the polyp no nourishment was overturned by later work showing they supply photosynthate.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether symbiotic Chlorella need light to enter developing oocytes of green hydra, as Hadži found with dark-reared and colour-filtered polyps in a single season, and whether such algae-free eggs develop normally.",
+  "test": "Induce oogenesis in Hydra viridissima kept in darkness, under green, red or blue light, or in white light; count algae per oocyte by chlorophyll autofluorescence (confocal) and score embryo encapsulation, hatching and symbiont status of hatchlings.",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 18,
+   "to1945": 14,
+   "to1945_self": 2,
+   "mid": 3,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "57": {
+  "standing": "consistent",
+  "verdict": "Moisture and heat alter anuran egg and larval timing; consistent, never re-tested",
+  "why": "Kammerer reported that moisture, temperature, light and food shift hatching stage and larval duration in midwife toads and tree frogs, and that captive Alytes sometimes spawn in water without brood care; such developmental plasticity is accepted, but these specific results were never re-tested.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 26,
+   "to1945": 18,
+   "to1945_self": 7,
+   "mid": 0,
+   "modern_sci": 3,
+   "modern_hist": 5
+  }
+ },
+ "58": {
+  "standing": "unresolved",
+  "verdict": "Inverted cocoons gave stunted larvae; gravity’s role never tested",
+  "why": "Two inverted Hydrophilus cocoons yielded few, small larvae that died within days, plus many arrested embryos, against two normal controls; this was never repeated, and inverting the floating cocoon also lifted the eggs out of the water, so a gravity effect is unproven.",
+  "offers": [
+   "testable",
+   "organism"
+  ],
+  "open": "Whether reversing the eggs’ orientation to gravity, rather than the altered air and water exposure of an inverted floating cocoon, delays hatching and stunts larvae in Hydrophilus; the original used two inverted and two control cocoons.",
+  "test": "Keep Hydrophilus or related hydrophilid cocoons upright, inverted with the egg mass equally immersed and aerated, and on a slow clinostat; record hatching time, larval length and survival to first moult.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 2,
+   "to1945": 2,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "59": {
+  "standing": "consistent",
+  "verdict": "Mantis colour shifts independent of light, diet and background; consistent",
+  "why": "Przibram found Egyptian mantis colour alternates green–brown regardless of light, diet or background, and raptorial legs regenerate; a 2025 Sphodromantis viridis study likewise reports cue-independent colour change, but modern work sees camouflage where he saw no selective value.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 27,
+   "to1945": 22,
+   "to1945_self": 14,
+   "mid": 4,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "60": {
+  "standing": "no_claim",
+  "verdict": "Essay likening crystal repair to organic regeneration; nothing to test",
+  "why": "Przibram's essay treats the healing of broken crystals and the division and fusion of liquid crystals as physical models for organic form regulation; it offers analogies rather than testable results, and although broken crystals do regrow faster, regeneration biology does not use the analogy.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 15,
+   "to1945": 8,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 3,
+   "modern_hist": 3
+  }
+ },
+ "61": {
+  "standing": "consistent",
+  "verdict": "Regenerating mantis legs catch up over moults; formula not adopted",
+  "why": "Regenerating Sphodromantis tibiae grew by much larger ratios per moult that fell back to the normal ~1.26 once they matched the opposite leg, and regrew more slowly when lost later; such catch-up regrowth fits later insect work, but his potential-difference formula was not adopted.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 3,
+   "to1945": 2,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "62": {
+  "standing": "consistent",
+  "verdict": "Rotifer and paramecium paths diffuse like random walks; consistent with later work",
+  "why": "Rotifer and paramecium tracks sampled every 4 s had mean-square displacements growing linearly with time, and tracking-based diffusion coefficients roughly matched population spreading; diffusive long-time motion of swimming microorganisms is standard in modern active-matter physics, which cites Karl Przibram's studies as early work.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 10,
+   "to1945": 1,
+   "to1945_self": 0,
+   "mid": 3,
+   "modern_sci": 5,
+   "modern_hist": 1
+  }
+ },
+ "63": {
+  "standing": "consistent",
+  "verdict": "Mantis development doubles from 25 to 35 °C; consistent with later work",
+  "why": "Mantis egg and moult development roughly doubled in rate from 25 to 35 °C, with Q10 falling at higher and rising at lower temperatures; this matches modern thermal performance curves, but the species' values were not re-measured.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "modern literature",
+   "the paper's text"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 5,
+   "to1945_self": 3,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "64": {
+  "standing": "revised",
+  "verdict": "Adult rat body temperature tracks ambient linearly; overstated, only partly holds",
+  "why": "Reported adult rat rectal temperature rising about 0.75 °C per 5 °C across constant 5–40 °C housing; core temperature does rise in warmth, but cold-acclimated rats defend near-normal core temperature, so the linear law reflects shallow readings in part.",
+  "offers": [
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 15,
+   "to1945": 9,
+   "to1945_self": 6,
+   "mid": 2,
+   "modern_sci": 1,
+   "modern_hist": 3
+  }
+ },
+ "65": {
+  "standing": "consistent",
+  "verdict": "Big fiddler-crab claw regrows on the same side; consistent, not re-tested",
+  "why": "Przibram found that large male fiddler crabs regrow the big claw directly on the same side, confirming Zeleny, and that after total extirpation claws pass through transient leg-like forms; same-side regrowth underlies modern studies of regenerated claws, but the transient forms were not re-examined.",
+  "offers": [
+   "data",
+   "testable"
+  ],
+  "open": "Whether a major claw excised at the coxa, with the minor claw autotomized, regrows through biramous- or walking-leg-like stages before becoming a claw, as Przibram saw in a few crabs; no later study re-examines these forms.",
+  "test": "In male Minuca pugnax (Przibram’s Gelasimus pugnax), excise the major cheliped at the coxa and autotomize the minor claw, with autotomy-only controls; photograph regenerates over three moults, scoring segmentation, dactyl formation and dentition.",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 8,
+   "to1945": 6,
+   "to1945_self": 4,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "66": {
+  "standing": "consistent",
+  "verdict": "Half-grown mantis larvae regrew malformed antennae without leg parts; not re-tested",
+  "why": "Przibram cut the antennae of 87 half-grown mantis larvae at various levels and got malformed, antenna-like regenerates when the whole flagellum was removed but never clear leg parts; his own 1919 experiments on older nymphs did yield leg-like regenerates, and neither was re-tested.",
+  "offers": [
+   "organism"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 4,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "67": {
+  "standing": "consistent",
+  "verdict": "Background colour sets Pieris pupal colour; consistent, not re-tested",
+  "why": "Brecher found cabbage-white pupae turn light on white, dark on black and green on yellow or orange backgrounds, with yellow light giving green pupae at any intensity; such cued pupal colour is accepted and later explained hormonally, but her specific results were not re-tested.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 22,
+   "to1945": 17,
+   "to1945_self": 12,
+   "mid": 2,
+   "modern_sci": 3,
+   "modern_hist": 0
+  }
+ },
+ "68": {
+  "standing": "no_claim",
+  "verdict": "Obituary of Franz Megušar; no scientific claim to assess",
+  "why": "An obituary recording Franz Megušar’s death in 1916 and naming his most interesting results, regrowth of the totally removed jumping leg in orthopterans and bleaching of blinded or dark-kept crustaceans; it makes no empirical claim to assess.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text"
+  ],
+  "confidence": "high",
+  "use": "historians",
+  "cites": {
+   "total": 3,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 2
+  }
+ },
+ "69": {
+  "standing": "revised",
+  "verdict": "Denervated newt limbs fail to regenerate; 'formative tonus' explanation superseded",
+  "why": "Weiss's core result — denervated adult newt limbs form no blastema, and halving the nerve supply only slows regeneration — matches later work; his sympathetic, non-trophic 'formative tonus' gave way to nerve-derived growth factors, and late regenerates proved nerve-independent.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 24,
+   "to1945": 14,
+   "to1945_self": 3,
+   "mid": 10,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "70": {
+  "standing": "established",
+  "verdict": "Limb skeleton re-forms without the old skeleton; confirmed in later work",
+  "why": "Weiss showed that newt arms stripped of humerus and shoulder girdle, then amputated, regrow a complete distal skeleton; McCusker et al. 2016 re-tested this in axolotls, finding the regenerated skeleton arises from non-skeletal connective-tissue cells; Kragl et al. 2009 contradicts his broader homogeneous-blastema view.",
+  "offers": [
+   "method"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "general knowledge",
+   "the paper's text",
+   "citing works"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 54,
+   "to1945": 21,
+   "to1945_self": 6,
+   "mid": 23,
+   "modern_sci": 10,
+   "modern_hist": 0
+  }
+ },
+ "71": {
+  "standing": "revised",
+  "verdict": "Lateral limb wounds sprout toe rows; 'main axis only' claim revised",
+  "why": "Weiss found a longitudinal newt-leg wound does not restore the missing half but sprouts rows of separate toes, and concluded limbs form only along the main axis; accessory-limb work later showed lateral wounds can build whole limbs given nerve and positional input.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Why a longitudinal wound along the newt zeugopod and autopod spontaneously sprouts a row of separate digits, without grafts or nerve deviation, has never been re-examined with positional (Shh, Fgf8, Lmx1b) or lineage markers.",
+  "test": "Axolotl or newt: excise a longitudinal half of zeugopod and autopod, keeping the lateral surface open; map Shh, Fgf8 and Lmx1b expression along it, lineage-trace dorsal and ventral dermis, and count digits formed.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 9,
+   "to1945": 8,
+   "to1945_self": 2,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "72": {
+  "standing": "no_claim",
+  "verdict": "Method for measuring wing-vein angles, with a small two-species dataset",
+  "why": "Chiefly a method paper: vein-branching angles measured on descaled butterfly wings with a mirror and crystallographic goniometer, plus preliminary tables for Aglais io and Aporia crataegi showing between-individual and left–right variation, which modern digital wing morphometrics measures routinely.",
+  "offers": [
+   "method",
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 5,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "73": {
+  "standing": "established",
+  "verdict": "Grafted Hydra head and foot tissue keep their fates; credited today",
+  "why": "Burt's grafts showed that small head-region rings of Hydra oligactis form heads, and foot-region rings feet, at whichever end is free, with foot-forming potential rising aborally; a 2001 pedibin study credits Burt, with Hicklin and Wolpert, for this transplant-deduced foot-forming potential, now standard.",
+  "offers": [],
+  "open": "",
+  "test": "",
+  "basis": [
+   "citing works",
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 16,
+   "to1945": 8,
+   "to1945_self": 3,
+   "mid": 6,
+   "modern_sci": 2,
+   "modern_hist": 0
+  }
+ },
+ "74": {
+  "standing": "established",
+  "verdict": "Warm-reared rats grow relatively longer tails; confirmed in later work",
+  "why": "Rats reared at constant 5–40 °C showed relative tail length rising almost linearly with temperature; Tabh et al. (2023) credit this finding within the now-standard warm-rearing effect on rodent appendages, though his attribution to core body temperature is less secure.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "citing works",
+   "modern literature",
+   "the paper's text"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 6,
+   "to1945": 3,
+   "to1945_self": 0,
+   "mid": 2,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "75": {
+  "standing": "unresolved",
+  "verdict": "Temperature-dependent female tail advantage in rats; not re-tested, cause unclear",
+  "why": "Reported that female rats have relatively longer tails than males, a gap that shrinks at high and low rearing temperatures, and ascribed it to warmer female bodies; not re-measured since, and Sumner's anus-position artefact was never excluded.",
+  "offers": [
+   "testable",
+   "data"
+  ],
+  "open": "Whether female rats have skeletally longer relative tails than males, whether rearing temperature changes the gap, and whether body-temperature differences cause it; the anus-position artefact Sumner raised was never excluded.",
+  "test": "Rear mixed-sex rat litters at 15, 22 and 30 °C; measure caudal vertebral lengths by µCT against head–body length; log core and tail temperature by telemetry and thermal imaging; test sex × temperature interaction.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 1,
+   "to1945": 1,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "76": {
+  "standing": "unresolved",
+  "verdict": "Offspring tails overshoot after parental temperature shift; not re-tested",
+  "why": "Reported that offspring of rats moved 10 °C warmer or colder overshoot the new temperature's tail norm, reverse on back-transfer and regress over litters, rather than inheriting the parental change; parental thermal effects occur in mammals, but this was not re-tested.",
+  "offers": [
+   "testable",
+   "data"
+  ],
+  "open": "Whether parental thermal history shifts offspring tail length (Przibram's overshoot and crossover), and whether any effect is maternal (nest, uterus, milk) or germline; no modern rodent study has tested it.",
+  "test": "Keep mouse or rat lines at 15 and 30 °C for two generations, move both to 22 °C; cross-foster, embryo-transfer and use father-only exposure; measure offspring tail length by µCT and nest temperature.",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 2,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "77": {
+  "standing": "revised",
+  "verdict": "Tail growth fits Q10≈2 of body temperature; effect real, mechanism revised",
+  "why": "Found relative tail growth fitting a van't Hoff Q10 of about 2 when referenced to rectal temperature; warmer growth does lengthen tails, but true core temperature varies too little for that fit, and later work points to the tail's own tissue temperature.",
+  "offers": [
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 1,
+   "to1945": 1,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "78": {
+  "standing": "consistent",
+  "verdict": "No free DOPA detectable in pigment-forming skin; consistent, not re-tested",
+  "why": "Showed that ferric-chloride tests for free DOPA agree on frozen sections and extracts: positive in broad bean and some cocoons, negative in pigment-forming skin and eyes of rats, rabbits and humans; that fits DOPA’s modern role as a transient intermediate, not a stored precursor.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 7,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "79": {
+  "standing": "consistent",
+  "verdict": "Tyrosine, not stored DOPA, as melanin precursor; consistent, not re-tested",
+  "why": "Found no free DOPA in skin and skin-covering extracts of fishes, a bird and mammals, concluding DOPA is not the usual melanin chromogen and tyrosine may be; this agrees with the modern pathway, where tyrosinase makes DOPA from tyrosine as a transient intermediate.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 5,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "80": {
+  "standing": "consistent",
+  "verdict": "DOPA appears only during cocoon spinning; consistent, not re-tested",
+  "why": "Found the ortho-diphenol (DOPA) reaction absent in feeding pine-sawfly larvae, present while they spin, and then confined to the cocoon; stage-timed catechol supply for insect tanning is accepted, but this timing has not been re-examined with specific assays.",
+  "offers": [],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 5,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "81": {
+  "standing": "consistent",
+  "verdict": "Adrenaline pales, pituitary extract darkens minnow chromatophores; consistent, not re-tested",
+  "why": "Showed in the minnow that adrenaline aggregates melanophore pigment but leaves xanthophores unchanged, while posterior-pituitary extract disperses melanophores, xanthophores and erythrophores, as in frogs; adrenergic paling and pituitary-driven darkening are standard teleost physiology, but no re-test of these minnow results is recorded.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 32,
+   "to1945": 21,
+   "to1945_self": 0,
+   "mid": 11,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "82": {
+  "standing": "no_claim",
+  "verdict": "Erratum to the 1924 limb-axis paper; nothing to assess",
+  "why": "A one-page 1925 correction of a drawing error in Figure e of Przibram’s 1924 limb-axis paper (entry 146); it reports no finding of its own.",
+  "offers": [],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 10,
+   "to1945": 9,
+   "to1945_self": 2,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "83": {
+  "standing": "revised",
+  "verdict": "Plasticity principles hold; claim that induced changes become heritable rejected",
+  "why": "Kammerer argues that responses to external factors depend on population origin, intensity thresholds and developmental stage, and that physiological and morphological colour change differ; these points fit modern plasticity work, but his claim that induced changes are inherited and become mutations is rejected.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "Whether sustained heat or dryness induces lasting morphological melanism in wall lizards, and whether Austrian and northern Italian populations differ in this response, as Kammerer reported from unpublished trials; never re-tested.",
+  "test": "Rear Podarcis muralis from Austrian and northern Italian populations at 20 versus 30 °C and dry versus humid conditions for 6–12 months; quantify dorsal melanin by reflectance spectrometry and skin histology.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 10,
+   "to1945": 8,
+   "to1945_self": 1,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "84": {
+  "standing": "revised",
+  "verdict": "Dorsal and ventral parts cannot replace each other; only partly true",
+  "why": "From others’ experiments, his Antedon work and malformations, Przibram argued that dorsal and ventral parts never replace each other, in eggs or adults; dorso-ventral fates are now known to be set by signalling gradients and can regulate in embryos, so the rule holds only partly.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 10,
+   "to1945": 10,
+   "to1945_self": 5,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "85": {
+  "standing": "unresolved",
+  "verdict": "Antenna-like outgrowths in place of insect eyes; three cases, unconfirmed",
+  "why": "Janda tested whether insects, like crustaceans, form antenna-like regenerates after eye and optic-ganglion removal, obtaining only three bristled, barely jointed outgrowths in two cockroaches and one mealworm beetle, whose nature he left open; no modern re-test is known.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether destroying the eye and optic ganglia in cockroach or mealworm larvae makes a structure with antennal identity regrow in its place; Janda’s evidence is three bristled, indistinctly jointed outgrowths among about twenty survivors, judged only by resemblance.",
+  "test": "Ablate one compound eye with its optic lobe in Periplaneta or Tenebrio larvae, with eye-only controls; after two or three moults score regenerates for segmentation and sensilla and for homothorax, Distal-less and eyes-absent expression.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 5,
+   "to1945_self": 2,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "86": {
+  "standing": "not_supported",
+  "verdict": "Soil colour alters salamander pattern; inheritance of the change not shown",
+  "why": "Claimed soil-induced colour shifts in fire salamanders are inherited, even via transplanted ovaries; Sanchez & Pröhl (2019) confirmed the within-generation background effect, but inheritance was never replicated and rests on a rejected framework.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "That offspring of salamanders recoloured on yellow or black soil, reared on neutral substrate and scored blind, differ in yellow area in the parental direction from offspring of untreated siblings, and that this passes through fathers or reaches unexposed generations.",
+  "test": "Randomly split captive-bred Salamandra sibships onto yellow or black substrate until maturity; cross treated males with naive virgin females and vice versa; rear all larvae on grey substrate; score yellow area blind from photographs, following paternal lines to F2.",
+  "basis": [
+   "citing works",
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "tested",
+  "use_note": "Sanchez & Pröhl (2019) re-ran the larval-background experiment in fire salamanders and confirmed the within-generation effect.",
+  "cites": {
+   "total": 34,
+   "to1945": 25,
+   "to1945_self": 9,
+   "mid": 4,
+   "modern_sci": 2,
+   "modern_hist": 3
+  }
+ },
+ "87": {
+  "standing": "revised",
+  "verdict": "Foraminiferal chambers grow geometrically; claimed universal doubling did not hold",
+  "why": "Averaging published foraminiferal chamber series gave a linear ratio near ∛2, read as volume doubling per chamber like mantid moults; chamber growth is roughly geometric, but his own table ranged 1.18–1.39 by species, and no universal doubling or mantid parallel was taken up.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 5,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "88": {
+  "standing": "consistent",
+  "verdict": "Grafted eye metamorphoses with its host; consistent with hormonal control, not re-tested",
+  "why": "Salamander larval eyes grafted to the neck blackened their irises in step with the host’s own eyes, earlier on older hosts and later on younger ones; thyroid-hormone control of metamorphosis is accepted, but this graft experiment was not re-tested.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 31,
+   "to1945": 30,
+   "to1945_self": 7,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "89": {
+  "standing": "consistent",
+  "verdict": "Magnesium enters freshwater-crab blood only slowly; consistent with later physiology",
+  "why": "Showed magnesium enters the blood of the freshwater crab Telphusa only after weeks in Mg-rich water, faster in small animals and without NaCl, and leaves slowly; consistent with freshwater crustacean ion regulation, but not re-tested.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 0,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "90": {
+  "standing": "consistent",
+  "verdict": "Waltzing inherited as a recessive; consistent, cross not repeated",
+  "why": "Hammerschlag's Japanese waltzing × albino mouse crosses showed waltzing, albinism and spotting segregating as recessives, with a deficit of waltzers (4.57:1); recessive waltzer mutations are standard mouse genetics, this cross was not repeated, and his one 'inherited injury' litter never recurred.",
+  "offers": [
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 4,
+   "to1945": 4,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "91": {
+  "standing": "consistent",
+  "verdict": "Earthworm regrows its sexual organs, in variable positions; pattern not re-tested",
+  "why": "Janda described Criodrilus regrowing its whole sexual apparatus from peritoneal cells after losing 17–30 front segments, with gonads multiplied and shifted forward; annelid gonad regeneration is accepted, but this pattern, disputed at the time by Tirala, was never re-examined.",
+  "offers": [
+   "testable",
+   "organism"
+  ],
+  "open": "Whether Criodrilus lacuum regrowing its genital region forms supernumerary gonads (5–8 pairs, up to 12) in abnormal, more anterior segments, as Janda found, or mostly in the normal segments, as Tirala reported, and whether they function.",
+  "test": "Cut off the anterior 20 segments of adult Criodrilus lacuum; at 3, 6 and 9 months map gonads segment by segment by serial sections or vasa/piwi in situ hybridization, and pair regenerated worms to test cocoon production.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "citing works"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 9,
+   "to1945": 6,
+   "to1945_self": 3,
+   "mid": 2,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "92": {
+  "standing": "not_supported",
+  "verdict": "Olm live birth below 15 °C refuted; light-grown eyes unconfirmed",
+  "why": "Kammerer claimed olms bear live young below 15 °C, lay eggs when warmer, grow well-developed eyes in light and pass light-acquired pigment to offspring; the live-birth claim was refuted (2019, 2022), eye growth never confirmed and inheritance unsupported; only light-induced skin darkening holds.",
+  "offers": [
+   "organism",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 27,
+   "to1945": 13,
+   "to1945_self": 2,
+   "mid": 7,
+   "modern_sci": 5,
+   "modern_hist": 2
+  }
+ },
+ "93": {
+  "standing": "revised",
+  "verdict": "Eyestalk removal disrupts colour change; later traced to hormones, not nerves",
+  "why": "Megušar showed eyestalk removal disrupts crustacean colour change, bleaching animals over months, and hastens moulting, and described day–night colour rhythms; he credited nerves and light, but later work traced the eyestalk effects to hormones and, in fiddler crabs, the rhythm to an endogenous clock.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 40,
+   "to1945": 16,
+   "to1945_self": 3,
+   "mid": 21,
+   "modern_sci": 2,
+   "modern_hist": 1
+  }
+ },
+ "94": {
+  "standing": "not_supported",
+  "verdict": "Programme premised on inherited acquired characters; premise not supported",
+  "why": "Przibram's programme treats inheritance of acquired characters as settled, citing Kammerer's salamanders and his own heat-rats, and plans tests of whether external factors reach the germ cells; the premise rests on results never confirmed, and modern germline epigenetics does not support them.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 10,
+   "to1945": 3,
+   "to1945_self": 3,
+   "mid": 0,
+   "modern_sci": 3,
+   "modern_hist": 4
+  }
+ },
+ "95": {
+  "standing": "consistent",
+  "verdict": "Light reaches salamander gonads through body wall; consistent, not repeated",
+  "why": "Šećerov measured with photographic paper implanted over the gonads that about 1/173 of incident light (range 1/30–1/330) passes the fire salamander's body wall, yellow skin transmitting 3–4 times more than black; such tissue light penetration is accepted, but the measurement was never repeated.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 4,
+   "to1945": 3,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "96": {
+  "standing": "consistent",
+  "verdict": "Rodent body temperature shifts modestly with climate; consistent, not repeated",
+  "why": "Congdon found adult rodents' rectal temperature rose 1–2 °C after weeks at 25–33 °C and fell in cold, while near-pubertal animals reared hot or cool did not differ; modest ambient effects on rodent body temperature are accepted, but his measurements were not repeated.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 15,
+   "to1945": 14,
+   "to1945_self": 6,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "97": {
+  "standing": "consistent",
+  "verdict": "Blinded loaches stay dark; grafts resorbed, cited as early graft rejection",
+  "why": "Secerov found blinded and dark-kept loaches stayed dark for about two years, and that skin grafted between individuals was slowly resorbed and replaced by host skin; Parker et al. (2022) cite this as an early report of fish allograft rejection.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "citing works",
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 10,
+   "to1945": 5,
+   "to1945_self": 0,
+   "mid": 4,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "98": {
+  "standing": "consistent",
+  "verdict": "Eyes grafted to the neck survive and rebuild retina; consistent, never re-tested",
+  "why": "Salamander larval eyes grafted to another larva’s neck lasted a year in about a quarter of animals, their retinas degenerating and then rebuilding without any brain connection; urodele retinal regeneration is accepted today, but this ectopic-graft result was not re-tested.",
+  "offers": [
+   "method",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 28,
+   "to1945": 24,
+   "to1945_self": 9,
+   "mid": 4,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "99": {
+  "standing": "consistent",
+  "verdict": "Snails and slugs regrow tentacles, eyes included; consistent, never re-tested",
+  "why": "Planorbis tentacles regrew within weeks, Lymnaea stagnalis tentacles failed to, the male Paludina’s copulatory tentacle regrew as a slender cone holding a blind penis rudiment, and slugs regrew eye-bearing tentacles; gastropod tentacle regeneration is accepted, but these results were never re-tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether the regenerated right tentacle of male Paludina (Viviparus) re-forms a penis with an opening and the club shape, and works in copulation; Černý found only a blind penis rudiment at seven months and did not test mating.",
+  "test": "Amputate the right tentacle of juvenile male Viviparus viviparus; section regenerates at 3, 7 and 12 months for penis duct and opening, and pair regenerated or intact males with virgin females, scoring copulation and stored sperm.",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 6,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "100": {
+  "standing": "consistent",
+  "verdict": "Perch × ruffe hybrids reported; consistent, never re-examined",
+  "why": "Kammerer reported reciprocal perch × ruffe hybrids with intermediate characters, fertile females and wild occurrence; intergeneric hybridisation among percids is documented (natural perch × pikeperch hybrids, 2011), but this cross was never re-examined, and his larval temperature data are still cited.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "tested",
+  "use_note": "Two thermal-tolerance syntheses (2010, 2012) use its 25–30 °C optimum for perch larvae.",
+  "cites": {
+   "total": 9,
+   "to1945": 4,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 5,
+   "modern_hist": 0
+  }
+ },
+ "101": {
+  "standing": "established",
+  "verdict": "Woodlouse regrows antennae inside the stub; confirmed by a 2025 study",
+  "why": "Woodlice regrew amputated antennae from autotomy points and from other cut sites, the regenerate forming inside the stub and emerging a third shorter at the next moult; a 2025 study of regenerated Porcellio scaber antennae confirms regrowth and credits Klintz for the within-stub development.",
+  "offers": [],
+  "open": "",
+  "test": "",
+  "basis": [
+   "citing works",
+   "modern literature",
+   "the paper's text"
+  ],
+  "confidence": "high",
+  "use": "tested",
+  "use_note": "A 2025 study of regenerated Porcellio scaber antennae builds on Klintz's observation that the new antenna forms inside the stub.",
+  "cites": {
+   "total": 1,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "102": {
+  "standing": "revised",
+  "verdict": "Muscle-protein coagulation points unchanged by heat; not a general rule",
+  "why": "Kryz found no shift in heat-coagulation points of amphibian muscle proteins after weeks at 25–40 °C and concluded they are independent of living temperature; later work shows muscle-protein thermal stability can change with season or acclimation in some ectotherms, so independence is not general.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 4,
+   "to1945_self": 1,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "103": {
+  "standing": "consistent",
+  "verdict": "Freshwater fish acclimate to salt only partly; consistent, not re-measured",
+  "why": "Neudörfer found lamprey larvae, sterlet, carp and pike tolerate slowly raised salinity only to roughly half-strength seawater, blood becoming isotonic, while eels keep blood dilute; modern osmoregulation agrees, his limits were not re-measured, and eels secrete salt rather than having impermeable gills.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 4,
+   "to1945": 4,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "104": {
+  "standing": "unresolved",
+  "verdict": "De-shelled hermit crabs grow a firmer, segmented abdomen; never re-tested",
+  "why": "De-shelled Pagurus and Diogenes hermit crabs grew a segmented, tougher, pigmented and flatter abdomen after moulting while appendage and claw asymmetry stayed unchanged; modern shelter studies address symmetry and shell use, not abdominal integument, so the result and its shell-pressure explanation remain untested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether a shell-free hermit crab's abdomen becomes sclerotised, segmented and pigmented at the next moult, and whether shell pressure or low oxygen, rather than loss of protection, keeps the normal abdomen soft.",
+  "test": "House de-shelled adult Pagurus bernhardus without shelter, in rigid straight tubes, or in normal shells, at normoxia and mild hypoxia; after one to two moults compare pleon cuticle thickness, calcium content, tergite segmentation and pigmentation.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 5,
+   "to1945": 4,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "105": {
+  "standing": "unresolved",
+  "verdict": "Arthropods shed malformed regenerates; three anecdotes, never systematically tested",
+  "why": "From two malformed lobster claw regenerates shed by autotomy (one then regrown normally) and a triplicated mantis leg lost at the moult, Przibram proposed that arthropods automatically clear malformed regenerates; limb autotomy is well studied, but whether such clearing is regular was never tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether arthropods shed malformed regenerates more often than normal ones, by autotomy or loss at the moult, so that shedding regularly clears malformations; the claim rests on two lobsters and one mantis.",
+  "test": "In cockroaches or stick insects, create malformed regenerates by leg-segment grafts that yield supernumerary legs, with sham grafts as controls; compare autotomy and loss at ecdysis between groups, and whether normal legs then regrow.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 4,
+   "to1945": 3,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "106": {
+  "standing": "consistent",
+  "verdict": "Mantis religiosa colour ignores background and humidity; consistent, not re-tested",
+  "why": "Przibram found European mantis nymphs keep their colour on green or brown backgrounds and at any humidity, and regrow forelegs; colour change and leg regeneration in mantises are accepted, but background responses differ between species and his Mantis religiosa result was not re-tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether Mantis religiosa nymph colour is unaffected by green versus brown surroundings and by humidity, as he reported from cultures with heavy mortality; mantid species differ in background responses, and no re-test in this species appears in the evidence.",
+  "test": "Rear full-sib Mantis religiosa nymphs individually from hatching on green or brown natural backgrounds at high or low humidity and constant 25 °C; measure colour at each instar by spectrophotometry; test background and humidity effects within families.",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "low",
+  "use": "precedent",
+  "cites": {
+   "total": 7,
+   "to1945": 5,
+   "to1945_self": 4,
+   "mid": 1,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "107": {
+  "standing": "consistent",
+  "verdict": "Mature bristletails still moult and regrow appendages; consistent, no re-test shown",
+  "why": "Silverfish and a jumping bristletail regrew antennae and tail bristles fully, palps and legs partly, even when sexually mature and moulting again; adult moulting and regrowth in apterygotes are accepted; a 1990 firebrat study and 2005 review cite it, but no re-test is shown.",
+  "offers": [
+   "organism"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge",
+   "citing works"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 14,
+   "to1945": 8,
+   "to1945_self": 4,
+   "mid": 3,
+   "modern_sci": 3,
+   "modern_hist": 0
+  }
+ },
+ "108": {
+  "standing": "revised",
+  "verdict": "Tyrosinase tied to cephalopod skin pigment; only partly holds (ommochromes)",
+  "why": "Weindl found tyrosine-darkening activity in extracts of octopus skin and eyes and unpigmented squid eggs, but not muscle, and linked it to their pigment; melanin is indeed tyrosinase-made, but cephalopod skin and eye pigments are mainly ommochromes, so his parallel only partly holds.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 14,
+   "to1945": 14,
+   "to1945_self": 4,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "109": {
+  "standing": "consistent",
+  "verdict": "Water spider autotomises and regrows legs; consistent, never re-tested",
+  "why": "Weiss showed that the water spider, previously listed as lacking both capacities, autotomises legs and regenerates them in early instars, but reported regeneration only in animals kept out of water; spider autotomy and leg regeneration are accepted, while the out-of-water requirement was never re-tested.",
+  "offers": [
+   "testable",
+   "organism"
+  ],
+  "open": "Whether water spiders regenerate legs only when kept out of water, as Weiss reported without counts, or whether his husbandry in water prevented it; and whether regenerative capacity ends after the second moult.",
+  "test": "Cut one hind leg at the coxa–trochanter joint in lab-hatched Argyroneta aquatica at successive instars; keep matched groups submerged with plants for bell-building or on moist filter paper; score survival and leg regeneration at each moult.",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 6,
+   "to1945": 2,
+   "to1945_self": 1,
+   "mid": 1,
+   "modern_sci": 3,
+   "modern_hist": 0
+  }
+ },
+ "110": {
+  "standing": "established",
+  "verdict": "Castration removes male newts’ breeding crest; confirmed by later castrations",
+  "why": "Brescia found that castrating adult male crested newts makes the breeding crest, white tail band and head marbling regress within a year; Koppányi (1924) repeated the castrations in two newt species with the same result, and androgen control of such characters is standard.",
+  "offers": [
+   "organism",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 21,
+   "to1945": 20,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "111": {
+  "standing": "revised",
+  "verdict": "Prawn colour change is eye-dependent; nervous-reflex explanation superseded by hormones",
+  "why": "Fröhlich found Palaemon chromatophores contract in bright light and expand in darkness and after blinding, with blinded prawns turning white over weeks; he explained this as a nervous reflex from the eyes, but crustacean chromatophores were later shown to be hormonally controlled.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 13,
+   "to1945": 12,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "112": {
+  "standing": "revised",
+  "verdict": "Larger, older mothers yield larger young; age effect not general",
+  "why": "Older, larger frogs, perch, salamanders and turtles produced larger eggs and young; maternal-size effects are well documented, especially in fish, but maternal-age effects vary in direction across species, and his egg-growth explanation for heavier later-born human babies has found no support.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 7,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "113": {
+  "standing": "not_supported",
+  "verdict": "Heat-induced lizard colours said inherited; never replicated",
+  "why": "Kammerer reported that heat gave female wall lizards male-like red bellies and altered Karst lizard colours, and that offspring inherited these acquired colours in fading degree; the inheritance was never replicated, and modern transgenerational-epigenetics work does not test it.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 5,
+   "to1945": 4,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "114": {
+  "standing": "consistent",
+  "verdict": "Orthopteran legs regrow depending on species and cut site; consistent, not re-tested",
+  "why": "Megušar found that cockroach, stick-insect, mantis, grasshopper and cricket nymphs regrow legs, including non-autotomizing mantis forelegs and legs cut proximal to the autotomy plane, though grasshopper and cricket hind legs do not regrow from it; this fits accepted leg regeneration but was not re-tested.",
+  "offers": [
+   "organism"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 14,
+   "to1945": 4,
+   "to1945_self": 2,
+   "mid": 8,
+   "modern_sci": 2,
+   "modern_hist": 0
+  }
+ },
+ "115": {
+  "standing": "revised",
+  "verdict": "Arthropod homeosis stands; Przibram’s differentiation rule replaced by Hox genetics",
+  "why": "Przibram’s rule that homeotic substitutes are less-differentiated appendages, usually from a following segment, arising mostly through regeneration, was an empirical generalisation that he himself amended in 1917; homeosis is now explained by Hox and other selector genes, and exceptions to the rule are known.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 13,
+   "to1945": 9,
+   "to1945_self": 7,
+   "mid": 3,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "116": {
+  "standing": "not_supported",
+  "verdict": "Pigment cells arise from epidermis; contradicted by neural-crest origin",
+  "why": "Winkler concluded that the branched pigment cells of regenerating amphibian tails arise from epidermal cells and migrate into the dermis, but later work traced vertebrate pigment cells to the neural crest, contradicting this origin.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 26,
+   "to1945": 24,
+   "to1945_self": 2,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "117": {
+  "standing": "consistent",
+  "verdict": "Seawater abolishes amoeba contractile vacuole reversibly; consistent, not repeated",
+  "why": "Zuelzer reported that the contractile vacuole of freshwater Amoeba verrucosa slows and then disappears at 1.5–2.5% salt as seawater is slowly raised, and reappears within a day on dilution; vacuole activity tracking external osmolarity is accepted, but this experiment was not repeated.",
+  "offers": [
+   "organism"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 9,
+   "to1945": 8,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "118": {
+  "standing": "not_supported",
+  "verdict": "Young leeches regrow both body ends; contradicted by later consensus",
+  "why": "Gluschkiewitsch reported that young Clepsine leeches regrew amputated anterior ends completely and posterior ends partly, so leeches were no exception among annelids; later surveys of annelid regeneration hold that leeches cannot regenerate lost segments, and the claim was never confirmed.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "general knowledge",
+   "the paper's text"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 2,
+   "to1945": 1,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "119": {
+  "standing": "not_supported",
+  "verdict": "Forced salamander birth-mode changes said inherited; never replicated",
+  "why": "Kammerer reported that salamanders forced by heat, humidity or water deprivation into the other species' birth mode passed the altered mode to offspring reared without those conditions; no one has replicated this, and Arntzen (2022) describes such carry-over claims as unconfirmed.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 34,
+   "to1945": 17,
+   "to1945_self": 7,
+   "mid": 2,
+   "modern_sci": 8,
+   "modern_hist": 7
+  }
+ },
+ "120": {
+  "standing": "unresolved",
+  "verdict": "Alga–dragonfly larva mutualism claimed; benefits never tested since",
+  "why": "Kammerer reported that Oedogonium growing on Aeshna cyanea larvae in one laundry pond is a mutualism, helping larvae survive CO2, fouled water and Saprolegnia in light; the association and its claimed benefits were never re-examined, as modern work centres on bacterial microbiomes.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether epizoic Oedogonium on Aeshna larvae gives a net benefit — higher survival under high CO2, fouled water and Saprolegnia in light, as Kammerer reported from small unreplicated trials — or is a neutral or costly epibiont.",
+  "test": "Collect Aeshna cyanea larvae, colonise half with Oedogonium and keep half clean; compare survival, growth and moulting under hypoxia/high CO2 and Saprolegnia exposure in light versus dark, measuring cuticle-surface oxygen with microsensors.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 5,
+   "to1945": 3,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "121": {
+  "standing": "consistent",
+  "verdict": "Amphibian sex ornaments regenerate, often simplified; consistent, never re-examined",
+  "why": "Kammerer reported that male nuptial pads, vocal sacs, newt crests, lip lobes and toe webs regenerate, often first in simpler, juvenile-like form; that such ornaments regrow fits current knowledge, but his species-by-species observations were never re-examined.",
+  "offers": [
+   "organism",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 5,
+   "to1945": 4,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "122": {
+  "standing": "consistent",
+  "verdict": "Copepods regenerate only before their final moult; consistent, never re-tested",
+  "why": "Cyclops regenerated antennal segments and caudal setae only as juveniles, adults forming just a clot because they never moult again; moult-bound regeneration and the copepod terminal moult are accepted, his copepod results were never re-tested, and his six-moult count is below the modern eleven.",
+  "offers": [],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 3,
+   "to1945": 2,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "123": {
+  "standing": "consistent",
+  "verdict": "Pond snail regrows tentacle and eye; consistent, not re-tested in Lymnaea",
+  "why": "Megušar found that four pond snails regrew cut tentacles, one with a small new eye, including animals near sexual maturity; tentacle and eye regeneration is now well documented in other gastropods such as Pomacea, but Lymnaea itself was not re-tested.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 5,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "124": {
+  "standing": "consistent",
+  "verdict": "Silkworm caudal horn regrows after early-instar removal; three survivors, not re-tested",
+  "why": "Megušar reported that the caudal horn, cut from three-day-old silkworm larvae, regrew smaller and less bristly in the survivors, against Kellogg’s negative result in older larvae; regeneration declining with larval age is accepted, but the experiment was not repeated.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "Whether the silkworm caudal horn regrows when cut off in the first instar but not later; Megušar’s evidence is one preserved 1 mm regenerate among 20 larvae operated three days after hatching, against Kellogg’s negative result in older larvae.",
+  "test": "Cut the caudal horn at its base in Bombyx mori larvae of each instar, about 30 per instar with unoperated siblings as controls; measure horn length and bristle density at every later moult up to pupation.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 2,
+   "to1945": 2,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "125": {
+  "standing": "consistent",
+  "verdict": "Beetle larvae widely regrow appendages, less with age; consistent, species not re-tested",
+  "why": "Megušar’s survey of eleven beetle species found larval mandibles, legs, wing rudiments and end segments regrow, less with age and injury, often appearing only at pupa or adult; recent ladybird studies report similar stage dependence, but his species were not re-tested.",
+  "offers": [
+   "organism"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 23,
+   "to1945": 16,
+   "to1945_self": 5,
+   "mid": 5,
+   "modern_sci": 2,
+   "modern_hist": 0
+  }
+ },
+ "126": {
+  "standing": "revised",
+  "verdict": "Amphibian lungs recover after resection, but by compensatory growth, not budding",
+  "why": "Muftic reported true regrowth of salamander and toad lungs from a local bud after partial and even total removal; modern salamander studies find recovery through organ-wide proliferation and compensatory growth instead, and regrowth after total removal was never re-tested.",
+  "offers": [
+   "testable",
+   "organism"
+  ],
+  "open": "Whether adult salamander or toad lungs regrow after complete extirpation including part of the bronchus, as Muftic reported for one salamander and two toads, and whether a local bud rather than organ-wide growth ever rebuilds removed tissue.",
+  "test": "In adult axolotls or Xenopus tropicalis, extirpate one lung completely or remove distal halves; follow by micro-CT, EdU labelling and lineage tracing for 8–12 weeks to locate where new airway and alveolar tissue arises.",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 4,
+   "to1945": 4,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "127": {
+  "standing": "consistent",
+  "verdict": "Odd-eyed trait not inherited as a unit; consistent, never repeated",
+  "why": "Przibram's few Angora litters showed odd-eyed parents producing odd-eyed (same or reversed side) and uniformly blue- or yellow-eyed kittens, with deafness on the blue-eyed side; this fits modern pigment-cell genetics of white cats, but the crosses were never repeated.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 21,
+   "to1945": 15,
+   "to1945_self": 0,
+   "mid": 4,
+   "modern_sci": 2,
+   "modern_hist": 0
+  }
+ },
+ "128": {
+  "standing": "revised",
+  "verdict": "Claw reversal reported in six genera; nerves later shown to matter",
+  "why": "Przibram extended claw reversal after loss of the large claw from Alpheus to five more decapod genera, slower in larger animals, and held that nerves only slow growth; claw reversal is accepted, but later snapping-shrimp and lobster work showed innervation and use shape claw type.",
+  "offers": [
+   "data",
+   "testable",
+   "organism"
+  ],
+  "open": "Whether claw reversal after loss of the major claw occurs in Carcinus, Portunus, Callianassa and Typton, and whether it slows with body size, passing through a two-minor-claw stage above about 10 mm carapace length.",
+  "test": "Autotomize the major claw in size-graded Carcinus maenas and Alpheus, with and without contralateral nerve section; score claw identity from dentition and closer-muscle fibre type over three moults against carapace length.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 10,
+   "to1945": 8,
+   "to1945_self": 6,
+   "mid": 1,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "129": {
+  "standing": "not_supported",
+  "verdict": "Adult mealworm beetle regrew wings in one case; not supported",
+  "why": "Werber reported that an adult mealworm beetle regrew elytra and wings within weeks after its elytra were removed, one of 20 operated; adult beetles do not moult, wing regeneration is known only from larval and pupal stages, and a 2021 study calls the finding puzzling.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 8,
+   "to1945": 6,
+   "to1945_self": 3,
+   "mid": 0,
+   "modern_sci": 2,
+   "modern_hist": 0
+  }
+ },
+ "130": {
+  "standing": "not_supported",
+  "verdict": "Freshly emerged flies regrow torn-out wings; adult wing regeneration not supported",
+  "why": "Kammerer reported that five of probably thousands of freshly emerged flies regrew torn-out wings by inflating a wound membrane, without moulting; Drosophila wing regenerative capacity ends early in the pupa, and a 2021 study calls the finding puzzling.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 7,
+   "to1945": 4,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 2,
+   "modern_hist": 1
+  }
+ },
+ "131": {
+  "standing": "consistent",
+  "verdict": "Limb loss speeds Asellus moulting, depending on timing; not re-tested",
+  "why": "Amputation mostly shortened moult intervals of Asellus but delayed the first moult when done late in the cycle; this timing-dependence matches later decapod work, which attributes it to hormonal moult control rather than her 'less mass to feed' account; not re-tested in Asellus.",
+  "offers": [
+   "data",
+   "testable"
+  ],
+  "open": "Whether multiple limb loss in Asellus aquaticus shortens the following intermoults when inflicted just after a moult but first delays moulting when inflicted later in the cycle; not re-tested in Asellus, and the first 1907 series lacked pre-amputation baselines.",
+  "test": "Keep Asellus aquaticus singly at constant temperature; after two baseline moults, remove antennae, posterior legs and furca at 0, 25, 50 or 75 percent of the intermoult, beside handled unamputated controls; record intermoult durations and regeneration.",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 11,
+   "to1945": 6,
+   "to1945_self": 2,
+   "mid": 2,
+   "modern_sci": 3,
+   "modern_hist": 0
+  }
+ },
+ "132": {
+  "standing": "consistent",
+  "verdict": "Earthworm regrows gonads after losing whole genital region; consistent, not re-tested",
+  "why": "Janda’s preliminary report showed Criodrilus regrowing its whole genital region with ovaries, testes, funnels and seminal vesicles, some misplaced, and inferred that germ cells arise from soma; annelid gonad regeneration is accepted, and Rota (2021) credits the segment regrowth without re-testing it.",
+  "offers": [
+   "organism"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 8,
+   "to1945": 4,
+   "to1945_self": 2,
+   "mid": 1,
+   "modern_sci": 2,
+   "modern_hist": 1
+  }
+ },
+ "133": {
+  "standing": "consistent",
+  "verdict": "Newt leg and girdle regrow after total removal; not re-tested",
+  "why": "Kurz reported that newts regrow a completely extirpated leg, and pelvis plus leg after girdle removal, failing only when the adjacent vertebral column is also excised; regrowth from the limb base fits accepted urodele limb regeneration, but the girdle results were not re-tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether, after removal of the whole pelvis, pelvis and legs regrow from residual flank tissue rather than, as Kurz held, from the vertebral column, and whether failure after vertebral resection, seen in two survivors, reflects lost spinal nerves.",
+  "test": "In adult axolotls with lineage-labelled lateral-plate connective tissue (Prrx1:CreER), remove the whole pelvis and both hindlimbs, with or without resecting the sacral vertebrae or only cutting their spinal nerves; follow regrowth by micro-CT and trace regenerate origin.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 28,
+   "to1945": 26,
+   "to1945_self": 9,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "134": {
+  "standing": "revised",
+  "verdict": "Starved newts catch up fast on refeeding; 'growth drive' explanation superseded",
+  "why": "Refed newts gained weight about twice as fast as controls with higher food efficiency, and intermittently fasted newts stayed smaller; compensatory growth is well documented, but his food-independent 'growth drive' tied to the nucleus-plasma ratio is not how it is explained today.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 7,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "135": {
+  "standing": "revised",
+  "verdict": "Mantis weight roughly doubles each moult; as a general rule, only approximate",
+  "why": "In 38 reared Sphodromantis, weight roughly doubled per moult (mean ratio 2.09, with occasional quadruplings then standstills) and pronotum length rose about 1.28-fold; later tests of 'Przibram's rule' find per-instar ratios vary with species, instar and conditions, and his one-division-per-moult explanation was abandoned.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "tested",
+  "use_note": "Studies of per-instar growth still test the moult-to-moult doubling rule this paper proposed (e.g. a 2020 study of scarab larvae).",
+  "cites": {
+   "total": 60,
+   "to1945": 25,
+   "to1945_self": 10,
+   "mid": 13,
+   "modern_sci": 17,
+   "modern_hist": 5
+  }
+ },
+ "136": {
+  "standing": "consistent",
+  "verdict": "Peritoneal pigment shields lizard gonads from light; consistent with later work",
+  "why": "Found only about 1/4,500 of light penetrates the Lacerta belly wall toward the gonads, far less than in Salamandra, and proposed peritoneal melanin, absent in nocturnal geckos, as a shield; consistent with later reptile body-wall transmission work, but not re-measured.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 4,
+   "to1945": 3,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "137": {
+  "standing": "consistent",
+  "verdict": "Dormouse tails regrow only skin, hair tuft and a vertebral stub; consistent",
+  "why": "Klintz found that dormice shed tail skin by autotomy and regrow no tail, only closing skin, a hair tuft and sometimes a short bony stub from the cut vertebra; lack of mammalian tail regeneration is accepted, but his observations were not re-tested.",
+  "offers": [
+   "organism"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 1,
+   "to1945": 1,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "138": {
+  "standing": "consistent",
+  "verdict": "Grafted gills resorb when the host metamorphoses; consistent, never re-tested",
+  "why": "Gills grafted onto salamander larvae were resorbed exactly when each host metamorphosed, even when one donor’s two gills went to hosts of different ages; thyroid-hormone control of gill resorption is accepted, but this graft result was not re-tested.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 15,
+   "to1945": 15,
+   "to1945_self": 4,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "139": {
+  "standing": "consistent",
+  "verdict": "No hatchling size increase with mantis mother's age; consistent, not re-tested",
+  "why": "Hatchlings from successive oothecae of three once-mated Sphodromantis females were not larger, though size tracked incubation time and mother size; modern studies find maternal-age effects on offspring size vary in sign across species, including insects, and mantids were never re-tested.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether mantis hatchling size is independent of maternal age once incubation time is held constant; the 1914 null rests on three once-mated females whose ten oothecae incubated for 27 to 37 days.",
+  "test": "Mate Sphodromantis lineola females once; incubate each successive ootheca at one constant temperature; measure pronotum length and mass of all hatchlings; model hatchling size on ootheca order, maternal size and incubation time across 15 or more females.",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 0,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "140": {
+  "standing": "revised",
+  "verdict": "Mantis dimensions grow about ∛2 per moult; division-step explanation dropped",
+  "why": "Prothorax, mesothorax and facet dimensions of 19 Sphodromantis grew about ∛2 per moult, and constant epidermal nucleus density was read as one cell division per moult; the ratio proved only approximate across insects, and Przibram himself had dropped the division-step idea by 1930.",
+  "offers": [
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 17,
+   "to1945": 13,
+   "to1945_self": 6,
+   "mid": 3,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "141": {
+  "standing": "consistent",
+  "verdict": "Larval eyes perceive the hue that sets pupal colour; consistent, not re-tested",
+  "why": "Showed yellow or blue lacquer on the larval eyes steers pupal colour, and that yellow papers, unlike equally bright greys, give green pupae, so the cue is seen and hue-specific; this fits later neuroendocrine accounts, but no repetition of these small experiments is known.",
+  "offers": [
+   "method"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 16,
+   "to1945": 13,
+   "to1945_self": 9,
+   "mid": 0,
+   "modern_sci": 3,
+   "modern_hist": 0
+  }
+ },
+ "142": {
+  "standing": "consistent",
+  "verdict": "Hue reaching the larval eye sets pupal colour; consistent, not re-tested",
+  "why": "Showed in peacock and small tortoiseshell larvae that coloured lacquer on the eyes overrides the surrounding light, and that yellow, unlike equally bright grey, yields gold pupae; this fits later neuroendocrine accounts of visually cued pupal colour, but no repetition is known.",
+  "offers": [
+   "method"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 5,
+   "to1945": 1,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 3,
+   "modern_hist": 0
+  }
+ },
+ "143": {
+  "standing": "consistent",
+  "verdict": "Shaft-cut stick-insect antennae regrow as legs; consistent, not re-tested",
+  "why": "Brecher confirmed in Carausius that cutting the newly hatched larva's antenna through the shaft regenerates a leg while cutting the flagellum regenerates an antenna, with regeneration lost in older larvae; homeotic regeneration is accepted, but no modern re-test or mechanism appears in the evidence.",
+  "offers": [
+   "organism",
+   "testable"
+  ],
+  "open": "Whether Carausius antenna-legs are wired and behave as antennae, as her touch, alcohol and electrical tests suggested (antenna-like deflections, no gripping, insensitive tips), or as legs; this functional identity has not been re-tested.",
+  "test": "Carausius morosus: cut the right antenna through scape or pedicel at hatching; in adults with antenna-legs, backfill sensory neurons to map brain versus leg-neuromere projections and film touch-evoked movements against normal antennae and forelegs.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 7,
+   "to1945": 3,
+   "to1945_self": 2,
+   "mid": 4,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "144": {
+  "standing": "consistent",
+  "verdict": "Whole newt spleens grafted without sutures survived months; consistent, not repeated",
+  "why": "Whole spleens exchanged between adult crested newts without vascular suture healed in, became vascularised and stayed histologically normal for up to four months in 9 of 22 evaluable cases; free splenic grafts also revascularise in mammals, but this newt experiment was never repeated.",
+  "offers": [
+   "organism",
+   "method"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 1,
+   "to1945": 1,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "145": {
+  "standing": "consistent",
+  "verdict": "First furrow often misses newt midline; consistent, marker never re-used",
+  "why": "In alpine-newt eggs the first furrow ran through the future midline in only 35 of 125, and punctures of a natural animal-pole pigment spot ended up at the embryo’s nape; both fit later cleavage and fate-map work, but the marker was never re-used.",
+  "offers": [
+   "organism",
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 1,
+   "to1945": 1,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "146": {
+  "standing": "not_supported",
+  "verdict": "Model-based rebuttal of Harrison’s limb-axis grafts; Harrison’s account prevailed",
+  "why": "With cardboard models and no new experiments, Przibram argued that Harrison’s laterality-reversed limb grafts arose by mirror-image outgrowth from the graft’s proximal wound rather than host re-specification of axes; Harrison’s reading, anteroposterior fixed before dorsoventral, remains the standard account.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 6,
+   "to1945": 5,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "147": {
+  "standing": "consistent",
+  "verdict": "Moist-cocoon darkening traced to DOPA; consistent, not re-tested",
+  "why": "Traced moisture-induced darkening of some moth and sawfly cocoons to DOPA in the silk blackening without enzyme; catechol tanning of insect silk and cuticle is accepted and Andersen’s 1996 review cites the paper, but its remark that tyrosinase melanogenesis bypasses DOPA is wrong.",
+  "offers": [
+   "organism"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 11,
+   "to1945": 8,
+   "to1945_self": 1,
+   "mid": 2,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "148": {
+  "standing": "revised",
+  "verdict": "Grafted limbs move in step with neighbour; resonance theory abandoned",
+  "why": "Weiss found limbs grafted beside a host limb in salamander larvae moved in step with it, muscle for muscle, and explained this by muscle ‘resonance’ independent of wiring; the response was seen again, but later work traced it to nerve–muscle connections and dropped resonance.",
+  "offers": [
+   "history",
+   "organism"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 42,
+   "to1945": 24,
+   "to1945_self": 9,
+   "mid": 16,
+   "modern_sci": 1,
+   "modern_hist": 1
+  }
+ },
+ "149": {
+  "standing": "consistent",
+  "verdict": "Transplanted limbs regenerate by origin, not site; consistent, never re-tested",
+  "why": "Swapping developed fore- and hindlimbs in fire-salamander larvae, Weiss found amputated arms at the pelvis regrew four-fingered hands and legs at the shoulder mostly five-toed feet, so the stump, not the site, sets the regenerate; this matches later positional-memory work but was never repeated.",
+  "offers": [
+   "organism",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 20,
+   "to1945": 18,
+   "to1945_self": 8,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "150": {
+  "standing": "consistent",
+  "verdict": "Newt testes grafted across species kept spermatogenesis; consistent, not re-tested",
+  "why": "Whole newt testes placed unsutured in the body cavity of other species or of females kept full spermatogenesis for 6–12 months and did not transfer species-specific sex characters; grafted testis tissue can sustain spermatogenesis, but these urodele grafts were never re-tested.",
+  "offers": [
+   "method",
+   "testable"
+  ],
+  "open": "Whether whole adult newt testes grafted into another species or into females keep producing fertile sperm; Koppányi showed normal histology and live sperm at 6–12 months but never tested fertility or longer survival.",
+  "test": "Graft whole testes, unsutured, from GFP-transgenic Pleurodeles waltl into castrated Pleurodeles males, partly castrated females and castrated Cynops newts; at 6–18 months examine histology, fertilise eggs with graft sperm and confirm donor paternity.",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 8,
+   "to1945": 7,
+   "to1945_self": 1,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "151": {
+  "standing": "consistent",
+  "verdict": "Newt flank spots form without rib pressure; consistent, not re-tested",
+  "why": "Pleurodeles' yellow flank spots persisted for months after rib removal and re-formed in regenerated skin without ribs, so the pigment does not depend on rib pressure; this fits current understanding of amphibian pigment patterning, but the experiment has not been repeated.",
+  "offers": [
+   "testable"
+  ],
+  "open": "Whether the yellow flank spots re-form at their former positions in regenerated skin with no ribs beneath; Koppányi reported spots in such skin but gave no animal numbers, positions or unoperated comparisons.",
+  "test": "In adult Pleurodeles waltl, excise ribs alone or ribs with overlying skin on one side, sham-operate the other; photograph flanks monthly for six months; map spot number and position against former rib tips.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 0,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "152": {
+  "standing": "consistent",
+  "verdict": "Raised body temperature lengthened rat tails; weakly evidenced, not repeated",
+  "why": "Reported extra relative tail growth in pups running over 1 °C warm after their parents moved from a cold cellar indoors; controls were historical norms and it was not repeated, though warmer growth lengthening rodent tails is accepted.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "low",
+  "use": "none",
+  "cites": {
+   "total": 0,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "153": {
+  "standing": "revised",
+  "verdict": "Regeneration as accelerated normal growth; regrowth pattern holds, theory superseded",
+  "why": "In 70 regeneration series from 20 species, regenerate size ratios started high and fell to the normal growth ratio as the part was restored; slowing regrowth is accepted, but regeneration is now seen as an injury-triggered programme, not simply accelerated normal growth.",
+  "offers": [
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 18,
+   "to1945": 16,
+   "to1945_self": 7,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "154": {
+  "standing": "unresolved",
+  "verdict": "Cut mantis antennae regrew as raptorial forelegs; one clear case, unrepeated",
+  "why": "Przibram showed that non-autotomizing mantis forelegs regrow, contrary to Bordage, which fits accepted nymphal leg regeneration, and reported antennae cut within the scape of older nymphs regrowing as legs, one clearly a raptorial foreleg; that result was never repeated.",
+  "offers": [
+   "testable",
+   "organism"
+  ],
+  "open": "Whether antennae cut within the scape in late mantid nymphs regenerate as legs, and whether these carry raptorial foreleg identity; the claim rests on one clear and one partial case among six regenerates and was never repeated.",
+  "test": "Cut antennae within the scape in late-instar Sphodromantis or Hierodula nymphs reared at 17–20 °C; score regenerates for femoral spines and tibial teeth, and compare Sex combs reduced, Antennapedia, homothorax and Distal-less expression with fore- and midlegs.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 8,
+   "to1945": 7,
+   "to1945_self": 4,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "155": {
+  "standing": "consistent",
+  "verdict": "Leg segments on beetle antennae read as regenerates; consistent, never re-tested",
+  "why": "Przibram read tarsus-like segments on three wild-caught beetles' antennae as heteromorphic regenerates and rejected ganglionic control of appendage identity; antenna-to-leg transformation is accepted and identity is now traced to genes within the appendage, but these specimens were never re-examined.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 4,
+   "to1945": 4,
+   "to1945_self": 2,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "156": {
+  "standing": "not_supported",
+  "verdict": "Light colour tunes tyrosinase to produce colour adaptation; not supported",
+  "why": "Przibram and Brecher claimed blue and yellow light directly slow or speed tyrosinase through changes in acidity, explaining colour adaptation; this found no later confirmation, and colour adaptation runs through sense organs and hormones, though their red intermediate of melanin formation holds.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 34,
+   "to1945": 33,
+   "to1945_self": 14,
+   "mid": 0,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "157": {
+  "standing": "not_supported",
+  "verdict": "Photochemical enzyme theory of colouration and its inheritance; not supported",
+  "why": "Przibram’s theory held that light-, heat- and acid-sensitive enzymes directly produce colour adaptation, that induced colours reach the germ cells to form colour races, and that colour vision works photographically; all three ideas were abandoned, leaving only the older tyrosinase–melanin link.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 20,
+   "to1945": 20,
+   "to1945_self": 11,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "158": {
+  "standing": "consistent",
+  "verdict": "Air exclusion preserves tyrosinase activity; consistent, not re-tested",
+  "why": "Przibram and Dembowski found honey-fungus tyrosinase keeps its activity for months when sealed without air, consistent with its oxygen-dependent chemistry; their claim that yellow light pre-activates the enzyme has no later support, and their colour regressions fit later-described melanin intermediates.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 16,
+   "to1945": 16,
+   "to1945_self": 7,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "159": {
+  "standing": "revised",
+  "verdict": "Dark pupae on black backgrounds hold; ultraviolet, eye-independent explanation fails",
+  "why": "Brecher traced darker pupae on black backgrounds to reflected ultraviolet and, because black-lacquered larvae still responded, held the cue independent of vision; the background and wavelength effects fit later work, but black reflects little ultraviolet and her 1924 lacquer experiments showed the cue is seen.",
+  "offers": [
+   "data",
+   "testable"
+  ],
+  "open": "Whether ultraviolet light itself darkens Pieris brassicae pupae, as her quinine-sulphate filters (lighter pupae on black) and spectrum experiment (darkest pupae in ultraviolet) indicated; no test since her own Part VII (1922) is known.",
+  "test": "Rear wandering P. brassicae larvae on black backgrounds under broad-spectrum light with or without a UV-blocking filter matched for visible transmission, some with stemmata painted over; score pupal melanisation by reflectance spectrometry.",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 23,
+   "to1945": 14,
+   "to1945_self": 8,
+   "mid": 6,
+   "modern_sci": 3,
+   "modern_hist": 0
+  }
+ },
+ "160": {
+  "standing": "not_supported",
+  "verdict": "Heritable nuptial pads in water-bred midwife toads; never replicated",
+  "why": "Claimed midwife toads forced to breed in water develop nuptial pads from the grandchild generation, growing over generations; never replicated, the surviving specimen's pad was found ink-injected (Noble 1926), and epigenetic reinterpretations remain speculative.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "citing works",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "historians",
+  "cites": {
+   "total": 11,
+   "to1945": 3,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 7
+  }
+ },
+ "161": {
+  "standing": "revised",
+  "verdict": "Iris depigments after lens removal; passive 'iris-sac' explanation superseded",
+  "why": "Uhlenhuth confirmed iris depigmentation after lens removal, with shed pigment taken up by leukocytes, but explained it as passive expulsion when aqueous humour enters a torn 'iris sac', pigment blocking division; modern accounts treat dedifferentiation as an active, signal-driven programme.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 11,
+   "to1945": 8,
+   "to1945_self": 1,
+   "mid": 3,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "162": {
+  "standing": "no_claim",
+  "verdict": "One catfish eye with a second lens; description only",
+  "why": "Kolmer describes one catfish eye containing a second, lens-like body and explicitly leaves its origin (iris versus primary lens vesicle) undecided; it is a single-specimen description with no general claim to test.",
+  "offers": [],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 2,
+   "to1945_self": 0,
+   "mid": 3,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "163": {
+  "standing": "not_supported",
+  "verdict": "Carp teeth and calluses cited for Lamarckian inheritance; framework rejected",
+  "why": "Argued that a carp pharyngeal tooth which never chewed still bore a grinding surface, and that pre-formed calluses show use-acquired traits become hereditary; such pre-formed traits are now explained by selection or genetic assimilation, not Lamarckian inheritance.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 5,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "164": {
+  "standing": "not_supported",
+  "verdict": "Hermaphrodite-gland theory of homosexuality not supported; rodent graft results repeated",
+  "why": "Steinach argued that mixed-sex (‘hermaphrodite’) puberty glands cause intersex traits and homosexuality, citing grafted guinea pigs, castration-and-implant operations on homosexual men and a goat with ovotestes; no later work supports a gonadal cause of sexual orientation, though the rodent graft results were repeated.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 28,
+   "to1945": 21,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 6,
+   "modern_hist": 0
+  }
+ },
+ "165": {
+  "standing": "not_supported",
+  "verdict": "Distinctive testis histology in homosexual men; not supported",
+  "why": "Steinach described atrophic tubules, fewer Leydig cells and large ‘F-cells’ in testes removed from five homosexual men, compared only with cryptorchid testes, and proposed them as a diagnostic marker; no later work has confirmed any testicular marker of sexual orientation.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "high",
+  "use": "precedent",
+  "cites": {
+   "total": 26,
+   "to1945": 18,
+   "to1945_self": 2,
+   "mid": 4,
+   "modern_sci": 4,
+   "modern_hist": 0
+  }
+ },
+ "166": {
+  "standing": "no_claim",
+  "verdict": "Single-case skeletal description of an intersex person; no claim to assess",
+  "why": "A measured description of one intersex person’s skeleton, showing mixed male and female traits, unusually long limbs and many anomalies; its closing link to gonadal secretion restates the view of the time rather than testing a claim.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 5,
+   "to1945": 5,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "167": {
+  "standing": "revised",
+  "verdict": "Size variants after Paramecium 'endomixis'; process reinterpreted as autogamy",
+  "why": "Reported that each 'endomixis' in pure Paramecium aurelia lines yields sublines with new heritable mean sizes; endomixis was later identified as autogamy, a meiotic self-fertilisation, so segregation and new-macronucleus differences, not a failure of the genotype concept, would explain them.",
+  "offers": [
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 18,
+   "to1945": 13,
+   "to1945_self": 0,
+   "mid": 1,
+   "modern_sci": 4,
+   "modern_hist": 0
+  }
+ },
+ "168": {
+  "standing": "revised",
+  "verdict": "Wound responses as passive physics without 'stimulus'; not the modern view",
+  "why": "This theoretical conclusion to Part I (no new data) argues that wound responses such as iris depigmentation are passive physico-chemical events needing no 'stimulus'; the depigmentation is real, but modern work treats iris dedifferentiation as an active, injury-signal-driven cellular programme.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 11,
+   "to1945": 10,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "169": {
+  "standing": "not_supported",
+  "verdict": "Heat boosts virility in rats and humans; not supported",
+  "why": "Rats kept warm matured earlier than rats in unheated stalls, which the authors read as heat-boosted, heritable virility explaining racial differences; the rat work was never re-tested, heat is now known to impair the testis, and the inheritance and ‘race’ claims are not supported.",
+  "offers": [
+   "history",
+   "data"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 20,
+   "to1945": 10,
+   "to1945_self": 3,
+   "mid": 3,
+   "modern_sci": 4,
+   "modern_hist": 3
+  }
+ },
+ "170": {
+  "standing": "not_supported",
+  "verdict": "Light acting on blood tyrosinase sets pupal colour; not supported",
+  "why": "Brecher proposed that coloured light shifts the acidity of the caterpillar’s blood tyrosinase, directly setting pupal melanin and green; pupal colour is now understood to be set through neuroendocrine signals and pigment-gene expression, with green from bilin–protein complexes, so this chemism is not supported.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 11,
+   "to1945": 7,
+   "to1945_self": 6,
+   "mid": 3,
+   "modern_sci": 1,
+   "modern_hist": 0
+  }
+ },
+ "171": {
+  "standing": "revised",
+  "verdict": "No separate DOPA-oxidase needed; its reaction mechanism and albinism account failed",
+  "why": "Argued that Bloch’s separate ‘Dopa-oxidase’ is unnecessary because tyrosinase blackens DOPA and tyrosine alike, making tyrosine the likely melanin precursor; that fits the modern tyrosinase pathway, but its side-chain mechanism, equal-rate claim and acidity explanation of albinism did not hold.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "modern literature",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 10,
+   "to1945": 8,
+   "to1945_self": 7,
+   "mid": 2,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "172": {
+  "standing": "revised",
+  "verdict": "Pale pupae on white backgrounds hold; infrared-ray explanation superseded",
+  "why": "Attributed pale pupae on white backgrounds to infrared (heat) rays and traced every pupal colour to specific radiation effects; Brecher’s 1924 eye experiments and later neuroendocrine work place the cue in larval vision, so the white-background effect stands but not its infrared explanation.",
+  "offers": [
+   "testable",
+   "history"
+  ],
+  "open": "Whether warmth or near-infrared light during the pre-pupal sensitive period, independently of the visible background, lightens Pieris brassicae pupae, as her heat and infrared-filter experiments suggested.",
+  "test": "Rear wandering P. brassicae larvae on identical grey backgrounds at 18 versus 30 °C, and at fixed temperature with or without a near-infrared-blocking filter; score pupal melanisation and opacity by reflectance spectrometry.",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "historians",
+  "cites": {
+   "total": 20,
+   "to1945": 18,
+   "to1945_self": 3,
+   "mid": 1,
+   "modern_sci": 0,
+   "modern_hist": 1
+  }
+ },
+ "173": {
+  "standing": "consistent",
+  "verdict": "Rat gestation length unaffected by rearing temperature; consistent with later knowledge",
+  "why": "Found rat litter-to-litter intervals (about 24 days) unchanged across constant 5–40 °C; mammalian gestation is generally buffered against ambient temperature, though his 'secondary homeothermy' explanation assumed body-temperature swings now thought exaggerated.",
+  "offers": [
+   "data",
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 2,
+   "to1945": 2,
+   "to1945_self": 1,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ },
+ "174": {
+  "standing": "revised",
+  "verdict": "Triple limbs from breaks: true for injuries, not a universal rule",
+  "why": "Przibram argued that all Bateson-rule triple limbs arise regeneratively at a break with two wound surfaces; injury-induced mirror-image supernumeraries are real, but many triplications are genetic (e.g. Hoge's Mendelian Drosophila reduplications) and positional-confrontation models replaced the break mechanism.",
+  "offers": [
+   "history",
+   "testable"
+  ],
+  "open": "Whether the mirror-image middle claw of an injury-induced triplication in heterochelous decapods always keeps its own side's claw type, as Przibram inferred from museum specimens, has never been tested experimentally.",
+  "test": "Induce supernumerary chelae in juvenile lobsters or snapping shrimp by partial claw fractures or lateral wounds (as Murayama did in crayfish); score crusher/cutter identity, handedness and symmetry of each component.",
+  "basis": [
+   "the paper's text",
+   "citing works",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "precedent",
+  "cites": {
+   "total": 44,
+   "to1945": 24,
+   "to1945_self": 6,
+   "mid": 18,
+   "modern_sci": 2,
+   "modern_hist": 0
+  }
+ },
+ "175": {
+  "standing": "no_claim",
+  "verdict": "One-page review of a growth-speed rule of form; nothing to test",
+  "why": "A one-page review of Karl Przibram's proposal that faster growth yields elongated, branched forms; it reports no data, and the rule, argued from examples such as etiolation, Daphnia helmets and warm-reared mice, never became an accepted principle of organic form.",
+  "offers": [
+   "history"
+  ],
+  "open": "",
+  "test": "",
+  "basis": [
+   "the paper's text",
+   "general knowledge"
+  ],
+  "confidence": "medium",
+  "use": "none",
+  "cites": {
+   "total": 0,
+   "to1945": 0,
+   "to1945_self": 0,
+   "mid": 0,
+   "modern_sci": 0,
+   "modern_hist": 0
+  }
+ }
+}

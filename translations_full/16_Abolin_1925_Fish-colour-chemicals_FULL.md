@@ -14,7 +14,7 @@ With Plates III—VI and 2 Text-figures.
 
 *Archiv für Entwicklungsmechanik der Organismen*, vol. 104 (1925).
 
-> **Full translation.** A complete English rendering of Abolin's study of how chemicals (adrenalin, pituitrin, pilocarpine, atropine and others) influence the colour change of fishes — the chromatophore responses — with the tables and figure legends.
+> **Full translation.** A complete English rendering of Abolin's study of how two chemicals — adrenalin and the pituitary extract infundin — influence the colour change of the minnow — the chromatophore responses — with the tables and figure legends.
 
 ### Table of Contents.
 

@@ -218,4 +218,4 @@ After completion of the present work, a treatise by Vogt appeared — *Further e
 
 ---
 
-*Translator's note.* Complete translation of the running text and apparatus. Przibram's central terms — *Zenitfeld* ("zenith field"), the "virtual" vs. "real" embryo, animal/vegetative pole, dorso-anterior/ventro-posterior — are rendered consistently. This is the corpus's top verified rediscovery target: 52 modern studies on the same organism (*Triton/Triturus/Ichthyosaura alpestris*), none of which cite this paper.
+*Translator's note.* Complete translation of the running text and apparatus. Przibram's central terms — *Zenitfeld* ("zenith field"), the "virtual" vs. "real" embryo, animal/vegetative pole, dorso-anterior/ventro-posterior — are rendered consistently.

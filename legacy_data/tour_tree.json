@@ -284,28 +284,25 @@
    "kind": "titlepage"
   },
   "26": {
-   "kind": "figure",
-   "score": 84.3,
-   "src": "figures/131_Koppanyi_1923_Eye-replantation-III/Plate_III.jpg",
-   "page": null
-  },
-  "27": {
    "kind": "plate",
    "score": 102.2,
    "src": null,
    "page": 18
   },
-  "28": {
-   "kind": "plate",
-   "score": 74.3,
-   "src": null,
-   "page": 6
+  "27": {
+   "kind": "titlepage"
   },
-  "29": {
+  "28": {
    "kind": "plate",
    "score": 96.8,
    "src": null,
    "page": 12
+  },
+  "29": {
+   "kind": "figure",
+   "score": 84.3,
+   "src": "figures/131_Koppanyi_1923_Eye-replantation-III/Plate_III.jpg",
+   "page": null
   },
   "30": {
    "kind": "plate",
@@ -314,13 +311,13 @@
    "page": 10
   },
   "31": {
-   "kind": "titlepage"
-  },
-  "32": {
    "kind": "plate",
    "score": 74.6,
    "src": null,
    "page": 15
+  },
+  "32": {
+   "kind": "titlepage"
   },
   "33": {
    "kind": "titlepage"

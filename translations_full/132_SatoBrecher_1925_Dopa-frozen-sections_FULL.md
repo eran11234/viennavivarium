@@ -12,7 +12,7 @@ By
 
 *Archiv für mikroskopische Anatomie und Entwicklungsmechanik*, vol. 104 (1925).
 
-> **Full translation.** A complete English rendering of the running text of “Agreement of Positive and Negative Dopa-Reactions on Frozen Sections with those on Extracts” (Sato / Brecher, 1925), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
+> **Full translation.** A complete English rendering of the running text of “Agreement of Positive and Negative Dopa-Reactions on Frozen Sections with those on Extracts” (Brecher and Winkler, 1925), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
 
 In a comprehensive review of the present state of the doctrine of pigments, Bloch (1923), with reference to the work of Przibram, with the collaboration of Dembowski and Brecher (1921): Action of tyrosinase on dopa, also raised the objection that the experiments had indeed been carried out on extracts, a method which is less exact than the one used by Bloch himself, namely that of conducting reactions on tissue sections.
 
@@ -105,4 +105,4 @@ There is accordingly no occasion to assume a difference in the detectability of 
 
 ---
 
-*Translator's note.* One of the Biologische Versuchsanstalt (Vienna Vivarium) papers flagged on the project site as a modern rediscovery target. Claims are rendered as stated in the original, not endorsed.
+*Translator's note.* Claims are rendered as stated in the original, not endorsed.

@@ -44,6 +44,99 @@ def sens_html(pid, where):
             % (html.escape(s.get("severity") or "medium"), cat,
                html.escape(s.get("heading") or "Before you read this"), paras))
 
+# ---------------------------------------------------------------- assessment (September 2026 review)
+# Where each paper's own claim stands today, how current research uses it, and what it offers a
+# researcher now: legacy_data/assessment.json (built from a paper-by-paper reading under one rubric).
+# This replaced the old statuses, the sleeping-beauty index and the legacy layers.
+_asp = os.path.join(ROOT, "legacy_data", "assessment.json")
+ASSESS = ({int(k): v for k, v in json.load(open(_asp, encoding="utf-8")).items() if not k.startswith("_")}
+          if os.path.exists(_asp) else {})
+STANDING = [   # key, full label, short label, definition
+    ("established", "Established", "Established",
+     "Later work confirmed this paper’s specific result, or explicitly credits it for a result that is now standard."),
+    ("consistent", "Consistent with current knowledge", "Consistent",
+     "The phenomenon it reports is accepted today, but this paper’s own result was never re-tested. It stands as an early instance."),
+    ("revised", "Revised", "Revised",
+     "The observation holds, at least in part, but its explanation, mechanism, scope or generality has changed."),
+    ("unresolved", "Unresolved", "Unresolved",
+     "A specific question the paper raised has not been settled: never re-tested with modern methods, or the evidence is mixed."),
+    ("not_supported", "Not supported", "Not supported",
+     "Later work contradicts the claim, it failed to replicate, or it rests on a framework now rejected."),
+    ("no_claim", "No claim to assess", "No claim",
+     "An obituary, a review, a methods paper or a pure description: nothing empirical to adjudicate."),
+]
+ST_LABEL = {k: l for k, l, _, _ in STANDING}
+ST_SHORT = {k: s for k, _, s, _ in STANDING}
+ST_DEF = {k: d for k, _, _, d in STANDING}
+USE = [
+    ("tested", "Tested or used today", "Current research re-tests the result or uses the paper’s data."),
+    ("precedent", "Cited as a precedent",
+     "Cited in scientific work since 1990, usually as an early description or as background, without re-testing it."),
+    ("historians", "Cited by historians", "Cited since 1990 only in the history of science."),
+    ("none", "Not cited since 1990", "No citing work since 1990 is recorded in OpenAlex."),
+]
+USE_LABEL = {k: l for k, l, _ in USE}
+USE_DEF = {k: d for k, _, d in USE}
+OFFERS = [("testable", "A testable question"), ("data", "Quantitative data"), ("method", "A reusable method"),
+          ("organism", "An unusual system"), ("history", "Chiefly of historical interest")]
+OFFER_LABEL = dict(OFFERS)
+BASIS_LABEL = {"modern literature": "the modern literature", "citing works": "the works that cite it",
+               "the paper's text": "the paper itself", "general knowledge": "general knowledge of the field"}
+
+
+def st_chip(pid, full=False, href=None):
+    """The standing chip for one paper ('' if it has no assessment)."""
+    a = ASSESS.get(pid)
+    if not a:
+        return ""
+    s = a["standing"]
+    lab = ST_LABEL[s] if full else ST_SHORT[s]
+    if href:
+        return '<a class="stc stc-%s" href="%s" title="%s">%s</a>' % (s, href, html.escape(ST_DEF[s]), html.escape(lab))
+    return '<span class="stc stc-%s" title="%s">%s</span>' % (s, html.escape(ST_DEF[s]), html.escape(lab))
+
+
+def use_chip(pid):
+    a = ASSESS.get(pid)
+    if not a:
+        return ""
+    u = a["use"]
+    return '<span class="usec usec-%s" title="%s">%s</span>' % (u, html.escape(USE_DEF[u]), html.escape(USE_LABEL[u]))
+
+
+# the six big questions of the tour, reused as a filter on Discover
+PROGRAMME_OF_PHENOMENON = {
+    "regeneration": "regen", "heteromorphosis": "regen",
+    "transplantation": "graft", "developmental_mechanics": "graft",
+    "pigmentation": "colour", "color_change": "colour", "light_effects": "colour",
+    "sex_determination": "sex",
+    "inheritance_of_acquired": "heredity", "thermal_modification": "heredity",
+    "salinity_osmotic": "heredity", "hybridization": "heredity",
+    "growth": "growth", "morphology": "growth", "behavior": "growth", "gravity_effects": "growth",
+}
+# most specific first: a paper tagged both "regeneration" and "sex_determination" is about sex
+PHENOMENON_PRIORITY = ["sex_determination", "inheritance_of_acquired", "hybridization", "pigmentation",
+                       "color_change", "light_effects", "thermal_modification", "salinity_osmotic",
+                       "heteromorphosis", "transplantation", "growth", "morphology", "gravity_effects",
+                       "behavior", "regeneration", "developmental_mechanics"]
+
+
+def programme_map():
+    """paper id -> programme id, and the programmes (id, title) in tour order."""
+    tp = os.path.join(ROOT, "legacy_data", "tour_tree.json")
+    if not os.path.exists(tp):
+        return {}, []
+    TT = json.load(open(tp, encoding="utf-8"))
+    assign = {int(k): v for k, v in TT.get("assign", {}).items()}
+    out = {}
+    for c in catalog:
+        if c["id"] in assign:
+            out[c["id"]] = assign[c["id"]]
+            continue
+        ph = c.get("phenomena") or []
+        out[c["id"]] = next((PROGRAMME_OF_PHENOMENON[p] for p in PHENOMENON_PRIORITY if p in ph), "growth")
+    return out, [(P["id"], P["title"]) for P in TT["programmes"]]
+
 YEARS = [c["year"] for c in catalog]
 STATS = dict(papers=len(catalog), trans=len(translations),
              y0=min(YEARS), y1=max(YEARS),
@@ -91,7 +184,7 @@ DOWNLOADS = [
          lede="The whole website, working without an internet connection.",
          what=["All 175 English translations, with their figures",
                "All 175 German originals as PDFs",
-               "The catalog, the guided tour, the Discover hub and all 172 dossiers",
+               "The catalog, the guided tour, Discover and a dossier for every paper",
                "497 figure and plate scans"],
          how="Unzip and open <code>index.html</code>. Nothing to install, no server needed.",
          who="Best if you want to read, browse or keep the corpus."),
@@ -100,8 +193,8 @@ DOWNLOADS = [
          name="Research bundle",
          lede="Every text and every data file, without the scans.",
          what=["All 175 translations as Markdown",
-               "<code>catalog.csv</code> — one row per paper, with verdicts, citations and links",
-               "The full working data: verdicts, citations, methodology, syntheses, biographies",
+               "<code>catalog.csv</code> — one row per paper: where it stands, how it is cited today, citations by era, links",
+               "The full working data: assessments, citations, methodology, biographies",
                "The original corpus spreadsheet"],
          how="Unzip and start with <code>catalog.csv</code>, or point a script at the folder.",
          who="Best for analysis, text mining, or handing the corpus to an AI."),
@@ -151,14 +244,11 @@ def page(path, title, active, body, prefix="", head="", foot="", desc=None):
 <footer class="site"><div class="wrap">
 <p>Biologische Versuchsanstalt (the “Vivarium”), Vienna · {STATS['papers']} papers, {STATS['y0']}–{STATS['y1']} · {STATS['trans']} English translations.</p>
 <p class="muted">An orientation platform for researchers. Translations and corpus analysis are scholarly working documents; cite the original alongside the translation. Corrections, collaborations and contributions are welcome — <a href="{prefix}contribute.html">get involved</a>.</p>
+<p class="disclaimer"><b>Please note.</b> These papers are historical documents, reproduced for study, not as endorsements, and we are not responsible for their content. Some data may be wrong or harmful: early twentieth-century science sometimes used methods and arguments that would be considered unscientific or harmful today. The translations and assessments on this site may also contain errors.</p>
 <p class="fdl"><a class="dlbtn" href="{prefix}download.html"><span class="dlarrow">&darr;</span> Download the whole corpus<small>translations, German originals and all the data — {SNAPSHOT_DATE}</small></a></p>
 </div></footer>{foot}</body></html>"""
     with open(os.path.join(SITE, path), "w", encoding="utf-8") as f:
         f.write(doc)
-
-def layer_badge(n):
-    if not n: return '<span class="badge l0">unranked</span>'
-    return f'<span class="badge l{n}">legacy layer {n}</span>'
 
 # ---------------------------------------------------------------- home
 def gen_index():
@@ -170,14 +260,11 @@ def gen_index():
         {'<span class="badge wip">in progress</span>' if t['status']!='complete' else '<span class="badge done">full text</span>'}
         </a>'''
         for t in translations if t['status']=='complete')
-    # live counts for the stats strip: curated people on the Authors page, and the
-    # strict sleeping-beauty set from the Discover re-evaluation
+    # live counts for the stats strip: curated people on the Authors page, and the assessments
     _ap = os.path.join(ROOT, "legacy_data", "authors.json")
     n_people = len(json.load(open(_ap, encoding="utf-8"))["people"]) if os.path.exists(_ap) else STATS["authors"]
-    _cp = os.path.join(ROOT, "legacy_data", "consensus_all.json")
-    _CA = json.load(open(_cp, encoding="utf-8")) if os.path.exists(_cp) else {}
-    n_sleep = sum(1 for v in _CA.values() if v.get("sleeping"))
-    n_confirmed = sum(1 for v in _CA.values() if v.get("status") in ("Sleeping Beauty", "Quiet Classic", "Living Legacy"))
+    n_hold = sum(1 for v in ASSESS.values() if v["standing"] in ("established", "consistent"))
+    n_open = sum(1 for v in ASSESS.values() if v.get("open"))
     # four programme covers for the featured panel (gen_tour writes assets/tree/prog-<id>-c.jpg later in the build)
     tour_imgs = "".join('<img src="assets/tree/prog-%s-c.jpg" alt="" loading="lazy">' % i
                         for i in ("regen", "colour", "graft", "heredity"))
@@ -185,11 +272,11 @@ def gen_index():
 <section class="hero">
   <p class="kicker">An orientation platform for researchers</p>
   <h1>The Vienna Vivarium, in English</h1>
-  <p class="lede">The Biologische Versuchsanstalt (1902–1945) was one of the first institutes for experimental biology. This platform opens the complete published output of its zoological department to English-language researchers: a searchable catalog of <strong>{STATS['papers']} papers</strong> ({STATS['y0']}–{STATS['y1']}), full English <strong>translations</strong> with figures, the German originals — and every paper <strong>read against today's science</strong>, to show which of these forgotten results the field has since rediscovered.</p>
+  <p class="lede">The Biologische Versuchsanstalt (1902–1945) was one of the first institutes for experimental biology. This platform opens the complete published output of its zoological department to English-language researchers: a searchable catalog of <strong>{STATS['papers']} papers</strong> ({STATS['y0']}–{STATS['y1']}), full English <strong>translations</strong> with figures, the German originals — and every paper <strong>assessed against later work</strong>: whether its own claim still stands, how current research uses it, and what it still offers a researcher.</p>
   <div class="cta">
     <a class="btn primary" href="catalog.html">Browse the catalog</a>
     <a class="btn" href="translations.html">Read translations</a>
-    <a class="btn" href="rediscovery.html">☾ Discover what held up</a>
+    <a class="btn" href="rediscovery.html">Where each paper stands today</a>
   </div>
 </section>
 <a class="tourpanel" href="tour.html">
@@ -209,8 +296,8 @@ def gen_index():
   <div><b>{STATS['papers']}</b><span>papers cataloged</span></div>
   <div><b>{STATS['trans']}</b><span>English translations</span></div>
   <div><b>{n_people}</b><span>authors</span></div>
-  <div><b>{n_confirmed}</b><span>results confirmed by today's science</span></div>
-  <div><b>{n_sleep}</b><span>sleeping beauties</span></div>
+  <div><b>{n_hold}</b><span>results that still stand</span></div>
+  <div><b>{n_open}</b><span>open questions worth testing</span></div>
 </section>
 <section>
   <h2>Featured translations</h2>
@@ -218,7 +305,7 @@ def gen_index():
 </section>
 <section class="how">
   <h2>How to use this platform</h2>
-  <p>The <a href="catalog.html">Catalog</a> is the map of the whole corpus — filter by author, organism, phenomenon, method, or today's verdict, and jump to a paper's English translation (where one exists) or its German original. The <a href="translations.html">Translations</a> are full reading pages with the original plates and a side-by-side view against the scanned German. <a href="rediscovery.html">Discover</a> sets every paper against the current literature: which results became textbook science, which are still contested, and which <em>sleeping beauties</em> the field has rediscovered without ever citing them. <a href="authors.html">Authors</a> gives the people behind the papers, the <a href="tour.html">Tour</a> walks from six big questions down to the papers, and <a href="analytics.html">Analytics</a> shows the shape of the institute's output over its four decades.</p>
+  <p>The <a href="catalog.html">Catalog</a> is the map of the whole corpus — filter by author, organism, phenomenon, method, or where the paper stands today, and jump to a paper's English translation (where one exists) or its German original. The <a href="translations.html">Translations</a> are full reading pages with the original plates and a side-by-side view against the scanned German. <a href="rediscovery.html">Discover</a> sets every paper against later work: whether its own result was confirmed, is consistent with what is now known, was revised, is still unresolved or did not hold — and whether current research still uses it. Most papers are cited today, if at all, as history; Discover points to the few open questions and datasets still worth a researcher’s time. <a href="authors.html">Authors</a> gives the people behind the papers, the <a href="tour.html">Tour</a> walks from six big questions down to the papers, and <a href="analytics.html">Analytics</a> shows the shape of the institute's output over its four decades.</p>
 </section>"""
     page("index.html", "Home", "Home", body)
     # Redirect stubs for pages whose URL changed (legacy_data/redirects.json: old -> new).
@@ -231,9 +318,12 @@ def gen_index():
     _moved = json.load(open(_rp, encoding="utf-8")) if os.path.exists(_rp) else {}
     _pub = json.load(open(_pp, encoding="utf-8")) if os.path.exists(_pp) else {}
     _now = {t["id"]: "papers/%s.html" % t["page_slug"] for t in translations}
+    _live = set(_now.values())
     for _old, _pid in _pub.items():
         if _pid in _now and _old != _now[_pid] and _old not in _moved:
             _moved[_old] = _now[_pid]
+    # never let a redirect stub overwrite a page that is live today (e.g. after a translation is re-paired)
+    _moved = {o: n for o, n in _moved.items() if o not in _live}
     try:   # remember today's URLs too (a no-op in CI, which does not commit)
         _pub.update({v: k for k, v in _now.items()})
         json.dump(dict(sorted(_pub.items())), open(_pp, "w", encoding="utf-8"), indent=1)
@@ -259,41 +349,36 @@ def gen_index():
 def gen_catalog():
     body = """
 <h1>Catalog</h1>
-<p class="lede">All papers in the corpus. Search and filter; <strong>click any row to see the modern works that cite it</strong>, or use the Read column to open the translation or German original.</p>
-<section class="dscta">
-  <div class="dsctatext">
-    <h2>☾ Every paper, judged against today's science</h2>
-    <p>The <b>Today</b> column carries each paper's verdict from <b>Discover</b>, where all 174 were read against the current literature and placed on two axes — how much modern science <em>remembers</em> them, and whether their ideas <em>held up</em>. Click any chip or <b>☾ Dossier</b> to open that paper's full dossier.</p>
-    <ul class="dsctaleg">
-      <li><span class="cstat cst-sb">Sleeping Beauty</span> forgotten, yet confirmed</li>
-      <li><span class="cstat cst-qc">Quiet Classic</span> lightly cited, but vindicated</li>
-      <li><span class="cstat cst-ll">Living Legacy</span> well cited, and it held up</li>
-      <li><span class="cstat cst-st">Stirring</span> alive but unsettled</li>
-      <li><span class="cstat cst-cl">Contested Legacy</span> famous, but refuted</li>
-      <li><span class="cstat cst-rr">Rightly Rested</span> forgotten, and it did not hold</li>
-    </ul>
-  </div>
-  <a class="dsctabtn" href="rediscovery.html">Open Discover →</a>
+<p class="lede">All papers in the corpus. Search and filter; <strong>click any row to open the paper’s dossier</strong> — where its claim stands, and every work that cites it — or use the Read column to open the translation or the German original.</p>
+<section class="stlegend">
+  <p><b>Where it stands</b> is each paper’s assessment against later work (September 2026, one paper at a time; see <a href="rediscovery.html#how">Discover</a>):
+  <span class="stc stc-established">Established</span> <span class="stc stc-consistent">Consistent</span> <span class="stc stc-revised">Revised</span>
+  <span class="stc stc-unresolved">Unresolved</span> <span class="stc stc-not_supported">Not supported</span> <span class="stc stc-no_claim">No claim</span>.
+  <b>Cited since 1990</b> counts the works that cite the paper since 1990, scientific and historical; hover for how it is used.</p>
 </section>
 <div class="filters">
-  <input id="q" type="search" placeholder="Search author, title, organism…">
-  <select id="layer"><option value="">Any legacy layer</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
+  <input id="q" type="search" placeholder="Search author, title, organism, claim…">
   <select id="phen"><option value="">Any phenomenon</option></select>
   <select id="method"><option value="">Any method</option></select>
-  <select id="status"><option value="">Any verdict today</option>
-    <option>Sleeping Beauty</option><option>Quiet Classic</option><option>Living Legacy</option>
-    <option>Stirring</option><option>Contested Legacy</option><option>Rightly Rested</option></select>
-  <label class="chk"><input type="checkbox" id="tonly"> Translated only</label>
-  <label class="chk"><input type="checkbox" id="ronly"> ☾ Sleeping beauties</label>
-  <select id="sort"><option value="year">Sort: year ↑</option><option value="-year">year ↓</option><option value="-cit">most cited</option><option value="-sbi">sleeping-beauty index</option><option value="author">author</option><option value="method">method</option></select>
+  <select id="stand"><option value="">Wherever it stands</option>
+    <option value="established">Established</option><option value="consistent">Consistent with current knowledge</option>
+    <option value="revised">Revised</option><option value="unresolved">Unresolved</option>
+    <option value="not_supported">Not supported</option><option value="no_claim">No claim to assess</option></select>
+  <select id="use"><option value="">However it is used today</option>
+    <option value="tested">Tested or used today</option><option value="precedent">Cited as a precedent</option>
+    <option value="historians">Cited by historians</option><option value="none">Not cited since 1990</option></select>
+  <select id="offer"><option value="">Anything it offers</option>
+    <option value="testable">A testable question</option><option value="data">Quantitative data</option>
+    <option value="method">A reusable method</option><option value="organism">An unusual system</option></select>
+  <select id="sort"><option value="year">Sort: year ↑</option><option value="-year">year ↓</option><option value="-mod">most cited since 1990</option><option value="-cit">most cited overall</option><option value="stand">where it stands</option><option value="author">author</option><option value="method">method</option></select>
 </div>
 <p id="count" class="muted"></p>
 <div class="tablewrap"><table id="cat"><thead><tr>
-<th>Year</th><th>Author</th><th>Title</th><th>Organism</th><th>Method</th><th>Legacy</th><th class="num">Cited</th><th>Today</th><th>Read</th>
+<th>Year</th><th>Author</th><th>Title</th><th>Organism</th><th>Method</th><th>Where it stands</th><th class="num">Cited since 1990</th><th>Read</th>
 </tr></thead><tbody></tbody></table></div>
 """
     page("catalog.html", "Catalog", "Catalog", body,
-         foot='<script src="data/site.js"></script><script src="data/methodology.js"></script><script src="data/catalog.js"></script><script src="data/discidx.js"></script><script src="assets/catalog.js"></script>')
+         foot='<script src="data/site.js"></script><script src="data/methodology.js"></script><script src="data/catalog.js"></script><script src="data/assess.js"></script><script src="assets/catalog.js"></script>')
 
 # ---------------------------------------------------------------- translations index
 def gen_translations():
@@ -316,51 +401,34 @@ def gen_translations():
 
 # ---------------------------------------------------------------- legacy
 def gen_legacy():
-    body = """
-<h1>Legacy explorer</h1>
-<p class="lede">For each paper: who cites it in modern science, and whether its organism is still actively studied. <strong>Rediscovery targets</strong> are papers whose organism is alive in today's literature but whose original BVA work goes uncited — candidates for renewed attention.</p>
-<p class="muted" style="font-size:13px;line-height:1.55;border-left:3px solid var(--rule);padding:2px 0 2px 12px;margin:0 0 14px">The short note beside each citing work describes the <em>likely</em> reason it cites the BVA original, reconstructed from that work's title, topic and (where available) abstract — not from the citing sentence itself, which is seldom digitised for this 1900–1940 literature. Read the notes as orientation; follow each DOI for the primary source.</p>
-
-<section class="layers">
-  <h2>What the four legacy layers mean</h2>
-  <p>Every paper is graded by how deeply modern science still engages its actual work — judged from the present-day papers that cite it, with purely historical mentions set aside. The depth runs from the same organism still under study down to nothing but the bare logic of experiment surviving.</p>
-  <div class="laycards">
-    <div class="laycard"><span class="badge l1">Layer 1</span><b>Same genus, still studied</b><p>Modern work still studies the very genus the BVA paper worked on — the deepest continuity. <span class="muted">22 papers · 13%</span></p></div>
-    <div class="laycard"><span class="badge l2">Layer 2</span><b>Same taxon, different genus</b><p>The technique or question travelled to a related animal: the same broad group (amphibians, beetles, crustaceans, mammals) but a different genus. The BVA's best-cited work lives here. <span class="muted">70 papers · 40%</span></p></div>
-    <div class="laycard"><span class="badge l3">Layer 3</span><b>Same phenomenon, unrelated organism</b><p>Modern work pursues the same phenomenon — regeneration, transplantation, colour change, inheritance, sex determination — but in an unrelated organism. <span class="muted">37 papers · 21%</span></p></div>
-    <div class="laycard"><span class="badge l4">Layer 4</span><b>Only the experimental logic survives</b><p>Engagement exists, but shares only the abstract form of “perturb and observe,” not the species, taxon, or phenomenon. <span class="muted">41 papers · 23%</span></p></div>
-  </div>
-  <p class="muted">A further 5 papers have no indexed modern citations at all. Depth is judged from OpenAlex citation data, excluding history-of-science (“historiographic”) mentions.</p>
-</section>
-
-<div class="filters">
-  <input id="q" type="search" placeholder="Search author, title, organism…">
-  <select id="conv"><option value="">Any convergence axis</option></select>
-  <select id="layer"><option value="">Any legacy layer</option><option>1</option><option>2</option><option>3</option><option>4</option></select>
-  <label class="chk"><input type="checkbox" id="ronly" checked> Rediscovery targets only</label>
-</div>
-<p id="count" class="muted"></p>
-<div id="list" class="legacy"></div>
-"""
-    page("legacy.html", "Legacy", "Legacy", body,
-         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="data/summaries.js"></script><script src="data/methodology.js"></script><script src="data/discidx.js"></script><script src="assets/legacy.js"></script>')
+    """legacy.html (the legacy explorer) was retired in September 2026: its "legacy layers" measured whether
+    a paper's organism is still studied, not the paper's legacy. Old links, including legacy.html?id=N,
+    forward to that paper's dossier, or to Discover."""
+    open(os.path.join(SITE, "legacy.html"), "w", encoding="utf-8").write(
+        '<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title><meta name="robots" content="noindex">'
+        '<script>var i=new URLSearchParams(location.search).get("id");'
+        'location.replace(/^[0-9]+$/.test(i||"")?"dossier/"+i+".html":"rediscovery.html");</script>'
+        '<meta http-equiv="refresh" content="1; url=rediscovery.html"></head>'
+        '<body><p>This page has moved to <a href="rediscovery.html">Discover</a>.</p></body></html>')
 
 # ---------------------------------------------------------------- analytics
 def gen_analytics():
     body = """
 <h1>Analytics</h1>
-<p class="lede">The shape of the institute's output, and how it lands in modern science.</p>
+<p class="lede">The shape of the institute's output, where its claims stand today, and how it is cited.</p>
 <div class="charts">
   <div class="chart"><h3>Publications per year</h3><canvas id="cYear"></canvas></div>
-  <div class="chart"><h3>Legacy-layer distribution</h3><canvas id="cLayer"></canvas></div>
+  <div class="chart"><h3>Where the papers’ claims stand today</h3><canvas id="cStand"></canvas></div>
+  <div class="chart"><h3>Every citing work, by era</h3><canvas id="cEra"></canvas></div>
+  <div class="chart"><h3>How current research uses the papers</h3><canvas id="cUse"></canvas></div>
   <div class="chart"><h3>Most prolific authors</h3><canvas id="cAuth"></canvas></div>
-  <div class="chart"><h3>Most-cited papers today</h3><canvas id="cCit"></canvas></div>
+  <div class="chart"><h3>Most cited in science since 1990</h3><canvas id="cCit"></canvas></div>
 </div>
-<p class="note muted">Legacy layers run from 1 (modern work still engages the same genus) to 4 (only the abstract logic of experiment survives) — see the <a href="legacy.html">Legacy</a> page for full definitions. Citation counts via OpenAlex.</p>
+<p class="note muted">Assessments from the September 2026 review — definitions on <a href="rediscovery.html#how">Discover</a>. Citing works via OpenAlex; “authors in this corpus” means citing works written by someone who also published in the series, so roughly the institute citing itself.</p>
 """
     page("analytics.html", "Analytics", "Analytics", body,
          head='<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>',
-         foot='<script src="data/catalog.js"></script><script src="assets/analytics.js"></script>')
+         foot='<script src="data/catalog.js"></script><script src="data/assess.js"></script><script src="assets/analytics.js"></script>')
 
 # ---------------------------------------------------------------- about
 def gen_about():
@@ -373,14 +441,16 @@ def gen_about():
 <h2>What the corpus is</h2>
 <p>From 1907 to 1925 the zoological department had its own section in Wilhelm Roux's <em>Archiv für Entwicklungsmechanik der Organismen</em>, the “Arbeiten der Zoologischen Abteilung der Biologischen Versuchsanstalt in Wien”; by 1930, when the institute's publications there stopped, <strong>175 articles</strong> had appeared — more than a tenth of the journal's output in those years. This platform contains that series <strong>in full</strong>: all {STATS['papers']} papers ({STATS['y0']}–{STATS['y1']}). It does not cover the botanical, physico-chemical or physiological departments' publications, which appeared elsewhere, nor Przibram's seven-volume <em>Experimental-Zoologie</em>.</p>
 <h2>What this platform does</h2>
-<p>It is an orientation layer for researchers who do not read German. It assembles, in one place: a searchable <strong>catalog</strong> of the series; full English <strong>translations</strong> with the original figures ({STATS['trans']} of {STATS['papers']}); the scanned German <strong>originals</strong>; the people behind the papers; and, on <strong>Discover</strong>, every paper read against the current literature — a summary of the state of the art, a verdict on whether the paper's claim held up, the modern works that actually cite it, and a ranked search for <em>sleeping beauties</em>: results the field has since confirmed without ever citing their Viennese origin.</p>
+<p>It is an orientation layer for researchers who do not read German. It assembles, in one place: a searchable <strong>catalog</strong> of the series; full English <strong>translations</strong> with the original figures ({STATS['trans']} of {STATS['papers']}); the scanned German <strong>originals</strong>; the people behind the papers; and, on <strong>Discover</strong>, every paper assessed against later work: where its own claim stands today, how current research uses it, what it still offers a researcher, and every work that cites it.</p>
+<h2>How the papers were assessed</h2>
+<p>In September 2026 every paper was re-read from its full translation, together with every work that cites it (OpenAlex) and a search of the related modern literature (Consensus), and placed under one written rubric. <em>Established</em> means later work confirmed this paper’s own result, or explicitly credits it for a result now standard; <em>consistent</em> means the phenomenon is accepted but this paper’s result was never re-tested; <em>revised</em> means it holds only in part or for different reasons; <em>unresolved</em> means a specific point was never settled, and the dossier says how it could be tested; <em>not supported</em> means later work contradicts it, it failed to replicate, or it rests on a rejected framework. Where the more modest label was defensible, it was chosen. Separately, each paper records how it is cited today — most are cited, if at all, as history or as an early instance of something now known. These readings replaced an earlier scheme of “sleeping beauties” and “legacy layers”, which mistook general acceptance of a phenomenon for confirmation of a particular paper.</p>
 <h2>How the translations were made</h2>
 <p>Each German paper was OCR-corrected against the scanned source and translated in full, preserving numbered points, tables, and figure legends. Historical species names are kept as in the original, with modern equivalents noted (e.g. <em>Triton</em> → <em>Triturus</em>). Where an author's claims were later disputed — Kammerer's above all — the translation renders them exactly as stated, and says so; it reports the claims, it does not endorse them.</p>
 <p><strong>On the plates.</strong> Text figures and plates are reproduced wherever they are present in the scanned original. In many cases they are not: the journal's lithographic plates were bound separately from the article offprints, so a paper's scan often ends with the plate <em>legends</em> but without the plates themselves. Those points are marked <em>“figure not reproduced”</em> in the running text, and the legends are always translated, so it is clear what is missing and where. Kammerer's 1909 monograph is the largest such case — its Plates XVI and XVII are absent from the source scan.</p>
 <h2>How to cite</h2>
 <p>Cite the original publication, noting the English translation and this platform as the access point, e.g.: <em>Author (Year), “Original German title,” Archiv für Entwicklungsmechanik …; English translation, Vienna Vivarium in English.</em></p>
 <h2>Sources, data &amp; limits</h2>
-<p>Citation data (who cites each paper today) derive from <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a>. The modern literature on each paper's questions was retrieved once, at build time, from the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API (June 2026); the state-of-the-art summaries, verdicts and sleeping-beauty index were written and computed from that retrieval and are a research aid, not a settled historiographic judgment. Portraits on the Authors page are public-domain images via Wikimedia Commons, credited in place. Corpus metadata, legacy layers and convergence axes are part of the project's ongoing analysis and should be treated as scholarly working material; corrections, collaborations and contributions are welcome — <a href="contribute.html">get involved</a>.</p>
+<p>Citation data (who cites each paper today) derive from <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a>. The modern literature on each paper's questions was retrieved once, at build time, from the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API (June 2026); it shows what later work says on each paper’s subject and does not cite the papers. The assessments are careful readings, not a consensus of the field, and a research aid rather than a settled historical judgment. Portraits on the Authors page are public-domain images via Wikimedia Commons, credited in place. Corpus metadata and the assessments are part of the project's ongoing analysis and should be treated as scholarly working material; corrections, collaborations and contributions are welcome — <a href="contribute.html">get involved</a>.</p>
 </div>"""
     page("about.html", "About", "About", body)
 
@@ -389,7 +459,7 @@ def gen_contribute():
     """The always-reachable 'Get involved' page: an on-site form posting to Formspree
     (FORM_ENDPOINT); until that is configured it falls back to the visitor's mail client."""
     ways = [
-        ("collab", "Research collaboration", "historians, biologists or philosophers of science who want to work with the corpus, co-author, or build on the Discover verdicts"),
+        ("collab", "Research collaboration", "historians, biologists or philosophers of science who want to work with the corpus, co-author, or build on the Discover assessments"),
         ("translate", "Translate or check a translation", "German readers who can review, correct or improve a rendering"),
         ("context", "Add context, citations or corrections", "point to modern work that cites a paper, fix a fact, or extend a biography"),
         ("archive", "Share archives, images or family material", "descendants, archivists and institutions holding letters, photographs or documents"),
@@ -427,10 +497,10 @@ def gen_contribute():
 </div>
 <aside class="caside">
   <div class="box"><h2>What helps most right now</h2><ul>
-    <li><b>Modern citations we missed.</b> If a paper here is cited or used in work we haven't found, tell us — the verdicts on Discover depend on it.</li>
+    <li><b>Modern citations we missed.</b> If a paper here is cited or used in work we haven't found, tell us — the assessments on Discover depend on it.</li>
     <li><b>The people.</b> Many of the {len(json.load(open(os.path.join(ROOT, "legacy_data", "authors.json"), encoding="utf-8"))["people"])} authors have only a line of biography. Dates, places, photographs, descendants.</li>
     <li><b>Translation checks.</b> Every rendering was made carefully, but a second German reader on any paper is welcome.</li>
-    <li><b>Collaboration.</b> The corpus, the verdicts and the citation data are open to joint research.</li>
+    <li><b>Collaboration.</b> The corpus, the assessments and the citation data are open to joint research.</li>
   </ul></div>
   <div class="box donate"><h2>Supporting the project</h2><p>The platform runs without institutional funding. If you or your organisation would like to support it — financially, with hosting, or by helping it find an institutional home — tick <em>Support the project</em> and we will be in touch.</p></div>
   <div class="box"><h2>Prefer email?</h2><p>Write to <a id="cmail" href="#">the project</a> directly.</p></div>
@@ -566,173 +636,8 @@ def gen_reader():
 <p id="rmiss" class="muted" style="display:none">Paper not found. <a href="catalog.html">Back to the catalog</a>.</p>
 """
     page("reader.html", "Reader", None, body,
-         foot='<script src="data/catalog.js"></script><script src="data/discidx.js"></script><script src="assets/reader.js"></script>')
+         foot='<script src="data/catalog.js"></script><script src="data/assess.js"></script><script src="assets/reader.js"></script>')
 
-# ---------------------------------------------------------------- legacy map
-REDISC_CSS = r"""
-.rstats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 8px}
-.rstats div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:13px 14px}
-.rstats b{display:block;font-family:Georgia,serif;font-size:27px;line-height:1}
-.rstats span{font-size:12px;color:var(--muted)}
-.qbanner{display:flex;gap:12px;align-items:flex-start;background:#f1ece1;border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:10px;padding:12px 15px;margin:14px 0;font-size:14px;line-height:1.5}
-.qbanner .qi{font-size:21px;color:var(--accent2);line-height:1}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0 6px}
-.chip{border:1px solid var(--rule);background:var(--card);border-radius:20px;padding:6px 13px;font-size:13.5px;color:var(--ink);cursor:pointer}
-.chip:hover{border-color:#cdc4b1}
-.chip.on{background:var(--accent);color:#fff;border-color:var(--accent)}
-.zchk{display:inline-flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted);margin:4px 0 10px;cursor:pointer}
-.gsec{margin:26px 0 8px}
-.ghead{border-bottom:2px solid var(--rule);padding-bottom:8px;margin-bottom:14px}
-.ghead h2{margin:.1em 0 .15em}
-.gmod{font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
-.gblurb{font-size:14.5px;color:#46423b;max-width:74ch;margin:0}
-.dcard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:16px 17px;margin:12px 0}
-.dcard.flash{box-shadow:0 0 0 3px rgba(122,59,46,.4);transition:box-shadow .3s}
-.dc-h{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}
-.dc-h h3{font-family:Georgia,serif;font-size:18px;line-height:1.25;margin:0 0 3px}
-.dc-de{font-style:italic;color:var(--muted);font-size:12.5px;margin:1px 0 4px}
-.dc-meta{font-size:13.5px;color:var(--muted);margin:0}
-.dc-meta .now{color:var(--accent2)}
-.dc-badges{display:flex;flex-direction:column;gap:5px;align-items:flex-end;flex-shrink:0;text-align:right}
-.lb{font-size:11px;padding:2px 7px;border-radius:5px;color:#fff;white-space:nowrap}
-.lb.l1{background:var(--l1)}.lb.l2{background:var(--l2)}.lb.l3{background:var(--l3)}.lb.l4{background:var(--l4)}
-.clab{font-size:11px;color:var(--muted);max-width:150px}
-.gap{margin:12px 0 10px}
-.gapbar{height:7px;background:#ece6da;border-radius:4px;overflow:hidden}
-.gapbar span{display:block;height:100%;background:linear-gradient(90deg,#9a6a1f,#7a3b2e)}
-.gaptxt{font-size:13px;color:#46423b;margin:6px 0 0}
-.gaptxt b{font-family:Georgia,serif}.gaptxt b.z{color:var(--accent)}
-.ztag{color:var(--accent);font-weight:600;font-size:12px}
-.dcard.zero{border-color:#d9b8ac;background:#fdf6f3}
-.whatsnew{font-size:14.5px;line-height:1.55;margin:10px 0 0}
-.openend{font-size:14px;line-height:1.55;margin:10px 0 0;background:#f3efe6;border-radius:8px;padding:9px 12px}
-.citetag{display:inline-block;margin-left:8px;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:600;padding:1px 7px;border-radius:10px;white-space:nowrap;vertical-align:middle}
-.citetag.wake{background:#1d6e56;color:#fff}
-.citetag.dorm{background:#e6ddcb;color:#6f6a61}
-.citesumm{font-size:13.5px;line-height:1.55;margin:8px 0 0;background:#eef2f5;border-left:3px solid var(--accent2);border-radius:6px;padding:8px 12px}
-.citesumm .lab{color:var(--accent2)}
-.lab{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-right:7px}
-.openend .lab{color:var(--accent2)}
-.dc-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:13px}
-.tlink{font-size:13px;border:1px solid var(--rule);border-radius:7px;padding:5px 10px;background:var(--paper);color:var(--ink)}
-.tlink:hover{border-color:#cdc4b1;text-decoration:none}
-.qedbtn{font-size:13px;border:1px solid var(--accent2);color:#fff;background:var(--accent2);border-radius:7px;padding:5px 11px;cursor:pointer;text-decoration:none;display:inline-block}
-a.qedbtn{margin-left:6px}
-.dc-links .qedbtn.ghost{margin-left:auto}
-.qedbtn:hover{background:#2b4d68;text-decoration:none}
-.qedbtn.ghost{background:transparent;color:var(--accent2)}
-.qedbtn.ghost:hover{background:#eef2f5}
-.qedout{display:none;margin-top:11px;font-size:13.5px;line-height:1.5;border-left:3px solid var(--accent2);padding:9px 12px;background:#eef2f5;border-radius:6px}
-.qpend b{color:var(--accent2)}
-.cons .consq{margin:0 0 2px;font-size:13.5px}
-.cons .consmeta{margin:0 0 10px;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.02em}
-.conspaper{padding:8px 0;border-top:1px solid #dde4ea}
-.conspaper:first-of-type{border-top:0}
-.conslink{font-weight:600;font-size:13.5px;line-height:1.35;display:inline-block}
-.consmeta2{font-size:11.5px;color:var(--muted);margin:2px 0 3px}
-.ptag{display:inline-block;background:#fff;border:1px solid var(--rule);border-radius:5px;padding:0 6px;margin-left:5px;font-size:10.5px;text-transform:capitalize}
-.constake{margin:3px 0 0;font-size:13px;line-height:1.5;color:#2f2c28}
-.consfoot{margin:9px 0 0;font-size:11.5px;color:var(--muted);font-style:italic}
-.ubh{margin-top:40px}
-.ubintro{max-width:74ch}
-.ubcard{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:17px 18px;margin:13px 0}
-.ubcard h3{font-family:Georgia,serif;font-size:19px;margin:0 0 6px}
-.ubq{font-size:15px;color:#3c3833;font-weight:500;margin:0 0 10px}
-.ubquote{margin:0;border-left:3px solid var(--accent);padding:4px 0 4px 14px;font-style:italic;color:#46423b;font-size:14px}
-.ubquote cite{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:6px}
-.ubquote .conf{color:#9a6a1f}
-.ubquote .de{display:none;margin-top:8px;color:#5a554c}
-.degerman{display:inline-block;margin-left:8px;font-size:11px;border:1px solid var(--rule);border-radius:5px;background:var(--paper);color:var(--muted);padding:1px 7px;cursor:pointer;font-style:normal}
-.ubmod{font-size:14px;line-height:1.55;margin:11px 0 0}
-.ublinks{font-size:13px;color:var(--muted);margin:10px 0 0}
-.pchip{display:inline-block;border:1px solid var(--rule);border-radius:14px;padding:2px 9px;margin:2px 3px 0 0;font-size:12.5px;background:var(--paper)}
-.obit{font-size:13px;border-top:1px solid var(--rule);margin-top:30px;padding-top:14px}
-@media(max-width:680px){.rstats{grid-template-columns:repeat(2,1fr)}.dc-h{flex-direction:column}.dc-badges{flex-direction:row;align-items:flex-start;text-align:left}.qedbtn{margin-left:0}}
-"""
-
-REDISC_JS = r"""
-(function(){
-var R=window.REDISCOVERY, MG=R.stats.maxgap||63;
-function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-
-function links(c){var L=[];
-  if(c.read)L.push('<a class="tlink" href="'+c.read+'">Read translation</a>');
-  if(c.pdf)L.push('<a class="tlink" href="pdfs/'+encodeURIComponent(c.pdf)+'" download>German PDF</a>');
-  L.push('<a class="tlink" href="legacy.html">Who cites it ↗</a>');
-  if(c.doi)L.push('<a class="tlink" href="https://doi.org/'+c.doi+'" target="_blank" rel="noopener">DOI ↗</a>');
-  return L.join('');}
-function cardHTML(pid){var c=R.cards[pid]; if(!c)return '';
-  var pct=Math.max(4,Math.round(c.gap/MG*100)), zero=c.citations===0;
-  var now=(c.modern&&c.modern!=='—'&&c.modern!==c.organism)?' <span class="now">→ today <em>'+esc(c.modern)+'</em></span>':'';
-  return '<article id="card-'+pid+'" class="dcard'+(zero?' zero':'')+'" data-cit="'+c.citations+'">'
-   +'<div class="dc-h"><div><h3>'+esc(c.title)+'</h3>'
-   +((c.title_de&&c.title_de!==c.title)?'<p class="dc-de">('+esc(c.title_de)+')</p>':'')
-   +'<p class="dc-meta">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>':'')+now+'</p></div>'
-   +'<div class="dc-badges">'+(c.layer?'<span class="lb l'+c.layer+'">Layer '+c.layer+'</span>':'')
-   +(c.cluster?'<span class="clab">'+esc(c.cluster)+'</span>':'')+'</div></div>'
-   +'<div class="gap"><div class="gapbar"><span style="width:'+pct+'%"></span></div>'
-   +'<p class="gaptxt"><b>'+c.gap+'</b> modern works study this animal · <b class="'+(zero?'z':'')+'">'+c.citations+'</b> cite the original'
-   +(zero?' <span class="ztag">none yet</span>':'')+'</p></div>'
-   +'<p class="whatsnew"><span class="lab">What’s new</span>'+esc(c.whats_new)+'</p>'
-   +'<div class="openend"><span class="lab">Still open today?</span>'+esc(c.open_end)
-   +(c.ncite?'<span class="citetag'+(c.recent?' wake':' dorm')+'">'+(c.recent?'re-cited '+c.lastcite+' · waking':'last cited '+c.lastcite+' · dormant')+'</span>':'<span class="citetag dorm">never cited</span>')
-   +'</div>'
-   +(c.cite_summary?'<div class="citesumm"><span class="lab">How it’s cited today</span>'+esc(c.cite_summary)+'</div>':'')
-   +'<div class="dc-links">'+links(c)
-   +(c.consensus?'<button class="qedbtn ghost" onclick="qedAnalyze('+pid+')">☾ Quick peek</button>':'')
-   +'<a class="qedbtn" href="dossier/'+pid+'.html">☾ Deep dive'+(c.consensus?(' · '+c.consensus.n+' papers'):'')+' →</a></div>'
-   +'<div class="qedout" id="qed-'+pid+'"></div></article>';}
-function groupHTML(g){return '<section class="gsec" data-k="'+g.key+'"><div class="ghead"><h2>'+esc(g.title)+'</h2>'
-   +'<p class="gmod">'+esc(g.modern)+'</p><p class="gblurb">'+esc(g.blurb)+'</p></div>'
-   +g.papers.slice().sort(function(a,b){return (R.cards[b]?R.cards[b].gap:0)-(R.cards[a]?R.cards[a].gap:0);}).map(cardHTML).join('')+'</section>';}
-
-document.getElementById('chips').innerHTML='<button class="chip on" data-k="all">All ‹'+R.stats.targets+'›</button>'
-  +R.groups.map(function(g){return '<button class="chip" data-k="'+g.key+'">'+esc(g.title)+' ‹'+g.papers.length+'›</button>';}).join('');
-document.getElementById('groups').innerHTML=R.groups.map(groupHTML).join('');
-
-document.getElementById('unfinished').innerHTML=R.unfinished.map(function(u){
-  var ch=(u.papers||[]).map(function(id){var c=R.cards[id];return c?'<a class="pchip" href="#card-'+id+'" onclick="return jump('+id+')">'+esc(c.author)+' '+c.year+'</a>':'';}).join('');
-  return '<section class="ubcard"><h3>'+esc(u.title)+'</h3><p class="ubq">'+esc(u.question)+'</p>'
-   +'<blockquote class="ubquote">“'+esc(u.quote_en)+'”'
-   +'<button class="degerman" onclick="var d=this.parentNode.querySelector(\'.de\');d.style.display=d.style.display===\'block\'?\'none\':\'block\';">original German</button>'
-   +'<span class="de">„'+esc(u.quote_de)+'“</span>'
-   +'<cite>— '+esc(u.source)+' · <span class="conf">'+esc(u.confidence)+'</span></cite></blockquote>'
-   +'<p class="ubmod"><span class="lab">Where it went</span>'+esc(u.modern)+'</p>'
-   +(ch?'<p class="ublinks">In the walk-through: '+ch+'</p>':'')+'</section>';
-}).join('');
-
-if(R.obituary){document.querySelector('.obit').innerHTML='A 40th paper, '+esc(R.obituary.author)+' ('+R.obituary.year+'), “'+esc(R.obituary.title)+',” was flagged by the same algorithm but is an obituary (of the BVA researcher Franz Megusar), not a discovery — so it is left out of the walk-through above.';}
-
-var zchk=document.getElementById('zonly');
-function applyZero(){var on=zchk.checked;
-  document.querySelectorAll('.dcard').forEach(function(c){c.style.display=(on&&c.dataset.cit!=='0')?'none':'';});}
-function setFilter(k){
-  document.querySelectorAll('#chips .chip').forEach(function(b){b.classList.toggle('on',b.dataset.k===k);});
-  document.querySelectorAll('.gsec').forEach(function(s){s.style.display=(k==='all'||s.dataset.k===k)?'':'none';});
-  applyZero();}
-document.getElementById('chips').addEventListener('click',function(e){var b=e.target.closest('.chip');if(b)setFilter(b.dataset.k);});
-zchk.addEventListener('change',applyZero);
-
-window.jump=function(id){setFilter('all');zchk.checked=false;applyZero();var el=document.getElementById('card-'+id);
-  if(el){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('flash');setTimeout(function(){el.classList.remove('flash');},1600);}return false;};
-
-window.qedAnalyze=function(id){var out=document.getElementById('qed-'+id),c=R.cards[id];
-  if(out.style.display==='block'){out.style.display='none';return;}
-  out.style.display='block';
-  var cn=c.consensus;
-  if(!cn||!cn.papers||!cn.papers.length){out.innerHTML='<div class="qpend">No Consensus results recorded for this question.</div>';return;}
-  var h='<div class="cons"><p class="consq">Question put to <b>Consensus</b>: <em>“'+esc(cn.query)+'”</em></p>'
-    +'<p class="consmeta">'+cn.n+' papers found · '+cn.recent+' published since 2015'+(cn.latest?(' · most recent '+cn.latest):'')+'</p>';
-  h+=cn.papers.map(function(p){
-    var meta=[p.year,(p.author?(esc(p.author)+(p.others>0?(' +'+p.others):'')):''),(p.journal?esc(p.journal):'')].filter(Boolean).join(' · ');
-    var tags=(p.study?'<span class="ptag">'+esc(p.study)+'</span>':'')+((p.cites!=null)?'<span class="ptag">'+p.cites+' cites</span>':'');
-    return '<div class="conspaper"><a class="conslink" href="'+p.url+'" target="_blank" rel="noopener">'+esc(p.title)+' ↗</a>'
-      +'<div class="consmeta2">'+meta+' '+tags+'</div>'
-      +(p.takeaway?'<p class="constake">'+esc(p.takeaway)+'</p>':'')+'</div>';}).join('');
-  h+='<p class="consfoot">Modern literature retrieved via the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API for this paper’s open question. Takeaways are Consensus’s one-line summaries of each citing study.</p></div>';
-  out.innerHTML=h;};
-})();
-"""
 
 
 def gen_authors():
@@ -836,190 +741,57 @@ AUTHORS_CSS = r"""
 """
 
 
-def gen_rediscovery():
-    """Interactive walk-through of the 40 rediscovery targets, grouped by living model
-    system, with per-paper open ends, a monograph-mined 'unfinished business' synthesis,
-    and a (placeholder) Q.E.D. Science analysis button wired for later activation."""
-    rp = os.path.join(ROOT, "legacy_data", "rediscovery.json")
-    R = json.load(open(rp, encoding="utf-8"))
-    cat_by_id = {c["id"]: c for c in catalog}
-    read_for = {t["id"]: t["page_slug"] for t in translations}
-    org_ov = {int(k): v for k, v in R.get("org_override", {}).items()}
-    mpath = os.path.join(ROOT, "legacy_data", "methodology.json")
-    meth = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else {}
-    _sp = os.path.join(ROOT, "legacy_data", "citation_summaries.json")
-    SUMM = json.load(open(_sp, encoding="utf-8")) if os.path.exists(_sp) else {}
-    _ep = os.path.join(ROOT, "legacy_data", "citations_enriched.json")
-    ENR = json.load(open(_ep, encoding="utf-8")) if os.path.exists(_ep) else {}
-    _consp = os.path.join(ROOT, "legacy_data", "consensus.json")
-    CONS = json.load(open(_consp, encoding="utf-8")) if os.path.exists(_consp) else {}
-
-    def consensus_for(pid):
-        cn = CONS.get(str(pid))
-        if not cn or not cn.get("results"):
-            return None
-        rs = [r for r in cn["results"] if r.get("title")][:5]
-        if not rs:
-            return None
-        yrs = [r.get("year") for r in rs if r.get("year")]
-        return dict(
-            query=cn.get("query"), n=cn.get("n_results", len(rs)),
-            latest=(max(yrs) if yrs else None),
-            recent=sum(1 for y in yrs if y and y >= 2015),
-            papers=[dict(title=r.get("title"), author=r.get("author"),
-                         others=max(0, (r.get("n_authors") or 1) - 1), year=r.get("year"),
-                         journal=r.get("journal"), study=r.get("study_type"),
-                         cites=r.get("citations"), takeaway=r.get("takeaway"), url=r.get("url"))
-                    for r in rs])
-
-    def citeyears(pid):
-        ys = sorted(w.get("year") for w in ENR.get(str(pid), {}).get("works", []) if w.get("year"))
-        return ys
-
-    def card(pid):
-        c = cat_by_id[pid]
-        cur = R["cards"][str(pid)]
-        org, modern = org_ov.get(pid, (c.get("organism"), c.get("modern")))
-        ys = citeyears(pid)
-        last = ys[-1] if ys else None
-        return dict(
-            cite_summary=SUMM.get(str(pid)),
-            lastcite=last, recent=bool(last and last >= 2010), ncite=len(ys),
-            id=pid, title=(c.get("title_en") or c.get("title") or "").replace("�", "ä"),
-            title_de=(c.get("title") or "").replace("�", "ä"),
-            author=c.get("author"), year=c.get("year"),
-            organism=org, modern=modern, taxon=c.get("taxon"),
-            cluster=(meth.get(str(pid), {}) or {}).get("method", ""), layer=c.get("layer"),
-            citations=c.get("citations", 0), gap=c.get("n_parallels", 0),
-            whats_new=cur[0], open_end=cur[1],
-            read=("papers/" + read_for[pid] + ".html") if pid in read_for else None,
-            pdf=c.get("pdf"), doi=c.get("doi"), consensus=consensus_for(pid))
-
-    cards = {}
-    for g in R["groups"]:
-        for pid in g["papers"]:
-            cards[str(pid)] = card(pid)
-    maxgap = max((c["gap"] for c in cards.values()), default=63)
-    zero = sum(1 for c in cards.values() if c["citations"] == 0)
-    cons_total = sum(c["consensus"]["n"] for c in cards.values() if c.get("consensus"))
-    cons_npapers = sum(1 for c in cards.values() if c.get("consensus"))
-    ob = cat_by_id.get(R.get("obituary"))
-    obit = dict(id=ob["id"], author=ob["author"], year=ob["year"],
-                title=(ob.get("title") or "").replace("�", "ä")) if ob else None
-    data = dict(intro=R["intro"], qed=R["qed"], groups=R["groups"], cards=cards,
-                unfinished=R["unfinished"], obituary=obit,
-                stats=dict(targets=len(cards), systems=len(R["groups"]),
-                           zero=zero, programs=len(R["unfinished"]), maxgap=maxgap,
-                           cons_total=cons_total, cons_npapers=cons_npapers))
-    os.makedirs(DATA, exist_ok=True)
-    open(os.path.join(DATA, "rediscovery.js"), "w", encoding="utf-8").write(
-        "window.REDISCOVERY=" + json.dumps(data, ensure_ascii=False) + ";")
-
-    body = ('<p class="kicker">Rediscovery targets</p>'
-        '<h1>Forty discoveries waiting to be re-cited</h1>'
-        '<p class="lede">' + R["intro"] + '</p>'
-        '<div class="rstats">'
-        '<div><b>' + str(len(cards)) + '</b><span>rediscovery targets</span></div>'
-        '<div><b>' + str(len(R["groups"])) + '</b><span>living model systems</span></div>'
-        '<div><b>' + str(zero) + '</b><span>with zero modern citations</span></div>'
-        '<div><b>' + str(len(R["unfinished"])) + '</b><span>unfinished programs</span></div>'
-        '<div><b>' + str(cons_total) + '</b><span>modern papers via Consensus</span></div>'
-        '</div>'
-        '<div class="qbanner"><span class="qi">☾</span><div><b>Is it still open — or a sleeping beauty?</b> '
-        'For each paper, the “Still open today?” line asks whether the question it touches remains unresolved, or '
-        'whether the paper is a <em>sleeping beauty</em> — a forgotten early answer to something science is still asking. '
-        'A green <span class="citetag wake" style="margin:0">re-cited · waking</span> tag means modern work (2010 on) has begun citing it again; a grey '
-        '<span class="citetag dorm" style="margin:0">dormant</span> tag means it has gone quiet. '
-        'Now wired live: the <b>☾ What today\'s research says</b> button on each card opens the modern literature on that '
-        'paper\'s open question — <b>' + str(cons_total) + ' papers</b> across the ' + str(cons_npapers) + ' targets, retrieved from the <b>Consensus</b> API with each study\'s one-line takeaway.</div></div>'
-        '<p class="muted" style="font-size:13.5px;line-height:1.55;max-width:76ch;margin:8px 0 0">On each card the bar reads <b>how many modern works study this animal</b> against <b>how many cite the BVA original</b> — the wider the gap, the more orphaned the work. Where modern science <em>does</em> engage a paper, a “How it’s cited today” note summarises that reception; <b>Who cites it ↗</b> opens the full, paper-by-paper citation list on the Legacy page.</p>'
-        '<div id="chips" class="chips"></div>'
-        '<label class="zchk"><input type="checkbox" id="zonly"> Show only the targets nobody cites yet ('
-        + str(zero) + ')</label>'
-        '<div id="groups"></div>'
-        '<h2 class="ubh">The institute’s unfinished business</h2>'
-        '<p class="muted ubintro">Beyond the single papers, the Vivarium opened whole research programs it never '
-        'closed. These six are drawn from Przibram’s own monographs — each with the original passage and a note '
-        'on where the question went.</p>'
-        '<div id="unfinished"></div>'
-        '<section style="margin-top:34px;padding:14px 16px;border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:10px;background:#f1ece1">'
-        '<h3 style="margin:.1em 0 .4em">Powered by Consensus</h3>'
-        '<p class="muted" style="font-size:13.5px;line-height:1.6;max-width:80ch;margin:0">'
-        'Each paper&rsquo;s open question was put to the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> '
-        'developer API (<code>GET /v1/quick_search</code>), which returns ranked, peer-reviewed papers with a one-line takeaway for each. '
-        'The results were fetched once <b>at build time</b> and baked into this page, so there is no per-visitor cost and the API key '
-        'never sits in this static site&rsquo;s JavaScript. The takeaways shown are Consensus&rsquo;s own summaries of each study; '
-        'follow any title to read it on Consensus. Verdicts reflect the literature as retrieved in June 2026 and are a research aid, not a settled answer.</p></section>'
-        '<p class="obit muted"></p>')
-
-    page("rediscovery.html", "Rediscover", "Rediscover", body,
-         head="<style>" + REDISC_CSS + "</style>",
-         foot='<script src="data/summaries.js"></script><script src="data/rediscovery.js"></script><script>' + REDISC_JS + '</script>')
-    print("rediscovery.html:", len(cards), "cards |", len(R["groups"]), "groups |",
-          len(R["unfinished"]), "programs | zero-cite:", zero)
-
-
 DISCOVER_CSS = r"""
-.dlede{max-width:78ch;font-size:16.5px;line-height:1.6}
-.ledenote{display:block;margin-top:9px;font-size:14px;color:var(--muted)}
-.sbwrap{margin:22px 0 8px;background:linear-gradient(135deg,#1d2733,#33485c);border-radius:16px;padding:18px 20px 20px;color:#f3efe6;position:relative;overflow:hidden}
-.sbwrap::after{content:"☾";position:absolute;right:-10px;top:-26px;font-size:150px;opacity:.07}
-.sbhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;position:relative;z-index:2}
-.sbeyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cdb98a;font-weight:600}
-.sbnav button{background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:8px;width:34px;height:30px;font-size:15px;cursor:pointer;margin-left:6px}
-.sbnav button:hover{background:rgba(255,255,255,.25)}
-.carousel{position:relative;z-index:2;min-height:166px}
-.cslide{display:none;animation:cfade .6s ease}
-.cslide.on{display:block}
-@keyframes cfade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.cverdict{display:inline-block;background:#cdb98a;color:#26313d;font-size:11.5px;font-weight:700;letter-spacing:.03em;padding:3px 11px;border-radius:20px}
-.cslide h3{font-family:Georgia,serif;font-size:23px;margin:9px 0 3px;color:#fff;line-height:1.2}
-.cmeta{font-size:13px;color:#b9c6d3;margin:0 0 8px}
-.cmeta em{color:#e7dcc4;font-style:normal}
-.ctoday{font-size:14.5px;line-height:1.55;color:#eee;max-width:80ch;margin:0 0 12px}
-.ctoday b{color:#cdb98a;font-weight:700}
-.cgo{display:inline-block;background:#fff;color:#26313d;font-weight:600;font-size:13px;padding:6px 13px;border-radius:8px;text-decoration:none}
-.cgo:hover{background:#cdb98a;text-decoration:none}
-.sbdots{display:flex;flex-wrap:wrap;gap:5px;margin-top:13px;position:relative;z-index:2}
-.sbdots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer}
-.sbdots i.on{background:#cdb98a;transform:scale(1.3)}
-.explorer{margin:26px 0 8px}
+.dlede{max-width:80ch;font-size:16.5px;line-height:1.6}
+.entries{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0 10px}
+.entry{text-align:left;font:inherit;cursor:pointer;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 15px 13px;
+  display:flex;flex-direction:column;gap:4px;color:var(--ink);transition:border-color .2s,box-shadow .2s,transform .2s}
+.entry:hover{border-color:#cfc5b1;box-shadow:0 6px 18px rgba(40,30,10,.08);transform:translateY(-1px)}
+.entry.on{border-color:var(--accent2);box-shadow:inset 0 0 0 1px var(--accent2)}
+.entry b{font-family:Georgia,serif;font-size:27px;line-height:1;color:var(--accent2)}
+.entry .et{font-weight:600;font-size:15px;line-height:1.3}
+.entry .ed{font-size:12.8px;line-height:1.45;color:var(--muted)}
+.howto{margin:14px 0 6px;background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:4px 16px}
+.howto summary{cursor:pointer;font-weight:600;font-size:14.5px;padding:10px 0;color:var(--accent2)}
+.howto h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:14px 0 6px}
+.deflist{list-style:none;padding:0;margin:0 0 6px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:7px 18px}
+.deflist li{font-size:13.2px;line-height:1.5;color:#3c3833}
+.deflist li .stc,.deflist li .usec{margin-right:6px}
+.howto p{font-size:13.6px;line-height:1.6;color:#3c3833;max-width:92ch}
+.explorer{margin:20px 0 8px}
 .search{width:100%;font-size:15px;padding:11px 14px;border:1px solid var(--rule);border-radius:10px;background:var(--card);font-family:inherit}
-.exrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:11px 0}
+.chipset{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:10px 0 0}
+.chipset .lbl{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-right:4px;min-width:118px}
+.fchip{font:inherit;font-size:12.5px;border:1px solid var(--rule);background:var(--card);border-radius:20px;padding:4px 11px;cursor:pointer;color:var(--ink)}
+.fchip .cc{opacity:.55;font-size:11px;margin-left:4px}
+.fchip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.exrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0 4px}
 .exrow select{font-size:13.5px;padding:7px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--card);font-family:inherit}
-.count{font-size:13px;color:var(--muted);margin-left:auto}
-.chips{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}
-.chip{font-size:12.5px;border:1px solid var(--rule);background:var(--card);border-radius:20px;padding:5px 13px;cursor:pointer;color:var(--ink)}
-.chip.on{background:var(--accent2);color:#fff;border-color:var(--accent2)}
-.chip .cc{opacity:.6;font-size:11px;margin-left:3px}
-.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px;margin-top:6px}
-.dcardx{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:15px 16px;display:flex;flex-direction:column}
-.dcardx .stat{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:2px 9px;border-radius:20px;align-self:flex-start;margin-bottom:7px}
-.st-sb{background:#33485c;color:#f3efe6}.st-qc{background:#2e6f6a;color:#fff}.st-ll{background:#1d6e56;color:#fff}.st-st{background:#9a6a1f;color:#fff}.st-cl{background:#8a3a3a;color:#fff}.st-rr{background:#9a9387;color:#fff}
-.csbi{display:inline-block;margin-left:8px;background:rgba(255,255,255,.14);color:#e7dcc4;font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 10px;border-radius:20px}
-.taxnote{margin:18px 0 4px;background:var(--card);border:1px solid var(--rule);border-left:4px solid #33485c;border-radius:10px;padding:13px 16px}
-.taxnote p{font-size:13.8px;line-height:1.6;margin:0 0 9px;max-width:84ch;color:#3c3833}
-.taxleg{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:6px 16px}
-.taxleg li{font-size:12.5px;color:var(--muted);line-height:1.5}
-.taxleg .stat{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-right:5px}
-.synbadge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:1px 8px;margin-left:6px}
-.dcardx h3{font-family:Georgia,serif;font-size:17px;margin:0 0 3px;line-height:1.25}
-.dcardx .cm{font-size:12.5px;color:var(--muted);margin:0 0 8px}
-.dcardx .cm em{font-style:italic}
-.dcardx .ck{font-size:13px;line-height:1.5;color:#3c3833;margin:0 0 10px;flex:1}
-.dcardx .cn{font-size:11.5px;color:var(--accent2);font-weight:600;margin:0 0 9px}
-.dcardx .lk{display:flex;gap:8px;flex-wrap:wrap}
-.dcardx .lk a{font-size:12.5px;border:1px solid var(--rule);border-radius:7px;padding:4px 10px;text-decoration:none;color:var(--ink)}
-.dcardx .lk a.go{background:var(--accent2);color:#fff;border-color:var(--accent2)}
-.dcardx .lk a:hover{border-color:#cdc4b1}
-@media(max-width:680px){.rstats{grid-template-columns:repeat(2,1fr)}.dgrid{grid-template-columns:1fr}}
+.exrow .count{font-size:13px;color:var(--muted);margin-left:auto}
+.exrow .reset{font-size:13px;background:none;border:0;color:var(--accent2);cursor:pointer;padding:0}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-top:8px}
+.dc{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.dc .dtop{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.dc h3{font-family:Georgia,serif;font-size:17px;margin:2px 0 0;line-height:1.28}
+.dc h3 a{color:var(--ink)}
+.dc .dm{font-size:12.5px;color:var(--muted);margin:0}
+.dc .dm em{font-style:italic}
+.dc .dv{font-size:14px;font-weight:600;line-height:1.4;margin:2px 0 0;color:#2f2c28}
+.dc .dw{font-size:13.2px;line-height:1.55;color:#4a463f;margin:0}
+.dc .dop{font-size:13px;line-height:1.5;margin:0;padding:7px 10px;background:#eef2f5;border-radius:8px;color:#2f3e4c}
+.dc .doff{display:flex;flex-wrap:wrap;gap:5px}
+.dc .dlk{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.dc .dlk a{font-size:12.5px;border:1px solid var(--rule);border-radius:7px;padding:4px 10px;text-decoration:none;color:var(--ink)}
+.dc .dlk a.go{background:var(--accent2);color:#fff;border-color:var(--accent2)}
+.dc mark.hlt{font-weight:600}
+@media(max-width:860px){.entries{grid-template-columns:repeat(2,1fr)}.chipset .lbl{min-width:0;width:100%}}
+@media(max-width:560px){.entries{grid-template-columns:1fr}.dgrid{grid-template-columns:1fr}}
 """
 
 DISCOVER_JS = r"""
 (function(){
 var D=window.DISCOVER, P=D.papers;
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-// --- search-term highlighting: applied to ALREADY-ESCAPED html, so it can never break markup ---
 function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
 function hl(escaped,term){
   if(!term)return escaped;
@@ -1029,295 +801,288 @@ function hl(escaped,term){
   var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
   return escaped.replace(re,'<mark class="hlt">$1</mark>');
 }
-var SC={'Sleeping Beauty':'st-sb','Quiet Classic':'st-qc','Living Legacy':'st-ll','Stirring':'st-st','Contested Legacy':'st-cl','Rightly Rested':'st-rr'};
-// ---------- sleeping-beauty carousel ----------
-var sb=D.sleeping, ci=0, timer=null, playing=true;
-function slide(pid){var p=P[pid];var now=(p.org&&p.org!=='—')?('<span class="cmeta"> </span>'):'';
-  var today=p.ft?('<p class="ctoday"><b>Today'+(p.fy?(' ('+p.fy+')'):'')+':</b> '+esc(p.ft)+'</p>'):(p.hook?('<p class="ctoday"><b>Today:</b> '+esc(p.hook)+'</p>'):'');
-  return '<div class="cslide on"><span class="cverdict">'+esc(p.v||'Sleeping Beauty')+'</span><span class="csbi">☾ Sleeping-Beauty Index '+(p.sbi!=null?p.sbi:'—')+'</span>'
-   +'<h3>'+esc(p.t)+'</h3><p class="cmeta">'+esc(p.au||'')+' · '+p.y+(p.org&&p.org!=='—'?(' · <em>'+esc(p.org)+'</em>'):'')+' · cited '+p.c+'× today · '+p.n+' modern papers</p>'
-   +today+'<a class="cgo" href="dossier/'+pid+'.html">Open the full dossier →</a></div>';}
-function showCar(i){ci=(i+sb.length)%sb.length;document.getElementById('carousel').innerHTML=slide(sb[ci]);
-  var dots=document.getElementById('sbdots').children;for(var k=0;k<dots.length;k++)dots[k].className=(k===ci?'on':'');}
-function nextCar(){showCar(ci+1);}
-function buildDots(){document.getElementById('sbdots').innerHTML=sb.map(function(_,k){return '<i data-k="'+k+'"></i>';}).join('');}
-function play(){if(timer)clearInterval(timer);timer=setInterval(nextCar,5200);playing=true;document.getElementById('sbtoggle').textContent='⏸';}
-function pause(){if(timer)clearInterval(timer);timer=null;playing=false;document.getElementById('sbtoggle').textContent='▶';}
-buildDots();showCar(0);play();
-document.getElementById('sbNext').onclick=function(){nextCar();play();};
-document.getElementById('sbPrev').onclick=function(){showCar(ci-1);play();};
-document.getElementById('sbtoggle').onclick=function(){playing?pause():play();};
-document.getElementById('sbdots').onclick=function(e){var i=e.target.getAttribute('data-k');if(i!==null){showCar(+i);play();}};
-var cw=document.querySelector('.sbwrap');cw.onmouseenter=pause;cw.onmouseleave=function(){if(!playing)play();};
-// ---------- explorer ----------
-var st={q:'',status:'all',tax:'all',sort:'modern'};
-function chips(){var counts={};D.order.forEach(function(pid){var s=P[pid].st;counts[s]=(counts[s]||0)+1;});
-  var h='<button class="chip on" data-s="all">All ‹'+D.order.length+'›</button>';
-  D.statuses.forEach(function(s){if(counts[s])h+='<button class="chip" data-s="'+esc(s)+'">'+esc(s)+'<span class="cc">'+counts[s]+'</span></button>';});
-  document.getElementById('statuschips').innerHTML=h;}
-function card(pid){var p=P[pid];var Q=st.q.trim();
-  var lk='<a class="go" href="dossier/'+pid+'.html">Deep dive →</a>';
-  if(p.read)lk+='<a href="papers/'+p.read+'.html">Translation</a>';
-  lk+='<a href="reader.html?id='+pid+'">German</a>';
-  lk+='<a href="catalog.html?id='+pid+'">Catalog ↗</a>';
-  return '<article class="dcardx"><span class="stat '+(SC[p.st]||'st-dm')+'">'+esc(p.st)+'</span>'+(p.syn?'<span class="synbadge">✦ read &amp; compared</span>':'')
-   +'<h3>'+hl(esc(p.t),Q)+'</h3><p class="cm">'+hl(esc(p.au||''),Q)+' · '+p.y+(p.org&&p.org!=='—'?(' · <em>'+hl(esc(p.org),Q)+'</em>'):'')+'</p>'
-   +(p.hook?'<p class="ck">'+esc(p.hook)+'</p>':'<p class="ck"></p>')
-   +'<p class="cn">'+p.n+' modern papers'+(p.l?(' · latest '+p.l):'')+' · cited '+p.c+'× today'+(p.sb?(' · <b>☾ SBI '+p.sbi+'</b>'):'')+'</p>'
-   +'<div class="lk">'+lk+'</div></article>';}
-function render(){var q=st.q.toLowerCase();
-  var list=D.order.filter(function(pid){var p=P[pid];
-    if(st.status!=='all'&&p.st!==st.status)return false;
-    if(st.tax!=='all'&&p.tax!==st.tax)return false;
-    if(q){var hay=(p.t+' '+(p.au||'')+' '+(p.org||'')+' '+(p.de||'')).toLowerCase();if(hay.indexOf(q)<0)return false;}
-    return true;});
-  if(st.sort==='modern')list.sort(function(a,b){return P[b].n-P[a].n;});
-  else if(st.sort==='year')list.sort(function(a,b){return P[b].y-P[a].y;});
-  else if(st.sort==='cites')list.sort(function(a,b){return P[b].c-P[a].c;});
-  else if(st.sort==='recent')list.sort(function(a,b){return (P[b].l||0)-(P[a].l||0);});
-  else if(st.sort==='sbi')list.sort(function(a,b){return (P[b].sbi||0)-(P[a].sbi||0);});
-  document.getElementById('grid').innerHTML=list.map(card).join('');
-  document.getElementById('count').textContent=list.length+' of '+D.order.length+' papers';}
-chips();
-var tax=document.getElementById('taxsel');tax.innerHTML='<option value="all">All groups</option>'+D.taxa.map(function(t){return '<option value="'+esc(t)+'">'+esc(t)+'</option>';}).join('');
-document.getElementById('statuschips').onclick=function(e){var b=e.target.closest('.chip');if(!b)return;st.status=b.getAttribute('data-s');
-  document.querySelectorAll('#statuschips .chip').forEach(function(x){x.classList.toggle('on',x===b);});render();};
-document.getElementById('q').oninput=function(e){st.q=e.target.value;render();};
-tax.onchange=function(e){st.tax=e.target.value;render();};
+var ST={},US={},OF={},PG={};
+D.standing.forEach(function(x){ST[x[0]]=x;});D.use.forEach(function(x){US[x[0]]=x;});
+D.offers.forEach(function(x){OF[x[0]]=x;});D.progs.forEach(function(x){PG[x[0]]=x;});
+var ORDER={};D.standing.forEach(function(x,i){ORDER[x[0]]=i;});
+var ENTRY={open:function(p){return !!p.op;},hold:function(p){return p.s==='established'||p.s==='consistent';},
+  fail:function(p){return p.s==='not_supported';},data:function(p){return p.o.indexOf('data')>=0;}};
+var st={q:'',s:'all',u:'all',o:'all',p:'all',e:null,sort:'year'};
+function useText(p){var u=US[p.u],t=u[1];
+  if(p.u==='precedent')t+=' · '+p.c[3]+' since 1990';
+  if(p.u==='historians')t+=' · '+p.c[4]+' since 1990';
+  return t;}
+function card(id){var p=P[id],Q=st.q.trim();
+  var offs=p.o.map(function(o){return '<span class="oft oft-'+o+'">'+esc(OF[o][1])+'</span>';}).join('');
+  var lk='<a class="go" href="dossier/'+id+'.html">Dossier →</a>';
+  if(p.rd)lk+='<a href="papers/'+p.rd+'.html">English</a>';
+  lk+='<a href="reader.html?id='+id+'">German</a>';
+  return '<article class="dc"><div class="dtop"><span class="stc stc-'+p.s+'" title="'+esc(ST[p.s][3])+'">'+esc(ST[p.s][2])+'</span>'
+   +'<span class="usec usec-'+p.u+'" title="'+esc(US[p.u][2])+'">'+esc(useText(p))+'</span>'
+   +(p.sn?'<span class="oft oft-note" title="This paper carries a context note">◆ '+esc(p.sn)+'</span>':'')+'</div>'
+   +'<h3><a href="dossier/'+id+'.html">'+hl(esc(p.t),Q)+'</a></h3>'
+   +'<p class="dm">'+hl(esc(p.au),Q)+' · '+p.y+(p.org?' · <em>'+hl(esc(p.org),Q)+'</em>':'')+'</p>'
+   +'<p class="dv">'+hl(esc(p.v),Q)+'</p><p class="dw">'+hl(esc(p.w),Q)+'</p>'
+   +(p.op?'<p class="dop"><b>Open question.</b> '+esc(p.op)+'</p>':'')
+   +(offs?'<div class="doff">'+offs+'</div>':'')
+   +'<div class="dlk">'+lk+'</div></article>';}
+function pass(p){var q=st.q.toLowerCase();
+  if(st.e&&!ENTRY[st.e](p))return false;
+  if(st.s!=='all'&&p.s!==st.s)return false;
+  if(st.u!=='all'&&p.u!==st.u)return false;
+  if(st.o!=='all'&&p.o.indexOf(st.o)<0)return false;
+  if(st.p!=='all'&&p.prog!==st.p)return false;
+  if(q){var hay=(p.t+' '+p.de+' '+p.au+' '+(p.org||'')+' '+p.v+' '+p.w+' '+(p.op||'')).toLowerCase();if(hay.indexOf(q)<0)return false;}
+  return true;}
+function counts(key){var m={};D.order.forEach(function(id){var p=P[id];
+  var save=st[key];st[key]='all';if(pass(p)){var v=p[key];m[v]=(m[v]||0)+1;}st[key]=save;});return m;}
+function chipset(el,key,defs,labelIdx){var m=counts(key),tot=0;Object.keys(m).forEach(function(k){tot+=m[k];});
+  var h='<span class="lbl">'+el.getAttribute('data-label')+'</span><button class="fchip'+(st[key]==='all'?' on':'')+'" data-v="all">All<span class="cc">'+tot+'</span></button>';
+  defs.forEach(function(d){if(!m[d[0]]&&st[key]!==d[0])return;
+    h+='<button class="fchip'+(st[key]===d[0]?' on':'')+'" data-v="'+d[0]+'" title="'+esc(d[labelIdx+1]||'')+'">'+esc(d[labelIdx])+'<span class="cc">'+(m[d[0]]||0)+'</span></button>';});
+  el.innerHTML=h;}
+function render(){
+  var list=D.order.filter(function(id){return pass(P[id]);});
+  if(st.sort==='year')list.sort(function(a,b){return P[a].y-P[b].y||a-b;});
+  else if(st.sort==='-year')list.sort(function(a,b){return P[b].y-P[a].y||a-b;});
+  else if(st.sort==='cites')list.sort(function(a,b){return (P[b].c[3]+P[b].c[4])-(P[a].c[3]+P[a].c[4])||P[a].y-P[b].y;});
+  else if(st.sort==='standing')list.sort(function(a,b){return ORDER[P[a].s]-ORDER[P[b].s]||P[a].y-P[b].y;});
+  document.getElementById('grid').innerHTML=list.map(card).join('')||'<p class="muted">No paper matches these filters.</p>';
+  document.getElementById('count').textContent=list.length+' of '+D.order.length+' papers';
+  chipset(document.getElementById('fs'),'s',D.standing,2);
+  chipset(document.getElementById('fu'),'u',D.use,1);
+  document.querySelectorAll('.entry').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-e')===st.e);});
+}
+function wire(id,key){document.getElementById(id).onclick=function(e){var b=e.target.closest('.fchip');if(!b)return;st[key]=b.getAttribute('data-v');render();};}
+wire('fs','s');wire('fu','u');
+var osel=document.getElementById('osel');osel.innerHTML='<option value="all">Anything it offers</option>'+D.offers.map(function(o){return '<option value="'+o[0]+'">'+esc(o[1])+'</option>';}).join('');
+var psel=document.getElementById('psel');psel.innerHTML='<option value="all">All six questions</option>'+D.progs.map(function(o){return '<option value="'+o[0]+'">'+esc(o[1])+'</option>';}).join('');
+osel.onchange=function(){st.o=osel.value;render();};psel.onchange=function(){st.p=psel.value;render();};
 document.getElementById('sortsel').onchange=function(e){st.sort=e.target.value;render();};
+document.getElementById('q').oninput=function(e){st.q=e.target.value;render();};
+document.querySelectorAll('.entry').forEach(function(b){b.onclick=function(){var e=b.getAttribute('data-e');st.e=(st.e===e?null:e);
+  if(st.e==='open')st.sort='standing';render();document.getElementById('explorer').scrollIntoView({behavior:'smooth',block:'start'});};});
+document.getElementById('reset').onclick=function(){st={q:'',s:'all',u:'all',o:'all',p:'all',e:null,sort:'year'};
+  document.getElementById('q').value='';osel.value='all';psel.value='all';document.getElementById('sortsel').value='year';render();};
+var h=(location.hash||'').replace('#','');if(ENTRY[h])st.e=h;
+if(h==='how'){var hw=document.getElementById('how');if(hw)hw.open=true;}
 render();
-// unfinished business
-if(D.unfinished&&document.getElementById('unfinished')){
-  document.getElementById('unfinished').innerHTML=D.unfinished.map(function(u){
-    return '<section class="ubcard"><h3>'+esc(u.title)+'</h3><p class="ubq">'+esc(u.question)+'</p>'
-     +'<blockquote class="ubquote">“'+esc(u.quote_en)+'”<cite>— '+esc(u.source)+'</cite></blockquote>'
-     +'<p class="ubmod"><span class="lab">Where it went</span>'+esc(u.modern)+'</p></section>';}).join('');}
 })();
 """
 
 
 def gen_discover():
-    """All-175 interactive Discover hub: sleeping-beauty carousel + filterable explorer,
-    each paper set against the current literature retrieved from Consensus."""
-    ap = os.path.join(ROOT, "legacy_data", "consensus_all.json")
-    A = json.load(open(ap, encoding="utf-8")) if os.path.exists(ap) else {}
-    rp = os.path.join(ROOT, "legacy_data", "rediscovery.json")
-    R = json.load(open(rp, encoding="utf-8")) if os.path.exists(rp) else {}
-    _synp = os.path.join(ROOT, "legacy_data", "consensus_synthesis.json")
-    SYN = json.load(open(_synp, encoding="utf-8")) if os.path.exists(_synp) else {}
+    """Discover: where each paper's own claim stands today, how current research uses it and what it
+    offers a researcher now, with four ways in. Replaces the old status/sleeping-beauty hub."""
     cat_by_id = {c["id"]: c for c in catalog}
     read_for = {t["id"]: t["page_slug"] for t in translations}
-    ov = {int(k): v for k, v in R.get("org_override", {}).items()}
-
-    def org(c):
-        return (ov.get(c["id"], (None,))[0]) or c.get("organism") or c.get("genus") or c.get("modern") or "—"
-
-    def tax(c):
-        t = (c.get("taxon") or "Other").strip()
-        return {"Orthoptera / Mantis": "Insects", "Other arthropods": "Other invertebrates"}.get(t, t)
-
-    papers = {}; order = []; sleeping = []
-    for pid_s, d in A.items():
-        pid = int(pid_s); c = cat_by_id.get(pid)
-        if not c:
+    prog_of, progs = programme_map()
+    papers = {}
+    for c in catalog:
+        pid = c["id"]; a = ASSESS.get(pid)
+        if not a:
             continue
-        res = d.get("results", [])
-        hook = (res[0].get("takeaway") if res else "") or ""
-        fresh = max(res, key=lambda r: (r.get("year") or 0)) if res else None
+        k = a.get("cites") or {}
+        s = SENS.get(str(pid))
         papers[str(pid)] = dict(
-            id=pid, t=(c.get("title_en") or c.get("title") or "").replace("�", "ä"),
-            de=(c.get("title") or "").replace("�", "ä"), au=c.get("author"), y=c.get("year"),
-            org=org(c), tax=tax(c), st=d.get("status"), sb=1 if d.get("sleeping") else 0,
-            sbi=d.get("sbi"),
-            c=d.get("cites", 0), n=d.get("n_unique", 0), l=d.get("latest"),
-            v=(SYN.get(pid_s, {}).get("verdict") or d.get("verdict")),
-            syn=1 if SYN.get(pid_s) else 0,
-            read=(read_for.get(pid) or ""), hook=hook[:175],
-            fy=(fresh.get("year") if fresh else None), ft=((fresh.get("takeaway") or "")[:185] if fresh else ""))
-        order.append(pid)
-        if d.get("sleeping"):
-            sleeping.append(pid)
-    order.sort(key=lambda pid: (0 if papers[str(pid)]["sb"] else 1, -(papers[str(pid)]["sbi"] or 0), -(papers[str(pid)]["n"] or 0)))
-    sleeping.sort(key=lambda pid: -(papers[str(pid)]["sbi"] or 0))
-    stats = dict(papers=len(papers), modern=sum(p["n"] for p in papers.values()),
-                 sleeping=len(sleeping),
-                 legacy=sum(1 for p in papers.values() if p["st"] == "Living Legacy"),
-                 confirmed=sum(1 for p in papers.values() if p["st"] in ("Sleeping Beauty", "Quiet Classic")))
-    data = dict(papers=papers, order=order, sleeping=sleeping, stats=stats,
-                statuses=["Sleeping Beauty", "Quiet Classic", "Living Legacy", "Stirring", "Contested Legacy", "Rightly Rested"],
-                taxa=sorted(set(p["tax"] for p in papers.values())), unfinished=R.get("unfinished", []))
+            t=(c.get("title_en") or c.get("title") or ""), de=c.get("title") or "",
+            au=c.get("author_full") or c.get("author") or "", y=c["year"], org=c.get("organism") or "",
+            prog=prog_of.get(pid, ""), s=a["standing"], v=a["verdict"], w=a["why"],
+            op=a.get("open") or "", o=a.get("offers") or [], u=a["use"],
+            c=[k.get("to1945", 0), k.get("to1945_self", 0), k.get("mid", 0), k.get("modern_sci", 0),
+               k.get("modern_hist", 0), k.get("total", 0)],
+            rd=read_for.get(pid, ""), sn=(s or {}).get("category", ""))
+    order = sorted((int(k) for k in papers), key=lambda i: (papers[str(i)]["y"], i))
+    n = len(papers)
+    cnt = lambda f: sum(1 for p in papers.values() if f(p))
+    n_open = cnt(lambda p: p["op"]); n_hold = cnt(lambda p: p["s"] in ("established", "consistent"))
+    n_fail = cnt(lambda p: p["s"] == "not_supported"); n_data = cnt(lambda p: "data" in p["o"])
+    n_none = cnt(lambda p: p["u"] == "none")
+    data = dict(papers=papers, order=order,
+                standing=[[k, l, s, d] for k, l, s, d in STANDING],
+                use=[[k, l, d] for k, l, d in USE], offers=[[k, l] for k, l in OFFERS],
+                progs=[[i, t] for i, t in progs])
     os.makedirs(DATA, exist_ok=True)
     open(os.path.join(DATA, "discover.js"), "w", encoding="utf-8").write(
-        "window.DISCOVER=" + json.dumps(data, ensure_ascii=False) + ";")
-    # slim cross-page index so the Catalog (and any other page) can show the
-    # Discover verdict/status without loading the whole hub payload.
-    open(os.path.join(DATA, "discidx.js"), "w", encoding="utf-8").write(
-        "window.DISCIDX=" + json.dumps(
-            {str(p["id"]): {"st": p["st"], "sbi": p["sbi"], "sb": p["sb"], "v": p["v"]}
-             for p in papers.values()}, ensure_ascii=False) + ";")
-    body = ('<p class="kicker">The corpus in the light of today’s science</p>'
-            '<h1>Discover</h1>'
-            '<p class="lede dlede">All ' + str(stats["papers"]) + ' Vivarium <em>research</em> papers (1904–1930), each set against the current literature — '
-            '<b>' + str(stats["modern"]) + ' modern papers</b> retrieved from the Consensus API, then read and compared one by one. '
-            'Every paper is placed on two axes — how much today’s science <em>remembers</em> it, and whether its ideas actually <em>held up</em>. '
-            'Each card links back to its full <a href="catalog.html">Catalog</a> entry, and the Catalog carries these verdicts in its <b>Today</b> column. '
-            '<span class="ledenote">The <a href="catalog.html">Catalog</a> holds 175 items; three carry no verdict here. '
-            'Przibram’s 1917 <a href="papers/88-hans-przibram-1917.html">obituary of Franz Megušar</a> reports no experiment, '
-            'so there is nothing to set against the literature. The other two — the 1906 '
-            '<a href="papers/174-grosser-przibram-1906.html">dogfish malformations</a> and the 1922 '
-            '<a href="papers/175-przibram-brecher-1922.html">stick-insect colour modifications</a> — are being reassessed: '
-            'their catalogue rows were mistitled when the original assessments were made, so each had been given another '
-            'paper’s verdict. Those assessments have been withdrawn rather than left standing. All three are translated '
-            'and catalogued like the rest.</span></p>'
-            '<section class="sbwrap"><div class="sbhead"><span class="sbeyebrow">☾ The search for sleeping beauties</span>'
-            '<div class="sbnav"><button id="sbPrev" aria-label="previous">‹</button>'
-            '<button id="sbtoggle" aria-label="play/pause">⏸</button><button id="sbNext" aria-label="next">›</button></div></div>'
-            '<div id="carousel" class="carousel"></div><div id="sbdots" class="sbdots"></div></section>'
-            '<div class="rstats">'
-            '<div><b>' + str(stats["papers"]) + '</b><span>research papers, 1904–1930</span></div>'
-            '<div><b>' + str(stats["modern"]) + '</b><span>modern papers via Consensus</span></div>'
-            '<div><b>' + str(stats["sleeping"]) + '</b><span>sleeping beauties</span></div>'
-            '<div><b>' + str(stats["confirmed"]) + '</b><span>forgotten yet confirmed</span></div>'
-            '<div><b>' + str(stats["legacy"]) + '</b><span>living legacies</span></div></div>'
-            '<div class="taxnote">'
-            '<p><b>A new way to read the corpus.</b> Citation counts alone reward <em>notoriety</em>, not correctness — '
-            'some of the institute’s most-cited papers are its most <em>refuted</em> (Kammerer’s inheritance claims, '
-            'Steinach’s sexual-orientation theory), while genuinely confirmed work sits almost uncited. So each paper is placed on '
-            'two axes: <b>recognition</b> (how often today’s literature cites it) and <b>vindication</b> (whether its science held up, '
-            'from the read-and-compare verdicts). The <b>☾ Sleeping-Beauty Index</b> ranks the forgotten-yet-vindicated.</p>'
-            '<ul class="taxleg">'
-            '<li><span class="stat st-sb">Sleeping Beauty</span> forgotten, yet confirmed — the rediscovery prizes</li>'
-            '<li><span class="stat st-qc">Quiet Classic</span> lightly cited, but vindicated</li>'
-            '<li><span class="stat st-ll">Living Legacy</span> well cited, and it held up</li>'
-            '<li><span class="stat st-st">Stirring</span> forgotten; the idea is alive but unsettled</li>'
-            '<li><span class="stat st-cl">Contested Legacy</span> famous, but refuted</li>'
-            '<li><span class="stat st-rr">Rightly Rested</span> forgotten, and it did not hold</li>'
-            '</ul></div>'
-            '<div class="explorer"><input id="q" class="search" placeholder="Search title, author, or organism…">'
-            '<div id="statuschips" class="chips"></div>'
-            '<div class="exrow"><select id="taxsel"></select>'
-            '<select id="sortsel"><option value="modern">Sort: most modern papers</option>'
-            '<option value="sbi">Sort: sleeping-beauty index</option>'
-            '<option value="recent">Sort: most recent work</option>'
-            '<option value="cites">Sort: most cited today</option>'
-            '<option value="year">Sort: paper year</option></select>'
-            '<span id="count" class="count"></span></div></div>'
-            '<div id="grid" class="dgrid"></div>'
-            '<h2 class="ubh">The institute’s unfinished business</h2>'
-            '<p class="muted ubintro">Beyond the single papers, the Vivarium opened whole research programs it never closed — '
-            'drawn from Przibram’s own monographs.</p><div id="unfinished"></div>')
+        "window.DISCOVER=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";")
+    # slim cross-page index (Catalog, reader, analytics): id -> [standing, verdict, use, cites-by-era, offers]
+    open(os.path.join(DATA, "assess.js"), "w", encoding="utf-8").write(
+        "window.ASSESS=" + json.dumps({k: [p["s"], p["v"], p["u"], p["c"], p["o"]] for k, p in papers.items()},
+                                      ensure_ascii=False, separators=(",", ":")) + ";")
+    stand_li = "".join('<li><span class="stc stc-%s">%s</span>%s</li>' % (k, html.escape(l), html.escape(d))
+                       for k, l, _, d in STANDING)
+    use_li = "".join('<li><span class="usec usec-%s">%s</span>%s</li>' % (k, html.escape(l), html.escape(d))
+                     for k, l, d in USE)
+    off_li = "".join('<li><span class="oft oft-%s">%s</span></li>' % (k, html.escape(l)) for k, l in OFFERS)
+    body = f"""
+<p class="kicker">The corpus in the light of later work</p>
+<h1>Discover</h1>
+<p class="lede dlede">Each of the {n} papers was read in full and set against what later work did with it. Three things are recorded for every paper:
+<b>where its own claim stands today</b>, <b>how current research uses it</b>, and <b>what it still offers a researcher</b>.
+Most of these papers are cited today, if at all, as history or as an early instance of something now known;
+{n_none} have not been cited since 1990. The useful questions are narrower: which specific results still stand, which did not, and which were never settled.</p>
+<div class="entries" id="how-in">
+  <button class="entry" data-e="open"><b>{n_open}</b><span class="et">Open questions worth testing</span><span class="ed">A specific point later work never settled, with a design that could settle it.</span></button>
+  <button class="entry" data-e="hold"><b>{n_hold}</b><span class="et">Results that still stand</span><span class="ed">Established, or consistent with what is now known. Early instances, not necessarily the origin.</span></button>
+  <button class="entry" data-e="fail"><b>{n_fail}</b><span class="et">Claims that did not hold</span><span class="ed">Contradicted, never replicated, or resting on a rejected framework.</span></button>
+  <button class="entry" data-e="data"><b>{n_data}</b><span class="et">Data you could re-use</span><span class="ed">Measurement series or tables worth re-analysing.</span></button>
+</div>
+<details class="howto" id="how"><summary>How to read these assessments</summary>
+<h3>Where the paper’s claim stands</h3><ul class="deflist">{stand_li}</ul>
+<h3>How current research uses it</h3><ul class="deflist">{use_li}</ul>
+<h3>What it offers now</h3><ul class="deflist">{off_li}</ul>
+<p>Each paper was read from its full English translation together with every work that cites it (OpenAlex) and a search of the related modern literature, and judged under one written rubric: a paper is <em>established</em> only when later work confirmed its own specific result, and when a paper made two claims with different fates, its central claim decides and the other is named. Each assessment records what it rests on and how confident it is. They are careful readings, not a consensus of the field: treat them as a starting point and check the dossier’s evidence.</p>
+<p>In September 2026 these assessments replaced an earlier scheme that labelled papers “sleeping beauties”, ranked them on an index of forgotten-yet-confirmed work, and graded “legacy layers”. That scheme read general acceptance of a phenomenon as confirmation of a particular paper, and read citation counts as present-day use; it has been withdrawn.</p>
+</details>
+<section class="explorer" id="explorer">
+  <input id="q" class="search" type="search" placeholder="Search title, author, organism or claim…">
+  <div class="chipset" id="fs" data-label="Where it stands"></div>
+  <div class="chipset" id="fu" data-label="Used today"></div>
+  <div class="exrow">
+    <select id="psel"></select><select id="osel"></select>
+    <select id="sortsel"><option value="year">Sort: year ↑</option><option value="-year">year ↓</option>
+      <option value="standing">where it stands</option><option value="cites">most cited since 1990</option></select>
+    <button class="reset" id="reset" type="button">Clear filters</button>
+    <span id="count" class="count"></span>
+  </div>
+</section>
+<div id="grid" class="dgrid"></div>"""
     page("rediscovery.html", "Discover", "Discover", body,
-         head="<style>" + DISCOVER_CSS + REDISC_CSS + "</style>",
-         foot='<script src="data/discover.js"></script><script>' + DISCOVER_JS + '</script>')
-    print("discover.html:", len(papers), "papers |", len(sleeping), "sleeping |", stats["modern"], "modern papers")
+         head="<style>" + DISCOVER_CSS + "</style>",
+         foot='<script src="data/discover.js"></script><script>' + DISCOVER_JS + '</script>',
+         desc="Where each of the 175 Vivarium papers stands today: established, consistent, revised, unresolved "
+              "or not supported; how current research uses it; and what it still offers a researcher.")
+    print("discover:", n, "papers | open", n_open, "| hold", n_hold, "| not supported", n_fail, "| data", n_data)
 
 
 DOSSIER_CSS = r"""
-.dossier{max-width:820px}
+.dossier{max-width:840px}
 .dossier .detitle{font-style:italic;color:var(--muted);margin:.1em 0 .3em;font-size:16px}
 .dossier .byline{color:var(--muted);font-size:14px;margin:.2em 0 14px}
-.dsec{margin:26px 0;padding-top:6px}
+.dsec{margin:26px 0;padding-top:4px}
 .dsec h2{font-family:Georgia,serif;font-size:21px;border-bottom:2px solid var(--rule);padding-bottom:6px;margin:0 0 12px}
 .dsec h2 .cnt{font-family:-apple-system,sans-serif;font-size:13px;color:var(--muted);font-weight:400}
-.whatd{font-size:15.5px;line-height:1.6;margin:0}
-.meth{font-size:14px;line-height:1.6;margin:10px 0 0;color:#3c3833}
-.meth .lab,.openq .lab{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:600;margin-bottom:2px}
-.statebox{background:var(--card);border:1px solid var(--rule);border-left:4px solid var(--accent2);border-radius:12px;padding:16px 18px}
-.statebox h2{border-bottom:0;margin:.1em 0 8px;font-size:20px}
-.verdict{display:inline-block;background:var(--accent2);color:#fff;font-size:12px;font-weight:600;letter-spacing:.02em;padding:3px 11px;border-radius:20px;margin-bottom:8px}
-.dcat{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.02em;padding:3px 10px;border-radius:20px;margin:0 0 8px 7px}
-.dcat .sbii{opacity:.8;font-weight:600;margin-left:5px}
-.dcat.st-sb{background:#33485c;color:#f3efe6}.dcat.st-qc{background:#2e6f6a;color:#fff}.dcat.st-ll{background:#1d6e56;color:#fff}.dcat.st-st{background:#9a6a1f;color:#fff}.dcat.st-cl{background:#8a3a3a;color:#fff}.dcat.st-rr{background:#9a9387;color:#fff}
-.stateprose{font-size:15.5px;line-height:1.65;margin:0 0 14px}
-.cmph{font-family:-apple-system,sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin:4px 0 5px;font-weight:700}
-.dstats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 14px}
-.dstats div{background:var(--paper);border:1px solid var(--rule);border-radius:9px;padding:10px 12px;text-align:center}
-.dstats b{display:block;font-family:Georgia,serif;font-size:24px;line-height:1}
-.dstats span{font-size:11.5px;color:var(--muted)}
-.openq{font-size:14.5px;line-height:1.6;margin:4px 0 0;padding-top:10px;border-top:1px dashed var(--rule)}
+.standbox{background:var(--card);border:1px solid var(--rule);border-left:5px solid #9a9387;border-radius:12px;padding:16px 20px 14px}
+.standbox.sb-established{border-left-color:#1d6e56}.standbox.sb-consistent{border-left-color:#4f7a74}
+.standbox.sb-revised{border-left-color:#9a6a1f}.standbox.sb-unresolved{border-left-color:#33485c}
+.standbox.sb-not_supported{border-left-color:#8a3a3a}
+.standbox .lab{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:600;margin:0 0 7px}
+.standbox .sthead{margin:0 0 6px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.standbox .stdef{font-size:12.5px;color:var(--muted)}
+.standbox .stverdict{font-family:Georgia,serif;font-size:19px;line-height:1.35;margin:6px 0 8px;color:#211f1c}
+.standbox .stwhy{font-size:15.5px;line-height:1.65;margin:0 0 10px}
+.openbox{margin:12px 0 4px;padding:11px 14px;background:#eef2f5;border-radius:9px}
+.openbox p{margin:0 0 6px;font-size:14.5px;line-height:1.6}.openbox p:last-child{margin:0}
+.openbox b{color:#2f3e4c}
+.offers{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+.stbasis{font-size:12.5px;color:var(--muted);margin:10px 0 0;padding-top:8px;border-top:1px dashed var(--rule)}
+.usebox p{font-size:14.5px;line-height:1.6;margin:0 0 8px}
+.usenote{padding:9px 12px;background:#edf5f1;border-left:3px solid #1d6e56;border-radius:0 8px 8px 0}
+.eras{display:flex;height:22px;border-radius:6px;overflow:hidden;margin:12px 0 6px;background:#efe9dc}
+.eras span{display:block;height:100%}
+.era-self{background:#b9a57a}.era-early{background:#d8c9a3}.era-mid{background:#9fb1c0}.era-sci{background:#355e7d}.era-hist{background:#9a9387}
+.eraleg{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;color:#4a463f}
+.eraleg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.mgrid{display:grid;grid-template-columns:140px 1fr;gap:6px 14px;margin:0;font-size:14.5px;line-height:1.55}
+.mgrid dt{font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;padding-top:3px}
+.mgrid dd{margin:0}
+.mgrid dd.find{font-weight:600}
 .summbox{margin:0 0 14px;padding:12px 14px;border-left:3px solid var(--accent2);background:#eef2f5;border-radius:0 8px 8px 0}
 .summbox h3{margin:.1em 0 .4em;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent2)}
 .summbox p{margin:0;font-size:14px;line-height:1.62}
-.citelist{display:flex;flex-direction:column;gap:11px}
+.citelist{display:flex;flex-direction:column;gap:10px}
 .citework{border:1px solid var(--rule);border-radius:9px;padding:10px 13px;background:var(--card)}
 .citehd{margin:0;font-size:14px;line-height:1.5}
 .citehd b{font-family:Georgia,serif}
 .citenote{margin:6px 0 0;font-size:13.5px;line-height:1.6;color:#4a463f;padding-top:6px;border-top:1px dashed var(--rule)}
-.histtag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;background:#9a9387;color:#fff;border-radius:20px;padding:1px 8px}
-.facets{margin:0;padding-left:20px;font-size:15px;line-height:1.5}
-.facets li{margin:5px 0;color:#2f2c28}
-.conslist{margin-top:4px}
-.conspaper{padding:11px 0;border-top:1px solid var(--rule)}
+.histtag,.vertag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.02em;color:#fff;border-radius:20px;padding:1px 8px;vertical-align:1px}
+.histtag{background:#9a9387}.vertag{background:#1d6e56}
+.readnote{font-size:12.5px;color:var(--muted);line-height:1.55;margin:0 0 12px}
+.facets{margin:0 0 10px;padding-left:20px;font-size:14px;line-height:1.5;color:#4a463f}
+.conspaper{padding:10px 0;border-top:1px solid var(--rule)}
 .conspaper:first-child{border-top:0}
-.conslink{font-weight:600;font-size:15px;line-height:1.4}
+.conslink{font-weight:600;font-size:14.5px;line-height:1.4}
 .consmeta2{font-size:12px;color:var(--muted);margin:3px 0 4px}
 .ptag{display:inline-block;background:var(--card);border:1px solid var(--rule);border-radius:5px;padding:0 6px;margin-left:5px;font-size:10.5px;text-transform:capitalize}
-.constake{margin:3px 0 0;font-size:14px;line-height:1.55;color:#2f2c28}
-@media(max-width:640px){.dstats{grid-template-columns:repeat(3,1fr)}}
+.constake{margin:3px 0 0;font-size:13.8px;line-height:1.55;color:#2f2c28}
+@media(max-width:640px){.mgrid{grid-template-columns:1fr}.mgrid dt{padding-top:6px}}
 """
+
+# papers whose catalogue record (organism or claim) was wrong when the related-literature search was run,
+# so the retrieved literature is off-topic: the list is withheld rather than shown as if relevant
+DOSSIER_NO_TOPICAL = {18, 58, 81, 83, 85, 87, 143, 155, 162, 167, 172, 175, 26, 27, 28, 31, 33}
 
 
 def gen_dossier():
-    """One deep scroll page per rediscovery paper: the historic work, the modern
-    state of the field, the questions put to Consensus, and every relevant modern paper."""
-    rp = os.path.join(ROOT, "legacy_data", "rediscovery.json")
-    R = json.load(open(rp, encoding="utf-8"))
-    dp = os.path.join(ROOT, "legacy_data", "consensus_all.json")
-    DEEP = json.load(open(dp, encoding="utf-8")) if os.path.exists(dp) else {}
-    if not DEEP:
-        return
-    cat_by_id = {c["id"]: c for c in catalog}
-    read_for = {t["id"]: t["page_slug"] for t in translations}
-    org_ov = {int(k): v for k, v in R.get("org_override", {}).items()}
-    mpath = os.path.join(ROOT, "legacy_data", "methodology.json")
-    meth = json.load(open(mpath, encoding="utf-8")) if os.path.exists(mpath) else {}
-    _synp = os.path.join(ROOT, "legacy_data", "consensus_synthesis.json")
-    SYN = json.load(open(_synp, encoding="utf-8")) if os.path.exists(_synp) else {}
-
+    """One page per paper: where its claim stands, how current research uses it, what it did,
+    every work that cites it, and (where the search was on topic) the related modern literature."""
     def _ld(name):
         p = os.path.join(ROOT, "legacy_data", name)
         return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
-    # direct reception: who actually cites the BVA paper (folded in from the old Legacy panel)
+    DEEP = _ld("consensus_all.json")
+    meth = _ld("methodology.json")
     ENR = _ld("citations_enriched.json")      # per paper -> works[]
-    CNOTES = _ld("citation_notes.json")       # "<pid>:<oa_id>" -> curated prose note
+    CNOTES = _ld("citation_notes.json")       # "<pid>:<oa_id>" -> prose note, mostly inferred from title/abstract
+    CVER = set(_ld("citation_verified.json") or [])
     CTITLES = _ld("citation_titles.json")     # oa_id -> English title
-    CSUMM = _ld("citation_summaries.json")    # pid -> "how later science draws on this work"
+    CSUMM = _ld("citation_summaries.json")    # pid -> summary of the citing works
+    read_for = {t["id"]: t["page_slug"] for t in translations}
     os.makedirs(os.path.join(SITE, "dossier"), exist_ok=True)
 
+    def _t(s):  # sources carry (sometimes doubly) encoded entities — fully decode, then escape once
+        s = s or ""
+        for _ in range(3):
+            u = html.unescape(s)
+            if u == s:
+                break
+            s = u
+        return html.escape(s)
+
     def cited_by_html(pid_s):
-        rec = ENR.get(pid_s) or {}
-        works = sorted(rec.get("works", []), key=lambda w: (w.get("year") or 0), reverse=True)
+        works = sorted((ENR.get(pid_s) or {}).get("works", []), key=lambda w: (w.get("year") or 0), reverse=True)
         summ = CSUMM.get(pid_s)
-        if not works and not summ:
-            return ""
-        def _t(s):  # sources carry (sometimes doubly) encoded entities — fully decode, then escape once
-            s = s or ""
-            for _ in range(3):
-                u = html.unescape(s)
-                if u == s:
-                    break
-                s = u
-            return html.escape(s)
-        sm = ('<div class="summbox"><h3>How later science draws on this work</h3><p>'
-              + _t(summ) + '</p></div>') if summ else ''
+        n = len(works)
+        if not works:
+            return ('<section class="dsec"><h2>Every work that cites it</h2>'
+                    '<p class="muted">No citing work is recorded in OpenAlex.</p></section>')
+        sm = ('<div class="summbox"><h3>What the citing works do with it</h3><p>' + _t(summ) + '</p></div>') if summ else ''
         items = ""
         for w in works:
             a = w.get("authors") or []
             who = _t(a[0] if a else "") + (" et al." if len(a) > 1 else "")
             ttl = CTITLES.get(w.get("oa_id")) or w.get("title") or "(untitled)"
             doi = ('<a href="https://doi.org/%s" target="_blank" rel="noopener">doi ↗</a>' % w["doi"]) if w.get("doi") else ''
+            key = "%s:%s" % (pid_s, w.get("oa_id"))
             tag = '<span class="histtag">history of science</span>' if w.get("historiographic") else ''
-            note = CNOTES.get("%s:%s" % (pid_s, w.get("oa_id")))
+            ver = '<span class="vertag" title="Note written from the citing work’s full text">checked in the citing text</span>' if key in CVER else ''
+            note = CNOTES.get(key)
             nt = ('<p class="citenote">' + _t(note) + '</p>') if note else ''
-            items += ('<div class="citework"><p class="citehd"><b>' + str(w.get("year") or "n.d.") + '</b> · '
-                      + who + ' — ' + _t(ttl) + ' ' + doi + ' ' + tag + '</p>' + nt + '</div>')
-        n = len(works)
-        return ('<section class="dsec"><h2>Who cites this paper '
-                + ('<span class="cnt">(%d work%s)</span>' % (n, "" if n == 1 else "s") if n else '')
-                + '</h2>' + sm
-                + (('<div class="citelist">' + items + '</div>') if items
-                   else '<p class="muted">No modern citations recorded.</p>')
-                + '</section>')
+            yr = str(w.get("year") or "n.d.")
+            if w.get("year_online"):
+                yr += ' <span class="muted" title="OpenAlex lists the %s online date">(online %s)</span>' % (w["year_online"], w["year_online"])
+            items += ('<div class="citework"><p class="citehd"><b>' + yr + '</b> · ' + who + ' — ' + _t(ttl)
+                      + ' ' + doi + ' ' + tag + ' ' + ver + '</p>' + nt + '</div>')
+        return ('<section class="dsec"><h2>Every work that cites it <span class="cnt">(%d in OpenAlex)</span></h2>' % n
+                + sm + '<p class="readnote">The note under each work gives the likely reason it cites this paper. Most notes '
+                'were reconstructed from the citing work’s title, topic and abstract, not from the citing sentence, which is '
+                'rarely digitised for this literature; notes marked “checked in the citing text” were written from the citing '
+                'work itself. Follow the DOI for the primary source.</p>'
+                + '<div class="citelist">' + items + '</div></section>')
+
+    def eras_html(c):
+        tot = c.get("total", 0)
+        if not tot:
+            return '<p class="muted">No citing work is recorded in OpenAlex.</p>'
+        segs = [("era-self", c.get("to1945_self", 0), "by 1945, by authors in this corpus"),
+                ("era-early", c.get("to1945", 0) - c.get("to1945_self", 0), "by 1945, by others"),
+                ("era-mid", c.get("mid", 0), "1946–1989"),
+                ("era-sci", c.get("modern_sci", 0), "since 1990, scientific"),
+                ("era-hist", c.get("modern_hist", 0), "since 1990, history of science")]
+        dated = sum(v for _, v, _ in segs) or 1
+        bar = "".join('<span class="%s" style="width:%.2f%%" title="%d %s"></span>' % (k, 100.0 * v / dated, v, lab)
+                      for k, v, lab in segs if v)
+        leg = "".join('<li><i class="%s"></i>%d %s</li>' % (k, v, lab) for k, v, lab in segs if v)
+        return '<div class="eras" role="img" aria-label="Citing works by era">%s</div><ul class="eraleg">%s</ul>' % (bar, leg)
 
     def paper_html(r):
         bits = [str(r.get("year") or "")]
@@ -1327,87 +1092,109 @@ def gen_dossier():
         if r.get("journal"):
             bits.append(html.escape(r["journal"]))
         meta = " · ".join(x for x in bits if x)
-        tags = ""
-        if r.get("study_type"):
-            tags += '<span class="ptag">' + html.escape(r["study_type"]) + '</span>'
-        if r.get("citations") is not None:
-            tags += '<span class="ptag">' + str(r["citations"]) + ' cites</span>'
+        tags = ('<span class="ptag">' + html.escape(r["study_type"]) + '</span>') if r.get("study_type") else ""
         tk = ('<p class="constake">' + html.escape(r["takeaway"]) + '</p>') if r.get("takeaway") else ""
         u = r.get("url") or "#"
-        return ('<div class="conspaper"><a class="conslink" href="' + u + '" target="_blank" rel="noopener">'
+        return ('<div class="conspaper"><a class="conslink" href="' + html.escape(u) + '" target="_blank" rel="noopener">'
                 + html.escape(r.get("title") or "(untitled)") + ' ↗</a><div class="consmeta2">' + meta + ' '
                 + tags + '</div>' + tk + '</div>')
 
     n = 0
-    for pid_s, d in DEEP.items():
-        pid = int(pid_s)
-        c = cat_by_id.get(pid)
-        if not c:
+    for c in catalog:
+        pid = c["id"]; pid_s = str(pid)
+        a = ASSESS.get(pid)
+        if not a:
             continue
-        cur = R["cards"].get(pid_s, ["", ""])
-        org, modern = org_ov.get(pid, (c.get("organism"), c.get("modern")))
-        m = meth.get(pid_s, {})
-        title_en = (c.get("title_en") or c.get("title") or "").replace("�", "ä")
-        title_de = (c.get("title") or "").replace("�", "ä")
+        s = a["standing"]
+        title_en = c.get("title_en") or c.get("title") or ""
+        title_de = c.get("title") or ""
+        org = c.get("organism") or ""
         read = ("../papers/" + read_for[pid] + ".html") if pid in read_for else None
-        res = sorted(d.get("results", []), key=lambda r: (r.get("year") or 0), reverse=True)
-        _sy = SYN.get(pid_s) or {}
-        _verdict = _sy.get("verdict") or d.get("verdict") or "Still open today?"
-        _state = _sy.get("state") or d.get("state") or ""
-        _cmp_html = ('<h3 class="cmph">How this 1900s paper stands today</h3><p class="stateprose">'
-                     + html.escape(_sy["comparison"]) + '</p>') if _sy.get("comparison") else ''
-        _status = d.get("status") or ""
-        _sbi = d.get("sbi")
-        _SCLS = {"Sleeping Beauty": "st-sb", "Quiet Classic": "st-qc", "Living Legacy": "st-ll",
-                 "Stirring": "st-st", "Contested Legacy": "st-cl", "Rightly Rested": "st-rr"}
-        _sbi_html = ('<span class="sbii">☾ SBI %s</span>' % _sbi) if (d.get("sleeping") and _sbi is not None) else ''
-        _cat_html = ('<span class="dcat %s">%s%s</span>' % (_SCLS.get(_status, "st-rr"), html.escape(_status), _sbi_html)) if _status else ''
         actions = '<a class="btn" href="../rediscovery.html">← Discover</a>'
         if read:
             actions += '<a class="btn primary" href="%s">Read the English translation</a>' % read
         actions += '<a class="btn" href="../reader.html?id=%d">German original</a>' % pid
-        actions += '<a class="btn" href="../catalog.html?id=%d">Catalog entry ↗</a>' % pid
+        actions += '<a class="btn" href="../catalog.html?id=%d">Catalog entry</a>' % pid
         if c.get("doi"):
             actions += '<a class="btn" href="https://doi.org/%s" target="_blank" rel="noopener">DOI ↗</a>' % c["doi"]
+        # --- where it stands
+        openbox = ""
+        if a.get("open"):
+            openbox = ('<div class="openbox"><p><b>What is still open.</b> %s</p>%s</div>'
+                       % (html.escape(a["open"]),
+                          ('<p><b>How it could be tested.</b> %s</p>' % html.escape(a["test"])) if a.get("test") else ""))
+        offers = "".join('<span class="oft oft-%s">%s</span>' % (o, html.escape(OFFER_LABEL[o])) for o in a.get("offers") or [])
+        basis = ", ".join(BASIS_LABEL.get(b, b) for b in a.get("basis") or [])
+        stand = f"""
+  <section class="dsec standbox sb-{s}">
+    <span class="lab">Where its claim stands today</span>
+    <p class="sthead">{st_chip(pid, full=True)} <span class="stdef">{html.escape(ST_DEF[s])}</span></p>
+    <p class="stverdict">{html.escape(a['verdict'])}</p>
+    <p class="stwhy">{html.escape(a['why'])}</p>
+    {openbox}
+    {('<div class="offers">' + offers + '</div>') if offers else ''}
+    <p class="stbasis">Assessed from {html.escape(basis)} · confidence: {html.escape(a.get('confidence') or '')} ·
+      <a href="../rediscovery.html#how">how papers are assessed</a></p>
+  </section>"""
+        # --- how current research uses it
+        k = a.get("cites") or {}
+        un = ('<p class="usenote">%s</p>' % html.escape(a["use_note"])) if a.get("use_note") else ""
+        use = f"""
+  <section class="dsec usebox">
+    <h2>How current research uses it</h2>
+    <p>{use_chip(pid)} {html.escape(USE_DEF[a['use']])}</p>
+    {un}
+    {eras_html(k)}
+  </section>"""
+        # --- what the paper did (methodology record, corrected in the September 2026 review)
+        m = meth.get(pid_s) or {}
+        rows = [("Manipulation", "manipulation"), ("Design", "design"), ("Readout", "readout"),
+                ("Quantification", "quantification"), ("Scale", "scale"), ("Sample", "n"), ("What it reported", "finding")]
+        dl = "".join('<dt>%s</dt><dd%s>%s</dd>' % (lab, ' class="find"' if key == "finding" else "", html.escape(m[key]))
+                     for lab, key in rows if m.get(key))
+        tags = " ".join('<span class="badge">%s</span>' % html.escape(t) for t in (m.get("methods") or []))
+        did = (f"""
+  <section class="dsec">
+    <h2>What the paper did</h2>
+    {('<p style="margin:0 0 10px">' + ('<span class="badge mcl">' + html.escape(m.get('method')) + '</span> ' if m.get('method') else '') + tags + '</p>') if (m.get('method') or tags) else ''}
+    <dl class="mgrid">{dl}</dl>
+  </section>""" if dl else "")
+        # --- related literature (topical, not citing)
+        d = DEEP.get(pid_s) or {}
+        res = sorted(d.get("results", []), key=lambda r: (r.get("year") or 0), reverse=True)
+        topical = ""
+        if res and pid not in DOSSIER_NO_TOPICAL:
+            qs = "".join('<li>' + html.escape(f["q"]) + '</li>' for f in d.get("facets", []))
+            topical = f"""
+  <section class="dsec">
+    <h2>Related modern literature <span class="cnt">({len(res)} papers, topical search)</span></h2>
+    <p class="readnote">These papers do not cite this one. They were retrieved automatically in June 2026 from the
+      <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> search engine, with the questions below,
+      to show what later work says on the paper’s subject; each takeaway is Consensus’s one-line summary.</p>
+    <ul class="facets">{qs}</ul>
+    <div class="conslist">{''.join(paper_html(r) for r in res)}</div>
+  </section>"""
         body = f"""
 <article class="dossier">
-  <p class="kicker"><a href="../rediscovery.html">Rediscover</a> · BVA · {c.get('year')}{(' · <em>'+html.escape(org)+'</em>') if org else ''}</p>
+  <p class="kicker"><a href="../rediscovery.html">Discover</a> · {c.get('year')}{(' · <em>' + html.escape(org) + '</em>') if org else ''}</p>
   <h1>{html.escape(title_en)}</h1>
-  {('<p class="detitle">'+html.escape(title_de)+'</p>') if title_de and title_de != title_en else ''}
-  <p class="byline">{html.escape(c.get('author') or '')} · {c.get('year')}</p>
+  {('<p class="detitle">' + html.escape(title_de) + '</p>') if title_de and title_de != title_en else ''}
+  <p class="byline">{html.escape(c.get('author_full') or c.get('author') or '')} · {c.get('year')}</p>
   <div class="actionbar">{actions}</div>
   {sens_html(pid, "dossier")}
-  <section class="dsec">
-    <h2>What this paper did</h2>
-    <p class="whatd">{html.escape(cur[0])}</p>
-    {('<p class="meth"><span class="lab">How</span>'+html.escape(m.get('manipulation') or '')+'</p>') if m.get('manipulation') else ''}
-  </section>
-  <section class="dsec statebox">
-    <span class="verdict">{html.escape(_verdict)}</span>{_cat_html}
-    <h2>The state of the art today</h2>
-    <p class="stateprose">{html.escape(_state)}</p>
-    {_cmp_html}
-    <div class="dstats">
-      <div><b>{d.get('n_unique',0)}</b><span>modern papers read</span></div>
-      <div><b>{d.get('recent',0)}</b><span>since 2015</span></div>
-      <div><b>{d.get('latest') or '—'}</b><span>most recent</span></div>
-    </div>
-    <p class="openq"><span class="lab">The paper’s open question</span>{html.escape(cur[1])}</p>
-  </section>
+  {stand}
+  {use}
+  {did}
   {cited_by_html(pid_s)}
-  <section class="dsec">
-    <h2>Questions put to Consensus</h2>
-    <ul class="facets">{''.join('<li>'+html.escape(f['q'])+'</li>' for f in d.get('facets',[]))}</ul>
-  </section>
-  <section class="dsec">
-    <h2>What modern research says <span class="cnt">({len(res)} papers)</span></h2>
-    <div class="conslist">{''.join(paper_html(r) for r in res)}</div>
-  </section>
-  <footer class="cite">Modern literature retrieved via the <a href="https://consensus.app" target="_blank" rel="noopener">Consensus</a> API (June 2026) for this paper’s open questions; takeaways are Consensus’s one-line summaries of each study. A research aid, not a settled verdict.</footer>
+  {topical}
+  <footer class="cite">Assessment: September 2026 review of the full corpus, one paper at a time, under a written rubric.
+    Citations: OpenAlex. A research aid, not a settled historical judgment — corrections are welcome via
+    <a href="../contribute.html">Get involved</a>.</footer>
 </article>"""
-        page(f"dossier/{pid}.html", title_en, "Rediscover", body,
+        page(f"dossier/{pid}.html", title_en, "Discover", body,
              head="<style>" + DOSSIER_CSS + "</style>", prefix="../",
-             desc=(f"{c.get('author') or ''} ({c.get('year')}). {_verdict}. " + (_state or ""))[:300])
+             desc=(f"{c.get('author_full') or c.get('author') or ''} ({c.get('year')}). {ST_LABEL[s]}: "
+                   f"{a['verdict']}. {a['why']}")[:300])
         n += 1
     print("dossier pages:", n)
 
@@ -1521,7 +1308,12 @@ circle.leaf:hover{transform:scale(2.5);stroke:#fff;stroke-width:.5}
 .card .cs{font:13.5px/1.5 -apple-system,sans-serif;color:var(--dim);margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .card .cmeta{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px;padding-top:6px}
 .chip{font:600 11px/1 -apple-system,sans-serif;letter-spacing:.02em;padding:5px 9px;border-radius:20px;background:rgba(236,230,216,.08);color:#d9d2c3;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
-.chip.v{background:rgba(205,185,138,.14);color:#e7d6ab}
+.chip.v{background:rgba(205,185,138,.14);color:#e7d6ab;white-space:normal;line-height:1.35}
+.chip.st{color:#fff}
+.chip.st-established{background:#2f8f71}.chip.st-consistent{background:#557f79}.chip.st-revised{background:#a8772a}
+.chip.st-unresolved{background:#4c6883}.chip.st-not_supported{background:#a24a4a}.chip.st-no_claim{background:#6f6a61}
+.art .why{font:15px/1.65 -apple-system,sans-serif;color:#cfc8b8;margin:-8px 0 24px;max-width:68ch}
+.art .why .use{color:#9d968a}
 .chip.note{background:rgba(201,105,94,.22);color:#ffc9c0}
 .chip.note::before{content:"◆ ";font-size:9px}
 .card.more .cimg{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
@@ -1769,7 +1561,7 @@ function heroHTML(o){
 function paperCard(id,rt,i){
   var p=P(id), chips='';
   if(p.sens) chips+='<span class="chip note" title="'+esc(p.sens.s)+'">'+esc(p.sens.c)+'</span>';
-  if(p.v) chips+='<span class="chip v">'+esc(shortT(p.v,46))+'</span>';
+  if(p.s) chips+='<span class="chip st st-'+p.s+'">'+esc(p.sl)+'</span>';
   return '<a class="card" style="--i:'+i+'" href="'+hashOf(rt)+'" data-id="'+id+'">'+
     '<div class="cimg"><img class="pic" src="'+esc(img(p,'c'))+'" alt="" loading="lazy"></div>'+
     '<div class="cbody"><span class="cy">'+p.year+'</span><h3 class="ct">'+esc(shortT(p.t,110))+'</h3>'+
@@ -1811,7 +1603,7 @@ function renderArticle(pr,rk,aid){
       ' The full note is at the top of the '+(p.read?'<a href="'+esc(p.read)+'">reading page</a>':'reading page')+'.</div>':'';
   var acts='';
   if(p.read) acts+='<a class="abtn pri" href="'+esc(p.read)+'">Read the English translation →</a>';
-  if(p.dos) acts+='<a class="abtn" href="'+esc(p.dos)+'">☾ How it stands today</a>';
+  if(p.dos) acts+='<a class="abtn" href="'+esc(p.dos)+'">Where it stands, and who cites it</a>';
   acts+='<a class="abtn" href="'+esc(p.pdf)+'">The German original</a>';
   var sib=(rk==='_further'?pr.further:T.people[pr.id+'/'+rk].papers).filter(function(x){return String(x)!==String(aid);});
   var who=rk==='_further'?'this group':T.people[pr.id+'/'+rk].name;
@@ -1819,7 +1611,8 @@ function renderArticle(pr,rk,aid){
       kick:p.year+' · '+esc(pr.title),title:p.t})+
     '<div class="art" style="--acc:'+pr.accent+'">'+(p.de&&p.de!==p.t?'<p class="de">'+esc(p.de)+'</p>':'')+
     '<p class="au">'+esc(p.au)+'</p>'+note+(p.text?'<p class="body">'+esc(p.text)+'</p>':'')+
-    (p.v?'<div class="verd"><span class="lab">Today</span><span class="chip v">'+esc(p.v)+'</span>'+(p.st?'<span class="chip">'+esc(p.st)+(p.sbi?' · SBI '+p.sbi:'')+'</span>':'')+'</div>':'')+
+    (p.s?'<div class="verd"><span class="lab">Today</span><span class="chip st st-'+p.s+'">'+esc(p.sl)+'</span><span class="chip v">'+esc(p.v)+'</span></div>':'')+
+    (p.w?'<p class="why">'+esc(p.w)+(p.ul?' <span class="use">'+esc(p.ul)+'.</span>':'')+'</p>':'')+
     '<div class="acts">'+acts+'</div></div>'+
     (sib.length?'<p class="psec">More from '+esc(who)+'</p><div class="pgrid">'+
       sib.map(function(id,i){return paperCard(id,{p:pr.id,r:rk,a:String(id)},i);}).join('')+'</div>':'');}
@@ -1940,20 +1733,6 @@ if(depth(start)>0){renderPortal(start);showPortal();}
 # locating the figure region on each page (text masked out) and reviewed by eye.
 # The overview is a zoomable circle-pack; entering a programme opens "picture portals".
 
-PROGRAMME_OF_PHENOMENON = {
-    "regeneration": "regen", "heteromorphosis": "regen",
-    "transplantation": "graft", "developmental_mechanics": "graft",
-    "pigmentation": "colour", "color_change": "colour", "light_effects": "colour",
-    "sex_determination": "sex",
-    "inheritance_of_acquired": "heredity", "thermal_modification": "heredity",
-    "salinity_osmotic": "heredity", "hybridization": "heredity",
-    "growth": "growth", "morphology": "growth", "behavior": "growth", "gravity_effects": "growth",
-}
-# most specific first: a paper tagged both "regeneration" and "sex_determination" is about sex
-PHENOMENON_PRIORITY = ["sex_determination", "inheritance_of_acquired", "hybridization", "pigmentation",
-                       "color_change", "light_effects", "thermal_modification", "salinity_osmotic",
-                       "heteromorphosis", "transplantation", "growth", "morphology", "gravity_effects",
-                       "behavior", "regeneration", "developmental_mechanics"]
 
 
 def _smart_square(im, side):
@@ -1985,14 +1764,8 @@ def gen_tour():
     def ld(name):
         p = os.path.join(ROOT, "legacy_data", name)
         return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
-    A, SYN, SENS = ld("consensus_all.json"), ld("consensus_synthesis.json"), ld("sensitivity.json")
+    SENS = ld("sensitivity.json")
     METH = ld("methodology.json")
-    STOPS = {}
-    skip = set(TT.get("bio_stops", []))   # stops about a person, not about the paper they point at
-    for s in (ld("tour.json").get("stops") or []):        # the curated, fact-checked stop texts
-        if s["id"] in skip:
-            continue
-        STOPS.setdefault(s.get("pid") or s.get("slug"), s)
     AUTH = json.load(open(os.path.join(ROOT, "legacy_data", "authors.json"), encoding="utf-8"))["people"]
     cat_by_id = {c["id"]: c for c in catalog}
     read_for = {t["id"]: t["page_slug"] for t in translations}
@@ -2033,30 +1806,21 @@ def gen_tour():
     for c in catalog:
         pid = c["id"]; ps = str(pid)
         img = cut(pid)
-        sy = SYN.get(ps) or {}; a = A.get(ps) or {}
-        stop = STOPS.get(pid) or STOPS.get(slug_of.get(pid))
-        if stop:
-            text = stop["body"]
-        elif sy.get("comparison"):
-            text = sy["comparison"]
-        else:
-            m = METH.get(ps) or {}
-            text = m.get("finding") or m.get("whats_new") or ""
-        # keep the card text to a readable length, cut at a sentence
-        if len(text) > 520:
-            cutat = text.rfind(". ", 0, 520)
-            text = text[:cutat + 1] if cutat > 200 else text[:517] + "…"
+        # what the paper reported (methodology record, checked against the paper in the September 2026
+        # review) and where it stands today (the assessment) — no narrative that could outrun the evidence
+        text = (METH.get(ps) or {}).get("finding") or ""
+        asg = ASSESS.get(pid) or {}
         s = SENS.get(ps)
         pk = (pics.get(ps) or {}).get("kind", "titlepage")
         papers[ps] = dict(
             id=pid, year=c["year"], t=c.get("title_en") or c.get("title") or "",
             de=c.get("title") or "", au=c.get("author_full") or c.get("author") or "",
             img=img, kind=pk, text=text,
-            v=sy.get("verdict") or "", st=a.get("status") or "",
-            sbi=a.get("sbi") if a.get("sleeping") else None,
+            s=asg.get("standing") or "", sl=ST_LABEL.get(asg.get("standing"), ""),
+            v=asg.get("verdict") or "", w=asg.get("why") or "", ul=USE_LABEL.get(asg.get("use"), ""),
             sens=({"c": s["category"], "s": s.get("short", ""), "sev": s.get("severity", "medium")} if s else None),
             read=("papers/%s.html" % read_for[pid]) if pid in read_for else None,
-            dos=("dossier/%d.html" % pid) if ps in A else None,
+            dos=("dossier/%d.html" % pid) if asg else None,
             pdf="reader.html?id=%d" % pid,
             prog=programme_of(c))
 
@@ -2202,14 +1966,12 @@ def render_md(slug):
 
 def gen_reading_pages():
     os.makedirs(os.path.join(SITE, "papers"), exist_ok=True)
+    _ti = os.path.join(ROOT, "legacy_data", "translation_issues.json")
+    TR_NOTES = {k: v["public_note"] for k, v in (json.load(open(_ti, encoding="utf-8")) if os.path.exists(_ti) else {}).items()
+                if isinstance(v, dict) and v.get("public_note")}
     cat_by_id = {c["id"]: c for c in catalog}
     _sp = os.path.join(ROOT, "legacy_data", "citation_summaries.json")
     SUMM = json.load(open(_sp, encoding="utf-8")) if os.path.exists(_sp) else {}
-    # Discover cross-link: which papers have a dossier, and their verdict
-    _ap = os.path.join(ROOT, "legacy_data", "consensus_all.json")
-    _A = json.load(open(_ap, encoding="utf-8")) if os.path.exists(_ap) else {}
-    _synp = os.path.join(ROOT, "legacy_data", "consensus_synthesis.json")
-    _SYN = json.load(open(_synp, encoding="utf-8")) if os.path.exists(_synp) else {}
     # cross-link indices: paper -> author cards, and organism groupings for "related papers"
     _AUTH = json.load(open(os.path.join(ROOT, "legacy_data", "authors.json"), encoding="utf-8"))
     pid2auth = {}
@@ -2247,14 +2009,16 @@ def gen_reading_pages():
         reader_sxs = f"../reader.html?id={pid}&sxs=1"
         reader_one = f"../reader.html?id={pid}"
         notice = '<div class="notice">This translation is still being finalized (figures or full text in progress).</div>' if wip else ""
+        if TR_NOTES.get(slug):     # a known problem with this translation, stated before the text
+            notice += '<div class="notice">%s</div>' % html.escape(TR_NOTES[slug])
         # (Legacy panel removed — its content now lives in the Discover dossier.)
         # connections panel: author bio(s), this paper's rediscovery card, related papers (same organism)
         auth_links = "".join(
             '<a class="cnchip" href="../authors.html#a-%s">%s &rarr;</a>' % (html.escape(k), html.escape(nm))
             for k, nm in pid2auth.get(pid, []))
-        redis_link = ('<p class="ck">Rediscovery</p>'
-                      '<a class="cnredis" href="../dossier/%d.html">Modern state of the field &rarr;</a>' % pid
-                      ) if (lg.get("rediscovery") and str(pid) in _A) else ""
+        redis_link = ('<p class="ck">Today</p>'
+                      '<a class="cnredis" href="../dossier/%d.html">Where it stands, and who cites it &rarr;</a>' % pid
+                      ) if pid in ASSESS else ""
         _g = (c.get("genus") or "").strip().lower()
         _x = (c.get("taxon") or "").strip().lower()
         _seen = {pid}; _rel = []; _from_genus = 0
@@ -2285,21 +2049,18 @@ def gen_reading_pages():
                    + (('<p class="ck">More on %s</p>%s' % (html.escape(_org_label), rel_html)) if rel_html else '')
                    + '</section>')
         _pid = c["id"]
-        _dd = _A.get(str(_pid)) or {}
-        _dv = (_SYN.get(str(_pid)) or {}).get("verdict") or ""
-        _doss_btn = ('<a class="btn" href="../dossier/%d.html">☾ Discover dossier</a>' % _pid) if _dd else ''
-        _doss_chip = ('<span class="badge dverd">%s%s</span>' % (
-            html.escape(_dd.get("status") or ""),
-            (" · SBI %s" % _dd.get("sbi")) if _dd.get("sleeping") else "")) if _dd.get("status") else ''
-        _doss_line = ('<p class="dverdline">☾ <b>Today:</b> %s <a href="../dossier/%d.html">see the full dossier →</a></p>'
-                      % (html.escape(_dv), _pid)) if _dv else ''
+        _as = ASSESS.get(_pid) or {}
+        _doss_btn = ('<a class="btn" href="../dossier/%d.html">Where it stands today</a>' % _pid) if _as else ''
+        _doss_chip = st_chip(_pid, href="../dossier/%d.html" % _pid)
+        _doss_line = ('<p class="dverdline"><b>Today:</b> %s <a href="../dossier/%d.html">why, and who cites it →</a></p>'
+                      % (html.escape(_as["verdict"]), _pid)) if _as else ''
         body = f"""
 <article class="reading">
   <p class="kicker"><a href="../catalog.html">Catalog</a> · BVA · {t['year']}</p>
   <h1>{html.escape(t['title_en'])}</h1>
   <p class="detitle">{html.escape(t['title_de'])}</p>
   <p class="byline">{html.escape(t['author'])} · {html.escape(t['journal'])} · DOI {doi_a}</p>
-  <div class="badges">{layer_badge(c['layer'])} {('<span class=badge org>'+html.escape(c['organism'])+'</span>') if c['organism'] else ''} {'<span class="badge wip">in progress</span>' if wip else '<span class="badge done">full text</span>'} {_doss_chip}</div>
+  <div class="badges">{_doss_chip} {('<span class=badge org>'+html.escape(c['organism'])+'</span>') if c['organism'] else ''} {'<span class="badge wip">in progress</span>' if wip else '<span class="badge done">full text</span>'}</div>
   {_doss_line}
   {sens_html(pid, "read")}
   <div class="actionbar">
@@ -2592,6 +2353,23 @@ td.meth{font-size:12.5px;color:#4a463f}
 .laycard{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px}
 .laycard b{display:block;margin:8px 0 4px;font-size:15px}
 .laycard p{font-size:13.5px;color:#4a463f;margin:0}
+/* where a paper stands (assessment) and how it is used today */
+.stc{display:inline-block;font:600 11px/1.25 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:.02em;padding:3px 10px;border-radius:20px;color:#fff;white-space:nowrap;text-decoration:none;vertical-align:1px}
+a.stc:hover{text-decoration:none;filter:brightness(1.12)}
+.stc-established{background:#1d6e56}.stc-consistent{background:#4f7a74}.stc-revised{background:#9a6a1f}
+.stc-unresolved{background:#33485c}.stc-not_supported{background:#8a3a3a}.stc-no_claim{background:#9a9387}
+.usec{display:inline-block;font:600 11px/1.25 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:2px 9px;border-radius:20px;border:1px solid #cfc7b6;color:#5b5446;background:var(--card);white-space:nowrap}
+.usec-tested{border-color:#1d6e56;color:#1d6e56}.usec-precedent{border-color:#7d93a5;color:#34526a}
+.usec-historians{border-color:#c2ab7c;color:#7a6437}.usec-none{color:#8a857c}
+.oft{display:inline-block;font-size:11px;line-height:1.3;padding:2px 8px;border-radius:5px;background:#f1ece2;color:#5b5446;border:1px solid #e3dccd}
+.oft-testable{background:#eef2f5;color:#2f3e4c;border-color:#d3dde6}.oft-data{background:#eef5f1;color:#1d5a47;border-color:#cfe2d8}
+.oft-note{background:#f8ebe6;color:#7a3b2e;border-color:#e6c6bb}
+.stlegend{margin:14px 0 8px;padding:11px 14px;background:var(--card);border:1px solid var(--rule);border-radius:10px}
+.stlegend p{margin:0;font-size:13.5px;line-height:1.9;color:#3c3833}
+#cat td.today .stc{margin-bottom:2px}
+#cat td.num .usec{min-width:34px;text-align:center}
+footer.site .disclaimer{font-size:12.5px;line-height:1.55;color:#6f6a61;border-left:3px solid #d8cfbe;padding:2px 0 2px 11px;margin:12px 0;max-width:100ch}
+footer.site .disclaimer b{color:#4a463f}
 @media(max-width:860px){.cols{grid-template-columns:1fr}.toc{position:static}.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.rpanes{grid-template-columns:1fr}nav a{margin-left:12px}.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}#cat th{position:static}}
 """
     os.makedirs(os.path.join(SITE, "assets"), exist_ok=True)
@@ -2600,84 +2378,72 @@ td.meth{font-size:12.5px;color:#4a463f}
 def write_js():
     catalog_js = r"""
 (function(){
-var D=window.CATALOG||[];
-var q=document.getElementById('q'),layer=document.getElementById('layer'),
-phen=document.getElementById('phen'),tonly=document.getElementById('tonly'),
-ronly=document.getElementById('ronly'),sort=document.getElementById('sort'),
-statusSel=document.getElementById('status'),
-tb=document.querySelector('#cat tbody'),count=document.getElementById('count');
-// Discover cross-link: verdict + status + sleeping-beauty index, keyed by paper id
-var DI=window.DISCIDX||{};
-var SCLS={'Sleeping Beauty':'cst-sb','Quiet Classic':'cst-qc','Living Legacy':'cst-ll','Stirring':'cst-st','Contested Legacy':'cst-cl','Rightly Rested':'cst-rr'};
-function di(c){return DI[c.id]||null;}
+var D=window.CATALOG||[],AS=window.ASSESS||{};
+var q=document.getElementById('q'),phen=document.getElementById('phen'),method=document.getElementById('method'),
+ stand=document.getElementById('stand'),use=document.getElementById('use'),offer=document.getElementById('offer'),
+ sort=document.getElementById('sort'),tb=document.querySelector('#cat tbody'),count=document.getElementById('count');
+var SL={established:'Established',consistent:'Consistent',revised:'Revised',unresolved:'Unresolved',not_supported:'Not supported',no_claim:'No claim'};
+var SO={established:0,consistent:1,revised:2,unresolved:3,not_supported:4,no_claim:5};
+var UL={tested:'Tested or used today',precedent:'Cited as a precedent',historians:'Cited by historians',none:'Not cited since 1990'};
+function A(c){return AS[c.id]||null;}
+function modern(c){var a=A(c);return a?(a[3][3]+a[3][4]):0;}
 var ph={};D.forEach(function(c){(c.phenomena||[]).forEach(function(p){ph[p]=(ph[p]||0)+1})});
-Object.keys(ph).sort().forEach(function(p){var o=document.createElement('option');o.value=p;o.textContent=p+' ('+ph[p]+')';phen.appendChild(o)});
-var method=document.getElementById('method'),METH=window.METH||{};
+Object.keys(ph).sort().forEach(function(p){var o=document.createElement('option');o.value=p;o.textContent=p.replace(/_/g,' ')+' ('+ph[p]+')';phen.appendChild(o)});
+var METH=window.METH||{};
 var MLAB={"Regeneration & restitution":"Regeneration","Transplantation & grafting":"Transplantation","Endocrine & sex manipulation":"Endocrine/sex","Inheritance & breeding":"Inheritance","Colour change & pigment":"Colour change","Environmental modification":"Environment","Quantitative growth & biometry":"Growth/biometry","Developmental mechanics (egg/embryo)":"Dev. mechanics","Functional physiology & behaviour":"Physiology","Morphology, histology & biochemistry":"Morphology"};
 function mcl(c){var m=METH[c.id];return m?(m.cluster||''):'';}
 var ms={};D.forEach(function(c){var m=mcl(c);if(m)ms[m]=(ms[m]||0)+1;});
 Object.keys(ms).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=(MLAB[k]||k)+' ('+ms[k]+')';method.appendChild(o);});
-function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]})}
-// --- search-term highlighting: applied to ALREADY-ESCAPED html, so it can never break markup ---
+function esc(s){return (s||'').replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
 function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
 function hl(escaped,term){
   if(!term)return escaped;
   var t=String(term).trim(); if(t.length<2)return escaped;
   var parts=t.split(/\s+/).filter(function(x){return x.length>1;}).map(hlEsc);
   if(!parts.length)return escaped;
-  // never match inside a tag or an &entity;
   var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
   return escaped.replace(re,'<mark class="hlt">$1</mark>');
 }
 function row(c){
- var d=di(c);
- var Q=(q.value||'').trim();
- var read;
- if(c.has_translation){read='<a href="papers/'+c.slug+'.html"><span class="dot on"></span>English</a><br><a href="reader.html?id='+c.id+'">German</a>';}
- else {read='<a href="reader.html?id='+c.id+'">Read original</a>';}
- if(d)read+='<br><a class="dosslink" href="dossier/'+c.id+'.html">☾ Dossier</a>';
- var lay=c.layer?('<span class="badge l'+c.layer+'">L'+c.layer+'</span>'):'';
- var rd=c.rediscovery?' <span class="rd">◆ rediscovery</span>':'';
- var today='—';
- if(d){
-  today='<a class="cstat '+(SCLS[d.st]||'cst-rr')+'" href="dossier/'+c.id+'.html" title="'+esc(d.v||'')+'">'+esc(d.st)+'</a>'
-   +(d.sb?('<span class="csbi">☾ '+d.sbi+'</span>'):'')
-   +(d.v?('<div class="cverd">'+esc(d.v)+'</div>'):'');
- }
- return '<tr class="crow" data-id="'+c.id+'"><td>'+c.year+'</td><td>'+hl(esc(c.author).replace(/([\/;,])\s*/g,'$1\u200b'),Q)+'</td>'+
+ var a=A(c),Q=(q.value||'').trim();
+ var read=c.has_translation?('<a href="papers/'+c.slug+'.html"><span class="dot on"></span>English</a><br><a href="reader.html?id='+c.id+'">German</a>')
+                           :('<a href="reader.html?id='+c.id+'">Read original</a>');
+ var today='—',m=modern(c),cit='—';
+ if(a){today='<a class="stc stc-'+a[0]+'" href="dossier/'+c.id+'.html">'+SL[a[0]]+'</a><div class="cverd">'+hl(esc(a[1]),Q)+'</div>';
+   cit='<span class="usec usec-'+a[2]+'" title="'+UL[a[2]]+'">'+(m||'—')+'</span>';}
+ return '<tr class="crow" data-id="'+c.id+'"><td>'+c.year+'</td><td>'+hl(esc(c.author).replace(/([\/;,])\s*/g,'$1​'),Q)+'</td>'+
  '<td><div class="ti">'+hl(esc(c.title_en||c.title),Q)+'</div>'+((c.title&&c.title!==c.title_en)?'<div class="de">('+hl(esc(c.title),Q)+')</div>':'')+'</td>'+
- '<td><em>'+hl(esc(c.organism),Q)+'</em>'+rd+'</td>'+
- '<td class="meth">'+esc(MLAB[mcl(c)]||mcl(c)||'—')+((METH[c.id]&&METH[c.id].full)?' <span class="mfull" title="full methodology summary">●</span>':'')+'</td>'+
- '<td>'+lay+'</td><td class="num">'+(c.citations||0)+'</td><td class="today">'+today+'</td><td>'+read+'</td></tr>';
+ '<td><em>'+hl(esc(c.organism),Q)+'</em></td>'+
+ '<td class="meth">'+esc(MLAB[mcl(c)]||mcl(c)||'—')+'</td>'+
+ '<td class="today">'+today+'</td><td class="num">'+cit+'</td><td>'+read+'</td></tr>';
 }
 function apply(){
- var t=(q.value||'').toLowerCase(),L=layer.value,P=phen.value,M=method.value,S=statusSel?statusSel.value:'';
+ var t=(q.value||'').toLowerCase(),P=phen.value,M=method.value,S=stand.value,U=use.value,O=offer.value;
  var r=D.filter(function(c){
-  var d=di(c);
-  if(L&&String(c.layer)!==L)return false;
+  var a=A(c);
   if(P&&(c.phenomena||[]).indexOf(P)<0)return false;
   if(M&&mcl(c)!==M)return false;
-  if(S&&(!d||d.st!==S))return false;
-  if(tonly.checked&&!c.has_translation)return false;
-  if(ronly.checked&&!(d&&d.sb))return false;
-  if(t){var hay=(c.author+' '+c.title+' '+(c.title_en||'')+' '+(c.organism||'')).toLowerCase();if(hay.indexOf(t)<0)return false;}
+  if(S&&(!a||a[0]!==S))return false;
+  if(U&&(!a||a[2]!==U))return false;
+  if(O&&(!a||a[4].indexOf(O)<0))return false;
+  if(t){var hay=(c.author+' '+(c.author_full||'')+' '+c.title+' '+(c.title_en||'')+' '+(c.organism||'')+' '+(a?a[1]:'')).toLowerCase();if(hay.indexOf(t)<0)return false;}
   return true;});
  var s=sort.value;
  r.sort(function(a,b){
   if(s==='year')return a.year-b.year||a.id-b.id;
-  if(s==='-year')return b.year-a.year;
+  if(s==='-year')return b.year-a.year||a.id-b.id;
+  if(s==='-mod')return modern(b)-modern(a)||a.year-b.year;
   if(s==='-cit')return (b.citations||0)-(a.citations||0);
-  if(s==='-sbi'){var da=di(a),db=di(b);return ((db&&db.sbi)||0)-((da&&da.sbi)||0);}
+  if(s==='stand'){var x=A(a),y=A(b);return ((x?SO[x[0]]:9)-(y?SO[y[0]]:9))||a.year-b.year;}
   if(s==='author')return a.author.localeCompare(b.author);
   if(s==='method')return (mcl(a)||'~').localeCompare(mcl(b)||'~')||a.year-b.year;
   return 0;});
  tb.innerHTML=r.map(row).join('');
  count.textContent=r.length+' of '+D.length+' papers';
 }
-[q,layer,phen,method,sort].forEach(function(e){e.addEventListener('input',apply)});
-if(statusSel)statusSel.addEventListener('change',apply);
-[tonly,ronly].forEach(function(e){e.addEventListener('change',apply)});
-tb.addEventListener('click',function(e){if(e.target.closest('a'))return;var tr=e.target.closest('tr');if(tr&&tr.dataset.id)location.href='legacy.html?id='+tr.dataset.id;});
+[q,phen,method,sort].forEach(function(e){e.addEventListener('input',apply)});
+[stand,use,offer].forEach(function(e){e.addEventListener('change',apply)});
+tb.addEventListener('click',function(e){if(e.target.closest('a'))return;var tr=e.target.closest('tr');if(tr&&tr.dataset.id)location.href='dossier/'+tr.dataset.id+'.html';});
 apply();
 // deep link from Discover / a dossier: catalog.html?id=N — scroll to the row and flag it
 (function(){
@@ -2690,123 +2456,38 @@ apply();
 })();
 })();
 """
-    legacy_js = r"""
-(function(){
-var C=window.CATALOG||[],L=window.LEGACY||{};
-var byId={};C.forEach(function(c){byId[c.id]=c});
-var q=document.getElementById('q'),conv=document.getElementById('conv'),
-layer=document.getElementById('layer'),ronly=document.getElementById('ronly'),
-list=document.getElementById('list'),count=document.getElementById('count');
-var cv={};C.forEach(function(c){if(c.convergence)cv[c.convergence]=(cv[c.convergence]||0)+1});
-Object.keys(cv).sort().forEach(function(k){var o=document.createElement('option');o.value=k;o.textContent=k;conv.appendChild(o)});
-function esc(s){return (s||'').replace(/[&<>]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[m]})}
-function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
-function hl(escaped,term){
-  if(!term)return escaped;
-  var t=String(term).trim(); if(t.length<2)return escaped;
-  var parts=t.split(/\s+/).filter(function(x){return x.length>1;}).map(hlEsc);
-  if(!parts.length)return escaped;
-  var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
-  return escaped.replace(re,'<mark class="hlt">$1</mark>');
-}
-
-var PID=new URLSearchParams(location.search).get('id');
-if(PID){renderPaper(parseInt(PID,10));return;}
-function renderPaper(id){
- var main=document.querySelector('main'),c=byId[id];
- ['.layers','.filters'].forEach(function(s){var e=main.querySelector(s);if(e)e.style.display='none';});
- var cn=document.getElementById('count');if(cn)cn.style.display='none';
- var lede=main.querySelector('.lede');if(lede)lede.style.display='none';
- var h1=main.querySelector('h1');if(h1)h1.textContent='Article dossier';
- if(!c){document.getElementById('list').innerHTML='<p class="muted">Paper not found. <a href="legacy.html">Back to the legacy explorer</a>.</p>';return;}
- document.title=c.author+' '+c.year+' — legacy · Vienna Vivarium';
- var arr=(window.CITATIONS&&window.CITATIONS[id])||[],lg=L[id]||{},NT=window.NOTES||{};
- var sci=arr.filter(function(x){return !x.h;}),hist=arr.filter(function(x){return x.h;});
- var en=c.has_translation?('<a class="btn" href="papers/'+c.slug+'.html">Read English translation →</a>'):'';
- var _di=(window.DISCIDX||{})[id];
- var doss=_di?('<a class="btn" href="dossier/'+id+'.html">☾ Discover dossier</a>'):'';
- var vchip=_di?(' <span class="badge dverd" title="'+esc(_di.v||'')+'">'+esc(_di.st)+(_di.sb?(' · SBI '+_di.sbi):'')+'</span>'):'';
- var head='<p class="kicker"><a href="legacy.html">‹ Legacy explorer</a> · '+esc(c.convergence||'')+'</p>'+
-  '<h2 style="font-family:Georgia,serif;font-size:23px;margin:.1em 0">'+esc(c.title_en||c.title)+'</h2>'+
-  ((c.title&&c.title!==c.title_en)?'<p style="font-style:italic;color:var(--muted);margin:.1em 0">('+esc(c.title)+')</p>':'')+
-  '<p class="sub" style="font-size:14px;color:#4a463f">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+(c.layer?' · <span class="badge l'+c.layer+'">Layer '+c.layer+'</span>':'')+(c.rediscovery?' <span class="badge redis">rediscovery target</span>':'')+vchip+'</p>'+
-  ((_di&&_di.v)?('<p class="dverdline">☾ <b>Today:</b> '+esc(_di.v)+'</p>'):'')+
-  '<div class="actionbar" style="margin:12px 0"><a class="btn primary" href="reader.html?id='+id+'">Read original (PDF)</a>'+en+doss+(c.doi?'<a class="btn" target="_blank" href="https://doi.org/'+c.doi+'">DOI ↗</a>':'')+'</div>';
- function it(x){var note=NT[id+':'+x.k]||'';var doi=x.d?(' · <a target="_blank" href="https://doi.org/'+x.d+'">doi</a>'):'';
-  var vr=(window.VERIFIED&&window.VERIFIED[id+':'+x.k])?' <span title="Written from the citing work\'s full text, read via the publisher or an open archive" style="background:#1d6e56;color:#fff;border-radius:4px;padding:1px 6px;font-size:10px;font-weight:600;white-space:nowrap">✓ verified from source</span>':'';
-  return '<div class="litem"><div class="ti">'+esc(x.et||x.t||'(untitled)')+'</div>'+
-   '<div class="sub">'+esc(x.a||'')+' · '+(x.y||'')+(x.s?' · '+esc(x.s):'')+(x.h?' · <span class="badge wip">historiographic</span>':'')+doi+vr+'</div>'+
-   (note?'<p style="margin:7px 0 0;font-size:13.5px;line-height:1.6">'+esc(note)+'</p>':'')+'</div>';}
- var M=(window.METH&&window.METH[id])||{},F=M.full,methHtml='';
- if(F){var tg=(F.methods||[]).map(function(t){return '<span class="badge">'+esc(t)+'</span>';}).join(' ');
-  methHtml='<section class="methbox"><h3>Methodology</h3>'+
-   '<p style="margin:.2em 0 8px"><span class="badge mcl">'+esc(F.method||M.cluster||'')+'</span> '+tg+'</p>'+
-   '<dl class="mgrid"><dt>Manipulation</dt><dd>'+esc(F.manipulation||'')+'</dd>'+
-   '<dt>Design</dt><dd>'+esc(F.design||'')+'</dd><dt>Readout</dt><dd>'+esc(F.readout||'')+'</dd>'+
-   '<dt>Quantification</dt><dd>'+esc(F.quantification||'')+'</dd><dt>Scale</dt><dd>'+esc(F.scale||'')+'</dd>'+
-   (F.n?'<dt>Sample</dt><dd>'+esc(F.n)+'</dd>':'')+'</dl>'+
-   (F.finding?'<p class="mfind"><b>Key finding.</b> '+esc(F.finding)+'</p>':'')+
-   (F.summary?'<p style="line-height:1.62">'+esc(F.summary)+'</p>':'')+'</section>';
- }else if(M.cluster){methHtml='<section class="methbox"><h3>Methodology</h3><p><span class="badge mcl">'+esc(M.cluster)+'</span> <span class="muted">— full methodological summary not yet written for this paper.</span></p></section>';}
- var out=head+methHtml;
- var sm=(window.SUMMARIES&&window.SUMMARIES[id])||'';
- if(sm)out+='<section style="margin:18px 0 0;padding:13px 16px;border-left:4px solid var(--accent2);background:#eef2f5;border-radius:8px"><h3 style="margin:.1em 0 .4em">How later science draws on this work</h3><p style="margin:0;line-height:1.62;font-size:14.5px">'+esc(sm)+'</p></section>';
- var disc='<p class="muted" style="font-size:12px;line-height:1.5;margin:18px 0 0;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:#fbf9f3"><b>How to read these notes.</b> Each line below describes the most likely reason a work cites this paper, reconstructed from the citing work\'s title, topic and (where available) abstract — <em>not</em> from the citing passage itself, which is rarely digitised for this century-old literature. They are a guide to the citation\'s likely sense, not a verified quotation; the linked DOI is the primary source.</p>';
- if(!arr.length){out+='<p class="muted" style="margin-top:14px">No modern citations are recorded for this paper.</p>';}
- else{out+=disc+'<h3 style="margin:20px 0 8px">Cited by today — '+sci.length+' scientific work'+(sci.length!=1?'s':'')+'</h3><div class="legacy">'+sci.map(it).join('')+'</div>';
-  if(hist.length)out+='<h3 style="margin:20px 0 8px">Historiographic mentions — '+hist.length+'</h3><div class="legacy">'+hist.map(it).join('')+'</div>';}
- document.getElementById('list').innerHTML=out;
-}
-function item(c){
- var lg=L[c.id]||{};var cites=(lg.citations||[]).slice(0,10);
- var cl=cites.map(function(x){return '<li>'+(x.year?x.year+' · ':'')+esc(x.author)+' — '+esc((x.title||'').slice(0,120))+(x.doi?' <a target=_blank href="https://doi.org/'+x.doi+'">doi</a>':'')+'</li>'}).join('');
- var link=c.has_translation?'<a href="papers/'+c.slug+'.html">English translation →</a>':'<a href="reader.html?id='+c.id+'">read original →</a>';
- var Q=(q.value||'').trim();
- return '<div class="litem"><div class="h"><div><div class="ti">'+hl(esc(c.title_en||c.title),Q)+'</div>'+
- ((c.title&&c.title!==c.title_en)?'<div class="de" style="font-style:italic;color:var(--muted);font-size:12.5px;margin:1px 0 2px">('+hl(esc(c.title),Q)+')</div>':'')+
- '<div class="sub">'+hl(esc(c.author),Q)+' · '+c.year+' · <em>'+hl(esc(c.organism),Q)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':'')+'</div></div>'+
- '<div style="text-align:right">'+(c.rediscovery?'<span class="badge redis">rediscovery target</span><br>':'')+(c.layer?'<span class="badge l'+c.layer+'">L'+c.layer+'</span>':'')+'</div></div>'+
- '<div class="kv"><span><b>'+(lg.cited_by_count||0)+'</b> cited today</span><span><b>'+(lg.n_parallels||0)+'</b> modern parallels</span><span>'+esc(c.convergence||'')+'</span></div>'+
- (cl?'<details><summary>Show modern citations</summary><ul class="cites">'+cl+'</ul></details>':'')+
- '<div style="margin-top:8px">'+link+'</div></div>';
-}
-function apply(){
- var t=(q.value||'').toLowerCase(),V=conv.value,Y=layer.value;
- var r=C.filter(function(c){
-  if(ronly.checked&&!c.rediscovery)return false;
-  if(V&&c.convergence!==V)return false;
-  if(Y&&String(c.layer)!==Y)return false;
-  if(t){var hay=(c.author+' '+c.title+' '+(c.organism||'')).toLowerCase();if(hay.indexOf(t)<0)return false;}
-  return true;});
- r.sort(function(a,b){return (b.n_parallels||0)-(a.n_parallels||0)});
- list.innerHTML=r.map(item).join('');
- count.textContent=r.length+' papers';
-}
-[q,conv,layer].forEach(function(e){e.addEventListener('input',apply)});
-ronly.addEventListener('change',apply);apply();
-})();
-"""
     analytics_js = r"""
 (function(){
-var D=window.CATALOG||[];
-var ink='#211f1c',mut='#6f6a61',grid='#e4ddce';
+var D=window.CATALOG||[],AS=window.ASSESS||{};
+var mut='#6f6a61',grid='#e4ddce';
 Chart.defaults.font.family='-apple-system,Segoe UI,Roboto,sans-serif';Chart.defaults.color=mut;
 function years(){var m={};D.forEach(function(c){m[c.year]=(m[c.year]||0)+1});
  var ys=[];for(var y=1902;y<=1945;y++)ys.push(y);return{labels:ys,data:ys.map(function(y){return m[y]||0})};}
 var yr=years();
 new Chart(cYear,{type:'bar',data:{labels:yr.labels,datasets:[{data:yr.data,backgroundColor:'#7a3b2e'}]},
  options:{plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:12}},y:{grid:{color:grid},ticks:{precision:0}}}}});
-var lc={1:0,2:0,3:0,4:0};D.forEach(function(c){if(c.layer)lc[c.layer]++});
-new Chart(cLayer,{type:'doughnut',data:{labels:['Layer 1','Layer 2','Layer 3','Layer 4'],
- datasets:[{data:[lc[1],lc[2],lc[3],lc[4]],backgroundColor:['#1d6e56','#355e7d','#9a6a1f','#b8b1a4']}]},
+var ids=Object.keys(AS);
+var SK=['established','consistent','revised','unresolved','not_supported','no_claim'];
+var sc={};ids.forEach(function(k){sc[AS[k][0]]=(sc[AS[k][0]]||0)+1;});
+new Chart(cStand,{type:'doughnut',data:{labels:['Established','Consistent with current knowledge','Revised','Unresolved','Not supported','No claim to assess'],
+ datasets:[{data:SK.map(function(k){return sc[k]||0}),backgroundColor:['#1d6e56','#4f7a74','#9a6a1f','#33485c','#8a3a3a','#b8b1a4']}]},
  options:{plugins:{legend:{position:'right'}}}});
+var e=[0,0,0,0,0];ids.forEach(function(k){var c=AS[k][3];e[0]+=c[1];e[1]+=c[0]-c[1];e[2]+=c[2];e[3]+=c[3];e[4]+=c[4];});
+new Chart(cEra,{type:'bar',data:{labels:['By 1945 · authors in this corpus','By 1945 · others','1946–1989','Since 1990 · science','Since 1990 · history of science'],
+ datasets:[{data:e,backgroundColor:['#b9a57a','#d8c9a3','#9fb1c0','#355e7d','#9a9387']}]},
+ options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:grid},ticks:{precision:0}},y:{grid:{display:false}}}}});
+var UK=['tested','precedent','historians','none'];
+var uc={};ids.forEach(function(k){uc[AS[k][2]]=(uc[AS[k][2]]||0)+1;});
+new Chart(cUse,{type:'bar',data:{labels:['Tested or used today','Cited as a precedent','Cited by historians','Not cited since 1990'],
+ datasets:[{data:UK.map(function(k){return uc[k]||0}),backgroundColor:['#1d6e56','#355e7d','#b9a57a','#d8cfbe']}]},
+ options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:grid},ticks:{precision:0}},y:{grid:{display:false}}}}});
 var am={};D.forEach(function(c){am[c.author]=(am[c.author]||0)+1});
 var top=Object.keys(am).map(function(k){return[k,am[k]]}).sort(function(a,b){return b[1]-a[1]}).slice(0,12);
 new Chart(cAuth,{type:'bar',data:{labels:top.map(function(x){return x[0]}),datasets:[{data:top.map(function(x){return x[1]}),backgroundColor:'#355e7d'}]},
  options:{indexAxis:'y',plugins:{legend:{display:false}},scales:{x:{grid:{color:grid},ticks:{precision:0}},y:{grid:{display:false}}}}});
-var cc=D.slice().sort(function(a,b){return (b.citations||0)-(a.citations||0)}).slice(0,12);
-new Chart(cCit,{type:'bar',data:{labels:cc.map(function(c){return c.author+' '+c.year}),datasets:[{data:cc.map(function(c){return c.citations||0}),backgroundColor:'#7a3b2e'}]},
- options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(i){return (cc[i.dataIndex].title_en||cc[i.dataIndex].title||'').slice(0,70)}}}},scales:{x:{grid:{color:grid}},y:{grid:{display:false}}}}});
+var cc=D.filter(function(c){return AS[c.id]&&AS[c.id][3][3]>0;}).sort(function(a,b){return AS[b.id][3][3]-AS[a.id][3][3]}).slice(0,12);
+new Chart(cCit,{type:'bar',data:{labels:cc.map(function(c){return c.author+' '+c.year}),datasets:[{data:cc.map(function(c){return AS[c.id][3][3]}),backgroundColor:'#355e7d'}]},
+ options:{indexAxis:'y',plugins:{legend:{display:false},tooltip:{callbacks:{afterLabel:function(i){return (cc[i.dataIndex].title_en||cc[i.dataIndex].title||'').slice(0,70)}}}},scales:{x:{grid:{color:grid},ticks:{precision:0}},y:{grid:{display:false}}}}});
 })();
 """
     reader_js = r"""
@@ -2824,8 +2505,7 @@ var acts='<a class="btn primary" href="'+pdf+'" download>↓ Download PDF</a>';
 if(en){acts+='<a class="btn" href="'+en+'">Read English translation</a>';
  acts+= sxs?('<a class="btn" href="reader.html?id='+id+'">Single view</a>')
           :('<a class="btn" href="reader.html?id='+id+'&sxs=1">⇆ Side-by-side English</a>');}
-var _di=(window.DISCIDX||{})[id];
-if(_di)acts+='<a class="btn" href="dossier/'+id+'.html">☾ Discover dossier</a>';
+if((window.ASSESS||{})[id])acts+='<a class="btn" href="dossier/'+id+'.html">Where it stands today</a>';
 if(doi)acts+='<a class="btn" href="https://doi.org/'+C.doi+'" target="_blank">DOI ↗</a>';
 var ttl=C.title_en||C.title;
 head.innerHTML='<p class="kicker"><a href="catalog.html">Catalog</a> · BVA · '+C.year+'</p>'+
@@ -2843,7 +2523,6 @@ if(sxs&&en){
 """
     a = os.path.join(SITE, "assets")
     open(os.path.join(a, "catalog.js"), "w").write(catalog_js)
-    open(os.path.join(a, "legacy.js"), "w").write(legacy_js)
     open(os.path.join(a, "analytics.js"), "w").write(analytics_js)
     open(os.path.join(a, "reader.js"), "w").write(reader_js)
 

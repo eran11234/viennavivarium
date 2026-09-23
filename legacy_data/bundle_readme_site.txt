@@ -9,7 +9,7 @@ Unzip anywhere, then open  index.html  in a browser.
 
 Everything works with no internet connection and no server: all 175 English
 translations, all 175 German originals as PDFs, the figure plates, the catalog,
-the guided tour, the Discover hub and all 172 dossiers. Only outbound
+the guided tour, Discover and a dossier for every paper. Only outbound
 links (DOIs, Wikipedia, Consensus) need a connection.
 
 Nothing needs to be installed. If your browser blocks local files, try Firefox,
@@ -22,9 +22,8 @@ index.html        Start here.
 papers/           175 reading pages — the English translations, with figures.
 pdfs/             175 German originals, as scanned PDFs (360 MB of this bundle).
 figures/          497 figure and plate scans.
-dossier/          172 dossiers: each paper read against the current literature.
-                  (Three of the 175 carry no verdict: a 1917 obituary, which reports no
-                  experiment, and two whose assessments were withdrawn for redoing.)
+dossier/          175 dossiers: where each paper's claim stands today, how current
+                  research uses it, what it did, and every work that cites it.
 catalog.html      All 175 papers, searchable and sortable.
 tour.html         The guided tour: from six big questions down to the researchers
                   and their articles, with the figures from the papers.
@@ -39,21 +38,33 @@ megabytes rather than this one's size, and is the better choice for analysis.
 THIS IS A SNAPSHOT
 ------------------
 Dated above. The live site continues to change: translations get corrected,
-verdicts get revised, biographies get written. Check the live URL for anything
+assessments get revised, biographies get written. Check the live URL for anything
 you intend to rely on or quote.
 
 
-A NOTE ON THE VERDICTS
-----------------------
-Each paper was read against the current literature and given a verdict, a
-state-of-the-field paragraph, and an explicit comparison. Papers are placed on
-two axes: recognition (how much today's science cites it) and vindication
-(whether the science held up). These are deliberately separate, because citation
-counts partly measure notoriety — some of the institute's most-cited papers are
-among its most thoroughly refuted.
+HOW THE PAPERS WERE ASSESSED
+----------------------------
+Each paper was re-read in September 2026 and placed on one question: where does
+its own claim stand today? Established (later work confirmed this paper's
+result), consistent with current knowledge (the phenomenon is accepted but this
+result was never re-tested), revised, unresolved (with what is open and how to
+test it), not supported, or no claim to assess. Separately, each records how
+current research uses it — most papers are cited today, if at all, as history or
+as an early instance of something now known — and what it still offers a
+researcher. Definitions are on the Discover page.
 
-These are the project's own scholarly judgements, not a settled consensus.
-Disagreement is welcome and useful.
+These readings replaced an earlier scheme of "sleeping beauties" and "legacy
+layers", which has been withdrawn. They are careful readings, not a consensus of
+the field. Disagreement is welcome and useful.
+
+
+PLEASE NOTE
+-----------
+These papers are historical documents, reproduced for study, not as
+endorsements, and we are not responsible for their content. Some data may be
+wrong or harmful: early twentieth-century science sometimes used methods and
+arguments that would be considered unscientific or harmful today. The
+translations and assessments may also contain errors.
 
 
 CONTEXT NOTES
@@ -70,9 +81,9 @@ translations themselves are complete and unedited — the notes sit alongside
 them, never inside them, and nothing has been cut. If you quote from these
 papers, please carry the context with the quotation.
 
-Where a note says a verdict applies only to part of a paper, that is deliberate:
-several of these papers contain sound science next to material that should not
-be endorsed, and the verdict refers to the former.
+Several of these papers contain sound science next to material that should not
+be endorsed; the assessment judges the paper's central claim and names the fate
+of the other.
 
 Known provenance problems are recorded in data/translation_issues.json and noted
 on the pages themselves.
@@ -93,9 +104,8 @@ The translations and the corpus analysis are this project's own work. No reuse
 licence has been set for them yet — please get in touch before redistributing or
 republishing.
 
-Citation and parallel-work data derive from OpenAlex. Modern literature was
-retrieved via the Consensus API. Legacy layers, recognition/vindication axes and
-the Sleeping-Beauty Index are the project's own working analysis.
+Citation data derive from OpenAlex. Related modern literature was retrieved
+via the Consensus API. The assessments are the project's own working analysis.
 
 
 CONTACT

@@ -16,7 +16,7 @@ Received on 18 March 1912.
 
 *Archiv für Entwicklungsmechanik der Organismen*, vol. 34 (1912).
 
-> **Full translation.** A complete English rendering of the running text of “The Regeneration of the Sexual Organs in Criodrilus lacuum Hoffm. I” (Janda, 1912), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
+> **Full translation.** A complete English rendering of the running text of “The Regeneration of the Sexual Organs in Criodrilus lacuum Hoffm. II” (Janda, 1912), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
 
 In my first paper¹), which appeared in the form of a preliminary communication, I treated the new formation of the sexual apparatus of *Criodrilus* only quite briefly and reported only the principal results of my observations. Now I wish to discuss this subject more thoroughly and to supplement the already communicated facts with new ones.
 
@@ -470,4 +470,4 @@ The figures were for the most part prepared by means of Abbe's drawing apparatus
 
 ---
 
-*Translator's note.* One of the Biologische Versuchsanstalt (Vienna Vivarium) papers flagged on the project site as a modern rediscovery target. Claims are rendered as stated in the original, not endorsed.
+*Translator's note.* Claims are rendered as stated in the original, not endorsed.

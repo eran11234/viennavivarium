@@ -19,15 +19,15 @@
   "category": "Sexual orientation",
   "severity": "high",
   "heading": "Before you read this",
-  "short": "Sound hormone biology; also reports conversion surgery on a homosexual man as a success.",
+  "short": "Argues that “hermaphrodite” glands cause homosexuality, and reports conversion surgery on a homosexual man as a success.",
   "where": [
    "read",
    "dossier"
   ],
   "paras": [
-   "The animal endocrinology in this paper is sound, and is why it carries a positive verdict here: male and female gonadal secretions really do act against one another in shaping sexual characteristics, as modern work on opposing sex-differentiation pathways confirms.",
+   "The animal work this paper restates — gonad grafts shaping sexual characteristics in guinea pigs and rats — was repeated by others, although Steinach’s idea that male and female glands directly oppose each other was later explained through the pituitary. The paper’s central claim is something else: that mixed-sex “hermaphrodite” puberty glands cause intersex traits and homosexuality. That claim is not supported, and it is what the assessment on this page judges.",
    "The paper also reports, approvingly, the surgical castration of a homosexual man and the implantation of a donor testicle, describing the outcome as the removal of his “abnormal, homosexual erotisation”, and notes that Lichtenstern had since operated on further such cases. That claim is false and the practice was harmful. Sexual orientation has no gonadal basis and is not a medical condition.",
-   "The verdict recorded on this page applies to the hormone antagonism. It does not apply to that."
+   "Nothing on this page endorses that practice."
   ]
  },
  "38": {
@@ -70,7 +70,7 @@
    "dossier"
   ],
   "paras": [
-   "The general idea in this paper — that temperature acts on the endocrine and reproductive system — survives in modern terms, and that is what the verdict on this page refers to.",
+   "The paper’s central claim — that warmth enlarges the “puberty gland” and speeds and strengthens sexual development, heritably — is not supported: its control rats were kept in unheated stalls, and heat is now known to impair the testis. That is what the assessment on this page judges.",
    "A substantial part of the paper does something else. It carries the heat-rat results over to human populations, with sections headed “Influence of race”, “climatic races” and “primary races”, and draws direct comparisons between people living in the tropics and animals. This is racial-typological anthropology. Human populations do not divide into biological races, no claim made here about racial difference has any standing, and this style of argument is part of the intellectual history that racial science was built from.",
    "The text is translated in full rather than cut, because a corpus that quietly drops the passages it finds embarrassing is not a record. It is rendered as written and none of it is endorsed."
   ]
@@ -118,22 +118,7 @@
   "paras": [
    "This is a comparative catalogue running, in Przibram's own phrase, “from the plant-animals up to man”, and disabled and malformed people enter it as numbered specimens in the same series as crayfish claws, beetle legs and lambs.",
    "A three-headed boy is case No. 10, followed by a three-headed sheep cited “for the sake of the most complete possible enumeration”. A three-legged boy, a twelve-year-old girl whose foot is dissected bone by bone in print, and a young woman named in the text — whose supernumerary arm was removed surgically, and whose operation report is quoted — appear among cases 256–260. There are tables of human hand and foot polydactyly, and specimens drawn from surgical-college teratological collections in London whose provenance the paper does not examine.",
-   "The argument those cases serve — Bateson's rule — is sound, and is what the verdict refers to. The people described did not consent to become evidence for it."
-  ]
- },
- "31": {
-  "category": "Sexual orientation",
-  "severity": "medium",
-  "heading": "Before you read this",
-  "short": "Discusses same-sex mating in beetles as “pederasty” and “perversion”, drawing on period sexology.",
-  "where": [
-   "read",
-   "dossier"
-  ],
-  "paras": [
-   "The animals in this paper are water beetles. The vocabulary is not.",
-   "A page and a half of the opening section treats same-sex mating in beetles as “pederasty”, “perversion” and “perversities”, including a long approving quotation from another entomologist, with Finkler glossing the term himself as meaning homosexuality. His own worry is that such behaviour would contaminate his criteria for “typically male” and “typically female” conduct, and he reports with relief that his species showed none. The literature he draws on is the human sexology of the day.",
-   "No person appears in the paper and nothing is proposed for anyone. The note is here because that vocabulary carried real consequences for people at the time, and a reader should meet it knowing what it is."
+   "The argument those cases serve is Bateson’s rule of mirror-image symmetry, which is sound; the assessment on this page judges Przibram’s own explanation of it, that such triplications arise at a break. The people described did not consent to become evidence for either."
   ]
  },
  "90": {
@@ -176,7 +161,7 @@
    "dossier"
   ],
   "paras": [
-   "This is Przibram's review essay on the quantitative programme in biology, and the verdict on this page celebrates that programme.",
+   "This is Przibram’s review of English-language books on quantitative biology — by Loeb, D’Arcy Thompson and MacLeod — that reached Vienna after the wartime blockade. It reports no research of its own.",
    "Closing his review of MacLeod, he reports without qualification that Bertillonage — the anthropometric system used in criminalistics — contains, given enough measured characters, not only a person's individual identity but “the belonging to definite races”, so that people can be placed into a system by measurement. He treats sorting humans by race and sorting animals or plants by species as one and the same operation.",
    "It is a single unqualified sentence rather than an argument, and there is no eugenic proposal anywhere in the paper. It is flagged because anthropometric race classification is precisely what this programme was later used to justify."
   ]
@@ -209,6 +194,21 @@
    "In the polemical section of this paper Przibram defends Kammerer against a critic by publishing the mental illness of Franz Megušar — a colleague at the same institute, named in full, whose own papers are in this corpus and who has a biography on this site.",
    "He calls him “a mentally ill man” and “a sick man”, points to an obituary in which he had already said so, and offers to supply his case history privately by letter. Megušar had been killed in the First World War in 1916 and was not alive to answer.",
    "The passage is translated in full rather than cut, because the record is the point. It is flagged so that a reader meets it as what it is — a man's health used as an argument against his work."
+  ]
+ },
+ "32": {
+  "category": "Sexual orientation",
+  "severity": "medium",
+  "heading": "Before you read this",
+  "short": "Discusses same-sex mating in beetles as “pederasty” and “perversion”, drawing on period sexology.",
+  "where": [
+   "read",
+   "dossier"
+  ],
+  "paras": [
+   "The animals in this paper are water beetles. The vocabulary is not.",
+   "A page and a half of the opening section treats same-sex mating in beetles as “pederasty”, “perversion” and “perversities”, including a long approving quotation from another entomologist, with Finkler glossing the term himself as meaning homosexuality. His own worry is that such behaviour would contaminate his criteria for “typically male” and “typically female” conduct, and he reports with relief that his species showed none. The literature he draws on is the human sexology of the day.",
+   "No person appears in the paper and nothing is proposed for anyone. The note is here because that vocabulary carried real consequences for people at the time, and a reader should meet it knowing what it is."
   ]
  }
 }

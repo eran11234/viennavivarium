@@ -58,7 +58,7 @@
     156,
     157,
     158,
-    172,
+    171,
     173,
     174,
     175
@@ -104,7 +104,7 @@
    "link": "https://brainosoph.wordpress.com/2020/06/30/deported-and-forgotten-leonore-brecher/",
    "featured": true,
    "papers": [
-    5,
+    4,
     14,
     17,
     21,
@@ -177,7 +177,6 @@
     25,
     26,
     27,
-    28,
     29,
     150,
     151
@@ -196,6 +195,7 @@
     50,
     51,
     52,
+    107,
     129
    ]
   },
@@ -248,10 +248,10 @@
   },
   {
    "key": "wiesner",
-   "name": "B. P. Wiesner",
+   "name": "Bertold P. Wiesner",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the crystalline lens of adult animals can be replanted and survive — the lens, like the whole eye, tolerates transplantation.",
+   "bio": "Contributed 3 papers to the corpus: “The replantation of the lens in developed animals” (1923); “The functional capacity of ovaries in rats after autophoric (suture-free) transplantation” (1923); “Raising the body temperature of young brown rats (Mus decumanus) above the normal value and its influence on tail length” (1924).",
    "link": "",
    "featured": false,
    "papers": [
@@ -271,17 +271,17 @@
    "papers": [
     16,
     158,
-    172
+    171
    ],
    "img": "img/authors/dembowski.jpg",
    "img_credit": "Public domain · Wikimedia Commons"
   },
   {
    "key": "klintz",
-   "name": "Klintz",
+   "name": "Josef H. Klintz",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the terrestrial isopod regenerates its antenna.",
+   "bio": "Contributed 3 papers to the corpus: “Regeneration of the antenna in the common woodlouse (Porcellio scaber Latr.)” (1907); “Experiments on the poor regenerative capacity of the Cyclopidae” (1907); “Experimental tail regeneration in dormice (Myoxidae) and some other mammals” (1914).",
    "link": "",
    "featured": false,
    "papers": [
@@ -323,7 +323,7 @@
    "name": "Adolf Walther",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: argues, with the BVA line, that the germ-plasm is not sealed off from its environment.",
+   "bio": "Contributed 2 papers to the corpus: “The environment of the germ-plasm (Part V: The penetration of magnesium into the blood of the freshwater crab, Telphusa fluviatilis)” (1913); “No increase in size of freshly hatched Sphodromantis with the age of the mother” (1914).",
    "link": "",
    "featured": false,
    "papers": [
@@ -336,7 +336,7 @@
    "name": "Adolf Černý",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: maps the regenerative powers of freshwater snails.",
+   "bio": "Contributed 2 papers to the corpus: “Experiments on regeneration in freshwater snails (first communication)” (1905); “Experiments on regeneration in freshwater snails and slugs” (1907).",
    "link": "",
    "featured": false,
    "papers": [
@@ -346,10 +346,10 @@
   },
   {
    "key": "biberhofer",
-   "name": "Biberhofer",
+   "name": "Raoul Biberhofer",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the crayfish regenerates its third maxilliped, a specialized mouthpart-leg.",
+   "bio": "Contributed 2 papers to the corpus: “On the regeneration of the third maxilliped in the river crayfish (Astacus fluviatilis)” (1905); “On regeneration in Amphioxus lanceolatus” (1906).",
    "link": "",
    "featured": false,
    "papers": [
@@ -362,7 +362,7 @@
    "name": "Ferdinand Winkler",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: confirms that the DOPA reaction matches between sections and extracts, validating the histochemical test for melanin-forming enzyme.",
+   "bio": "Contributed 2 papers to the corpus: “Studies on Pigment Formation” (1910); “Agreement of positive and negative Dopa reactions on frozen sections with those on extracts (Causes of animal colouration XI)” (1925).",
    "link": "",
    "featured": false,
    "papers": [
@@ -372,10 +372,10 @@
   },
   {
    "key": "kurz",
-   "name": "Kurz",
+   "name": "Oskar Kurz",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: probes whether limb polarity is fixed or reversible — a direct test of how firmly the proximo-distal axis is determined.",
+   "bio": "Contributed 2 papers to the corpus: “The Leg-Forming Potencies of Developed Newts (Triton)” (1912); “Experiments on Polarity-Reversal in the Newt Leg” (1922).",
    "link": "",
    "featured": false,
    "papers": [
@@ -388,7 +388,7 @@
    "name": "Leo Abolin",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the newt regenerates structures after partial fibular-edge mutilation, probing how a partial wound is restored.",
+   "bio": "Contributed 2 papers to the corpus: “Influencing the Colour Change of Fishes by Chemicals (I: Infundin and Adrenalin on the Melano- and Xanthophores of the Minnow)” (1925); “The regeneration of legs mutilated at the fibular margin in Triton cristatus Laur.” (1930).",
    "link": "",
    "featured": false,
    "papers": [
@@ -413,10 +413,10 @@
   },
   {
    "key": "sciacchitano",
-   "name": "Sciacchitano",
+   "name": "Iginio Sciacchitano",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: edge-restricted mutilations regenerate, and excision of the fibular edge can yield a heteromorphic long bone — a patterned abnormality.",
+   "bio": "Contributed 2 papers to the corpus: “When the DOPA forms in the cocoons of Lophyrus pini L.” (1925); “The regeneration of legs mutilated at the tibial margin or medially in Triton cristatus Laur., and a heteromorphosis of the long bone after excision of the fibular margin” (1930).",
    "link": "",
    "featured": false,
    "papers": [
@@ -426,10 +426,10 @@
   },
   {
    "key": "bogacki",
-   "name": "Bogacki",
+   "name": "Kamil Bogacki",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: freshwater fishes regenerate amputated fins, with characteristic patterns of regrowth.",
+   "bio": "Contributed one paper to the corpus, “Experimental fin regeneration in European freshwater fishes” (1906). What it reported: Tail fins regrew in every species tested, dorsal fins partly, pectoral fins not; regrown fins restored their markings; the author judged capacity greatest along the body’s long axis.",
    "link": "",
    "featured": false,
    "papers": [
@@ -438,10 +438,10 @@
   },
   {
    "key": "brescia",
-   "name": "Brescia",
+   "name": "Giovanni Bresca",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: links the newts' secondary sexual characters to gonadal control — an amphibian counterpart to Steinach's mammalian sex-gland work.",
+   "bio": "Contributed one paper to the corpus, “Experimental Investigations on the Secondary Sex Characters of the Newts” (1910). What it reported: Castrating adult males made crest, white tail band and head marbling regress within a year; castrated females were unchanged; crest regeneration weakened after castration; gonad grafts failed.",
    "link": "",
    "featured": false,
    "papers": [
@@ -453,7 +453,7 @@
    "name": "Henny Burchardt",
    "years": "d. 1944",
    "role": "Researcher, zoological department",
-   "bio": "Henny (Henriette) Burchardt worked in the institute's zoological department in its final productive years; her 1930 paper on limbs implanted through the urodele body — showing that a regenerate's symmetry follows how the limb is set in the host — is among the last of the institute's Archiv series and is confirmed almost point for point by modern positional-information work in axolotls. After the 1938 Anschluss she was among the BVA staff persecuted as Jewish. She was murdered at Auschwitz-Birkenau in 1944, one of five former institute researchers killed by the Nazi regime (with Leonore Brecher, Helene Jacobi, Martha Geiringer and Heinrich Kun). Her name is misspelt 'Burchhardt' in most later bibliographies; the byline of her own paper reads Henny Burchardt.",
+   "bio": "Henny (Henriette) Burchardt worked in the institute's zoological department in its final productive years; her 1930 paper on limbs pushed through the urodele body, in which the cut ends regrew mirror-image distal parts, is among the last of the institute's Archiv series. After the 1938 Anschluss she was among the BVA staff persecuted as Jewish. She was murdered at Auschwitz-Birkenau in 1944, one of five former institute researchers killed by the Nazi regime (with Leonore Brecher, Helene Jacobi, Martha Geiringer and Heinrich Kun). Her name is misspelt 'Burchhardt' in most later bibliographies; the byline of her own paper reads Henny Burchardt.",
    "link": "",
    "featured": true,
    "papers": [
@@ -463,10 +463,10 @@
   },
   {
    "key": "burt",
-   "name": "Burt",
+   "name": "D. R. R. Burt",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: head and foot regions behave as unipotent systems, each regenerating along its own polarity — axial determination in Hydra.",
+   "bio": "Contributed one paper to the corpus, “The head and foot of Pelmatohydra oligactis, Pall., as unipotent systems” (1925). What it reported: Head-region rings formed heads and foot-region rings feet at whichever end was free; mid-body tissue could form either, head potential falling aborally; the stock did not influence the graft.",
    "link": "",
    "featured": false,
    "papers": [
@@ -475,10 +475,10 @@
   },
   {
    "key": "congdon",
-   "name": "Congdon",
+   "name": "E. D. Congdon",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: treats the germ plasm as influenced by its surroundings — environment as a factor in heredity.",
+   "bio": "Contributed one paper to the corpus, “The surroundings of the germ plasm (Part III: The internal temperature of warm-blooded animals (Mus decumanus, M. musculus, Myoxus glis) in artificial climates)” (1912). What it reported: Adult rats reared at 33 °C were 1 °C warmer than at 16 °C; transferred adult rats and mice shifted 1.5–3 °C; rearing temperature did not affect near-pubertal animals.",
    "link": "",
    "featured": false,
    "papers": [
@@ -487,10 +487,10 @@
   },
   {
    "key": "czwiklitzer",
-   "name": "Czwiklitzer",
+   "name": "Richard Czwiklitzer",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the worm regenerates its anterior end, including head structures, after amputation.",
+   "bio": "Contributed one paper to the corpus, “On the regeneration of the anterior end of Ophryotrocha puerilis Clap.-Metsch.” (1905). What it reported: No regeneration after loss of two or more segments (jaw apparatus expelled, eyes not regrown); after first-segment loss, segment two sometimes grew antennae; antennae with first-segment parts regrew within days.",
    "link": "",
    "featured": false,
    "papers": [
@@ -499,10 +499,10 @@
   },
   {
    "key": "ehrenpreis",
-   "name": "Ehrenpreis",
+   "name": "Alfred Ehrenpreis",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: tests whether a visceral organ, the spleen, can be transplanted and survive in adult newts.",
+   "bio": "Contributed one paper to the corpus, “Spleen transplantation in adult urodeles” (1924). What it reported: Spleens exchanged between newts without vascular sutures healed in, vascularised and kept normal histology with mitoses for up to 122 days in 9 of 25; removed spleens did not regenerate.",
    "link": "",
    "featured": false,
    "papers": [
@@ -511,10 +511,10 @@
   },
   {
    "key": "flathauser",
-   "name": "Flat-Hauser",
+   "name": "Eugenie Flat-Hauser",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the newt regenerates its long bones after partial internal removal — skeletal restitution within an intact limb.",
+   "bio": "Contributed one paper to the corpus, “Regeneration of the long bones after partial internal removal in the newt limb (Triton cristatus Laur.)” (1930). What it reported: Proximal halves regrew the missing distal half typically (all 22 regenerates); distal halves regrew mirror images of themselves (23) or atypical forms (13), never the proximal half.",
    "link": "",
    "featured": false,
    "papers": [
@@ -523,10 +523,10 @@
   },
   {
    "key": "frohlich",
-   "name": "Fröhlich",
+   "name": "Alfred Fröhlich",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: characterizes the prawn's colour-change reactions — an early analysis of crustacean chromatophore control.",
+   "bio": "Contributed one paper to the corpus, “Colour-Change Reactions in Palaemon” (1910). What it reported: Blinded prawns turn red-brown, then within weeks white (P. treillianus) or pale yellow (P. rectirostris); strong light and white ground contract chromatophores; explained as a nervous reflex from the eyes.",
    "link": "",
    "featured": false,
    "papers": [
@@ -535,10 +535,10 @@
   },
   {
    "key": "gluschkiewitsch",
-   "name": "Gluschkiewitsch",
+   "name": "Theophil Bohdan Gluschkiewitsch",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the leech regenerates both its anterior and posterior ends, with differences in capacity between them.",
+   "bio": "Contributed one paper to the corpus, “Regeneration of the anterior and posterior ends of Clepsine tessulata” (1907). What it reported: After 23 days there were 3 complete and 5 incomplete anterior regenerates (of 20) and 2 incomplete posterior ones (of 20); the author concluded leeches are no exception among annelids.",
    "link": "",
    "featured": false,
    "papers": [
@@ -550,7 +550,7 @@
    "name": "Goldschmidt",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: waterfowl can regenerate beak tissue — regeneration in warm-blooded vertebrates, not only the cold-blooded.",
+   "bio": "Contributed one paper to the corpus, “Regeneration of the bill in the domestic goose (Anser cinereus) and the domestic duck (Anas boschas)” (1909). What it reported: Beak tips cut from three-week-old geese and ducks of both sexes regrew, mostly completely, within 4–6 weeks, with epithelium, bone, connective tissue and tactile corpuscles but apparently no glands.",
    "link": "",
    "featured": false,
    "papers": [
@@ -559,10 +559,10 @@
   },
   {
    "key": "hammerschlag",
-   "name": "Hammerschlag",
+   "name": "Viktor Hammerschlag",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: analyses how traits, including the waltzing character, are inherited in mouse crosses.",
+   "bio": "Contributed one paper to the corpus, “Breeding experiments with Japanese dancing mice and European running mice” (1912). What it reported: Waltzing, albinism and spotting segregated as recessives, with runners to waltzers 4.57:1 and too few spotted mice; a malformed litter sired by a male that lost a leg never recurred.",
    "link": "",
    "featured": false,
    "papers": [
@@ -612,7 +612,7 @@
    "name": "Josef Halban",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: egg and newborn size rise with the mother's age — a maternal-age effect on offspring size.",
+   "bio": "Contributed one paper to the corpus, “The increase in size of eggs and newborns with the advancing age of the mother” (1910). What it reported: Egg and newborn size rise with the mother's age — a maternal-age effect on offspring size.",
    "link": "",
    "featured": false,
    "papers": [
@@ -624,7 +624,7 @@
    "name": "Jovan Hadži",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: documented the green hydra's symbiosis with Zoochlorella and basic features of its feeding and biology as groundwork for an experimental biology of the polyp.",
+   "bio": "Contributed one paper to the corpus, “Preliminary Experiments on the Biology of Hydra” (1906). What it reported: Green hydra withstood CO2 better than brown; in darkness or green light algae did not enter eggs, one of which still hatched; halved oocytes regained normal size; algae judged non-nutritive.",
    "link": "",
    "featured": false,
    "papers": [
@@ -645,10 +645,10 @@
   },
   {
    "key": "kornfeld",
-   "name": "Kornfeld",
+   "name": "Werner Kornfeld",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the metamorphic resorption of the gills depends on the whole organism — a systemic (hormonal) signal, not the gill's own programme, drives it.",
+   "bio": "Contributed one paper to the corpus, “Dependence of the Metamorphic Gill-Resorption on the Whole Organism in Salamandra maculosa” (1914). What it reported: Grafts show slow degenerative resorption, then abrupt resorption exactly synchronous with the host’s metamorphosis, whatever the donor’s age; the whole organism times gill resorption. No heterochronous case was seen.",
    "link": "",
    "featured": false,
    "papers": [
@@ -657,10 +657,10 @@
   },
   {
    "key": "kryz",
-   "name": "Kryz",
+   "name": "Ferdinand Kryž",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the coagulation point of muscle plasma is independent of the temperature the animal lived at — a fixed biochemical property.",
+   "bio": "Contributed one paper to the corpus, “Independence of the coagulation points of specific muscle plasmas from the temperature during life” (1907). What it reported: The coagulation point of muscle plasma is independent of the temperature the animal lived at — a fixed biochemical property.",
    "link": "",
    "featured": false,
    "papers": [
@@ -669,10 +669,10 @@
   },
   {
    "key": "kudo",
-   "name": "Kudô",
+   "name": "Tokuyasu Kudō",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the quantity of melanin itself changes during colour change — not only its distribution within chromatophores.",
+   "bio": "Contributed one paper to the corpus, “Change in the amount of melanin during colour change in the fishes Esox, Carassius, Phoxinus, Gobius, Nemachilus” (1922). What it reported: The quantity of melanin itself changes during colour change — not only its distribution within chromatophores.",
    "link": "",
    "featured": false,
    "papers": [
@@ -684,7 +684,7 @@
    "name": "Kunio Sato",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the DOPA reaction agrees between frozen sections and extracts — the enzyme detected histochemically is the same one assayed biochemically, validating the DOPA test for locating melanin formation.",
+   "bio": "Contributed one paper to the corpus, “Can Dopa or tyrosine yield the chromogen in vertebrates?” (1925). What it reported: No DOPA reaction in any vertebrate skin or skin-covering extract, so DOPA is not the usual chromogen; tyrosine tests inconclusive, since protein removal carries tyrosine down; tyrosine remains possible.",
    "link": "",
    "featured": false,
    "papers": [
@@ -693,10 +693,10 @@
   },
   {
    "key": "mayerhofer",
-   "name": "Mayerhofer",
+   "name": "Franz Mayerhofer",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: the pike changes colour with its background and light via chromatophore adjustment.",
+   "bio": "Contributed one paper to the corpus, “Colour-Change Experiments on the Pike (Esox lucius L.)” (1909). What it reported: Blinded pike darken and stop responding to light but not to electrical or thermal stimuli; in light they grow belly pigment, in darkness pigment regresses; seeing pike pale in darkness.",
    "link": "",
    "featured": false,
    "papers": [
@@ -705,10 +705,10 @@
   },
   {
    "key": "muftic",
-   "name": "Muftić",
+   "name": "Enver Muftić",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: amphibians regenerate lung tissue — regeneration of an internal organ, not only external appendages.",
+   "bio": "Contributed one paper to the corpus, “Lung regeneration in Salamandra maculosa and some other amphibians” (1907). What it reported: Salamandra, Rana and Bufo lungs regenerate after partial or complete removal when ligated before cutting, via an epithelial regeneration bud; the intact lung hypertrophies; Triton undecided.",
    "link": "",
    "featured": false,
    "papers": [
@@ -717,10 +717,10 @@
   },
   {
    "key": "neudorfer",
-   "name": "Neudörfer",
+   "name": "Arthur Neudörfer",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: freshwater fishes can be adapted to salt water within limits — experimental osmotic acclimation.",
+   "bio": "Contributed one paper to the corpus, “Experiments on the adaptation of freshwater fishes to salt water” (1907). What it reported: Lamprey larvae, sterlet, carp and pike tolerated salt only to a freezing point near −1.0 °C, blood equilibrating with the medium (gills salt-permeable); eel gills judged impermeable.",
    "link": "",
    "featured": false,
    "papers": [
@@ -732,7 +732,7 @@
    "name": "Otto Grosser",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: established the Egyptian mantis as a tractable experimental insect with marked colour change and regenerative capacity.",
+   "bio": "Contributed one paper to the corpus, “Some malformations in the spiny dogfish (Acanthias vulgaris Risso)” (1906). Described a nerveless head fin, gills on the upper jaw, a finless tail and two anterior duplications; Przibram suggested a displaced fin anlage, homoeosis, defect formation and separated cleavage cells.",
    "link": "",
    "featured": false,
    "papers": [
@@ -756,7 +756,7 @@
    "name": "Reinhard Demoll",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: weighs the case for and against the inheritance of acquired characters — the central theoretical question behind the BVA's Lamarckian experiments.",
+   "bio": "Contributed one paper to the corpus, “On the question of the inheritance of characters acquired by the soma” (1920). What it reported: The displaced tooth, which could never have chewed, still bore a grinding surface; Demoll concluded that carp grinding teeth are largely inherited individual acquisitions.",
    "link": "https://de.wikipedia.org/wiki/Reinhard_Demoll",
    "featured": false,
    "papers": [
@@ -768,7 +768,7 @@
    "name": "Rhoda Erdmann",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: body size varies systematically with the endomixis cycle in pure lines — linking a nuclear-reorganization rhythm to biometric size variation.",
+   "bio": "Contributed one paper to the corpus, “Endomixis and size variations in pure-bred lines of Paramaecium aurelia” (1920). What it reported: Size means and variability cycle through each roughly four-week intermictic period; after each endomixis a line splits into sublines with different heritable mean sizes, which selection can maintain.",
    "link": "https://en.wikipedia.org/wiki/Rhoda_Erdmann",
    "featured": false,
    "papers": [
@@ -791,10 +791,10 @@
   },
   {
    "key": "staudinger",
-   "name": "Staudinger",
+   "name": "Fritz Staudinger",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: heteromorphoses arise even at spiracles and other unexpected sites in the stick insect, widening the catalogue of homeotic regeneration.",
+   "bio": "Contributed one paper to the corpus, “Heteromorphoses of spiracles and other structures in Carausius (Dixippus) morosus Brunner” (1930). What it reported: Posterior closing plates regrew as mirror-image anterior plates, or not at all; anterior plates and whole spiracles did not regrow; spiracle-like head openings came from a displaced mandibular tendon.",
    "link": "",
    "featured": false,
    "papers": [
@@ -803,10 +803,10 @@
   },
   {
    "key": "sztern",
-   "name": "Sztern",
+   "name": "Henryk Sztern",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: quantifies the mantis growth curve, instar by instar.",
+   "bio": "Contributed one paper to the corpus, “Growth measurements on Sphodromantis bioculata Burm. II. Length, breadth and height” (1914). What it reported: No mitoses seen; constant epidermal nucleus density implied cell number doubling per moult; ganglion, thorax and facet dimensions grew by the cube root of 2, with deviations near moult VI.",
    "link": "",
    "featured": false,
    "papers": [
@@ -815,10 +815,10 @@
   },
   {
    "key": "thomson",
-   "name": "Thomson",
+   "name": "A. Landsborough Thomson",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: documents how the raptorial foreleg regenerates across different mantids, a comparative extension of the BVA mantis work.",
+   "bio": "Contributed one paper to the corpus, “Notes on the regeneration of the fore-limb in various genera of Mantidae” (1922). What it reported: Forelegs of Parathenodera and Stagmomantis nymphs regenerated as miniatures, often with fewer tarsal joints, contrary to Bordage; ganglion punctures failed as movement returned, and no less-differentiated limbs appeared.",
    "link": "",
    "featured": false,
    "papers": [
@@ -830,19 +830,20 @@
    "name": "Walter Kolmer",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: documents a spontaneously formed second lens in a fish eye — a natural lentoid bearing on lens formation and regeneration.",
+   "bio": "Contributed 2 papers to the corpus: “On the finding of a second lens (spontaneous lentoid formation) in the eye of a catfish” (1920); “The replantation of eyes. V. Histological investigations on transplanted eyes” (1923).",
    "link": "https://en.wikipedia.org/wiki/Walter_Kolmer",
    "featured": false,
    "papers": [
+    28,
     162
    ]
   },
   {
    "key": "weindl",
-   "name": "Weindl",
+   "name": "Theodor Weindl",
    "years": "",
    "role": "",
-   "bio": "Contributed to the corpus: pigment arises through preformed tyrosinase enzymes — an enzymatic theory of animal pigmentation.",
+   "bio": "Contributed one paper to the corpus, “Pigment Formation on the Basis of Pre-formed Tyrosinases” (1907). What it reported: Melanin-forming tyrosinase occurs in cephalopod skin and eyes but not muscle, in unpigmented squid eggs and in olm skin; reactions needed metal catalysts; living olms pigmented only in light.",
    "link": "",
    "featured": false,
    "papers": [

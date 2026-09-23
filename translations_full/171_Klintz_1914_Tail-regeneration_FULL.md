@@ -12,7 +12,7 @@ Received on 5 April 1914.
 
 *Archiv für Entwicklungsmechanik der Organismen*, vol. 40 (1914).
 
-> **Full translation.** A complete English rendering of the running text of “Experimental Tail Regeneration in [Lizards]” (Klintz, 1914), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
+> **Full translation.** A complete English rendering of the running text of “Experimental Tail Regeneration in Dormice (Myoxidae) and Some Other Mammals” (Klintz, 1914), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
 
 ### Contents.
 
@@ -455,4 +455,4 @@ The animals No. 6, 7, 8, 9 were born in captivity and taken into the experimenta
 
 ---
 
-*Translator's note.* One of the Biologische Versuchsanstalt (Vienna Vivarium) papers flagged on the project site as a modern rediscovery target. Claims are rendered as stated in the original, not endorsed.
+*Translator's note.* Claims are rendered as stated in the original, not endorsed.

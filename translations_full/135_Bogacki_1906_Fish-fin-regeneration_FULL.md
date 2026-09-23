@@ -60,4 +60,4 @@ From the protocol it emerges that the regenerative potencies are greatest in the
 
 ---
 
-*Translator's note.* One of the Biologische Versuchsanstalt (Vienna Vivarium) papers flagged on the project site as a modern rediscovery target. Claims are rendered as stated in the original, not endorsed.
+*Translator's note.* Claims are rendered as stated in the original, not endorsed.

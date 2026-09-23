@@ -54,14 +54,61 @@
  },
  "_eye_series_numbering": {
   "slug": "126_Koppanyi_1923_Eye-replantation-II / 131_Koppanyi_1923_Eye-replantation-III",
-  "severity": "open",
-  "summary": "The part numbers of the eye-replantation series disagree between the PDF filenames and the papers' own printed subtitles. Not resolved, and not guessed at.",
+  "severity": "resolved",
+  "summary": "Resolved September 2026 from the printed title pages and Crossref page numbers. The series in Arch. mikr. Anat. Entw.-Mech. 99 runs I (Przibram, methods, id 24), II (id 25, pp. 15–42), III physiology (id 26, pp. 43–57), IV growth (id 27, pp. 60–63), V Kolmer histology (id 28, pp. 64–75), VI colour (id 29, pp. 76–81), VII Jellinek training (id 30, pp. 82–103); Finkler I–III are ids 31–33. Translations, PDFs and DOIs were re-paired so each id is one article: translations 126→26, 158→27, 151→28, 131→29, 168→31, 165→32 (131 and 158 had also been attached to each other's PDF).",
   "evidence": [
    "id27's PDF is filed as 'Die-Replantation-von-Augen-II-Physiology.pdf' and the site title says '(II: physiology)', but the paper's own H2 reads 'III. The Physiology of Replanted Mammalian Eyes.'",
    "That paper's bibliography cites a Part II ('Haltbarkeit und Funktionsprufung', Akadem. Anz. 7/8, 1921) as a separate, earlier item.",
    "id26 is filed as '(III: growth)'. There are six papers in this cluster (ids 25-30), so renumbering one risks a collision."
   ],
-  "action_needed": "Resolve against the title pages of the whole series before changing any label. The printed subtitle is likely authoritative over the scan filename, but the series needs settling as a set, not one paper at a time.",
+  "action_needed": "None. Translation file names still carry the old numbering (internal only).",
   "reader_note_placed": false
+ },
+ "139_Wiesner_1923_Lens-replantation": {
+  "slug": "139_Wiesner_1923_Lens-replantation",
+  "severity": "open",
+  "summary": "The results and summary sections are largely unreadable (garbled output), and the operation tables contain wrong counts (the print gives 11 self-grafts in perch where the translation says 4, and 2 same-species grafts in the spadefoot toad where it says 11). The header gives the wrong receipt date (print: 13 October 1922) and says 'Amphibians' for 'Animals'.",
+  "action_needed": "Re-translate from the German original.",
+  "public_note": "This translation is being redone: its results and summary sections are unreliable and some table counts are wrong. Until then, please rely on the German original for anything beyond the methods.",
+  "reader_note_placed": true
+ },
+ "100_Kammerer_1913_Inherited-colour-changes-big": {
+  "slug": "100_Kammerer_1913_Inherited-colour-changes-big",
+  "severity": "open",
+  "summary": "Summary point 13 breaks off mid-sentence and runs into point 14; in the German, Kammerer adds that no intrauterine or intra-ovarian induction was ever found.",
+  "action_needed": "Complete point 13 from the German.",
+  "reader_note_placed": false
+ },
+ "56_Weiss_1923_Transplanted-limbs-II": {
+  "slug": "56_Weiss_1923_Transplanted-limbs-II",
+  "severity": "open",
+  "summary": "The translation reverses the graft direction for operation 065 and garbles page 169.",
+  "action_needed": "Correct against the German.",
+  "reader_note_placed": false
+ },
+ "172_Ehrenpreis_1924_Spleen-transplantation": {
+  "slug": "172_Ehrenpreis_1924_Spleen-transplantation",
+  "severity": "open",
+  "summary": "One test series is called a 'replantation' although it was a second spleen implanted beside the host's own.",
+  "action_needed": "Correct the term.",
+  "reader_note_placed": false
+ },
+ "_autophor": {
+  "slug": "82_Wiesner_1923_Transplanted-ovaries / 121_Koppanyi_1924_Transplanted-testis-spermatogenesis / 130_Przibram_1923_Autophoric-transplantation-method",
+  "severity": "open",
+  "summary": "'autophor' (Przibram's self-holding, suture-free graft method) was rendered as 'autoplastic(ally)' in titles and text. Titles are corrected; the running text still needs checking wherever the German has 'autophor'.",
+  "action_needed": "Replace 'autoplastic' by 'autophoric (suture-free)' where the German has 'autophor' — not where it has 'autoplastisch'.",
+  "reader_note_placed": false
+ },
+ "_chunk_notes": {
+  "slug": "33_Secerov_1909 / 71_Morgulis_1912 / 95_Przibram_1925_Rat-tail-length / 125_Brecher_1924",
+  "severity": "open",
+  "summary": "Leftover page-range notes from translation by sections: Secerov 1909 (summary point 1 continuation quoted in a note), Morgulis 1912 (an opening partial sentence), Przibram 1925 rat-tail length (first rows of Table XIV may be missing), Brecher 1924 Dixippus (results table garbled in translation). Four other such notes were removed in September 2026 because the text they described follows them.",
+  "action_needed": "Check each against the German and restore any missing text.",
+  "reader_note_placed": false
+ },
+ "_sept2026_fixed": {
+  "severity": "resolved",
+  "summary": "Fixed during the September 2026 review: wrong header notes in the translations of Abolin 1925 (named drugs it never used), Brecher & Winkler 1925 (authors), Weiss 1925 nerve dependence ('skeleton'), Thomson 1922 ('Amphibians'), Janda 1912 (part number), Klintz 1914 ('Lizards'), Kammerer 1909 ('epidemic' experiments), Kammerer 1907 (communication and species), Kolmer and Jellinek 1923 (authors); two mistranslations in Przibram 1917 (mean of 10 daily readings; young rats track the outside temperature more closely than mature ones); promotional translator's notes ('landmark', 'foreshadows', 'rediscovery target') removed from 109 translations."
  }
 }

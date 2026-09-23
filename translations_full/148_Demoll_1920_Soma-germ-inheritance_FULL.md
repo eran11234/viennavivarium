@@ -105,4 +105,4 @@ Demoll, *Vererbung vom Soma erworb. Eigenschaften.*    Verlag von Julius Springe
 
 ---
 
-*Translator's note.* One of the Biologische Versuchsanstalt (Vienna Vivarium) papers flagged on the project site as a modern rediscovery target. Claims are rendered as stated in the original, not endorsed.
+*Translator's note.* Claims are rendered as stated in the original, not endorsed.

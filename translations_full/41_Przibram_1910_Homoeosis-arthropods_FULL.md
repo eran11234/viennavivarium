@@ -633,4 +633,4 @@ Zelený, Ch., The Regeneration of an Antenna-like Organ in place of the Vestigia
 
 ---
 
-*Translator's note.* A landmark paper in the history of the term "homoeosis" (the replacement of one organ by another) in regeneration.
+*Translator's note.* "Homoeosis" — the replacement of one organ by another — is Bateson's term (1894), which Przibram adopts here for regenerative cases.

@@ -277,4 +277,4 @@ Experiments on *Triton cristatus* [modern *Triturus cristatus*]:
 
 ---
 
-*Translator's note.* Complete translation of the running text and apparatus. Weiss's central terms — *Determinationsfeld* ("determination field"), *Blastem* ("blastema"), and the "sprouting"/"budding" theory of regeneration — are rendered consistently. This is a landmark for the "field" concept in regeneration and foreshadows Weiss's later morphogenetic-field work.
+*Translator's note.* Complete translation of the running text and apparatus. Weiss's central terms — *Determinationsfeld* ("determination field"), *Blastem* ("blastema"), and the "sprouting"/"budding" theory of regeneration — are rendered consistently.

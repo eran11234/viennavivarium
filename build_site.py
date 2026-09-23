@@ -433,6 +433,10 @@ def build():
     _rdp = os.path.join(ROOT, "legacy_data", "rediscovery.json")
     ORG_OVERRIDE = (json.load(open(_rdp, encoding="utf-8")).get("org_override", {})
                     if os.path.exists(_rdp) else {})
+    # catalog corrections verified against each paper's title page and byline (Sept 2026 review);
+    # applied last, so they override the spreadsheet, the translation metadata and org_override
+    _pfp = os.path.join(ROOT, "legacy_data", "paper_fixes.json")
+    PAPER_FIX = json.load(open(_pfp, encoding="utf-8")) if os.path.exists(_pfp) else {}
     def defffd(s):
         if not s or "�" not in s: return s
         # match a whole word-core (may contain several U+FFFD), ignoring surrounding quotes/punctuation
@@ -481,6 +485,14 @@ def build():
         # English title for every paper: translation's own title if present, else curated translation
         title_en = (tmeta.get(slug, {}).get("title_en") if slug else None) or TITLES_EN.get(str(pid))
 
+        _pf = PAPER_FIX.get(str(pid)) or {}
+        if _pf:
+            author = _pf.get("author") or author
+            author_full = _pf.get("author_full") or author_full
+            title_en = _pf.get("title_en") or title_en
+            title_de = _pf.get("title_de") or title_de
+            if "organism" in _pf:
+                organism = _pf["organism"]
         rec = dict(
             id=pid, year=year, author=author, author_full=author_full,
             title=title_de, organism=organism, genus=clean(pr.get("genus")),
@@ -493,6 +505,8 @@ def build():
             title_en=title_en,
             rationale=defffd(ds.get("rationale", "")),
         )
+        if "taxon" in _pf:
+            rec["taxon"] = _pf["taxon"]
         catalog.append(rec)
 
         # legacy detail (cap citations to keep payload sane)
@@ -536,7 +550,7 @@ def build():
             else f"Archiv f. Entwicklungsmechanik der Organismen ({c['year']})")
         translations.append(dict(
             trans_slug=slug, page_slug=c["slug"], id=c["id"],
-            title_en=tm.get("title_en") or c.get("title_en") or "",
+            title_en=c.get("title_en") or tm.get("title_en") or "",
             title_de=c["title"], author=c["author_full"] or c["author"],
             year=c["year"], journal=journal, doi=c["doi"], pdf=c["pdf"],
             organism=c["organism"], words=tm.get("words", 0), figs=tm.get("figs", 0),

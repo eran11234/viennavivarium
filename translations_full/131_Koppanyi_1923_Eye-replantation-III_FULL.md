@@ -87,4 +87,4 @@ Koppányi, Replantation of Eyes. VI.  *Verlag von Julius Springer in Berlin.*
 
 ---
 
-*Translator's note.* One of the Biologische Versuchsanstalt (Vienna Vivarium) papers flagged on the project site as a modern rediscovery target. Claims are rendered as stated in the original, not endorsed.
+*Translator's note.* Claims are rendered as stated in the original, not endorsed.

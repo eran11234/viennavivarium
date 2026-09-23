@@ -10,7 +10,7 @@ A. Landsborough Thomson, O.B.E., M.A., D.Sc.
 
 *Archiv für Entwicklungsmechanik der Organismen*, vol. 50 (1922).
 
-> **Full text (English original).** This Vienna Vivarium paper was written in English; the running text of “Notes on the Regeneration of the Fore-Limb [in Amphibians]” (Thomson, 1922) is reproduced faithfully and complete — all tables, figure/plate legends, and footnotes — transcribed from the page images, with only obvious scan artefacts corrected.
+> **Full text (English original).** This Vienna Vivarium paper was written in English; the running text of “Notes on the Regeneration of the Fore-Limb in Various Genera of Mantidae” (Thomson, 1922) is reproduced faithfully and complete — all tables, figure/plate legends, and footnotes — transcribed from the page images, with only obvious scan artefacts corrected.
 
 ### List of Contents.
 

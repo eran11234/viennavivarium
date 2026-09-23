@@ -105,7 +105,7 @@ Congdon found for adult rats at 17° the high temperature 36.2°, at 33°: 37.2�
 
 ---
 
-*[End of pages (1–7). The text continues onto page 8 (outside this section): the conclusion of the Congdon sentence, Przibram's remark, the Summary (Section IV), and the printed Table X. Page 8 is therefore not reproduced here.]* Přibram, however, points out that in Congdon's experiments the Kammern [chambers] with constant temperatures were not yet available. To compare the results with those for mice etc. seemed to me somewhat hazardous, given the difference in the Material.
+Přibram, however, points out that in Congdon's experiments the Kammern [chambers] with constant temperatures were not yet available. To compare the results with those for mice etc. seemed to me somewhat hazardous, given the difference in the Material.
 
 ## IV. Zusammenfassung [Summary].
 

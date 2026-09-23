@@ -63,22 +63,25 @@ def write_catalog_csv(path):
     def ld(name):
         p = os.path.join(ROOT, "legacy_data", name)
         return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
-    A, S, SENS = ld("consensus_all.json"), ld("consensus_synthesis.json"), ld("sensitivity.json")
+    AS, SENS = ld("assessment.json"), ld("sensitivity.json")
     B = "https://eran11234.github.io/viennavivarium/"
 
     rows = []
     for c in sorted(cat, key=lambda x: x["id"]):
         i = c["id"]; s = str(i)
-        a = A.get(s) or {}; y = S.get(s) or {}; t = tr.get(i) or {}
+        a = AS.get(s) or {}; k = a.get("cites") or {}; t = tr.get(i) or {}
         rows.append(dict(
-            id=i, year=c.get("year"), author=c.get("author"),
+            id=i, year=c.get("year"), author=c.get("author"), authors=c.get("author_full") or c.get("author"),
             title_en=c.get("title_en") or "", title_de=c.get("title") or "",
-            journal=c.get("journal") or "", doi=c.get("doi") or "",
-            organism=c.get("organism") or "", genus=c.get("genus") or "", taxon=c.get("taxon") or "",
-            citations=c.get("citations"), legacy_layer=c.get("layer"),
-            discover_status=a.get("status") or "", sleeping_beauty=bool(a.get("sleeping")),
-            sbi=a.get("sbi") if a.get("sleeping") else "", verdict=y.get("verdict") or "",
-            modern_papers_read=a.get("n_unique") or "", modern_since_2015=a.get("recent") or "",
+            journal=t.get("journal") or "", doi=c.get("doi") or "",
+            organism=c.get("organism") or "", taxon=c.get("taxon") or "",
+            standing=a.get("standing", ""), verdict=a.get("verdict", ""), why=a.get("why", ""),
+            open_question=a.get("open", ""), how_to_test=a.get("test", ""),
+            offers=";".join(a.get("offers") or []), basis=";".join(a.get("basis") or []),
+            confidence=a.get("confidence", ""), use_today=a.get("use", ""), use_note=a.get("use_note", ""),
+            cites_total=k.get("total", ""), cites_to1945=k.get("to1945", ""),
+            cites_to1945_by_corpus_authors=k.get("to1945_self", ""), cites_1946_1989=k.get("mid", ""),
+            cites_since1990_science=k.get("modern_sci", ""), cites_since1990_history=k.get("modern_hist", ""),
             context_note=(SENS.get(s) or {}).get("category", ""),
             translation_file=(t.get("trans_slug", "") + "_FULL.md") if t else "",
             reading_page=(B + "papers/" + t["page_slug"] + ".html") if t.get("page_slug") else "",
@@ -87,6 +90,29 @@ def write_catalog_csv(path):
     with open(path, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
     return rows
+
+
+# The earlier assessment scheme ("sleeping beauties", the sleeping-beauty index, legacy layers,
+# statuses) was withdrawn in September 2026; its files are not shipped, and its fields are
+# stripped from the files that are.
+WITHDRAWN_FILES = {"consensus_synthesis.json", "rediscovery.json", "paper_legacy_summary.csv",
+                   "consensus.json", "consensus_deep.json", "tour.json", "legacy.json"}
+WITHDRAWN_FIELDS = {"status", "sleeping", "sbi", "verdict", "state", "layer", "rediscovery", "rationale",
+                    "convergence", "n_parallels"}
+
+
+def _copy_clean(src, dst):
+    b = os.path.basename(src)
+    if b in ("consensus_all.json", "catalog.json"):
+        d = json.load(open(src, encoding="utf-8"))
+        if isinstance(d, dict):
+            d = {k: ({f: x for f, x in v.items() if f not in WITHDRAWN_FIELDS} if isinstance(v, dict) else v)
+                 for k, v in d.items()}
+        else:
+            d = [{f: x for f, x in v.items() if f not in WITHDRAWN_FIELDS} for v in d]
+        json.dump(d, open(dst, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    else:
+        shutil.copyfile(src, dst)
 
 
 def build_research_bundle():
@@ -104,11 +130,13 @@ def build_research_bundle():
     for f in glob.glob(os.path.join(ROOT, "legacy_data", "*.json")) + \
              glob.glob(os.path.join(ROOT, "legacy_data", "*.csv")):
         b = os.path.basename(f)
-        if b.startswith("_batch_"):          # internal scratch, never shipped
+        if b.startswith("_batch_") or b in WITHDRAWN_FILES:   # internal scratch / withdrawn scheme
             continue
-        shutil.copyfile(f, os.path.join(stage, "data", b))
+        _copy_clean(f, os.path.join(stage, "data", b))
     for f in glob.glob(os.path.join(SITE, "data", "*.json")):
-        shutil.copyfile(f, os.path.join(stage, "site-data", os.path.basename(f)))
+        if os.path.basename(f) in WITHDRAWN_FILES:
+            continue
+        _copy_clean(f, os.path.join(stage, "site-data", os.path.basename(f)))
     xlsx = os.path.join(ROOT, "BVA Corpus Analysis.xlsx")
     if os.path.exists(xlsx):
         shutil.copyfile(xlsx, os.path.join(stage, os.path.basename(xlsx)))
@@ -120,9 +148,9 @@ def build_research_bundle():
     n, size = _zip(stage, out, top, level=9)
     shutil.rmtree(tmp, ignore_errors=True)
     noted = sum(1 for r in rows if r["context_note"])
-    noverd = [r["id"] for r in rows if not r["verdict"]]
+    missing = [r["id"] for r in rows if not r["standing"]]
     print("research bundle: %d files, %.1f MB  (%d papers, %d with a context note, "
-          "no verdict for ids %s)" % (n, size / 1e6, len(rows), noted, noverd))
+          "no assessment for ids %s)" % (n, size / 1e6, len(rows), noted, missing))
     return out
 
 

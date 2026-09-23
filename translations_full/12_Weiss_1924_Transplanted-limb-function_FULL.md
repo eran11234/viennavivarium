@@ -386,4 +386,4 @@ Braus, Hermann: Experimentelle Beiträge zur Frage nach der Entwicklung peripher
 
 ---
 
-*Translator's note.* A companion to Weiss's regeneration work; foreshadows his resonance theory of motor coordination.
+*Translator's note.* A companion to Weiss's regeneration work; Weiss later built his resonance theory of motor coordination on observations like these.

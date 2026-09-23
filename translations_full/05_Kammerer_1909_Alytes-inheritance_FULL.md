@@ -14,7 +14,7 @@ Received on 13 July 1909.
 
 *Archiv für Entwicklungsmechanik der Organismen*, vol. 28 (1909), pp. 447–545.
 
-> **Full translation.** A complete English rendering of this monograph — the introduction; the recapitulation of results from earlier work; the distinguishing of brood-care by experimental means (the temperature, epidemic, and moisture experiments, with their lettered sub-cases); the exploitation of the reproductive change (control series and descendant series); the summary; the plate legends; and the bibliography. OCR artefacts were corrected against the page images. Plates XVI–XVII are absent from the source scan (bound separately from the article); their legends are translated in full in section VIII. **Kammerer's inheritance claims are rendered exactly as he states them; this translation reports them, it does not endorse them.** The claims were later disputed (the 1926 nuptial-pad scandal).
+> **Full translation.** A complete English rendering of this monograph — the introduction; the recapitulation of results from earlier work; the distinguishing of brood-care by experimental means (the temperature, neoteny and moisture experiments, with their lettered sub-cases); the exploitation of the reproductive change (control series and descendant series); the summary; the plate legends; and the bibliography. OCR artefacts were corrected against the page images. Plates XVI–XVII are absent from the source scan (bound separately from the article); their legends are translated in full in section VIII. **Kammerer's inheritance claims are rendered exactly as he states them; this translation reports them, it does not endorse them.** The claims were later disputed (the 1926 nuptial-pad scandal).
 
 ### Table of Contents.
 

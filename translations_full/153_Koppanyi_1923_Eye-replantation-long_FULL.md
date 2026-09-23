@@ -16,7 +16,7 @@ With 6 text figures and 18 curves.
 
 *Archiv für mikroskopische Anatomie und Entwicklungsmechanik*, vol. 99 (1923).
 
-> **Full translation.** A complete English rendering of the running text of “The Replantation of Eyes (Koppanyi)” (Koppanyi, 1923), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
+> **Full translation.** A complete English rendering of the running text of “The Replantation of Eyes. VII. Training Experiments on Rats” (Auguste Jellinek, 1923), including all tables, figure and plate legends, and footnotes. Numbers and table cells were transcribed from the page images, not the noisy OCR.
 
 > ¹) An abstract of this work appeared under the same title as Communication No. 75 from the Biological Experimental Institute of the Academy of Sciences, Zoological Department, Director H. Przibram, in the Akad. Sitzungsanzeiger Wien No. 10, 1922.
 
@@ -554,4 +554,4 @@ Distinction of the white side of a sheet-metal plate (correct) from the black si
 
 ---
 
-*Translator's note.* One of the Biologische Versuchsanstalt (Vienna Vivarium) papers flagged on the project site as a modern rediscovery target. Claims are rendered as stated in the original, not endorsed.
+*Translator's note.* Claims are rendered as stated in the original, not endorsed.

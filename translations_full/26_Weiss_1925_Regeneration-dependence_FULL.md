@@ -13,7 +13,7 @@ With 10 Text-figures.
 
 *Archiv für mikroskopische Anatomie und Entwicklungsmechanik*, vol. 104 (1925).
 
-> **Full translation.** A complete English rendering of Weiss's study of the dependence of the regeneration of developed amphibian limbs on the skeleton (*Triton*), with the figure legends.
+> **Full translation.** A complete English rendering of Weiss's study of the dependence of the regeneration of developed amphibian limbs on the nervous system (*Triton*), with the figure legends.
 
 ### Table of Contents.
 | | Page |

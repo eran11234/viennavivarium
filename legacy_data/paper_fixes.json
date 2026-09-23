@@ -1,0 +1,838 @@
+{
+ "_about": "Catalog corrections verified against each paper's own title page, byline and text (September 2026 review). Applied last in build_site.py; each field overrides the spreadsheet value.",
+ "1": {
+  "author_full": "Leo Āboliņš"
+ },
+ "2": {
+  "organism": "Triton cristatus adults; Triton taeniatus and Salamandra maculosa larvae",
+  "title_en": "Regeneration and symmetry of limbs pushed through the urodele body",
+  "title_de": "Regeneration und Symmetrie durch den Urodelenkörper gesteckter Gliedmaßen"
+ },
+ "3": {
+  "author_full": "Eugenie Flat-Hauser and Hans Przibram"
+ },
+ "4": {
+  "author_full": "Hans Przibram, with the collaboration of Leonore Brecher"
+ },
+ "5": {
+  "author_full": "Hans Przibram",
+  "author": "Przibram"
+ },
+ "6": {
+  "author_full": "Iginio Sciacchitano, Paul Weiss and Hans Przibram"
+ },
+ "7": {
+  "author_full": "Fritz Staudinger",
+  "organism": "Carausius (Dixippus) morosus (stick insect)",
+  "taxon": "Orthoptera / Mantis"
+ },
+ "8": {
+  "author_full": "Paul Weiss",
+  "organism": "Lacerta muralis, L. agilis and L. serpa (lizards)",
+  "title_en": "Potency-Testing on the Regeneration Blastema (II: Behaviour of the Tail-Blastema after Transplantation to the Site of the Forelimb in Lizards, Lacerta)",
+  "title_de": "Potenzprüfung am Regenerationsblastem. II. Das Verhalten des Schwanzblastems nach Transplantation an die Stelle der Vorderextremität bei Eidechsen (Lacerta)",
+  "taxon": "Reptilia"
+ },
+ "9": {
+  "author_full": "Paul Weiss",
+  "organism": "Triton cristatus (crested newt)",
+  "title_de": "Ganzregenerate aus halbem Extremitätenquerschnitt",
+  "taxon": "Amphibia"
+ },
+ "10": {
+  "author_full": "Paul Weiss"
+ },
+ "11": {
+  "author_full": "Paul Weiss",
+  "organism": "Triton cristatus (crested newt), with T. alpestris and T. taeniatus",
+  "title_de": "Potenzprüfung am Regenerationsblastem. I. Extremitätenbildung aus Schwanzblastem im Extremitätenfeld bei Triton",
+  "taxon": "Amphibia"
+ },
+ "12": {
+  "taxon": "Mammals"
+ },
+ "13": {
+  "taxon": "Mammals"
+ },
+ "14": {
+  "author_full": "Leonore Brecher",
+  "title_en": "The Pupal Colourations of the Cabbage White, Pieris brassicae L. (Seventh Part: Effectiveness of Reflected and Transmitted Light)",
+  "title_de": "Die Puppenfärbungen des Kohlweißlings, Pieris brassicae L. Siebenter Teil: Wirksamkeit reflektierten und durchgehenden Lichtes",
+  "taxon": "Lepidoptera"
+ },
+ "15": {
+  "author_full": "Paul Kammerer",
+  "taxon": "Amphibia"
+ },
+ "16": {
+  "author_full": "Hans Przibram and Jan Dembowski",
+  "taxon": "Amphibia"
+ },
+ "18": {
+  "author_full": "Oskar Kurz",
+  "taxon": "Amphibia"
+ },
+ "19": {
+  "author_full": "A. Landsborough Thomson",
+  "organism": "Mantids: Parathenodera angustifolia, Stagmomantis carolinensis, Sphodromantis bioculata",
+  "taxon": "Orthoptera / Mantis"
+ },
+ "20": {
+  "author_full": "Hans Przibram",
+  "taxon": "Lepidoptera"
+ },
+ "21": {
+  "author_full": "Leonore Brecher",
+  "organism": "Vanessa io, V. urticae, Pyrameis cardui, P. atalanta",
+  "taxon": "Lepidoptera"
+ },
+ "22": {
+  "author_full": "Tokuyasu Kudō",
+  "organism": "Esox, Carassius, Phoxinus, Gobius, Nemachilus (pike, crucian carp, minnow, gudgeon, stone loach)",
+  "taxon": "Fishes"
+ },
+ "23": {
+  "author_full": "Hans Przibram",
+  "taxon": ""
+ },
+ "24": {
+  "author_full": "Hans Przibram",
+  "organism": "Various: Antedon, rats, amphibians, fish (methods paper)",
+  "title_en": "The method of autophoric (suture-free) transplantation (also: The replantation of eyes. I)",
+  "title_de": "Die Methode autophorer Transplantation (Zugleich: Die Replantation von Augen. I.)"
+ },
+ "25": {
+  "author_full": "Theodor Koppányi",
+  "title_en": "The replantation of eyes. II. Durability and functional testing in different classes of vertebrates",
+  "title_de": "Die Replantation von Augen. II. Haltbarkeit und Funktionsprüfung bei verschiedenen Wirbeltierklassen",
+  "organism": "Crucian carp, newts, salamanders, frogs, toads and rats",
+  "taxon": "Amphibia"
+ },
+ "26": {
+  "author_full": "Theodor Koppányi",
+  "title_en": "The replantation of eyes. III. The physiology of replanted mammalian eyes",
+  "title_de": "Die Replantation von Augen. III. Die Physiologie der replantierten Säugeraugen",
+  "organism": "Rats",
+  "taxon": "Mammals"
+ },
+ "27": {
+  "author_full": "Theodor Koppányi",
+  "title_en": "The replantation of eyes. IV. On the growth of the replanted eyes",
+  "title_de": "Die Replantation von Augen. IV. Über das Wachstum der replantierten Augen",
+  "organism": "Newts and fire salamanders; rats",
+  "taxon": "Amphibia"
+ },
+ "28": {
+  "author": "Kolmer",
+  "author_full": "W. Kolmer",
+  "title_en": "The replantation of eyes. V. Histological investigations on transplanted eyes",
+  "title_de": "Die Replantation von Augen. V. Histologische Untersuchungen an transplantierten Augen",
+  "organism": "Rats and a rabbit; newts and toads",
+  "taxon": "Mammals"
+ },
+ "29": {
+  "author_full": "Theodor Koppányi",
+  "title_en": "The replantation of eyes. VI. Change of eye colour and body colour",
+  "title_de": "Die Replantation von Augen. VI. Wechsel der Augen- und Körperfarbe",
+  "organism": "Newts, fire salamander, axolotl and crucian carp",
+  "taxon": "Amphibia"
+ },
+ "30": {
+  "author_full": "Auguste Jellinek",
+  "title_en": "The replantation of eyes. VII. Training experiments on rats with optically different training vessels",
+  "title_de": "Die Replantation von Augen. VII. Dressurversuche an Ratten mit optisch verschiedenen Dressurgefäßen",
+  "organism": "Rats",
+  "taxon": "Mammals"
+ },
+ "31": {
+  "author_full": "Walter Finkler",
+  "title_en": "Head transplantation in insects. I. Functional capacity of replanted heads",
+  "title_de": "Kopftransplantation an Insekten. I. Funktionsfähigkeit replantierter Köpfe",
+  "organism": "Water beetles (Hydrophilus, Dytiscus); Notonecta, Dixippus, Tenebrio larvae, Vanessa pupae",
+  "taxon": "Coleoptera (beetles)"
+ },
+ "32": {
+  "author_full": "Walter Finkler",
+  "title_en": "Head transplantation in insects. II. Exchange of Hydrophilus heads between males and females",
+  "title_de": "Kopftransplantation an Insekten. II. Austausch von Hydrophilus-Köpfen zwischen Männchen und Weibchen",
+  "organism": "Hydrophilus piceus (great silver water beetle)",
+  "taxon": "Coleoptera (beetles)"
+ },
+ "33": {
+  "author_full": "Walter Finkler",
+  "title_en": "Head transplantation in insects. III. Influence of the replanted head on the colour of other body parts",
+  "title_de": "Kopftransplantation an Insekten. III. Einfluß des replantierten Kopfes auf das Farbkleid anderer Körperteile",
+  "organism": "Hydrophilus, Dytiscus, Notonecta, Dixippus and Tenebrio",
+  "taxon": "Coleoptera (beetles)"
+ },
+ "34": {
+  "author_full": "Bertold P. Wiesner",
+  "organism": "Fishes (crucian carp, perch, tench, chub); anurans (Pelobates fuscus, Rana temporaria)",
+  "taxon": "Fishes"
+ },
+ "35": {
+  "author_full": "Bertold P. Wiesner",
+  "organism": "Brown rats (Epimys norvegicus), albino and pigmented strains",
+  "title_en": "The functional capacity of ovaries in rats after autophoric (suture-free) transplantation",
+  "taxon": "Mammals"
+ },
+ "36": {
+  "author_full": "Paul Weiss",
+  "title_en": "The Transplantation of Developed Limbs in Amphibians. I. Morphology of the Healing-In",
+  "title_de": "Die Transplantation von entwickelten Extremitäten bei Amphibien. I. Morphologie der Einheilung"
+ },
+ "37": {
+  "author_full": "Paul Weiss",
+  "organism": "Salamandra maculosa (fire salamander) larvae",
+  "title_de": "Die Transplantation von entwickelten Extremitäten bei Amphibien. II. Transplantation und Regeneration"
+ },
+ "38": {
+  "author_full": "Eugen Steinach",
+  "organism": "Guinea pigs and rats",
+  "taxon": "Mammals"
+ },
+ "39": {
+  "author_full": "Paul Kammerer",
+  "title_de": "Vererbung erzwungener Fortpflanzungsanpassungen. III. Mitteilung: Die Nachkommen der nicht brutpflegenden Alytes obstetricans",
+  "organism": "Alytes obstetricans (common midwife toad)",
+  "taxon": "Amphibia"
+ },
+ "40": {
+  "author_full": "Franz Mayerhofer",
+  "taxon": "Fishes"
+ },
+ "41": {
+  "organism": "Sphodromantis bioculata (also Mantis religiosa)",
+  "title_en": "Rearing, Colour Change and Regeneration of the Praying Mantises (Mantidae). III. Temperature and Heredity Experiments",
+  "title_de": "Aufzucht, Farbwechsel und Regeneration der Gottesanbeterinnen (Mantidae). III. Temperatur- und Vererbungsversuche"
+ },
+ "42": {
+  "author_full": "Slavko Šećerov",
+  "organism": "Nemachilus barbatula (stone loach)",
+  "taxon": "Fishes"
+ },
+ "43": {
+  "author_full": "E. I. Werber and W. Goldschmidt",
+  "organism": "Anser cinereus (domestic goose) and Anas boschas (domestic duck)",
+  "taxon": "Birds"
+ },
+ "44": {
+  "author_full": "Paul Kammerer",
+  "organism": "Salamandra atra and Salamandra salamandra (alpine and fire salamanders)",
+  "taxon": "Amphibia"
+ },
+ "45": {
+  "author_full": "Raoul Biberhofer",
+  "taxon": "Crustacea"
+ },
+ "46": {
+  "author_full": "Adolf Černý",
+  "organism": "Planorbis corneus and Paludina vivipara (freshwater snails)",
+  "title_en": "Experiments on regeneration in freshwater snails (first communication)",
+  "title_de": "Versuche über Regeneration bei Süßwasserschnecken (Erste Mitteilung)",
+  "taxon": "Mollusca"
+ },
+ "47": {
+  "author_full": "Richard Czwiklitzer",
+  "taxon": "Annelida"
+ },
+ "48": {
+  "author_full": "Paul Kammerer",
+  "organism": "Frog, toad and newt larvae (Rana, Bufo, Pelobates, Bombinator, Triton)"
+ },
+ "49": {
+  "author_full": "Hans Przibram",
+  "organism": "Decapod crustaceans, living and fossil (Alpheus, Homarus, Xantho)",
+  "title_de": "Die »Heterochelie« bei decapoden Crustaceen (zugleich: Experimentelle Studien über Regeneration. Dritte Mitteilung)",
+  "taxon": "Crustacea"
+ },
+ "50": {
+  "taxon": "Reptilia"
+ },
+ "51": {
+  "author_full": "Isaak Werber",
+  "taxon": "Coleoptera (beetles)"
+ },
+ "52": {
+  "author_full": "Isaak Werber",
+  "organism": "Lizards, geckos, newts and frogs (Lacerta, Tarentola, Triton, Rana, Hyla)"
+ },
+ "53": {
+  "author_full": "Raoul Biberhofer",
+  "title_de": "Über Regeneration bei Amphioxus lanceolatus"
+ },
+ "54": {
+  "author_full": "Kamil Bogacki",
+  "organism": "Seven European freshwater fishes (pike, perch, gudgeon, bullhead, three loaches)",
+  "taxon": "Fishes"
+ },
+ "56": {
+  "author_full": "Jovan Hadži",
+  "taxon": "Coelenterata / Cnidaria"
+ },
+ "57": {
+  "author_full": "Paul Kammerer",
+  "organism": "Alytes obstetricans and Hyla arborea (midwife toad and European tree frog)"
+ },
+ "58": {
+  "author_full": "Franz Megušar",
+  "taxon": "Coleoptera (beetles)"
+ },
+ "59": {
+  "author_full": "Hans Przibram"
+ },
+ "60": {
+  "taxon": ""
+ },
+ "61": {
+  "author_full": "Hans Przibram",
+  "title_en": "Growth measurements on Sphodromantis bioculata Burm. III. Length of regenerating and normal walking legs",
+  "title_de": "Wachstumsmessungen an Sphodromantis bioculata Burm. III. Länge regenerierender und normaler Schreitbeine"
+ },
+ "62": {
+  "author_full": "Karl Przibram",
+  "organism": "Rotifers (Hydatina) and Paramecium"
+ },
+ "64": {
+  "organism": "Mus decumanus and M. rattus (rats)",
+  "title_en": "The environment of the germ-plasm (Part VI: Direct temperature-dependence of body heat in rats, Mus decumanus and M. rattus)",
+  "title_de": "Die Umwelt des Keimplasmas. VI. Direkte Temperaturabhängigkeit der Körperwärme bei Ratten (Mus decumanus und M. rattus)",
+  "taxon": "Mammals"
+ },
+ "65": {
+  "author_full": "Hans Przibram",
+  "organism": "Gelasimus pugnax (fiddler crab)",
+  "taxon": "Crustacea"
+ },
+ "66": {
+  "author_full": "Hans Przibram"
+ },
+ "67": {
+  "author_full": "Leonore Brecher",
+  "taxon": "Lepidoptera"
+ },
+ "68": {
+  "organism": "",
+  "taxon": ""
+ },
+ "69": {
+  "author_full": "Paul Weiss",
+  "organism": "Triton cristatus (crested newt)",
+  "title_de": "Abhängigkeit der Regeneration entwickelter Amphibienextremitäten vom Nervensystem"
+ },
+ "70": {
+  "author_full": "Paul Weiss"
+ },
+ "71": {
+  "author_full": "Paul Weiss",
+  "organism": "Triton cristatus (crested newt)",
+  "taxon": "Amphibia"
+ },
+ "72": {
+  "author_full": "Paul Weiss",
+  "organism": "Butterflies (Aglais io, Aporia crataegi)",
+  "taxon": "Lepidoptera"
+ },
+ "73": {
+  "author_full": "D. R. R. Burt",
+  "taxon": "Coelenterata / Cnidaria"
+ },
+ "74": {
+  "organism": "Mus decumanus and M. rattus (rats)",
+  "taxon": "Mammals"
+ },
+ "75": {
+  "organism": "Mus decumanus and M. rattus (rats)",
+  "taxon": "Mammals"
+ },
+ "76": {
+  "author_full": "Hans Przibram",
+  "organism": "Mus decumanus and M. rattus (rats)",
+  "taxon": "Mammals"
+ },
+ "77": {
+  "author_full": "Hans Przibram",
+  "organism": "Mus decumanus and M. rattus (rats)",
+  "taxon": "Mammals"
+ },
+ "78": {
+  "organism": "Rat, rabbit and human skin; Vicia faba; moth cocoons; Vanessa urticae pupae",
+  "taxon": ""
+ },
+ "79": {
+  "organism": "Skin of fishes, fowl and mammals (11 species); moth pupae",
+  "taxon": ""
+ },
+ "80": {
+  "author_full": "Iginio Sciacchitano",
+  "organism": "Lophyrus pini (pine sawfly)",
+  "taxon": "Hymenoptera"
+ },
+ "81": {
+  "author_full": "Leo Abolin",
+  "organism": "Phoxinus phoxinus (minnow)",
+  "title_de": "Beeinflussung des Fischfarbwechsels durch Chemikalien. I. Infundin- und Adrenalinwirkung auf die Melano- und Xanthophoren der Elritze (Phoxinus laevis Ag.)",
+  "taxon": "Fishes"
+ },
+ "82": {
+  "author_full": "Hans Przibram",
+  "organism": "None (erratum)",
+  "title_en": "Correction to the paper “Axial relations and developmental potencies of the urodele limb, on models for Harrison's transplantation experiments”",
+  "title_de": "Berichtigung zur Abhandlung: „Achsenverhältnisse und Entwicklungspotenzen der Urodelenextremitäten an Modellen zu Harrisons Transplantationsversuchen“",
+  "taxon": ""
+ },
+ "83": {
+  "author_full": "Paul Kammerer",
+  "organism": "Mainly Podarcis muralis (wall lizard); other animals cited as examples",
+  "taxon": "Reptilia"
+ },
+ "84": {
+  "author_full": "Hans Przibram",
+  "organism": "Various: sea urchins, annelids, Antedon, amphibians (review)",
+  "taxon": ""
+ },
+ "85": {
+  "author_full": "Viktor Janda",
+  "organism": "Stylopyga orientalis (oriental cockroach) and Tenebrio molitor (mealworm beetle)"
+ },
+ "86": {
+  "organism": "Salamandra maculosa (fire salamander)",
+  "title_de": "Vererbung erzwungener Farbveränderungen. IV. Mitteilung: Das Farbkleid des Feuersalamanders (Salamandra maculosa Laurenti) in seiner Abhängigkeit von der Umwelt",
+  "taxon": "Amphibia"
+ },
+ "87": {
+  "author_full": "Hans Przibram",
+  "organism": "Foraminifera (compared with Sphodromantis)",
+  "taxon": "Protozoa"
+ },
+ "88": {
+  "author_full": "Eduard Uhlenhuth",
+  "organism": "Salamandra maculosa (fire salamander)"
+ },
+ "89": {
+  "author_full": "Adolf Walther",
+  "organism": "Telphusa fluviatilis (freshwater crab); eels",
+  "title_en": "The environment of the germ-plasm (Part V: The penetration of magnesium into the blood of the freshwater crab, Telphusa fluviatilis)",
+  "title_de": "Die Umwelt des Keimplasmas. V. Das Eindringen von Magnesium in das Blut der Süßwasserkrabbe (Telphusa fluviatilis Belon.)",
+  "taxon": "Crustacea"
+ },
+ "90": {
+  "author_full": "Viktor Hammerschlag",
+  "title_en": "Breeding experiments with Japanese dancing mice and European running mice",
+  "organism": "Mus musculus (Japanese dancing mice and albino running mice)",
+  "taxon": "Mammals"
+ },
+ "91": {
+  "author_full": "Viktor Janda",
+  "organism": "Criodrilus lacuum (freshwater oligochaete)",
+  "title_de": "Die Regeneration der Geschlechtsorgane bei Criodrilus lacuum Hoffm. II",
+  "taxon": "Annelida"
+ },
+ "92": {
+  "author_full": "Paul Kammerer"
+ },
+ "93": {
+  "author_full": "Franz Megušar",
+  "organism": "Gelasimus, Potamobius, Palaemonetes, Palaemon (crab, crayfish, prawns)",
+  "taxon": "Crustacea"
+ },
+ "94": {
+  "author_full": "Hans Przibram",
+  "title_en": "The environment of the germ-plasm (Part I: Programme of work)",
+  "title_de": "Die Umwelt des Keimplasmas. I. Das Arbeitsprogramm",
+  "organism": "None (work programme)",
+  "taxon": ""
+ },
+ "95": {
+  "author_full": "Slavko Šećerov",
+  "title_en": "The environment of the germ-plasm (Part II: The enjoyment of light in the body of Salamandra)",
+  "title_de": "Die Umwelt des Keimplasmas. II. Der Lichtgenuß im Salamandra-Körper",
+  "organism": "Salamandra salamandra (fire salamander)",
+  "taxon": "Amphibia"
+ },
+ "96": {
+  "author_full": "E. D. Congdon",
+  "title_en": "The surroundings of the germ plasm (Part III: The internal temperature of warm-blooded animals (Mus decumanus, M. musculus, Myoxus glis) in artificial climates)",
+  "title_de": "The surroundings of the germ plasm. III. The internal temperature of warm-blooded animals (Mus decumanus, M. musculus, Myoxus glis) in artificial climates",
+  "organism": "Rattus norvegicus, Mus musculus and Glis glis (rat, mouse, edible dormouse)",
+  "taxon": "Mammals"
+ },
+ "97": {
+  "author_full": "Slavko Šećerov",
+  "organism": "Nemachilus barbatula (stone loach)",
+  "taxon": "Fishes"
+ },
+ "98": {
+  "author_full": "Eduard Uhlenhuth"
+ },
+ "99": {
+  "author_full": "Adolf Černý",
+  "organism": "Freshwater snails (Planorbis, Limnaea, Paludina) and the slug Limax arborum",
+  "title_de": "Versuche über Regeneration bei Süßwasser- und Nacktschnecken",
+  "taxon": "Mollusca"
+ },
+ "100": {
+  "author_full": "Paul Kammerer",
+  "organism": "Perca fluviatilis and Gymnocephalus cernua (perch and ruffe) and their hybrids",
+  "taxon": "Fishes"
+ },
+ "101": {
+  "author_full": "Josef H. Klintz",
+  "taxon": "Crustacea"
+ },
+ "102": {
+  "author_full": "Ferdinand Kryž",
+  "organism": "Water frog, common toad and fire salamander (heat series); 11 vertebrate species surveyed",
+  "taxon": "Amphibia"
+ },
+ "103": {
+  "author_full": "Arthur Neudörfer",
+  "title_de": "Versuche über die Anpassung von Süßwasserfischen an Salzwasser",
+  "organism": "Brook lamprey (Lampetra planeri) larvae, sterlet, carp, crucian carp, pike and eel",
+  "taxon": "Fishes"
+ },
+ "104": {
+  "organism": "Hermit crabs (Eupagurus/Pagurus spp., Diogenes varians)",
+  "taxon": "Crustacea"
+ },
+ "105": {
+  "author_full": "Hans Przibram",
+  "organism": "European lobster and a praying mantis; daphnids from earlier work",
+  "taxon": "Crustacea"
+ },
+ "106": {
+  "author_full": "Hans Przibram"
+ },
+ "107": {
+  "author_full": "Hans Przibram and Ernst Isaak Werber",
+  "organism": "Lepisma saccharina (silverfish) and Machilis cylindrica (jumping bristletail)",
+  "author": "Przibram/Werber",
+  "taxon": "Other arthropods"
+ },
+ "108": {
+  "author_full": "Theodor Weindl",
+  "organism": "Eledone (octopus), Loligo eggs (squid), Proteus (olm)",
+  "taxon": "Mollusca"
+ },
+ "109": {
+  "author_full": "Otto Weiß",
+  "taxon": "Arachnida"
+ },
+ "110": {
+  "author_full": "Giovanni Bresca",
+  "organism": "Triton cristatus (crested newt)",
+  "author": "Bresca",
+  "taxon": "Amphibia"
+ },
+ "111": {
+  "author_full": "Alfred Fröhlich",
+  "organism": "Palaemon treillianus and P. rectirostris (prawns)",
+  "taxon": "Crustacea"
+ },
+ "112": {
+  "author_full": "Josef Halban",
+  "organism": "Frogs, perch, salamanders and turtles",
+  "taxon": ""
+ },
+ "113": {
+  "author_full": "Paul Kammerer",
+  "title_en": "Inheritance of enforced colour changes (Parts I and II: Induction of female dimorphism in Lacerta muralis, of male dimorphism in Lacerta fiumana)",
+  "title_de": "Vererbung erzwungener Farbveränderungen. I. und II. Mitteilung: Induktion von weiblichem Dimorphismus bei Lacerta muralis, von männlichem Dimorphismus bei Lacerta fiumana",
+  "organism": "Podarcis muralis and Podarcis melisellensis fiumana (wall and Karst lizards); also Lacerta viridis and L. agilis",
+  "taxon": "Reptilia"
+ },
+ "114": {
+  "author_full": "Franz Megušar",
+  "organism": "Stylopyga, Mantis, Dixippus, Chorthippus, Troglophilus, Gryllus (orthopteroid insects)",
+  "taxon": "Orthoptera / Mantis"
+ },
+ "115": {
+  "author_full": "Hans Przibram",
+  "organism": "Arthropods: moths (Cucullia, Zygaena, Adela), Prionus beetles, Cancer pagurus, Nephrops norvegicus, plus literature cases",
+  "taxon": "Other arthropods"
+ },
+ "116": {
+  "author_full": "Ferdinand Winkler",
+  "organism": "Newts and Salamandra larvae (tail regenerates); Hyla, Triton, mice (skin grafts)",
+  "taxon": "Amphibia"
+ },
+ "117": {
+  "author_full": "Margarete Zuelzer",
+  "organism": "Thecamoeba verrucosa (freshwater amoeba)",
+  "taxon": "Protozoa"
+ },
+ "118": {
+  "author_full": "Theophil Bohdan Gluschkiewitsch",
+  "taxon": "Annelida"
+ },
+ "119": {
+  "title_de": "Vererbung erzwungener Fortpflanzungsanpassungen. I. und II. Mitteilung: Die Nachkommen der spätgeborenen Salamandra maculosa und der frühgeborenen Salamandra atra",
+  "organism": "Salamandra salamandra and Salamandra atra (fire and alpine salamanders)",
+  "taxon": "Amphibia"
+ },
+ "120": {
+  "author_full": "Paul Kammerer",
+  "organism": "Aeshna cyanea (southern hawker) larvae with the alga Oedogonium undulatum",
+  "taxon": "Other arthropods"
+ },
+ "121": {
+  "author_full": "Paul Kammerer",
+  "organism": "Frogs and toads (Bufo, Bombinator, Hyla, Rana) and newts (Triton, about ten species)"
+ },
+ "122": {
+  "author_full": "Josef H. Klintz",
+  "organism": "Cyclops quadricornis, C. viridis and C. coronatus (copepods)",
+  "taxon": "Crustacea"
+ },
+ "123": {
+  "author_full": "Franz Megušar",
+  "taxon": "Mollusca"
+ },
+ "124": {
+  "author_full": "Franz Megušar",
+  "taxon": "Lepidoptera"
+ },
+ "125": {
+  "author_full": "Franz Megušar",
+  "taxon": "Coleoptera (beetles)"
+ },
+ "126": {
+  "author_full": "Enver Muftić",
+  "organism": "Salamandra maculosa (fire salamander), with Triton cristatus, Rana esculenta and Bufo vulgaris"
+ },
+ "127": {
+  "author_full": "Hans Przibram",
+  "organism": "Felis catus (Angora cats)",
+  "taxon": "Mammals"
+ },
+ "128": {
+  "organism": "20 decapod species (Alpheus, Athanas, Typton, Callianassa, Carcinus, Portunus, hermit crabs, lobsters)",
+  "taxon": "Crustacea"
+ },
+ "129": {
+  "author_full": "Isaak Werber",
+  "taxon": "Coleoptera (beetles)"
+ },
+ "130": {
+  "author_full": "Paul Kammerer",
+  "organism": "Musca domestica (house fly) and Calliphora vomitoria (blue blow-fly)",
+  "taxon": "Other arthropods"
+ },
+ "131": {
+  "author_full": "Margarete Zuelzer",
+  "organism": "Water louse (Asellus aquaticus)",
+  "taxon": "Crustacea"
+ },
+ "132": {
+  "author_full": "Viktor Janda",
+  "organism": "Criodrilus lacuum (freshwater oligochaete)",
+  "taxon": "Annelida"
+ },
+ "133": {
+  "author_full": "Oskar Kurz",
+  "taxon": "Amphibia"
+ },
+ "134": {
+  "author_full": "Sergius Morgulis",
+  "title_en": "Studies on inanition in its significance for the growth problem. II. Experiments on Triton cristatus",
+  "title_de": "Studien über Inanition in ihrer Bedeutung für das Wachstumsproblem. II. Experimente an Triton cristatus"
+ },
+ "135": {
+  "author_full": "Hans Przibram and Franz Megušar",
+  "title_de": "Wachstumsmessungen an Sphodromantis bioculata Burm. I. Länge und Masse"
+ },
+ "136": {
+  "author_full": "Slavko Šećerov",
+  "organism": "Lacerta (lizards); geckos",
+  "title_en": "The environment of the germ-plasm (Part IV: The light-enjoyment in the Lacerta body)",
+  "title_de": "Die Umwelt des Keimplasmas. IV. Der Lichtgenuß im Lacerta-Körper",
+  "taxon": "Reptilia"
+ },
+ "137": {
+  "author_full": "Josef H. Klintz",
+  "organism": "Dormice (Muscardinus avellanarius, Eliomys quercinus, Myoxus glis); also brown rats, opossums and kangaroos",
+  "taxon": "Mammals"
+ },
+ "138": {
+  "author_full": "Werner Kornfeld"
+ },
+ "139": {
+  "author_full": "Hans Przibram and Adolf Walther"
+ },
+ "140": {
+  "author_full": "Henryk Sztern",
+  "title_en": "Growth measurements on Sphodromantis bioculata Burm. II. Length, breadth and height",
+  "title_de": "Wachstumsmessungen an Sphodromantis bioculata Burm. II. Länge, Breite und Höhe"
+ },
+ "141": {
+  "author_full": "Leonore Brecher",
+  "title_en": "The Pupal Colourations of the Cabbage White, Pieris brassicae L. (Eighth Part: The Colour Adaptation of the Pupae through the Larval Eye)",
+  "title_de": "Die Puppenfärbungen des Kohlweißlings, Pieris brassicae L. Achter Teil: Die Farbanpassung der Puppen durch das Raupenauge",
+  "taxon": "Lepidoptera"
+ },
+ "142": {
+  "organism": "Vanessa io, V. urticae (peacock, small tortoiseshell)",
+  "title_de": "Die Puppenfärbungen der Vanessiden (Vanessa Io, V. urticae)",
+  "taxon": "Lepidoptera"
+ },
+ "143": {
+  "organism": "Dixippus (Carausius) morosus (stick insect)",
+  "taxon": "Orthoptera / Mantis"
+ },
+ "144": {
+  "author_full": "Alfred Ehrenpreis",
+  "organism": "Triton cristatus (crested newt); two T. alpestris",
+  "taxon": "Amphibia"
+ },
+ "145": {
+  "title_de": "Die virtuelle und reelle Lage des Amphibienembryos nach natürlichen und künstlichen Marken am Ei des Alpenmolches, Triton alpestris"
+ },
+ "146": {
+  "author_full": "Hans Przibram",
+  "organism": "None (cardboard models of Harrison’s axolotl limb grafts)",
+  "taxon": "Amphibia"
+ },
+ "147": {
+  "organism": "Moth and sawfly cocoons (Saturnia, Eriogaster, Cimbex, Lophyrus)",
+  "taxon": "Lepidoptera"
+ },
+ "148": {
+  "author_full": "Paul Weiss",
+  "organism": "Salamandra maculosa (fire salamander) larvae"
+ },
+ "149": {
+  "author_full": "Paul Weiss",
+  "organism": "Salamandra maculosa (fire salamander) larvae"
+ },
+ "150": {
+  "organism": "Pleurodeles waltli (ribbed newt), Triton cristatus and T. marmoratus",
+  "title_en": "Maintenance of spermatogenesis in the urodele testis after autophoric (suture-free) transplantation (also: Experiments on the biology of the ribbed newt Pleurodeles waltli, I: Heteroplastic testis replantation)",
+  "title_de": "Erhaltung der Spermatogenese im autophor transplantierten Urodelenhoden (Zugleich: Versuche zur Biologie des Rippenmolches Pleurodeles Waltli. I. Heteroplastische Hodenreplantation)"
+ },
+ "151": {
+  "author_full": "Theodor Koppányi",
+  "title_en": "Experiments on the biology of the ribbed newt Pleurodeles waltli Michah. II. Independence of the yellow lateral spots from rib pressure",
+  "title_de": "Versuche zur Biologie des Rippenmolches Pleurodeles Waltli Michah. II. Unabhängigkeit der gelben Seitenflecken vom Rippendruck"
+ },
+ "152": {
+  "author_full": "Hans Przibram and Bertold P. Wiesner",
+  "taxon": "Mammals"
+ },
+ "153": {
+  "author_full": "Hans Przibram",
+  "organism": "20 species (jellyfish, brittle star, polychaete, crustaceans, mantis, fishes, newts, tadpoles)",
+  "taxon": ""
+ },
+ "154": {
+  "organism": "Sphodromantis bioculata and Mantis religiosa (praying mantises)",
+  "taxon": "Orthoptera / Mantis"
+ },
+ "155": {
+  "author_full": "Hans Przibram",
+  "organism": "Beetles (Telephorus spp., Strangalia quadrifasciata, Carabus festivus)",
+  "taxon": "Coleoptera (beetles)"
+ },
+ "156": {
+  "organism": "Armillaria (honey fungus) tyrosinase; Pieris and moth pupae, stick insects, rats",
+  "taxon": ""
+ },
+ "157": {
+  "organism": "",
+  "taxon": ""
+ },
+ "158": {
+  "author_full": "Hans Przibram and Jan Dembowski",
+  "organism": "Armillaria (honey fungus) tyrosinase",
+  "taxon": ""
+ },
+ "159": {
+  "author_full": "Leonore Brecher",
+  "title_en": "The Pupal Colourations of the Cabbage White, Pieris brassicae L. Part Four: The Action of Visible and Invisible Rays",
+  "title_de": "Die Puppenfärbungen des Kohlweißlings, Pieris brassicae L. Vierter Teil: Wirkung sichtbarer und unsichtbarer Strahlen",
+  "taxon": "Lepidoptera"
+ },
+ "160": {
+  "author_full": "Paul Kammerer",
+  "title_en": "Inheritance of enforced form-changes (Part I: The nuptial pad of the Alytes male from ‘water-eggs’)",
+  "title_de": "Vererbung erzwungener Formveränderungen. I. Mitteilung: Die Brunftschwiele des Alytes-Männchen aus »Wassereiern«",
+  "taxon": "Amphibia"
+ },
+ "161": {
+  "organism": "Salamandra maculosa larvae; Rana pipiens (leopard frog)"
+ },
+ "162": {
+  "author_full": "W. Kolmer",
+  "organism": "Silurus glanis (wels catfish)",
+  "taxon": "Fishes"
+ },
+ "163": {
+  "author_full": "Reinhard Demoll",
+  "organism": "Cyprinus carpio (carp)",
+  "taxon": "Fishes"
+ },
+ "164": {
+  "author_full": "Eugen Steinach",
+  "organism": "Guinea pigs, rats and goats; human clinical cases",
+  "taxon": "Mammals"
+ },
+ "165": {
+  "author_full": "Eugen Steinach",
+  "organism": "Human (testis tissue)",
+  "taxon": "Mammals"
+ },
+ "166": {
+  "author_full": "Hermann Stieve",
+  "organism": "Human (skeleton of one adult)",
+  "taxon": "Mammals"
+ },
+ "167": {
+  "author_full": "Rhoda Erdmann",
+  "organism": "Paramecium aurelia (ciliate)",
+  "title_de": "Endomixis and Size Variations in Pure Bred Lines of Paramaecium aurelia",
+  "taxon": "Protozoa"
+ },
+ "168": {
+  "author_full": "Eduard Uhlenhuth",
+  "organism": "Salamandra maculosa, Rana pipiens (Part I data; no new material)",
+  "title_en": "Studies on lens regeneration in amphibians. I. A contribution to the depigmentation of the iris, with remarks on the value of stimulus physiology (conclusion)",
+  "title_de": "Studien zur Linsenregeneration bei den Amphibien. I. Ein Beitrag zur Depigmentierung der Iris, mit Bemerkungen über den Wert der Reizphysiologie (Schluß)"
+ },
+ "169": {
+  "author_full": "Eugen Steinach and Paul Kammerer",
+  "organism": "Albino brown rats (Epimys norvegicus); published human puberty data",
+  "taxon": "Mammals"
+ },
+ "170": {
+  "author_full": "Leonore Brecher",
+  "title_de": "Die Puppenfärbungen des Kohlweißlings, Pieris brassicae L. Sechster Teil: Chemismus der Farbanpassung",
+  "taxon": "Lepidoptera"
+ },
+ "171": {
+  "author_full": "Hans Przibram, Jan Dembowski and Leonore Brecher",
+  "organism": "Salamandra maculosa, rat, guinea pig; moth pupae; honey fungus",
+  "author": "Przibram/Dembowski/Brecher",
+  "taxon": ""
+ },
+ "172": {
+  "author_full": "Leonore Brecher",
+  "organism": "Pieris brassicae (cabbage white)",
+  "author": "Brecher",
+  "taxon": "Lepidoptera"
+ },
+ "173": {
+  "author_full": "Hans Przibram",
+  "organism": "Mus decumanus and M. rattus (rats)",
+  "taxon": "Mammals"
+ },
+ "174": {
+  "author_full": "Hans Przibram",
+  "organism": "Many animal groups (decapods, beetles, amphibians, birds, mammals incl. humans)",
+  "taxon": ""
+ },
+ "175": {
+  "author_full": "Hans Przibram",
+  "organism": "",
+  "title_de": "Form und Geschwindigkeit. Ein Beitrag zur allgemeinen Morphologie (Referat)",
+  "taxon": ""
+ }
+}
