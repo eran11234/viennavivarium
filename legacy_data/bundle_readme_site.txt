@@ -9,7 +9,7 @@ Unzip anywhere, then open  index.html  in a browser.
 
 Everything works with no internet connection and no server: all 175 English
 translations, all 175 German originals as PDFs, the figure plates, the catalog,
-the guided tour, the map, the Discover hub and all 172 dossiers. Only outbound
+the guided tour, the Discover hub and all 172 dossiers. Only outbound
 links (DOIs, Wikipedia, Consensus) need a connection.
 
 Nothing needs to be installed. If your browser blocks local files, try Firefox,
@@ -28,7 +28,6 @@ dossier/          172 dossiers: each paper read against the current literature.
 catalog.html      All 175 papers, searchable and sortable.
 tour.html         The guided tour: from six big questions down to the researchers
                   and their articles, with the figures from the papers.
-map.html          Force-directed map of the whole corpus.
 authors.html      58 people, with biographies.
 data/             The underlying JSON the pages are built from.
 

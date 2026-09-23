@@ -51,7 +51,7 @@ STATS = dict(papers=len(catalog), trans=len(translations),
              redis=sum(1 for c in catalog if c["rediscovery"]))
 
 NAV = [("index.html", "Home"), ("tour.html", "Tour"), ("catalog.html", "Catalog"),
-       ("map.html", "Map"), ("translations.html", "Translations"),
+       ("translations.html", "Translations"),
        ("rediscovery.html", "Discover"), ("authors.html", "Authors"),
        ("analytics.html", "Analytics"), ("about.html", "About")]
 
@@ -91,7 +91,7 @@ DOWNLOADS = [
          lede="The whole website, working without an internet connection.",
          what=["All 175 English translations, with their figures",
                "All 175 German originals as PDFs",
-               "The catalog, the guided tour, the map, and all 174 dossiers",
+               "The catalog, the guided tour, the Discover hub and all 172 dossiers",
                "497 figure and plate scans"],
          how="Unzip and open <code>index.html</code>. Nothing to install, no server needed.",
          who="Best if you want to read, browse or keep the corpus."),
@@ -218,20 +218,36 @@ def gen_index():
 </section>
 <section class="how">
   <h2>How to use this platform</h2>
-  <p>The <a href="catalog.html">Catalog</a> is the map of the whole corpus — filter by author, organism, phenomenon, method, or today's verdict, and jump to a paper's English translation (where one exists) or its German original. The <a href="translations.html">Translations</a> are full reading pages with the original plates and a side-by-side view against the scanned German. <a href="rediscovery.html">Discover</a> sets every paper against the current literature: which results became textbook science, which are still contested, and which <em>sleeping beauties</em> the field has rediscovered without ever citing them. <a href="authors.html">Authors</a> gives the people behind the papers, the <a href="map.html">Map</a> lays the corpus out by organism, and <a href="analytics.html">Analytics</a> shows the shape of the institute's output over its four decades.</p>
+  <p>The <a href="catalog.html">Catalog</a> is the map of the whole corpus — filter by author, organism, phenomenon, method, or today's verdict, and jump to a paper's English translation (where one exists) or its German original. The <a href="translations.html">Translations</a> are full reading pages with the original plates and a side-by-side view against the scanned German. <a href="rediscovery.html">Discover</a> sets every paper against the current literature: which results became textbook science, which are still contested, and which <em>sleeping beauties</em> the field has rediscovered without ever citing them. <a href="authors.html">Authors</a> gives the people behind the papers, the <a href="tour.html">Tour</a> walks from six big questions down to the papers, and <a href="analytics.html">Analytics</a> shows the shape of the institute's output over its four decades.</p>
 </section>"""
     page("index.html", "Home", "Home", body)
-    # Redirect stubs for pages whose URL changed after a metadata correction (legacy_data/redirects.json: old -> new)
+    # Redirect stubs for pages whose URL changed (legacy_data/redirects.json: old -> new).
+    # Paper URLs are built from the catalogue's author field, so correcting an author silently changes
+    # the URL and breaks every old link (it happened four times: Burchhardt, Sato, Thomsen, de Hahn).
+    # So every paper URL ever published is recorded in legacy_data/published_slugs.json (path -> paper id),
+    # and any recorded path that no longer matches its paper's current page becomes a redirect automatically.
     _rp = os.path.join(ROOT, "legacy_data", "redirects.json")
-    if os.path.exists(_rp):
-        for old, new in json.load(open(_rp, encoding="utf-8")).items():
+    _pp = os.path.join(ROOT, "legacy_data", "published_slugs.json")
+    _moved = json.load(open(_rp, encoding="utf-8")) if os.path.exists(_rp) else {}
+    _pub = json.load(open(_pp, encoding="utf-8")) if os.path.exists(_pp) else {}
+    _now = {t["id"]: "papers/%s.html" % t["page_slug"] for t in translations}
+    for _old, _pid in _pub.items():
+        if _pid in _now and _old != _now[_pid] and _old not in _moved:
+            _moved[_old] = _now[_pid]
+    try:   # remember today's URLs too (a no-op in CI, which does not commit)
+        _pub.update({v: k for k, v in _now.items()})
+        json.dump(dict(sorted(_pub.items())), open(_pp, "w", encoding="utf-8"), indent=1)
+    except OSError:
+        pass
+    if _moved:
+        for old, new in _moved.items():
             os.makedirs(os.path.dirname(os.path.join(SITE, old)) or SITE, exist_ok=True)
             depth = old.count("/"); pre = "../" * depth
             open(os.path.join(SITE, old), "w", encoding="utf-8").write(
                 f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Moved</title>'
                 f'<meta http-equiv="refresh" content="0; url={pre}{new}"><link rel="canonical" href="{SITE_URL}{new}">'
                 f'</head><body><p>This page has moved to <a href="{pre}{new}">{new}</a>.</p></body></html>')
-        print("redirects:", len(json.load(open(_rp, encoding="utf-8"))))
+        print("redirects:", len(_moved))
     # GitHub Pages serves 404.html for any missing path
     page("404.html", "Page not found", "", """
 <section class="hero"><p class="kicker">404</p><h1>That page isn’t here</h1>
@@ -553,27 +569,6 @@ def gen_reader():
          foot='<script src="data/catalog.js"></script><script src="data/discidx.js"></script><script src="assets/reader.js"></script>')
 
 # ---------------------------------------------------------------- legacy map
-def gen_map():
-    body = """
-<h1>The legacy map</h1>
-<p class="lede">Every paper the institute published, drawn as one network. Each dot is a paper, grouped by what it investigated and coloured by how deeply modern science still engages it. Hans Przibram's program — experiment, quantification, theory — ran across regeneration, growth, coloration, heredity, hormones, behaviour and more; in 1938 the Biologische Versuchsanstalt was destroyed and its findings scattered into the uneven afterlife this map charts. Hover a dot for its title; click it to open the paper and see the modern work that still carries it.</p>
-<div class="legend" id="leg"></div>
-<div class="mapctrl">
-  <input id="q" type="search" placeholder="Search author, title, organism…">
-  <select id="layer"><option value="">All legacy layers</option><option value="1">Layer 1 · same genus</option><option value="2">Layer 2 · same taxon</option><option value="3">Layer 3 · same phenomenon</option><option value="4">Layer 4 · logic only</option></select>
-  <select id="phen"><option value="">All themes</option></select>
-  <label class="chk"><input type="checkbox" id="ronly"> Rediscovery targets</label>
-  <button class="btn" id="reset">Reset</button>
-</div>
-<div class="maplayout">
-  <div class="mapwrap"><svg id="map" height="640" role="img" aria-label="Network of all 175 BVA papers grouped by research theme and coloured by legacy layer"></svg><div class="maptip" id="tip"></div></div>
-  <aside class="mappanel" id="panel"><p class="muted"><b>Click any paper</b> to zoom in and open the modern works that cite it as cards on this panel — hover a card to find that work on the map. Scroll to zoom, drag to pan. Colour shows the legacy layer (see the <a href="legacy.html">Legacy</a> page); a dark ring marks a rediscovery target — an organism still studied today whose BVA original goes uncited. Dot size is modern citations.</p></aside>
-</div>
-"""
-    page("map.html", "Map", "Map", body,
-         head='<script src="assets/d3.v7.min.js"></script>',
-         foot='<script src="data/catalog.js"></script><script src="data/legacy.js"></script><script src="data/citations.js"></script><script src="data/notes.js"></script><script src="assets/map.js"></script>')
-
 REDISC_CSS = r"""
 .rstats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 8px}
 .rstats div{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:13px 14px}
@@ -2597,31 +2592,7 @@ td.meth{font-size:12.5px;color:#4a463f}
 .laycard{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px}
 .laycard b{display:block;margin:8px 0 4px;font-size:15px}
 .laycard p{font-size:13.5px;color:#4a463f;margin:0}
-.maplayout{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;align-items:start}
-.mapwrap{position:relative;border:1px solid var(--rule);border-radius:10px;background:var(--card);overflow:hidden}
-.mapwrap::before{content:"";position:absolute;inset:0;z-index:0;background:url(img/prater-map-1883.jpg) center/cover no-repeat;opacity:.20;filter:sepia(.35) saturate(.65) contrast(1.02);pointer-events:none}
-.mapwrap::after{content:"the prater, vienna · 1883";position:absolute;right:9px;bottom:7px;z-index:2;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:rgba(247,244,238,.7);padding:1px 6px;border-radius:4px;pointer-events:none}
-#map{width:100%;display:block;cursor:grab;position:relative;z-index:1}
-#map:active{cursor:grabbing}
-.maptip{z-index:3}
-.mapctrl{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
-.mapctrl input[type=search],.mapctrl select{padding:7px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--card);font-size:13.5px}
-.mapctrl #q{flex:1;min-width:200px}
-.mappanel{border:1px solid var(--rule);border-radius:10px;background:var(--card);padding:14px 16px;font-size:14px;position:sticky;top:78px;max-height:82vh;overflow:auto}
-.mappanel h3{font-family:Georgia,serif;font-size:17px;margin:.1em 0 .3em;line-height:1.25}
-.mappanel .pde{font-style:italic;color:var(--muted);font-size:13px;margin:0 0 6px}
-.mappanel .pmeta{font-size:13px;color:#4a463f;margin:4px 0}
-.mappanel .pcites{font-size:12.5px;padding-left:16px;margin:6px 0}.mappanel .pcites li{margin:3px 0}
-.maptip{position:absolute;pointer-events:none;background:#211f1c;color:#fff;font-size:12px;padding:5px 8px;border-radius:6px;opacity:0;transition:opacity .08s;max-width:240px;z-index:9}
-text.cl{font-size:13px;fill:#3c3833;font-family:-apple-system,sans-serif;letter-spacing:.03em;font-weight:600}
-rect.clbg{fill:var(--paper);opacity:.85}
-text.blab{font-size:10px;fill:#6f6a61;font-family:-apple-system,sans-serif;pointer-events:none}
-.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;margin:6px 0 2px;color:#4a463f}
-.legend b{font-weight:600}
-.legend .it{display:inline-flex;align-items:center;gap:6px;cursor:default}
-.dotc{width:11px;height:11px;border-radius:50%;display:inline-block}
-text.sat{font-size:10px;fill:var(--muted);font-family:-apple-system,sans-serif}
-@media(max-width:860px){.cols{grid-template-columns:1fr}.toc{position:static}.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.rpanes{grid-template-columns:1fr}.maplayout{grid-template-columns:1fr}.mappanel{position:static;max-height:none}nav a{margin-left:12px}.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}#cat th{position:static}}
+@media(max-width:860px){.cols{grid-template-columns:1fr}.toc{position:static}.charts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.rpanes{grid-template-columns:1fr}nav a{margin-left:12px}.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch}#cat th{position:static}}
 """
     os.makedirs(os.path.join(SITE, "assets"), exist_ok=True)
     open(os.path.join(SITE, "assets", "style.css"), "w", encoding="utf-8").write(css)
@@ -2870,207 +2841,18 @@ if(sxs&&en){
 }
 })();
 """
-    map_js = r"""
-(function(){
-if(typeof d3==='undefined'){return;}
-var C=(window.CATALOG||[]).slice(), L=window.LEGACY||{};
-function esc(s){return (s||'').replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
-
-function hlEsc(t){return t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
-function hl(escaped,term){
-  if(!term)return escaped;
-  var t=String(term).trim(); if(t.length<2)return escaped;
-  var parts=t.split(/\s+/).filter(function(x){return x.length>1;}).map(hlEsc);
-  if(!parts.length)return escaped;
-  var re=new RegExp('(?![^<]*>)(?![^&;]*;)('+parts.join('|')+')','gi');
-  return escaped.replace(re,'<mark class="hlt">$1</mark>');
-}
-var THEMES=[['Regeneration',/regenerat/],['Transplantation',/transplant|graft|implant/],
-['Coloration',/colou?r|pigment|farb|chromat/],['Growth & form',/growth|wachstum|instar|moult|molt|größe|form/],
-['Heredity',/inherit|hered|vererb|lamarck|bastard|hybrid/],['Sex & hormones',/sex|gonad|pubert|endocrin|hormon|intersex|zwitter|erotiz/],
-['Environment',/temperature|environment|klima|humid|gravit|light|medium/],['Behaviour',/behav|instinct|lern|frisch|orient/],
-['Development',/development|embryo|entwicklung|cleavage|larv/]];
-function theme(c){var s=(((c.phenomena||[]).join(' '))+' '+(c.title||'')+' '+(c.title_en||'')).toLowerCase();
- for(var i=0;i<THEMES.length;i++){if(THEMES[i][1].test(s))return THEMES[i][0];}return 'Other';}
-var layerColor={1:'#1d6e56',2:'#355e7d',3:'#9a6a1f',4:'#9a9387'};
-function colOf(c){return layerColor[c.layer]||'#cfc8b8';}
-C.forEach(function(c){c._t=theme(c);c._r=4+Math.sqrt(c.citations||0)*1.7;});
-var order=THEMES.map(function(t){return t[0];}).concat(['Other']);
-var themes=[];C.forEach(function(c){if(themes.indexOf(c._t)<0)themes.push(c._t);});
-themes.sort(function(a,b){return order.indexOf(a)-order.indexOf(b);});
-
-var svg=d3.select('#map'),tip=d3.select('#tip'),panel=document.getElementById('panel');
-var defaultPanel=panel.innerHTML;
-(function(){var st=document.createElement('style');st.textContent=
-'.cclist{margin-top:8px;display:flex;flex-direction:column;gap:8px}'+
-'.cclbl{margin:8px 0 2px}'+
-'.citecard{border:1px solid #e6dfcc;border-left:3px solid transparent;border-radius:10px;padding:8px 10px;background:#fffdf8;transition:box-shadow .15s ease,border-color .15s ease,transform .12s ease}'+
-'.citecard.has{border-left-color:#7a3b2e}'+
-'.citecard.hl{border-color:#b07a4e;box-shadow:0 3px 12px rgba(122,59,46,.15);transform:translateY(-1px)}'+
-'.citecard.flash{animation:ccflash .9s ease}'+
-'@keyframes ccflash{0%,100%{box-shadow:0 0 0 0 rgba(217,140,95,0)}30%{box-shadow:0 0 0 3px rgba(217,140,95,.5)}}'+
-'.cc-h{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:2px}'+
-'.cc-au{font-weight:600;color:#403a2e;font-size:11.5px}'+
-'.cc-t{font-size:13px;line-height:1.38;color:#1c1a17;font-weight:600}'+
-'.cc-de{font-size:11px;color:#8a8268;margin-top:1px;font-style:italic}'+
-'.cc-note{font-size:12.5px;line-height:1.6;margin-top:6px;color:#34312a}'+
-'.cc-pending{font-size:11.5px;color:#a59c84;margin-top:5px;font-style:italic}'+
-'.cc-m{margin-top:5px;font-size:11px}.cc-m a{color:#7a3b2e}'+
-'.badge.sci{background:#e7ddc6;color:#7a3b2e}';
-document.head.appendChild(st);})();
-var H=Math.max(680,Math.min(960,Math.round((window.innerHeight||820)*0.85)));
-svg.attr('height',H);
-var byId={};C.forEach(function(c){byId[c.id]=c;});
-var groups={};C.forEach(function(c){var g=(c.genus||'').toLowerCase();if(g)(groups[g]=groups[g]||[]).push(c);});
-var links=[];Object.keys(groups).forEach(function(g){var ar=groups[g].slice().sort(function(a,b){return a.year-b.year;});for(var i=1;i<ar.length;i++)links.push({source:ar[i-1],target:ar[i]});});
-var nbr={};C.forEach(function(c){nbr[c.id]={};});links.forEach(function(l){nbr[l.source.id][l.target.id]=1;nbr[l.target.id][l.source.id]=1;});
-var gz=svg.append('g'),gEdge=gz.append('g'),gThread=gz.append('g'),gRing=gz.append('g'),gNode=gz.append('g'),gLab=gz.append('g');
-function width(){return svg.node().clientWidth||900;}
-var centers={};
-function computeCenters(){var w=width(),cols=Math.min(themes.length,w<640?2:(w<1000?3:4)),rows=Math.ceil(themes.length/cols);
- themes.forEach(function(t,i){var col=i%cols,row=Math.floor(i/cols);
-  centers[t]={x:(col+0.5)/cols*w,y:(row+0.62)/rows*H,lx:(col+0.5)/cols*w,ly:row/rows*H+20};});}
-computeCenters();
-var sim=d3.forceSimulation(C)
- .velocityDecay(0.34).alphaDecay(0.022)
- .force('x',d3.forceX(function(c){return centers[c._t].x;}).strength(0.13))
- .force('y',d3.forceY(function(c){return centers[c._t].y;}).strength(0.13))
- .force('charge',d3.forceManyBody().strength(-9))
- .force('link',d3.forceLink(links).id(function(c){return c.id;}).distance(58).strength(0.05))
- .force('collide',d3.forceCollide(function(c){return c._r+1.9;}))
- .on('tick',tick);
-var edge=gEdge.selectAll('line').data(links).join('line').attr('stroke','#cdc4b1').attr('stroke-width',0.7).attr('opacity',0.32);
-var labG=gLab.selectAll('g.lg').data(themes).join('g').attr('class','lg');
-labG.append('rect').attr('class','clbg');
-var labels=labG.append('text').attr('class','cl').attr('text-anchor','middle').text(function(d){return d;});
-function placeLabels(){labG.attr('transform',function(d){return 'translate('+centers[d].lx+','+centers[d].ly+')';});
- labels.attr('x',0).attr('y',0);
- labG.each(function(){var g=d3.select(this),tx=g.select('text').node();if(!tx)return;var bb=tx.getBBox();
-  g.select('rect.clbg').attr('x',bb.x-8).attr('y',bb.y-3).attr('width',bb.width+16).attr('height',bb.height+6).attr('rx',9);});}
-var rings=gRing.selectAll('circle').data(C.filter(function(c){return c.rediscovery;})).join('circle')
- .attr('r',function(c){return c._r+3;}).attr('fill','none').attr('stroke','#7a3b2e').attr('stroke-width',1.1).attr('pointer-events','none');
-var nodes=gNode.selectAll('circle').data(C).join('circle')
- .attr('r',function(c){return c._r;}).attr('fill',colOf).attr('stroke','#fffdf9').attr('stroke-width',0.8).style('cursor','pointer')
- .on('mouseover',function(e,c){if(!selected)hoverNode(c);})
- .on('mousemove',function(e,c){var p=d3.pointer(e,svg.node());var nb=Object.keys(nbr[c.id]).length;tip.style('opacity',1).style('left',(p[0]+12)+'px').style('top',(p[1]+10)+'px').html('<b>'+esc(c.author)+' '+c.year+'</b><br>'+esc((c.title_en||c.title||'').slice(0,90))+(nb?'<br><span style="opacity:.65">'+nb+' same-genus link'+(nb>1?'s':'')+'</span>':''));})
- .on('mouseout',function(){tip.style('opacity',0);if(!selected)unhover();})
- .on('click',function(e,c){select(c);});
-function hoverNode(c){var s=nbr[c.id];nodes.transition().duration(150).attr('opacity',function(d){return (d===c||s[d.id])?1:0.16;});
- edge.transition().duration(150).attr('opacity',function(l){return (l.source===c||l.target===c)?0.95:0.05;}).attr('stroke',function(l){return (l.source===c||l.target===c)?'#7a3b2e':'#cdc4b1';});}
-function unhover(){nodes.transition().duration(150).attr('opacity',1);edge.transition().duration(150).attr('opacity',0.32).attr('stroke','#cdc4b1');}
-function tick(){nodes.attr('cx',function(c){return c.x;}).attr('cy',function(c){return c.y;});
- rings.attr('cx',function(c){return c.x;}).attr('cy',function(c){return c.y;});
- edge.attr('x1',function(l){return l.source.x;}).attr('y1',function(l){return l.source.y;}).attr('x2',function(l){return l.target.x;}).attr('y2',function(l){return l.target.y;});}
-sim.on('end',placeLabels);setTimeout(placeLabels,500);
-var selected=null,bubbleSel=null;
-function hasNote(c,d){return !!(window.NOTES&&window.NOTES[c.id+':'+d.k]);}
-function layoutBubbles(n){var pts=[],ringR=[60,104,150,196,244,294],cap=[8,13,18,24,30,44],idx=0;
- for(var r=0;r<ringR.length&&idx<n;r++){var count=Math.min(cap[r],n-idx);
-  for(var j=0;j<count;j++){var ang=(j+0.5)/count*2*Math.PI+r*0.4;pts.push({x:Math.cos(ang)*ringR[r],y:Math.sin(ang)*ringR[r]});idx++;}}
- while(idx<n){var ang=Math.random()*2*Math.PI;pts.push({x:Math.cos(ang)*330,y:Math.sin(ang)*330});idx++;}return pts;}
-function ccHi(i,on){var el=document.getElementById('cc'+i);if(!el)return;
- if(on){el.classList.add('hl');el.scrollIntoView({block:'nearest',behavior:'smooth'});}else{el.classList.remove('hl');}}
-function bubHi(i,on){if(!bubbleSel)return;bubbleSel.filter(function(d,j){return j===i;}).select('circle')
- .transition().duration(130).attr('r',function(d){return on?(hasNote(selected,d)?9.5:8.5):(hasNote(selected,d)?6:5);})
- .attr('fill',function(d){return on?'#c2540f':(d.h?'#cfc8b8':'#d98c5f');});}
-function drawBubbles(c){gThread.selectAll('*').remove();
- var arr=(window.CITATIONS&&window.CITATIONS[c.id])||[];if(!arr.length){bubbleSel=null;return;}
- var pts=layoutBubbles(arr.length);
- gThread.selectAll('line').data(arr).join('line').attr('x1',c.x).attr('y1',c.y).attr('x2',c.x).attr('y2',c.y)
-  .attr('stroke','#d3cbb9').attr('stroke-width',0.5).attr('opacity',0)
-  .transition().duration(560).delay(function(d,i){return i*4;})
-  .attr('x2',function(d,i){return c.x+pts[i].x;}).attr('y2',function(d,i){return c.y+pts[i].y;}).attr('opacity',0.6);
- var b=gThread.selectAll('g.bub').data(arr).join('g').attr('class','bub').style('cursor','pointer')
-  .attr('transform','translate('+c.x+','+c.y+')')
-  .on('mouseover',function(e,d){var i=arr.indexOf(d);ccHi(i,true);bubHi(i,true);})
-  .on('mouseout',function(e,d){var i=arr.indexOf(d);ccHi(i,false);bubHi(i,false);})
-  .on('click',function(e,d){if(e.stopPropagation)e.stopPropagation();var i=arr.indexOf(d);var el=document.getElementById('cc'+i);if(el){el.scrollIntoView({block:'center',behavior:'smooth'});el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');}});
- b.transition().duration(560).delay(function(d,i){return i*4;}).attr('transform',function(d,i){return 'translate('+(c.x+pts[i].x)+','+(c.y+pts[i].y)+')';});
- b.append('circle').attr('r',function(d){return hasNote(c,d)?6:5;})
-  .attr('fill',function(d){return d.h?'#cfc8b8':'#d98c5f';})
-  .attr('stroke',function(d){return hasNote(c,d)?'#7a3b2e':'#fffdf9';})
-  .attr('stroke-width',function(d){return hasNote(c,d)?1.4:0.7;})
-  .attr('opacity',0).transition().duration(520).delay(function(d,i){return i*4;}).attr('opacity',1);
- b.append('text').attr('class','blab').attr('text-anchor',function(d,i){return pts[i].x<0?'end':'start';})
-  .attr('x',function(d,i){return pts[i].x<0?-9:9;}).attr('y',3)
-  .text(function(d){var ln=(d.a||'').replace(' et al.','').split(' ').slice(-1)[0];return ln+' '+(d.y||'');})
-  .attr('opacity',0).transition().duration(420).delay(function(d,i){return 160+i*4;}).attr('opacity',1);
- bubbleSel=b;}
-function citeCard(c,d,i){var note=(window.NOTES&&window.NOTES[c.id+':'+d.k])||'';
- var badge=d.h?'<span class="badge wip">historiographic</span>':'<span class="badge sci">scientific</span>';
- var vr=(window.VERIFIED&&window.VERIFIED[c.id+':'+d.k])?' <span title="Written from the full text" style="background:#1d6e56;color:#fff;border-radius:4px;padding:0 5px;font-size:9.5px;font-weight:600">✓ verified</span>':'';badge+=vr;
- var rel=(d.m&&d.m.indexOf('same')>=0)?(' <span class="badge">'+esc(d.m.replace(/_/g,' '))+'</span>'):'';
- var de=(d.et&&d.t&&d.et!==d.t)?'<div class="cc-de">'+esc(d.t)+'</div>':'';
- var body=note?'<div class="cc-note">'+esc(note)+'</div>':'<div class="cc-pending">How it cites the original — paragraph still to be written.</div>';
- var doi=d.d?'<div class="cc-m"><a target=_blank href="https://doi.org/'+d.d+'">'+esc(d.d)+'</a></div>':'';
- return '<div class="citecard'+(note?' has':'')+'" id="cc'+i+'" data-i="'+i+'">'+
-  '<div class="cc-h"><span class="cc-au">'+esc(d.a||'(anon.)')+' · '+(d.y||'n.d.')+'</span>'+badge+rel+'</div>'+
-  '<div class="cc-t">'+esc(d.et||d.t||'(untitled)')+'</div>'+de+body+doi+'</div>';}
-function select(c){selected=c;
- nodes.transition().duration(220).attr('opacity',function(d){return d===c?1:0.1;}).attr('stroke',function(d){return d===c?'#211f1c':'#fffdf9';}).attr('stroke-width',function(d){return d===c?2:0.8;});
- rings.transition().duration(220).attr('opacity',0.18);edge.transition().duration(220).attr('opacity',0.04);
- var k=2.6,w=width();
- svg.transition().duration(760).ease(d3.easeCubicInOut).call(zoom.transform,d3.zoomIdentity.translate(w/2-c.x*k,H/2-c.y*k).scale(k));
- drawBubbles(c);
- var lg=L[c.id]||{},arr=(window.CITATIONS&&window.CITATIONS[c.id])||[];
- var ord=arr.map(function(d,i){return {d:d,i:i};});
- ord.sort(function(A,B){var na=hasNote(c,A.d)?0:1,nb=hasNote(c,B.d)?0:1;if(na!==nb)return na-nb;
-  var ha=A.d.h?1:0,hb=B.d.h?1:0;if(ha!==hb)return ha-hb;return (B.d.y||0)-(A.d.y||0);});
- var nnote=arr.filter(function(x){return hasNote(c,x);}).length;
- var en=c.has_translation?('<a class="btn" href="papers/'+c.slug+'.html">Read English →</a>'):'';
- var head='<p class="kicker"><a href="#" id="backp">‹ all papers</a> · '+esc(c._t)+' · '+(c.layer?('Layer '+c.layer):'unranked')+'</p>'+
-  '<h3>'+esc(c.title_en||c.title)+'</h3>'+
-  ((c.title&&c.title!==c.title_en)?'<p class="pde">('+esc(c.title)+')</p>':'')+
-  '<p class="pmeta">'+esc(c.author)+' · '+c.year+(c.organism?' · <em>'+esc(c.organism)+'</em>'+(lg.modern?' (now <em>'+esc(lg.modern)+'</em>)':''):'')+'</p>'+
-  '<p class="pmeta"><b>'+(c.citations||0)+'</b> modern citations · <b>'+(lg.n_parallels||0)+'</b> parallels'+(c.rediscovery?' · <span class="badge redis">rediscovery</span>':'')+'</p>'+
-  '<div class="actionbar" style="margin:10px 0"><a class="btn primary" href="reader.html?id='+c.id+'">Read original</a>'+en+'</div>';
- var listhdr=arr.length?('<p class="pmeta cclbl"><b>'+arr.length+'</b> works cite this paper'+(nnote?' · <b>'+nnote+'</b> annotated':'')+' — hover a card to find it on the map. <span class="muted" title="Each note is reconstructed from the citing work\'s title, topic and (where available) abstract, not from the citing passage itself.">How notes are written ⓘ</span></p>'):'<p class="muted" style="margin-top:6px">No modern citations recorded for this paper.</p>';
- panel.innerHTML=head+listhdr+(arr.length?('<div class="cclist">'+ord.map(function(o){return citeCard(c,o.d,o.i);}).join('')+'</div>'):'');
- var bp=document.getElementById('backp');if(bp)bp.addEventListener('click',function(e){e.preventDefault();deselect();});
- var lst=panel.querySelector('.cclist');
- if(lst){lst.addEventListener('mouseover',function(e){var card=e.target.closest('.citecard');if(!card)return;bubHi(+card.getAttribute('data-i'),true);card.classList.add('hl');});
-  lst.addEventListener('mouseout',function(e){var card=e.target.closest('.citecard');if(!card)return;bubHi(+card.getAttribute('data-i'),false);card.classList.remove('hl');});}
- panel.scrollTop=0;}
-function deselect(){selected=null;bubbleSel=null;
- nodes.transition().duration(280).attr('opacity',1).attr('stroke','#fffdf9').attr('stroke-width',0.8);
- rings.transition().duration(280).attr('opacity',0.9);edge.transition().duration(280).attr('opacity',0.32).attr('stroke','#cdc4b1');
- gThread.selectAll('*').remove();panel.innerHTML=defaultPanel;
- svg.transition().duration(640).ease(d3.easeCubicInOut).call(zoom.transform,d3.zoomIdentity);}
-var zoom=d3.zoom().scaleExtent([0.4,5]).on('zoom',function(e){gz.attr('transform',e.transform);});
-svg.call(zoom);
-var q=document.getElementById('q'),fl=document.getElementById('layer'),fp=document.getElementById('phen'),fr=document.getElementById('ronly'),reset=document.getElementById('reset');
-themes.forEach(function(t){var o=document.createElement('option');o.value=t;o.textContent=t;fp.appendChild(o);});
-function matches(c){if(fl.value&&String(c.layer)!==fl.value)return false;if(fp.value&&c._t!==fp.value)return false;
- if(fr.checked&&!c.rediscovery)return false;var t=(q.value||'').toLowerCase();
- if(t){var hay=(c.author+' '+c.title+' '+(c.title_en||'')+' '+(c.organism||'')).toLowerCase();if(hay.indexOf(t)<0)return false;}return true;}
-function applyFilter(){nodes.attr('opacity',function(c){return matches(c)?1:0.08;}).attr('pointer-events',function(c){return matches(c)?'all':'none';});
- rings.attr('opacity',function(c){return matches(c)?0.9:0.05;});}
-[q,fl,fp].forEach(function(e){e.addEventListener('input',applyFilter);});fr.addEventListener('change',applyFilter);
-reset.addEventListener('click',function(){q.value='';fl.value='';fp.value='';fr.checked=false;selected=null;bubbleSel=null;
- nodes.attr('opacity',1).attr('pointer-events','all').attr('stroke','#fffdf9').attr('stroke-width',0.8);
- rings.attr('opacity',0.9);edge.attr('opacity',0.32).attr('stroke','#cdc4b1');gThread.selectAll('*').remove();panel.innerHTML=defaultPanel;
- svg.transition().duration(520).ease(d3.easeCubicInOut).call(zoom.transform,d3.zoomIdentity);});
-document.getElementById('leg').innerHTML='<span class="it"><b>Legacy layer:</b></span>'+
- [['1','1'],['2','2'],['3','3'],['4','4']].map(function(p){return '<span class="it"><span class="dotc" style="background:'+layerColor[p[0]]+'"></span>'+p[1]+'</span>';}).join('')+
- '<span class="it"><span class="dotc" style="background:#cfc8b8"></span>none</span>'+
- '<span class="it"><span class="dotc" style="background:transparent;border:1.5px solid #7a3b2e"></span>rediscovery</span>'+
- '<span class="it muted">size = citations</span>';
-window.addEventListener('resize',function(){H=Math.max(680,Math.min(960,Math.round((window.innerHeight||820)*0.85)));svg.attr('height',H);computeCenters();placeLabels();sim.alpha(0.3).restart();});
-})();
-"""
     a = os.path.join(SITE, "assets")
     open(os.path.join(a, "catalog.js"), "w").write(catalog_js)
     open(os.path.join(a, "legacy.js"), "w").write(legacy_js)
     open(os.path.join(a, "analytics.js"), "w").write(analytics_js)
     open(os.path.join(a, "reader.js"), "w").write(reader_js)
-    open(os.path.join(a, "map.js"), "w").write(map_js)
 
 def main():
     os.makedirs(DATA, exist_ok=True)
     write_css(); write_js()
     open(os.path.join(DATA, "site.js"), "w").write("window.SITE=" + json.dumps({"fullPdfs": FULL}) + ";")
     open(os.path.join(SITE, ".nojekyll"), "w").write("")
-    gen_index(); gen_catalog(); gen_map(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader(); gen_contribute(); gen_download()
+    gen_index(); gen_catalog(); gen_translations(); gen_legacy(); gen_analytics(); gen_about(); gen_reader(); gen_contribute(); gen_download()
     gen_citations(); gen_methodology(); gen_discover(); gen_dossier(); gen_authors(); gen_reading_pages(); copy_assets()
     gen_tour()  # after copy_assets: it thumbnails figures/portraits that copy_assets puts in place
     print("Generated site at", SITE, "| FULL_PDFS =", FULL)
