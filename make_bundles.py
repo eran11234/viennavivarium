@@ -6,7 +6,7 @@ Run AFTER build_site.py and gen_site.py:
     python3 build_site.py && python3 gen_site.py && python3 make_bundles.py
 
 Produces, in dist/:
-    viennavivarium-site.zip              the whole browsable site, ~590 MB
+    viennavivarium-site.zip              the whole browsable site, ~670 MB
     viennavivarium-research-bundle.zip   translations + data + catalog.csv, ~8 MB
 
 CI runs this on every push and uploads both to the "latest" GitHub release, so

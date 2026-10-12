@@ -8,7 +8,8 @@ HOW TO USE THIS
 Unzip anywhere, then open  index.html  in a browser.
 
 Everything works with no internet connection and no server: all 175 English
-translations, all 175 German originals as PDFs, the figure plates, the catalog,
+translations (also as print-ready PDFs, figures in place), all 175 German
+originals as PDFs, the figure plates, the catalog,
 the guided tour, Discover and a dossier for every paper. Only outbound
 links (DOIs, Wikipedia, Consensus) need a connection.
 
@@ -21,6 +22,8 @@ WHAT IS IN HERE
 index.html        Start here.
 papers/           175 reading pages — the English translations, with figures.
 pdfs/             175 German originals, as scanned PDFs (360 MB of this bundle).
+pdf/              175 English translations as PDFs, each figure and plate printed
+                  where the original has it.
 figures/          497 figure and plate scans.
 dossier/          175 dossiers: where each paper's claim stands today, how current
                   research uses it, what it did, and every work that cites it.

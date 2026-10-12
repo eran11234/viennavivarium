@@ -11,10 +11,11 @@ edit source  ──►  git push  ──►  GitHub Actions  ──►  GitHub P
 ```
 
 On every push to `main`, `.github/workflows/deploy.yml`:
-1. installs Python + pandoc,
+1. installs Python + pandoc + WeasyPrint,
 2. runs `build_site.py` (cleans the data → `vivarium_site/data/`),
-3. runs `gen_site.py` with `FULL_PDFS=1` (renders all pages, copies figures and **all 175 German PDFs**),
-4. publishes `vivarium_site/` to GitHub Pages.
+3. runs `make_pdfs.py` (typesets every translation as an English PDF → `vivarium_site/pdf/`, each figure placed at its caption in the text, as in the original),
+4. runs `gen_site.py` with `FULL_PDFS=1` (renders all pages, copies figures and **all 175 German PDFs**),
+5. publishes `vivarium_site/` to GitHub Pages.
 
 You never edit the website directly and never commit it — it is rebuilt from source each time.
 
@@ -31,8 +32,9 @@ git add -A && git commit -m "update" && git push   # → live in ~2 minutes
 ## Build locally (optional)
 
 ```bash
-pip install openpyxl          # pandoc also required
+pip install openpyxl weasyprint   # pandoc also required
 python build_site.py
+python make_pdfs.py           # English PDFs (~2 min); `python make_pdfs.py --plan 74_` shows where each figure goes
 python gen_site.py            # light: 7 PDFs. For all 175: FULL_PDFS=1 python gen_site.py
 python -m http.server -d vivarium_site 8000   # http://localhost:8000
 ```
@@ -42,6 +44,7 @@ python -m http.server -d vivarium_site 8000   # http://localhost:8000
 | Path | What it is |
 |---|---|
 | `build_site.py` | Cleans + joins the corpus/legacy data → `vivarium_site/data/*.json` |
+| `make_pdfs.py` | Typesets each translation as an English PDF, with every figure where the original prints it |
 | `gen_site.py` | Generates all HTML/CSS/JS, copies figures and PDFs |
 | `BVA Corpus Analysis.xlsx` | Master corpus metadata (175 papers) |
 | `legacy_data/` | Per-paper legacy profiles + citing/parallel works |

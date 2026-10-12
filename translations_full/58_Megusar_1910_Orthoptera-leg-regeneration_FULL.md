@@ -1355,15 +1355,15 @@ Larvae of a similar, often younger stage were used in all the following series o
 
 ## Figures
 
-**Plate XII.**
+**Plate XVI.**
 
 ![](figures/58_Megusar_1910_Orthoptera-leg-regeneration/Plate_XII.jpg)
 
-**Plate XIII.**
+**Plate XVII.**
 
 ![](figures/58_Megusar_1910_Orthoptera-leg-regeneration/Plate_XIII.jpg)
 
-**Plate XIV.**
+**Plate XVIII.**
 
 ![](figures/58_Megusar_1910_Orthoptera-leg-regeneration/Plate_XIV.jpg)
 

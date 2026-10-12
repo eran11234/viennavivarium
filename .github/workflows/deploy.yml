@@ -30,14 +30,25 @@ jobs:
       - name: Install pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc
 
-      - name: Install Python deps
-        run: pip install openpyxl pillow
+      # WeasyPrint typesets the English PDFs; it needs Pango, and the PDFs use the
+      # Liberation and DejaVu fonts. Usually already on the runner image.
+      - name: Install the PDF typesetter's libraries and fonts
+        run: |
+          sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 fonts-liberation fonts-dejavu-core || true
+          sudo apt-get install -y libharfbuzz-subset0 || true
 
+      - name: Install Python deps
+        run: pip install openpyxl pillow weasyprint==70.0
+
+      # make_pdfs.py writes vivarium_site/pdf/<page>.pdf, the English translation with every
+      # figure where the original prints it (~4 min). gen_site.py then links each reading page's
+      # "English PDF" button only if its PDF was built, so a failure here costs buttons, not the site.
       - name: Build data + pages (with all PDFs)
         env:
           FULL_PDFS: "1"
         run: |
           python build_site.py
+          python make_pdfs.py || echo "::warning::Some English PDFs were not built; those pages have no English PDF button."
           python gen_site.py
 
       - uses: actions/configure-pages@v5
@@ -66,7 +77,7 @@ jobs:
             "" \
             "| | Size | What it is |" \
             "|---|---|---|" \
-            "| \`viennavivarium-site.zip\` | ~590 MB | The whole browsable site. Unzip, open \`index.html\`, works offline — all 175 translations, all 175 German PDFs, the figures, catalog, tour, map and dossiers. |" \
+            "| \`viennavivarium-site.zip\` | ~670 MB | The whole browsable site. Unzip, open \`index.html\`, works offline — all 175 translations (also as English PDFs, figures in place), all 175 German PDFs, the figures, catalog, tour, map and dossiers. |" \
             "| \`viennavivarium-research-bundle.zip\` | ~8 MB | Translations as Markdown, \`catalog.csv\`, and every data file. No PDFs or figures. For analysis. |" \
             "" \
             "Each zip carries a \`README.txt\` with its contents, the verdict methodology, the context notes, and citation and rights." \

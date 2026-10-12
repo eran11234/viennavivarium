@@ -170,7 +170,7 @@ FAVICON = ("data:image/svg+xml," + "%3Csvg xmlns='http://www.w3.org/2000/svg' vi
 # Rebuilt by CI on EVERY push (make_bundles.py) and uploaded to the "latest"
 # release, so the Download page can never serve a snapshot older than the live
 # site. Release assets rather than files in the Pages site: Pages has a ~1 GB
-# soft limit and the site alone is already ~590 MB.
+# soft limit and the site alone is already ~680 MB (with the English PDFs).
 # The tag and filenames are fixed, so these URLs never need updating; the date
 # below is stamped at build time and therefore always matches what CI uploaded.
 SNAPSHOT_DATE = _time.strftime("%d %B %Y").lstrip("0")
@@ -178,11 +178,12 @@ REL_TAG = "latest"
 REL_BASE = "https://github.com/eran11234/viennavivarium/releases/download/" + REL_TAG + "/"
 REPO_ZIP = "https://github.com/eran11234/viennavivarium/archive/refs/heads/main.zip"
 DOWNLOADS = [
-    dict(key="site", size="~590 MB", primary=True,
+    dict(key="site", size="~670 MB", primary=True,
          href=REL_BASE + "viennavivarium-site.zip",
          name="Complete offline site",
          lede="The whole website, working without an internet connection.",
          what=["All 175 English translations, with their figures",
+               "Every translation as a print-ready English PDF, figures in place",
                "All 175 German originals as PDFs",
                "The catalog, the guided tour, Discover and a dossier for every paper",
                "497 figure and plate scans"],
@@ -2006,6 +2007,10 @@ def gen_reading_pages():
         wip = t["status"] != "complete"
         pid = t["id"]
         pdf_rel = f"../pdfs/{t['pdf']}"
+        # the English PDF (make_pdfs.py, run before this script): linked only if it was built
+        en_pdf_btn = (f'<a class="btn" href="../pdf/{ps}.pdf" download="{ps}-english.pdf" '
+                      f'title="The English translation as a PDF, with the figures where the original prints them">'
+                      f'↓ English PDF</a>') if os.path.exists(os.path.join(SITE, "pdf", ps + ".pdf")) else ""
         reader_sxs = f"../reader.html?id={pid}&sxs=1"
         reader_one = f"../reader.html?id={pid}"
         notice = '<div class="notice">This translation is still being finalized (figures or full text in progress).</div>' if wip else ""
@@ -2067,7 +2072,8 @@ def gen_reading_pages():
     <a class="btn primary" href="{reader_sxs}">⇆ Read German side-by-side</a>
     <a class="btn" href="{reader_one}">German reader</a>
     {_doss_btn}
-    <a class="btn" href="{pdf_rel}" download>↓ Download PDF</a>
+    {en_pdf_btn}
+    <a class="btn" href="{pdf_rel}" download>↓ German original (PDF)</a>
     {('<a class="btn" href="https://doi.org/'+doi+'" target="_blank">DOI ↗</a>') if doi else ''}
   </div>
   {notice}
