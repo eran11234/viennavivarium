@@ -567,31 +567,31 @@ Zelený, Ch., The Regeneration of an Antenna-like Organ in place of the Vestigia
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_1.jpg)
 
-**Fig. 2b.**
+**Figs. 2a and 2b.**
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_2b.jpg)
 
-**Fig. 2c-d.**
+**Figs. 2α–δ.**
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_2c_d.jpg)
 
-**Fig. 3a-e.**
+**Figs. 3a–e.**
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_3a_e.jpg)
 
-**Fig. 4a–d.**
+**Figs. 4a–d.**
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_4a_d.jpg)
 
-**Fig. 4e–g.**
+**Figs. 4e–g.**
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_4e_g.jpg)
 
-**Fig. 4h–k.**
+**Figs. 4h–k.**
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_4h_k.jpg)
 
-**Fig. 4l.**
+**Fig. 4β.**
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_4l.jpg)
 
@@ -599,7 +599,7 @@ Zelený, Ch., The Regeneration of an Antenna-like Organ in place of the Vestigia
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_5.jpg)
 
-**Fig. 6.A-C.**
+**Figs. 6A–C.**
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_6_A_C.jpg)
 
@@ -611,7 +611,7 @@ Zelený, Ch., The Regeneration of an Antenna-like Organ in place of the Vestigia
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_8.jpg)
 
-**Fig. 8b.**
+**Figs. 8b–e.**
 
 ![](figures/41_Przibram_1910_Homoeosis-arthropods/Fig_8b.jpg)
 

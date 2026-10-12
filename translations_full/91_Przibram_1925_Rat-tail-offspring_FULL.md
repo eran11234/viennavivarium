@@ -1396,7 +1396,7 @@ Data:
 
 ## Figures
 
-**Fig. XVII.**
+**Text figure (p. 579).**
 
 ![](figures/91_Przibram_1925_Rat-tail-offspring/Fig_XVII.jpg)
 

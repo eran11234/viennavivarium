@@ -919,10 +919,6 @@ Note: Owing to its hardness, the lens was in most median sections of this large 
 
 ## Figures
 
-**Plate XXI.**
-
-![](figures/39_Kammerer_1912_Proteus-experiments/Plate_XXI.jpg)
-
 **Plate XXII.**
 
 ![](figures/39_Kammerer_1912_Proteus-experiments/Plate_XXII.jpg)
@@ -934,6 +930,8 @@ Note: Owing to its hardness, the lens was in most median sections of this large 
 **Plate XXIV.**
 
 ![](figures/39_Kammerer_1912_Proteus-experiments/Plate_XXIV.jpg)
+
+*Plate XXI is not included in the scanned copy used here.*
 
 ---
 

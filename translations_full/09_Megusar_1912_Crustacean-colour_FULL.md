@@ -2735,25 +2735,21 @@ Translator's note:
 
 ## Figures
 
-**Plate LVI.**
+**Plate XXV.**
 
-![](figures/09_Megusar_1912_Crustacean-colour/Plate_LVI.jpg)
+![](figures/09_Megusar_1912_Crustacean-colour/Taf_XXV.jpg)
 
-**Plate XXXV.**
+**Plate XXVI.**
 
-![](figures/09_Megusar_1912_Crustacean-colour/Plate_XXXV.jpg)
+![](figures/09_Megusar_1912_Crustacean-colour/Taf_XXVI.jpg)
 
-**Plate XXXVI.**
+**Plate XXVII.**
 
-![](figures/09_Megusar_1912_Crustacean-colour/Plate_XXXVI.jpg)
+![](figures/09_Megusar_1912_Crustacean-colour/Taf_XXVII.jpg)
 
-**Plate XXXVII.**
+**Plate XXVIII.**
 
-![](figures/09_Megusar_1912_Crustacean-colour/Plate_XXXVII.jpg)
-
-**Plate XXXVIII.**
-
-![](figures/09_Megusar_1912_Crustacean-colour/Plate_XXXVIII.jpg)
+![](figures/09_Megusar_1912_Crustacean-colour/Taf_XXVIII.jpg)
 
 ---
 

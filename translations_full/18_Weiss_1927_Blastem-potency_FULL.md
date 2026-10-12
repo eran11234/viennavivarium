@@ -304,9 +304,9 @@ From the experimental outcome a division within the concept of potency can be de
 
 ![](figures/18_Weiss_1927_Blastem-potency/Fig_3.jpg)
 
-**Fig. 3.**
+**Fig. 4.**
 
-![](figures/18_Weiss_1927_Blastem-potency/Fig_3__2.jpg)
+![](figures/18_Weiss_1927_Blastem-potency/Fig_4.jpg)
 
 **Fig. 5.**
 

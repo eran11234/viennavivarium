@@ -1089,7 +1089,7 @@ Since the sexes in rats and mice as a rule differ in size, and the greater relat
 
 ## Figures
 
-**Fig. 4-7.**
+**Figs. 1–6.** (The page is printed sideways, as in the original.)
 
 ![](figures/134_Przibram_1925_Rat-tail-temperature/Fig_4_7.jpg)
 

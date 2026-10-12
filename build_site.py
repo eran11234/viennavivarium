@@ -169,7 +169,7 @@ TRANS_PDF = {
  "27_Przibram_1905_Heterochely": "1905_Przibram_Die-Heterochelie-bei-decapoden-Crustaceen-zugleich-Experimentelle-Stud.pdf",
  "28_Weiss_1924_Regeneration-transplanted-limbs": "1924_Weiss_Regeneration-an-transplantierten-Extremitaten-entwickelter-Amphibien.pdf",
  "29_Brecher_1919_Pieris-pupal-colours": "1919_Brecher_Die-Puppenfarbungen-des-Kohlweißlings-Pieris-brassicae-L.pdf",
- "30_Weiss_1923_Transplanted-developed-limbs": "1923_Weiss_Die-Transplantation-von-entwickelten-Extremitaten-bei-Amphibien__bf02108516.pdf",
+ "30_Weiss_1923_Transplanted-developed-limbs": "1923_Weiss_Die-Transplantation-von-entwickelten-Extremitaten-bei-Amphibien__bf02108515.pdf",  # Part I (DOI ...515)
  "31_Brescia_1910_Secondary-sex-characters": "1910_Brescia_Experimentelle-Untersuchungen-uber-die-sekundaren-Sexualcharaktere-der.pdf",
  "32_Przibram_1907_Angora-cat-eye-colour": "1907_Przibram_Vererbungsversuche-uber-asymmetrische-Augenfarbung-bei-Angorakatzen.pdf",
  "33_Secerov_1909_Loach-colour-change": "1909_Secerov_Farbenwechselversuche-an-der-Bartgrundel-Nemachilus-barbatula-L.pdf",
@@ -195,7 +195,7 @@ TRANS_PDF = {
  "53_Kurz_1922_Polarity-reversal-newt-leg": "1922_Kurz_Versuche-uber-Polaritatsumkehr-am-Tritonenbein.pdf",
  "54_Przibram_1924_Dopa-in-cocoons": "1924_Przibram_Die-Rolle-der-Dopa-in-den-Kokonen-gewisser-Nachtfalter-und-Blattwespen.pdf",
  "55_deHahn_1922_Rat-body-temperature": "1922_de-Hahn_Die-Korpertemperatur-junger-Wanderratten-Mus-decumanus-und-ihre-Beeinf.pdf",
- "56_Weiss_1923_Transplanted-limbs-II": "1923_Weiss_Die-Transplantation-von-entwickelten-Extremitaten-bei-Amphibien__bf02108515.pdf",
+ "56_Weiss_1923_Transplanted-limbs-II": "1923_Weiss_Die-Transplantation-von-entwickelten-Extremitaten-bei-Amphibien__bf02108516.pdf",  # Part II (DOI ...516)
  "57_Przibram_1906_Crystal-analogies": "1906_Przibram_Kristall-Analogien-zur-Entwicklungsmechanik-der-Organismen.pdf",
  "58_Megusar_1910_Orthoptera-leg-regeneration": "1910_Megusar_Regeneration-der-Fang-Schreit-und-Sprungbeine-bei-der-Aufzucht-von-Ort.pdf",
  "59_Koppanyi_1923_Eye-replantation": "1923_Koppanyi_Die-Replantation-von-Augen__bf02108504.pdf",

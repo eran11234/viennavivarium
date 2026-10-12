@@ -176,43 +176,43 @@ In antero-posterior insertion of the implant both into the dorsal and into the v
 
 ## Figures
 
-**Fig. 1.**
+**Fig. a.**
 
-![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_1.jpg)
+![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_a.jpg)
 
-**Fig. 2.**
+**Fig. b.**
 
-![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_2.jpg)
+![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_b.jpg)
 
-**Fig. 3.**
+**Fig. c.**
 
-![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_3.jpg)
+![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_c.jpg)
 
-**Fig. 4.**
+**Fig. d.**
 
-![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_4.jpg)
+![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_d.jpg)
 
-**Fig. 5.**
+**Fig. e.**
 
-![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_5.jpg)
-
-**Fig. 6.**
-
-![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_6.jpg)
+![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_e.jpg)
 
 **Fig. f.**
 
 ![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_f.jpg)
 
-**Fig. g-j.**
+**Fig. g.**
 
-![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_g_j.jpg)
+![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_g.jpg)
 
-**Fig. k-m.**
+**Figs. h–j.**
+
+![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_h_j.jpg)
+
+**Figs. k–m.**
 
 ![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_k_m.jpg)
 
-**Fig. n-p.**
+**Figs. n–p.**
 
 ![](figures/136_Przibram_1924_Limb-axial-ratios/Fig_n_p.jpg)
 

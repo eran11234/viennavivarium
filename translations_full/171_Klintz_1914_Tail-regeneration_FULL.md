@@ -441,10 +441,6 @@ The animals No. 6, 7, 8, 9 were born in captivity and taken into the experimenta
 
 ![](figures/171_Klintz_1914_Tail-regeneration/Fig_4.jpg)
 
-**Fig. 5.**
-
-![](figures/171_Klintz_1914_Tail-regeneration/Fig_5.jpg)
-
 **Taf. VII.**
 
 ![](figures/171_Klintz_1914_Tail-regeneration/Taf_VII.jpg)

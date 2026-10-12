@@ -159,7 +159,7 @@ All three main lines in question, Line I, IE, and O, were branched, and the side
 
 > ¹ Archiv für Entwicklungsmechanik Bd. 46.   7 originated from Professor Woodruff's main line I₃; it was branched off January 17, 1916, at the 5471st generation, kept in constant temperature, and in the standard hay infusion, on isolated slides. Endomixis occurred at the 5493d generation, February 6th, and at the 5530th generation, on March 8th. This line was not interpolated for 59 generations. It was discarded at the 5545th generation, after flourishing mass cultures had been started, following the last occurrence of endomixis. The first lot, I 5530₁₀, was allowed to multiply ten days, the next, I 5530₁₂, twelve days, the third, I 5530₁₄, fourteen days, and the last I 5530₂₄, twenty-four days, in the standard quantity of the standard hay infusion in constant temperature.
 
-![Diagram 1](#) — *V-shaped diagram. The descending arm (left) is labelled* ASCENDING PHASE *and* DESCENDING PHASE *with* CLIMAX *at the bottom and* CONSTRICTION *near a chain of dividing animals; arm III is marked* SUB-PERIOD OF INTERMICTIC PERIOD III, MEDIUM MEAN LENGTH, HIGH STANDARD DEVIATION, HIGH CORRELATION. *The apex (subperiod II) is marked* HIGH MEAN LENGTH, MEDIUM STANDARD DEVIATION, MEDIUM CORRELATION. *The ascending arm (right) is labelled* SUB-PERIOD OF INTERMICTIC PERIOD I, LOW MEAN LENGTH, LOW STANDARD DEVIATION, LOW CORRELATION, *with* DESCENDING PHASE, ASCENDING PHASE, CLIMAX *and* ENDO- *at the bottom; the centre is labelled* INTERMICTIC PERIOD.
+**Diagram 1** — *V-shaped diagram. The descending arm (left) is labelled* ASCENDING PHASE *and* DESCENDING PHASE *with* CLIMAX *at the bottom and* CONSTRICTION *near a chain of dividing animals; arm III is marked* SUB-PERIOD OF INTERMICTIC PERIOD III, MEDIUM MEAN LENGTH, HIGH STANDARD DEVIATION, HIGH CORRELATION. *The apex (subperiod II) is marked* HIGH MEAN LENGTH, MEDIUM STANDARD DEVIATION, MEDIUM CORRELATION. *The ascending arm (right) is labelled* SUB-PERIOD OF INTERMICTIC PERIOD I, LOW MEAN LENGTH, LOW STANDARD DEVIATION, LOW CORRELATION, *with* DESCENDING PHASE, ASCENDING PHASE, CLIMAX *and* ENDO- *at the bottom; the centre is labelled* INTERMICTIC PERIOD.
 
 > Diagram 1: The change of the intermictic and endomictic period is represented, the divisions of the intermictic period, the number of which is arbitrarly fixed one for each day are shown. The three subperiods of the intermictic period with the changing of the four quantities in question is expressed for each subperiod.
 
@@ -1036,9 +1036,9 @@ Young, R. T. 1917. Experimental induction of endomixis in *Paramecium aurelia*. 
 
 ![](figures/103_Erdmann_1920_Endomixis-paramaecium/Diagram_7.jpg)
 
-**Diagram 5 (2)**
+**Diagram 8.**
 
-![](figures/103_Erdmann_1920_Endomixis-paramaecium/Diagram_5_2.jpg)
+![](figures/103_Erdmann_1920_Endomixis-paramaecium/Diagram_8.jpg)
 
 **Diagram 9.**
 

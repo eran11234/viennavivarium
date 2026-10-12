@@ -1764,9 +1764,11 @@ This concludes the great regeneration census table (printed pp. 328–335). On t
 
 ## Figures
 
-**Taf. XI.**
+**Text-figure (p. 275).**
 
-![](figures/109_Przibram_1907_Claw-reversal-decapods/Taf_XI.jpg)
+![](figures/109_Przibram_1907_Claw-reversal-decapods/Text_fig.jpg)
+
+*Plates X–XIV are not included in the scanned copy used here; the plate bound into the scan (Taf. XI of the same volume, with insect figures) belongs to another article.*
 
 ---
 

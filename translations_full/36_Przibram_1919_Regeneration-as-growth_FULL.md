@@ -1996,27 +1996,23 @@ Day after operation: 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18…21…32
 
 ## Figures
 
-**Figure 1.**
+**Curves 1)–4a) and 9)–12b).**
 
 ![](figures/36_Przibram_1919_Regeneration-as-growth/Figure_1.jpg)
 
-**Figure 2.**
+**Curves 5)–8).**
 
 ![](figures/36_Przibram_1919_Regeneration-as-growth/Figure_2.jpg)
 
-**Figure 3.**
+**Curves 18)–30).**
 
 ![](figures/36_Przibram_1919_Regeneration-as-growth/Figure_3.jpg)
 
-**22).**
+**Curves 31) and 32).**
 
-![](figures/36_Przibram_1919_Regeneration-as-growth/22.jpg)
+![](figures/36_Przibram_1919_Regeneration-as-growth/Curves_31_32.jpg)
 
-**29).**
-
-![](figures/36_Przibram_1919_Regeneration-as-growth/29.jpg)
-
-**Figure 6.**
+**Curves 33)–70).**
 
 ![](figures/36_Przibram_1919_Regeneration-as-growth/Figure_6.jpg)
 

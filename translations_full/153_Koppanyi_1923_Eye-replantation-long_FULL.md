@@ -504,53 +504,57 @@ Distinction of the white side of a sheet-metal plate (correct) from the black si
 
 ## Figures
 
-**Curve IVa.**
-
-![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IVa.jpg)
-
 **Fig. 1.**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Fig_1.jpg)
-
-**Curve IVb.**
-
-![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IVb.jpg)
 
 **Fig. 2.**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Fig_2.jpg)
 
-**Curve 1a.**
+**Curve Ia (α learning curve, β distribution curve).**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_1a.jpg)
 
-**Curve 1b.**
+**Curve Ib (α, β).**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_1b.jpg)
 
-**Curve IIa.**
+**Curves IIa (α, β).**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IIa.jpg)
 
-**Curve IIb.**
+**Curve IIb (α, β).**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IIb.jpg)
 
-**Curve IIc.**
+**Curve IIc (α, β).**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IIc.jpg)
 
-**Fig. 3, 4, 5, 6.**
+**Figs. 3, 4, 5, 6.**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Fig_3_4_5_6.jpg)
 
-**Curve IIIa.**
+**Curve IIIa (α, β).**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IIIa.jpg)
 
-**Curve IIIb.**
+**Curve IIIb (α, β).**
 
 ![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IIIb.jpg)
+
+**Curve IIIc (α, β).**
+
+![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IIIc.jpg)
+
+**Curve IVα.**
+
+![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IVa.jpg)
+
+**Curve IVβ.**
+
+![](figures/153_Koppanyi_1923_Eye-replantation-long/Curve_IVb.jpg)
 
 ---
 

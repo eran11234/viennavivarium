@@ -697,7 +697,7 @@ in place of the antennal formations, in which not only members with leg-characte
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_1.jpg)
 
-**Fig. 2 / Abb. 3.**
+**Figs. 2 and 3.**
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_2_Abb_3.jpg)
 
@@ -741,7 +741,7 @@ in place of the antennal formations, in which not only members with leg-characte
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_10.jpg)
 
-**Fig. 11 u. 12.**
+**Figs. 11 and 12.**
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_11_u_12.jpg)
 
@@ -749,15 +749,15 @@ in place of the antennal formations, in which not only members with leg-characte
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_13.jpg)
 
-**Fig. 14-22.**
+**Figs. 14–22.**
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_14_22.jpg)
 
-**Fig. (p.35)**
+**Schema: kinds of heteromorphosis (p. 350).**
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_p_35.jpg)
 
-**Fig. 23-26.**
+**Figs. 23–26.**
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_23_26.jpg)
 
@@ -765,11 +765,11 @@ in place of the antennal formations, in which not only members with leg-characte
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_27.jpg)
 
-**Fig. 28a.**
+**Fig. 27a.**
 
-![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_28a.jpg)
+![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_27a.jpg)
 
-**Fig. 28, 28a.**
+**Figs. 28 and 28a.**
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_28_28a.jpg)
 
@@ -777,11 +777,11 @@ in place of the antennal formations, in which not only members with leg-characte
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_29.jpg)
 
-**Fig. 30 u. 31.**
+**Figs. 30 and 31.**
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_30_u_31.jpg)
 
-**Fig. 32, 33.**
+**Figs. 32 and 33.**
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_32_33.jpg)
 
@@ -793,9 +793,9 @@ in place of the antennal formations, in which not only members with leg-characte
 
 ![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_35.jpg)
 
-**Fig. 33.**
+**Fig. 36.**
 
-![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_33.jpg)
+![](figures/170_Staudinger_1930_Stigmata-heteromorphoses/Fig_36.jpg)
 
 ---
 

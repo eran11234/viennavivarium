@@ -105,9 +105,17 @@ They amount essentially to a shortening of the tail, as well as to a malformatio
 
 ## Figures
 
-**Taf. IX.**
+**Fig. 1.**
 
-![](figures/155_Hammerschlag_1912_Dancing-mice-breeding/Taf_IX.jpg)
+![](figures/155_Hammerschlag_1912_Dancing-mice-breeding/Fig_1.jpg)
+
+**Fig. 2.**
+
+![](figures/155_Hammerschlag_1912_Dancing-mice-breeding/Fig_2.jpg)
+
+**Fig. 3.**
+
+![](figures/155_Hammerschlag_1912_Dancing-mice-breeding/Fig_3.jpg)
 
 ---
 

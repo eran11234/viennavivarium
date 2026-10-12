@@ -1083,11 +1083,11 @@ Notes on the source:
 
 ## Figures
 
-**Plate 17.**
+**Plate VI.**
 
 ![](figures/22_Przibram_1906_Mantis-rearing/Plate_17.jpg)
 
-**Plate 18.**
+**Plate VII.**
 
 ![](figures/22_Przibram_1906_Mantis-rearing/Plate_18.jpg)
 

@@ -199,53 +199,49 @@ digited foot regenerated from the knee wound springs not from a fibula but from 
 
 ## Figures
 
-**Fig. 1.**
+**Fig. 1 (a–o).**
 
 ![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_1.jpg)
 
-**Fig. 1 (2)**
+**Fig. 1, continued (d–s).**
 
 ![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_1_2.jpg)
 
-**Fig. 2–7.**
+**Figs. 2–7.**
 
 ![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_2_7.jpg)
 
-**Fig. 8–12.**
+**Figs. 8–10.**
 
-![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_8_12.jpg)
+![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_8_10.jpg)
 
-**Fig. 13–17.**
+**Figs. 11–16.**
 
-![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_13_17.jpg)
-
-**Fig. 18–19.**
-
-![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_18_19.jpg)
+![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_11_16.jpg)
 
 **Fig. 17.**
 
 ![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_17.jpg)
 
-**Fig. 18–22.**
+**Figs. 18–24.**
 
-![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_18_22.jpg)
+![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_18_24.jpg)
 
-**Fig. 25–26.**
+**Figs. 25 and 26.**
 
 ![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_25_26.jpg)
 
-**Fig. 27–33.**
+**Figs. 27–34.**
 
-![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_27_33.jpg)
+![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_27_34.jpg)
 
-**Fig. 34–35.**
+**Figs. 35 and 36.**
 
-![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_34_35.jpg)
+![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_35_36.jpg)
 
-**Fig. 36.**
+**Fig. 37.**
 
-![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_36.jpg)
+![](figures/94_SciacchitanoWeissPrzibram_1930_Triton-leg-regeneration/Fig_37.jpg)
 
 ---
 

@@ -610,10 +610,6 @@ Zeller, E. v., Untersuchungen über die Samenträger und den Cloakenwulst der Tr
 
 ![](figures/31_Brescia_1910_Secondary-sex-characters/Fig_3.jpg)
 
-**Fig. 4.**
-
-![](figures/31_Brescia_1910_Secondary-sex-characters/Fig_4.jpg)
-
 ---
 
 *Translator's note.* An experimental study of gonadal control of secondary sex characters.

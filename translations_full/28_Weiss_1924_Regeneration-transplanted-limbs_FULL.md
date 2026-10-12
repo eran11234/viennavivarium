@@ -529,25 +529,33 @@ Interchange of the developed fore- and hind-limb in *Salamandra maculosa larv.* 
 
 ![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_6.jpg)
 
+**Fig. 7.**
+
+![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_7.jpg)
+
 **Fig. 8.**
 
 ![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_8.jpg)
-
-**Fig. 8.**
-
-![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_8__2.jpg)
-
-**Fig. 8.**
-
-![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_8__3.jpg)
 
 **Fig. 9.**
 
 ![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_9.jpg)
 
-**Fig. 8.**
+**Fig. 10.**
 
-![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_8__4.jpg)
+![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_10.jpg)
+
+**Fig. 11.**
+
+![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_11.jpg)
+
+**Fig. 12.**
+
+![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_12.jpg)
+
+**Fig. 13.**
+
+![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_13.jpg)
 
 **Fig. 14.**
 
@@ -561,21 +569,25 @@ Interchange of the developed fore- and hind-limb in *Salamandra maculosa larv.* 
 
 ![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_16.jpg)
 
-**Fig. 17.**
+**Figs. 17–19.**
 
-![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_17.jpg)
+![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_17_19.jpg)
+
+**Figs. 20 and 21.**
+
+![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_20_21.jpg)
+
+**Fig. 22.**
+
+![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_22.jpg)
 
 **Fig. 23.**
 
 ![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_23.jpg)
 
-**Fig. 25.**
+**Figs. 24 and 25.**
 
-![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_25.jpg)
-
-**Fig. 26.**
-
-![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_26.jpg)
+![](figures/28_Weiss_1924_Regeneration-transplanted-limbs/Fig_24_25.jpg)
 
 ---
 
