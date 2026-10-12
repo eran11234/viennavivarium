@@ -341,10 +341,7 @@
    "page": null
   },
   "37": {
-   "kind": "plate",
-   "score": 54.2,
-   "src": null,
-   "page": 13
+   "kind": "titlepage"
   },
   "38": {
    "kind": "figure",
@@ -574,7 +571,7 @@
   "90": {
    "kind": "figure",
    "score": 65.9,
-   "src": "figures/155_Hammerschlag_1912_Dancing-mice-breeding/Taf_IX.jpg",
+   "src": "figures/155_Hammerschlag_1912_Dancing-mice-breeding/Fig_3.jpg",
    "page": null
   },
   "91": {
@@ -592,7 +589,7 @@
   "93": {
    "kind": "figure",
    "score": 46.2,
-   "src": "figures/09_Megusar_1912_Crustacean-colour/Plate_LVI.jpg",
+   "src": "figures/09_Megusar_1912_Crustacean-colour/Taf_XXVI.jpg",
    "page": null
   },
   "94": {
@@ -743,7 +740,7 @@
   "128": {
    "kind": "figure",
    "score": 55.4,
-   "src": "figures/109_Przibram_1907_Claw-reversal-decapods/Taf_XI.jpg",
+   "src": "figures/109_Przibram_1907_Claw-reversal-decapods/Text_fig.jpg",
    "page": null
   },
   "129": {
